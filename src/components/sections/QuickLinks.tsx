@@ -1,35 +1,38 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 import { BookIcon, HeartIcon, PeopleIcon, PinIcon } from "@/components/ui/icons";
 
-const links = [
-  {
-    title: "Join a Bible study",
-    description: "The 5-phase online discipleship and Bible education program.",
-    href: "/bible-study",
-    Icon: BookIcon,
-  },
-  {
-    title: "Find your campus",
-    description: "Our network of chapters and fellowships.",
-    href: "/network",
-    Icon: PinIcon,
-  },
-  {
-    title: "Get involved",
-    description: "Connect, grow, lead and be sent with AM.",
-    href: "/get-involved",
-    Icon: PeopleIcon,
-  },
-  {
-    title: "Support the mission",
-    description: "Give, pray and partner with students in the field.",
-    href: "/give",
-    Icon: HeartIcon,
-  },
-];
+export default async function QuickLinks() {
+  const t = await getTranslations("Home.QuickLinks");
 
-export default function QuickLinks() {
+  const links = [
+    {
+      title: t("joinBibleStudyTitle"),
+      description: t("joinBibleStudyDescription"),
+      href: "/bible-study",
+      Icon: BookIcon,
+    },
+    {
+      title: t("findCampusTitle"),
+      description: t("findCampusDescription"),
+      href: "/network",
+      Icon: PinIcon,
+    },
+    {
+      title: t("getInvolvedTitle"),
+      description: t("getInvolvedDescription"),
+      href: "/get-involved",
+      Icon: PeopleIcon,
+    },
+    {
+      title: t("supportTitle"),
+      description: t("supportDescription"),
+      href: "/give",
+      Icon: HeartIcon,
+    },
+  ];
+
   return (
     <section className="bg-white py-8">
       <Container>

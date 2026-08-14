@@ -1,6 +1,12 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
-export default function Logo({ dark = false }: { dark?: boolean }) {
+export default function Logo({
+  dark = false,
+  internationalLabel = "International",
+}: {
+  dark?: boolean;
+  internationalLabel?: string;
+}) {
   const textColor = dark ? "text-ink" : "text-white";
   return (
     <Link href="/" className="inline-flex flex-col leading-none" aria-label="AM International home">
@@ -8,7 +14,7 @@ export default function Logo({ dark = false }: { dark?: boolean }) {
         AM
       </span>
       <span className={`text-[9px] font-semibold uppercase tracking-[0.3em] ${textColor} opacity-90`}>
-        International
+        {internationalLabel}
       </span>
     </Link>
   );

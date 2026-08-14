@@ -1,0 +1,194 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · 사명을 위해 보냄받은 자",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "우리는 누구인가",
+    "whatWeDo": "우리가 하는 일",
+    "getInvolved": "참여하기",
+    "ourNetwork": "우리의 네트워크",
+    "news": "소식",
+    "contactUs": "문의하기",
+    "give": "후원하기",
+    "toggleNav": "탐색 메뉴 열기/닫기",
+    "whoWeAreMenu": {
+      "aboutAM": "AM 소개",
+      "missionStatement": "사명 선언문",
+      "statementOfFaith": "신앙고백",
+      "ourHistory": "우리의 역사",
+      "leadership": "리더십",
+      "ourFirstChairman": "초대 명예 회장"
+    },
+    "whatWeDoMenu": {
+      "bibleStudyProgram": "성경공부 프로그램",
+      "fourSpiritualThemes": "4가지 영적 주제",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "우리의 사역"
+    },
+    "getInvolvedMenu": {
+      "connectGrowLeadSent": "연결, 성장, 리더십, 파송",
+      "chapterAffiliation": "지부 가입",
+      "ourNetwork": "우리의 네트워크",
+      "events": "행사",
+      "give": "후원하기"
+    }
+  },
+  "Footer": {
+    "tagline": "땅끝까지 복음을 전하며 주님의 영원한 사랑을 증거하는 데 헌신하는 초교파 선교단체입니다.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "미국 뉴저지주 트렌턴",
+    "email": "info@amintl.org",
+    "whoWeAre": "우리는 누구인가",
+    "whatWeDo": "우리가 하는 일",
+    "getInvolved": "참여하기",
+    "media": "미디어",
+    "aboutAM": "AM 소개",
+    "missionStatement": "사명 선언문",
+    "statementOfFaith": "신앙고백",
+    "ourHistory": "우리의 역사",
+    "leadership": "리더십",
+    "bibleStudyProgram": "성경공부 프로그램",
+    "fourSpiritualThemes": "4가지 영적 주제",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "우리의 사역",
+    "connectGrowLeadSent": "연결, 성장, 리더십, 파송",
+    "chapterAffiliation": "지부 가입",
+    "ourNetwork": "우리의 네트워크",
+    "events": "행사",
+    "give": "후원하기",
+    "news": "소식",
+    "legacyOfChairman": "랄프 D. 윈터 박사의 유산",
+    "contactUs": "문의하기",
+    "copyright": "© 2026 Apostolos Missions International. All rights reserved.",
+    "contact": "문의"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "언어"
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — 보냄받은 자",
+      "headingLine1": "미래는",
+      "headingWhere": "우리가 있는 곳에서",
+      "headingWeAre": "시작됩니다",
+      "joinBibleStudy": "성경공부 참여하기",
+      "whoWeAre": "우리는 누구인가",
+      "stat1Value": "2003",
+      "stat1Label": "파송 시작",
+      "stat2Value": "트렌턴",
+      "stat2Label": "미국 뉴저지주",
+      "stat3Value": "글로벌",
+      "stat3Label": "캠퍼스 네트워크",
+      "dragToExplore": "드래그하여 둘러보기"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "성경공부 프로그램에 참여하세요",
+      "heading": "첫 질문에서 파송까지, 5단계의 여정.",
+      "description": "AM의 5단계 성경공부 프로그램은 학생들이 예수 그리스도의 복음과 신앙의 삶을 체계적으로 배워나가도록 이끄는 온라인 제자훈련 및 성경교육 프로그램입니다. 이 프로그램은 학생들을 성경 교사와 연결하여 참여자의 일정에 맞춰 지도를 제공합니다. 봉사 활동에 참여하거나, 학생 선교사로 훈련받거나, 혹은 AM과 함께 하나님의 말씀을 더 깊이 탐구할 수 있는 기회로 이어집니다.",
+      "cta": "프로그램 시작하기"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "성경공부 참여하기",
+      "joinBibleStudyDescription": "5단계 온라인 제자훈련 및 성경교육 프로그램.",
+      "findCampusTitle": "캠퍼스 찾기",
+      "findCampusDescription": "우리의 지부와 공동체 네트워크.",
+      "getInvolvedTitle": "참여하기",
+      "getInvolvedDescription": "AM과 함께 연결되고, 성장하고, 리더십을 발휘하고, 파송받으세요.",
+      "supportTitle": "사역을 후원하기",
+      "supportDescription": "현장의 학생들을 위해 후원하고, 기도하고, 동역하세요."
+    },
+    "Ministries": {
+      "eyebrow": "연결 · 성장 · 리더십 · 파송",
+      "heading": "네 단계, 우리는 그 모든 여정을 함께 걷습니다.",
+      "getInvolved": "참여하기",
+      "learnMore": "더 알아보기",
+      "connectTitle": "AM과 연결되기",
+      "connectDescription": "AM은 주 예수 그리스도와의 영적 삶과 관계를 키워주는 다양한 성경공부 프로그램을 제공합니다.",
+      "growTitle": "AM과 함께 성장하기",
+      "growDescription": "우리의 그룹 활동에 참여하여 진리 안에서 함께 성숙해지세요. 우리의 그룹 프로그램은 모든 학생이 영적인 힘을 얻을 수 있는 양질의 경험을 제공합니다.",
+      "leadTitle": "AM과 함께 리더십 발휘하기",
+      "leadDescription": "AM은 하나님이 주신 재능으로 다양한 부서에서 봉사하고 섬기기를 원하는 학생들을 기쁘게 맞이합니다.",
+      "sentTitle": "AM과 함께 파송받기",
+      "sentDescription": "AM은 졸업 후에도 여러분의 삶 가운데 \"보냄받음\"이라는 소중한 부르심이 이루어질 때까지 함께 동행합니다!",
+      "connectTag": "연결",
+      "growTag": "성장",
+      "leadTag": "리더십",
+      "sentTag": "파송"
+    },
+    "OurMission": {
+      "eyebrow": "우리의 사명",
+      "statementPrefix": "Apostolos Missions의 사명은",
+      "statementEmphasis": "예수와 그의 십자가에 못 박히심을 전파하는 것",
+      "statementSuffix": "이며, 캠퍼스 선교의 동원을 위해 그리스도 중심의 청년 그리스도인 네트워크를 세워가는 것입니다.",
+      "readFullStatement": "전체 사명 선언문 읽기",
+      "nameOrigin": "apostolos라는 이름은 사도를 의미하는 그리스어입니다. \"사명을 위해 보냄받은 자\"라는 뜻입니다.",
+      "history": "복음을 전하고 예수님을 알리고자 하는 열정적인 소수의 청년 학생들이 미국 캘리포니아주 로스앤젤레스에서 시작한 작은 모임이, 오늘날 전 세계 대학 캠퍼스에서 활동하는 국제적인 단체로 성장했습니다.",
+      "ourHistory": "우리의 역사"
+    },
+    "GetInvolved": {
+      "eyebrow": "연결되기",
+      "heading": "참여하기",
+      "bibleStudies": "성경공부",
+      "volunteer": "봉사활동",
+      "internship": "인턴십"
+    },
+    "Media": {
+      "eyebrow": "미디어",
+      "heading": "가르침, 간증, 그리고 말씀.",
+      "moreContents": "더 많은 콘텐츠",
+      "playVideo": "AM 소개 영상 재생",
+      "post1Title": "4가지 영적 주제 – 개요",
+      "post2Title": "구원이란 무엇인가? | Sola Fide 1부 – AM Academy",
+      "post3Title": "소셜 미디어 제자훈련의 시대, 학생들을 복음의 실체와 연결하다",
+      "post4Title": "새해를 향한 하나님의 약속",
+      "post1Date": "2026년 1월 5일",
+      "post2Date": "2023년 6월 27일",
+      "post3Date": "2022년 6월 3일",
+      "post4Date": "2022년 1월 2일"
+    },
+    "Events": {
+      "eyebrow": "행사",
+      "heading": "네트워크가 함께 모이는 곳.",
+      "allEvents": "모든 행사 보기",
+      "event1Date": "4월 4일–5일",
+      "event1Title": "부활절 수련회",
+      "event2Date": "2월 18일",
+      "event2Title": "사순절 40일 걷기",
+      "event3Date": "1월 16일",
+      "event3Title": "신임 지부장 모임"
+    },
+    "OurNetwork": {
+      "eyebrow": "우리의 네트워크",
+      "heading": "여러분의 캠퍼스에 이미 공동체가 있을지도 모릅니다.",
+      "description": "학교나 도시로 검색해 보세요. 근처에 아무것도 없다면, 그것은 새로 시작하라는 초대입니다 — 저희가 함께 도와드리겠습니다.",
+      "startChapter": "지부 시작하기",
+      "searchPlaceholder": "학교 또는 도시 검색",
+      "noMatches": "아직 결과가 없습니다 — 문의해 주시면 새로 시작할 수 있도록 도와드리겠습니다."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "초대 명예 회장",
+      "followingLegacy": "그의 유산을 따라",
+      "name": "랄프 D. 윈터 박사",
+      "quoteLine1": "그러므로 너희는 가서",
+      "quoteLine2": "모든 민족을",
+      "quoteLine3": "제자로 삼아…",
+      "quoteReference": "—마태복음 28장 19절"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "동역자가 되어주세요",
+      "heading": "여러분이 결코 만나지 못할 누군가를 보내주세요.",
+      "description": "여러분의 모든 후원은 떠날 준비가 된 학생들에게 성경공부, 훈련, 그리고 파송 공동체를 가능하게 합니다.",
+      "giveToday": "오늘 후원하기",
+      "talkToUs": "문의하기"
+    },
+    "Newsletter": {
+      "heading": "캠퍼스 소식",
+      "description": "매달 전해드리는 짧은 편지: 학생들이 목격하는 일들, AM의 다음 행보, 그리고 기도 제목.",
+      "cta": "AM Academy"
+    }
+  }
+}

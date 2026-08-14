@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
@@ -38,7 +39,7 @@ async function getCampuses(): Promise<Campus[]> {
 }
 
 export default async function OurNetwork() {
-  const campuses = await getCampuses();
+  const [campuses, t] = await Promise.all([getCampuses(), getTranslations("Home.OurNetwork")]);
 
   return (
     <section
@@ -47,20 +48,23 @@ export default async function OurNetwork() {
     >
       <Container className="grid gap-12 lg:grid-cols-2 lg:gap-20">
         <div className="lg:pt-2">
-          <Eyebrow tone="light">Our network</Eyebrow>
+          <Eyebrow tone="light">{t("eyebrow")}</Eyebrow>
           <h2 className="font-display text-4xl font-semibold tracking-[-0.02em] text-white sm:text-5xl">
-            There may already be a fellowship on your campus.
+            {t("heading")}
           </h2>
           <p className="mt-6 max-w-md text-base leading-relaxed text-white/75">
-            Search by school or city. If nothing comes up near you, that is
-            an invitation &mdash; we will help you start one.
+            {t("description")}
           </p>
           <Button href="/get-involved/chapter-affiliation" variant="outlineLight" className="mt-9">
-            Start a chapter
+            {t("startChapter")}
           </Button>
         </div>
 
-        <CampusSearch campuses={campuses} />
+        <CampusSearch
+          campuses={campuses}
+          searchPlaceholder={t("searchPlaceholder")}
+          noMatchesLabel={t("noMatches")}
+        />
       </Container>
     </section>
   );

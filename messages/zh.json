@@ -1,0 +1,194 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · 受差遣完成使命的人",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "关于我们",
+    "whatWeDo": "我们的事工",
+    "getInvolved": "参与我们",
+    "ourNetwork": "我们的网络",
+    "news": "新闻",
+    "contactUs": "联系我们",
+    "give": "奉献",
+    "toggleNav": "切换导航菜单",
+    "whoWeAreMenu": {
+      "aboutAM": "关于 AM",
+      "missionStatement": "使命宣言",
+      "statementOfFaith": "信仰告白",
+      "ourHistory": "我们的历史",
+      "leadership": "领导团队",
+      "ourFirstChairman": "首任名誉主席"
+    },
+    "whatWeDoMenu": {
+      "bibleStudyProgram": "查经课程",
+      "fourSpiritualThemes": "四个属灵主题",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "我们的事工"
+    },
+    "getInvolvedMenu": {
+      "connectGrowLeadSent": "连结、成长、带领、受差遣",
+      "chapterAffiliation": "分会加盟",
+      "ourNetwork": "我们的网络",
+      "events": "活动",
+      "give": "奉献"
+    }
+  },
+  "Footer": {
+    "tagline": "AM 是一个跨宗派的福音机构，致力于将福音传到地极，为主永恒的爱作见证。",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "美国新泽西州特伦顿",
+    "email": "info@amintl.org",
+    "whoWeAre": "关于我们",
+    "whatWeDo": "我们的事工",
+    "getInvolved": "参与我们",
+    "media": "媒体",
+    "aboutAM": "关于 AM",
+    "missionStatement": "使命宣言",
+    "statementOfFaith": "信仰告白",
+    "ourHistory": "我们的历史",
+    "leadership": "领导团队",
+    "bibleStudyProgram": "查经课程",
+    "fourSpiritualThemes": "四个属灵主题",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "我们的事工",
+    "connectGrowLeadSent": "连结、成长、带领、受差遣",
+    "chapterAffiliation": "分会加盟",
+    "ourNetwork": "我们的网络",
+    "events": "活动",
+    "give": "奉献",
+    "news": "新闻",
+    "legacyOfChairman": "拉尔夫·D·温特博士的属灵遗产",
+    "contactUs": "联系我们",
+    "copyright": "© 2026 Apostolos Missions International. 保留所有权利。",
+    "contact": "联系方式"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "语言"
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — 受差遣的人",
+      "headingLine1": "未来",
+      "headingWhere": "从我们所在之处",
+      "headingWeAre": "开始",
+      "joinBibleStudy": "加入我们的查经",
+      "whoWeAre": "关于我们",
+      "stat1Value": "2003",
+      "stat1Label": "差传起始年",
+      "stat2Value": "特伦顿",
+      "stat2Label": "美国新泽西州",
+      "stat3Value": "全球",
+      "stat3Label": "校园网络",
+      "dragToExplore": "拖动以探索"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "加入我们的查经课程",
+      "heading": "从第一个疑问到受差遣的五阶段旅程。",
+      "description": "AM 的五阶段查经课程是一项在线门徒训练与圣经教育项目，带领学生系统地学习耶稣基督的福音与信仰生活。该课程将学生与圣经教师配对，按学员的时间安排进行指导，最终可以选择成为义工、接受学生宣教士训练，或与 AM 一同更深入地探究神的话语。",
+      "cta": "开始课程"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "加入查经",
+      "joinBibleStudyDescription": "五阶段在线门徒训练与圣经教育项目。",
+      "findCampusTitle": "寻找你的校园",
+      "findCampusDescription": "我们的分会与团契网络。",
+      "getInvolvedTitle": "参与我们",
+      "getInvolvedDescription": "与 AM 一同连结、成长、带领，并受差遣。",
+      "supportTitle": "支持这项使命",
+      "supportDescription": "为在前线的学生奉献、代祷并同心合作。"
+    },
+    "Ministries": {
+      "eyebrow": "连结 · 成长 · 带领 · 受差遣",
+      "heading": "四个阶段，我们与你同行每一步。",
+      "getInvolved": "参与我们",
+      "learnMore": "了解更多",
+      "connectTitle": "与 AM 连结",
+      "connectDescription": "AM 提供多种查经课程，滋养我们与主耶稣基督的属灵生命与关系。",
+      "growTitle": "与 AM 一同成长",
+      "growDescription": "加入我们的小组活动，在真理的团契中共同成长。我们的小组课程为每一位学生提供优质的经历，帮助他们获得属灵力量。",
+      "leadTitle": "与 AM 一同带领",
+      "leadDescription": "AM 乐于接纳愿意运用神所赐才干，在各个部门中担任义工与服事的学生。",
+      "sentTitle": "与 AM 一同受差遣",
+      "sentDescription": "即使在你毕业之后，AM 仍将持续与你同行，直到「受差遣」这一宝贵的呼召在你生命中得以实现！",
+      "connectTag": "连结",
+      "growTag": "成长",
+      "leadTag": "带领",
+      "sentTag": "差遣"
+    },
+    "OurMission": {
+      "eyebrow": "我们的使命",
+      "statementPrefix": "Apostolos Missions 的使命是",
+      "statementEmphasis": "传扬耶稣基督并他钉十字架",
+      "statementSuffix": "——建立以基督为中心的青年基督徒网络，动员校园宣教。",
+      "readFullStatement": "阅读完整使命宣言",
+      "nameOrigin": "apostolos 是希腊文中「使徒」一词，意思是「受差遣完成使命的人」。",
+      "history": "AM 起初是一小群充满热忱的青年学生，在美国加州洛杉矶渴望传扬福音、使人认识耶稣，如今已发展成为一个在世界各地大学校园中服事的国际机构。",
+      "ourHistory": "我们的历史"
+    },
+    "GetInvolved": {
+      "eyebrow": "建立连结",
+      "heading": "参与我们",
+      "bibleStudies": "查经",
+      "volunteer": "义工服事",
+      "internship": "实习"
+    },
+    "Media": {
+      "eyebrow": "媒体",
+      "heading": "教导、见证与神的话语。",
+      "moreContents": "更多内容",
+      "playVideo": "播放 AM 介绍影片",
+      "post1Title": "四个属灵主题 – 概览",
+      "post2Title": "什么是救恩？| 因信称义 第一部分 – AM Academy",
+      "post3Title": "社交媒体门训时代：连结学生与福音的真实",
+      "post4Title": "新年里神的应许",
+      "post1Date": "2026年1月5日",
+      "post2Date": "2023年6月27日",
+      "post3Date": "2022年6月3日",
+      "post4Date": "2022年1月2日"
+    },
+    "Events": {
+      "eyebrow": "活动",
+      "heading": "网络相聚之处。",
+      "allEvents": "查看所有活动",
+      "event1Date": "4月4日–5日",
+      "event1Title": "复活节静修会",
+      "event2Date": "2月18日",
+      "event2Title": "大斋期四十日徒步灵修",
+      "event3Date": "1月16日",
+      "event3Title": "新任分会领袖聚会"
+    },
+    "OurNetwork": {
+      "eyebrow": "我们的网络",
+      "heading": "你的校园或许已经有一个团契。",
+      "description": "按学校或城市搜索。如果附近没有结果，这正是一个邀请——我们将帮助你建立一个。",
+      "startChapter": "创立分会",
+      "searchPlaceholder": "搜索学校或城市",
+      "noMatches": "暂时没有匹配结果——联系我们，我们会帮助你创立一个。"
+    },
+    "HonoraryChairman": {
+      "eyebrow": "首任名誉主席",
+      "followingLegacy": "承继他的属灵遗产",
+      "name": "拉尔夫·D·温特博士",
+      "quoteLine1": "所以，你们要去，",
+      "quoteLine2": "使万民",
+      "quoteLine3": "作我的门徒……",
+      "quoteReference": "——马太福音 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "成为我们的伙伴",
+      "heading": "差遣一位你永远不会亲自认识的人。",
+      "description": "你的每一份奉献，都使已预备好出发的学生能够得到查经、装备训练与差传群体的支持。",
+      "giveToday": "立即奉献",
+      "talkToUs": "与我们联系"
+    },
+    "Newsletter": {
+      "heading": "校园前线通讯",
+      "description": "一封简短的月度信函：学生们所看见的事、AM 下一步的方向，以及代祷事项。",
+      "cta": "AM Academy"
+    }
+  }
+}

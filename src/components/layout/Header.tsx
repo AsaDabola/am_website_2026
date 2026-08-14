@@ -1,57 +1,61 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 import Logo from "@/components/ui/Logo";
+import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 import { ChevronDownIcon } from "@/components/ui/icons";
 
-const dropdowns = [
-  {
-    label: "Who We Are",
-    links: [
-      { label: "About AM", href: "/about" },
-      { label: "Mission statement", href: "/about/mission" },
-      { label: "Statement of faith", href: "/about/statement-of-faith" },
-      { label: "Our history", href: "/about/history" },
-      { label: "Leadership", href: "/about/leadership" },
-      { label: "Our First Chairman", href: "/about/chairman" },
-    ],
-  },
-  {
-    label: "What We Do",
-    links: [
-      { label: "Bible Study Program", href: "/bible-study" },
-      { label: "Four Spiritual Themes", href: "/four-spiritual-themes" },
-      { label: "AM Academy", href: "https://www.amacademy.org" },
-      { label: "Our ministries", href: "/ministries" },
-    ],
-  },
-  {
-    label: "Get Involved",
-    links: [
-      { label: "Connect, Grow, Lead, Sent", href: "/get-involved" },
-      { label: "Chapter affiliation", href: "/get-involved/chapter-affiliation" },
-      { label: "Our Network", href: "/network" },
-      { label: "Events", href: "/events" },
-      { label: "Give", href: "/give" },
-    ],
-  },
-];
-
-const plainLinks = [
-  { label: "Our Network", href: "/network" },
-  { label: "News", href: "/news" },
-  { label: "Contact Us", href: "/contact" },
-];
-
 export default function Header() {
+  const t = useTranslations("Header");
+  const tLogo = useTranslations("Logo");
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const dropdowns = [
+    {
+      label: t("whoWeAre"),
+      links: [
+        { label: t("whoWeAreMenu.aboutAM"), href: "/about" },
+        { label: t("whoWeAreMenu.missionStatement"), href: "/about/mission" },
+        { label: t("whoWeAreMenu.statementOfFaith"), href: "/about/statement-of-faith" },
+        { label: t("whoWeAreMenu.ourHistory"), href: "/about/history" },
+        { label: t("whoWeAreMenu.leadership"), href: "/about/leadership" },
+        { label: t("whoWeAreMenu.ourFirstChairman"), href: "/about/chairman" },
+      ],
+    },
+    {
+      label: t("whatWeDo"),
+      links: [
+        { label: t("whatWeDoMenu.bibleStudyProgram"), href: "/bible-study" },
+        { label: t("whatWeDoMenu.fourSpiritualThemes"), href: "/four-spiritual-themes" },
+        { label: t("whatWeDoMenu.amAcademy"), href: "https://www.amacademy.org" },
+        { label: t("whatWeDoMenu.ourMinistries"), href: "/ministries" },
+      ],
+    },
+    {
+      label: t("getInvolved"),
+      links: [
+        { label: t("getInvolvedMenu.connectGrowLeadSent"), href: "/get-involved" },
+        { label: t("getInvolvedMenu.chapterAffiliation"), href: "/get-involved/chapter-affiliation" },
+        { label: t("getInvolvedMenu.ourNetwork"), href: "/network" },
+        { label: t("getInvolvedMenu.events"), href: "/events" },
+        { label: t("getInvolvedMenu.give"), href: "/give" },
+      ],
+    },
+  ];
+
+  const plainLinks = [
+    { label: t("ourNetwork"), href: "/network" },
+    { label: t("news"), href: "/news" },
+    { label: t("contactUs"), href: "/contact" },
+  ];
 
   return (
     <header className="sticky top-0 z-40 bg-brand-blue/95 backdrop-blur-[7px]">
       <Container className="flex h-[77px] items-center justify-between">
-        <Logo />
+        <Logo internationalLabel={tLogo("international")} />
 
         <nav className="hidden items-center gap-1 lg:flex">
           {dropdowns.map((item) => (
@@ -87,15 +91,16 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1">
+          <LanguageSwitcher />
           <Link
             href="/give"
-            className="hidden rounded-full bg-brand-navy px-6 py-3 text-sm font-semibold uppercase tracking-[0.04em] text-white hover:bg-brand-navy-light sm:inline-flex"
+            className="ml-2 hidden rounded-full bg-brand-navy px-6 py-3 text-sm font-semibold uppercase tracking-[0.04em] text-white hover:bg-brand-navy-light sm:inline-flex"
           >
-            Give
+            {t("give")}
           </Link>
           <button
-            aria-label="Toggle navigation menu"
+            aria-label={t("toggleNav")}
             className="flex size-10 items-center justify-center rounded-md text-white lg:hidden"
             onClick={() => setMobileOpen((open) => !open)}
           >
@@ -144,7 +149,7 @@ export default function Header() {
               href="/give"
               className="mt-2 inline-flex w-fit rounded-full bg-brand-navy px-6 py-3 text-sm font-semibold uppercase tracking-[0.04em] text-white"
             >
-              Give
+              {t("give")}
             </Link>
           </Container>
         </div>

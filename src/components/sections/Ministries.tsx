@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
@@ -15,46 +16,47 @@ type Step = {
   imageUrl?: string;
 };
 
-const defaultSteps: Step[] = [
-  {
-    tag: "Connect",
-    title: "Connect with AM",
-    description:
-      "AM offers various Bible study programs that nurture our spiritual life and relationship with the Lord Jesus Christ.",
-    href: "/bible-study",
-    from: "#2a5eec",
-    to: "#0d1f52",
-  },
-  {
-    tag: "Grow",
-    title: "Grow with AM",
-    description:
-      "Join our Group Activities and mature together in the fellowship of truth. Our Group programs provide high-quality experiences for every student to gain spiritual strength.",
-    href: "/ministries",
-    from: "#3a6cd8",
-    to: "#0d1f52",
-  },
-  {
-    tag: "Lead",
-    title: "Lead with AM",
-    description:
-      "AM is happy to welcome students interested in volunteering and serving through their God given talents in various departments.",
-    href: "/get-involved",
-    from: "#4d8df6",
-    to: "#0d1f52",
-  },
-  {
-    tag: "Sent",
-    title: "Sent with AM",
-    description:
-      "AM will continue to walk with you until your precious calling of “being sent” is fulfilled in your life even after your graduation!",
-    href: "/get-involved",
-    from: "#1449c6",
-    to: "#050a2e",
-  },
-];
+async function getDefaultSteps(): Promise<Step[]> {
+  const t = await getTranslations("Home.Ministries");
+  return [
+    {
+      tag: t("connectTag"),
+      title: t("connectTitle"),
+      description: t("connectDescription"),
+      href: "/bible-study",
+      from: "#2a5eec",
+      to: "#0d1f52",
+    },
+    {
+      tag: t("growTag"),
+      title: t("growTitle"),
+      description: t("growDescription"),
+      href: "/ministries",
+      from: "#3a6cd8",
+      to: "#0d1f52",
+    },
+    {
+      tag: t("leadTag"),
+      title: t("leadTitle"),
+      description: t("leadDescription"),
+      href: "/get-involved",
+      from: "#4d8df6",
+      to: "#0d1f52",
+    },
+    {
+      tag: t("sentTag"),
+      title: t("sentTitle"),
+      description: t("sentDescription"),
+      href: "/get-involved",
+      from: "#1449c6",
+      to: "#050a2e",
+    },
+  ];
+}
 
 async function getSteps(): Promise<Step[]> {
+  const defaultSteps = await getDefaultSteps();
+
   const docs = await fetchCollectionSafely(async (payload) => {
     const result = await payload.find({
       collection: "ministries",
@@ -85,20 +87,20 @@ async function getSteps(): Promise<Step[]> {
 }
 
 export default async function Ministries() {
-  const steps = await getSteps();
+  const [steps, t] = await Promise.all([getSteps(), getTranslations("Home.Ministries")]);
 
   return (
     <section className="bg-white py-24">
       <Container>
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div>
-            <Eyebrow>Connect · Grow · Lead · Sent</Eyebrow>
+            <Eyebrow>{t("eyebrow")}</Eyebrow>
             <h2 className="max-w-xl font-display text-4xl font-semibold tracking-[-0.02em] text-ink sm:text-5xl">
-              Four steps, and we walk every one of them with you.
+              {t("heading")}
             </h2>
           </div>
           <Button href="/get-involved" variant="ghostDark" className="shrink-0">
-            Get involved
+            {t("getInvolved")}
           </Button>
         </div>
 
@@ -128,7 +130,7 @@ export default async function Ministries() {
                 {step.description}
               </p>
               <Button href={step.href} variant="ghostDark" className="mt-5">
-                Learn more
+                {t("learnMore")}
               </Button>
             </div>
           ))}

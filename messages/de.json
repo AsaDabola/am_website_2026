@@ -1,0 +1,194 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Einer, der auf eine Mission gesandt wird",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Wer wir sind",
+    "whatWeDo": "Was wir tun",
+    "getInvolved": "Mitmachen",
+    "ourNetwork": "Unser Netzwerk",
+    "news": "Neuigkeiten",
+    "contactUs": "Kontakt",
+    "give": "Spenden",
+    "toggleNav": "Navigationsmenü umschalten",
+    "whoWeAreMenu": {
+      "aboutAM": "Über AM",
+      "missionStatement": "Leitbild",
+      "statementOfFaith": "Glaubensbekenntnis",
+      "ourHistory": "Unsere Geschichte",
+      "leadership": "Leitung",
+      "ourFirstChairman": "Unser erster Vorsitzender"
+    },
+    "whatWeDoMenu": {
+      "bibleStudyProgram": "Bibelstudienprogramm",
+      "fourSpiritualThemes": "Vier geistliche Themen",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Unsere Dienste"
+    },
+    "getInvolvedMenu": {
+      "connectGrowLeadSent": "Verbinden, Wachsen, Führen, Gesandt werden",
+      "chapterAffiliation": "Ortsgruppen-Zugehörigkeit",
+      "ourNetwork": "Unser Netzwerk",
+      "events": "Veranstaltungen",
+      "give": "Spenden"
+    }
+  },
+  "Footer": {
+    "tagline": "Ein konfessionsübergreifender Dienst, der sich verpflichtet hat, das Evangelium bis an die Enden der Erde zu verbreiten und von der ewigen Liebe des Herrn zu zeugen.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, USA",
+    "email": "info@amintl.org",
+    "whoWeAre": "Wer wir sind",
+    "whatWeDo": "Was wir tun",
+    "getInvolved": "Mitmachen",
+    "media": "Medien",
+    "aboutAM": "Über AM",
+    "missionStatement": "Leitbild",
+    "statementOfFaith": "Glaubensbekenntnis",
+    "ourHistory": "Unsere Geschichte",
+    "leadership": "Leitung",
+    "bibleStudyProgram": "Bibelstudienprogramm",
+    "fourSpiritualThemes": "Vier geistliche Themen",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Unsere Dienste",
+    "connectGrowLeadSent": "Verbinden, Wachsen, Führen, Gesandt werden",
+    "chapterAffiliation": "Ortsgruppen-Zugehörigkeit",
+    "ourNetwork": "Unser Netzwerk",
+    "events": "Veranstaltungen",
+    "give": "Spenden",
+    "news": "Neuigkeiten",
+    "legacyOfChairman": "Vermächtnis von Ralph D. Winter",
+    "contactUs": "Kontakt",
+    "copyright": "© 2026 Apostolos Missions International. Alle Rechte vorbehalten.",
+    "contact": "Kontakt"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "Sprache"
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — einer, der gesandt wird",
+      "headingLine1": "Die Zukunft beginnt",
+      "headingWhere": "dort, wo",
+      "headingWeAre": "wir sind",
+      "joinBibleStudy": "Unserem Bibelstudium beitreten",
+      "whoWeAre": "Wer wir sind",
+      "stat1Value": "2003",
+      "stat1Label": "Gesandt seit",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, USA",
+      "stat3Value": "Weltweit",
+      "stat3Label": "Campus-Netzwerk",
+      "dragToExplore": "Ziehen zum Erkunden"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Tritt unserem Bibelstudienprogramm bei",
+      "heading": "Ein 5-Phasen-Weg von der ersten Frage bis zur Aussendung.",
+      "description": "AMs 5-Phasen-Bibelstudienprogramm ist ein Online-Jüngerschafts- und Bibelbildungsprogramm, das Studierende systematisch durch das Evangelium von Jesus Christus und das Leben im Glauben führt. Das Programm bringt Studierende mit Bibellehrern zusammen, die nach dem Zeitplan der Teilnehmenden Unterricht geben. Es mündet in die Möglichkeit, sich freiwillig zu engagieren, sich als studentischer Missionar ausbilden zu lassen oder einfach tiefer in Gottes Wort mit AM einzutauchen.",
+      "cta": "Programm beginnen"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Einem Bibelstudium beitreten",
+      "joinBibleStudyDescription": "Das 5-Phasen-Online-Jüngerschafts- und Bibelbildungsprogramm.",
+      "findCampusTitle": "Finde deinen Campus",
+      "findCampusDescription": "Unser Netzwerk aus Ortsgruppen und Gemeinschaften.",
+      "getInvolvedTitle": "Mitmachen",
+      "getInvolvedDescription": "Verbinde dich, wachse, führe und werde mit AM gesandt.",
+      "supportTitle": "Die Mission unterstützen",
+      "supportDescription": "Spenden, beten und mit Studierenden im Einsatz partnerschaftlich verbunden sein."
+    },
+    "Ministries": {
+      "eyebrow": "Verbinden · Wachsen · Führen · Gesandt werden",
+      "heading": "Vier Schritte, und wir gehen jeden einzelnen mit dir.",
+      "getInvolved": "Mitmachen",
+      "learnMore": "Mehr erfahren",
+      "connectTitle": "Verbinde dich mit AM",
+      "connectDescription": "AM bietet verschiedene Bibelstudienprogramme an, die unser geistliches Leben und unsere Beziehung zum Herrn Jesus Christus nähren.",
+      "growTitle": "Wachse mit AM",
+      "growDescription": "Nimm an unseren Gruppenaktivitäten teil und wachse gemeinsam in der Gemeinschaft der Wahrheit. Unsere Gruppenprogramme bieten hochwertige Erfahrungen, damit jeder Studierende geistliche Kraft gewinnt.",
+      "leadTitle": "Führe mit AM",
+      "leadDescription": "AM heißt Studierende willkommen, die sich freiwillig engagieren und mit ihren von Gott gegebenen Talenten in verschiedenen Bereichen dienen möchten.",
+      "sentTitle": "Gesandt mit AM",
+      "sentDescription": "AM wird auch nach deinem Abschluss weiter mit dir gehen, bis sich die kostbare Berufung, \"gesandt zu werden\", in deinem Leben erfüllt!",
+      "connectTag": "Verbinden",
+      "growTag": "Wachsen",
+      "leadTag": "Führen",
+      "sentTag": "Gesandt"
+    },
+    "OurMission": {
+      "eyebrow": "Unsere Mission",
+      "statementPrefix": "Die Mission von Apostolos Missions ist es,",
+      "statementEmphasis": "Jesus und ihn gekreuzigt zu predigen",
+      "statementSuffix": "— und so ein christuszentriertes Netzwerk junger Christen für die Mobilisierung der Campus-Mission zu fördern.",
+      "readFullStatement": "Das vollständige Leitbild lesen",
+      "nameOrigin": "Der Name apostolos ist das griechische Wort für Apostel. Es bedeutet \"einer, der auf eine Mission gesandt wird\".",
+      "history": "Was als kleine Gruppe leidenschaftlicher junger Studierender in Los Angeles, Kalifornien, begann, die das Evangelium verbreiten und Jesus bekannt machen wollten, ist zu einer weltweiten Organisation geworden, die auf Universitätscampus rund um den Globus wirkt.",
+      "ourHistory": "Unsere Geschichte"
+    },
+    "GetInvolved": {
+      "eyebrow": "In Verbindung treten",
+      "heading": "Mitmachen",
+      "bibleStudies": "Bibelstudien",
+      "volunteer": "Freiwilligenarbeit",
+      "internship": "Praktikum"
+    },
+    "Media": {
+      "eyebrow": "Medien",
+      "heading": "Lehre, Zeugnis und das Wort.",
+      "moreContents": "Weitere Inhalte",
+      "playVideo": "Das AM-Vorstellungsvideo abspielen",
+      "post1Title": "Vier geistliche Themen – Überblick",
+      "post2Title": "Was ist Errettung? | Sola Fide Teil 1 – AM Academy",
+      "post3Title": "Die Ära der Jüngerschaft in sozialen Medien: Studierende mit der Realität des Evangeliums verbinden",
+      "post4Title": "Gottes Verheißungen für das neue Jahr",
+      "post1Date": "5. Januar 2026",
+      "post2Date": "27. Juni 2023",
+      "post3Date": "3. Juni 2022",
+      "post4Date": "2. Januar 2022"
+    },
+    "Events": {
+      "eyebrow": "Veranstaltungen",
+      "heading": "Wo sich das Netzwerk trifft.",
+      "allEvents": "Alle Veranstaltungen",
+      "event1Date": "4.–5. April",
+      "event1Title": "Osterfreizeit",
+      "event2Date": "18. Februar",
+      "event2Title": "40-tägiger Fastenzeit-Marsch",
+      "event3Date": "16. Januar",
+      "event3Title": "Treffen neuer Ortsgruppenleiter"
+    },
+    "OurNetwork": {
+      "eyebrow": "Unser Netzwerk",
+      "heading": "Vielleicht gibt es auf deinem Campus bereits eine Gemeinschaft.",
+      "description": "Suche nach Schule oder Stadt. Wenn in deiner Nähe nichts erscheint, ist das eine Einladung — wir helfen dir, eine zu gründen.",
+      "startChapter": "Ortsgruppe gründen",
+      "searchPlaceholder": "Nach Schule oder Stadt suchen",
+      "noMatches": "Noch keine Treffer — melde dich, und wir helfen dir, eine zu gründen."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Unser erster Ehrenvorsitzender",
+      "followingLegacy": "In der Nachfolge des Vermächtnisses von",
+      "name": "Dr. Ralph D. Winter",
+      "quoteLine1": "Darum gehet hin",
+      "quoteLine2": "und machet zu Jüngern",
+      "quoteLine3": "alle Völker…",
+      "quoteReference": "—Matthäus 28,19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Partner werden",
+      "heading": "Sende jemanden, den du nie treffen wirst.",
+      "description": "Jede Gabe bringt Bibelstudium, Ausbildung und eine sendende Gemeinschaft in Reichweite von Studierenden, die bereit sind zu gehen.",
+      "giveToday": "Heute spenden",
+      "talkToUs": "Sprich mit uns"
+    },
+    "Newsletter": {
+      "heading": "Feldnotizen von den Campus",
+      "description": "Ein kurzer monatlicher Brief: was Studierende erleben, wohin AM als Nächstes geht, und wie man beten kann.",
+      "cta": "AM Academy"
+    }
+  }
+}

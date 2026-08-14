@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 import AboutHero from "@/components/about/AboutHero";
 import AboutSubNav from "@/components/about/AboutSubNav";
@@ -79,19 +80,19 @@ export default function WhoWeArePage() {
               brothers and sisters.
             </p>
             <p>
-              <a
+              <Link
                 href="/about/statement-of-faith"
                 className="text-brand-navy underline underline-offset-2"
               >
                 Read our statement of faith
-              </a>{" "}
+              </Link>{" "}
               or{" "}
-              <a
+              <Link
                 href="/about/history"
                 className="text-brand-navy underline underline-offset-2"
               >
                 trace the history
-              </a>
+              </Link>
               .
             </p>
           </div>

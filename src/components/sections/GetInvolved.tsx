@@ -1,25 +1,28 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import PlaceholderPhoto from "@/components/ui/PlaceholderPhoto";
 import { ArrowRightIcon } from "@/components/ui/icons";
 
-const cards = [
-  { title: "Bible Studies", href: "/bible-study", from: "#3a6cd8", to: "#0d1f52" },
-  { title: "Volunteer", href: "/get-involved", from: "#2a5eec", to: "#0a0e26" },
-  { title: "Internship", href: "/get-involved", from: "#1449c6", to: "#050a2e" },
-];
+export default async function GetInvolved() {
+  const t = await getTranslations("Home.GetInvolved");
 
-export default function GetInvolved() {
+  const cards = [
+    { title: t("bibleStudies"), href: "/bible-study", from: "#3a6cd8", to: "#0d1f52" },
+    { title: t("volunteer"), href: "/get-involved", from: "#2a5eec", to: "#0a0e26" },
+    { title: t("internship"), href: "/get-involved", from: "#1449c6", to: "#050a2e" },
+  ];
+
   return (
     <section className="bg-white py-24">
       <Container>
         <div className="text-center">
           <div className="flex justify-center">
-            <Eyebrow>Get Connected</Eyebrow>
+            <Eyebrow>{t("eyebrow")}</Eyebrow>
           </div>
           <h2 className="font-display text-4xl font-semibold tracking-[-0.02em] text-ink sm:text-5xl">
-            Get Involved
+            {t("heading")}
           </h2>
         </div>
 

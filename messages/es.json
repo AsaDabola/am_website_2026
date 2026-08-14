@@ -1,0 +1,194 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Uno que es enviado en una misión",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Quiénes somos",
+    "whatWeDo": "Qué hacemos",
+    "getInvolved": "Involúcrate",
+    "ourNetwork": "Nuestra red",
+    "news": "Noticias",
+    "contactUs": "Contáctanos",
+    "give": "Donar",
+    "toggleNav": "Alternar menú de navegación",
+    "whoWeAreMenu": {
+      "aboutAM": "Sobre AM",
+      "missionStatement": "Declaración de misión",
+      "statementOfFaith": "Declaración de fe",
+      "ourHistory": "Nuestra historia",
+      "leadership": "Liderazgo",
+      "ourFirstChairman": "Nuestro primer presidente"
+    },
+    "whatWeDoMenu": {
+      "bibleStudyProgram": "Programa de estudio bíblico",
+      "fourSpiritualThemes": "Cuatro temas espirituales",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Nuestros ministerios"
+    },
+    "getInvolvedMenu": {
+      "connectGrowLeadSent": "Conecta, crece, lidera, sé enviado",
+      "chapterAffiliation": "Afiliación de capítulos",
+      "ourNetwork": "Nuestra red",
+      "events": "Eventos",
+      "give": "Donar"
+    }
+  },
+  "Footer": {
+    "tagline": "Un ministerio interdenominacional comprometido con difundir el evangelio hasta los confines de la tierra, testificando el amor eterno del Señor.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, Nueva Jersey, EE. UU.",
+    "email": "info@amintl.org",
+    "whoWeAre": "Quiénes somos",
+    "whatWeDo": "Qué hacemos",
+    "getInvolved": "Involúcrate",
+    "media": "Medios",
+    "aboutAM": "Sobre AM",
+    "missionStatement": "Declaración de misión",
+    "statementOfFaith": "Declaración de fe",
+    "ourHistory": "Nuestra historia",
+    "leadership": "Liderazgo",
+    "bibleStudyProgram": "Programa de estudio bíblico",
+    "fourSpiritualThemes": "Cuatro temas espirituales",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Nuestros ministerios",
+    "connectGrowLeadSent": "Conecta, crece, lidera, sé enviado",
+    "chapterAffiliation": "Afiliación de capítulos",
+    "ourNetwork": "Nuestra red",
+    "events": "Eventos",
+    "give": "Donar",
+    "news": "Noticias",
+    "legacyOfChairman": "Legado de Ralph D. Winter",
+    "contactUs": "Contáctanos",
+    "copyright": "© 2026 Apostolos Missions International. Todos los derechos reservados.",
+    "contact": "Contacto"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "Idioma"
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — uno que es enviado",
+      "headingLine1": "El futuro comienza",
+      "headingWhere": "desde donde",
+      "headingWeAre": "estamos",
+      "joinBibleStudy": "Únete a nuestro estudio bíblico",
+      "whoWeAre": "Quiénes somos",
+      "stat1Value": "2003",
+      "stat1Label": "Enviando desde",
+      "stat2Value": "Trenton",
+      "stat2Label": "Nueva Jersey, EE. UU.",
+      "stat3Value": "Global",
+      "stat3Label": "Red de campus",
+      "dragToExplore": "Arrastra para explorar"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Únete a nuestro programa de estudio bíblico",
+      "heading": "Un camino de 5 fases, de la primera pregunta hasta ser enviado.",
+      "description": "El programa de estudio bíblico de 5 fases de AM es un programa de discipulado y educación bíblica en línea que guía a los estudiantes a través de un aprendizaje sistemático del Evangelio de Jesucristo y la vida de fe. El programa agrupa a los estudiantes con maestros bíblicos que instruirán según el horario del participante. Culmina con la oportunidad de ser voluntario, entrenarse como misionero estudiantil, o simplemente profundizar en la Palabra de Dios con AM.",
+      "cta": "Comenzar el programa"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Únete a un estudio bíblico",
+      "joinBibleStudyDescription": "El programa de discipulado y educación bíblica en línea de 5 fases.",
+      "findCampusTitle": "Encuentra tu campus",
+      "findCampusDescription": "Nuestra red de capítulos y comunidades.",
+      "getInvolvedTitle": "Involúcrate",
+      "getInvolvedDescription": "Conecta, crece, lidera y sé enviado con AM.",
+      "supportTitle": "Apoya la misión",
+      "supportDescription": "Dona, ora y colabora con los estudiantes en el campo."
+    },
+    "Ministries": {
+      "eyebrow": "Conecta · Crece · Lidera · Sé enviado",
+      "heading": "Cuatro pasos, y caminamos contigo en cada uno de ellos.",
+      "getInvolved": "Involúcrate",
+      "learnMore": "Saber más",
+      "connectTitle": "Conecta con AM",
+      "connectDescription": "AM ofrece varios programas de estudio bíblico que nutren nuestra vida espiritual y relación con el Señor Jesucristo.",
+      "growTitle": "Crece con AM",
+      "growDescription": "Únete a nuestras actividades grupales y madura junto a otros en la comunión de la verdad. Nuestros programas grupales ofrecen experiencias de alta calidad para que cada estudiante gane fortaleza espiritual.",
+      "leadTitle": "Lidera con AM",
+      "leadDescription": "AM se complace en recibir a estudiantes interesados en ser voluntarios y servir con los talentos que Dios les ha dado en distintos departamentos.",
+      "sentTitle": "Sé enviado con AM",
+      "sentDescription": "AM seguirá caminando contigo hasta que se cumpla en tu vida el precioso llamado de \"ser enviado\", incluso después de tu graduación.",
+      "connectTag": "Conecta",
+      "growTag": "Crece",
+      "leadTag": "Lidera",
+      "sentTag": "Enviado"
+    },
+    "OurMission": {
+      "eyebrow": "Nuestra misión",
+      "statementPrefix": "La misión de Apostolos Missions es",
+      "statementEmphasis": "predicar a Jesús y a Él crucificado",
+      "statementSuffix": "— fomentando una red centrada en Cristo de jóvenes cristianos para la movilización de la misión universitaria.",
+      "readFullStatement": "Lee la declaración de misión completa",
+      "nameOrigin": "El nombre apostolos es la palabra griega para apóstol. Significa \"uno que es enviado en una misión\".",
+      "history": "Lo que comenzó como un pequeño grupo de jóvenes estudiantes apasionados en Los Ángeles, California, deseosos de difundir el evangelio y dar a conocer a Jesús, se ha convertido en una organización global que trabaja en campus universitarios de todo el mundo.",
+      "ourHistory": "Nuestra historia"
+    },
+    "GetInvolved": {
+      "eyebrow": "Conéctate",
+      "heading": "Involúcrate",
+      "bibleStudies": "Estudios bíblicos",
+      "volunteer": "Voluntariado",
+      "internship": "Pasantía"
+    },
+    "Media": {
+      "eyebrow": "Medios",
+      "heading": "Enseñanza, testimonio y la Palabra.",
+      "moreContents": "Más contenido",
+      "playVideo": "Reproducir el video de introducción de AM",
+      "post1Title": "Cuatro temas espirituales – Resumen",
+      "post2Title": "¿Qué es la salvación? | Sola Fide Parte 1 – AM Academy",
+      "post3Title": "La era del discipulado en redes sociales, conectando a los estudiantes con la realidad del evangelio",
+      "post4Title": "Las promesas de Dios para el año nuevo",
+      "post1Date": "5 de enero de 2026",
+      "post2Date": "27 de junio de 2023",
+      "post3Date": "3 de junio de 2022",
+      "post4Date": "2 de enero de 2022"
+    },
+    "Events": {
+      "eyebrow": "Eventos",
+      "heading": "Donde la red se reúne.",
+      "allEvents": "Todos los eventos",
+      "event1Date": "4–5 de abril",
+      "event1Title": "Retiro de Pascua",
+      "event2Date": "18 de febrero",
+      "event2Title": "Caminata de 40 días de Cuaresma",
+      "event3Date": "16 de enero",
+      "event3Title": "Reunión de nuevos líderes de capítulo"
+    },
+    "OurNetwork": {
+      "eyebrow": "Nuestra red",
+      "heading": "Puede que ya haya una comunidad en tu campus.",
+      "description": "Busca por escuela o ciudad. Si no aparece nada cerca de ti, esa es una invitación — te ayudaremos a comenzar una.",
+      "startChapter": "Inicia un capítulo",
+      "searchPlaceholder": "Busca por escuela o ciudad",
+      "noMatches": "Aún no hay coincidencias — contáctanos y te ayudaremos a comenzar una."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Nuestro primer presidente honorario",
+      "followingLegacy": "Siguiendo el legado de",
+      "name": "Dr. Ralph D. Winter",
+      "quoteLine1": "Id, pues,",
+      "quoteLine2": "y haced discípulos",
+      "quoteLine3": "a todas las naciones…",
+      "quoteReference": "—Mateo 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Sé nuestro aliado",
+      "heading": "Envía a alguien que nunca conocerás.",
+      "description": "Cada donación pone el estudio bíblico, la formación y una comunidad de envío al alcance de los estudiantes que están listos para ir.",
+      "giveToday": "Dona hoy",
+      "talkToUs": "Habla con nosotros"
+    },
+    "Newsletter": {
+      "heading": "Notas desde los campus",
+      "description": "Una breve carta mensual: lo que los estudiantes están viendo, hacia dónde va AM, y cómo orar.",
+      "cta": "AM Academy"
+    }
+  }
+}

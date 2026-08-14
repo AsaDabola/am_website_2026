@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
@@ -5,13 +6,18 @@ import { fetchCollectionSafely } from "@/lib/getPayloadSafely";
 
 type EventItem = { date: string; title: string };
 
-const defaultEvents: EventItem[] = [
-  { date: "April 4–5", title: "Easter Retreat" },
-  { date: "February 18", title: "Lenten 40-Day Walk" },
-  { date: "January 16", title: "New Chapter Leaders’ Meeting" },
-];
+async function getDefaultEvents(): Promise<EventItem[]> {
+  const t = await getTranslations("Home.Events");
+  return [
+    { date: t("event1Date"), title: t("event1Title") },
+    { date: t("event2Date"), title: t("event2Title") },
+    { date: t("event3Date"), title: t("event3Title") },
+  ];
+}
 
 async function getEvents(): Promise<EventItem[]> {
+  const defaultEvents = await getDefaultEvents();
+
   const docs = await fetchCollectionSafely(async (payload) => {
     const result = await payload.find({
       collection: "events",
@@ -26,20 +32,20 @@ async function getEvents(): Promise<EventItem[]> {
 }
 
 export default async function Events() {
-  const events = await getEvents();
+  const [events, t] = await Promise.all([getEvents(), getTranslations("Home.Events")]);
 
   return (
     <section className="bg-white py-24">
       <Container>
         <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
           <div>
-            <Eyebrow>Events</Eyebrow>
+            <Eyebrow>{t("eyebrow")}</Eyebrow>
             <h2 className="font-display text-4xl font-semibold tracking-[-0.02em] text-ink sm:text-5xl">
-              Where the network gathers.
+              {t("heading")}
             </h2>
           </div>
           <Button href="/events" variant="ghostDark" className="shrink-0">
-            All events
+            {t("allEvents")}
           </Button>
         </div>
 

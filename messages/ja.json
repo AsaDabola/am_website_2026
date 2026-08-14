@@ -1,0 +1,194 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · 使命のために遣わされた者",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "私たちについて",
+    "whatWeDo": "活動内容",
+    "getInvolved": "参加する",
+    "ourNetwork": "ネットワーク",
+    "news": "ニュース",
+    "contactUs": "お問い合わせ",
+    "give": "献金する",
+    "toggleNav": "ナビゲーションメニューを切り替え",
+    "whoWeAreMenu": {
+      "aboutAM": "AMについて",
+      "missionStatement": "使命声明",
+      "statementOfFaith": "信仰告白",
+      "ourHistory": "沿革",
+      "leadership": "リーダーシップ",
+      "ourFirstChairman": "初代名誉会長"
+    },
+    "whatWeDoMenu": {
+      "bibleStudyProgram": "聖書study プログラム",
+      "fourSpiritualThemes": "4つの霊的テーマ",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "私たちの働き"
+    },
+    "getInvolvedMenu": {
+      "connectGrowLeadSent": "つながる・成長する・導く・遣わされる",
+      "chapterAffiliation": "支部の登録",
+      "ourNetwork": "ネットワーク",
+      "events": "イベント",
+      "give": "献金する"
+    }
+  },
+  "Footer": {
+    "tagline": "地の果てまで福音を伝え、主の永遠の愛を証しすることに献身する、超教派の宣教団体です。",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "米国ニュージャージー州トレントン",
+    "email": "info@amintl.org",
+    "whoWeAre": "私たちについて",
+    "whatWeDo": "活動内容",
+    "getInvolved": "参加する",
+    "media": "メディア",
+    "aboutAM": "AMについて",
+    "missionStatement": "使命声明",
+    "statementOfFaith": "信仰告白",
+    "ourHistory": "沿革",
+    "leadership": "リーダーシップ",
+    "bibleStudyProgram": "聖書study プログラム",
+    "fourSpiritualThemes": "4つの霊的テーマ",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "私たちの働き",
+    "connectGrowLeadSent": "つながる・成長する・導く・遣わされる",
+    "chapterAffiliation": "支部の登録",
+    "ourNetwork": "ネットワーク",
+    "events": "イベント",
+    "give": "献金する",
+    "news": "ニュース",
+    "legacyOfChairman": "ラルフ・D・ウィンター博士の遺産",
+    "contactUs": "お問い合わせ",
+    "copyright": "© 2026 Apostolos Missions International. All rights reserved.",
+    "contact": "お問い合わせ"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "言語"
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — 遣わされた者",
+      "headingLine1": "未来は",
+      "headingWhere": "私たちがいる場所から",
+      "headingWeAre": "始まる",
+      "joinBibleStudy": "聖書studyに参加する",
+      "whoWeAre": "私たちについて",
+      "stat1Value": "2003",
+      "stat1Label": "派遣開始",
+      "stat2Value": "トレントン",
+      "stat2Label": "米国ニュージャージー州",
+      "stat3Value": "グローバル",
+      "stat3Label": "キャンパスネットワーク",
+      "dragToExplore": "ドラッグして見る"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "聖書studyプログラムに参加する",
+      "heading": "最初の疑問から派遣まで、5段階の道のり。",
+      "description": "AMの5段階聖書studyプログラムは、学生がイエス・キリストの福音と信仰の生活を体系的に学んでいくオンラインの弟子訓練・聖書教育プログラムです。このプログラムでは、学生を聖書教師と組み合わせ、参加者のスケジュールに合わせて指導を行います。最終的にはボランティア活動、学生宣教師としての訓練、あるいはAMと共に神の言葉をさらに深く学ぶ機会へとつながります。",
+      "cta": "プログラムを始める"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "聖書studyに参加する",
+      "joinBibleStudyDescription": "5段階のオンライン弟子訓練・聖書教育プログラム。",
+      "findCampusTitle": "キャンパスを探す",
+      "findCampusDescription": "支部とコミュニティのネットワーク。",
+      "getInvolvedTitle": "参加する",
+      "getInvolvedDescription": "AMとつながり、成長し、導き、遣わされましょう。",
+      "supportTitle": "宣教を支える",
+      "supportDescription": "現場の学生たちのために献金し、祈り、パートナーとなりましょう。"
+    },
+    "Ministries": {
+      "eyebrow": "つながる · 成長する · 導く · 遣わされる",
+      "heading": "4つのステップを、私たちはあなたと共に歩みます。",
+      "getInvolved": "参加する",
+      "learnMore": "詳しく見る",
+      "connectTitle": "AMとつながる",
+      "connectDescription": "AMは、主イエス・キリストとの霊的生活と関係を育むさまざまな聖書studyプログラムを提供しています。",
+      "growTitle": "AMと共に成長する",
+      "growDescription": "グループ活動に参加し、真理の交わりの中で共に成長しましょう。私たちのグループプログラムは、すべての学生が霊的な力を得られる質の高い経験を提供します。",
+      "leadTitle": "AMと共に導く",
+      "leadDescription": "AMは、神から与えられた賜物を用いてさまざまな部門でボランティアや奉仕をしたいと願う学生を歓迎します。",
+      "sentTitle": "AMと共に遣わされる",
+      "sentDescription": "AMは、卒業後もあなたの人生における「遣わされる」という尊い召命が実現するまで、共に歩み続けます!",
+      "connectTag": "つながる",
+      "growTag": "成長",
+      "leadTag": "導き",
+      "sentTag": "派遣"
+    },
+    "OurMission": {
+      "eyebrow": "私たちの使命",
+      "statementPrefix": "Apostolos Missionsの使命は、",
+      "statementEmphasis": "イエスとその十字架を宣べ伝えること",
+      "statementSuffix": "であり、キャンパス宣教の動員のためにキリスト中心の若きクリスチャンのネットワークを育てることです。",
+      "readFullStatement": "使命声明の全文を読む",
+      "nameOrigin": "apostolosとは、使徒を意味するギリシャ語です。「使命のために遣わされた者」という意味を持ちます。",
+      "history": "福音を伝え、イエスを知らせたいと願う情熱的な少数の学生たちが、米国カリフォルニア州ロサンゼルスで始めた小さな集まりは、今では世界中の大学キャンパスで活動する国際的な団体へと成長しました。",
+      "ourHistory": "沿革"
+    },
+    "GetInvolved": {
+      "eyebrow": "つながる",
+      "heading": "参加する",
+      "bibleStudies": "聖書study",
+      "volunteer": "ボランティア",
+      "internship": "インターンシップ"
+    },
+    "Media": {
+      "eyebrow": "メディア",
+      "heading": "教え、証し、そして御言葉。",
+      "moreContents": "もっと見る",
+      "playVideo": "AM紹介動画を再生",
+      "post1Title": "4つの霊的テーマ – 概要",
+      "post2Title": "救いとは何か？ | Sola Fide 第1部 – AM Academy",
+      "post3Title": "ソーシャルメディア弟子訓練の時代、学生と福音の現実をつなぐ",
+      "post4Title": "新年に向けた神の約束",
+      "post1Date": "2026年1月5日",
+      "post2Date": "2023年6月27日",
+      "post3Date": "2022年6月3日",
+      "post4Date": "2022年1月2日"
+    },
+    "Events": {
+      "eyebrow": "イベント",
+      "heading": "ネットワークが集う場所。",
+      "allEvents": "すべてのイベントを見る",
+      "event1Date": "4月4日〜5日",
+      "event1Title": "イースター・リトリート",
+      "event2Date": "2月18日",
+      "event2Title": "四旬節40日ウォーク",
+      "event3Date": "1月16日",
+      "event3Title": "新支部リーダー会議"
+    },
+    "OurNetwork": {
+      "eyebrow": "ネットワーク",
+      "heading": "あなたのキャンパスにも、すでにコミュニティがあるかもしれません。",
+      "description": "学校名や都市名で検索してください。近くに見つからない場合、それは新しく始めるチャンスです — 私たちがお手伝いします。",
+      "startChapter": "支部を立ち上げる",
+      "searchPlaceholder": "学校名または都市名で検索",
+      "noMatches": "まだ該当がありません — ご連絡いただければ、新しく始めるお手伝いをします。"
+    },
+    "HonoraryChairman": {
+      "eyebrow": "初代名誉会長",
+      "followingLegacy": "その遺産を受け継いで",
+      "name": "ラルフ・D・ウィンター博士",
+      "quoteLine1": "それゆえ、行って",
+      "quoteLine2": "あらゆる国の人々を",
+      "quoteLine3": "弟子としなさい…",
+      "quoteReference": "—マタイによる福音書 28章19節"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "パートナーになる",
+      "heading": "あなたが決して会うことのない誰かを、送り出してください。",
+      "description": "すべての献金は、旅立つ準備ができた学生たちに聖書study、訓練、そして派遣のコミュニティを届けます。",
+      "giveToday": "今日献金する",
+      "talkToUs": "お問い合わせ"
+    },
+    "Newsletter": {
+      "heading": "キャンパスからの便り",
+      "description": "月に一度の短い便り: 学生たちが目にしていること、AMの次の展開、そして祈りの課題。",
+      "cta": "AM Academy"
+    }
+  }
+}

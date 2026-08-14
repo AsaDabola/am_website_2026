@@ -1,48 +1,8 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 import Logo from "@/components/ui/Logo";
 import { FacebookIcon, InstagramIcon, MailIcon, YoutubeIcon } from "@/components/ui/icons";
-
-const columns = [
-  {
-    title: "Who we are",
-    links: [
-      { label: "About AM", href: "/about" },
-      { label: "Mission statement", href: "/about/mission" },
-      { label: "Statement of faith", href: "/about/statement-of-faith" },
-      { label: "Our history", href: "/about/history" },
-      { label: "Leadership", href: "/about/leadership" },
-    ],
-  },
-  {
-    title: "What we do",
-    links: [
-      { label: "Bible Study Program", href: "/bible-study" },
-      { label: "Four Spiritual Themes", href: "/four-spiritual-themes" },
-      { label: "AM Academy", href: "https://www.amacademy.org" },
-      { label: "Our ministries", href: "/ministries" },
-    ],
-  },
-  {
-    title: "Get involved",
-    links: [
-      { label: "Connect, Grow, Lead, Sent", href: "/get-involved" },
-      { label: "Chapter affiliation", href: "/get-involved/chapter-affiliation" },
-      { label: "Our Network", href: "/network" },
-      { label: "Events", href: "/events" },
-      { label: "Give", href: "/give" },
-    ],
-  },
-  {
-    title: "Media",
-    links: [
-      { label: "News", href: "/news" },
-      { label: "Four Spiritual Themes", href: "/four-spiritual-themes" },
-      { label: "Legacy of Ralph D. Winter", href: "/ralph-d-winter" },
-      { label: "Contact us", href: "/contact" },
-    ],
-  },
-];
 
 const socials = [
   { label: "Facebook", href: "https://facebook.com", Icon: FacebookIcon },
@@ -51,24 +11,66 @@ const socials = [
   { label: "Email", href: "mailto:info@amintl.org", Icon: MailIcon },
 ];
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getTranslations("Footer");
+  const tLogo = await getTranslations("Logo");
+
+  const columns = [
+    {
+      title: t("whoWeAre"),
+      links: [
+        { label: t("aboutAM"), href: "/about" },
+        { label: t("missionStatement"), href: "/about/mission" },
+        { label: t("statementOfFaith"), href: "/about/statement-of-faith" },
+        { label: t("ourHistory"), href: "/about/history" },
+        { label: t("leadership"), href: "/about/leadership" },
+      ],
+    },
+    {
+      title: t("whatWeDo"),
+      links: [
+        { label: t("bibleStudyProgram"), href: "/bible-study" },
+        { label: t("fourSpiritualThemes"), href: "/four-spiritual-themes" },
+        { label: t("amAcademy"), href: "https://www.amacademy.org" },
+        { label: t("ourMinistries"), href: "/ministries" },
+      ],
+    },
+    {
+      title: t("getInvolved"),
+      links: [
+        { label: t("connectGrowLeadSent"), href: "/get-involved" },
+        { label: t("chapterAffiliation"), href: "/get-involved/chapter-affiliation" },
+        { label: t("ourNetwork"), href: "/network" },
+        { label: t("events"), href: "/events" },
+        { label: t("give"), href: "/give" },
+      ],
+    },
+    {
+      title: t("media"),
+      links: [
+        { label: t("news"), href: "/news" },
+        { label: t("fourSpiritualThemes"), href: "/four-spiritual-themes" },
+        { label: t("legacyOfChairman"), href: "/ralph-d-winter" },
+        { label: t("contactUs"), href: "/contact" },
+      ],
+    },
+  ];
+
   return (
     <footer className="border-t border-white/[0.07] bg-footer text-on-dark">
       <Container className="grid gap-12 py-16 lg:grid-cols-[minmax(0,1fr)_auto_auto_auto_auto] lg:gap-8">
         <div className="max-w-xs">
-          <Logo />
+          <Logo internationalLabel={tLogo("international")} />
           <p className="mt-6 text-sm leading-relaxed text-on-dark/70">
-            An interdenominational ministry committed to spreading the gospel
-            to the ends of the earth, testifying to the eternal love of the
-            Lord.
+            {t("tagline")}
           </p>
           <p className="mt-6 text-sm leading-relaxed text-on-dark/70">
-            Apostolos Missions International
+            {t("orgName")}
             <br />
-            Trenton, New Jersey, USA
+            {t("orgLocation")}
             <br />
             <a href="mailto:info@amintl.org" className="underline underline-offset-2">
-              info@amintl.org
+              {t("email")}
             </a>
           </p>
           <div className="mt-6 flex gap-3">
@@ -105,16 +107,16 @@ export default function Footer() {
 
       <div className="border-t border-white/[0.15]">
         <Container className="flex flex-col items-center justify-between gap-4 py-6 text-[13px] text-on-dark/45 sm:flex-row">
-          <p>© 2026 Apostolos Missions International. All rights reserved.</p>
+          <p>{t("copyright")}</p>
           <div className="flex gap-6">
             <Link href="/about/statement-of-faith" className="hover:text-on-dark/80">
-              Statement of faith
+              {t("statementOfFaith")}
             </Link>
             <Link href="/contact" className="hover:text-on-dark/80">
-              Contact
+              {t("contact")}
             </Link>
             <Link href="/give" className="hover:text-on-dark/80">
-              Give
+              {t("give")}
             </Link>
           </div>
         </Container>

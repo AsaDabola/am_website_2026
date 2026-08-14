@@ -1,0 +1,194 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · One who is sent on a mission",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Who We Are",
+    "whatWeDo": "What We Do",
+    "getInvolved": "Get Involved",
+    "ourNetwork": "Our Network",
+    "news": "News",
+    "contactUs": "Contact Us",
+    "give": "Give",
+    "toggleNav": "Toggle navigation menu",
+    "whoWeAreMenu": {
+      "aboutAM": "About AM",
+      "missionStatement": "Mission statement",
+      "statementOfFaith": "Statement of faith",
+      "ourHistory": "Our history",
+      "leadership": "Leadership",
+      "ourFirstChairman": "Our First Chairman"
+    },
+    "whatWeDoMenu": {
+      "bibleStudyProgram": "Bible Study Program",
+      "fourSpiritualThemes": "Four Spiritual Themes",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Our ministries"
+    },
+    "getInvolvedMenu": {
+      "connectGrowLeadSent": "Connect, Grow, Lead, Sent",
+      "chapterAffiliation": "Chapter affiliation",
+      "ourNetwork": "Our Network",
+      "events": "Events",
+      "give": "Give"
+    }
+  },
+  "Footer": {
+    "tagline": "An interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, USA",
+    "email": "info@amintl.org",
+    "whoWeAre": "Who we are",
+    "whatWeDo": "What we do",
+    "getInvolved": "Get involved",
+    "media": "Media",
+    "aboutAM": "About AM",
+    "missionStatement": "Mission statement",
+    "statementOfFaith": "Statement of faith",
+    "ourHistory": "Our history",
+    "leadership": "Leadership",
+    "bibleStudyProgram": "Bible Study Program",
+    "fourSpiritualThemes": "Four Spiritual Themes",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Our ministries",
+    "connectGrowLeadSent": "Connect, Grow, Lead, Sent",
+    "chapterAffiliation": "Chapter affiliation",
+    "ourNetwork": "Our Network",
+    "events": "Events",
+    "give": "Give",
+    "news": "News",
+    "legacyOfChairman": "Legacy of Ralph D. Winter",
+    "contactUs": "Contact us",
+    "copyright": "© 2026 Apostolos Missions International. All rights reserved.",
+    "contact": "Contact"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "Language"
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — one who is sent",
+      "headingLine1": "Future Begins",
+      "headingWhere": "from Where",
+      "headingWeAre": "We Are",
+      "joinBibleStudy": "Join our Bible Study",
+      "whoWeAre": "Who we are",
+      "stat1Value": "2003",
+      "stat1Label": "Sending since",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, USA",
+      "stat3Value": "Global",
+      "stat3Label": "Campus network",
+      "dragToExplore": "Drag to explore"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Join our Bible Study Program",
+      "heading": "A 5-phase path from first question to being sent.",
+      "description": "AM's 5-phase Bible Study Program is an online discipleship and Bible education program that leads students through a systematic flow of learning the Gospel of Jesus Christ and the life of faith. The program groups students with Bible teachers who will give instruction according to the listener's schedule. It culminates with the opportunity to volunteer, train as a student missionary, or simply dive deeper into the Word of God with AM.",
+      "cta": "Start the program"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Join a Bible study",
+      "joinBibleStudyDescription": "The 5-phase online discipleship and Bible education program.",
+      "findCampusTitle": "Find your campus",
+      "findCampusDescription": "Our network of chapters and fellowships.",
+      "getInvolvedTitle": "Get involved",
+      "getInvolvedDescription": "Connect, grow, lead and be sent with AM.",
+      "supportTitle": "Support the mission",
+      "supportDescription": "Give, pray and partner with students in the field."
+    },
+    "Ministries": {
+      "eyebrow": "Connect · Grow · Lead · Sent",
+      "heading": "Four steps, and we walk every one of them with you.",
+      "getInvolved": "Get involved",
+      "learnMore": "Learn more",
+      "connectTitle": "Connect with AM",
+      "connectDescription": "AM offers various Bible study programs that nurture our spiritual life and relationship with the Lord Jesus Christ.",
+      "growTitle": "Grow with AM",
+      "growDescription": "Join our Group Activities and mature together in the fellowship of truth. Our Group programs provide high-quality experiences for every student to gain spiritual strength.",
+      "leadTitle": "Lead with AM",
+      "leadDescription": "AM is happy to welcome students interested in volunteering and serving through their God given talents in various departments.",
+      "sentTitle": "Sent with AM",
+      "sentDescription": "AM will continue to walk with you until your precious calling of \"being sent\" is fulfilled in your life even after your graduation!",
+      "connectTag": "Connect",
+      "growTag": "Grow",
+      "leadTag": "Lead",
+      "sentTag": "Sent"
+    },
+    "OurMission": {
+      "eyebrow": "Our mission",
+      "statementPrefix": "Apostolos Missions' mission is to",
+      "statementEmphasis": "preach Jesus and Him crucified",
+      "statementSuffix": "— fostering a Christ-centred network of young Christians for the mobilisation of campus mission.",
+      "readFullStatement": "Read the full mission statement",
+      "nameOrigin": "The name apostolos is the Greek word for apostle. It means \"one who is sent on a mission.\"",
+      "history": "What began as a small group of passionate young students in Los Angeles, California, eager to spread the gospel and make Jesus known, has become a global organisation working across university campuses around the world.",
+      "ourHistory": "Our history"
+    },
+    "GetInvolved": {
+      "eyebrow": "Get Connected",
+      "heading": "Get Involved",
+      "bibleStudies": "Bible Studies",
+      "volunteer": "Volunteer",
+      "internship": "Internship"
+    },
+    "Media": {
+      "eyebrow": "Media",
+      "heading": "Teaching, testimony and the Word.",
+      "moreContents": "More contents",
+      "playVideo": "Play the AM introduction video",
+      "post1Title": "Four Spiritual Themes – Overview",
+      "post2Title": "What is Salvation? | Sola Fide Part 1 – AM Academy",
+      "post3Title": "Era of Social Media Discipleship, Connecting Students to Reality of the Gospel",
+      "post4Title": "God's Promises For the New Year",
+      "post1Date": "January 5, 2026",
+      "post2Date": "June 27, 2023",
+      "post3Date": "June 3, 2022",
+      "post4Date": "January 2, 2022"
+    },
+    "Events": {
+      "eyebrow": "Events",
+      "heading": "Where the network gathers.",
+      "allEvents": "All events",
+      "event1Date": "April 4–5",
+      "event1Title": "Easter Retreat",
+      "event2Date": "February 18",
+      "event2Title": "Lenten 40-Day Walk",
+      "event3Date": "January 16",
+      "event3Title": "New Chapter Leaders' Meeting"
+    },
+    "OurNetwork": {
+      "eyebrow": "Our network",
+      "heading": "There may already be a fellowship on your campus.",
+      "description": "Search by school or city. If nothing comes up near you, that is an invitation — we will help you start one.",
+      "startChapter": "Start a chapter",
+      "searchPlaceholder": "Search school or city",
+      "noMatches": "No matches yet — reach out and we'll help you start one."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Our First Honorary Chairman",
+      "followingLegacy": "Following the Legacy of",
+      "name": "Dr. Ralph D. Winter",
+      "quoteLine1": "Go therefore",
+      "quoteLine2": "and make disciples",
+      "quoteLine3": "of all nations…",
+      "quoteReference": "—Matthew 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Partner with us",
+      "heading": "Send someone you will never meet.",
+      "description": "Every gift puts Bible study, training and a sending community within reach of students who are ready to go.",
+      "giveToday": "Give today",
+      "talkToUs": "Talk to us"
+    },
+    "Newsletter": {
+      "heading": "Field Notes from the Campuses",
+      "description": "A short monthly letter: what students are seeing, where AM is going next, and how to pray.",
+      "cta": "AM Academy"
+    }
+  }
+}

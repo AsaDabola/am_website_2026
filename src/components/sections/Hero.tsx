@@ -1,15 +1,18 @@
+import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import PlaceholderPhoto from "@/components/ui/PlaceholderPhoto";
 
-const stats = [
-  { value: "2003", label: "Sending since" },
-  { value: "Trenton", label: "New Jersey, USA" },
-  { value: "Global", label: "Campus network" },
-];
+export default async function Hero() {
+  const t = await getTranslations("Home.Hero");
 
-export default function Hero() {
+  const stats = [
+    { value: t("stat1Value"), label: t("stat1Label") },
+    { value: t("stat2Value"), label: t("stat2Label") },
+    { value: t("stat3Value"), label: t("stat3Label") },
+  ];
+
   return (
     <section className="relative overflow-hidden bg-night">
       <PlaceholderPhoto
@@ -21,20 +24,20 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-night via-night/80 to-transparent" />
 
       <Container className="relative flex min-h-[720px] flex-col justify-center py-24">
-        <Eyebrow tone="light">Apostolos — one who is sent</Eyebrow>
+        <Eyebrow tone="light">{t("eyebrow")}</Eyebrow>
 
         <h1 className="max-w-2xl font-display text-5xl font-bold leading-[1.05] tracking-[-0.03em] text-white [text-shadow:0px_4px_14px_rgba(0,0,0,0.4)] sm:text-6xl lg:text-[80px]">
-          Future Begins <span className="text-[#c5ddff]">from Where</span>
+          {t("headingLine1")} <span className="text-[#c5ddff]">{t("headingWhere")}</span>
           <br />
-          <span className="text-[#c5ddff]">We Are</span>.
+          <span className="text-[#c5ddff]">{t("headingWeAre")}</span>.
         </h1>
 
         <div className="mt-9 flex flex-wrap gap-4">
           <Button href="/bible-study" variant="solidNavy">
-            Join our Bible Study
+            {t("joinBibleStudy")}
           </Button>
           <Button href="/about" variant="outlineLight" icon={false}>
-            Who we are
+            {t("whoWeAre")}
           </Button>
         </div>
 
@@ -51,7 +54,7 @@ export default function Hero() {
       </Container>
 
       <p className="absolute bottom-8 right-6 hidden text-[11px] uppercase tracking-[0.15em] text-on-dark/45 lg:right-10 lg:block">
-        Drag to explore
+        {t("dragToExplore")}
       </p>
     </section>
   );
