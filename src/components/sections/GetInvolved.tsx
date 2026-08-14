@@ -1,17 +1,17 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
-import PlaceholderPhoto from "@/components/ui/PlaceholderPhoto";
 import { ArrowRightIcon } from "@/components/ui/icons";
 
 export default async function GetInvolved() {
   const t = await getTranslations("Home.GetInvolved");
 
   const cards = [
-    { title: t("bibleStudies"), href: "/bible-study", from: "#3a6cd8", to: "#0d1f52" },
-    { title: t("volunteer"), href: "/get-involved", from: "#2a5eec", to: "#0a0e26" },
-    { title: t("internship"), href: "/get-involved", from: "#1449c6", to: "#050a2e" },
+    { title: t("bibleStudies"), href: "/bible-study", image: "/images/get-involved-bible-studies.png" },
+    { title: t("volunteer"), href: "/get-involved", image: "/images/get-involved-volunteer.png" },
+    { title: t("internship"), href: "/get-involved", image: "/images/get-involved-internship.png" },
   ];
 
   return (
@@ -33,7 +33,13 @@ export default async function GetInvolved() {
               href={card.href}
               className="group relative block aspect-[416/520] overflow-hidden rounded-2xl"
             >
-              <PlaceholderPhoto className="absolute inset-0" from={card.from} to={card.to} />
+              <Image
+                src={card.image}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 33vw, 100vw"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               <span className="absolute bottom-6 left-6 font-display text-2xl font-bold text-white">
                 {card.title}

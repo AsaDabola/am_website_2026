@@ -1,7 +1,7 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
-import PlaceholderPhoto from "@/components/ui/PlaceholderPhoto";
 
 export default async function HonoraryChairman() {
   const t = await getTranslations("Home.HonoraryChairman");
@@ -28,12 +28,15 @@ export default async function HonoraryChairman() {
           </div>
         </div>
 
-        <PlaceholderPhoto
-          className="aspect-square w-full max-w-[320px] rounded-2xl"
-          from="#3a4256"
-          to="#14161f"
-          label="Dr. Ralph D. Winter portrait"
-        />
+        <div className="relative aspect-square w-full max-w-[320px] overflow-hidden rounded-2xl">
+          <Image
+            src="/images/honorary-chairman.png"
+            alt={t("name")}
+            fill
+            className="object-cover"
+            sizes="320px"
+          />
+        </div>
       </Container>
     </section>
   );

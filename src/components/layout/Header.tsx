@@ -10,7 +10,6 @@ import { ChevronDownIcon } from "@/components/ui/icons";
 
 export default function Header() {
   const t = useTranslations("Header");
-  const tLogo = useTranslations("Logo");
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const dropdowns = [
@@ -55,7 +54,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-brand-blue/95 backdrop-blur-[7px]">
       <Container className="flex h-[77px] items-center justify-between">
-        <Logo internationalLabel={tLogo("international")} />
+        <Logo />
 
         <nav className="hidden items-center gap-1 lg:flex">
           {dropdowns.map((item) => (

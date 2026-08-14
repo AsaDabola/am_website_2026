@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
-import PlaceholderPhoto from "@/components/ui/PlaceholderPhoto";
 
 type Crumb = { label: string; href?: string };
 
@@ -15,10 +15,12 @@ export default function AboutHero({
 }) {
   return (
     <section className="relative overflow-hidden bg-night">
-      <PlaceholderPhoto
-        className="absolute inset-0 opacity-80"
-        from="#1c3f8c"
-        to="#050a2e"
+      <Image
+        src="/images/about-hero-banner.png"
+        alt=""
+        fill
+        className="object-cover opacity-80"
+        sizes="100vw"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-night/10 to-night/50" />
 

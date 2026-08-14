@@ -13,7 +13,6 @@ const socials = [
 
 export default async function Footer() {
   const t = await getTranslations("Footer");
-  const tLogo = await getTranslations("Logo");
 
   const columns = [
     {
@@ -60,7 +59,7 @@ export default async function Footer() {
     <footer className="border-t border-white/[0.07] bg-footer text-on-dark">
       <Container className="grid gap-12 py-16 lg:grid-cols-[minmax(0,1fr)_auto_auto_auto_auto] lg:gap-8">
         <div className="max-w-xs">
-          <Logo internationalLabel={tLogo("international")} />
+          <Logo />
           <p className="mt-6 text-sm leading-relaxed text-on-dark/70">
             {t("tagline")}
           </p>

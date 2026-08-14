@@ -1,8 +1,8 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
-import PlaceholderPhoto from "@/components/ui/PlaceholderPhoto";
 
 export default async function Hero() {
   const t = await getTranslations("Home.Hero");
@@ -15,11 +15,13 @@ export default async function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-night">
-      <PlaceholderPhoto
-        className="absolute inset-0 opacity-90"
-        from="#1c3f8c"
-        to="#050a2e"
-        label="AM campus photography"
+      <Image
+        src="/images/hero-campus.png"
+        alt=""
+        fill
+        priority
+        className="object-cover opacity-90"
+        sizes="100vw"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-night via-night/80 to-transparent" />
 
