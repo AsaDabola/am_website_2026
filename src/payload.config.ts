@@ -1,5 +1,6 @@
 import path from "path";
 import { fileURLToPath } from "url";
+import sharp from "sharp";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { vercelBlobStorage } from "@payloadcms/storage-vercel-blob";
@@ -24,6 +25,7 @@ export default buildConfig({
   collections: [Users, Media, Campuses, Events, Posts, Ministries],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
+  sharp,
   typescript: {
     outputFile: path.resolve(dirname, "payload-types.ts"),
   },
@@ -31,6 +33,10 @@ export default buildConfig({
     pool: {
       connectionString: getDatabaseUri(),
     },
+    // This project has no migrations yet, so let Payload sync the schema
+    // straight from the collection configs — including in production.
+    // Once the schema settles, switch to `payload migrate` and drop this.
+    push: true,
   }),
   plugins: [
     vercelBlobStorage({
