@@ -15,6 +15,7 @@ const dropdowns = [
       { label: "Statement of faith", href: "/about/statement-of-faith" },
       { label: "Our history", href: "/about/history" },
       { label: "Leadership", href: "/about/leadership" },
+      { label: "Our First Chairman", href: "/about/chairman" },
     ],
   },
   {
