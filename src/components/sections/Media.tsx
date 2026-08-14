@@ -3,8 +3,11 @@ import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import { PlayIcon } from "@/components/ui/icons";
+import { fetchCollectionSafely } from "@/lib/getPayloadSafely";
 
-const posts = [
+type PostItem = { title: string; date: string };
+
+const defaultPosts: PostItem[] = [
   { title: "Four Spiritual Themes – Overview", date: "January 5, 2026" },
   {
     title: "What is Salvation? | Sola Fide Part 1 – AM Academy",
@@ -18,7 +21,32 @@ const posts = [
   { title: "God’s Promises For the New Year", date: "January 2, 2022" },
 ];
 
-export default function Media() {
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+});
+
+async function getPosts(): Promise<PostItem[]> {
+  const docs = await fetchCollectionSafely(async (payload) => {
+    const result = await payload.find({
+      collection: "posts",
+      sort: "-publishedDate",
+      limit: 4,
+    });
+    return result.docs;
+  });
+
+  if (!docs) return defaultPosts;
+  return docs.map((doc) => ({
+    title: doc.title,
+    date: dateFormatter.format(new Date(doc.publishedDate)),
+  }));
+}
+
+export default async function Media() {
+  const posts = await getPosts();
+
   return (
     <section
       className="relative overflow-hidden py-24"

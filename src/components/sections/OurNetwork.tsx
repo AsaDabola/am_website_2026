@@ -1,13 +1,13 @@
-"use client";
-
-import { useMemo, useState } from "react";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
-import { SearchIcon } from "@/components/ui/icons";
+import CampusSearch from "@/components/sections/CampusSearch";
+import { fetchCollectionSafely } from "@/lib/getPayloadSafely";
 
-// PLACEHOLDER campus list — replace with AM's real chapter directory.
-const campuses = [
+type Campus = { name: string; location: string };
+
+// PLACEHOLDER campus list — shown until real chapters are added in /admin.
+const defaultCampuses: Campus[] = [
   { name: "AM Harvard", location: "Cambridge, Massachusetts" },
   { name: "AM @ UCLA", location: "Los Angeles, California" },
   { name: "AM Rutgers", location: "New Brunswick, New Jersey" },
@@ -22,16 +22,23 @@ const campuses = [
   { name: "AM Washington", location: "Seattle, Washington" },
 ];
 
-export default function OurNetwork() {
-  const [query, setQuery] = useState("");
+async function getCampuses(): Promise<Campus[]> {
+  const docs = await fetchCollectionSafely(async (payload) => {
+    const result = await payload.find({
+      collection: "campuses",
+      where: { active: { equals: true } },
+      sort: "name",
+      limit: 200,
+    });
+    return result.docs;
+  });
 
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return campuses;
-    return campuses.filter(
-      (c) => c.name.toLowerCase().includes(q) || c.location.toLowerCase().includes(q),
-    );
-  }, [query]);
+  if (!docs) return defaultCampuses;
+  return docs.map((doc) => ({ name: doc.name, location: doc.location }));
+}
+
+export default async function OurNetwork() {
+  const campuses = await getCampuses();
 
   return (
     <section
@@ -53,37 +60,7 @@ export default function OurNetwork() {
           </Button>
         </div>
 
-        <div>
-          <label className="relative block">
-            <SearchIcon className="pointer-events-none absolute left-4 top-1/2 size-[18px] -translate-y-1/2 text-white/70" />
-            <input
-              type="text"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="Search school or city"
-              className="w-full rounded-full border border-white/25 bg-white/10 py-4 pl-12 pr-5 text-sm text-white placeholder:text-white/60 backdrop-blur-sm focus:border-white/50 focus:outline-none"
-            />
-          </label>
-
-          <ul className="mt-6 max-h-[416px] divide-y divide-white/15 overflow-y-auto rounded-xl border border-white/15 bg-white/5">
-            {filtered.map((campus) => (
-              <li key={campus.name}>
-                <a
-                  href="/network"
-                  className="flex items-center justify-between gap-4 px-6 py-4 text-sm hover:bg-white/10"
-                >
-                  <span className="font-semibold text-white">{campus.name}</span>
-                  <span className="text-white/60">{campus.location}</span>
-                </a>
-              </li>
-            ))}
-            {filtered.length === 0 && (
-              <li className="px-6 py-4 text-sm text-white/70">
-                No matches yet &mdash; reach out and we&rsquo;ll help you start one.
-              </li>
-            )}
-          </ul>
-        </div>
+        <CampusSearch campuses={campuses} />
       </Container>
     </section>
   );

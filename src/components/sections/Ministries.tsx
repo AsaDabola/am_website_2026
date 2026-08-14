@@ -1,9 +1,21 @@
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import PlaceholderPhoto from "@/components/ui/PlaceholderPhoto";
+import { fetchCollectionSafely } from "@/lib/getPayloadSafely";
 
-const steps = [
+type Step = {
+  tag: string;
+  title: string;
+  description: string;
+  href: string;
+  from: string;
+  to: string;
+  imageUrl?: string;
+};
+
+const defaultSteps: Step[] = [
   {
     tag: "Connect",
     title: "Connect with AM",
@@ -42,7 +54,39 @@ const steps = [
   },
 ];
 
-export default function Ministries() {
+async function getSteps(): Promise<Step[]> {
+  const docs = await fetchCollectionSafely(async (payload) => {
+    const result = await payload.find({
+      collection: "ministries",
+      sort: "order",
+      limit: 4,
+      depth: 1,
+    });
+    return result.docs;
+  });
+
+  if (!docs) return defaultSteps;
+
+  return docs.map((doc, index) => {
+    const fallback = defaultSteps[index % defaultSteps.length];
+    const image =
+      doc.image && typeof doc.image === "object" ? doc.image.url ?? undefined : undefined;
+
+    return {
+      tag: doc.tag,
+      title: doc.title,
+      description: doc.description,
+      href: doc.href || fallback.href,
+      from: fallback.from,
+      to: fallback.to,
+      imageUrl: image,
+    };
+  });
+}
+
+export default async function Ministries() {
+  const steps = await getSteps();
+
   return (
     <section className="bg-white py-24">
       <Container>
@@ -61,12 +105,18 @@ export default function Ministries() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step) => (
             <div key={step.tag} className="flex flex-col">
-              <div className="relative overflow-hidden rounded-2xl">
-                <PlaceholderPhoto
-                  className="aspect-[256/160]"
-                  from={step.from}
-                  to={step.to}
-                />
+              <div className="relative aspect-[256/160] overflow-hidden rounded-2xl">
+                {step.imageUrl ? (
+                  <Image
+                    src={step.imageUrl}
+                    alt={step.title}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                  />
+                ) : (
+                  <PlaceholderPhoto className="absolute inset-0" from={step.from} to={step.to} />
+                )}
                 <span className="absolute left-3 top-3 rounded-md bg-black/40 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
                   {step.tag}
                 </span>

@@ -11,6 +11,10 @@ import HonoraryChairman from "@/components/sections/HonoraryChairman";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 
+// Re-render at most once a minute so edits made in /admin (campuses,
+// events, posts, ministries) show up without a full redeploy.
+export const revalidate = 60;
+
 export default function Home() {
   return (
     <>

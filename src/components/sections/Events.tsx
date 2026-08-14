@@ -1,14 +1,33 @@
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
+import { fetchCollectionSafely } from "@/lib/getPayloadSafely";
 
-const events = [
+type EventItem = { date: string; title: string };
+
+const defaultEvents: EventItem[] = [
   { date: "April 4–5", title: "Easter Retreat" },
   { date: "February 18", title: "Lenten 40-Day Walk" },
   { date: "January 16", title: "New Chapter Leaders’ Meeting" },
 ];
 
-export default function Events() {
+async function getEvents(): Promise<EventItem[]> {
+  const docs = await fetchCollectionSafely(async (payload) => {
+    const result = await payload.find({
+      collection: "events",
+      sort: "startDate",
+      limit: 3,
+    });
+    return result.docs;
+  });
+
+  if (!docs) return defaultEvents;
+  return docs.map((doc) => ({ date: doc.dateLabel, title: doc.title }));
+}
+
+export default async function Events() {
+  const events = await getEvents();
+
   return (
     <section className="bg-white py-24">
       <Container>
