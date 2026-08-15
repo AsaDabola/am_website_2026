@@ -9,7 +9,7 @@ export default async function Newsletter() {
   return (
     <section className="relative min-h-[195px] overflow-hidden">
       <Image
-        src="/images/newsletter-baptism.png"
+        src="/images/bible-study-collage.jpg"
         alt=""
         fill
         className="object-cover"

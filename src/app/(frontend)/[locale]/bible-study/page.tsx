@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
@@ -13,9 +14,18 @@ export const metadata: Metadata = {
     "Six tracks of Bible study, from a first look at the gospel through to discipling others.",
 };
 
-const tracks = [
+type Track = {
+  title: string;
+  image?: string;
+  from: string;
+  to: string;
+  description: string;
+};
+
+const tracks: Track[] = [
   {
     title: "Phase 1 — Sola Fide",
+    image: "/images/bible-study-sola-fide.jpg",
     from: "#2a5eec",
     to: "#0d1f52",
     description:
@@ -23,6 +33,7 @@ const tracks = [
   },
   {
     title: "Phase 2 — Bible Core",
+    image: "/images/bible-study-bible-core.jpg",
     from: "#3a6cd8",
     to: "#0d1f52",
     description:
@@ -30,6 +41,7 @@ const tracks = [
   },
   {
     title: "Phase 3(1) — The Path of the Ancestors' Faith",
+    image: "/images/bible-study-faith.jpg",
     from: "#4d8df6",
     to: "#0d1f52",
     description:
@@ -111,12 +123,24 @@ export default function BibleStudyPage() {
                   {track.description}
                 </p>
               </div>
-              <PlaceholderPhoto
-                className="aspect-[666/520] w-full rounded-2xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.12)]"
-                from={track.from}
-                to={track.to}
-                label={track.title}
-              />
+              {track.image ? (
+                <div className="relative aspect-[666/520] w-full overflow-hidden rounded-2xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.12)]">
+                  <Image
+                    src={track.image}
+                    alt={track.title}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                  />
+                </div>
+              ) : (
+                <PlaceholderPhoto
+                  className="aspect-[666/520] w-full rounded-2xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.12)]"
+                  from={track.from}
+                  to={track.to}
+                  label={track.title}
+                />
+              )}
             </div>
           ))}
         </Container>
