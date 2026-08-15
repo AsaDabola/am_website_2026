@@ -13,25 +13,36 @@
     "give": "Spenden",
     "toggleNav": "Navigationsmenü umschalten",
     "whoWeAreMenu": {
-      "aboutAM": "Über AM",
-      "missionStatement": "Leitbild",
+      "whoWeAre": "Wer wir sind",
+      "ourMission": "Unsere Mission",
       "statementOfFaith": "Glaubensbekenntnis",
-      "ourHistory": "Unsere Geschichte",
-      "leadership": "Leitung",
-      "ourFirstChairman": "Unser erster Vorsitzender"
+      "history": "Geschichte",
+      "ourFirstChairmen": "Unsere ersten Vorsitzenden",
+      "membership": "Mitgliedschaft",
+      "ourLeadership": "Unsere Leitung"
     },
     "whatWeDoMenu": {
+      "pillarsOfMission": "Unsere Missionssäulen",
+      "administration": "Verwaltung",
       "bibleStudyProgram": "Bibelstudienprogramm",
       "fourSpiritualThemes": "Vier geistliche Themen",
       "amAcademy": "AM Academy",
       "ourMinistries": "Unsere Dienste"
     },
     "getInvolvedMenu": {
-      "connectGrowLeadSent": "Verbinden, Wachsen, Führen, Gesandt werden",
-      "chapterAffiliation": "Ortsgruppen-Zugehörigkeit",
-      "ourNetwork": "Unser Netzwerk",
+      "bibleStudies": "Bibelstudien",
+      "groupActivities": "Gruppenaktivitäten",
+      "volunteer": "Ehrenamt",
+      "bibleTeacherTraining": "Ausbildung für Bibellehrer",
+      "internship": "Praktikum",
+      "donate": "Spenden"
+    },
+    "newsMenu": {
+      "featured": "Empfohlen",
       "events": "Veranstaltungen",
-      "give": "Spenden"
+      "editorial": "Leitartikel",
+      "photoNews": "Fotonachrichten",
+      "testimony": "Zeugnis"
     }
   },
   "Footer": {

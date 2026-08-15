@@ -13,25 +13,36 @@
     "give": "Donar",
     "toggleNav": "Alternar menú de navegación",
     "whoWeAreMenu": {
-      "aboutAM": "Sobre AM",
-      "missionStatement": "Declaración de misión",
+      "whoWeAre": "Quiénes somos",
+      "ourMission": "Nuestra misión",
       "statementOfFaith": "Declaración de fe",
-      "ourHistory": "Nuestra historia",
-      "leadership": "Liderazgo",
-      "ourFirstChairman": "Nuestro primer presidente"
+      "history": "Historia",
+      "ourFirstChairmen": "Nuestros primeros presidentes",
+      "membership": "Membresía",
+      "ourLeadership": "Nuestro liderazgo"
     },
     "whatWeDoMenu": {
+      "pillarsOfMission": "Nuestros pilares de misión",
+      "administration": "Administración",
       "bibleStudyProgram": "Programa de estudio bíblico",
       "fourSpiritualThemes": "Cuatro temas espirituales",
       "amAcademy": "AM Academy",
       "ourMinistries": "Nuestros ministerios"
     },
     "getInvolvedMenu": {
-      "connectGrowLeadSent": "Conecta, crece, lidera, sé enviado",
-      "chapterAffiliation": "Afiliación de capítulos",
-      "ourNetwork": "Nuestra red",
+      "bibleStudies": "Estudios bíblicos",
+      "groupActivities": "Actividades grupales",
+      "volunteer": "Voluntariado",
+      "bibleTeacherTraining": "Capacitación de maestros bíblicos",
+      "internship": "Pasantía",
+      "donate": "Donar"
+    },
+    "newsMenu": {
+      "featured": "Destacados",
       "events": "Eventos",
-      "give": "Donar"
+      "editorial": "Editorial",
+      "photoNews": "Noticias fotográficas",
+      "testimony": "Testimonio"
     }
   },
   "Footer": {

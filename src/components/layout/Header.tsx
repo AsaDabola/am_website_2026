@@ -16,17 +16,20 @@ export default function Header() {
     {
       label: t("whoWeAre"),
       links: [
-        { label: t("whoWeAreMenu.aboutAM"), href: "/about" },
-        { label: t("whoWeAreMenu.missionStatement"), href: "/about/mission" },
+        { label: t("whoWeAreMenu.whoWeAre"), href: "/about" },
+        { label: t("whoWeAreMenu.ourMission"), href: "/about/mission" },
         { label: t("whoWeAreMenu.statementOfFaith"), href: "/about/statement-of-faith" },
-        { label: t("whoWeAreMenu.ourHistory"), href: "/about/history" },
-        { label: t("whoWeAreMenu.leadership"), href: "/about/leadership" },
-        { label: t("whoWeAreMenu.ourFirstChairman"), href: "/about/chairman" },
+        { label: t("whoWeAreMenu.history"), href: "/about/history" },
+        { label: t("whoWeAreMenu.ourFirstChairmen"), href: "/about/chairman" },
+        { label: t("whoWeAreMenu.membership"), href: "/about/membership" },
+        { label: t("whoWeAreMenu.ourLeadership"), href: "/about/leadership" },
       ],
     },
     {
       label: t("whatWeDo"),
       links: [
+        { label: t("whatWeDoMenu.pillarsOfMission"), href: "/what-we-do/pillars-of-mission" },
+        { label: t("whatWeDoMenu.administration"), href: "/what-we-do/administration" },
         { label: t("whatWeDoMenu.bibleStudyProgram"), href: "/bible-study" },
         { label: t("whatWeDoMenu.fourSpiritualThemes"), href: "/four-spiritual-themes" },
         { label: t("whatWeDoMenu.amAcademy"), href: "https://www.amacademy.org" },
@@ -36,18 +39,28 @@ export default function Header() {
     {
       label: t("getInvolved"),
       links: [
-        { label: t("getInvolvedMenu.connectGrowLeadSent"), href: "/get-involved" },
-        { label: t("getInvolvedMenu.chapterAffiliation"), href: "/get-involved/chapter-affiliation" },
-        { label: t("getInvolvedMenu.ourNetwork"), href: "/network" },
-        { label: t("getInvolvedMenu.events"), href: "/events" },
-        { label: t("getInvolvedMenu.give"), href: "/give" },
+        { label: t("getInvolvedMenu.bibleStudies"), href: "/bible-study" },
+        { label: t("getInvolvedMenu.groupActivities"), href: "/get-involved/group-activities" },
+        { label: t("getInvolvedMenu.volunteer"), href: "/get-involved" },
+        { label: t("getInvolvedMenu.bibleTeacherTraining"), href: "/get-involved/bible-teacher-training" },
+        { label: t("getInvolvedMenu.internship"), href: "/get-involved" },
+        { label: t("getInvolvedMenu.donate"), href: "/give" },
+      ],
+    },
+    {
+      label: t("news"),
+      links: [
+        { label: t("newsMenu.featured"), href: "/news" },
+        { label: t("newsMenu.events"), href: "/events" },
+        { label: t("newsMenu.editorial"), href: "/news/editorial" },
+        { label: t("newsMenu.photoNews"), href: "/news/photo-news" },
+        { label: t("newsMenu.testimony"), href: "/news/testimony" },
       ],
     },
   ];
 
   const plainLinks = [
     { label: t("ourNetwork"), href: "/network" },
-    { label: t("news"), href: "/news" },
     { label: t("contactUs"), href: "/contact" },
   ];
 

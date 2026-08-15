@@ -13,25 +13,36 @@
     "give": "奉献",
     "toggleNav": "切换导航菜单",
     "whoWeAreMenu": {
-      "aboutAM": "关于 AM",
-      "missionStatement": "使命宣言",
+      "whoWeAre": "关于我们",
+      "ourMission": "我们的使命",
       "statementOfFaith": "信仰告白",
-      "ourHistory": "我们的历史",
-      "leadership": "领导团队",
-      "ourFirstChairman": "首任名誉主席"
+      "history": "历史",
+      "ourFirstChairmen": "首任名誉主席",
+      "membership": "会员",
+      "ourLeadership": "我们的领导团队"
     },
     "whatWeDoMenu": {
+      "pillarsOfMission": "使命的支柱",
+      "administration": "行政",
       "bibleStudyProgram": "查经课程",
       "fourSpiritualThemes": "四个属灵主题",
       "amAcademy": "AM Academy",
       "ourMinistries": "我们的事工"
     },
     "getInvolvedMenu": {
-      "connectGrowLeadSent": "连结、成长、带领、受差遣",
-      "chapterAffiliation": "分会加盟",
-      "ourNetwork": "我们的网络",
+      "bibleStudies": "查经",
+      "groupActivities": "小组活动",
+      "volunteer": "义工服事",
+      "bibleTeacherTraining": "圣经教师培训",
+      "internship": "实习",
+      "donate": "奉献"
+    },
+    "newsMenu": {
+      "featured": "精选",
       "events": "活动",
-      "give": "奉献"
+      "editorial": "专栏",
+      "photoNews": "图片新闻",
+      "testimony": "见证"
     }
   },
   "Footer": {

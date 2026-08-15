@@ -26,6 +26,7 @@ async function getDefaultSteps(): Promise<Step[]> {
       href: "/bible-study",
       from: "#2a5eec",
       to: "#0d1f52",
+      imageUrl: "/images/ministry-connect.png",
     },
     {
       tag: t("growTag"),
@@ -34,6 +35,7 @@ async function getDefaultSteps(): Promise<Step[]> {
       href: "/ministries",
       from: "#3a6cd8",
       to: "#0d1f52",
+      imageUrl: "/images/ministry-grow.png",
     },
     {
       tag: t("leadTag"),
@@ -51,7 +53,6 @@ async function getDefaultSteps(): Promise<Step[]> {
       href: "/get-involved",
       from: "#1449c6",
       to: "#050a2e",
-      imageUrl: "/images/ministry-sent.png",
     },
   ];
 }
@@ -111,19 +112,43 @@ export default async function Ministries() {
             <div key={step.tag} className="flex flex-col">
               <div className="relative aspect-[256/160] overflow-hidden rounded-2xl">
                 {step.imageUrl ? (
-                  <Image
-                    src={step.imageUrl}
-                    alt={step.title}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                  />
+                  <>
+                    <Image
+                      src={step.imageUrl}
+                      alt={step.title}
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                    />
+                    <span className="absolute left-3 top-3 rounded-md bg-black/40 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+                      {step.tag}
+                    </span>
+                  </>
                 ) : (
-                  <PlaceholderPhoto className="absolute inset-0" from={step.from} to={step.to} />
+                  <>
+                    <PlaceholderPhoto className="absolute inset-0" from={step.from} to={step.to} />
+                    <span className="absolute left-3 top-3 rounded-md bg-black/25 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+                      {step.tag}
+                    </span>
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute inset-0 flex items-center justify-center font-display text-4xl italic text-white"
+                    >
+                      {step.tag}
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="ml-1 size-6 -translate-y-2"
+                      >
+                        <path d="M5 12h13M13 6l6 6-6 6" />
+                      </svg>
+                    </span>
+                  </>
                 )}
-                <span className="absolute left-3 top-3 rounded-md bg-black/40 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
-                  {step.tag}
-                </span>
               </div>
               <h3 className="mt-6 font-display text-xl font-bold tracking-[-0.02em] text-ink">
                 {step.title}

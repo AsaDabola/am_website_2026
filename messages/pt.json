@@ -13,25 +13,36 @@
     "give": "Doar",
     "toggleNav": "Alternar menu de navegação",
     "whoWeAreMenu": {
-      "aboutAM": "Sobre a AM",
-      "missionStatement": "Declaração de missão",
+      "whoWeAre": "Quem somos",
+      "ourMission": "Nossa missão",
       "statementOfFaith": "Declaração de fé",
-      "ourHistory": "Nossa história",
-      "leadership": "Liderança",
-      "ourFirstChairman": "Nosso primeiro presidente"
+      "history": "História",
+      "ourFirstChairmen": "Nossos primeiros presidentes",
+      "membership": "Associação",
+      "ourLeadership": "Nossa liderança"
     },
     "whatWeDoMenu": {
+      "pillarsOfMission": "Nossos pilares de missão",
+      "administration": "Administração",
       "bibleStudyProgram": "Programa de estudo bíblico",
       "fourSpiritualThemes": "Quatro temas espirituais",
       "amAcademy": "AM Academy",
       "ourMinistries": "Nossos ministérios"
     },
     "getInvolvedMenu": {
-      "connectGrowLeadSent": "Conectar, crescer, liderar, ser enviado",
-      "chapterAffiliation": "Afiliação de núcleo",
-      "ourNetwork": "Nossa rede",
+      "bibleStudies": "Estudos bíblicos",
+      "groupActivities": "Atividades em grupo",
+      "volunteer": "Voluntariado",
+      "bibleTeacherTraining": "Treinamento de professores bíblicos",
+      "internship": "Estágio",
+      "donate": "Doar"
+    },
+    "newsMenu": {
+      "featured": "Destaques",
       "events": "Eventos",
-      "give": "Doar"
+      "editorial": "Editorial",
+      "photoNews": "Notícias em fotos",
+      "testimony": "Testemunho"
     }
   },
   "Footer": {

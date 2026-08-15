@@ -13,25 +13,36 @@
     "give": "献金する",
     "toggleNav": "ナビゲーションメニューを切り替え",
     "whoWeAreMenu": {
-      "aboutAM": "AMについて",
-      "missionStatement": "使命声明",
+      "whoWeAre": "私たちについて",
+      "ourMission": "私たちの使命",
       "statementOfFaith": "信仰告白",
-      "ourHistory": "沿革",
-      "leadership": "リーダーシップ",
-      "ourFirstChairman": "初代名誉会長"
+      "history": "沿革",
+      "ourFirstChairmen": "初代名誉会長",
+      "membership": "メンバーシップ",
+      "ourLeadership": "リーダーシップ"
     },
     "whatWeDoMenu": {
-      "bibleStudyProgram": "聖書study プログラム",
+      "pillarsOfMission": "使命の柱",
+      "administration": "運営",
+      "bibleStudyProgram": "聖書研究プログラム",
       "fourSpiritualThemes": "4つの霊的テーマ",
       "amAcademy": "AM Academy",
       "ourMinistries": "私たちの働き"
     },
     "getInvolvedMenu": {
-      "connectGrowLeadSent": "つながる・成長する・導く・遣わされる",
-      "chapterAffiliation": "支部の登録",
-      "ourNetwork": "ネットワーク",
+      "bibleStudies": "聖書研究",
+      "groupActivities": "グループ活動",
+      "volunteer": "ボランティア",
+      "bibleTeacherTraining": "聖書教師トレーニング",
+      "internship": "インターンシップ",
+      "donate": "献金する"
+    },
+    "newsMenu": {
+      "featured": "注目の記事",
       "events": "イベント",
-      "give": "献金する"
+      "editorial": "コラム",
+      "photoNews": "フォトニュース",
+      "testimony": "証し"
     }
   },
   "Footer": {

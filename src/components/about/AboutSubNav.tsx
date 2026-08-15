@@ -6,8 +6,9 @@ export const aboutTabs = [
   { label: "Mission statement", href: "/about/mission" },
   { label: "Statement of faith", href: "/about/statement-of-faith" },
   { label: "History", href: "/about/history" },
-  { label: "Leadership", href: "/about/leadership" },
   { label: "Our First Chairman", href: "/about/chairman" },
+  { label: "Membership", href: "/about/membership" },
+  { label: "Leadership", href: "/about/leadership" },
 ];
 
 export default function AboutSubNav({ active }: { active: string }) {

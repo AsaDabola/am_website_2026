@@ -13,25 +13,36 @@
     "give": "Give",
     "toggleNav": "Toggle navigation menu",
     "whoWeAreMenu": {
-      "aboutAM": "About AM",
-      "missionStatement": "Mission statement",
+      "whoWeAre": "Who we are",
+      "ourMission": "Our mission",
       "statementOfFaith": "Statement of faith",
-      "ourHistory": "Our history",
-      "leadership": "Leadership",
-      "ourFirstChairman": "Our First Chairman"
+      "history": "History",
+      "ourFirstChairmen": "Our First Chairmen",
+      "membership": "Membership",
+      "ourLeadership": "Our leadership"
     },
     "whatWeDoMenu": {
+      "pillarsOfMission": "Our pillars of mission",
+      "administration": "Administration",
       "bibleStudyProgram": "Bible Study Program",
       "fourSpiritualThemes": "Four Spiritual Themes",
       "amAcademy": "AM Academy",
       "ourMinistries": "Our ministries"
     },
     "getInvolvedMenu": {
-      "connectGrowLeadSent": "Connect, Grow, Lead, Sent",
-      "chapterAffiliation": "Chapter affiliation",
-      "ourNetwork": "Our Network",
+      "bibleStudies": "Bible studies",
+      "groupActivities": "Group activities",
+      "volunteer": "Volunteer",
+      "bibleTeacherTraining": "Bible teacher training",
+      "internship": "Internship",
+      "donate": "Donate"
+    },
+    "newsMenu": {
+      "featured": "Featured",
       "events": "Events",
-      "give": "Give"
+      "editorial": "Editorial",
+      "photoNews": "Photo news",
+      "testimony": "Testimony"
     }
   },
   "Footer": {

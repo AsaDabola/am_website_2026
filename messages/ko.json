@@ -13,25 +13,36 @@
     "give": "후원하기",
     "toggleNav": "탐색 메뉴 열기/닫기",
     "whoWeAreMenu": {
-      "aboutAM": "AM 소개",
-      "missionStatement": "사명 선언문",
+      "whoWeAre": "우리는 누구인가",
+      "ourMission": "우리의 사명",
       "statementOfFaith": "신앙고백",
-      "ourHistory": "우리의 역사",
-      "leadership": "리더십",
-      "ourFirstChairman": "초대 명예 회장"
+      "history": "연혁",
+      "ourFirstChairmen": "초대 명예 회장단",
+      "membership": "멤버십",
+      "ourLeadership": "우리의 리더십"
     },
     "whatWeDoMenu": {
+      "pillarsOfMission": "사명의 기둥",
+      "administration": "행정",
       "bibleStudyProgram": "성경공부 프로그램",
       "fourSpiritualThemes": "4가지 영적 주제",
       "amAcademy": "AM Academy",
       "ourMinistries": "우리의 사역"
     },
     "getInvolvedMenu": {
-      "connectGrowLeadSent": "연결, 성장, 리더십, 파송",
-      "chapterAffiliation": "지부 가입",
-      "ourNetwork": "우리의 네트워크",
+      "bibleStudies": "성경공부",
+      "groupActivities": "그룹 활동",
+      "volunteer": "봉사",
+      "bibleTeacherTraining": "성경 교사 훈련",
+      "internship": "인턴십",
+      "donate": "후원하기"
+    },
+    "newsMenu": {
+      "featured": "주요 소식",
       "events": "행사",
-      "give": "후원하기"
+      "editorial": "칼럼",
+      "photoNews": "포토 뉴스",
+      "testimony": "간증"
     }
   },
   "Footer": {
