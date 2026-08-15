@@ -49,6 +49,7 @@ const tracks: Track[] = [
   },
   {
     title: "Phase 3(2) — Basics of Christian Life",
+    image: "/images/bible-study-christian-life.jpg",
     from: "#1449c6",
     to: "#050a2e",
     description:
@@ -56,6 +57,7 @@ const tracks: Track[] = [
   },
   {
     title: "Phase 4 — Only Jesus",
+    image: "/images/bible-study-only-jesus.jpg",
     from: "#2a5eec",
     to: "#0d1f52",
     description:
@@ -63,6 +65,7 @@ const tracks: Track[] = [
   },
   {
     title: "Discipleship Track",
+    image: "/images/bible-study-discipleship-track.jpg",
     from: "#0d1f52",
     to: "#050a2e",
     description:

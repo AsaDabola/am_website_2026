@@ -16,7 +16,7 @@ export default function AboutHero({
   return (
     <section className="relative overflow-hidden bg-night">
       <Image
-        src="/images/about-hero-banner.png"
+        src="/images/about-hero-banner.jpg"
         alt=""
         fill
         className="object-cover opacity-80"
