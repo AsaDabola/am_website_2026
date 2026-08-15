@@ -1,0 +1,64 @@
+import type { CollectionConfig } from "payload";
+import { lexicalEditor } from "@payloadcms/richtext-lexical";
+
+// Editor-managed pages. Leaving `tenant` empty makes a page part of the main
+// amintl.org site; setting it scopes the page to one country site instead
+// (rendered at /{continent}/{tenant.slug}/{slug}, or the tenant's home page
+// when `isHome` is checked and slug is empty). The existing hardcoded routes
+// (/about, /bible-study, etc.) keep working — Next.js only falls through to
+// this collection for paths that don't match a real route file.
+export const Pages: CollectionConfig = {
+  slug: "pages",
+  admin: {
+    useAsTitle: "title",
+    defaultColumns: ["title", "slug", "tenant", "published"],
+    description:
+      "Add, edit, or remove pages without a code deploy. Pages with no tenant belong to the main amintl.org site.",
+  },
+  access: {
+    read: () => true,
+  },
+  fields: [
+    { name: "title", type: "text", required: true },
+    {
+      name: "slug",
+      type: "text",
+      required: true,
+      admin: {
+        description:
+          "URL path segment(s), e.g. \"our-story\" or \"programs/summer-camp\". Leave empty only for a tenant's home page.",
+      },
+    },
+    {
+      name: "tenant",
+      type: "relationship",
+      relationTo: "tenants",
+      admin: { description: "Leave empty for a page on the main amintl.org site." },
+    },
+    { name: "isHome", type: "checkbox", defaultValue: false, admin: { description: "This is the tenant's home page (served at /{continent}/{country})." } },
+    { name: "published", type: "checkbox", defaultValue: true },
+    {
+      name: "navLabel",
+      type: "text",
+      admin: { description: "Label to show in site navigation. Leave empty to keep this page out of the nav." },
+    },
+    {
+      name: "hero",
+      type: "group",
+      fields: [
+        { name: "heading", type: "text" },
+        { name: "subheading", type: "text" },
+        { name: "image", type: "upload", relationTo: "media" },
+      ],
+    },
+    { name: "body", type: "richText", editor: lexicalEditor() },
+    {
+      name: "meta",
+      type: "group",
+      fields: [
+        { name: "title", type: "text" },
+        { name: "description", type: "textarea" },
+      ],
+    },
+  ],
+};

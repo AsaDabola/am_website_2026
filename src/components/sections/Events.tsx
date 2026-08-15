@@ -3,6 +3,7 @@ import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import { fetchCollectionSafely } from "@/lib/getPayloadSafely";
+import { tenantContentWhere } from "@/lib/tenantContentWhere";
 
 type EventItem = { date: string; title: string };
 
@@ -15,7 +16,7 @@ async function getDefaultEvents(): Promise<EventItem[]> {
   ];
 }
 
-async function getEvents(): Promise<EventItem[]> {
+async function getEvents(tenantId?: string): Promise<EventItem[]> {
   const defaultEvents = await getDefaultEvents();
 
   const docs = await fetchCollectionSafely(async (payload) => {
@@ -23,6 +24,7 @@ async function getEvents(): Promise<EventItem[]> {
       collection: "events",
       sort: "startDate",
       limit: 3,
+      where: tenantContentWhere(tenantId),
     });
     return result.docs;
   });
@@ -31,8 +33,8 @@ async function getEvents(): Promise<EventItem[]> {
   return docs.map((doc) => ({ date: doc.dateLabel, title: doc.title }));
 }
 
-export default async function Events() {
-  const [events, t] = await Promise.all([getEvents(), getTranslations("Home.Events")]);
+export default async function Events({ tenantId }: { tenantId?: string } = {}) {
+  const [events, t] = await Promise.all([getEvents(tenantId), getTranslations("Home.Events")]);
 
   return (
     <section className="bg-white py-24">

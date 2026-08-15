@@ -5,6 +5,7 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import { PlayIcon } from "@/components/ui/icons";
 import { fetchCollectionSafely } from "@/lib/getPayloadSafely";
+import { tenantContentWhere } from "@/lib/tenantContentWhere";
 
 type PostItem = { title: string; date: string };
 
@@ -18,7 +19,7 @@ async function getDefaultPosts(): Promise<PostItem[]> {
   ];
 }
 
-async function getPosts(): Promise<PostItem[]> {
+async function getPosts(tenantId?: string): Promise<PostItem[]> {
   const [defaultPosts, locale] = await Promise.all([getDefaultPosts(), getLocale()]);
 
   const docs = await fetchCollectionSafely(async (payload) => {
@@ -26,6 +27,7 @@ async function getPosts(): Promise<PostItem[]> {
       collection: "posts",
       sort: "-publishedDate",
       limit: 4,
+      where: tenantContentWhere(tenantId),
     });
     return result.docs;
   });
@@ -44,9 +46,9 @@ async function getPosts(): Promise<PostItem[]> {
   }));
 }
 
-export default async function Media() {
+export default async function Media({ tenantId }: { tenantId?: string } = {}) {
   const [posts, t, tMinistries] = await Promise.all([
-    getPosts(),
+    getPosts(tenantId),
     getTranslations("Home.Media"),
     getTranslations("Home.Ministries"),
   ]);

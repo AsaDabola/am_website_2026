@@ -8,6 +8,7 @@ import { routing } from "@/i18n/routing";
 import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import CountrySuggestionBanner from "@/components/layout/CountrySuggestionBanner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -54,6 +55,7 @@ export default async function RootLayout({
         <NextIntlClientProvider>
           <AnnouncementBar />
           <Header />
+          <CountrySuggestionBanner />
           <main className="flex-1">{children}</main>
           <Footer />
         </NextIntlClientProvider>

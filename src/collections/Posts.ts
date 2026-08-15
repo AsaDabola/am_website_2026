@@ -1,10 +1,11 @@
 import type { CollectionConfig } from "payload";
+import { syndicationFields } from "./fields/syndication";
 
 export const Posts: CollectionConfig = {
   slug: "posts",
   admin: {
     useAsTitle: "title",
-    defaultColumns: ["title", "publishedDate"],
+    defaultColumns: ["title", "publishedDate", "tenant"],
   },
   access: {
     read: () => true,
@@ -29,6 +30,7 @@ export const Posts: CollectionConfig = {
       name: "excerpt",
       type: "textarea",
     },
+    ...syndicationFields,
   ],
   defaultSort: "-publishedDate",
 };

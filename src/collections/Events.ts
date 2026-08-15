@@ -1,10 +1,11 @@
 import type { CollectionConfig } from "payload";
+import { syndicationFields } from "./fields/syndication";
 
 export const Events: CollectionConfig = {
   slug: "events",
   admin: {
     useAsTitle: "title",
-    defaultColumns: ["title", "dateLabel", "startDate"],
+    defaultColumns: ["title", "dateLabel", "startDate", "tenant"],
   },
   access: {
     read: () => true,
@@ -31,6 +32,7 @@ export const Events: CollectionConfig = {
         description: "Used for sorting events chronologically.",
       },
     },
+    ...syndicationFields,
   ],
   defaultSort: "startDate",
 };

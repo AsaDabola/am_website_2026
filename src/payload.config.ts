@@ -14,6 +14,8 @@ import { Posts } from "./collections/Posts";
 import { Ministries } from "./collections/Ministries";
 import { BibleStudySignups } from "./collections/BibleStudySignups";
 import { VolunteerApplications } from "./collections/VolunteerApplications";
+import { Tenants } from "./collections/Tenants";
+import { Pages } from "./collections/Pages";
 import { getDatabaseUri } from "./lib/getDatabaseUri";
 
 const filename = fileURLToPath(import.meta.url);
@@ -33,6 +35,8 @@ export default buildConfig({
     Ministries,
     BibleStudySignups,
     VolunteerApplications,
+    Tenants,
+    Pages,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
