@@ -13,11 +13,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // drizzle-kit is dynamically require()'d by pushDevSchema (used by the
-  // temporary /api/dev-push-schema route); Turbopack mangles that dynamic
-  // require when bundled, so leave it external and let the runtime
-  // require it directly from node_modules instead.
-  serverExternalPackages: ["drizzle-kit"],
+  // drizzle-kit is dynamically require()'d (via createRequire) inside
+  // @payloadcms/drizzle's requireDrizzleKit.js, used by the temporary
+  // /api/dev-push-schema route. Turbopack rewrites that require() call
+  // whenever the *calling* module (@payloadcms/drizzle) is bundled, even
+  // though the require target itself is external — producing a mangled
+  // "drizzle-kit-<hash>/api" specifier that doesn't exist. Externalizing
+  // drizzle-kit alone isn't enough; @payloadcms/drizzle must be left
+  // unbundled too so that file's require() call reaches Node untouched.
+  serverExternalPackages: ["drizzle-kit", "@payloadcms/drizzle"],
 };
 
 export default withPayload(withNextIntl(nextConfig));
