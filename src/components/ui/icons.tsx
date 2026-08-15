@@ -142,3 +142,28 @@ export function HeartIcon({ className = "size-8" }: IconProps) {
     </svg>
   );
 }
+
+export function MonitorIcon({ className = "size-8" }: IconProps) {
+  return (
+    <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden="true">
+      <rect x="4" y="6" width="24" height="16" rx="1.8" stroke="currentColor" strokeWidth={1.7} />
+      <path d="M11 26.5h10M16 22v4.5" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function PaletteIcon({ className = "size-8" }: IconProps) {
+  return (
+    <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M16 5.5c-6.9 0-11.5 5-11.5 10.9 0 5 3.4 8.1 7 8.1 1.3 0 1.9-.8 1.9-1.7 0-.7-.4-1.1-.7-1.6-.3-.4-.6-.9-.6-1.6 0-1.3 1-2.3 2.5-2.3h2.4c3.7 0 6.5-2.5 6.5-6.3 0-3.1-2.7-5.5-7.5-5.5Z"
+        stroke="currentColor"
+        strokeWidth={1.7}
+        strokeLinejoin="round"
+      />
+      <circle cx="10.5" cy="14" r="1.4" fill="currentColor" />
+      <circle cx="14.5" cy="10" r="1.4" fill="currentColor" />
+      <circle cx="19.5" cy="11.5" r="1.4" fill="currentColor" />
+    </svg>
+  );
+}
