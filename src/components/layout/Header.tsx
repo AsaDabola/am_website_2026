@@ -15,6 +15,7 @@ export default function Header() {
   const dropdowns = [
     {
       label: t("whoWeAre"),
+      columns: 2,
       links: [
         { label: t("whoWeAreMenu.whoWeAre"), href: "/about" },
         { label: t("whoWeAreMenu.ourMission"), href: "/about/mission" },
@@ -23,11 +24,6 @@ export default function Header() {
         { label: t("whoWeAreMenu.ourFirstChairmen"), href: "/about/chairman" },
         { label: t("whoWeAreMenu.membership"), href: "/about/membership" },
         { label: t("whoWeAreMenu.ourLeadership"), href: "/about/leadership" },
-      ],
-    },
-    {
-      label: t("whatWeDo"),
-      links: [
         { label: t("whatWeDoMenu.pillarsOfMission"), href: "/what-we-do/pillars-of-mission" },
         { label: t("whatWeDoMenu.administration"), href: "/what-we-do/administration" },
         { label: t("whatWeDoMenu.bibleStudyProgram"), href: "/bible-study" },
@@ -37,7 +33,8 @@ export default function Header() {
       ],
     },
     {
-      label: t("getInvolved"),
+      label: t("connect"),
+      columns: 1,
       links: [
         { label: t("getInvolvedMenu.bibleStudies"), href: "/bible-study" },
         { label: t("getInvolvedMenu.groupActivities"), href: "/get-involved/group-activities" },
@@ -45,10 +42,12 @@ export default function Header() {
         { label: t("getInvolvedMenu.bibleTeacherTraining"), href: "/get-involved/bible-teacher-training" },
         { label: t("getInvolvedMenu.internship"), href: "/get-involved" },
         { label: t("getInvolvedMenu.donate"), href: "/give" },
+        { label: t("contactUs"), href: "/contact" },
       ],
     },
     {
       label: t("news"),
+      columns: 1,
       links: [
         { label: t("newsMenu.featured"), href: "/news" },
         { label: t("newsMenu.events"), href: "/events" },
@@ -59,10 +58,7 @@ export default function Header() {
     },
   ];
 
-  const plainLinks = [
-    { label: t("ourNetwork"), href: "/network" },
-    { label: t("contactUs"), href: "/contact" },
-  ];
+  const plainLinks = [{ label: t("ourNetwork"), href: "/network" }];
 
   return (
     <header className="sticky top-0 z-40 bg-brand-blue/95 backdrop-blur-[7px]">
@@ -77,7 +73,13 @@ export default function Header() {
                 <ChevronDownIcon className="size-2.5 text-white/80" />
               </button>
               <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-opacity group-hover:visible group-hover:opacity-100">
-                <ul className="w-56 rounded-xl border border-black/5 bg-white p-2 shadow-xl">
+                <ul
+                  className={
+                    item.columns === 2
+                      ? "grid w-[28rem] grid-cols-2 gap-x-2 rounded-xl border border-black/5 bg-white p-2 shadow-xl"
+                      : "w-56 rounded-xl border border-black/5 bg-white p-2 shadow-xl"
+                  }
+                >
                   {item.links.map((link) => (
                     <li key={link.label}>
                       <Link
