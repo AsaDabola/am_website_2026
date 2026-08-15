@@ -12,6 +12,7 @@ import { Campuses } from "./collections/Campuses";
 import { Events } from "./collections/Events";
 import { Posts } from "./collections/Posts";
 import { Ministries } from "./collections/Ministries";
+import { BibleStudySignups } from "./collections/BibleStudySignups";
 import { getDatabaseUri } from "./lib/getDatabaseUri";
 
 const filename = fileURLToPath(import.meta.url);
@@ -22,7 +23,7 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Users, Media, Campuses, Events, Posts, Ministries],
+  collections: [Users, Media, Campuses, Events, Posts, Ministries, BibleStudySignups],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   sharp,
