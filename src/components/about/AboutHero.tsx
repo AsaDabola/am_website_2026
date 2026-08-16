@@ -8,15 +8,17 @@ export default function AboutHero({
   crumbs,
   title,
   subtitle,
+  backgroundImage = "/images/about-hero-banner.jpg",
 }: {
   crumbs: Crumb[];
   title: string;
   subtitle: string;
+  backgroundImage?: string;
 }) {
   return (
     <section className="relative overflow-hidden bg-night">
       <Image
-        src="/images/about-hero-banner.jpg"
+        src={backgroundImage}
         alt=""
         fill
         className="object-cover opacity-80"
