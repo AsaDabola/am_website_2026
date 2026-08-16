@@ -21,7 +21,7 @@ export default async function PartnerWithUs({ data }: { data?: PartnerWithUsData
         </div>
 
         <div className="flex shrink-0 flex-wrap gap-4">
-          <Button href="/give" variant="solid">
+          <Button href="/get-involved/donate" variant="solid">
             {data?.giveTodayLabel ?? t("giveToday")}
           </Button>
           <Button href="/contact" variant="outlineBlue" icon={false}>

@@ -41,7 +41,7 @@ export default async function Footer() {
         { label: t("chapterAffiliation"), href: "/get-involved/chapter-affiliation" },
         { label: t("ourNetwork"), href: "/network" },
         { label: t("events"), href: "/events" },
-        { label: t("give"), href: "/give" },
+        { label: t("give"), href: "/get-involved/donate" },
       ],
     },
     {
@@ -114,7 +114,7 @@ export default async function Footer() {
             <Link href="/contact" className="hover:text-on-dark/80">
               {t("contact")}
             </Link>
-            <Link href="/give" className="hover:text-on-dark/80">
+            <Link href="/get-involved/donate" className="hover:text-on-dark/80">
               {t("give")}
             </Link>
           </div>

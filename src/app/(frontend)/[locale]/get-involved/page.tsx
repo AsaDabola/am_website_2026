@@ -11,6 +11,7 @@ import {
   HeartIcon,
 } from "@/components/ui/icons";
 import AboutHero from "@/components/about/AboutHero";
+import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
 import VolunteerApplicationForm from "@/components/get-involved/VolunteerApplicationForm";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
@@ -52,7 +53,7 @@ const categories = [
   {
     title: "Your Gift",
     Icon: HeartIcon,
-    href: "/give",
+    href: "/get-involved/donate",
     description: "Give financially to fuel Bible study, training, and sending students out.",
   },
 ];
@@ -65,6 +66,7 @@ export default function GetInvolvedPage() {
         title="Get Involved"
         subtitle="An interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord."
       />
+      <GetInvolvedSubNav active="/get-involved" />
 
       <section className="bg-mist py-20">
         <Container className="max-w-[900px] text-center">

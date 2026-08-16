@@ -40,8 +40,8 @@ export default function Header() {
         { label: t("getInvolvedMenu.groupActivities"), href: "/get-involved/group-activities" },
         { label: t("getInvolvedMenu.volunteer"), href: "/get-involved" },
         { label: t("getInvolvedMenu.bibleTeacherTraining"), href: "/get-involved/bible-teacher-training" },
-        { label: t("getInvolvedMenu.internship"), href: "/get-involved" },
-        { label: t("getInvolvedMenu.donate"), href: "/give" },
+        { label: t("getInvolvedMenu.internship"), href: "/get-involved/internship" },
+        { label: t("getInvolvedMenu.donate"), href: "/get-involved/donate" },
         { label: t("contactUs"), href: "/contact" },
       ],
     },
@@ -108,7 +108,7 @@ export default function Header() {
         <div className="flex items-center gap-1">
           <LanguageSwitcher />
           <Link
-            href="/give"
+            href="/get-involved/donate"
             className="ml-2 hidden rounded-full bg-brand-navy px-6 py-3 text-sm font-semibold uppercase tracking-[0.04em] text-white hover:bg-brand-navy-light sm:inline-flex"
           >
             {t("give")}
@@ -160,7 +160,7 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="/give"
+              href="/get-involved/donate"
               className="mt-2 inline-flex w-fit rounded-full bg-brand-navy px-6 py-3 text-sm font-semibold uppercase tracking-[0.04em] text-white"
             >
               {t("give")}

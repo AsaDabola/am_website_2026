@@ -17,6 +17,7 @@ import { VolunteerApplications } from "./collections/VolunteerApplications";
 import { Tenants } from "./collections/Tenants";
 import { Pages } from "./collections/Pages";
 import { ContactMessages } from "./collections/ContactMessages";
+import { DonationIntents } from "./collections/DonationIntents";
 import { getDatabaseUri } from "./lib/getDatabaseUri";
 
 const filename = fileURLToPath(import.meta.url);
@@ -39,6 +40,7 @@ export default buildConfig({
     Tenants,
     Pages,
     ContactMessages,
+    DonationIntents,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
