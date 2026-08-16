@@ -2,14 +2,17 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import type { NewsletterData } from "@/lib/homeBlockTypes";
+import { mediaUrl } from "@/lib/homeBlockTypes";
 
-export default async function Newsletter() {
+export default async function Newsletter({ data }: { data?: NewsletterData } = {}) {
   const t = await getTranslations("Home.Newsletter");
+  const backgroundImage = mediaUrl(data?.backgroundImage) ?? "/images/bible-study-collage.jpg";
 
   return (
     <section className="relative min-h-[195px] overflow-hidden">
       <Image
-        src="/images/bible-study-collage.jpg"
+        src={backgroundImage}
         alt=""
         fill
         className="object-cover"
@@ -20,14 +23,14 @@ export default async function Newsletter() {
       <Container className="relative flex min-h-[195px] flex-col items-start justify-center gap-4 py-10 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h2 className="font-display text-xl font-bold text-white">
-            {t("heading")}
+            {data?.heading ?? t("heading")}
           </h2>
           <p className="mt-1 max-w-lg text-sm text-white/75">
-            {t("description")}
+            {data?.description ?? t("description")}
           </p>
         </div>
         <Button href="https://www.amacademy.org" variant="solidNavy" className="shrink-0">
-          {t("cta")}
+          {data?.ctaLabel ?? t("cta")}
         </Button>
       </Container>
     </section>

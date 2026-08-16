@@ -4,25 +4,33 @@ import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import { ArrowRightIcon } from "@/components/ui/icons";
+import type { GetInvolvedData } from "@/lib/homeBlockTypes";
+import { mediaUrl } from "@/lib/homeBlockTypes";
 
-export default async function GetInvolved() {
+export default async function GetInvolved({ data }: { data?: GetInvolvedData } = {}) {
   const t = await getTranslations("Home.GetInvolved");
 
-  const cards = [
-    { title: t("bibleStudies"), href: "/bible-study", image: "/images/get-involved-bible-studies.png" },
-    { title: t("volunteer"), href: "/get-involved", image: "/images/get-involved-volunteer.png" },
-    { title: t("internship"), href: "/get-involved", image: "/images/get-involved-internship.png" },
-  ];
+  const cards = data?.cards?.length
+    ? data.cards.map((card) => ({
+        title: card.title ?? "",
+        href: card.href ?? "/get-involved",
+        image: mediaUrl(card.image) ?? "/images/get-involved-volunteer.png",
+      }))
+    : [
+        { title: t("bibleStudies"), href: "/bible-study", image: "/images/get-involved-bible-studies.png" },
+        { title: t("volunteer"), href: "/get-involved", image: "/images/get-involved-volunteer.png" },
+        { title: t("internship"), href: "/get-involved", image: "/images/get-involved-internship.png" },
+      ];
 
   return (
     <section className="bg-white py-24">
       <Container>
         <div className="text-center">
           <div className="flex justify-center">
-            <Eyebrow>{t("eyebrow")}</Eyebrow>
+            <Eyebrow>{data?.eyebrow ?? t("eyebrow")}</Eyebrow>
           </div>
           <h2 className="font-display text-4xl font-semibold tracking-[-0.02em] text-ink sm:text-5xl">
-            {t("heading")}
+            {data?.heading ?? t("heading")}
           </h2>
         </div>
 

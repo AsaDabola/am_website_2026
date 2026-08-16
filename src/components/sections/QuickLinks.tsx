@@ -1,37 +1,47 @@
 import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
+import { Link } from "@/i18n/navigation";
 import { BookIcon, HeartIcon, PeopleIcon, PinIcon } from "@/components/ui/icons";
+import type { QuickLinksData } from "@/lib/homeBlockTypes";
 
-export default async function QuickLinks() {
+const iconMap = { book: BookIcon, pin: PinIcon, people: PeopleIcon, heart: HeartIcon };
+
+export default async function QuickLinks({ data }: { data?: QuickLinksData } = {}) {
   const t = await getTranslations("Home.QuickLinks");
 
-  const links = [
-    {
-      title: t("joinBibleStudyTitle"),
-      description: t("joinBibleStudyDescription"),
-      href: "/bible-study",
-      Icon: BookIcon,
-    },
-    {
-      title: t("findCampusTitle"),
-      description: t("findCampusDescription"),
-      href: "/network",
-      Icon: PinIcon,
-    },
-    {
-      title: t("getInvolvedTitle"),
-      description: t("getInvolvedDescription"),
-      href: "/get-involved",
-      Icon: PeopleIcon,
-    },
-    {
-      title: t("supportTitle"),
-      description: t("supportDescription"),
-      href: "/give",
-      Icon: HeartIcon,
-    },
-  ];
+  const links = data?.links?.length
+    ? data.links.map((link) => ({
+        title: link.title ?? "",
+        description: link.description ?? "",
+        href: link.href ?? "#",
+        Icon: iconMap[link.icon ?? "book"],
+      }))
+    : [
+        {
+          title: t("joinBibleStudyTitle"),
+          description: t("joinBibleStudyDescription"),
+          href: "/bible-study",
+          Icon: BookIcon,
+        },
+        {
+          title: t("findCampusTitle"),
+          description: t("findCampusDescription"),
+          href: "/network",
+          Icon: PinIcon,
+        },
+        {
+          title: t("getInvolvedTitle"),
+          description: t("getInvolvedDescription"),
+          href: "/get-involved",
+          Icon: PeopleIcon,
+        },
+        {
+          title: t("supportTitle"),
+          description: t("supportDescription"),
+          href: "/give",
+          Icon: HeartIcon,
+        },
+      ];
 
   return (
     <section className="bg-white py-8">

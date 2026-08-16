@@ -2,29 +2,30 @@ import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
+import type { PartnerWithUsData } from "@/lib/homeBlockTypes";
 
-export default async function PartnerWithUs() {
+export default async function PartnerWithUs({ data }: { data?: PartnerWithUsData } = {}) {
   const t = await getTranslations("Home.PartnerWithUs");
 
   return (
     <section className="bg-gradient-to-br from-mist to-[#dbe6f9] py-24">
       <Container className="flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
         <div>
-          <Eyebrow>{t("eyebrow")}</Eyebrow>
+          <Eyebrow>{data?.eyebrow ?? t("eyebrow")}</Eyebrow>
           <h2 className="max-w-lg font-display text-4xl font-semibold tracking-[-0.02em] text-ink sm:text-5xl">
-            {t("heading")}
+            {data?.heading ?? t("heading")}
           </h2>
           <p className="mt-4 max-w-md text-base leading-relaxed text-ink-muted">
-            {t("description")}
+            {data?.description ?? t("description")}
           </p>
         </div>
 
         <div className="flex shrink-0 flex-wrap gap-4">
           <Button href="/give" variant="solid">
-            {t("giveToday")}
+            {data?.giveTodayLabel ?? t("giveToday")}
           </Button>
           <Button href="/contact" variant="outlineBlue" icon={false}>
-            {t("talkToUs")}
+            {data?.talkToUsLabel ?? t("talkToUs")}
           </Button>
         </div>
       </Container>

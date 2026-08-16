@@ -4,6 +4,7 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import CampusSearch from "@/components/sections/CampusSearch";
 import { fetchCollectionSafely } from "@/lib/getPayloadSafely";
+import type { OurNetworkData } from "@/lib/homeBlockTypes";
 
 type Campus = { name: string; location: string };
 
@@ -38,7 +39,7 @@ async function getCampuses(): Promise<Campus[]> {
   return docs.map((doc) => ({ name: doc.name, location: doc.location }));
 }
 
-export default async function OurNetwork() {
+export default async function OurNetwork({ data }: { data?: OurNetworkData } = {}) {
   const [campuses, t] = await Promise.all([getCampuses(), getTranslations("Home.OurNetwork")]);
 
   return (
@@ -48,22 +49,22 @@ export default async function OurNetwork() {
     >
       <Container className="grid gap-12 lg:grid-cols-2 lg:gap-20">
         <div className="lg:pt-2">
-          <Eyebrow tone="light">{t("eyebrow")}</Eyebrow>
+          <Eyebrow tone="light">{data?.eyebrow ?? t("eyebrow")}</Eyebrow>
           <h2 className="font-display text-4xl font-semibold tracking-[-0.02em] text-white sm:text-5xl">
-            {t("heading")}
+            {data?.heading ?? t("heading")}
           </h2>
           <p className="mt-6 max-w-md text-base leading-relaxed text-white/75">
-            {t("description")}
+            {data?.description ?? t("description")}
           </p>
           <Button href="/get-involved/chapter-affiliation" variant="outlineLight" className="mt-9">
-            {t("startChapter")}
+            {data?.startChapterLabel ?? t("startChapter")}
           </Button>
         </div>
 
         <CampusSearch
           campuses={campuses}
-          searchPlaceholder={t("searchPlaceholder")}
-          noMatchesLabel={t("noMatches")}
+          searchPlaceholder={data?.searchPlaceholder ?? t("searchPlaceholder")}
+          noMatchesLabel={data?.noMatchesLabel ?? t("noMatches")}
         />
       </Container>
     </section>

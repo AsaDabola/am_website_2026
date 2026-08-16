@@ -13,6 +13,8 @@ export type PageDoc = {
   } | null;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   body?: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  sections?: any[];
 };
 
 /**

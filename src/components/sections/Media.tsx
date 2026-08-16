@@ -6,6 +6,7 @@ import Button from "@/components/ui/Button";
 import { PlayIcon } from "@/components/ui/icons";
 import { fetchCollectionSafely } from "@/lib/getPayloadSafely";
 import { tenantContentWhere } from "@/lib/tenantContentWhere";
+import type { MediaSectionData } from "@/lib/homeBlockTypes";
 
 type PostItem = { title: string; date: string };
 
@@ -46,7 +47,10 @@ async function getPosts(tenantId?: string): Promise<PostItem[]> {
   }));
 }
 
-export default async function Media({ tenantId }: { tenantId?: string } = {}) {
+export default async function Media({
+  tenantId,
+  data,
+}: { tenantId?: string; data?: MediaSectionData } = {}) {
   const [posts, t, tMinistries] = await Promise.all([
     getPosts(tenantId),
     getTranslations("Home.Media"),
@@ -68,20 +72,20 @@ export default async function Media({ tenantId }: { tenantId?: string } = {}) {
       <Container className="relative">
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-start">
           <div>
-            <Eyebrow tone="light">{t("eyebrow")}</Eyebrow>
+            <Eyebrow tone="light">{data?.eyebrow ?? t("eyebrow")}</Eyebrow>
             <h2 className="max-w-md font-display text-4xl font-semibold tracking-[-0.02em] text-white sm:text-5xl">
-              {t("heading")}
+              {data?.heading ?? t("heading")}
             </h2>
           </div>
           <Button href="/news" variant="ghostLight" className="shrink-0">
-            {t("moreContents")}
+            {data?.moreContentsLabel ?? t("moreContents")}
           </Button>
         </div>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
           <button
             type="button"
-            aria-label={t("playVideo")}
+            aria-label={data?.playVideoLabel ?? t("playVideo")}
             className="group relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-2xl"
             style={{ backgroundImage: "linear-gradient(160deg, #10245e, #050a2e)" }}
           >

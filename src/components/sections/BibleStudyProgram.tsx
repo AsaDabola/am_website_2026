@@ -3,16 +3,19 @@ import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
+import type { BibleStudyProgramData } from "@/lib/homeBlockTypes";
+import { mediaUrl } from "@/lib/homeBlockTypes";
 
-export default async function BibleStudyProgram() {
+export default async function BibleStudyProgram({ data }: { data?: BibleStudyProgramData } = {}) {
   const t = await getTranslations("Home.BibleStudyProgram");
+  const image = mediaUrl(data?.image) ?? "/images/bible-study-group.png";
 
   return (
     <section className="bg-mist py-24">
       <Container className="grid items-center gap-12 lg:grid-cols-[416px_1fr] lg:gap-20">
         <div className="relative aspect-[416/520] w-full overflow-hidden rounded-[18px] shadow-[0px_10px_30px_0px_rgba(27,29,52,0.12)]">
           <Image
-            src="/images/bible-study-group.png"
+            src={image}
             alt=""
             fill
             className="object-cover"
@@ -21,15 +24,15 @@ export default async function BibleStudyProgram() {
         </div>
 
         <div>
-          <Eyebrow>{t("eyebrow")}</Eyebrow>
+          <Eyebrow>{data?.eyebrow ?? t("eyebrow")}</Eyebrow>
           <h2 className="font-display text-4xl font-semibold tracking-[-0.02em] text-ink sm:text-5xl">
-            {t("heading")}
+            {data?.heading ?? t("heading")}
           </h2>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted">
-            {t("description")}
+            {data?.description ?? t("description")}
           </p>
           <Button href="/bible-study" variant="solid" className="mt-9">
-            {t("cta")}
+            {data?.ctaLabel ?? t("cta")}
           </Button>
         </div>
       </Container>

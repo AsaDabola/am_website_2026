@@ -1,5 +1,6 @@
 import type { CollectionConfig } from "payload";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { homeBlocks } from "./blocks/homeBlocks";
 
 // Editor-managed pages. Leaving `tenant` empty makes a page part of the main
 // amintl.org site; setting it scopes the page to one country site instead
@@ -35,7 +36,15 @@ export const Pages: CollectionConfig = {
       relationTo: "tenants",
       admin: { description: "Leave empty for a page on the main amintl.org site." },
     },
-    { name: "isHome", type: "checkbox", defaultValue: false, admin: { description: "This is the tenant's home page (served at /{continent}/{country})." } },
+    {
+      name: "isHome",
+      type: "checkbox",
+      defaultValue: false,
+      admin: {
+        description:
+          "This is the home page — served at / for the main site, or /{continent}/{country} for a tenant.",
+      },
+    },
     { name: "published", type: "checkbox", defaultValue: true },
     {
       name: "navLabel",
@@ -52,6 +61,15 @@ export const Pages: CollectionConfig = {
       ],
     },
     { name: "body", type: "richText", editor: lexicalEditor() },
+    {
+      name: "sections",
+      type: "blocks",
+      blocks: homeBlocks,
+      admin: {
+        description:
+          "Homepage-style content sections (used instead of the simple hero/body above — mainly for a site's home page).",
+      },
+    },
     {
       name: "meta",
       type: "group",

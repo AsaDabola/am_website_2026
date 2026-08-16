@@ -4,6 +4,7 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import { fetchCollectionSafely } from "@/lib/getPayloadSafely";
 import { tenantContentWhere } from "@/lib/tenantContentWhere";
+import type { EventsData } from "@/lib/homeBlockTypes";
 
 type EventItem = { date: string; title: string };
 
@@ -33,7 +34,10 @@ async function getEvents(tenantId?: string): Promise<EventItem[]> {
   return docs.map((doc) => ({ date: doc.dateLabel, title: doc.title }));
 }
 
-export default async function Events({ tenantId }: { tenantId?: string } = {}) {
+export default async function Events({
+  tenantId,
+  data,
+}: { tenantId?: string; data?: EventsData } = {}) {
   const [events, t] = await Promise.all([getEvents(tenantId), getTranslations("Home.Events")]);
 
   return (
@@ -41,13 +45,13 @@ export default async function Events({ tenantId }: { tenantId?: string } = {}) {
       <Container>
         <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
           <div>
-            <Eyebrow>{t("eyebrow")}</Eyebrow>
+            <Eyebrow>{data?.eyebrow ?? t("eyebrow")}</Eyebrow>
             <h2 className="font-display text-4xl font-semibold tracking-[-0.02em] text-ink sm:text-5xl">
-              {t("heading")}
+              {data?.heading ?? t("heading")}
             </h2>
           </div>
           <Button href="/events" variant="ghostDark" className="shrink-0">
-            {t("allEvents")}
+            {data?.allEventsLabel ?? t("allEvents")}
           </Button>
         </div>
 

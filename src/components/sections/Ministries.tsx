@@ -5,6 +5,8 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import PlaceholderPhoto from "@/components/ui/PlaceholderPhoto";
 import { fetchCollectionSafely } from "@/lib/getPayloadSafely";
+import type { MinistriesData } from "@/lib/homeBlockTypes";
+import { mediaUrl } from "@/lib/homeBlockTypes";
 
 type Step = {
   tag: string;
@@ -57,8 +59,23 @@ async function getDefaultSteps(): Promise<Step[]> {
   ];
 }
 
-async function getSteps(): Promise<Step[]> {
+async function getSteps(data?: MinistriesData): Promise<Step[]> {
   const defaultSteps = await getDefaultSteps();
+
+  if (data?.steps?.length) {
+    return data.steps.map((step, index) => {
+      const fallback = defaultSteps[index % defaultSteps.length];
+      return {
+        tag: step.tag ?? fallback.tag,
+        title: step.title ?? fallback.title,
+        description: step.description ?? fallback.description,
+        href: step.href ?? fallback.href,
+        from: fallback.from,
+        to: fallback.to,
+        imageUrl: mediaUrl(step.image) ?? fallback.imageUrl,
+      };
+    });
+  }
 
   const docs = await fetchCollectionSafely(async (payload) => {
     const result = await payload.find({
@@ -89,21 +106,21 @@ async function getSteps(): Promise<Step[]> {
   });
 }
 
-export default async function Ministries() {
-  const [steps, t] = await Promise.all([getSteps(), getTranslations("Home.Ministries")]);
+export default async function Ministries({ data }: { data?: MinistriesData } = {}) {
+  const [steps, t] = await Promise.all([getSteps(data), getTranslations("Home.Ministries")]);
 
   return (
     <section className="bg-white py-24">
       <Container>
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div>
-            <Eyebrow>{t("eyebrow")}</Eyebrow>
+            <Eyebrow>{data?.eyebrow ?? t("eyebrow")}</Eyebrow>
             <h2 className="max-w-xl font-display text-4xl font-semibold tracking-[-0.02em] text-ink sm:text-5xl">
-              {t("heading")}
+              {data?.heading ?? t("heading")}
             </h2>
           </div>
           <Button href="/get-involved" variant="ghostDark" className="shrink-0">
-            {t("getInvolved")}
+            {data?.getInvolvedLabel ?? t("getInvolved")}
           </Button>
         </div>
 
