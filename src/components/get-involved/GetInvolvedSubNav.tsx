@@ -5,7 +5,7 @@ export const getInvolvedTabs = [
   { label: "Thursday Bible Study", href: "/what-we-do/pillars-of-mission" },
   { label: "Bible Studies", href: "/bible-study" },
   { label: "Group Activities", href: "/get-involved/group-activities" },
-  { label: "Volunteer", href: "/get-involved" },
+  { label: "Volunteer", href: "/get-involved/volunteer" },
   { label: "Chapter Staff", href: "/get-involved/chapter-staff" },
   { label: "Bible Teacher Training", href: "/get-involved/bible-teacher-training" },
   { label: "Internship", href: "/get-involved/internship" },

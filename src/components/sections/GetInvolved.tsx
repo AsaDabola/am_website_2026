@@ -18,8 +18,8 @@ export default async function GetInvolved({ data }: { data?: GetInvolvedData } =
       }))
     : [
         { title: t("bibleStudies"), href: "/bible-study", image: "/images/get-involved-bible-studies.png" },
-        { title: t("volunteer"), href: "/get-involved", image: "/images/get-involved-volunteer.png" },
-        { title: t("internship"), href: "/get-involved", image: "/images/get-involved-internship.png" },
+        { title: t("volunteer"), href: "/get-involved/volunteer", image: "/images/get-involved-volunteer.png" },
+        { title: t("internship"), href: "/get-involved/internship", image: "/images/get-involved-internship.png" },
       ];
 
   return (

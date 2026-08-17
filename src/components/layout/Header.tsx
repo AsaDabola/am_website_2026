@@ -38,7 +38,7 @@ export default function Header() {
       links: [
         { label: t("getInvolvedMenu.bibleStudies"), href: "/bible-study" },
         { label: t("getInvolvedMenu.groupActivities"), href: "/get-involved/group-activities" },
-        { label: t("getInvolvedMenu.volunteer"), href: "/get-involved" },
+        { label: t("getInvolvedMenu.volunteer"), href: "/get-involved/volunteer" },
         { label: t("getInvolvedMenu.bibleTeacherTraining"), href: "/get-involved/bible-teacher-training" },
         { label: t("getInvolvedMenu.internship"), href: "/get-involved/internship" },
         { label: t("getInvolvedMenu.donate"), href: "/get-involved/donate" },
