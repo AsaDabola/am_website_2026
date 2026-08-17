@@ -38,7 +38,7 @@ export default async function QuickLinks({ data }: { data?: QuickLinksData } = {
         {
           title: t("supportTitle"),
           description: t("supportDescription"),
-          href: "/give",
+          href: "/get-involved/donate",
           Icon: HeartIcon,
         },
       ];

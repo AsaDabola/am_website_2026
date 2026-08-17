@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
+import Button from "@/components/ui/Button";
 import AboutHero from "@/components/about/AboutHero";
 import AboutSubNav from "@/components/about/AboutSubNav";
 import PullQuote from "@/components/about/PullQuote";
@@ -19,10 +21,16 @@ export default function WhoWeArePage() {
     <>
       <AboutHero
         crumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
-        title="Who we are"
+        title="As the Father sent me, I send you."
         subtitle="An interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord."
       />
       <AboutSubNav active="/about" />
+
+      <section className="bg-white pt-16">
+        <Container>
+          <WhatWeDoInPractice />
+        </Container>
+      </section>
 
       <article className="bg-white py-20">
         <Container className="max-w-[720px]">
@@ -99,7 +107,59 @@ export default function WhoWeArePage() {
         </Container>
       </article>
 
-      <WhatWeDoInPractice />
+      <section className="bg-white pb-24">
+        <Container className="max-w-[720px]">
+          <div className="grid gap-6 sm:grid-cols-2">
+            <Link
+              href="/about/statement-of-faith"
+              className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
+            >
+              <Image
+                src="/images/bible-study-faith.jpg"
+                alt=""
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(min-width: 640px) 50vw, 100vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <span className="absolute left-6 top-6 font-display text-lg font-bold text-white">
+                Read our statement of Faith
+              </span>
+              <Button
+                href="/about/statement-of-faith"
+                variant="solid"
+                className="pointer-events-none absolute bottom-6 left-6 !px-5 !py-2.5 !text-xs"
+              >
+                Learn more
+              </Button>
+            </Link>
+            <Link
+              href="/about/mission"
+              className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
+            >
+              <Image
+                src="/images/network-hero.jpg"
+                alt=""
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(min-width: 640px) 50vw, 100vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <span className="absolute left-6 top-6 font-display text-lg font-bold text-white">
+                Mission Statement
+              </span>
+              <Button
+                href="/about/mission"
+                variant="solid"
+                className="pointer-events-none absolute bottom-6 left-6 !px-5 !py-2.5 !text-xs"
+              >
+                Learn more
+              </Button>
+            </Link>
+          </div>
+        </Container>
+      </section>
+
       <PartnerWithUs />
       <Newsletter />
     </>
