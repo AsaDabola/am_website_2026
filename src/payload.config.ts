@@ -18,6 +18,8 @@ import { Tenants } from "./collections/Tenants";
 import { Pages } from "./collections/Pages";
 import { ContactMessages } from "./collections/ContactMessages";
 import { DonationIntents } from "./collections/DonationIntents";
+import { Partners } from "./collections/Partners";
+import { Invoices } from "./collections/Invoices";
 import { getDatabaseUri } from "./lib/getDatabaseUri";
 
 const filename = fileURLToPath(import.meta.url);
@@ -41,6 +43,8 @@ export default buildConfig({
     Pages,
     ContactMessages,
     DonationIntents,
+    Partners,
+    Invoices,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
