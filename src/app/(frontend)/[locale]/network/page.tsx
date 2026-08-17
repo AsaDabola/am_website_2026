@@ -15,13 +15,29 @@ export const metadata: Metadata = {
   description: "Find AM's presence around the world, from campus chapters to country sites.",
 };
 
-const usCities = [
-  "New York",
-  "Princeton",
-  "Raleigh",
-  "San Diego",
-  "San Francisco",
-  "Washington DC",
+const northAmericaChapters = [
+  "USA, Trenton (HQ)",
+  "USA, New York",
+  "USA, Atlanta",
+  "USA, Boston",
+  "USA, Burlington",
+  "USA, Detroit",
+  "USA, Houston",
+  "USA, Los Angeles",
+  "USA, Nashville",
+  "USA, New Haven",
+  "USA, Philadelphia",
+  "USA, Princeton",
+  "USA, Raleigh",
+  "USA, San Diego",
+  "USA, San Francisco",
+  "USA, Seattle",
+  "USA, St. Louis",
+  "USA, Washington DC",
+  "USA, Wichita",
+  "Canada, Montreal",
+  "Canada, Toronto",
+  "Canada, Vancouver",
 ];
 
 export default async function NetworkPage() {
@@ -92,8 +108,8 @@ export default async function NetworkPage() {
             <div className="border-t-2 border-black/10 pt-6">
               <h3 className="font-display text-base font-bold text-ink">North America</h3>
               <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-ink-muted">
-                {usCities.map((city) => (
-                  <li key={city}>USA, {city}</li>
+                {northAmericaChapters.map((chapter) => (
+                  <li key={chapter}>{chapter}</li>
                 ))}
               </ul>
             </div>
