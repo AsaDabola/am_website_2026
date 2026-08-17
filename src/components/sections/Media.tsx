@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
-import { PlayIcon } from "@/components/ui/icons";
+import VideoPlayer from "@/components/sections/VideoPlayer";
 import { fetchCollectionSafely } from "@/lib/getPayloadSafely";
 import { tenantContentWhere } from "@/lib/tenantContentWhere";
 import type { MediaSectionData } from "@/lib/homeBlockTypes";
@@ -83,16 +83,11 @@ export default async function Media({
         </div>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
-          <button
-            type="button"
-            aria-label={data?.playVideoLabel ?? t("playVideo")}
-            className="group relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-2xl"
-            style={{ backgroundImage: "linear-gradient(160deg, #10245e, #050a2e)" }}
-          >
-            <span className="flex size-16 items-center justify-center rounded-full bg-brand-navy text-white shadow-lg transition-transform group-hover:scale-105">
-              <PlayIcon className="size-6 translate-x-0.5" />
-            </span>
-          </button>
+          <VideoPlayer
+            poster="/images/media-video-poster.jpg"
+            src="/videos/highlight.mp4"
+            playLabel={data?.playVideoLabel ?? t("playVideo")}
+          />
 
           <ul className="divide-y divide-white/15">
             {posts.map((post) => (

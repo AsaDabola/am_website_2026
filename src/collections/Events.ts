@@ -17,6 +17,26 @@ export const Events: CollectionConfig = {
       required: true,
     },
     {
+      name: "slug",
+      type: "text",
+      required: true,
+      unique: true,
+      admin: { description: 'URL segment, e.g. "spring-retreat-2026"' },
+    },
+    {
+      name: "coverImage",
+      type: "upload",
+      relationTo: "media",
+    },
+    {
+      name: "location",
+      type: "text",
+    },
+    {
+      name: "excerpt",
+      type: "textarea",
+    },
+    {
       name: "dateLabel",
       type: "text",
       required: true,

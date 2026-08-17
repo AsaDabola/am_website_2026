@@ -55,6 +55,35 @@ export async function getTenantsByContinent(continent: string) {
   }
 }
 
+export async function getAllActiveTenantsByContinent(): Promise<
+  Record<Continent, { country: string; city?: string; slug: string }[]>
+> {
+  const empty = {} as Record<Continent, { country: string; city?: string; slug: string }[]>;
+  for (const continent of CONTINENTS) empty[continent] = [];
+
+  try {
+    const payload = await getPayload({ config });
+    const result = await payload.find({
+      collection: "tenants",
+      where: { active: { equals: true } },
+      sort: "country",
+      limit: 500,
+      depth: 0,
+    });
+    for (const tenant of result.docs) {
+      if (!isContinent(tenant.continent)) continue;
+      empty[tenant.continent].push({
+        country: tenant.country,
+        city: tenant.city ?? undefined,
+        slug: tenant.slug,
+      });
+    }
+    return empty;
+  } catch {
+    return empty;
+  }
+}
+
 export async function getActiveTenantCountByContinent(): Promise<Record<string, number>> {
   try {
     const payload = await getPayload({ config });

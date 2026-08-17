@@ -17,6 +17,7 @@ export const Tenants: CollectionConfig = {
   },
   fields: [
     { name: "country", type: "text", required: true, admin: { description: 'e.g. "Germany"' } },
+    { name: "city", type: "text", admin: { description: 'Main chapter city, e.g. "Frankfurt" — shown on the Our Network page.' } },
     {
       name: "continent",
       type: "select",

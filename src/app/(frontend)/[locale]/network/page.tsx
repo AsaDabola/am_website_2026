@@ -6,7 +6,7 @@ import { Link } from "@/i18n/navigation";
 import AboutHero from "@/components/about/AboutHero";
 import OurNetwork from "@/components/sections/OurNetwork";
 import { regions } from "@/lib/regions";
-import { getActiveTenantCountByContinent } from "@/lib/tenants";
+import { getActiveTenantCountByContinent, getAllActiveTenantsByContinent } from "@/lib/tenants";
 
 export const revalidate = 60;
 
@@ -15,8 +15,20 @@ export const metadata: Metadata = {
   description: "Find AM's presence around the world, from campus chapters to country sites.",
 };
 
+const usCities = [
+  "New York",
+  "Princeton",
+  "Raleigh",
+  "San Diego",
+  "San Francisco",
+  "Washington DC",
+];
+
 export default async function NetworkPage() {
-  const counts = await getActiveTenantCountByContinent();
+  const [counts, tenantsByContinent] = await Promise.all([
+    getActiveTenantCountByContinent(),
+    getAllActiveTenantsByContinent(),
+  ]);
 
   return (
     <>
@@ -24,6 +36,7 @@ export default async function NetworkPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "Our Network" }]}
         title="Our Network"
         subtitle="Find AM's presence around the world, from campus chapters to country-wide ministries."
+        backgroundImage="/images/network-hero.jpg"
       />
 
       <section className="bg-white py-24">
@@ -62,6 +75,53 @@ export default async function NetworkPage() {
                 </Link>
               );
             })}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-mist py-24">
+        <Container className="text-center">
+          <div className="flex justify-center">
+            <Eyebrow>A worldwide community</Eyebrow>
+          </div>
+          <h2 className="mx-auto max-w-2xl font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
+            Chapters in diverse cities and corners of the world
+          </h2>
+
+          <div className="mt-14 grid gap-x-10 gap-y-12 text-left sm:grid-cols-2 lg:grid-cols-4">
+            <div className="border-t-2 border-black/10 pt-6">
+              <h3 className="font-display text-base font-bold text-ink">North America</h3>
+              <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-ink-muted">
+                {usCities.map((city) => (
+                  <li key={city}>USA, {city}</li>
+                ))}
+              </ul>
+            </div>
+
+            {regions
+              .filter((region) => region.slug !== "northamerica")
+              .map((region) => {
+                const tenants = tenantsByContinent[region.slug];
+                return (
+                  <div key={region.slug} className="border-t-2 border-black/10 pt-6">
+                    <h3 className="font-display text-base font-bold text-ink">{region.label}</h3>
+                    {tenants.length > 0 ? (
+                      <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-ink-muted">
+                        {tenants.map((tenant) => (
+                          <li key={tenant.slug}>
+                            {tenant.country}
+                            {tenant.city ? `, ${tenant.city}` : ""}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="mt-3 text-sm leading-relaxed text-ink-muted/70">
+                        Chapters launching soon.
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
           </div>
         </Container>
       </section>
