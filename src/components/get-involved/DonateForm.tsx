@@ -25,7 +25,7 @@ export default function DonateForm() {
     const data = new FormData(form);
 
     try {
-      const res = await fetch("/api/donation-intents", {
+      const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -35,24 +35,12 @@ export default function DonateForm() {
           frequency,
         }),
       });
-      if (!res.ok) throw new Error("Request failed");
-      setStatus("success");
-      form.reset();
+      const result = await res.json();
+      if (!res.ok || !result.url) throw new Error(result.error ?? "Request failed");
+      window.location.href = result.url;
     } catch {
       setStatus("error");
     }
-  }
-
-  if (status === "success") {
-    return (
-      <div className="rounded-2xl border border-black/10 bg-white p-10 text-center">
-        <h3 className="font-display text-2xl font-semibold text-ink">Thank you!</h3>
-        <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-          We&rsquo;ve recorded your {frequency.toLowerCase()} gift of ${selectedAmount}. Our team
-          will follow up by email with a secure link to complete your donation.
-        </p>
-      </div>
-    );
   }
 
   return (
@@ -131,29 +119,15 @@ export default function DonateForm() {
       <div className="py-8">
         <p className="text-sm font-semibold text-ink">Payment Information</p>
         <p className="mt-2 text-xs text-ink-muted">
-          Secure online payment is being connected. Submit your gift below and we&rsquo;ll
-          follow up by email with a secure link to complete it.
+          You&rsquo;ll be securely redirected to Stripe to complete your card payment. AM
+          International never sees or stores your card details.
         </p>
-        <div className="mt-3 space-y-3 opacity-50">
-          <div>
-            <label className="mb-1.5 block text-xs font-medium text-ink">Card Number</label>
-            <input disabled placeholder="1234 5678 9012 3456" className={inputClass} />
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <label className="mb-1.5 block text-xs font-medium text-ink">Expiry</label>
-              <input disabled placeholder="MM / YY" className={inputClass} />
-            </div>
-            <div>
-              <label className="mb-1.5 block text-xs font-medium text-ink">CVC</label>
-              <input disabled placeholder="CVC" className={inputClass} />
-            </div>
-          </div>
-        </div>
       </div>
 
       {status === "error" && (
-        <p className="mb-4 text-sm text-red-600">Something went wrong. Please try again.</p>
+        <p className="mb-4 text-sm text-red-600">
+          Something went wrong starting your donation. Please try again.
+        </p>
       )}
 
       <button
@@ -162,7 +136,7 @@ export default function DonateForm() {
         className="inline-flex w-full items-center justify-center rounded-full bg-brand-blue px-8 py-4 text-sm font-semibold uppercase tracking-[0.04em] text-white transition-colors hover:bg-brand-navy disabled:opacity-60"
       >
         {status === "submitting"
-          ? "Submitting…"
+          ? "Redirecting to secure payment…"
           : `Donate ${selectedAmount ? `$${selectedAmount.toLocaleString()}` : ""}`}
       </button>
     </form>

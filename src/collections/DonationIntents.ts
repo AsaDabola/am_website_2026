@@ -2,14 +2,14 @@ import type { CollectionConfig } from "payload";
 
 // Deliberately has no payment-card fields. Raw card numbers must never
 // touch our own database — that's a serious PCI-compliance and security
-// problem. This collection only records giving *interest* (who, how much,
-// how often) until a real payment processor (e.g. Stripe Checkout) is
-// wired in to handle the actual charge.
+// problem. This collection records giving intent up front (who, how much,
+// how often), then the Stripe webhook flips `status` to "completed" once
+// the donor actually pays on Stripe's hosted Checkout page.
 export const DonationIntents: CollectionConfig = {
   slug: "donation-intents",
   admin: {
     useAsTitle: "email",
-    defaultColumns: ["fullName", "email", "amount", "frequency", "createdAt"],
+    defaultColumns: ["fullName", "email", "amount", "frequency", "status", "createdAt"],
   },
   access: {
     create: () => true,
@@ -27,6 +27,17 @@ export const DonationIntents: CollectionConfig = {
       required: true,
       options: ["One-Time", "Monthly", "Yearly"],
     },
+    {
+      name: "status",
+      type: "select",
+      required: true,
+      defaultValue: "pending",
+      options: ["pending", "completed", "failed"],
+    },
+    { name: "stripeSessionId", type: "text", admin: { readOnly: true } },
+    { name: "stripeCustomerId", type: "text", admin: { readOnly: true } },
+    { name: "stripeSubscriptionId", type: "text", admin: { readOnly: true } },
+    { name: "stripePaymentIntentId", type: "text", admin: { readOnly: true } },
   ],
   defaultSort: "-createdAt",
 };
