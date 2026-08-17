@@ -1,12 +1,14 @@
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 
-export const whatWeDoTabs = [
-  { label: "Our Pillars of Mission", href: "/what-we-do/pillars-of-mission" },
-  { label: "Administration", href: "/what-we-do/administration" },
-];
-
 export default function WhatWeDoSubNav({ active }: { active: string }) {
+  const t = useTranslations("WhatWeDoSubNav");
+  const whatWeDoTabs = [
+    { label: t("pillarsOfMission"), href: "/what-we-do/pillars-of-mission" },
+    { label: t("administration"), href: "/what-we-do/administration" },
+  ];
+
   return (
     <div className="border-b border-black/[0.12] bg-white">
       <Container>

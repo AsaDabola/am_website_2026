@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -74,17 +75,22 @@ const additionalDepartments = [
   },
 ];
 
-export default function AdministrationPage() {
+export default async function AdministrationPage() {
+  const [t, tHeader] = await Promise.all([
+    getTranslations("Common"),
+    getTranslations("Header"),
+  ]);
+
   return (
     <>
       <AboutHero
         crumbs={[
           { label: "Home", href: "/" },
-          { label: "What We Do" },
+          { label: tHeader("whatWeDo") },
           { label: "Administration" },
         ]}
-        title="What We Do"
-        subtitle="An interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord."
+        title={tHeader("whatWeDo")}
+        subtitle={t("tagline")}
       />
       <WhatWeDoSubNav active="/what-we-do/administration" />
 

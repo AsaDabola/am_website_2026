@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -15,7 +16,9 @@ export const metadata: Metadata = {
     "AM International is a non-profit organization supported by our loving staff, and by the contributions of the Christian community.",
 };
 
-export default function DonatePage() {
+export default async function DonatePage() {
+  const t = await getTranslations("Common");
+
   return (
     <>
       <AboutHero
@@ -25,7 +28,7 @@ export default function DonatePage() {
           { label: "Donate" },
         ]}
         title="Donate"
-        subtitle="An interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord."
+        subtitle={t("tagline")}
         backgroundImage="/images/donate-hero.jpg"
       />
       <GetInvolvedSubNav active="/get-involved/donate" />

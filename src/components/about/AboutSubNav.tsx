@@ -1,17 +1,22 @@
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 
-export const aboutTabs = [
-  { label: "Who we are", href: "/about" },
-  { label: "Mission statement", href: "/about/mission" },
-  { label: "Statement of faith", href: "/about/statement-of-faith" },
-  { label: "History", href: "/about/history" },
-  { label: "Our First Chairman", href: "/about/chairman" },
-  { label: "Membership", href: "/about/membership" },
-  { label: "Leadership", href: "/about/leadership" },
-];
+export function useAboutTabs() {
+  const t = useTranslations("AboutSubNav");
+  return [
+    { label: t("whoWeAre"), href: "/about" },
+    { label: t("missionStatement"), href: "/about/mission" },
+    { label: t("statementOfFaith"), href: "/about/statement-of-faith" },
+    { label: t("history"), href: "/about/history" },
+    { label: t("ourFirstChairman"), href: "/about/chairman" },
+    { label: t("membership"), href: "/about/membership" },
+    { label: t("leadership"), href: "/about/leadership" },
+  ];
+}
 
 export default function AboutSubNav({ active }: { active: string }) {
+  const aboutTabs = useAboutTabs();
   return (
     <div className="border-b border-black/[0.12] bg-white">
       <Container>

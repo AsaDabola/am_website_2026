@@ -1,27 +1,14 @@
-const items = [
-  {
-    title: "Bible study",
-    description: "Small and large group study that puts Scripture at the centre of campus life.",
-    bg: "#0f766e",
-  },
-  {
-    title: "Leadership training",
-    description: "Students are coached to lead their peers, then to send the next group out.",
-    bg: "#0d1f52",
-  },
-  {
-    title: "Online education",
-    description: "AM Academy courses in Scripture, missiology and cross-cultural ministry.",
-    bg: "#0d1f52",
-  },
-  {
-    title: "Internships & trips",
-    description: "Short-term missions and internships that turn training into practice.",
-    bg: "#0d1f52",
-  },
-];
+import { getTranslations } from "next-intl/server";
 
-export default function WhatWeDoInPractice() {
+export default async function WhatWeDoInPractice() {
+  const t = await getTranslations("InPractice");
+  const items = [
+    { title: t("bibleStudyTag"), description: t("bibleStudyDescription"), bg: "#0f766e" },
+    { title: t("leadershipTrainingTag"), description: t("leadershipTrainingDescription"), bg: "#0d1f52" },
+    { title: t("onlineEducationTag"), description: t("onlineEducationDescription"), bg: "#0d1f52" },
+    { title: t("internshipsTripsTag"), description: t("internshipsTripsDescription"), bg: "#0d1f52" },
+  ];
+
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {items.map((item) => (

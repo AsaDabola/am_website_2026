@@ -81,6 +81,44 @@
   "LanguageSwitcher": {
     "label": "语言"
   },
+  "Common": {
+    "tagline": "AM 是一个跨宗派的福音机构，致力于将福音传到地极，为主永恒的爱作见证。",
+    "learnMore": "了解更多",
+    "readMore": "阅读更多",
+    "clickHere": "点击这里",
+    "home": "首页"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "关于我们",
+    "missionStatement": "使命宣言",
+    "statementOfFaith": "信仰告白",
+    "history": "历史",
+    "ourFirstChairman": "首任名誉主席",
+    "membership": "会员",
+    "leadership": "领导团队"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "使命的支柱",
+    "administration": "行政"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "周四查经",
+    "bibleStudies": "查经",
+    "groupActivities": "小组活动",
+    "volunteer": "义工服事",
+    "chapterStaff": "分会同工",
+    "bibleTeacherTraining": "圣经教师培训",
+    "internship": "实习",
+    "alumniConnect": "校友连结",
+    "donate": "奉献"
+  },
+  "NewsSubNav": {
+    "featuredNews": "精选新闻",
+    "events": "活动",
+    "editorial": "专栏",
+    "photoNews": "图片新闻",
+    "testimony": "见证"
+  },
   "Home": {
     "Hero": {
       "eyebrow": "Apostolos — 受差遣的人",
@@ -202,5 +240,100 @@
       "description": "一封简短的月度信函：学生们所看见的事、AM 下一步的方向，以及代祷事项。",
       "cta": "AM Academy"
     }
+  },
+  "InPractice": {
+    "eyebrow": "实践中",
+    "heading": "无论走到哪里，我们都在做这四件事。",
+    "bibleStudyTag": "查经",
+    "bibleStudyDescription": "以圣经为校园生活核心的小组及大组查经。",
+    "leadershipTrainingTag": "领袖训练",
+    "leadershipTrainingDescription": "学生受装备去带领同伴，然后差派下一组人。",
+    "onlineEducationTag": "在线教育",
+    "onlineEducationDescription": "AM Academy 提供的圣经、宣教学与跨文化事工课程。",
+    "internshipsTripsTag": "实习与短宣",
+    "internshipsTripsDescription": "将装备化为实践的短期宣教与实习机会。"
+  },
+  "AboutPage": {
+    "heroTitle": "父怎样差遣了我，我也照样差遣你们。",
+    "breadcrumb": "关于我们",
+    "paragraph1": "使徒差传国际会（Apostolos Missions International，简称 AM）是一个跨宗派的福音机构，致力于将福音传到地极，为主永恒的爱作见证。",
+    "paragraph2Prefix": "「使徒」",
+    "paragraph2": "（ἀπόστολος）是希腊文，意为「被差遣去完成使命的人」或「使者」。「使徒」这一称谓在新约中常指耶稣所拣选的十二门徒（马太福音10:2，马可福音3:14，路加福音6:13，使徒行传2:42）。保罗曾是逼迫教会的人，后来成为传扬福音的大使者，他自称为「使徒」（罗马书1:1，哥林多前书1:1，哥林多后书1:1，加拉太书1:1，歌罗西书1:1，提摩太前书1:1，提摩太后书1:1，提多书）。",
+    "paragraph3": "使徒是主所差遣、去完成「传扬耶稣基督、使人认识神」这一使命的人。使徒职分的圣经根据，在于主拣选了最初的使徒，并差遣他们如同代表不同国家的使者一般被派出去。使徒们明白自己的生命不再属于自己，而是为了在这堕落的世界中彰显基督的荣耀而活。",
+    "blockquote": "约翰福音20章21节说：「耶稣又对他们说：愿你们平安！父怎样差遣了我，我也照样差遣你们。」",
+    "paragraph4": "AM 愿意效法历世历代使徒的传统，作为蒙差遣宣扬神话语的人而活。我们每一个人也同样领受了这呼召，要被差遣到世界中，成为神的手和脚。我们愿意将生命献上，跟随耶稣的脚踪，将福音传到地极。",
+    "paragraph5": "正如我们的生命曾被主触摸、改变，我们也愿意将主向我们所显明的爱彰显出来，为祂一切迷失的儿女和我们的弟兄姊妹成为一座灯塔。",
+    "readStatementOfFaith": "阅读我们的信仰告白",
+    "or": "或",
+    "traceHistory": "了解我们的历史",
+    "cardStatementOfFaithTitle": "阅读我们的信仰告白",
+    "cardMissionStatementTitle": "使命宣言"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "AM 路线图",
+    "roadmapHeading": "有什么期待？",
+    "connectTag": "连结",
+    "connectItems": [
+      "实体/线上查经"
+    ],
+    "growTag": "成长",
+    "growItems": [
+      "小组活动"
+    ],
+    "leadTag": "带领",
+    "leadItems": [
+      "义工与实习",
+      "分会领袖"
+    ],
+    "sentTag": "差派",
+    "sentItems": [
+      "校友连结",
+      "全职/兼职宣教同工",
+      "圣经教师"
+    ],
+    "connectHeading": "连结",
+    "connectStep1Title": "1. 订阅我们的网站",
+    "connectStep1Body": "与 AM 保持联系的方式有很多。您可以订阅我们的主网站 www.amintl.org，接收通讯。或者订阅我们的在线圣经学校网站 www.amacademy.org，接收最新消息与课程信息。欢迎随时透过我们的网站了解异象、活动与课程，如有任何问题也欢迎随时发邮件与我们联系。",
+    "connectStep2Title": "2. 报名与同工见面",
+    "connectStep2BodyPrefix": "如果您希望与我们的同工交谈，接受属灵旅程上的辅导，欢迎在此",
+    "connectStep2SignUp": "报名",
+    "connectStep2BodySuffix": "。您可以预约时间，也可以直接联系我们的同工。许多同工都有校园生活的经历，理解大学生所面对的处境，将帮助您找到最适合您信仰旅程的道路。",
+    "connectStep3Title": "3. 报名参加查经",
+    "connectStep3BodyPrefix": "如果您已准备好开始我们的查经课程，请在本页面",
+    "connectStep3SignUp": "报名",
+    "connectStep3BodySuffix": "。如果没有找到合适的时间，请提交申请表并注明您想要的课程与时间！",
+    "connectStep4Title": "4. 与本地分会连结",
+    "connectStep4BodyPrefix": "如果您希望与我们的本地分会办公室及同工建立联系，请",
+    "connectStep4ContactHere": "在此联系我们",
+    "connectStep4BodySuffix": "。我们期待很快与您相见！",
+    "growHeading": "成长",
+    "growIntro": "正如我们在童年经历不同阶段而成长成熟，我们在属灵成熟上也会到达重要的里程碑。AM 提供多种课程与路径，帮助学生走过属灵成长中至关重要的三个阶段：",
+    "rebornTitle": "1. 重生",
+    "rebornBody": "我们藉着耶稣在十字架上的赎罪牺牲而重生。",
+    "matureTitle": "1. 成熟",
+    "matureBody": "我们藉着从耶稣支取爱与真理，在灵性上成长成熟。",
+    "fruitfulTitle": "1. 结果子",
+    "fruitfulBody": "我们藉着神的祝福，在与基督耶稣成熟联合中经历生命的丰盛结实。",
+    "navigatingTitle": "行走校园生活",
+    "navigatingBody": "校园生活令人兴奋且充实，但面对如此多的选择，也可能让人感到迷茫。AM 藉着真理与祷告，帮助您分辨神的旨意，为您非凡的人生找到清晰的引导。",
+    "nextStepsTitle": "下一步",
+    "nextStepsBody": "继续参与我们的课程——把握多样的机会聆听神的话语、一同祷告、与信心的弟兄姊妹团契，并在福音中成长的同时服事他人。",
+    "leadHeading": "带领",
+    "leadStep1Title": "1. 在基督的爱中服事",
+    "leadStep1Body": "当我们成长时，我们渴望服事那些需要帮助来到耶稣面前的人。当我们服事时，我们也在基督的爱中成长得更深。",
+    "leadStep2Title": "2. 领袖职分的祝福",
+    "leadStep2Body": "耶稣说：「施比受更为有福」（使徒行传20:35）。带领与引导他人需要智慧、祷告、牺牲与忍耐。然而，那正是十字架荣耀达到顶峰的蒙福之地。",
+    "leadStep3Title": "3. 领袖职分的祝福",
+    "leadStep3Body": "虽然大学生仍然年轻，但透过领袖角色，他们杰出的恩赐与才能能够被更强有力地发现与培养。这是一个美好的过程，每位学生藉着服事与带领这份恩典的经历，来试验并确认他们从天上领受的恩赐。",
+    "leadStep4Title": "4. 与 AM 同行的机会",
+    "leadStep4Body": "AM 为学生提供多样的机会与角色，参与服事与带领。欢迎加入我们的义工团队、分会同工、分会领袖、圣经教师等团队。按照神美好的计划，发掘祂在你里面所栽种的。",
+    "sentHeading": "差派",
+    "sentParagraph1": "大学毕业是我们迈向广阔世界、有待探索的另一个重要出发点。我们当中有些人会继续深造或投入职涯，有些人也会顺服神的呼召，成为 AM 的全职同工、宣教士或传道人。",
+    "sentParagraph2": "在这关键的一步，AM 提供课程，让您透过校友连结继续保持联系，持续服事福音的使命。AM 也提供培训课程与路径，帮助您成为专业的宣教同工，加入 AM 世界宣教团队。",
+    "sentParagraph3": "通往光明未来的多种选择正为您敞开。AM 愿意与每一位个人紧密同行，一同完成大使命：「所以，你们要去，使万民作我的门徒，奉父、子、圣灵的名给他们施洗」（马太福音28:19）。",
+    "sentLinkAlumniConnect": "校友连结",
+    "sentLinkBibleTeachers": "成为 AM 圣经教师",
+    "sentLinkMissionaries": "成为 AM 宣教士",
+    "sentLinkStaff": "AM 总部全职同工"
   }
 }

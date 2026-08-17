@@ -81,6 +81,44 @@
   "LanguageSwitcher": {
     "label": "Sprache"
   },
+  "Common": {
+    "tagline": "Ein konfessionsübergreifender Dienst, der sich verpflichtet hat, das Evangelium bis an die Enden der Erde zu verbreiten und von der ewigen Liebe des Herrn zu zeugen.",
+    "learnMore": "Mehr erfahren",
+    "readMore": "Weiterlesen",
+    "clickHere": "Hier klicken",
+    "home": "Startseite"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Wer wir sind",
+    "missionStatement": "Leitbild",
+    "statementOfFaith": "Glaubensbekenntnis",
+    "history": "Geschichte",
+    "ourFirstChairman": "Unser erster Vorsitzender",
+    "membership": "Mitgliedschaft",
+    "leadership": "Leitung"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Unsere Missionssäulen",
+    "administration": "Verwaltung"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Donnerstags-Bibelstudium",
+    "bibleStudies": "Bibelstudien",
+    "groupActivities": "Gruppenaktivitäten",
+    "volunteer": "Ehrenamt",
+    "chapterStaff": "Ortsgruppen-Mitarbeiter",
+    "bibleTeacherTraining": "Ausbildung für Bibellehrer",
+    "internship": "Praktikum",
+    "alumniConnect": "Alumni-Netzwerk",
+    "donate": "Spenden"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Empfohlene Nachrichten",
+    "events": "Veranstaltungen",
+    "editorial": "Leitartikel",
+    "photoNews": "Fotonachrichten",
+    "testimony": "Zeugnis"
+  },
   "Home": {
     "Hero": {
       "eyebrow": "Apostolos — einer, der gesandt wird",
@@ -202,5 +240,100 @@
       "description": "Ein kurzer monatlicher Brief: was Studierende erleben, wohin AM als Nächstes geht, und wie man beten kann.",
       "cta": "AM Academy"
     }
+  },
+  "InPractice": {
+    "eyebrow": "In der Praxis",
+    "heading": "Vier Dinge, die wir überall tun, wohin wir auch gehen.",
+    "bibleStudyTag": "Bibelstudium",
+    "bibleStudyDescription": "Kleine und große Gruppenstudien, die die Schrift ins Zentrum des Campuslebens stellen.",
+    "leadershipTrainingTag": "Führungstraining",
+    "leadershipTrainingDescription": "Studierende werden gecoacht, ihre Mitstudierenden zu leiten und dann die nächste Gruppe auszusenden.",
+    "onlineEducationTag": "Online-Bildung",
+    "onlineEducationDescription": "AM-Academy-Kurse zu Schrift, Missiologie und interkulturellem Dienst.",
+    "internshipsTripsTag": "Praktika & Reisen",
+    "internshipsTripsDescription": "Kurzzeiteinsätze und Praktika, die Ausbildung in Praxis umsetzen."
+  },
+  "AboutPage": {
+    "heroTitle": "Wie mich der Vater gesandt hat, so sende ich euch.",
+    "breadcrumb": "Wer wir sind",
+    "paragraph1": "Apostolos Missions International (AM) ist ein konfessionsübergreifender Dienst, der sich verpflichtet hat, das Evangelium bis an die Enden der Erde zu verbreiten und von der ewigen Liebe des Herrn zu zeugen.",
+    "paragraph2Prefix": "Der Name",
+    "paragraph2": "(ἀπόστολος) ist das griechische Wort für Apostel. Es bedeutet „einer, der auf eine Mission gesandt wird“ oder „Bote“. Der Titel „Apostel“ bezeichnet im Neuen Testament oft die zwölf von Jesus berufenen Jünger (Matthäus 10,2; Markus 3,14; Lukas 6,13; Apostelgeschichte 2,42). Paulus, ein ehemaliger Verfolger des Christentums, der zu einem großen Herold des Evangeliums wurde, bezeichnete sich selbst als „Apostel“ (Römer 1,1; 1. Korinther 1,1; 2. Korinther 1,1; Galater 1,1; Kolosser 1,1; 1. Timotheus 1,1; 2. Timotheus 1,1; Titus).",
+    "paragraph3": "Apostel sind jene, die vom Herrn gesandt werden, um die Mission zu erfüllen, „Jesus Christus zu predigen und Gott bekannt zu machen“ der ganzen Schöpfung. Die biblische Grundlage des Apostelamtes findet sich in vielen Worten des Herrn, der die ersten Apostel auswählte und sie wie Gesandte aussandte, um verschiedene Nationen zu vertreten. Apostel verstanden, dass ihr Leben nicht nur ihnen selbst gehörte, sondern dass sie lebten, um die Herrlichkeit Christi in dieser gefallenen Welt zu offenbaren.",
+    "blockquote": "Johannes 20,21 sagt: „Da sprach Jesus abermals zu ihnen: Friede sei mit euch! Wie mich der Vater gesandt hat, so sende ich euch.“ (LUT)",
+    "paragraph4": "AM möchte der Tradition der Apostel folgen, die als Menschen auf einer Mission lebten, um das Wort Gottes zu verkünden. Jeder von uns empfängt ebenfalls diesen Ruf Gottes, als seine Hände und Füße in die Welt gesandt zu werden. Wir möchten unser Leben der Nachfolge Jesu widmen und das Evangelium bis an die Enden der Erde verkünden.",
+    "paragraph5": "So wie unser Leben vom Herrn berührt und verändert wurde, möchten wir die Liebe des Herrn offenbaren, die uns gezeigt wurde, und ein Leuchtfeuer für alle seine verlorenen Kinder und unsere Brüder und Schwestern werden.",
+    "readStatementOfFaith": "Lesen Sie unser Glaubensbekenntnis",
+    "or": "oder",
+    "traceHistory": "entdecken Sie unsere Geschichte",
+    "cardStatementOfFaithTitle": "Lesen Sie unser Glaubensbekenntnis",
+    "cardMissionStatementTitle": "Leitbild"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "AM-Fahrplan",
+    "roadmapHeading": "Was wird erwartet?",
+    "connectTag": "Verbinden",
+    "connectItems": [
+      "Vor-Ort-/Online-Bibelstudien"
+    ],
+    "growTag": "Wachsen",
+    "growItems": [
+      "Gruppenaktivitäten"
+    ],
+    "leadTag": "Führen",
+    "leadItems": [
+      "Ehrenamt & Praktika",
+      "Ortsgruppenleiter"
+    ],
+    "sentTag": "Gesandt",
+    "sentItems": [
+      "Alumni-Netzwerk",
+      "Voll-/Teilzeit-Missionsmitarbeiter",
+      "Bibellehrer"
+    ],
+    "connectHeading": "Verbinden",
+    "connectStep1Title": "1. Abonnieren Sie unsere Websites",
+    "connectStep1Body": "Es gibt viele Möglichkeiten, mit AM in Verbindung zu bleiben. Sie können unsere Hauptwebsite, www.amintl.org, abonnieren und Newsletter erhalten. Oder Sie abonnieren unsere Online-Bibelschule, www.amacademy.org, und erhalten die neuesten Nachrichten und Programme. Stöbern Sie gerne durch unsere Vision, Aktivitäten und Programme auf unseren Websites und schreiben Sie uns jederzeit bei Fragen.",
+    "connectStep2Title": "2. Melden Sie sich an, um unser Team kennenzulernen",
+    "connectStep2BodyPrefix": "Melden Sie sich gerne",
+    "connectStep2SignUp": "hier an",
+    "connectStep2BodySuffix": "wenn Sie mit einem unserer Mitarbeiter sprechen und Begleitung auf Ihrem geistlichen Weg erhalten möchten. Sie können einen Termin vereinbaren oder unser Team direkt kontaktieren. Viele unserer Mitarbeiter haben Erfahrung im Campusleben und verstehen die Situationen, denen Studierende begegnen. Sie helfen Ihnen, den passendsten Weg für Ihre Glaubensreise zu finden.",
+    "connectStep3Title": "3. Zum Bibelstudium anmelden",
+    "connectStep3BodyPrefix": "Wenn Sie bereit sind, unser Bibelstudienprogramm zu beginnen,",
+    "connectStep3SignUp": "melden Sie sich an",
+    "connectStep3BodySuffix": "auf dieser Seite. Falls Sie keinen passenden Termin finden, reichen Sie das Anfrageformular mit Ihrem bevorzugten Kurs und Ihrer bevorzugten Zeit ein!",
+    "connectStep4Title": "4. Mit der Ortsgruppe verbinden",
+    "connectStep4BodyPrefix": "Wenn Sie mit unserem Büro und Team vor Ort in Verbindung treten möchten, bitte",
+    "connectStep4ContactHere": "kontaktieren Sie uns hier",
+    "connectStep4BodySuffix": ". Wir freuen uns darauf, Sie bald kennenzulernen!",
+    "growHeading": "Wachsen",
+    "growIntro": "So wie wir durch verschiedene Phasen unserer Kindheit wachsen und reifen, erreichen wir auch wichtige Meilensteine in unserer geistlichen Reife. AM bietet zahlreiche Programme und Wege, die Studierende durch jede dieser drei wesentlichen Phasen des geistlichen Wachstums führen:",
+    "rebornTitle": "1. Wiedergeboren",
+    "rebornBody": "Wir werden neu geboren durch das sühnende Opfer Jesu am Kreuz.",
+    "matureTitle": "1. Reifen",
+    "matureBody": "Wir wachsen und reifen geistlich, indem wir uns von der Liebe und Wahrheit Jesu nähren.",
+    "fruitfulTitle": "1. Fruchtbar",
+    "fruitfulBody": "Wir erfahren die Fruchtbarkeit des Lebens durch Gottes Segen, erfüllt in unserer reifen Einheit mit Christus Jesus.",
+    "navigatingTitle": "Das Campusleben meistern",
+    "navigatingBody": "Das Campusleben ist aufregend und erfüllend, aber bei so vielen verfügbaren Optionen kann es sich auch ziellos anfühlen. Durch Wahrheit und Gebet hilft Ihnen AM, Gottes Willen zu erkennen und klare Orientierung für Ihr außergewöhnliches Leben zu finden.",
+    "nextStepsTitle": "Nächste Schritte",
+    "nextStepsBody": "Bleiben Sie unseren Programmen verbunden — nutzen Sie die vielfältigen Möglichkeiten, das Wort zu hören, gemeinsam zu beten, mit Glaubensgeschwistern Gemeinschaft zu haben und zu dienen, während Sie im Evangelium wachsen.",
+    "leadHeading": "Führen",
+    "leadStep1Title": "1. Dienen in der Liebe Christi",
+    "leadStep1Body": "Während wir wachsen, wünschen wir uns, denen zu dienen, die Hilfe brauchen, um zu Jesus zu kommen. Indem wir dienen, wachsen wir auch tiefer in der Liebe Christi.",
+    "leadStep2Title": "2. Der Segen der Führung",
+    "leadStep2Body": "Jesus sagte: „Geben ist seliger als Nehmen“ (Apostelgeschichte 20,35). Andere zu führen und zu leiten erfordert Weisheit, Gebet, Opferbereitschaft und Geduld. Doch es ist ein gesegneter Ort, an dem die Herrlichkeit des Kreuzes gipfelt.",
+    "leadStep3Title": "3. Der Segen der Führung",
+    "leadStep3Body": "Obwohl Studierende noch jung sind, können herausragende Gaben und Fähigkeiten durch Führungsrollen noch kraftvoller entdeckt und entwickelt werden. Es ist ein schöner Prozess, bei dem jeder Studierende seine himmlischen Gaben durch die gnädige Erfahrung des Dienens und Führens erprobt und bestätigt.",
+    "leadStep4Title": "4. Möglichkeiten mit AM",
+    "leadStep4Body": "AM bietet vielfältige Möglichkeiten und Rollen für Studierende, um sich im Dienen und in der Führung zu engagieren. Werden Sie Teil unseres Teams aus Ehrenamtlichen, Ortsgruppen-Mitarbeitern, Ortsgruppenleitern, Bibellehrern und vielen anderen. Entdecken Sie, was Jesus nach seinem ausgezeichneten Plan in Sie gepflanzt hat.",
+    "sentHeading": "Gesandt",
+    "sentParagraph1": "Der Hochschulabschluss ist ein weiterer bedeutender Aufbruch in eine weit offene Welt, die es zu entdecken gilt. Manche von uns setzen ihre Ausbildung fort oder verfolgen eine berufliche Laufbahn. Manche von uns werden auch AM-Vollzeitmitarbeiter, Missionare oder Diener, die dem Ruf Gottes folgen.",
+    "sentParagraph2": "In diesem entscheidenden Schritt bietet AM Programme, mit denen Sie verbunden bleiben und weiterhin der Evangeliumsmission durch das Alumni-Netzwerk dienen können. AM bietet auch Ausbildungsprogramme und Wege, um professioneller Missionsmitarbeiter und Mitarbeiter bei AM World Mission zu werden.",
+    "sentParagraph3": "Verschiedene Optionen stehen Ihnen für eine strahlende Zukunft offen. AM möchte eng mit jedem Einzelnen gehen, um gemeinsam den Missionsbefehl zu erfüllen: „Darum gehet hin und machet zu Jüngern alle Völker: Taufet sie auf den Namen des Vaters und des Sohnes und des Heiligen Geistes“ (Matthäus 28,19).",
+    "sentLinkAlumniConnect": "Alumni-Netzwerk",
+    "sentLinkBibleTeachers": "AM-Bibellehrer werden",
+    "sentLinkMissionaries": "AM-Missionar werden",
+    "sentLinkStaff": "Vollzeitmitarbeiter in der AM-Zentrale"
   }
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import AboutHero from "@/components/about/AboutHero";
@@ -14,30 +15,36 @@ export const metadata: Metadata = {
     "An interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord.",
 };
 
-const roadmap = [
-  { tag: "Connect", items: ["Onsite/Online Bible", "Study Programs"] },
-  { tag: "Grow", items: ["Group Activities"] },
-  { tag: "Lead", items: ["Volunteer & Internships", "Chapter Leaders"] },
-  { tag: "Sent", items: ["Alumni Connect", "Part/Full Time Staff Missionaries", "Bible Teachers"] },
-];
+export default async function GetInvolvedHubPage() {
+  const [t, tCommon, tHeader] = await Promise.all([
+    getTranslations("GetInvolvedHub"),
+    getTranslations("Common"),
+    getTranslations("Header"),
+  ]);
 
-export default function GetInvolvedHubPage() {
+  const roadmap = [
+    { tag: t("connectTag"), items: t.raw("connectItems") as string[] },
+    { tag: t("growTag"), items: t.raw("growItems") as string[] },
+    { tag: t("leadTag"), items: t.raw("leadItems") as string[] },
+    { tag: t("sentTag"), items: t.raw("sentItems") as string[] },
+  ];
+
   return (
     <>
       <AboutHero
-        crumbs={[{ label: "Home", href: "/" }, { label: "Get Involved" }]}
-        title="Get Involved"
-        subtitle="An interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord."
+        crumbs={[{ label: tCommon("home"), href: "/" }, { label: tHeader("getInvolved") }]}
+        title={tHeader("getInvolved")}
+        subtitle={tCommon("tagline")}
       />
       <GetInvolvedSubNav active="/get-involved" />
 
       <section className="bg-mist py-24">
         <Container className="text-center">
           <div className="flex justify-center">
-            <Eyebrow>AM Roadmap</Eyebrow>
+            <Eyebrow>{t("roadmapEyebrow")}</Eyebrow>
           </div>
           <h2 className="mx-auto max-w-xl font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
-            What is expected?
+            {t("roadmapHeading")}
           </h2>
 
           <div className="mt-14 grid gap-8 text-left sm:grid-cols-2 lg:grid-cols-4">
@@ -72,65 +79,55 @@ export default function GetInvolvedHubPage() {
             </div>
             <div>
               <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink">
-                Connect
+                {t("connectHeading")}
               </h2>
 
               <div className="mt-8 space-y-8">
                 <div>
                   <h3 className="font-display text-lg font-bold text-ink">
-                    1. Subscribe to Our Websites
+                    {t("connectStep1Title")}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-                    There are many ways to be connected with AM. You can subscribe to our main
-                    website, www.amintl.org, and receive newsletters. Or you can subscribe to our
-                    online Bible school website, www.amacademy.org, and receive the latest news
-                    and programs. Feel free to browse our vision, activities, and programs
-                    through our websites and email us anytime if you have any questions.
+                    {t("connectStep1Body")}
                   </p>
                 </div>
                 <div>
                   <h3 className="font-display text-lg font-bold text-ink">
-                    2. Sign up to Meet Our Staff
+                    {t("connectStep2Title")}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-                    Feel free to{" "}
+                    {t("connectStep2BodyPrefix")}{" "}
                     <Link href="/contact" className="text-brand-blue underline underline-offset-2">
-                      sign up
+                      {t("connectStep2SignUp")}
                     </Link>{" "}
-                    here if you wish to talk to one of our staff and receive counseling on your
-                    spiritual journey. You can either set up the appointment or contact our
-                    staff. Many of our staff members have experiences in campus life and
-                    understand the contexts that college students face. They will help you find
-                    the most fitting track for your journey of faith.
+                    {t("connectStep2BodySuffix")}
                   </p>
                 </div>
                 <div>
                   <h3 className="font-display text-lg font-bold text-ink">
-                    3. Sign up for Bible Study
+                    {t("connectStep3Title")}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-                    If you are ready to start our Bible study program,{" "}
+                    {t("connectStep3BodyPrefix")}{" "}
                     <Link
                       href="/bible-study/join"
                       className="text-brand-blue underline underline-offset-2"
                     >
-                      sign up
+                      {t("connectStep3SignUp")}
                     </Link>{" "}
-                    on this page. If you don&rsquo;t find the schedule that fits, submit the
-                    request form with your preferred course and time!
+                    {t("connectStep3BodySuffix")}
                   </p>
                 </div>
                 <div>
                   <h3 className="font-display text-lg font-bold text-ink">
-                    4. Connect with Local Chapter
+                    {t("connectStep4Title")}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-                    If you wish to be connected in our onsite local chapter office and staff,
-                    please{" "}
+                    {t("connectStep4BodyPrefix")}{" "}
                     <Link href="/contact" className="text-brand-blue underline underline-offset-2">
-                      contact here
+                      {t("connectStep4ContactHere")}
                     </Link>
-                    . We look forward to meeting you soon!
+                    {t("connectStep4BodySuffix")}
                   </p>
                 </div>
               </div>
@@ -153,52 +150,30 @@ export default function GetInvolvedHubPage() {
             </div>
             <div>
               <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink">
-                Grow
+                {t("growHeading")}
               </h2>
-              <p className="mt-8 text-sm leading-relaxed text-ink-muted">
-                Just as we grow and mature through different stages in our childhood, we reach
-                key milestones in our spiritual maturity. AM offers numerous programs and tracks
-                designed to guide students through each of these three vital stages of spiritual
-                growth:
-              </p>
+              <p className="mt-8 text-sm leading-relaxed text-ink-muted">{t("growIntro")}</p>
 
               <div className="mt-8 space-y-5">
                 <div>
-                  <h3 className="font-display text-base font-bold text-ink">1. Reborn</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-                    We are born again through the atoning sacrifice of Jesus on the Cross.
-                  </p>
+                  <h3 className="font-display text-base font-bold text-ink">{t("rebornTitle")}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">{t("rebornBody")}</p>
                 </div>
                 <div>
-                  <h3 className="font-display text-base font-bold text-ink">1. Mature</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-                    We grow and mature spiritually by nourishing love and truth from Jesus.
-                  </p>
+                  <h3 className="font-display text-base font-bold text-ink">{t("matureTitle")}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">{t("matureBody")}</p>
                 </div>
                 <div>
-                  <h3 className="font-display text-base font-bold text-ink">1. Fruitful</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-                    We experience the fruitfulness of life through God&rsquo;s blessing,
-                    fulfilled in our mature unity with Christ Jesus.
-                  </p>
+                  <h3 className="font-display text-base font-bold text-ink">{t("fruitfulTitle")}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">{t("fruitfulBody")}</p>
                 </div>
               </div>
 
-              <h3 className="mt-8 font-display text-lg font-bold text-ink">
-                Navigating Campus Life
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-                Campus life is exciting and fulfilling, but with so many choices available, it
-                can also feel aimless. Through truth and prayer, AM helps you discern God&rsquo;s
-                will and find clear guidance for your extraordinary life.
-              </p>
+              <h3 className="mt-8 font-display text-lg font-bold text-ink">{t("navigatingTitle")}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-muted">{t("navigatingBody")}</p>
 
-              <h3 className="mt-8 font-display text-lg font-bold text-ink">Next Steps</h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-                Continue to engage with our programs—take advantage of diverse opportunities to
-                hear the Word, pray together, fellowship with brothers and sisters of faith, and
-                serve as you grow in the Gospel.
-              </p>
+              <h3 className="mt-8 font-display text-lg font-bold text-ink">{t("nextStepsTitle")}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-muted">{t("nextStepsBody")}</p>
             </div>
           </div>
         </Container>
@@ -218,51 +193,25 @@ export default function GetInvolvedHubPage() {
             </div>
             <div>
               <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink">
-                Lead
+                {t("leadHeading")}
               </h2>
 
               <div className="mt-8 space-y-6">
                 <div>
-                  <h3 className="font-display text-lg font-bold text-ink">
-                    1. Serving in the Love of Christ
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-                    As we grow, we desire to serve others who need help to come to Jesus. As we
-                    serve, we also grow more deeply in the love of Christ.
-                  </p>
+                  <h3 className="font-display text-lg font-bold text-ink">{t("leadStep1Title")}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">{t("leadStep1Body")}</p>
                 </div>
                 <div>
-                  <h3 className="font-display text-lg font-bold text-ink">
-                    2. The Blessing of Leadership
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-                    Jesus said, &ldquo;It is more blessed to give than to receive&rdquo; (Acts
-                    20:35). Leading and guiding others requires wisdom, prayer, sacrifice, and
-                    patience. However, it is a blessed place where the glory of the Cross
-                    culminates.
-                  </p>
+                  <h3 className="font-display text-lg font-bold text-ink">{t("leadStep2Title")}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">{t("leadStep2Body")}</p>
                 </div>
                 <div>
-                  <h3 className="font-display text-lg font-bold text-ink">
-                    3. The Blessing of Leadership
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-                    Although college students are still young, outstanding gifts and skills can
-                    be discovered and developed even more powerfully through leadership roles. It
-                    is a beautiful process as each student tests and affirms their heavenly gifts
-                    through the gracious experience of serving and leading.
-                  </p>
+                  <h3 className="font-display text-lg font-bold text-ink">{t("leadStep3Title")}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">{t("leadStep3Body")}</p>
                 </div>
                 <div>
-                  <h3 className="font-display text-lg font-bold text-ink">
-                    4. Opportunities with AM
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-                    AM offers diverse opportunities and roles for students to participate in
-                    serving and leadership. Join our team of volunteers, Chapter staff, Chapter
-                    leaders, Bible teachers, and many others. Discover what Jesus planted in you
-                    according to His excellent plan.
-                  </p>
+                  <h3 className="font-display text-lg font-bold text-ink">{t("leadStep4Title")}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">{t("leadStep4Body")}</p>
                 </div>
               </div>
             </div>
@@ -284,37 +233,21 @@ export default function GetInvolvedHubPage() {
             </div>
             <div>
               <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink">
-                Sent
+                {t("sentHeading")}
               </h2>
 
               <div className="mt-8 space-y-5 text-sm leading-relaxed text-ink-muted">
-                <p>
-                  Graduation from college is another significant departure toward the world wide
-                  open for us to explore. Some of us may pursue education further or take the
-                  career path. Some of us also become AM full-time staff, missionaries, or
-                  ministers following the calling from God.
-                </p>
-                <p>
-                  In this crucial step, AM offers programs that you can stay connected and
-                  continue to serve the Gospel mission through Alumni Connect. AM also provides
-                  training programs and tracks to become professional mission workers and staff
-                  in AM World Mission.
-                </p>
-                <p>
-                  Various options are open for you toward a bright future. AM wishes to walk
-                  closely with every individual to bring altogether for the Great Commission,
-                  &ldquo;Therefore go and make disciples of all nations, baptizing them in the
-                  name of the Father and of the Son and of the Holy Spirit (Matthew
-                  28:19).&rdquo;
-                </p>
+                <p>{t("sentParagraph1")}</p>
+                <p>{t("sentParagraph2")}</p>
+                <p>{t("sentParagraph3")}</p>
               </div>
 
               <ul className="mt-8 space-y-3">
                 {[
-                  { label: "Alumni Connect", href: "/get-involved/alumni-connect" },
-                  { label: "Become AM Bible Teachers", href: "/get-involved/bible-teacher-training" },
-                  { label: "Become AM Missionaries", href: "/get-involved/internship" },
-                  { label: "Full-Time Staff in AM HQ", href: "/contact" },
+                  { label: t("sentLinkAlumniConnect"), href: "/get-involved/alumni-connect" },
+                  { label: t("sentLinkBibleTeachers"), href: "/get-involved/bible-teacher-training" },
+                  { label: t("sentLinkMissionaries"), href: "/get-involved/internship" },
+                  { label: t("sentLinkStaff"), href: "/contact" },
                 ].map((link) => (
                   <li key={link.label}>
                     <Link

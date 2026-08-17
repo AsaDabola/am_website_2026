@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -52,31 +53,30 @@ const pillars = [
   },
 ];
 
-const overview = [
-  { tag: "Bible study", description: "Active outreach and events with the youth in universities." },
-  { tag: "Leadership training", description: "Teach and raise students in the Word of God." },
-  {
-    tag: "Online education",
-    description: "Offering students the opportunity to apply the Word of God in practical life.",
-  },
-  {
-    tag: "Internships & trips",
-    description:
-      "Innovate ways to pioneer new chapters and serve God according to your gifts and talents.",
-  },
-];
+export default async function PillarsOfMissionPage() {
+  const [t, tPractice, tHeader] = await Promise.all([
+    getTranslations("Common"),
+    getTranslations("InPractice"),
+    getTranslations("Header"),
+  ]);
 
-export default function PillarsOfMissionPage() {
+  const overview = [
+    { tag: tPractice("bibleStudyTag"), description: tPractice("bibleStudyDescription") },
+    { tag: tPractice("leadershipTrainingTag"), description: tPractice("leadershipTrainingDescription") },
+    { tag: tPractice("onlineEducationTag"), description: tPractice("onlineEducationDescription") },
+    { tag: tPractice("internshipsTripsTag"), description: tPractice("internshipsTripsDescription") },
+  ];
+
   return (
     <>
       <AboutHero
         crumbs={[
           { label: "Home", href: "/" },
-          { label: "What We Do" },
-          { label: "Our Pillars of Mission" },
+          { label: tHeader("whatWeDo") },
+          { label: tHeader("whatWeDoMenu.pillarsOfMission") },
         ]}
-        title="What We Do"
-        subtitle="An interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord."
+        title={tHeader("whatWeDo")}
+        subtitle={t("tagline")}
       />
       <WhatWeDoSubNav active="/what-we-do/pillars-of-mission" />
 
@@ -154,10 +154,10 @@ export default function PillarsOfMissionPage() {
       <section className="bg-white py-24">
         <Container className="text-center">
           <div className="flex justify-center">
-            <Eyebrow>In practice</Eyebrow>
+            <Eyebrow>{tPractice("eyebrow")}</Eyebrow>
           </div>
           <h2 className="mx-auto max-w-xl font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
-            Four things we do everywhere we go.
+            {tPractice("heading")}
           </h2>
 
           <div className="mt-14 grid gap-8 text-left sm:grid-cols-2 lg:grid-cols-4">

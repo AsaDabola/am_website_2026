@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -13,17 +14,22 @@ export const metadata: Metadata = {
   description: "Stay connected with AM after graduation and keep serving the mission.",
 };
 
-export default function AlumniConnectPage() {
+export default async function AlumniConnectPage() {
+  const [t, tHeader] = await Promise.all([
+    getTranslations("Common"),
+    getTranslations("Header"),
+  ]);
+
   return (
     <>
       <AboutHero
         crumbs={[
           { label: "Home", href: "/" },
-          { label: "Get Involved", href: "/get-involved" },
+          { label: tHeader("getInvolved"), href: "/get-involved" },
           { label: "Alumni Connect" },
         ]}
-        title="Get Involved"
-        subtitle="An interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord."
+        title={tHeader("getInvolved")}
+        subtitle={t("tagline")}
         backgroundImage="/images/alumni-hero.jpg"
       />
       <GetInvolvedSubNav active="/get-involved/alumni-connect" />

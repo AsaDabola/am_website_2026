@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import AboutHero from "@/components/about/AboutHero";
@@ -12,7 +13,9 @@ export const metadata: Metadata = {
     "Fill out the form below and one of our teachers will reach out with more information.",
 };
 
-export default function JoinBibleStudyPage() {
+export default async function JoinBibleStudyPage() {
+  const t = await getTranslations("Common");
+
   return (
     <>
       <AboutHero
@@ -23,7 +26,7 @@ export default function JoinBibleStudyPage() {
           { label: "Join our Bible Studies" },
         ]}
         title="Join our Bible Studies"
-        subtitle="An interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord."
+        subtitle={t("tagline")}
       />
 
       <section className="bg-mist py-20">

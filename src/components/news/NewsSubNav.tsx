@@ -1,15 +1,17 @@
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 
-export const newsTabs = [
-  { label: "Featured News", href: "/news" },
-  { label: "Events", href: "/events" },
-  { label: "Editorial", href: "/news/editorial" },
-  { label: "Photo News", href: "/news/photo-news" },
-  { label: "Testimony", href: "/news/testimony" },
-];
-
 export default function NewsSubNav({ active }: { active: string }) {
+  const t = useTranslations("NewsSubNav");
+  const newsTabs = [
+    { label: t("featuredNews"), href: "/news" },
+    { label: t("events"), href: "/events" },
+    { label: t("editorial"), href: "/news/editorial" },
+    { label: t("photoNews"), href: "/news/photo-news" },
+    { label: t("testimony"), href: "/news/testimony" },
+  ];
+
   return (
     <div className="border-b border-black/[0.12] bg-white">
       <Container>

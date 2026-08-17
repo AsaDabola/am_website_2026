@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import { Link } from "@/i18n/navigation";
@@ -12,13 +13,15 @@ export const metadata: Metadata = {
   description: "Get in touch with Apostolos Missions International.",
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const t = await getTranslations("Common");
+
   return (
     <>
       <AboutHero
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact Us" }]}
         title="Contact Us"
-        subtitle="An interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord."
+        subtitle={t("tagline")}
         backgroundImage="/images/contact-hero.jpg"
       />
 

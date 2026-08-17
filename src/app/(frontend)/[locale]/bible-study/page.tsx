@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -73,7 +74,9 @@ const tracks: Track[] = [
   },
 ];
 
-export default function BibleStudyPage() {
+export default async function BibleStudyPage() {
+  const t = await getTranslations("Common");
+
   return (
     <>
       <AboutHero
@@ -83,7 +86,7 @@ export default function BibleStudyPage() {
           { label: "Bible Studies" },
         ]}
         title="Bible Studies"
-        subtitle="An interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord."
+        subtitle={t("tagline")}
       />
 
       <section className="bg-mist py-20">

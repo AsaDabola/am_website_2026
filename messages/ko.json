@@ -81,6 +81,44 @@
   "LanguageSwitcher": {
     "label": "언어"
   },
+  "Common": {
+    "tagline": "땅끝까지 복음을 전하며 주님의 영원한 사랑을 증거하는 데 헌신하는 초교파 선교단체입니다.",
+    "learnMore": "자세히 보기",
+    "readMore": "더 읽기",
+    "clickHere": "여기를 클릭하세요",
+    "home": "홈"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "우리는 누구인가",
+    "missionStatement": "선교 성명",
+    "statementOfFaith": "신앙고백",
+    "history": "연혁",
+    "ourFirstChairman": "초대 명예 회장",
+    "membership": "멤버십",
+    "leadership": "리더십"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "사명의 기둥",
+    "administration": "행정"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "목요 성경공부",
+    "bibleStudies": "성경공부",
+    "groupActivities": "그룹 활동",
+    "volunteer": "봉사",
+    "chapterStaff": "지부 스태프",
+    "bibleTeacherTraining": "성경 교사 훈련",
+    "internship": "인턴십",
+    "alumniConnect": "동문 네트워크",
+    "donate": "후원하기"
+  },
+  "NewsSubNav": {
+    "featuredNews": "주요 소식",
+    "events": "행사",
+    "editorial": "칼럼",
+    "photoNews": "포토 뉴스",
+    "testimony": "간증"
+  },
   "Home": {
     "Hero": {
       "eyebrow": "Apostolos — 보냄받은 자",
@@ -202,5 +240,100 @@
       "description": "매달 전해드리는 짧은 편지: 학생들이 목격하는 일들, AM의 다음 행보, 그리고 기도 제목.",
       "cta": "AM Academy"
     }
+  },
+  "InPractice": {
+    "eyebrow": "실천 사항",
+    "heading": "우리가 가는 모든 곳에서 실천하는 네 가지.",
+    "bibleStudyTag": "성경공부",
+    "bibleStudyDescription": "캠퍼스 생활의 중심에 말씀을 두는 소그룹 및 대그룹 성경공부.",
+    "leadershipTrainingTag": "리더십 훈련",
+    "leadershipTrainingDescription": "학생들이 동료를 이끌도록 훈련받고, 이후 다음 그룹을 파송합니다.",
+    "onlineEducationTag": "온라인 교육",
+    "onlineEducationDescription": "성경, 선교학, 타문화 사역에 관한 AM 아카데미 강좌.",
+    "internshipsTripsTag": "인턴십 및 단기선교",
+    "internshipsTripsDescription": "훈련을 실천으로 바꾸는 단기선교와 인턴십."
+  },
+  "AboutPage": {
+    "heroTitle": "아버지께서 나를 보내신 것 같이 나도 너희를 보내노라.",
+    "breadcrumb": "우리는 누구인가",
+    "paragraph1": "AM 국제선교회(Apostolos Missions International)는 땅끝까지 복음을 전하며 주님의 영원한 사랑을 증거하는 데 헌신하는 초교파 선교단체입니다.",
+    "paragraph2Prefix": "아포스톨로스",
+    "paragraph2": "(ἀπόστολος)라는 이름은 사도를 뜻하는 헬라어입니다. 이는 \"사명을 위해 보냄받은 자\" 또는 \"사자(使者)\"를 의미합니다. \"사도\"라는 칭호는 신약성경에서 예수님이 임명하신 열두 제자를 가리키는 데 자주 사용됩니다 (마태복음 10:2, 마가복음 3:14, 누가복음 6:13, 사도행전 2:42). 한때 기독교를 박해하던 자였다가 복음의 위대한 전달자가 된 바울도 자신을 \"사도\"라고 소개했습니다 (로마서 1:1, 고린도전서 1:1, 고린도후서 1:1, 갈라디아서 1:1, 골로새서 1:1, 디모데전서 1:1, 디모데후서 1:1, 디도서).",
+    "paragraph3": "사도는 \"예수 그리스도를 전파하고 하나님을 알리는\" 사명을 감당하도록 주께서 보내신 사람들입니다. 사도직의 성경적 근거는 주님께서 처음 사도들을 택하시고 여러 민족을 대표하도록 파송된 사신들처럼 그들을 보내신 많은 말씀에서 찾을 수 있습니다. 사도들은 자신의 삶이 자신만의 것이 아니라, 이 타락한 세상에서 그리스도의 영광을 드러내기 위해 사는 것임을 깨달았습니다.",
+    "blockquote": "요한복음 20장 21절은 이렇게 말합니다. \"예수께서 또 이르시되 너희에게 평강이 있을지어다 아버지께서 나를 보내신 것 같이 나도 너희를 보내노라.\"",
+    "paragraph4": "AM은 하나님의 말씀을 전파하는 사명자로 살았던 사도들의 전통을 따르고자 합니다. 우리 각자도 하나님의 손과 발이 되어 세상으로 보냄받는 이 부르심을 받았습니다. 우리는 예수님의 발자취를 따라 땅끝까지 복음을 전하는 데 삶을 헌신하고자 합니다.",
+    "paragraph5": "우리의 삶이 주님으로 인해 변화되었듯이, 우리에게 보여주신 주님의 사랑을 드러내어 잃어버린 모든 자녀와 형제자매들에게 등불이 되고자 합니다.",
+    "readStatementOfFaith": "신앙고백 보기",
+    "or": "또는",
+    "traceHistory": "연혁 살펴보기",
+    "cardStatementOfFaithTitle": "신앙고백 보기",
+    "cardMissionStatementTitle": "선교 성명"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "AM 로드맵",
+    "roadmapHeading": "무엇을 기대할 수 있나요?",
+    "connectTag": "연결",
+    "connectItems": [
+      "대면/온라인 성경공부"
+    ],
+    "growTag": "성장",
+    "growItems": [
+      "그룹 활동"
+    ],
+    "leadTag": "리더십",
+    "leadItems": [
+      "봉사 및 인턴십",
+      "지부 리더"
+    ],
+    "sentTag": "파송",
+    "sentItems": [
+      "동문 네트워크",
+      "전임/파트타임 선교사",
+      "성경 교사"
+    ],
+    "connectHeading": "연결",
+    "connectStep1Title": "1. 웹사이트를 구독하세요",
+    "connectStep1Body": "AM과 연결되는 방법은 다양합니다. 본 웹사이트 www.amintl.org를 구독하여 뉴스레터를 받아보실 수 있습니다. 또는 온라인 성경학교 웹사이트 www.amacademy.org를 구독하여 최신 소식과 프로그램을 받아보실 수 있습니다. 언제든지 저희 비전, 활동, 프로그램을 자유롭게 살펴보시고 궁금한 점이 있으시면 이메일로 문의해 주세요.",
+    "connectStep2Title": "2. 스태프와의 만남 신청",
+    "connectStep2BodyPrefix": "영적 여정에 대한 상담을 받고 저희 스태프와 대화하고 싶으시다면 여기서",
+    "connectStep2SignUp": "신청",
+    "connectStep2BodySuffix": "해 주세요. 약속을 잡거나 스태프에게 직접 연락하실 수 있습니다. 많은 스태프가 캠퍼스 생활을 경험했으며 대학생들이 마주하는 상황을 잘 이해하고 있습니다. 여러분의 신앙 여정에 가장 적합한 길을 찾도록 도와드릴 것입니다.",
+    "connectStep3Title": "3. 성경공부 신청",
+    "connectStep3BodyPrefix": "성경공부 프로그램을 시작할 준비가 되셨다면 이 페이지에서",
+    "connectStep3SignUp": "신청",
+    "connectStep3BodySuffix": "해 주세요. 맞는 시간대가 없다면 원하는 과정과 시간을 적어 신청서를 제출해 주세요!",
+    "connectStep4Title": "4. 지역 지부와 연결",
+    "connectStep4BodyPrefix": "현지 지부 사무실과 스태프에게 연결되고 싶으시다면",
+    "connectStep4ContactHere": "여기로 문의해 주세요",
+    "connectStep4BodySuffix": ". 곧 만나뵙기를 기대합니다!",
+    "growHeading": "성장",
+    "growIntro": "어린 시절 여러 단계를 거치며 자라듯이, 우리는 영적 성숙에서도 중요한 이정표에 도달합니다. AM은 학생들이 영적 성장의 세 가지 핵심 단계를 통과하도록 돕는 다양한 프로그램과 트랙을 제공합니다:",
+    "rebornTitle": "1. 거듭남",
+    "rebornBody": "우리는 십자가에서 이루신 예수님의 속죄 희생을 통해 거듭납니다.",
+    "matureTitle": "1. 성숙",
+    "matureBody": "우리는 예수님의 사랑과 진리를 양분 삼아 영적으로 자라고 성숙해집니다.",
+    "fruitfulTitle": "1. 결실",
+    "fruitfulBody": "우리는 그리스도 예수와의 성숙한 연합 안에서 이루어지는 하나님의 축복을 통해 삶의 결실을 경험합니다.",
+    "navigatingTitle": "캠퍼스 생활 탐색하기",
+    "navigatingBody": "캠퍼스 생활은 설레고 보람차지만, 선택지가 너무 많아 방향을 잃은 느낌이 들 수도 있습니다. AM은 진리와 기도를 통해 여러분이 하나님의 뜻을 분별하고 특별한 삶을 위한 분명한 인도하심을 찾도록 돕습니다.",
+    "nextStepsTitle": "다음 단계",
+    "nextStepsBody": "말씀을 듣고, 함께 기도하고, 믿음의 형제자매와 교제하며, 복음 안에서 성장하며 섬길 수 있는 다양한 기회를 활용하여 프로그램에 계속 참여해 보세요.",
+    "leadHeading": "리더십",
+    "leadStep1Title": "1. 그리스도의 사랑으로 섬기기",
+    "leadStep1Body": "우리는 자라면서 예수님께 나아오도록 도움이 필요한 이들을 섬기고자 합니다. 섬길 때 우리는 그리스도의 사랑 안에서 더욱 깊이 자랍니다.",
+    "leadStep2Title": "2. 리더십의 축복",
+    "leadStep2Body": "예수님은 \"주는 것이 받는 것보다 복이 있다\"고 말씀하셨습니다(사도행전 20:35). 다른 이들을 이끌고 인도하는 데는 지혜와 기도, 희생과 인내가 필요합니다. 그러나 그것은 십자가의 영광이 절정에 이르는 복된 자리입니다.",
+    "leadStep3Title": "3. 리더십의 축복",
+    "leadStep3Body": "대학생들이 아직 어리지만, 리더십 역할을 통해 뛰어난 은사와 기술이 더욱 강력하게 발견되고 계발될 수 있습니다. 각 학생이 섬김과 리더십이라는 은혜로운 경험을 통해 하늘의 은사를 시험하고 확증하는 아름다운 과정입니다.",
+    "leadStep4Title": "4. AM과 함께하는 기회",
+    "leadStep4Body": "AM은 학생들이 섬김과 리더십에 참여할 수 있는 다양한 기회와 역할을 제공합니다. 봉사자, 지부 스태프, 지부 리더, 성경 교사 등 다양한 팀에 합류하세요. 하나님의 탁월한 계획에 따라 그분이 여러분 안에 심으신 것을 발견하세요.",
+    "sentHeading": "파송",
+    "sentParagraph1": "대학 졸업은 우리가 탐험할 넓은 세상을 향한 또 하나의 중요한 출발입니다. 어떤 이들은 학업을 계속하거나 직업의 길을 걷습니다. 어떤 이들은 하나님의 부르심을 따라 AM 전임 스태프, 선교사, 사역자가 되기도 합니다.",
+    "sentParagraph2": "이 중요한 단계에서 AM은 동문 네트워크를 통해 여러분이 계속 연결되어 복음 사역을 섬길 수 있는 프로그램을 제공합니다. 또한 AM 월드미션의 전문 선교 사역자와 스태프가 되기 위한 훈련 프로그램과 트랙도 제공합니다.",
+    "sentParagraph3": "밝은 미래를 향한 다양한 선택지가 여러분에게 열려 있습니다. AM은 모든 개인과 가까이 동행하며 함께 지상명령을 이루고자 합니다. \"그러므로 너희는 가서 모든 민족을 제자로 삼아 아버지와 아들과 성령의 이름으로 세례를 베풀고\"(마태복음 28:19).",
+    "sentLinkAlumniConnect": "동문 네트워크",
+    "sentLinkBibleTeachers": "AM 성경 교사 되기",
+    "sentLinkMissionaries": "AM 선교사 되기",
+    "sentLinkStaff": "AM 본부 전임 스태프"
   }
 }

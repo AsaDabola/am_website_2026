@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -58,17 +59,22 @@ const categories = [
   },
 ];
 
-export default function VolunteerPage() {
+export default async function VolunteerPage() {
+  const [t, tHeader] = await Promise.all([
+    getTranslations("Common"),
+    getTranslations("Header"),
+  ]);
+
   return (
     <>
       <AboutHero
         crumbs={[
           { label: "Home", href: "/" },
-          { label: "Get Involved", href: "/get-involved" },
+          { label: tHeader("getInvolved"), href: "/get-involved" },
           { label: "Volunteer" },
         ]}
-        title="Get Involved"
-        subtitle="An interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord."
+        title={tHeader("getInvolved")}
+        subtitle={t("tagline")}
       />
       <GetInvolvedSubNav active="/get-involved/volunteer" />
 

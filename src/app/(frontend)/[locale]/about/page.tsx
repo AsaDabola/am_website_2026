@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
@@ -16,13 +17,18 @@ export const metadata: Metadata = {
     "Apostolos Missions International (AM) is an interdenominational ministry committed to spreading the gospel to the ends of the earth.",
 };
 
-export default function WhoWeArePage() {
+export default async function WhoWeArePage() {
+  const [t, tCommon] = await Promise.all([
+    getTranslations("AboutPage"),
+    getTranslations("Common"),
+  ]);
+
   return (
     <>
       <AboutHero
-        crumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
-        title="As the Father sent me, I send you."
-        subtitle="An interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord."
+        crumbs={[{ label: tCommon("home"), href: "/" }, { label: t("breadcrumb") }]}
+        title={t("heroTitle")}
+        subtitle={tCommon("tagline")}
         backgroundImage="/images/about-hero-cross.jpg"
       />
       <AboutSubNav active="/about" />
@@ -36,71 +42,33 @@ export default function WhoWeArePage() {
       <article className="bg-white py-20">
         <Container className="max-w-[720px]">
           <div className="space-y-6 text-base leading-relaxed text-ink">
+            <p>{t("paragraph1")}</p>
             <p>
-              Apostolos Missions International (AM) is an interdenominational
-              ministry committed to spreading the gospel to the ends of the
-              earth, testifying to the eternal love of the Lord.
+              {t("paragraph2Prefix")} <em className="italic">apostolos</em> {t("paragraph2")}
             </p>
-            <p>
-              The name <em className="italic">apostolos</em> (ἀπόστολος) is
-              the Greek word for apostle. It means &ldquo;one who is sent on
-              a mission&rdquo; or &ldquo;messenger.&rdquo; The title
-              &ldquo;apostle&rdquo; often comes out in the New Testament to
-              represent the Twelve disciples appointed by Jesus (Matthew
-              10:2, Mark 3:14, Luke 6:13, Acts 2:42). Paul, a former
-              persecutor of Christianity turning to a great herald of the
-              gospel, introduced himself as an &ldquo;apostle&rdquo; (Romans
-              1:1, 1 Corinthians 1:1, 2 Corinthians 1:1, Galatians 1:1,
-              Colossians 1:1, 1 Timothy 1:1, 2 Timothy 1:1, Titus).
-            </p>
-            <p>
-              Apostles are those who are sent by the Lord to fulfill the
-              mission of &ldquo;preaching Jesus Christ and making God
-              known&rdquo; to the whole creation. Biblical foundation of
-              apostleship is found in many words of the Lord who selected
-              first apostles and sent them out like the ambassadors
-              dispatched to represent different nations. Apostles understood
-              that their lives were not just their own, but they lived to
-              reveal the glory of Christ in this fallen world.
-            </p>
+            <p>{t("paragraph3")}</p>
           </div>
 
           <div className="my-10">
-            <PullQuote>
-              John 20:21 says, &ldquo;Again Jesus said, &lsquo;Peace be with
-              you! As the Father has sent me, I am sending you.&rsquo;&rdquo;
-              (NIV)
-            </PullQuote>
+            <PullQuote>{t("blockquote")}</PullQuote>
           </div>
 
           <div className="space-y-6 text-base leading-relaxed text-ink">
-            <p>
-              AM wishes to follow the tradition of the apostles who lived as
-              people on a mission to proclaim the Word of God. Each of us
-              also receive this calling from God to be sent out into the
-              world as His hands and feet. We wish to dedicate our lives to
-              follow the footsteps of Jesus and proclaim the Gospel until the
-              ends of the earth.
-            </p>
-            <p>
-              Just as our lives have been touched and changed by the Lord, we
-              wish to reveal the love of the Lord that was shown to us,
-              becoming a beacon for all of His lost children and our fellow
-              brothers and sisters.
-            </p>
+            <p>{t("paragraph4")}</p>
+            <p>{t("paragraph5")}</p>
             <p>
               <Link
                 href="/about/statement-of-faith"
                 className="text-brand-navy underline underline-offset-2"
               >
-                Read our statement of faith
+                {t("readStatementOfFaith")}
               </Link>{" "}
-              or{" "}
+              {t("or")}{" "}
               <Link
                 href="/about/history"
                 className="text-brand-navy underline underline-offset-2"
               >
-                trace the history
+                {t("traceHistory")}
               </Link>
               .
             </p>
@@ -124,14 +92,14 @@ export default function WhoWeArePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               <span className="absolute left-6 top-6 font-display text-lg font-bold text-white">
-                Read our statement of Faith
+                {t("cardStatementOfFaithTitle")}
               </span>
               <Button
                 href="/about/statement-of-faith"
                 variant="solid"
                 className="pointer-events-none absolute bottom-6 left-6 !px-5 !py-2.5 !text-xs"
               >
-                Learn more
+                {tCommon("learnMore")}
               </Button>
             </Link>
             <Link
@@ -147,14 +115,14 @@ export default function WhoWeArePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               <span className="absolute left-6 top-6 font-display text-lg font-bold text-white">
-                Mission Statement
+                {t("cardMissionStatementTitle")}
               </span>
               <Button
                 href="/about/mission"
                 variant="solid"
                 className="pointer-events-none absolute bottom-6 left-6 !px-5 !py-2.5 !text-xs"
               >
-                Learn more
+                {tCommon("learnMore")}
               </Button>
             </Link>
           </div>

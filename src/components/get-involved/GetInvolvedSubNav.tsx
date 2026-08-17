@@ -1,19 +1,21 @@
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 
-export const getInvolvedTabs = [
-  { label: "Thursday Bible Study", href: "/what-we-do/pillars-of-mission" },
-  { label: "Bible Studies", href: "/bible-study" },
-  { label: "Group Activities", href: "/get-involved/group-activities" },
-  { label: "Volunteer", href: "/get-involved/volunteer" },
-  { label: "Chapter Staff", href: "/get-involved/chapter-staff" },
-  { label: "Bible Teacher Training", href: "/get-involved/bible-teacher-training" },
-  { label: "Internship", href: "/get-involved/internship" },
-  { label: "Alumni Connect", href: "/get-involved/alumni-connect" },
-  { label: "Donate", href: "/get-involved/donate" },
-];
-
 export default function GetInvolvedSubNav({ active }: { active: string }) {
+  const t = useTranslations("GetInvolvedSubNav");
+  const getInvolvedTabs = [
+    { label: t("thursdayBibleStudy"), href: "/what-we-do/pillars-of-mission" },
+    { label: t("bibleStudies"), href: "/bible-study" },
+    { label: t("groupActivities"), href: "/get-involved/group-activities" },
+    { label: t("volunteer"), href: "/get-involved/volunteer" },
+    { label: t("chapterStaff"), href: "/get-involved/chapter-staff" },
+    { label: t("bibleTeacherTraining"), href: "/get-involved/bible-teacher-training" },
+    { label: t("internship"), href: "/get-involved/internship" },
+    { label: t("alumniConnect"), href: "/get-involved/alumni-connect" },
+    { label: t("donate"), href: "/get-involved/donate" },
+  ];
+
   return (
     <div className="border-b border-black/[0.12] bg-white">
       <Container>
