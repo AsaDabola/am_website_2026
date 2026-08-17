@@ -20,6 +20,7 @@ import { ContactMessages } from "./collections/ContactMessages";
 import { DonationIntents } from "./collections/DonationIntents";
 import { Partners } from "./collections/Partners";
 import { Invoices } from "./collections/Invoices";
+import { ChapterAffiliations } from "./collections/ChapterAffiliations";
 import { getDatabaseUri } from "./lib/getDatabaseUri";
 
 const filename = fileURLToPath(import.meta.url);
@@ -45,6 +46,7 @@ export default buildConfig({
     DonationIntents,
     Partners,
     Invoices,
+    ChapterAffiliations,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",

@@ -21,6 +21,12 @@ export const Media: CollectionConfig = {
       { name: "card", width: 900, height: undefined },
       { name: "hero", width: 1920, height: undefined },
     ],
-    mimeTypes: ["image/*"],
+    mimeTypes: [
+      "image/*",
+      "application/pdf",
+      "text/csv",
+      "application/vnd.ms-excel",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    ],
   },
 };
