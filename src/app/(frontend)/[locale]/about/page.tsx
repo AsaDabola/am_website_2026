@@ -23,6 +23,7 @@ export default function WhoWeArePage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
         title="As the Father sent me, I send you."
         subtitle="An interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord."
+        backgroundImage="/images/about-hero-cross.jpg"
       />
       <AboutSubNav active="/about" />
 
@@ -115,7 +116,7 @@ export default function WhoWeArePage() {
               className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
             >
               <Image
-                src="/images/bible-study-faith.jpg"
+                src="/images/about-statement-faith-card.jpg"
                 alt=""
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -138,7 +139,7 @@ export default function WhoWeArePage() {
               className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
             >
               <Image
-                src="/images/network-hero.jpg"
+                src="/images/about-mission-card.jpg"
                 alt=""
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-105"

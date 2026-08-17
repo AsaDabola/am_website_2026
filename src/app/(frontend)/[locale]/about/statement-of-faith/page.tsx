@@ -22,6 +22,7 @@ export default function StatementOfFaithPage() {
         ]}
         title="Statement of Faith"
         subtitle="The convictions AM holds in common across every campus, chapter and country."
+        backgroundImage="/images/statement-of-faith-hero.jpg"
       />
       <AboutSubNav active="/about/statement-of-faith" />
 

@@ -23,6 +23,7 @@ export default function MissionStatementPage() {
         ]}
         title="Mission statement"
         subtitle="A worldwide community of believers dedicated to the spreading of the Gospel across university campuses."
+        backgroundImage="/images/mission-hero.jpg"
       />
       <AboutSubNav active="/about/mission" />
 
