@@ -11,6 +11,8 @@ import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 import { getPostBySlug, getRelatedPosts } from "@/lib/posts";
 
+export const revalidate = 60;
+
 const categoryTag: Record<string, string> = {
   news: "News",
   editorial: "Editorial",

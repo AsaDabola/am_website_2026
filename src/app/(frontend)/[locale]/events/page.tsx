@@ -8,6 +8,8 @@ import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 import { getEventsList } from "@/lib/events";
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: "Events | AM International",
   description: "Upcoming AM retreats, conferences, and chapter events.",
