@@ -8,6 +8,8 @@ import Newsletter from "@/components/sections/Newsletter";
 import { isContinent, getTenantBySlug } from "@/lib/tenants";
 import { getPageBySlug } from "@/lib/pages";
 import { renderHomeBlock, DefaultHomeBlocks } from "@/lib/renderHomeBlocks";
+import { redirect } from "@/i18n/navigation";
+import { locales } from "@/i18n/routing";
 
 export const revalidate = 60;
 
@@ -49,11 +51,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function DynamicPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const resolved = await resolve(slug);
 
   if (!resolved) notFound();
   const { tenant, page, isTenantRoute } = resolved;
+
+  // Every country site has one language it's meant to be browsed in
+  // (Tenant.locale). Landing on it under a different locale — e.g. a link
+  // that dropped the prefix, or a visitor's browser default — redirects to
+  // the same page under the tenant's own language instead of silently
+  // serving the wrong one.
+  if (
+    isTenantRoute &&
+    tenant!.locale &&
+    tenant!.locale !== locale &&
+    (locales as readonly string[]).includes(tenant!.locale)
+  ) {
+    redirect({ href: `/${slug.join("/")}`, locale: tenant!.locale });
+  }
+
   const isTenantHome = isTenantRoute && slug.length === 2;
 
   // A country site's home route renders the same rich, block-based

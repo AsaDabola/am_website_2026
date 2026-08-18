@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
 import Logo from "@/components/ui/Logo";
 import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
@@ -33,15 +34,19 @@ export default async function Header() {
   ];
 
   const ctaLinks = [
-    { label: tMega("ctaBibleStudy"), href: "/bible-study" },
-    { label: tMega("ctaFindChapter"), href: "/network" },
-    { label: tMega("ctaGive"), href: "/get-involved/donate" },
+    { label: tMega("ctaBibleStudy"), href: "/bible-study", tenantAware: true },
+    // "Our Network" is a single global directory of every country, not a
+    // per-tenant page, so it stays a plain (non-prefixed) link even inside
+    // a country site.
+    { label: tMega("ctaFindChapter"), href: "/network", tenantAware: false },
+    { label: tMega("ctaGive"), href: "/get-involved/donate", tenantAware: true },
   ];
 
   const dropdowns = [
-    { label: t("whoWeAre"), links: [...aboutLinks, ...whatWeDoLinks] },
+    { label: t("whoWeAre"), tenantAware: true, links: [...aboutLinks, ...whatWeDoLinks] },
     {
       label: t("connect"),
+      tenantAware: true,
       links: [
         { label: t("getInvolvedMenu.bibleStudies"), href: "/bible-study" },
         { label: t("getInvolvedMenu.groupActivities"), href: "/get-involved/group-activities" },
@@ -56,7 +61,10 @@ export default async function Header() {
       ],
     },
     {
+      // News/events are shared, globally-listed content with no per-tenant
+      // route yet, so these links intentionally stay un-prefixed.
       label: t("news"),
+      tenantAware: false,
       links: [
         { label: t("newsMenu.featured"), href: "/news" },
         { label: t("newsMenu.events"), href: "/events" },
@@ -67,7 +75,7 @@ export default async function Header() {
     },
   ];
 
-  const plainLinks = [{ label: t("ourNetwork"), href: "/network" }];
+  const plainLinks = [{ label: t("ourNetwork"), href: "/network", tenantAware: false }];
 
   return (
     <header className="sticky top-0 z-40 bg-brand-blue/95 backdrop-blur-[7px]">
@@ -91,12 +99,12 @@ export default async function Header() {
                     <ul className="mt-4 space-y-3">
                       {aboutLinks.map((link) => (
                         <li key={link.label}>
-                          <Link
+                          <TenantLink
                             href={link.href}
                             className="text-sm text-ink-muted hover:text-brand-blue"
                           >
                             {link.label}
-                          </Link>
+                          </TenantLink>
                         </li>
                       ))}
                     </ul>
@@ -109,12 +117,12 @@ export default async function Header() {
                     <ul className="mt-4 space-y-3">
                       {whatWeDoLinks.map((link) => (
                         <li key={link.label}>
-                          <Link
+                          <TenantLink
                             href={link.href}
                             className="text-sm text-ink-muted hover:text-brand-blue"
                           >
                             {link.label}
-                          </Link>
+                          </TenantLink>
                         </li>
                       ))}
                     </ul>
@@ -163,70 +171,79 @@ export default async function Header() {
                 </div>
 
                 <div className="mt-8 flex flex-wrap gap-x-10 gap-y-3 border-t border-black/[0.06] pt-6">
-                  {ctaLinks.map((link) => (
-                    <Link
-                      key={link.label}
-                      href={link.href}
-                      className="group/cta flex items-center gap-3"
-                    >
-                      <span className="flex size-9 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue transition-colors group-hover/cta:bg-brand-blue group-hover/cta:text-white">
-                        <ArrowUpRightIcon className="size-4" />
-                      </span>
-                      <span className="text-sm font-semibold text-ink">{link.label}</span>
-                    </Link>
-                  ))}
+                  {ctaLinks.map((link) => {
+                    const CtaLink = link.tenantAware ? TenantLink : Link;
+                    return (
+                      <CtaLink
+                        key={link.label}
+                        href={link.href}
+                        className="group/cta flex items-center gap-3"
+                      >
+                        <span className="flex size-9 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue transition-colors group-hover/cta:bg-brand-blue group-hover/cta:text-white">
+                          <ArrowUpRightIcon className="size-4" />
+                        </span>
+                        <span className="text-sm font-semibold text-ink">{link.label}</span>
+                      </CtaLink>
+                    );
+                  })}
                 </div>
               </div>
             </div>
           </div>
 
-          {dropdowns.slice(1).map((item) => (
-            <div key={item.label} className="group relative">
-              <button className="flex items-center gap-1.5 rounded-md px-4 py-2.5 text-sm font-medium text-white">
-                {item.label}
-                <ChevronDownIcon className="size-2.5 text-white/80" />
-              </button>
-              <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-opacity group-hover:visible group-hover:opacity-100">
-                <div className="w-64 rounded-2xl border border-black/5 bg-white p-5 shadow-2xl">
-                  <p className="text-xs font-bold uppercase tracking-[0.12em] text-ink">
-                    {item.label}
-                  </p>
-                  <ul className="mt-4 space-y-3">
-                    {item.links.map((link) => (
-                      <li key={link.label}>
-                        <Link
-                          href={link.href}
-                          className="text-sm text-ink-muted hover:text-brand-blue"
-                        >
-                          {link.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+          {dropdowns.slice(1).map((item) => {
+            const ItemLink = item.tenantAware ? TenantLink : Link;
+            return (
+              <div key={item.label} className="group relative">
+                <button className="flex items-center gap-1.5 rounded-md px-4 py-2.5 text-sm font-medium text-white">
+                  {item.label}
+                  <ChevronDownIcon className="size-2.5 text-white/80" />
+                </button>
+                <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-opacity group-hover:visible group-hover:opacity-100">
+                  <div className="w-64 rounded-2xl border border-black/5 bg-white p-5 shadow-2xl">
+                    <p className="text-xs font-bold uppercase tracking-[0.12em] text-ink">
+                      {item.label}
+                    </p>
+                    <ul className="mt-4 space-y-3">
+                      {item.links.map((link) => (
+                        <li key={link.label}>
+                          <ItemLink
+                            href={link.href}
+                            className="text-sm text-ink-muted hover:text-brand-blue"
+                          >
+                            {link.label}
+                          </ItemLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
 
-          {plainLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="px-4 py-2.5 text-sm font-medium text-white hover:text-white/80"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {plainLinks.map((link) => {
+            const PlainLink = link.tenantAware ? TenantLink : Link;
+            return (
+              <PlainLink
+                key={link.label}
+                href={link.href}
+                className="px-4 py-2.5 text-sm font-medium text-white hover:text-white/80"
+              >
+                {link.label}
+              </PlainLink>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-1">
           <LanguageSwitcher />
-          <Link
+          <TenantLink
             href="/get-involved/donate"
             className="ml-2 hidden rounded-full bg-brand-navy px-6 py-3 text-sm font-semibold uppercase tracking-[0.04em] text-white hover:bg-brand-navy-light sm:inline-flex"
           >
             {t("give")}
-          </Link>
+          </TenantLink>
           <MobileNav
             dropdowns={dropdowns}
             plainLinks={plainLinks}

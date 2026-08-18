@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
+import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
 import Logo from "@/components/ui/Logo";
 import { FacebookIcon, InstagramIcon, MailIcon, YoutubeIcon } from "@/components/ui/icons";
@@ -94,9 +94,9 @@ export default async function Footer() {
             <ul className="mt-6 space-y-4 text-sm text-on-dark/70">
               {col.links.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="hover:text-white">
+                  <TenantLink href={link.href} className="hover:text-white">
                     {link.label}
-                  </Link>
+                  </TenantLink>
                 </li>
               ))}
             </ul>
@@ -108,15 +108,15 @@ export default async function Footer() {
         <Container className="flex flex-col items-center justify-between gap-4 py-6 text-[13px] text-on-dark/45 sm:flex-row">
           <p>{t("copyright")}</p>
           <div className="flex gap-6">
-            <Link href="/about/statement-of-faith" className="hover:text-on-dark/80">
+            <TenantLink href="/about/statement-of-faith" className="hover:text-on-dark/80">
               {t("statementOfFaith")}
-            </Link>
-            <Link href="/contact" className="hover:text-on-dark/80">
+            </TenantLink>
+            <TenantLink href="/contact" className="hover:text-on-dark/80">
               {t("contact")}
-            </Link>
-            <Link href="/get-involved/donate" className="hover:text-on-dark/80">
+            </TenantLink>
+            <TenantLink href="/get-involved/donate" className="hover:text-on-dark/80">
               {t("give")}
-            </Link>
+            </TenantLink>
           </div>
         </Container>
       </div>

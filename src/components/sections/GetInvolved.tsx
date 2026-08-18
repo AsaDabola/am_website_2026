@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
+import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import { ArrowRightIcon } from "@/components/ui/icons";
@@ -36,7 +36,7 @@ export default async function GetInvolved({ data }: { data?: GetInvolvedData } =
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {cards.map((card) => (
-            <Link
+            <TenantLink
               key={card.title}
               href={card.href}
               className="group relative block aspect-[416/520] overflow-hidden rounded-2xl"
@@ -55,7 +55,7 @@ export default async function GetInvolved({ data }: { data?: GetInvolvedData } =
               <span className="absolute bottom-6 right-6 flex size-11 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm transition-colors group-hover:bg-white/25">
                 <ArrowRightIcon />
               </span>
-            </Link>
+            </TenantLink>
           ))}
         </div>
       </Container>

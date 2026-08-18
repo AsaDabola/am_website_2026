@@ -1,5 +1,5 @@
-import { Link } from "@/i18n/navigation";
 import { ReactNode } from "react";
+import TenantLink from "@/components/layout/TenantLink";
 import { ArrowRightIcon } from "./icons";
 
 type Variant = "solid" | "solidNavy" | "outlineLight" | "outlineBlue" | "ghostLight" | "ghostDark";
@@ -31,23 +31,23 @@ export default function Button({
 
   if (isGhost) {
     return (
-      <Link
+      <TenantLink
         href={href}
         className={`inline-flex items-center gap-2 text-sm font-semibold ${variantClasses[variant]} ${className}`}
       >
         {children}
         {icon && <ArrowRightIcon />}
-      </Link>
+      </TenantLink>
     );
   }
 
   return (
-    <Link
+    <TenantLink
       href={href}
       className={`inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-[0.04em] transition-colors ${variantClasses[variant]} ${className}`}
     >
       {children}
       {icon && <ArrowRightIcon />}
-    </Link>
+    </TenantLink>
   );
 }

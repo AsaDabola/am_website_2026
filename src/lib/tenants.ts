@@ -1,20 +1,8 @@
 import config from "@payload-config";
 import { getPayload } from "payload";
 
-export const CONTINENTS = [
-  "africa",
-  "asia",
-  "europe",
-  "northamerica",
-  "southamerica",
-  "oceania",
-] as const;
-
-export type Continent = (typeof CONTINENTS)[number];
-
-export function isContinent(value: string): value is Continent {
-  return (CONTINENTS as readonly string[]).includes(value);
-}
+export { CONTINENTS, isContinent, type Continent } from "./continents";
+import { CONTINENTS, isContinent, type Continent } from "./continents";
 
 export async function getTenantBySlug(continent: string, countrySlug: string) {
   if (!isContinent(continent)) return null;

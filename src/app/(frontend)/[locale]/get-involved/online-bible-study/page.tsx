@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import AboutHero from "@/components/about/AboutHero";
 import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
-import PlaceholderPhoto from "@/components/ui/PlaceholderPhoto";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 
@@ -45,24 +45,24 @@ export default async function OnlineBibleStudyPage() {
           </h1>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
-            <PlaceholderPhoto
-              className="aspect-square rounded-xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.1)]"
-              from="#2a5eec"
-              to="#0d1f52"
-              label="Online Bible Study"
-            />
-            <PlaceholderPhoto
-              className="aspect-square rounded-xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.1)]"
-              from="#3a6cd8"
-              to="#0d1f52"
-              label="Online Bible Study"
-            />
-            <PlaceholderPhoto
-              className="aspect-square rounded-xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.1)]"
-              from="#4d8df6"
-              to="#0d1f52"
-              label="Online Bible Study"
-            />
+            {[
+              "/images/online-bible-study-1.jpg",
+              "/images/online-bible-study-2.jpg",
+              "/images/online-bible-study-3.jpg",
+            ].map((src) => (
+              <div
+                key={src}
+                className="relative aspect-square overflow-hidden rounded-xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.1)]"
+              >
+                <Image
+                  src={src}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 640px) 33vw, 100vw"
+                />
+              </div>
+            ))}
           </div>
         </Container>
       </section>
