@@ -7,7 +7,6 @@ import { ArrowRightIcon } from "@/components/ui/icons";
 import AboutHero from "@/components/about/AboutHero";
 import AboutSubNav from "@/components/about/AboutSubNav";
 import PullQuote from "@/components/about/PullQuote";
-import WhatWeDoInPractice from "@/components/about/WhatWeDoInPractice";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 
@@ -17,10 +16,18 @@ export const metadata: Metadata = {
     "Apostolos Missions International (AM) is an interdenominational ministry committed to spreading the gospel to the ends of the earth.",
 };
 
+const practiceTags = [
+  "bibleStudyTag",
+  "leadershipTrainingTag",
+  "onlineEducationTag",
+  "internshipsTripsTag",
+] as const;
+
 export default async function WhoWeArePage() {
-  const [t, tCommon] = await Promise.all([
+  const [t, tCommon, tPractice] = await Promise.all([
     getTranslations("AboutPage"),
     getTranslations("Common"),
+    getTranslations("InPractice"),
   ]);
 
   return (
@@ -30,14 +37,19 @@ export default async function WhoWeArePage() {
         title={t("heroTitle")}
         subtitle={tCommon("tagline")}
         backgroundImage="/images/about-hero-cross.jpg"
-      />
+      >
+        <div className="mt-10 flex flex-wrap gap-3">
+          {practiceTags.map((key) => (
+            <span
+              key={key}
+              className="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.1em] text-white backdrop-blur-sm"
+            >
+              {tPractice(key)}
+            </span>
+          ))}
+        </div>
+      </AboutHero>
       <AboutSubNav active="/about" />
-
-      <section className="bg-white pt-16">
-        <Container>
-          <WhatWeDoInPractice />
-        </Container>
-      </section>
 
       <article className="bg-white py-20">
         <Container className="max-w-[720px]">
