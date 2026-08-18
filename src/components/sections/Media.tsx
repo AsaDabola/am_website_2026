@@ -64,7 +64,7 @@ export default async function Media({
     >
       <p
         aria-hidden
-        className="pointer-events-none absolute -right-4 top-4 hidden select-none font-display text-[220px] italic text-white/10 lg:block"
+        className="pointer-events-none absolute -right-4 top-4 hidden select-none font-script text-[260px] font-bold text-white/10 lg:block"
       >
         {tMinistries("sentTag")}
       </p>

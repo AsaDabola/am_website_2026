@@ -27,7 +27,7 @@ export default async function Hero({ data }: { data?: HeroData } = {}) {
         className="object-cover opacity-90"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-night via-night/80 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-night/70 via-night/20 to-transparent" />
 
       <Container className="relative flex min-h-[720px] flex-col justify-center py-24">
         <Eyebrow tone="light">{data?.eyebrow ?? t("eyebrow")}</Eyebrow>

@@ -17,14 +17,36 @@ export const metadata: Metadata = {
 };
 
 const tiers = [
-  { label: "Newcomer", description: "Joins our bible programs, group activities and others." },
+  {
+    label: "Newcomer",
+    description: "Joins our bible programs, group activities and others.",
+    from: "#14b8a6",
+    to: "#0f3d3a",
+  },
   {
     label: "Registered",
     description: "Joins consistent activities and shares Statement of Faith.",
+    from: "#2a5eec",
+    to: "#0d1f52",
   },
-  { label: "Volunteer", description: "Actively serves God through ministry activities." },
-  { label: "Staff", description: "Passionately seeking God's calling for ministry vocation." },
-  { label: "Leader", description: "Participating in serving leadership." },
+  {
+    label: "Volunteer",
+    description: "Actively serves God through ministry activities.",
+    from: "#4d8df6",
+    to: "#153a7a",
+  },
+  {
+    label: "Staff",
+    description: "Passionately seeking God's calling for ministry vocation.",
+    from: "#1449c6",
+    to: "#0a1a4d",
+  },
+  {
+    label: "Leader",
+    description: "Participating in serving leadership.",
+    from: "#0a0e26",
+    to: "#050a2e",
+  },
 ];
 
 export default async function MembershipPage() {
@@ -40,16 +62,21 @@ export default async function MembershipPage() {
         title="Membership"
         subtitle="What it means to belong to the AM network as a chapter or an individual."
         backgroundImage="/images/membership-hero.jpg"
+        size="large"
+        titleVariant="ghost"
       >
-        <div className="mt-10 flex flex-wrap gap-3">
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {tiers.map((tier) => (
-            <span
+            <div
               key={tier.label}
-              title={tier.description}
-              className="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.1em] text-white backdrop-blur-sm"
+              className="rounded-lg px-4 py-3"
+              style={{ backgroundImage: `linear-gradient(160deg, ${tier.from}, ${tier.to})` }}
             >
-              {tier.label}
-            </span>
+              <p className="font-display text-xs font-bold uppercase tracking-[0.08em] text-white">
+                {tier.label}
+              </p>
+              <p className="mt-1 text-[11px] leading-snug text-white/75">{tier.description}</p>
+            </div>
           ))}
         </div>
       </AboutHero>

@@ -12,7 +12,7 @@ export default async function HonoraryChairman({ data }: { data?: HonoraryChairm
 
   return (
     <section className="bg-night-deep py-24">
-      <Container className="grid items-center gap-12 lg:grid-cols-[1fr_320px] lg:gap-16">
+      <Container className="grid items-start gap-6 lg:grid-cols-[1fr_220px] lg:gap-10">
         <div>
           <Eyebrow tone="light">{data?.eyebrow ?? t("eyebrow")}</Eyebrow>
           <p className="font-display text-xl italic text-white/70">
@@ -21,29 +21,29 @@ export default async function HonoraryChairman({ data }: { data?: HonoraryChairm
           <h2 className="mt-1 font-display text-4xl font-bold tracking-[-0.02em] text-white sm:text-5xl">
             {name}
           </h2>
-
-          <div className="mt-6 inline-flex flex-col items-start font-display text-xl font-bold uppercase leading-[1.5] tracking-[-0.01em] text-white sm:text-2xl">
-            <span className="bg-brand-blue px-2 py-0.5">{data?.quoteLine1 ?? t("quoteLine1")}</span>
-            <span className="mt-1 bg-brand-blue px-2 py-0.5">
-              {data?.quoteLine2 ?? t("quoteLine2")}
-            </span>
-            <span className="mt-1 bg-brand-blue px-2 py-0.5">
-              {data?.quoteLine3 ?? t("quoteLine3")}{" "}
-              <span className="text-sm normal-case">
-                {data?.quoteReference ?? t("quoteReference")}
-              </span>
-            </span>
-          </div>
         </div>
 
-        <div className="relative aspect-square w-full max-w-[320px] overflow-hidden rounded-2xl">
+        <div className="relative aspect-square w-full max-w-[220px] overflow-hidden rounded-2xl justify-self-start lg:justify-self-end">
           <Image
             src={image}
             alt={name}
             fill
             className="object-cover"
-            sizes="320px"
+            sizes="220px"
           />
+        </div>
+
+        <div className="mt-2 inline-flex flex-col items-start font-display text-xl font-bold uppercase leading-[1.5] tracking-[-0.01em] text-white sm:text-2xl lg:col-span-2">
+          <span className="bg-brand-blue px-2 py-0.5">{data?.quoteLine1 ?? t("quoteLine1")}</span>
+          <span className="mt-1 bg-brand-blue px-2 py-0.5">
+            {data?.quoteLine2 ?? t("quoteLine2")}
+          </span>
+          <span className="mt-1 bg-brand-blue px-2 py-0.5">
+            {data?.quoteLine3 ?? t("quoteLine3")}{" "}
+            <span className="text-sm normal-case">
+              {data?.quoteReference ?? t("quoteReference")}
+            </span>
+          </span>
         </div>
       </Container>
     </section>

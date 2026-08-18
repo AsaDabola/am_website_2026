@@ -149,20 +149,9 @@ export default async function Ministries({ data }: { data?: MinistriesData } = {
                     </span>
                     <span
                       aria-hidden
-                      className="pointer-events-none absolute inset-0 flex items-center justify-center font-display text-4xl italic text-white"
+                      className="pointer-events-none absolute inset-0 flex items-center justify-center font-script text-5xl font-bold text-white"
                     >
                       {step.tag}
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="ml-1 size-6 -translate-y-2"
-                      >
-                        <path d="M5 12h13M13 6l6 6-6 6" />
-                      </svg>
                     </span>
                   </>
                 )}
