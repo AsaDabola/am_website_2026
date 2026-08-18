@@ -81,8 +81,8 @@ export default async function Header() {
               {t("whoWeAre")}
               <ChevronDownIcon className="size-2.5 text-white/80" />
             </button>
-            <div className="invisible absolute left-1/2 top-full -translate-x-1/2 pt-2 opacity-0 transition-opacity group-hover:visible group-hover:opacity-100">
-              <div className="w-[880px] rounded-2xl border border-black/5 bg-white p-8 shadow-2xl">
+            <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-opacity group-hover:visible group-hover:opacity-100">
+              <div className="w-[880px] max-w-[calc(100vw-2rem)] rounded-2xl border border-black/5 bg-white p-8 shadow-2xl">
                 <div className="grid grid-cols-[1fr_1fr_1.3fr] gap-8">
                   <div>
                     <p className="text-xs font-bold uppercase tracking-[0.12em] text-ink">
