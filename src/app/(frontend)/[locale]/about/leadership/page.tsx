@@ -2,18 +2,19 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
+import Eyebrow from "@/components/ui/Eyebrow";
 import AboutHero from "@/components/about/AboutHero";
 import AboutSubNav from "@/components/about/AboutSubNav";
+import { ArrowRightIcon } from "@/components/ui/icons";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 
 export const metadata: Metadata = {
   title: "Leadership | AM International",
-  description:
-    "The people who steer, teach and serve across AM's campuses and offices.",
+  description: "Servants, sent and given — the people who steer AM's mission worldwide.",
 };
 
-const leaders = [
+const featuredLeaders = [
   {
     name: "Rev. Dr. Paul DeVries",
     title: "Senior Leader and Advisor",
@@ -22,30 +23,81 @@ const leaders = [
   },
   {
     name: "Rani Reid",
-    title: "General Secretary",
-    bio: "Rani Reid is our General Secretary who steers and leads the administration, mission and operation of AM world mission.",
-    email: "rani.r@amintl.org",
+    title: "Executive Director",
+    bio: "Rani Reid is our Executive Director who steers and leads the administration, mission and operation of AM world mission.",
     image: "/images/leader-reid.jpg",
   },
+];
+
+const hqStaff = [
   {
     name: "Asa Daboh",
     title: "HQ Staff",
-    bio: "Asa Daboh serves as our HQ Staff, overseeing chapter involvement, property management, and assisting with HQ operations.",
-    email: "asa.d@amintl.org",
+    bio: "Asa Daboh serves as our HQ staff, overseeing chapter involvement, property management, and assisting with HQ operations.",
+    email: "asa@amintl.org",
     image: "/images/leader-daboh.jpg",
   },
   {
     name: "Ruth Jigmedsuren",
     title: "HQ Staff",
-    bio: "Ruth Jigmedsuren serves as our HQ staff, overseeing on campus chapter involvement, and assisting with HQ operations.",
+    bio: "Ruth Jigmedsuren serves as our HQ staff, overseeing on-campus chapter involvement and assisting with HQ operations.",
+    email: "ruth@amintl.org",
     image: "/images/leader-jigmedsuren.jpg",
   },
   {
     name: "Can Liu",
     title: "Director of Chinese Mission in USA",
-    bio: "Can Liu is our Director of Chinese mission in the United States. He creates edifying, empowering, and nourishing Biblical programs for overseas Chinese students studying in U.S. colleges based on his faith journey from China with many testimonies and stories of grace.",
-    email: "can.l@amintl.org",
+    bio: "Can Liu is our Director of the Chinese mission in the United States. He creates edifying, empowering, and nourishing Biblical programs for overseas Chinese students studying in US colleges based on his faith journey from China with many testimonies and stories of grace.",
+    email: "can@amintl.org",
     image: "/images/leader-liu.jpg",
+  },
+];
+
+const coordinators = [
+  { name: "Heewon Ham", region: "USA & Canada" },
+  { name: "Andrea Rico", region: "South America" },
+  { name: "Joel Lee", region: "Asia Pacific" },
+  { name: "Mara Oneyama", region: "Europe" },
+  { name: "Jonathan Xie", region: "China" },
+  { name: "Priya Bharat Vaya", region: "South Asia" },
+  { name: "Samuel Kwizera", region: "Africa" },
+  { name: "Khiaghie Koropa", region: "Oceania" },
+];
+
+function initials(name: string) {
+  return name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("")
+    .toUpperCase();
+}
+
+const leaderKinds = [
+  {
+    number: "01",
+    title: "Chapter Leaders",
+    description:
+      "Students who register AM at their university, open the first Bible study, and carry the chapter through each academic year.",
+  },
+  {
+    number: "02",
+    title: "Field Missionaries",
+    description:
+      "Sent to cities where no chapter exists yet, planting the work from the first conversation onward.",
+  },
+  {
+    number: "03",
+    title: "Bible Teachers",
+    description:
+      "Walking students through the five-phase programme one study at a time, on the student's schedule.",
+  },
+  {
+    number: "04",
+    title: "Local Staff",
+    description:
+      "Holding the practical work of each chapter — rooms, resources, events and the people who keep coming back.",
   },
 ];
 
@@ -58,54 +110,135 @@ export default function LeadershipPage() {
           { label: "About", href: "/about" },
           { label: "Leadership" },
         ]}
-        title="Leadership"
-        subtitle="The people who steer, teach and serve across AM's campuses and offices."
+        title="Servants, sent and given."
+        subtitle="Our mission is possible through God-given servants who join our team from all across the world. We collaborate and work together in unity with Chapter leaders, field missionaries, Bible teachers, and many local staff."
       />
       <AboutSubNav active="/about/leadership" />
 
-      <article className="bg-white py-20">
-        <Container className="max-w-[720px]">
-          <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink">
-            Our Leadership
+      <section className="bg-white py-20">
+        <Container className="max-w-[1104px]">
+          <Eyebrow>Headquarters &amp; Field</Eyebrow>
+          <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
+            The people behind the sending.
           </h2>
-          <p className="mt-6 text-base leading-relaxed text-ink">
-            Our mission is possible through God-given servants who join our team from all across
-            the world. We collaborate and work together in unity with Chapter leaders, field
-            missionaries, Bible teachers, and many local staff. We are pleased to introduce our
-            representative leaders and staff who exert gracious leadership for our Gospel
-            movement.
-          </p>
 
-          <div className="mt-14 space-y-12">
-            {leaders.map((leader) => (
-              <div key={leader.name} className="flex flex-col gap-6 sm:flex-row sm:items-start">
-                <div className="relative size-[120px] shrink-0 overflow-hidden rounded-xl">
+          <div className="mt-10 space-y-12">
+            {featuredLeaders.map((leader) => (
+              <div
+                key={leader.name}
+                className="flex flex-col gap-8 border-t border-black/10 pt-10 first:border-t-0 first:pt-0 sm:flex-row"
+              >
+                <div className="relative aspect-[258/215] w-full shrink-0 overflow-hidden rounded-xl sm:w-[258px]">
                   <Image
                     src={leader.image}
                     alt={leader.name}
                     fill
                     className="object-cover"
-                    sizes="120px"
+                    sizes="258px"
                   />
                 </div>
                 <div>
-                  <p className="font-display text-lg font-bold text-ink">{leader.name}</p>
-                  <p className="text-sm font-semibold text-brand-blue">{leader.title}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">{leader.bio}</p>
-                  {leader.email && (
-                    <Link
-                      href={`mailto:${leader.email}`}
-                      className="mt-2 inline-block text-sm text-brand-blue underline underline-offset-2"
-                    >
-                      {leader.email}
-                    </Link>
-                  )}
+                  <p className="font-display text-xl font-bold text-ink">{leader.name}</p>
+                  <p className="mt-2 text-sm font-semibold text-brand-blue">{leader.title}</p>
+                  <p className="mt-4 max-w-[760px] text-sm leading-relaxed text-ink-muted">
+                    {leader.bio}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </Container>
-      </article>
+      </section>
+
+      <section className="bg-mist py-20">
+        <Container className="max-w-[1104px]">
+          <Eyebrow>HQ Staff &amp; Coordinators</Eyebrow>
+          <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
+            Holding the day to day.
+          </h2>
+
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {hqStaff.map((person) => (
+              <div key={person.name} className="overflow-hidden rounded-2xl bg-white">
+                <div className="relative aspect-[352/215] w-full">
+                  <Image
+                    src={person.image}
+                    alt={person.name}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="font-display text-lg font-bold text-ink">{person.name}</p>
+                  <p className="mt-1 text-sm font-semibold text-brand-blue">{person.title}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">{person.bio}</p>
+                  <Link
+                    href={`mailto:${person.email}`}
+                    className="mt-3 inline-block text-sm text-brand-blue underline underline-offset-2"
+                  >
+                    {person.email}
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-white py-20">
+        <Container className="max-w-[1104px]">
+          <Eyebrow>AM Global</Eyebrow>
+          <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
+            Coordinators, region by region.
+          </h2>
+
+          <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 lg:grid-cols-5">
+            {coordinators.map((person) => (
+              <div key={person.name} className="text-center">
+                <span className="mx-auto flex aspect-square w-full items-center justify-center rounded-2xl bg-mist font-display text-2xl font-bold text-ink-muted">
+                  {initials(person.name)}
+                </span>
+                <p className="mt-4 text-sm font-semibold text-ink">{person.name}</p>
+                <p className="mt-1 text-xs text-ink-muted">{person.region}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-mist py-20">
+        <Container className="max-w-[1104px]">
+          <Eyebrow>Across the Network</Eyebrow>
+          <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
+            Four kinds of leaders, one movement.
+          </h2>
+
+          <div className="mt-10 divide-y divide-black/10 rounded-2xl bg-white px-6">
+            {leaderKinds.map((kind) => (
+              <div
+                key={kind.number}
+                className="flex flex-col gap-3 py-7 sm:flex-row sm:items-center sm:gap-8"
+              >
+                <div className="flex items-baseline gap-4 sm:w-[304px] sm:shrink-0">
+                  <span className="font-display text-sm font-extrabold text-brand-blue">
+                    {kind.number}
+                  </span>
+                  <p className="font-display text-xl font-extrabold tracking-[-0.02em] text-ink">
+                    {kind.title}
+                  </p>
+                </div>
+                <p className="flex-1 text-sm leading-relaxed text-ink-muted">
+                  {kind.description}
+                </p>
+                <span className="hidden size-[42px] shrink-0 items-center justify-center rounded-full border border-black/10 text-ink sm:flex">
+                  <ArrowRightIcon />
+                </span>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       <PartnerWithUs />
       <Newsletter />
