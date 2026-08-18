@@ -24,23 +24,34 @@ const defaultCampuses: Campus[] = [
   { name: "AM Washington", location: "Seattle, Washington" },
 ];
 
-async function getCampuses(): Promise<Campus[]> {
+async function getCampuses(tenantId?: string): Promise<Campus[]> {
   const docs = await fetchCollectionSafely(async (payload) => {
     const result = await payload.find({
       collection: "campuses",
-      where: { active: { equals: true } },
+      where: {
+        and: [
+          { active: { equals: true } },
+          tenantId ? { tenant: { equals: tenantId } } : { tenant: { exists: false } },
+        ],
+      },
       sort: "name",
       limit: 200,
     });
     return result.docs;
   });
 
-  if (!docs) return defaultCampuses;
+  if (!docs) return tenantId ? [] : defaultCampuses;
   return docs.map((doc) => ({ name: doc.name, location: doc.location }));
 }
 
-export default async function OurNetwork({ data }: { data?: OurNetworkData } = {}) {
-  const [campuses, t] = await Promise.all([getCampuses(), getTranslations("Home.OurNetwork")]);
+export default async function OurNetwork({
+  data,
+  tenantId,
+}: { data?: OurNetworkData; tenantId?: string } = {}) {
+  const [campuses, t] = await Promise.all([
+    getCampuses(tenantId),
+    getTranslations("Home.OurNetwork"),
+  ]);
 
   return (
     <section

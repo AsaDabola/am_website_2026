@@ -28,5 +28,14 @@ export const Campuses: CollectionConfig = {
       type: "checkbox",
       defaultValue: true,
     },
+    {
+      name: "tenant",
+      type: "relationship",
+      relationTo: "tenants",
+      admin: {
+        description:
+          "Leave empty for a main-site (US) chapter. Set this to show the chapter on that country site's network search instead.",
+      },
+    },
   ],
 };
