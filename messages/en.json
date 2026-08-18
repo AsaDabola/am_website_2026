@@ -44,6 +44,15 @@
       "editorial": "Editorial",
       "photoNews": "Photo news",
       "testimony": "Testimony"
+    },
+    "megaMenu": {
+      "aboutHeading": "About",
+      "whatWeDoHeading": "What we do",
+      "featuredHeading": "Featured articles",
+      "allArticles": "All articles",
+      "ctaBibleStudy": "Start a Bible study",
+      "ctaFindChapter": "Find your chapter",
+      "ctaGive": "Give today"
     }
   },
   "Footer": {
@@ -151,13 +160,25 @@
     "roadmapEyebrow": "AM Roadmap",
     "roadmapHeading": "What is expected?",
     "connectTag": "Connect",
-    "connectItems": ["Onsite/Online Bible", "Study Programs"],
+    "connectItems": [
+      "Onsite/Online Bible",
+      "Study Programs"
+    ],
     "growTag": "Grow",
-    "growItems": ["Group Activities"],
+    "growItems": [
+      "Group Activities"
+    ],
     "leadTag": "Lead",
-    "leadItems": ["Volunteer & Internships", "Chapter Leaders"],
+    "leadItems": [
+      "Volunteer & Internships",
+      "Chapter Leaders"
+    ],
     "sentTag": "Sent",
-    "sentItems": ["Alumni Connect", "Part/Full Time Staff Missionaries", "Bible Teachers"],
+    "sentItems": [
+      "Alumni Connect",
+      "Part/Full Time Staff Missionaries",
+      "Bible Teachers"
+    ],
     "connectHeading": "Connect",
     "connectStep1Title": "1. Subscribe to Our Websites",
     "connectStep1Body": "There are many ways to be connected with AM. You can subscribe to our main website, www.amintl.org, and receive newsletters. Or you can subscribe to our online Bible school website, www.amacademy.org, and receive the latest news and programs. Feel free to browse our vision, activities, and programs through our websites and email us anytime if you have any questions.",

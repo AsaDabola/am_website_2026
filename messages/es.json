@@ -44,6 +44,15 @@
       "editorial": "Editorial",
       "photoNews": "Noticias fotográficas",
       "testimony": "Testimonio"
+    },
+    "megaMenu": {
+      "aboutHeading": "Nosotros",
+      "whatWeDoHeading": "Qué hacemos",
+      "featuredHeading": "Artículos destacados",
+      "allArticles": "Todos los artículos",
+      "ctaBibleStudy": "Comienza un estudio bíblico",
+      "ctaFindChapter": "Encuentra tu capítulo",
+      "ctaGive": "Dona hoy"
     }
   },
   "Footer": {

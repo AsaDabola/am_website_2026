@@ -16,6 +16,20 @@ export function ArrowRightIcon({ className = "size-4" }: IconProps) {
   );
 }
 
+export function ArrowUpRightIcon({ className = "size-4" }: IconProps) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M4 12 12 4M5.5 4H12v6.5"
+        stroke="currentColor"
+        strokeWidth={1.6}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function ChevronDownIcon({ className = "size-2.5" }: IconProps) {
   return (
     <svg viewBox="0 0 10 6" fill="none" className={className} aria-hidden="true">

@@ -32,4 +32,9 @@
 body {
   background: #ffffff;
   color: var(--color-ink);
+  /* Some browsers fake a bold/italic weight for a font by drawing the glyph
+     twice at a slight offset when the exact weight isn't available yet
+     (e.g. the moment before a webfont swaps in). That reads as doubled or
+     "embossed" text on large display headings, so it's disabled globally. */
+  font-synthesis: none;
 }

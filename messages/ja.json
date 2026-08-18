@@ -44,6 +44,15 @@
       "editorial": "コラム",
       "photoNews": "フォトニュース",
       "testimony": "証し"
+    },
+    "megaMenu": {
+      "aboutHeading": "私たちについて",
+      "whatWeDoHeading": "活動内容",
+      "featuredHeading": "注目の記事",
+      "allArticles": "すべての記事",
+      "ctaBibleStudy": "聖書研究を始める",
+      "ctaFindChapter": "支部を探す",
+      "ctaGive": "今すぐ献金する"
     }
   },
   "Footer": {

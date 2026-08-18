@@ -44,6 +44,15 @@
       "editorial": "칼럼",
       "photoNews": "포토 뉴스",
       "testimony": "간증"
+    },
+    "megaMenu": {
+      "aboutHeading": "소개",
+      "whatWeDoHeading": "우리가 하는 일",
+      "featuredHeading": "추천 아티클",
+      "allArticles": "모든 아티클",
+      "ctaBibleStudy": "성경공부 시작하기",
+      "ctaFindChapter": "지부 찾기",
+      "ctaGive": "지금 후원하기"
     }
   },
   "Footer": {

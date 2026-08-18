@@ -44,6 +44,15 @@
       "editorial": "专栏",
       "photoNews": "图片新闻",
       "testimony": "见证"
+    },
+    "megaMenu": {
+      "aboutHeading": "关于我们",
+      "whatWeDoHeading": "我们的事工",
+      "featuredHeading": "精选文章",
+      "allArticles": "所有文章",
+      "ctaBibleStudy": "开始查经",
+      "ctaFindChapter": "寻找分会",
+      "ctaGive": "立即奉献"
     }
   },
   "Footer": {

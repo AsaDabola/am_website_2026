@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import AboutHero from "@/components/about/AboutHero";
 import AboutSubNav from "@/components/about/AboutSubNav";
@@ -22,25 +23,69 @@ export default function ChairmanPage() {
         ]}
         title="Ralph D. Winter"
         subtitle="AM's first honorary chairman, and the missiology the ministry still carries forward."
+        backgroundImage="/images/chairman-hero.jpg"
       />
       <AboutSubNav active="/about/chairman" />
 
       <article className="bg-white py-20">
-        <Container className="max-w-[720px]">
-          <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink">
-            A Life of Mission
-          </h2>
-          <div className="mt-6 space-y-6 text-base leading-relaxed text-ink">
-            <p>
-              Apostolos Missions International is proudly continuing the
-              legacy of world evangelization as established by American
-              missiologist Ralph D. Winter. Ralph D. Winter was an
-              accomplished missiologist and missionary who opened a new
-              paradigm regarding the role of churches, mission structures,
-              and outreach among unreached people groups. His strategies and
-              approach to mission were a watershed transition that opened
-              the door for the world to know the Gospel.
-            </p>
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[1fr_420px]">
+            <div>
+              <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink">
+                Our First Chairman
+              </h2>
+              <div className="mt-6 max-w-[720px] space-y-6 text-base leading-relaxed text-ink">
+                <p>
+                  Apostolos Mission International is proudly continuing the legacy of world
+                  evangelization as established by American missiologist, Ralph D. Winter. Ralph
+                  D. Winter was an accomplished missiologist and missionary who opened a new
+                  paradigm regarding the role of churches, mission structures, and outreach among
+                  unreached people groups. His strategies and approach to mission were a
+                  watershed transition that opened the door for the world to know the Gospel.
+                </p>
+                <p>
+                  Dr. Winter aimed to overcome cultural and linguistic hurdles in world mission so
+                  that all people could hear the truth. Dr. Winter was recognized by many because
+                  of his influence in world mission strategies. He was even acknowledged by Time
+                  magazine in 2005 as being one of the 25 Most Influential Evangelicals in
+                  America.
+                </p>
+                <p>
+                  Overall, Dr. Winter was a man who was praised for his creative approach in
+                  mission according to the world they were in. He was a revolutionary thinker who
+                  continually worked hard to foresee the best strategy that best fit the scene.
+                </p>
+                <p>
+                  AM International was blessed to have Dr. Winter serve as the organization&rsquo;s
+                  first chairman and received his blessing to embody the same heart, creativity,
+                  and passion for world missions. As the ones who are &ldquo;sent,&rdquo; AM
+                  desires to fuel the heart of the youth with a drive for sharing the Word. Their
+                  dream is to give hope to those who are weary and burdened. May AM deliver the
+                  Gospel, sharing the freedom that only the truth can bring.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div className="relative aspect-[420/302] overflow-hidden rounded-2xl">
+                <Image
+                  src="/images/chairman-photo-1.jpg"
+                  alt="Dr. Ralph D. Winter teaching at Seoul '73"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 420px, 100vw"
+                />
+              </div>
+              <div className="relative aspect-[420/250] overflow-hidden rounded-2xl">
+                <Image
+                  src="/images/chairman-photo-2.jpg"
+                  alt="AM chapter graduates in Guatemala"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 420px, 100vw"
+                />
+              </div>
+            </div>
           </div>
         </Container>
       </article>
