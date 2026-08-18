@@ -77,7 +77,19 @@ export default async function PillarsOfMissionPage() {
         ]}
         title={tHeader("whatWeDo")}
         subtitle={t("tagline")}
-      />
+      >
+        <div className="mt-10 flex flex-wrap gap-3">
+          {pillars.map((pillar) => (
+            <a
+              key={pillar.title}
+              href={`#${pillar.title.toLowerCase()}`}
+              className="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.1em] text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+            >
+              {pillar.title}
+            </a>
+          ))}
+        </div>
+      </AboutHero>
       <WhatWeDoSubNav active="/what-we-do/pillars-of-mission" />
 
       <section className="bg-mist py-20">
@@ -124,7 +136,11 @@ export default async function PillarsOfMissionPage() {
       </section>
 
       {pillars.map((pillar, index) => (
-        <section key={pillar.title} className={index % 2 === 0 ? "bg-white py-20" : "bg-mist py-20"}>
+        <section
+          key={pillar.title}
+          id={pillar.title.toLowerCase()}
+          className={`scroll-mt-24 ${index % 2 === 0 ? "bg-white py-20" : "bg-mist py-20"}`}
+        >
           <Container>
             <div className="grid items-start gap-10 lg:grid-cols-[386px_1fr] lg:gap-16">
               <div className="relative aspect-square overflow-hidden rounded-2xl">

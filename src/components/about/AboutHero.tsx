@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 
@@ -9,11 +10,13 @@ export default function AboutHero({
   title,
   subtitle,
   backgroundImage = "/images/about-hero-banner.jpg",
+  children,
 }: {
   crumbs: Crumb[];
   title: string;
   subtitle: string;
   backgroundImage?: string;
+  children?: ReactNode;
 }) {
   return (
     <section className="relative overflow-hidden bg-night">
@@ -50,6 +53,7 @@ export default function AboutHero({
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-on-dark/80 sm:text-xl">
           {subtitle}
         </p>
+        {children}
       </Container>
     </section>
   );

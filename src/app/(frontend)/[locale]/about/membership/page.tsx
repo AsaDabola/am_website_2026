@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
+import { ArrowRightIcon } from "@/components/ui/icons";
 import AboutHero from "@/components/about/AboutHero";
 import AboutSubNav from "@/components/about/AboutSubNav";
+import PullQuote from "@/components/about/PullQuote";
+import MembershipApplicationForm from "@/components/about/MembershipApplicationForm";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 
@@ -10,35 +16,124 @@ export const metadata: Metadata = {
   description: "What it means to belong to the AM network as a chapter or an individual.",
 };
 
-export default function MembershipPage() {
+const tiers = [
+  { label: "Newcomer", description: "Joins our bible programs, group activities and others." },
+  {
+    label: "Registered",
+    description: "Joins consistent activities and shares Statement of Faith.",
+  },
+  { label: "Volunteer", description: "Actively serves God through ministry activities." },
+  { label: "Staff", description: "Passionately seeking God's calling for ministry vocation." },
+  { label: "Leader", description: "Participating in serving leadership." },
+];
+
+export default async function MembershipPage() {
+  const [t, tCommon] = await Promise.all([
+    getTranslations("AboutPage"),
+    getTranslations("Common"),
+  ]);
+
   return (
     <>
       <AboutHero
-        crumbs={[
-          { label: "Home", href: "/" },
-          { label: "About", href: "/about" },
-          { label: "Membership" },
-        ]}
+        crumbs={[{ label: "Home", href: "/" }, { label: "About", href: "/about" }, { label: "Membership" }]}
         title="Membership"
         subtitle="What it means to belong to the AM network as a chapter or an individual."
-      />
+        backgroundImage="/images/membership-hero.jpg"
+      >
+        <div className="mt-10 flex flex-wrap gap-3">
+          {tiers.map((tier) => (
+            <span
+              key={tier.label}
+              title={tier.description}
+              className="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.1em] text-white backdrop-blur-sm"
+            >
+              {tier.label}
+            </span>
+          ))}
+        </div>
+      </AboutHero>
       <AboutSubNav active="/about/membership" />
 
       <article className="bg-white py-20">
         <Container className="max-w-[720px]">
-          <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink">
-            Becoming Part of AM
-          </h2>
-          <div className="mt-6 space-y-6 text-base leading-relaxed text-ink">
-            <p>
-              We&rsquo;re putting together the full details on chapter and individual
-              membership with AM. In the meantime, if you&rsquo;d like to know more about
-              starting a chapter on your campus or joining an existing one, reach out to
-              our team and we&rsquo;ll walk you through it.
-            </p>
+          <p className="text-base leading-relaxed text-ink-muted">
+            Qualifications for membership includes being over the age of 18 and regularly
+            attending Bible programs for at least one month at your local AM chapter. Membership
+            is open primarily to current students of the university, but also to university
+            alumni, faculty, and staff. Becoming a member indicates that you share and agree with
+            the AM Statement of Faith and Mission Statement. A member is also one who wishes to
+            uphold the values of the Christian faith in their lives and support the work of
+            God&rsquo;s Kingdom here on earth. Current students must be registered to their
+            university chapter by filling out the application and having it signed by their
+            chapter leader. AM members benefit from full access to the AM resources and
+            facilities. They can also join AM leadership meetings, conventions, and retreats.
+            Members of AM are recommended to give a monthly offering to their chapters. The
+            amount of the offering is of their choice. 100% of the donations go towards
+            supporting the local chapter&rsquo;s operations and activities.
+          </p>
+
+          <div className="my-10">
+            <PullQuote>
+              John 20:21 says, &ldquo;Again Jesus said, &lsquo;Peace be with you! As the Father
+              has sent me, I am sending you.&rsquo;&rdquo; (NIV)
+            </PullQuote>
           </div>
         </Container>
       </article>
+
+      <section className="bg-mist py-20">
+        <Container className="max-w-[800px]">
+          <MembershipApplicationForm />
+        </Container>
+      </section>
+
+      <section className="bg-white py-24">
+        <Container className="max-w-[720px]">
+          <div className="grid gap-6 sm:grid-cols-2">
+            <Link
+              href="/about/statement-of-faith"
+              className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
+            >
+              <Image
+                src="/images/about-statement-faith-card.jpg"
+                alt=""
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(min-width: 640px) 50vw, 100vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <span className="absolute left-6 top-6 font-display text-lg font-bold text-white">
+                {t("cardStatementOfFaithTitle")}
+              </span>
+              <span className="absolute bottom-6 left-6 inline-flex items-center gap-2 rounded-full bg-brand-blue px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.04em] text-white">
+                {tCommon("learnMore")}
+                <ArrowRightIcon />
+              </span>
+            </Link>
+            <Link
+              href="/about/mission"
+              className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
+            >
+              <Image
+                src="/images/about-mission-card.jpg"
+                alt=""
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(min-width: 640px) 50vw, 100vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <span className="absolute left-6 top-6 font-display text-lg font-bold text-white">
+                {t("cardMissionStatementTitle")}
+              </span>
+              <span className="absolute bottom-6 left-6 inline-flex items-center gap-2 rounded-full bg-brand-blue px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.04em] text-white">
+                {tCommon("learnMore")}
+                <ArrowRightIcon />
+              </span>
+            </Link>
+          </div>
+        </Container>
+      </section>
 
       <PartnerWithUs />
       <Newsletter />

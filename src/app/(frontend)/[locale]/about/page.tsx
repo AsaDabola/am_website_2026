@@ -3,7 +3,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
-import Button from "@/components/ui/Button";
+import { ArrowRightIcon } from "@/components/ui/icons";
 import AboutHero from "@/components/about/AboutHero";
 import AboutSubNav from "@/components/about/AboutSubNav";
 import PullQuote from "@/components/about/PullQuote";
@@ -94,13 +94,10 @@ export default async function WhoWeArePage() {
               <span className="absolute left-6 top-6 font-display text-lg font-bold text-white">
                 {t("cardStatementOfFaithTitle")}
               </span>
-              <Button
-                href="/about/statement-of-faith"
-                variant="solid"
-                className="pointer-events-none absolute bottom-6 left-6 !px-5 !py-2.5 !text-xs"
-              >
+              <span className="absolute bottom-6 left-6 inline-flex items-center gap-2 rounded-full bg-brand-blue px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.04em] text-white">
                 {tCommon("learnMore")}
-              </Button>
+                <ArrowRightIcon />
+              </span>
             </Link>
             <Link
               href="/about/mission"
@@ -117,13 +114,10 @@ export default async function WhoWeArePage() {
               <span className="absolute left-6 top-6 font-display text-lg font-bold text-white">
                 {t("cardMissionStatementTitle")}
               </span>
-              <Button
-                href="/about/mission"
-                variant="solid"
-                className="pointer-events-none absolute bottom-6 left-6 !px-5 !py-2.5 !text-xs"
-              >
+              <span className="absolute bottom-6 left-6 inline-flex items-center gap-2 rounded-full bg-brand-blue px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.04em] text-white">
                 {tCommon("learnMore")}
-              </Button>
+                <ArrowRightIcon />
+              </span>
             </Link>
           </div>
         </Container>
