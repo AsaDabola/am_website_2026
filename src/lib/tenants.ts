@@ -44,9 +44,12 @@ export async function getTenantsByContinent(continent: string) {
 }
 
 export async function getAllActiveTenantsByContinent(): Promise<
-  Record<Continent, { country: string; city?: string; slug: string }[]>
+  Record<Continent, { country: string; city?: string; slug: string; locale?: string }[]>
 > {
-  const empty = {} as Record<Continent, { country: string; city?: string; slug: string }[]>;
+  const empty = {} as Record<
+    Continent,
+    { country: string; city?: string; slug: string; locale?: string }[]
+  >;
   for (const continent of CONTINENTS) empty[continent] = [];
 
   try {
@@ -64,6 +67,7 @@ export async function getAllActiveTenantsByContinent(): Promise<
         country: tenant.country,
         city: tenant.city ?? undefined,
         slug: tenant.slug,
+        locale: tenant.locale ?? undefined,
       });
     }
     return empty;

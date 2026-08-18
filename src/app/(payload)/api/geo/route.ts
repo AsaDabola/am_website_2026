@@ -22,7 +22,12 @@ export async function GET(request: NextRequest) {
     if (!tenant) return NextResponse.json({ tenant: null });
 
     return NextResponse.json({
-      tenant: { country: tenant.country, continent: tenant.continent, slug: tenant.slug },
+      tenant: {
+        country: tenant.country,
+        continent: tenant.continent,
+        slug: tenant.slug,
+        locale: tenant.locale,
+      },
     });
   } catch {
     return NextResponse.json({ tenant: null });

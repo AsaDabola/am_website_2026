@@ -42,9 +42,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  // A tenant home route with no Page doc yet still gets real metadata.
+  // A tenant home route with no Page doc yet still gets real, unique
+  // metadata — this (plus the sitemap and the tenant-locale redirect) is
+  // what lets a country's site surface as its own result in search rather
+  // than just as a path under the main site.
   if (resolved.isTenantRoute && slug.length === 2) {
-    return { title: `AM ${resolved.tenant!.country} | Apostolos Missions International` };
+    const tenant = resolved.tenant!;
+    return {
+      title: `AM ${tenant.country} | Apostolos Missions International`,
+      description: `Apostolos Missions International in ${tenant.country}${tenant.city ? ` (${tenant.city})` : ""} — an interdenominational ministry spreading the gospel and sending students out on mission.`,
+    };
   }
 
   return {};
