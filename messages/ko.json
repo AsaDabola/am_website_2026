@@ -36,7 +36,9 @@
       "volunteer": "봉사",
       "bibleTeacherTraining": "성경 교사 훈련",
       "internship": "인턴십",
-      "donate": "후원하기"
+      "donate": "후원하기",
+      "onlineBibleStudy": "온라인 성경공부",
+      "chapterAffiliation": "지부 가입"
     },
     "newsMenu": {
       "featured": "주요 소식",
@@ -53,6 +55,45 @@
       "ctaBibleStudy": "성경공부 시작하기",
       "ctaFindChapter": "지부 찾기",
       "ctaGive": "지금 후원하기"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "AM 소개",
+        "description": "우리가 누구이며 무엇을 믿고 어디에서 왔는지."
+      },
+      "leadership": {
+        "title": "리더십",
+        "description": "이 운동을 섬기는 사람들과 함께하는 방법."
+      },
+      "whatWeDo": {
+        "title": "우리의 사역",
+        "description": "선교를 이끄는 기둥과 사역들."
+      },
+      "bibleStudy": {
+        "title": "성경공부 프로그램",
+        "description": "첫 질문에서 파송까지, 5단계의 여정."
+      },
+      "getInvolved": {
+        "title": "참여하기",
+        "description": "어디에 있든 이 운동 안에서 당신의 자리를 찾으세요."
+      },
+      "supportMission": {
+        "title": "섬김과 후원",
+        "description": "훈련받고, 지부를 시작하고, 현장의 학생들을 후원하세요."
+      },
+      "latestNews": {
+        "title": "최신 소식",
+        "description": "네트워크 전역의 이야기와 소식."
+      },
+      "events": {
+        "title": "행사",
+        "description": "수련회, 컨퍼런스, 모임 안내."
+      }
+    },
+    "mobile": {
+      "back": "뒤로",
+      "close": "메뉴 닫기",
+      "menu": "메뉴"
     }
   },
   "Footer": {

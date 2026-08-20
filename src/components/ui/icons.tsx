@@ -52,6 +52,47 @@ export function SentSwooshWatermarkIcon({ className = "h-[173.5px] w-[391px]" }:
   );
 }
 
+export function ChevronRightIcon({ className = "size-4" }: IconProps) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" className={className} aria-hidden="true">
+      <path
+        d="m6 3.5 4.5 4.5L6 12.5"
+        stroke="currentColor"
+        strokeWidth={1.6}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function ArrowLeftIcon({ className = "size-5" }: IconProps) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M12.667 8H3.333M7.333 12.333 3 8l4.333-4.333"
+        stroke="currentColor"
+        strokeWidth={1.6}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function CloseIcon({ className = "size-5" }: IconProps) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" className={className} aria-hidden="true">
+      <path
+        d="m4 4 8 8M12 4l-8 8"
+        stroke="currentColor"
+        strokeWidth={1.6}
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 export function ChevronDownIcon({ className = "size-2.5" }: IconProps) {
   return (
     <svg viewBox="0 0 10 6" fill="none" className={className} aria-hidden="true">
@@ -202,4 +243,95 @@ export function PaletteIcon({ className = "size-8" }: IconProps) {
       <circle cx="19.5" cy="11.5" r="1.4" fill="currentColor" />
     </svg>
   );
+}
+
+export function CalendarIcon({ className = "size-8" }: IconProps) {
+  return (
+    <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden="true">
+      <rect x="4.5" y="7" width="23" height="20" rx="2.2" stroke="currentColor" strokeWidth={1.7} />
+      <path
+        d="M4.5 13h23M11 4.5V8M21 4.5V8"
+        stroke="currentColor"
+        strokeWidth={1.7}
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+export function NewspaperIcon({ className = "size-8" }: IconProps) {
+  return (
+    <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M6 7.5h15a1.5 1.5 0 0 1 1.5 1.5v15.5a2 2 0 0 0 2 2H8a2 2 0 0 1-2-2V7.5Z"
+        stroke="currentColor"
+        strokeWidth={1.7}
+        strokeLinejoin="round"
+      />
+      <path
+        d="M22.5 13H26a1.5 1.5 0 0 1 1.5 1.5v10a2 2 0 0 1-2 2M10 12h8.5M10 16.5h8.5M10 21h5"
+        stroke="currentColor"
+        strokeWidth={1.7}
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+export function GraduationIcon({ className = "size-8" }: IconProps) {
+  return (
+    <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M16 6 3.5 12 16 18l12.5-6L16 6Z"
+        stroke="currentColor"
+        strokeWidth={1.7}
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8.5 15v6.5c0 2 3.4 3.5 7.5 3.5s7.5-1.5 7.5-3.5V15M28.5 12.5v6"
+        stroke="currentColor"
+        strokeWidth={1.7}
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+export function GiftIcon({ className = "size-8" }: IconProps) {
+  return (
+    <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden="true">
+      <rect x="4.5" y="13" width="23" height="14" rx="1.8" stroke="currentColor" strokeWidth={1.7} />
+      <path d="M3.5 8.5h25V13h-25V8.5ZM16 8.5V27" stroke="currentColor" strokeWidth={1.7} strokeLinejoin="round" />
+      <path
+        d="M16 8.5S14.5 4 11.5 4a3 3 0 0 0 0 6H16Zm0 0S17.5 4 20.5 4a3 3 0 0 1 0 6H16Z"
+        stroke="currentColor"
+        strokeWidth={1.7}
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+/**
+ * The nav data is built on the server but also rendered by the client-side
+ * mobile menu, and React components can't cross that boundary as props — so
+ * groups carry an icon *name* and both sides resolve it through this map.
+ */
+const NAV_ICONS = {
+  gift: GiftIcon,
+  book: BookIcon,
+  people: PeopleIcon,
+  pin: PinIcon,
+  heart: HeartIcon,
+  graduation: GraduationIcon,
+  calendar: CalendarIcon,
+  newspaper: NewspaperIcon,
+  monitor: MonitorIcon,
+} as const;
+
+export type NavIconName = keyof typeof NAV_ICONS;
+
+export function NavIcon({ name, className }: { name: NavIconName; className?: string }) {
+  const Icon = NAV_ICONS[name];
+  return <Icon className={className} />;
 }

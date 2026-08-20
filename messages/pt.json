@@ -36,7 +36,9 @@
       "volunteer": "Voluntariado",
       "bibleTeacherTraining": "Treinamento de professores bíblicos",
       "internship": "Estágio",
-      "donate": "Doar"
+      "donate": "Doar",
+      "onlineBibleStudy": "Estudo bíblico on-line",
+      "chapterAffiliation": "Afiliação de núcleo"
     },
     "newsMenu": {
       "featured": "Destaques",
@@ -53,6 +55,45 @@
       "ctaBibleStudy": "Comece um estudo bíblico",
       "ctaFindChapter": "Encontre seu capítulo",
       "ctaGive": "Doe agora"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "Sobre a AM",
+        "description": "Quem somos, no que cremos e de onde viemos."
+      },
+      "leadership": {
+        "title": "Liderança",
+        "description": "As pessoas que servem o movimento e como fazer parte."
+      },
+      "whatWeDo": {
+        "title": "O que fazemos",
+        "description": "Os pilares e ministérios que sustentam a missão."
+      },
+      "bibleStudy": {
+        "title": "Programa de estudo bíblico",
+        "description": "Um caminho de cinco fases, da primeira pergunta até ser enviado."
+      },
+      "getInvolved": {
+        "title": "Participe",
+        "description": "Encontre o seu lugar no movimento, onde quer que esteja."
+      },
+      "supportMission": {
+        "title": "Sirva e apoie",
+        "description": "Capacite-se, inicie um núcleo ou apoie estudantes no campo."
+      },
+      "latestNews": {
+        "title": "Últimas notícias",
+        "description": "Histórias e novidades de toda a rede."
+      },
+      "events": {
+        "title": "Eventos",
+        "description": "Retiros, conferências e encontros perto de você."
+      }
+    },
+    "mobile": {
+      "back": "Voltar",
+      "close": "Fechar menu",
+      "menu": "Menu"
     }
   },
   "Footer": {

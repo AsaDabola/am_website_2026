@@ -36,7 +36,9 @@
       "volunteer": "ボランティア",
       "bibleTeacherTraining": "聖書教師トレーニング",
       "internship": "インターンシップ",
-      "donate": "献金する"
+      "donate": "献金する",
+      "onlineBibleStudy": "オンライン聖書研究",
+      "chapterAffiliation": "支部への加入"
     },
     "newsMenu": {
       "featured": "注目の記事",
@@ -53,6 +55,45 @@
       "ctaBibleStudy": "聖書研究を始める",
       "ctaFindChapter": "支部を探す",
       "ctaGive": "今すぐ献金する"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "AMについて",
+        "description": "私たちが何者で、何を信じ、どこから来たのか。"
+      },
+      "leadership": {
+        "title": "リーダーシップ",
+        "description": "この働きに仕える人々と、参加する方法。"
+      },
+      "whatWeDo": {
+        "title": "私たちの働き",
+        "description": "宣教を支える柱とミニストリー。"
+      },
+      "bibleStudy": {
+        "title": "聖書研究プログラム",
+        "description": "最初の問いから派遣まで、5つの段階の道のり。"
+      },
+      "getInvolved": {
+        "title": "参加する",
+        "description": "どこにいても、この働きの中であなたの場所を見つけましょう。"
+      },
+      "supportMission": {
+        "title": "仕える・支える",
+        "description": "訓練を受け、支部を始め、現場の学生を支援する。"
+      },
+      "latestNews": {
+        "title": "最新ニュース",
+        "description": "ネットワーク全体からの物語とお知らせ。"
+      },
+      "events": {
+        "title": "イベント",
+        "description": "リトリート、カンファレンス、集会のご案内。"
+      }
+    },
+    "mobile": {
+      "back": "戻る",
+      "close": "メニューを閉じる",
+      "menu": "メニュー"
     }
   },
   "Footer": {

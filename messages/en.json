@@ -36,7 +36,9 @@
       "volunteer": "Volunteer",
       "bibleTeacherTraining": "Bible teacher training",
       "internship": "Internship",
-      "donate": "Donate"
+      "donate": "Donate",
+      "onlineBibleStudy": "Online Bible study",
+      "chapterAffiliation": "Chapter affiliation"
     },
     "newsMenu": {
       "featured": "Featured",
@@ -53,6 +55,45 @@
       "ctaBibleStudy": "Start a Bible study",
       "ctaFindChapter": "Find your chapter",
       "ctaGive": "Give today"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "About AM",
+        "description": "Who we are, what we believe and where we came from."
+      },
+      "leadership": {
+        "title": "Leadership",
+        "description": "The people serving the movement and how to belong."
+      },
+      "whatWeDo": {
+        "title": "What We Do",
+        "description": "The pillars and ministries that carry the mission forward."
+      },
+      "bibleStudy": {
+        "title": "Bible Study Program",
+        "description": "A five-phase path from your first question to being sent."
+      },
+      "getInvolved": {
+        "title": "Get Involved",
+        "description": "Find your place in the movement, wherever you are."
+      },
+      "supportMission": {
+        "title": "Serve & Support",
+        "description": "Train, start a chapter, or partner with students in the field."
+      },
+      "latestNews": {
+        "title": "Latest News",
+        "description": "Stories and updates from across the network."
+      },
+      "events": {
+        "title": "Events",
+        "description": "Retreats, conferences and gatherings near you."
+      }
+    },
+    "mobile": {
+      "back": "Back",
+      "close": "Close menu",
+      "menu": "Menu"
     }
   },
   "Footer": {

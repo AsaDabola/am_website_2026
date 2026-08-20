@@ -36,7 +36,9 @@
       "volunteer": "Ehrenamt",
       "bibleTeacherTraining": "Ausbildung für Bibellehrer",
       "internship": "Praktikum",
-      "donate": "Spenden"
+      "donate": "Spenden",
+      "onlineBibleStudy": "Online-Bibelstudium",
+      "chapterAffiliation": "Gruppenanschluss"
     },
     "newsMenu": {
       "featured": "Empfohlen",
@@ -53,6 +55,45 @@
       "ctaBibleStudy": "Bibelstudium beginnen",
       "ctaFindChapter": "Kapitel finden",
       "ctaGive": "Jetzt spenden"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "Über AM",
+        "description": "Wer wir sind, was wir glauben und woher wir kommen."
+      },
+      "leadership": {
+        "title": "Leitung",
+        "description": "Die Menschen, die der Bewegung dienen – und wie du dazugehörst."
+      },
+      "whatWeDo": {
+        "title": "Was wir tun",
+        "description": "Die Säulen und Dienste, die die Mission tragen."
+      },
+      "bibleStudy": {
+        "title": "Bibelstudium-Programm",
+        "description": "Ein Weg in fünf Phasen – von der ersten Frage bis zur Aussendung."
+      },
+      "getInvolved": {
+        "title": "Mitmachen",
+        "description": "Finde deinen Platz in der Bewegung, wo immer du bist."
+      },
+      "supportMission": {
+        "title": "Dienen & Unterstützen",
+        "description": "Ausbildung, eine Gruppe gründen oder Studierende im Einsatz unterstützen."
+      },
+      "latestNews": {
+        "title": "Aktuelles",
+        "description": "Geschichten und Neuigkeiten aus dem Netzwerk."
+      },
+      "events": {
+        "title": "Veranstaltungen",
+        "description": "Freizeiten, Konferenzen und Treffen in deiner Nähe."
+      }
+    },
+    "mobile": {
+      "back": "Zurück",
+      "close": "Menü schließen",
+      "menu": "Menü"
     }
   },
   "Footer": {

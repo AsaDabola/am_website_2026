@@ -36,7 +36,9 @@
       "volunteer": "义工服事",
       "bibleTeacherTraining": "圣经教师培训",
       "internship": "实习",
-      "donate": "奉献"
+      "donate": "奉献",
+      "onlineBibleStudy": "线上查经",
+      "chapterAffiliation": "团契加入"
     },
     "newsMenu": {
       "featured": "精选",
@@ -53,6 +55,45 @@
       "ctaBibleStudy": "开始查经",
       "ctaFindChapter": "寻找分会",
       "ctaGive": "立即奉献"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "关于 AM",
+        "description": "我们是谁、我们的信仰以及我们的起源。"
+      },
+      "leadership": {
+        "title": "领导团队",
+        "description": "服事这一运动的人，以及如何参与其中。"
+      },
+      "whatWeDo": {
+        "title": "我们的事工",
+        "description": "承载使命的支柱与事工。"
+      },
+      "bibleStudy": {
+        "title": "查经课程",
+        "description": "从第一个问题到被差派的五阶段旅程。"
+      },
+      "getInvolved": {
+        "title": "参与其中",
+        "description": "无论你身在何处，都能在这运动中找到位置。"
+      },
+      "supportMission": {
+        "title": "服事与支持",
+        "description": "接受装备、建立团契，或支持在禾场的学生。"
+      },
+      "latestNews": {
+        "title": "最新消息",
+        "description": "来自整个网络的故事与动态。"
+      },
+      "events": {
+        "title": "活动",
+        "description": "退修会、特会与聚会。"
+      }
+    },
+    "mobile": {
+      "back": "返回",
+      "close": "关闭菜单",
+      "menu": "菜单"
     }
   },
   "Footer": {
