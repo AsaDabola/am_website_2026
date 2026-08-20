@@ -12,7 +12,7 @@ export default async function HonoraryChairman({ data }: { data?: HonoraryChairm
 
   return (
     <section className="bg-night-deep py-24">
-      <Container className="grid items-start gap-6 lg:grid-cols-[1fr_220px] lg:gap-10">
+      <Container className="grid items-start gap-6 lg:grid-cols-[1fr_300px] lg:gap-10">
         <div>
           <Eyebrow tone="light">{data?.eyebrow ?? t("eyebrow")}</Eyebrow>
           <p className="font-display text-xl italic text-white/70">
@@ -23,13 +23,13 @@ export default async function HonoraryChairman({ data }: { data?: HonoraryChairm
           </h2>
         </div>
 
-        <div className="relative aspect-square w-full max-w-[220px] overflow-hidden rounded-2xl justify-self-start lg:justify-self-end">
+        <div className="relative aspect-square w-full max-w-[300px] overflow-hidden rounded-2xl justify-self-start lg:justify-self-end">
           <Image
             src={image}
             alt={name}
             fill
             className="object-cover"
-            sizes="220px"
+            sizes="300px"
           />
         </div>
 
@@ -40,9 +40,7 @@ export default async function HonoraryChairman({ data }: { data?: HonoraryChairm
           </span>
           <span className="mt-1 bg-brand-blue px-2 py-0.5">
             {data?.quoteLine3 ?? t("quoteLine3")}{" "}
-            <span className="text-sm normal-case">
-              {data?.quoteReference ?? t("quoteReference")}
-            </span>
+            <span className="text-sm">{data?.quoteReference ?? t("quoteReference")}</span>
           </span>
         </div>
       </Container>

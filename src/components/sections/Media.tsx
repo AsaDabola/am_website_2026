@@ -4,6 +4,7 @@ import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import VideoPlayer from "@/components/sections/VideoPlayer";
+import { SentSwooshWatermarkIcon } from "@/components/ui/icons";
 import { fetchCollectionSafely } from "@/lib/getPayloadSafely";
 import { tenantContentWhere } from "@/lib/tenantContentWhere";
 import type { MediaSectionData } from "@/lib/homeBlockTypes";
@@ -51,23 +52,14 @@ export default async function Media({
   tenantId,
   data,
 }: { tenantId?: string; data?: MediaSectionData } = {}) {
-  const [posts, t, tMinistries] = await Promise.all([
-    getPosts(tenantId),
-    getTranslations("Home.Media"),
-    getTranslations("Home.Ministries"),
-  ]);
+  const [posts, t] = await Promise.all([getPosts(tenantId), getTranslations("Home.Media")]);
 
   return (
     <section
       className="relative overflow-hidden py-24"
       style={{ backgroundImage: "linear-gradient(120deg, #1449c6, #007aff)" }}
     >
-      <p
-        aria-hidden
-        className="pointer-events-none absolute -right-4 top-4 hidden select-none font-script text-[260px] font-bold text-white/10 lg:block"
-      >
-        {tMinistries("sentTag")}
-      </p>
+      <SentSwooshWatermarkIcon className="pointer-events-none absolute -right-4 top-10 hidden h-[173px] w-[391px] select-none text-white/10 lg:block" />
 
       <Container className="relative">
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-start">

@@ -4,6 +4,7 @@ import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import PlaceholderPhoto from "@/components/ui/PlaceholderPhoto";
+import { SentSwooshIcon } from "@/components/ui/icons";
 import { fetchCollectionSafely } from "@/lib/getPayloadSafely";
 import type { MinistriesData } from "@/lib/homeBlockTypes";
 import { mediaUrl } from "@/lib/homeBlockTypes";
@@ -149,9 +150,9 @@ export default async function Ministries({ data }: { data?: MinistriesData } = {
                     </span>
                     <span
                       aria-hidden
-                      className="pointer-events-none absolute inset-0 flex items-center justify-center font-script text-5xl font-bold text-white"
+                      className="pointer-events-none absolute inset-0 flex items-center justify-center text-white"
                     >
-                      {step.tag}
+                      <SentSwooshIcon className="h-[70px] w-[128px]" />
                     </span>
                   </>
                 )}
