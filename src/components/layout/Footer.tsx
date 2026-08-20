@@ -29,9 +29,7 @@ export default async function Footer() {
       title: t("whatWeDo"),
       links: [
         { label: t("bibleStudyProgram"), href: "/bible-study" },
-        { label: t("fourSpiritualThemes"), href: "/four-spiritual-themes" },
         { label: t("amAcademy"), href: "https://www.amacademy.org" },
-        { label: t("ourMinistries"), href: "/ministries" },
       ],
     },
     {
@@ -48,8 +46,7 @@ export default async function Footer() {
       title: t("media"),
       links: [
         { label: t("news"), href: "/news" },
-        { label: t("fourSpiritualThemes"), href: "/four-spiritual-themes" },
-        { label: t("legacyOfChairman"), href: "/ralph-d-winter" },
+        { label: t("legacyOfChairman"), href: "/about/chairman" },
         { label: t("contactUs"), href: "/contact" },
       ],
     },

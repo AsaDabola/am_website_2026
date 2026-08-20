@@ -59,7 +59,10 @@ export default async function Media({
       className="relative overflow-hidden py-24"
       style={{ backgroundImage: "linear-gradient(120deg, #1449c6, #007aff)" }}
     >
-      <SentSwooshWatermarkIcon className="pointer-events-none absolute -right-4 top-10 hidden h-[173px] w-[391px] select-none text-white/10 lg:block" />
+      {/* Watermark geometry comes straight from the design: 817 x 363 at
+          -6.116deg, overlapping the heading rather than tucked into the
+          corner. */}
+      <SentSwooshWatermarkIcon className="pointer-events-none absolute left-[34%] top-16 hidden h-[363px] w-[817px] -rotate-[6.116deg] select-none text-white/20 lg:block" />
 
       <Container className="relative">
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-start">

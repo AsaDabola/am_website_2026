@@ -113,7 +113,7 @@ export async function POST(request: NextRequest) {
               tag: tMin("growTag"),
               title: tMin("growTitle"),
               description: tMin("growDescription"),
-              href: "/ministries",
+              href: "/get-involved/group-activities",
             },
             {
               tag: tMin("leadTag"),

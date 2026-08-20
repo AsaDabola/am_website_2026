@@ -85,12 +85,6 @@ export async function getNavigation(): Promise<{
               href: "/what-we-do/administration",
               tenantAware: true,
             },
-            { label: t("whatWeDoMenu.ourMinistries"), href: "/ministries", tenantAware: true },
-            {
-              label: t("whatWeDoMenu.fourSpiritualThemes"),
-              href: "/four-spiritual-themes",
-              tenantAware: true,
-            },
           ],
         },
       ],

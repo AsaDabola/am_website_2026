@@ -8,7 +8,14 @@ export default async function PartnerWithUs({ data }: { data?: PartnerWithUsData
   const t = await getTranslations("Home.PartnerWithUs");
 
   return (
-    <section className="bg-gradient-to-br from-mist to-[#dbe6f9] py-24">
+    <section
+      className="py-24"
+      style={{
+        backgroundColor: "#ffffff",
+        backgroundImage:
+          "radial-gradient(120% 70% at 85% 0%, rgba(20, 73, 198, 0.18) 0%, rgba(20, 73, 198, 0.00) 60%), radial-gradient(100% 60% at 5% 100%, rgba(77, 141, 246, 0.14) 0%, rgba(77, 141, 246, 0.00) 60%)",
+      }}
+    >
       <Container className="flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
         <div>
           <Eyebrow>{data?.eyebrow ?? t("eyebrow")}</Eyebrow>

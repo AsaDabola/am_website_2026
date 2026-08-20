@@ -53,7 +53,12 @@ export default async function QuickLinks({ data }: { data?: QuickLinksData } = {
   return (
     <section className="bg-white py-8">
       <Container>
-        <div className="grid overflow-hidden rounded-xl border border-white/[0.07] sm:grid-cols-2 lg:grid-cols-4">
+        {/* The 1px gaps let the container colour through as hairline dividers
+            between the tiles, matching the design's white rules. */}
+        <div
+          className="grid gap-px overflow-hidden rounded-xl sm:grid-cols-2 lg:grid-cols-4"
+          style={{ backgroundColor: "rgba(255,255,255,0.28)" }}
+        >
           {links.map(({ title, description, href, Icon, tenantAware }) => {
             const ItemLink = tenantAware ? TenantLink : Link;
             return (

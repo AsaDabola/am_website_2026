@@ -16,11 +16,34 @@ export const metadata: Metadata = {
     "Apostolos Missions International (AM) is an interdenominational ministry committed to spreading the gospel to the ends of the earth.",
 };
 
-const practiceTags = [
-  "bibleStudyTag",
-  "leadershipTrainingTag",
-  "onlineEducationTag",
-  "internshipsTripsTag",
+/**
+ * The four ways AM works in practice, shown as two-tone cards overlapping the
+ * hero. The colour pairs match the pillar cards elsewhere on the site rather
+ * than being theme tokens, so they stay literal.
+ */
+const practiceCards = [
+  { tag: "bibleStudyTag", body: "bibleStudyDescription", header: "#2abfbf", panel: "#1a4040", text: "#e0f7f7" },
+  {
+    tag: "leadershipTrainingTag",
+    body: "leadershipTrainingDescription",
+    header: "#3b82f6",
+    panel: "#1a2a4a",
+    text: "#dbeafe",
+  },
+  {
+    tag: "onlineEducationTag",
+    body: "onlineEducationDescription",
+    header: "#4b7aae",
+    panel: "#1a2535",
+    text: "#d1e4f5",
+  },
+  {
+    tag: "internshipsTripsTag",
+    body: "internshipsTripsDescription",
+    header: "#1e3a5f",
+    panel: "#0f1f35",
+    text: "#c8d8ec",
+  },
 ] as const;
 
 export default async function WhoWeArePage() {
@@ -32,24 +55,37 @@ export default async function WhoWeArePage() {
 
   return (
     <>
+      {/* The design puts the section tabs directly under the site header,
+          above the hero image, rather than below it. */}
+      <AboutSubNav active="/about" />
       <AboutHero
         crumbs={[{ label: tCommon("home"), href: "/" }, { label: t("breadcrumb") }]}
         title={t("heroTitle")}
-        subtitle={tCommon("tagline")}
         backgroundImage="/images/about-hero-cross.jpg"
+        size="large"
+        titleVariant="ghost"
+        align="center"
       >
-        <div className="mt-10 flex flex-wrap gap-3">
-          {practiceTags.map((key) => (
-            <span
-              key={key}
-              className="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.1em] text-white backdrop-blur-sm"
-            >
-              {tPractice(key)}
-            </span>
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {practiceCards.map((card) => (
+            <div key={card.tag} className="overflow-hidden rounded-lg">
+              <div
+                className="flex items-center justify-center px-4 py-3.5"
+                style={{ backgroundColor: card.header }}
+              >
+                <span className="font-display text-sm font-extrabold uppercase tracking-[0.04em] text-white">
+                  {tPractice(card.tag)}
+                </span>
+              </div>
+              <div className="px-4 py-4" style={{ backgroundColor: card.panel }}>
+                <p className="text-center text-xs leading-[1.6]" style={{ color: card.text }}>
+                  {tPractice(card.body)}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </AboutHero>
-      <AboutSubNav active="/about" />
 
       <article className="bg-white py-20">
         <Container className="max-w-[720px]">

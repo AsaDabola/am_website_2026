@@ -127,8 +127,13 @@ export default async function Ministries({ data }: { data?: MinistriesData } = {
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step) => (
-            <div key={step.tag} className="flex flex-col">
-              <div className="relative aspect-[256/160] overflow-hidden rounded-2xl">
+            // 1px hairline border with a 12px radius, per the design spec —
+            // the photo sits inside the border rather than above it.
+            <div
+              key={step.tag}
+              className="flex flex-col overflow-hidden rounded-xl border border-black/10"
+            >
+              <div className="relative aspect-[256/160]">
                 {step.imageUrl ? (
                   <>
                     <Image
@@ -157,15 +162,15 @@ export default async function Ministries({ data }: { data?: MinistriesData } = {
                   </>
                 )}
               </div>
-              <h3 className="mt-6 font-display text-xl font-bold tracking-[-0.02em] text-ink">
-                {step.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-                {step.description}
-              </p>
-              <Button href={step.href} variant="ghostDark" className="mt-5">
-                {t("learnMore")}
-              </Button>
+              <div className="flex flex-1 flex-col p-5">
+                <h3 className="font-display text-xl font-bold tracking-[-0.02em] text-ink">
+                  {step.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-muted">{step.description}</p>
+                <Button href={step.href} variant="ghostDark" className="mt-5 self-start">
+                  {t("learnMore")}
+                </Button>
+              </div>
             </div>
           ))}
         </div>

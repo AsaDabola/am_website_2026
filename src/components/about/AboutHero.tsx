@@ -12,17 +12,20 @@ export default function AboutHero({
   backgroundImage = "/images/about-hero-banner.jpg",
   size = "default",
   titleVariant = "solid",
+  align = "left",
   children,
 }: {
   crumbs: Crumb[];
   title: string;
-  subtitle: string;
+  subtitle?: string;
   backgroundImage?: string;
   size?: "default" | "large";
   titleVariant?: "solid" | "ghost";
+  align?: "left" | "center";
   children?: ReactNode;
 }) {
   const isLarge = size === "large";
+  const isCentered = align === "center";
 
   return (
     <section className="relative overflow-hidden bg-night">
@@ -58,17 +61,24 @@ export default function AboutHero({
         </nav>
 
         <h1
-          className={
+          className={[
             titleVariant === "ghost"
-              ? "max-w-4xl font-display text-[64px] font-extrabold uppercase leading-none tracking-[-0.02em] text-transparent [-webkit-text-stroke:2px_white] sm:text-[96px] lg:text-[140px]"
-              : "max-w-3xl font-display text-5xl font-semibold tracking-[-0.02em] text-white sm:text-6xl lg:text-[80px]"
-          }
+              ? "font-display text-[44px] font-extrabold uppercase leading-none tracking-[-0.02em] text-transparent [-webkit-text-stroke:2px_white] sm:text-[72px] lg:text-[104px]"
+              : "font-display text-5xl font-semibold tracking-[-0.02em] text-white sm:text-6xl lg:text-[80px]",
+            isCentered ? "mx-auto max-w-5xl text-center" : "max-w-4xl",
+          ].join(" ")}
         >
           {title}
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-on-dark/80 sm:text-xl">
-          {subtitle}
-        </p>
+        {subtitle && (
+          <p
+            className={`mt-6 text-lg leading-relaxed text-on-dark/80 sm:text-xl ${
+              isCentered ? "mx-auto max-w-3xl text-center" : "max-w-2xl"
+            }`}
+          >
+            {subtitle}
+          </p>
+        )}
         {children}
       </Container>
     </section>
