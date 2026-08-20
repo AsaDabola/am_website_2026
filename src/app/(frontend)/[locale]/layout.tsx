@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import { Archivo, Caveat, Inter } from "next/font/google";
+import { Archivo, Inter, Lato } from "next/font/google";
 import "../globals.css";
 import { routing } from "@/i18n/routing";
 import AnnouncementBar from "@/components/layout/AnnouncementBar";
@@ -21,10 +21,13 @@ const archivo = Archivo({
   weight: ["500", "600", "700", "800"],
 });
 
-const caveat = Caveat({
-  variable: "--font-script",
+// The "Following the Legacy of" line in the Ralph D. Winter banner is
+// specified as Lato Light Italic in the design; nothing else uses it.
+const lato = Lato({
+  variable: "--font-lato",
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["300"],
+  style: ["italic"],
 });
 
 export const metadata: Metadata = {
@@ -55,7 +58,7 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${archivo.variable} ${caveat.variable} h-full antialiased`}
+      className={`${inter.variable} ${archivo.variable} ${lato.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white font-sans text-ink">
         <NextIntlClientProvider>
