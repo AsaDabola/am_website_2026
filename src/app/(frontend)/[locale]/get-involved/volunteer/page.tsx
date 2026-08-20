@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
-import { Link } from "@/i18n/navigation";
+import TenantLink from "@/components/layout/TenantLink";
 import {
   PeopleIcon,
   BookIcon,
@@ -120,7 +120,7 @@ export default async function VolunteerPage() {
         <Container>
           <div className="mx-auto grid max-w-[813px] gap-x-10 gap-y-14 sm:grid-cols-2">
             {categories.map(({ title, Icon, href, description }) => (
-              <Link key={title} href={href} className="group text-center">
+              <TenantLink key={title} href={href} className="group text-center">
                 <span className="mx-auto flex size-16 items-center justify-center rounded-full bg-mist text-brand-blue transition-colors group-hover:bg-brand-blue group-hover:text-white">
                   <Icon className="size-8" />
                 </span>
@@ -130,7 +130,7 @@ export default async function VolunteerPage() {
                 <p className="mx-auto mt-3 max-w-[348px] text-sm leading-relaxed text-ink-muted">
                   {description}
                 </p>
-              </Link>
+              </TenantLink>
             ))}
           </div>
         </Container>

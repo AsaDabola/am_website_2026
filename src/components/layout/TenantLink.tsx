@@ -3,26 +3,24 @@
 import type { ComponentProps } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { isContinent } from "@/lib/continents";
+import { isTenantAwareHref } from "@/lib/tenantRoutes";
 
 /**
- * Drop-in replacement for the site's <Link> used in shared navigation
- * chrome (Header, Footer, subnavs). While browsing a country site
- * (/{continent}/{slug}/...), it keeps that country prefixed on every
- * internal link instead of dropping back to the main amintl.org site —
- * e.g. clicking "Who We Are" from /europe/germany goes to
- * /europe/germany/about, not /about.
+ * Drop-in replacement for the site's <Link>. While browsing a country site
+ * (/{continent}/{slug}/...), it keeps that country prefixed on internal
+ * links instead of dropping back to the main amintl.org site — e.g. clicking
+ * "Who We Are" from /europe/germany goes to /europe/germany/about, not
+ * /about.
  *
- * Falls back to a plain relative link for pages that don't have tenant
- * content yet (the target route 404s the same way any missing page
- * would) and leaves external/absolute URLs untouched.
+ * Only routes a country site actually serves get prefixed (see
+ * lib/tenantRoutes). Everything else — the shared news/events feeds, the
+ * network directory, external URLs — is left alone, so a link can never point
+ * at a country URL that doesn't exist.
  */
-export default function TenantLink({
-  href,
-  ...props
-}: ComponentProps<typeof Link>) {
+export default function TenantLink({ href, ...props }: ComponentProps<typeof Link>) {
   const pathname = usePathname();
 
-  if (typeof href !== "string" || !href.startsWith("/") || href.startsWith("//")) {
+  if (typeof href !== "string" || !isTenantAwareHref(href)) {
     return <Link href={href} {...props} />;
   }
 
@@ -30,8 +28,11 @@ export default function TenantLink({
   const tenantPrefix =
     segments.length >= 2 && isContinent(segments[0]) ? `/${segments[0]}/${segments[1]}` : "";
 
-  const isAlreadyPrefixed = tenantPrefix !== "" && href.startsWith(`${tenantPrefix}/`);
-  const finalHref = tenantPrefix && !isAlreadyPrefixed ? `${tenantPrefix}${href}` : href;
+  if (!tenantPrefix || href === tenantPrefix || href.startsWith(`${tenantPrefix}/`)) {
+    return <Link href={href} {...props} />;
+  }
 
-  return <Link href={finalHref} {...props} />;
+  // "/" is the country home itself, so it becomes the bare prefix rather than
+  // picking up a trailing slash.
+  return <Link href={href === "/" ? tenantPrefix : `${tenantPrefix}${href}`} {...props} />;
 }

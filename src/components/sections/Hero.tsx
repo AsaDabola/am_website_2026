@@ -32,11 +32,16 @@ export default async function Hero({ data }: { data?: HeroData } = {}) {
       <Container className="relative flex min-h-[720px] flex-col justify-center py-24">
         <Eyebrow tone="light">{data?.eyebrow ?? t("eyebrow")}</Eyebrow>
 
-        <h1 className="max-w-2xl font-display text-5xl font-bold leading-[1.05] tracking-[-0.03em] text-white [text-shadow:0px_4px_14px_rgba(0,0,0,0.4)] sm:text-6xl lg:text-[80px]">
-          {data?.headingLine1 ?? t("headingLine1")}{" "}
-          <span className="text-[#c5ddff]">{data?.headingHighlight1 ?? t("headingWhere")}</span>
+        {/* Three deliberate lines, matching the design: the middle line stays
+            unbroken however narrow the viewport gets. */}
+        <h1 className="max-w-3xl font-display text-5xl font-bold leading-[1.05] tracking-[-0.03em] text-white [text-shadow:0px_4px_14px_rgba(0,0,0,0.4)] sm:text-6xl lg:text-[80px]">
+          {data?.headingLine1 ?? t("headingLine1")}
           <br />
-          <span className="text-[#c5ddff]">{data?.headingHighlight2 ?? t("headingWeAre")}</span>.
+          <span className="whitespace-nowrap text-[#c5ddff]">
+            {data?.headingHighlight1 ?? t("headingWhere")}
+          </span>
+          <br />
+          <span className="text-[#c5ddff]">{data?.headingHighlight2 ?? t("headingWeAre")}</span>
         </h1>
 
         <div className="mt-9 flex flex-wrap gap-4">
@@ -59,10 +64,6 @@ export default async function Hero({ data }: { data?: HeroData } = {}) {
           ))}
         </div>
       </Container>
-
-      <p className="absolute bottom-8 right-6 hidden text-[11px] uppercase tracking-[0.15em] text-on-dark/45 lg:right-10 lg:block">
-        {t("dragToExplore")}
-      </p>
     </section>
   );
 }

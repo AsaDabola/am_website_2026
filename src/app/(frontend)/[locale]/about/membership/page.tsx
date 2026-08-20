@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
+import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
 import { ArrowRightIcon } from "@/components/ui/icons";
 import AboutHero from "@/components/about/AboutHero";
@@ -118,7 +118,7 @@ export default async function MembershipPage() {
       <section className="bg-white py-24">
         <Container className="max-w-[720px]">
           <div className="grid gap-6 sm:grid-cols-2">
-            <Link
+            <TenantLink
               href="/about/statement-of-faith"
               className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
             >
@@ -137,8 +137,8 @@ export default async function MembershipPage() {
                 {tCommon("learnMore")}
                 <ArrowRightIcon />
               </span>
-            </Link>
-            <Link
+            </TenantLink>
+            <TenantLink
               href="/about/mission"
               className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
             >
@@ -157,7 +157,7 @@ export default async function MembershipPage() {
                 {tCommon("learnMore")}
                 <ArrowRightIcon />
               </span>
-            </Link>
+            </TenantLink>
           </div>
         </Container>
       </section>

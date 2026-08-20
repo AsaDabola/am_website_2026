@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
-import { Link } from "@/i18n/navigation";
+import TenantLink from "@/components/layout/TenantLink";
 import AboutHero from "@/components/about/AboutHero";
 import ContactForm from "@/components/contact/ContactForm";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
@@ -38,9 +38,9 @@ export default async function ContactPage() {
             <p>AM International Headquarters</p>
             <p>716 Bellevue Ave., Trenton, NJ 08618</p>
             <p>
-              <Link href="mailto:mission@amintl.org" className="underline underline-offset-2">
+              <TenantLink href="mailto:mission@amintl.org" className="underline underline-offset-2">
                 mission@amintl.org
-              </Link>
+              </TenantLink>
             </p>
             <p>+1 (917) 569-9073</p>
           </div>

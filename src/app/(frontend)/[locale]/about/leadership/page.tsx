@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Link } from "@/i18n/navigation";
+import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import AboutHero from "@/components/about/AboutHero";
@@ -173,12 +173,12 @@ export default function LeadershipPage() {
                   <p className="font-display text-lg font-bold text-ink">{person.name}</p>
                   <p className="mt-1 text-sm font-semibold text-brand-blue">{person.title}</p>
                   <p className="mt-3 text-sm leading-relaxed text-ink-muted">{person.bio}</p>
-                  <Link
+                  <TenantLink
                     href={`mailto:${person.email}`}
                     className="mt-3 inline-block text-sm text-brand-blue underline underline-offset-2"
                   >
                     {person.email}
-                  </Link>
+                  </TenantLink>
                 </div>
               </div>
             ))}

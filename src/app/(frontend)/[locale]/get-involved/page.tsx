@@ -7,7 +7,7 @@ import AboutHero from "@/components/about/AboutHero";
 import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import { Link } from "@/i18n/navigation";
+import TenantLink from "@/components/layout/TenantLink";
 
 export const metadata: Metadata = {
   title: "Get Involved | AM International",
@@ -97,9 +97,9 @@ export default async function GetInvolvedHubPage() {
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-ink-muted">
                     {t("connectStep2BodyPrefix")}{" "}
-                    <Link href="/contact" className="text-brand-blue underline underline-offset-2">
+                    <TenantLink href="/contact" className="text-brand-blue underline underline-offset-2">
                       {t("connectStep2SignUp")}
-                    </Link>{" "}
+                    </TenantLink>{" "}
                     {t("connectStep2BodySuffix")}
                   </p>
                 </div>
@@ -109,12 +109,12 @@ export default async function GetInvolvedHubPage() {
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-ink-muted">
                     {t("connectStep3BodyPrefix")}{" "}
-                    <Link
+                    <TenantLink
                       href="/bible-study/join"
                       className="text-brand-blue underline underline-offset-2"
                     >
                       {t("connectStep3SignUp")}
-                    </Link>{" "}
+                    </TenantLink>{" "}
                     {t("connectStep3BodySuffix")}
                   </p>
                 </div>
@@ -124,9 +124,9 @@ export default async function GetInvolvedHubPage() {
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-ink-muted">
                     {t("connectStep4BodyPrefix")}{" "}
-                    <Link href="/contact" className="text-brand-blue underline underline-offset-2">
+                    <TenantLink href="/contact" className="text-brand-blue underline underline-offset-2">
                       {t("connectStep4ContactHere")}
-                    </Link>
+                    </TenantLink>
                     {t("connectStep4BodySuffix")}
                   </p>
                 </div>
@@ -250,12 +250,12 @@ export default async function GetInvolvedHubPage() {
                   { label: t("sentLinkStaff"), href: "/contact" },
                 ].map((link) => (
                   <li key={link.label}>
-                    <Link
+                    <TenantLink
                       href={link.href}
                       className="text-sm font-medium text-brand-blue underline underline-offset-2"
                     >
                       {link.label}
-                    </Link>
+                    </TenantLink>
                   </li>
                 ))}
               </ul>

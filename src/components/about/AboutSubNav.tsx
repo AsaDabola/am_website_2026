@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
 
 export function useAboutTabs() {
@@ -24,7 +24,7 @@ export default function AboutSubNav({ active }: { active: string }) {
           {aboutTabs.map((tab) => {
             const isActive = tab.href === active;
             return (
-              <Link
+              <TenantLink
                 key={tab.href}
                 href={tab.href}
                 className={`whitespace-nowrap border-b-2 py-4 text-sm font-medium transition-colors ${
@@ -34,7 +34,7 @@ export default function AboutSubNav({ active }: { active: string }) {
                 }`}
               >
                 {tab.label}
-              </Link>
+              </TenantLink>
             );
           })}
         </nav>

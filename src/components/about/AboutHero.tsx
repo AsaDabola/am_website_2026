@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { Link } from "@/i18n/navigation";
+import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
 
 type Crumb = { label: string; href?: string };
@@ -46,9 +46,9 @@ export default function AboutHero({
               <li key={crumb.label} className="flex items-center gap-2">
                 {index > 0 && <span className="opacity-50">/</span>}
                 {crumb.href ? (
-                  <Link href={crumb.href} className="hover:text-white">
+                  <TenantLink href={crumb.href} className="hover:text-white">
                     {crumb.label}
-                  </Link>
+                  </TenantLink>
                 ) : (
                   <span>{crumb.label}</span>
                 )}

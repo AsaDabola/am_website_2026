@@ -10,6 +10,7 @@ import { getPageBySlug } from "@/lib/pages";
 import { renderHomeBlock, DefaultHomeBlocks } from "@/lib/renderHomeBlocks";
 import { redirect } from "@/i18n/navigation";
 import { locales } from "@/i18n/routing";
+import { getTenantStaticPage } from "./tenantStaticPages";
 
 export const revalidate = 60;
 
@@ -22,12 +23,12 @@ async function resolve(slug: string[]) {
 
     const restSlug = slug.slice(2).join("/");
     const page = await getPageBySlug(String(tenant.id), restSlug);
-    return { tenant, page, isTenantRoute: true as const };
+    return { tenant, page, restSlug, isTenantRoute: true as const };
   }
 
   const page = await getPageBySlug(null, slug.join("/"));
   if (!page) return null;
-  return { tenant: null, page, isTenantRoute: false as const };
+  return { tenant: null, page, restSlug: "", isTenantRoute: false as const };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -52,6 +53,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `AM ${tenant.country} | Apostolos Missions International`,
       description: `Apostolos Missions International in ${tenant.country}${tenant.city ? ` (${tenant.city})` : ""} — an interdenominational ministry spreading the gospel and sending students out on mission.`,
     };
+  }
+
+  // Inherit the fallback page's own metadata, re-branded for this country so
+  // the two versions don't compete for the same search result.
+  if (resolved.isTenantRoute) {
+    const loadStaticPage = getTenantStaticPage(resolved.restSlug);
+    if (loadStaticPage) {
+      const { metadata = {} } = await loadStaticPage();
+      const country = resolved.tenant!.country;
+      const ownTitle =
+        typeof metadata.title === "string" ? metadata.title.split(" | ")[0] : null;
+
+      return {
+        ...metadata,
+        title: ownTitle ? `${ownTitle} | AM ${country}` : `AM ${country}`,
+      };
+    }
   }
 
   return {};
@@ -107,6 +125,17 @@ export default async function DynamicPage({ params }: Props) {
     }
 
     return <DefaultHomeBlocks tenantId={tenantId} />;
+  }
+
+  // No country-specific Page authored yet — serve the main site's version of
+  // this route rather than a 404, so every country site is browsable in full
+  // from the day it is created.
+  if (!page && isTenantRoute) {
+    const loadStaticPage = getTenantStaticPage(resolved.restSlug);
+    if (loadStaticPage) {
+      const { default: StaticPage } = await loadStaticPage();
+      return <StaticPage />;
+    }
   }
 
   if (!page) notFound();
