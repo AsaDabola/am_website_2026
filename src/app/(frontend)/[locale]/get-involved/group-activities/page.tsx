@@ -56,10 +56,7 @@ const activities = [
 ];
 
 export default async function GroupActivitiesPage() {
-  const [t, tHeader] = await Promise.all([
-    getTranslations("Common"),
-    getTranslations("Header"),
-  ]);
+  const tHeader = await getTranslations("Header");
 
   return (
     <>
@@ -70,8 +67,9 @@ export default async function GroupActivitiesPage() {
           { label: "Group Activities" },
         ]}
         title="Group Activities"
-        subtitle={t("tagline")}
         backgroundImage="/images/group-activities-hero.jpg"
+        titleVariant="ghost"
+        align="center"
       />
       <GetInvolvedSubNav active="/get-involved/group-activities" />
 

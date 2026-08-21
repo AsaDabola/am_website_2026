@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
-import Eyebrow from "@/components/ui/Eyebrow";
 import AboutHero from "@/components/about/AboutHero";
 import BibleStudySignupForm from "@/components/bible-study/BibleStudySignupForm";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
@@ -13,9 +11,7 @@ export const metadata: Metadata = {
     "Fill out the form below and one of our teachers will reach out with more information.",
 };
 
-export default async function JoinBibleStudyPage() {
-  const t = await getTranslations("Common");
-
+export default function JoinBibleStudyPage() {
   return (
     <>
       <AboutHero
@@ -26,20 +22,14 @@ export default async function JoinBibleStudyPage() {
           { label: "Join our Bible Studies" },
         ]}
         title="Join our Bible Studies"
-        subtitle={t("tagline")}
+        backgroundImage="/images/hero-slide-bible-study.jpg"
+        size="large"
+        titleVariant="ghost"
+        align="center"
       />
 
       <section className="bg-mist py-20">
-        <Container className="max-w-[720px] text-center">
-          <div className="flex justify-center">
-            <Eyebrow>What we do</Eyebrow>
-          </div>
-          <h1 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
-            Join our Bible Studies
-          </h1>
-        </Container>
-
-        <Container className="mt-12 max-w-[847px]">
+        <Container className="max-w-[847px]">
           <BibleStudySignupForm />
         </Container>
       </section>

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -74,9 +73,7 @@ const tracks: Track[] = [
   },
 ];
 
-export default async function BibleStudyPage() {
-  const t = await getTranslations("Common");
-
+export default function BibleStudyPage() {
   return (
     <>
       <AboutHero
@@ -86,7 +83,10 @@ export default async function BibleStudyPage() {
           { label: "Bible Studies" },
         ]}
         title="Bible Studies"
-        subtitle={t("tagline")}
+        backgroundImage="/images/hero-slide-bible-study.jpg"
+        size="large"
+        titleVariant="ghost"
+        align="center"
       />
 
       <section className="bg-mist py-20">
@@ -94,9 +94,6 @@ export default async function BibleStudyPage() {
           <div className="flex justify-center">
             <Eyebrow>Sign up for our Bible studies today</Eyebrow>
           </div>
-          <h1 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
-            Bible Studies
-          </h1>
           <p className="mx-auto mt-6 max-w-[640px] text-base leading-relaxed text-ink-muted">
             Apostolos Missions offers various Bible study programs that will nurture your
             spiritual life and relationship with the Lord Jesus. These Bible studies were
