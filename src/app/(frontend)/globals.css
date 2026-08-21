@@ -89,3 +89,27 @@ body {
     stroke-dasharray: none;
   }
 }
+
+/* Scroll reveal. The hidden state lives in CSS so that anyone who has asked
+   for reduced motion simply sees the content, with no movement and no
+   transition to wait through. */
+.am-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 620ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 620ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+.am-reveal[data-revealed="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .am-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

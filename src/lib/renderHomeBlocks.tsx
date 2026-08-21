@@ -10,6 +10,7 @@ import OurNetwork from "@/components/sections/OurNetwork";
 import HonoraryChairman from "@/components/sections/HonoraryChairman";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
+import Reveal from "@/components/ui/Reveal";
 
 // Shared between the main amintl.org homepage and every country (tenant)
 // site's homepage, so both render the same CMS-authored `sections` blocks
@@ -53,18 +54,42 @@ export function renderHomeBlock(block: any, tenantId?: string) {
 export function DefaultHomeBlocks({ tenantId }: { tenantId?: string }) {
   return (
     <>
+      {/* The hero is above the fold, so it is deliberately not revealed —
+          there is no scroll to trigger it and it would only flash on load. */}
       <Hero />
-      <BibleStudyProgram />
-      <QuickLinks />
-      <Ministries />
-      <OurMission />
-      <GetInvolved />
-      <Media tenantId={tenantId} />
-      <Events tenantId={tenantId} />
-      <OurNetwork tenantId={tenantId} />
-      <HonoraryChairman />
-      <PartnerWithUs />
-      <Newsletter />
+      <Reveal>
+        <BibleStudyProgram />
+      </Reveal>
+      <Reveal>
+        <QuickLinks />
+      </Reveal>
+      <Reveal>
+        <Ministries />
+      </Reveal>
+      <Reveal>
+        <OurMission />
+      </Reveal>
+      <Reveal>
+        <GetInvolved />
+      </Reveal>
+      <Reveal>
+        <Media tenantId={tenantId} />
+      </Reveal>
+      <Reveal>
+        <Events tenantId={tenantId} />
+      </Reveal>
+      <Reveal>
+        <OurNetwork tenantId={tenantId} />
+      </Reveal>
+      <Reveal>
+        <HonoraryChairman />
+      </Reveal>
+      <Reveal>
+        <PartnerWithUs />
+      </Reveal>
+      <Reveal>
+        <Newsletter />
+      </Reveal>
     </>
   );
 }
