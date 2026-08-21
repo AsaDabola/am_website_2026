@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
+import HistoryTimeline from "@/components/about/HistoryTimeline";
 import Eyebrow from "@/components/ui/Eyebrow";
 import AboutHero from "@/components/about/AboutHero";
 import AboutSubNav from "@/components/about/AboutSubNav";
@@ -140,27 +141,9 @@ export default function HistoryPage() {
             </h2>
           </div>
 
-          <ol className="mt-16">
-            {timeline.map((item, index) => (
-              <li key={item.tag} className="relative flex gap-6 pb-10 last:pb-0">
-                <div className="flex shrink-0 flex-col items-center">
-                  <span className="size-4 shrink-0 rounded-full bg-brand-blue" />
-                  {index < timeline.length - 1 && (
-                    <span className="mt-1 w-0.5 flex-1 bg-brand-blue/20" />
-                  )}
-                </div>
-                <div className="pb-2">
-                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-blue">
-                    {item.tag}
-                  </p>
-                  <p className="mt-2 font-display text-lg font-bold text-ink">{item.title}</p>
-                  <p className="mt-2 max-w-[560px] text-sm leading-relaxed text-ink-muted">
-                    {item.description}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
+          <div className="mt-16">
+            <HistoryTimeline milestones={timeline} />
+          </div>
         </Container>
       </section>
 
