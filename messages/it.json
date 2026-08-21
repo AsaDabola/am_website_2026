@@ -303,7 +303,9 @@
       "regionAria": "Mappa di {region} con {count} capitoli di AM.",
       "captionSouthAsia": "Asia meridionale",
       "captionEastCentralAsia": "Asia orientale e centrale",
-      "captionSoutheastAsia": "Sud-est asiatico"
+      "captionSoutheastAsia": "Sud-est asiatico",
+      "hqBadge": "Sede",
+      "regionalHqBadge": "Sede regionale"
     }
   },
   "Home": {

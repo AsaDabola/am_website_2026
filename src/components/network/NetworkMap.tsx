@@ -10,6 +10,7 @@ import {
 } from "@/lib/mapViews";
 import {
   CHAPTERS,
+  networkRoutes,
   projectForView,
   type Chapter,
   type RegionKey,
@@ -59,6 +60,18 @@ const STARS = Array.from({ length: 90 }, (_, i) => {
     delay: (i % 7) * 0.6,
   };
 });
+
+/**
+ * Roughly half the width of a marker's label, in viewBox units. Approximated
+ * from the glyph metrics rather than measured, which is all the label
+ * declutter below needs.
+ */
+function labelReach(chapter: Placed) {
+  const isGlobal = chapter.role === "global";
+  const fontSize = isGlobal ? 8.5 : chapter.role === "regional" ? 8 : 7;
+  const text = isGlobal ? `HQ \u00b7 ${chapter.city}, NJ` : chapter.city;
+  return (text.length * fontSize * 0.5) / 2;
+}
 
 /** Quadratic arc bowed perpendicular to the run, so routes fan out. */
 function arcPath(from: Placed, to: Placed) {
@@ -117,7 +130,11 @@ export default function NetworkMap() {
     [visibleChapters, view],
   );
 
-  const hq = placed.find((c) => c.hq) ?? null;
+  // Routes follow the sending structure rather than fanning out of one point
+  // — see networkRoutes. In a zoomed view only that continent's chapters are
+  // passed in, so what comes back is that continent's spokes alone.
+  const routes = useMemo(() => networkRoutes(placed), [placed]);
+
   const activeId = hovered ?? selected;
   const selectedChapter = placed.find((c) => c.id === selected) ?? null;
 
@@ -139,19 +156,26 @@ export default function NetworkMap() {
     // tighter gap before labels start colliding.
     const MIN_GAP = isWorld ? 17 : 26;
     const ordered = [...placed].sort((a, b) => {
-      if (a.hq !== b.hq) return a.hq ? -1 : 1;
-      return a.x - b.x;
+      const rank = (c: Placed) => (c.role === "global" ? 0 : c.role === "regional" ? 1 : 2);
+      return rank(a) - rank(b) || a.x - b.x;
     });
 
     const keep = new Set<string>();
-    const taken: { x: number; y: number }[] = [];
+    const taken: { x: number; y: number; reach: number }[] = [];
     for (const chapter of ordered) {
-      const clashes = taken.some(
-        (p) => Math.hypot(p.x - chapter.x, p.y - chapter.y) < MIN_GAP,
-      );
+      // A headquarters is never dropped — it is the anchor of everything
+      // drawn around it, so an unlabelled one would read as an ordinary dot.
+      const pinned = chapter.role !== undefined;
+      const clashes =
+        !pinned &&
+        taken.some((p) => Math.hypot(p.x - chapter.x, p.y - chapter.y) < p.reach + MIN_GAP / 2);
       if (clashes) continue;
       keep.add(chapter.id);
-      taken.push({ x: chapter.x, y: chapter.y });
+      // How far this label reaches: a plain dot keeps its neighbours half a
+      // gap away, but "HQ · Trenton, NJ" is several times the width of
+      // "Paris", so the keep-out comes from the text rather than a flat
+      // multiplier — a blanket one silently swallowed Dublin and Madrid.
+      taken.push({ x: chapter.x, y: chapter.y, reach: Math.max(MIN_GAP / 2, labelReach(chapter)) });
     }
     return keep;
   }, [isWorld, placed]);
@@ -214,11 +238,6 @@ export default function NetworkMap() {
           }
         >
           <defs>
-            <linearGradient id="am-arc" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#ffb457" stopOpacity="0.85" />
-              <stop offset="45%" stopColor="#7cc4ff" stopOpacity="0.55" />
-              <stop offset="100%" stopColor="#7cc4ff" stopOpacity="0.15" />
-            </linearGradient>
             <radialGradient id="am-marker-glow">
               <stop offset="0%" stopColor="#7cc4ff" stopOpacity="0.8" />
               <stop offset="100%" stopColor="#7cc4ff" stopOpacity="0" />
@@ -226,6 +245,11 @@ export default function NetworkMap() {
             <radialGradient id="am-hq-glow">
               <stop offset="0%" stopColor="#ffb457" stopOpacity="0.95" />
               <stop offset="100%" stopColor="#ffb457" stopOpacity="0" />
+            </radialGradient>
+            <radialGradient id="am-regional-glow">
+              <stop offset="0%" stopColor="#eaf5ff" stopOpacity="0.9" />
+              <stop offset="45%" stopColor="#9fd4ff" stopOpacity="0.45" />
+              <stop offset="100%" stopColor="#7cc4ff" stopOpacity="0" />
             </radialGradient>
           </defs>
 
@@ -300,47 +324,57 @@ export default function NetworkMap() {
             })}
           </g>
 
-          {/* Routes, drawn only where the hub is actually in frame. */}
-          {hq && (
-            <g fill="none" strokeLinecap="round">
-              {placed
-                .filter((chapter) => !chapter.hq)
-                .map((chapter) => {
-                  const d = arcPath(hq, chapter);
-                  const isActive = activeId === chapter.id;
-                  return (
-                    <g key={`arc-${chapter.id}`}>
-                      <path
-                        d={d}
-                        stroke="url(#am-arc)"
-                        strokeWidth={isActive ? 1.4 : 0.7}
-                        opacity={isActive ? 1 : 0.45}
-                        className="transition-all duration-200"
-                      />
-                      <path
-                        d={d}
-                        stroke="#ffd8a3"
-                        strokeWidth={1.2}
-                        opacity={0.95}
-                        className="am-map-flow"
-                      />
-                    </g>
-                  );
-                })}
-            </g>
-          )}
+          <g fill="none" strokeLinecap="round">
+            {routes.map(({ from, to }) => {
+              const d = arcPath(from, to);
+              // Trunk routes leave the international headquarters; spokes
+              // leave a continental one. Colouring them apart is what makes
+              // the two tiers readable at a glance.
+              const isTrunk = from.role === "global";
+              const isActive = activeId === to.id || activeId === from.id;
+              return (
+                <g key={`arc-${from.id}-${to.id}`}>
+                  <path
+                    d={d}
+                    stroke={isTrunk ? "#ffb457" : "#7cc4ff"}
+                    strokeWidth={isActive ? 1.6 : isTrunk ? 1.1 : 0.75}
+                    opacity={isActive ? 1 : isTrunk ? 0.8 : 0.6}
+                    className="transition-all duration-200"
+                  />
+                  <path
+                    d={d}
+                    stroke={isTrunk ? "#ffd8a3" : "#9fd4ff"}
+                    strokeWidth={isTrunk ? 1.2 : 0.9}
+                    opacity={0.95}
+                    className="am-map-flow"
+                  />
+                </g>
+              );
+            })}
+          </g>
 
           <g>
             {placed.map((chapter) => {
               const isActive = activeId === chapter.id;
-              const radius = chapter.hq ? 3.2 : 2;
+              const isGlobal = chapter.role === "global";
+              const isRegional = chapter.role === "regional";
+              const radius = isGlobal ? 3.2 : isRegional ? 2.7 : 2;
+              // The trunk is orange, the continental hubs are white-hot, and
+              // the chapters they reach are the same blue as their spokes.
+              const colour = isGlobal ? "#ffb457" : isRegional ? "#ffffff" : "#bfe0ff";
 
               return (
                 <g
                   key={chapter.id}
                   role="button"
                   tabIndex={0}
-                  aria-label={`${chapter.city}, ${chapter.country}${chapter.hq ? " — headquarters" : ""}`}
+                  aria-label={
+                    isGlobal
+                      ? `${chapter.city}, ${chapter.country} — ${t("map.hqBadge")}`
+                      : isRegional
+                        ? `${chapter.city}, ${chapter.country} — ${t("map.regionalHqBadge")}`
+                        : `${chapter.city}, ${chapter.country}`
+                  }
                   aria-pressed={selected === chapter.id}
                   onMouseEnter={() => setHovered(chapter.id)}
                   onMouseLeave={() => setHovered(null)}
@@ -361,7 +395,9 @@ export default function NetworkMap() {
                     cx={chapter.x}
                     cy={chapter.y}
                     r={isActive ? radius * 5 : radius * 3}
-                    fill={`url(#${chapter.hq ? "am-hq-glow" : "am-marker-glow"})`}
+                    fill={`url(#${
+                      isGlobal ? "am-hq-glow" : isRegional ? "am-regional-glow" : "am-marker-glow"
+                    })`}
                     className="transition-all duration-200"
                   />
                   <circle
@@ -369,7 +405,7 @@ export default function NetworkMap() {
                     cy={chapter.y}
                     r={radius}
                     fill="none"
-                    stroke={chapter.hq ? "#ffb457" : "#7cc4ff"}
+                    stroke={isGlobal ? "#ffb457" : isRegional ? "#dcefff" : "#7cc4ff"}
                     strokeWidth={0.8}
                     className="am-map-pulse"
                   />
@@ -377,20 +413,26 @@ export default function NetworkMap() {
                     cx={chapter.x}
                     cy={chapter.y}
                     r={isActive ? radius * 1.6 : radius}
-                    fill={chapter.hq ? "#ffb457" : "#bfe0ff"}
+                    fill={colour}
                     className="transition-all duration-200"
                   />
                   {(labelledIds.has(chapter.id) || isActive) && (
                     <text
                       x={chapter.x}
-                      y={chapter.y - (chapter.hq ? 9 : 7)}
+                      y={chapter.y - (isGlobal ? 9 : isRegional ? 8 : 7)}
                       textAnchor="middle"
                       className="pointer-events-none"
-                      fill={chapter.hq ? "#ffd8a3" : isActive ? "#ffffff" : "rgba(232,238,248,0.7)"}
-                      fontSize={chapter.hq ? 8.5 : 7}
-                      fontWeight={chapter.hq || isActive ? 700 : 500}
+                      fill={
+                        isGlobal
+                          ? "#ffd8a3"
+                          : isRegional || isActive
+                            ? "#ffffff"
+                            : "rgba(232,238,248,0.7)"
+                      }
+                      fontSize={isGlobal ? 8.5 : isRegional ? 8 : 7}
+                      fontWeight={isGlobal || isRegional || isActive ? 700 : 500}
                     >
-                      {chapter.hq ? `HQ · ${chapter.city}, NJ` : chapter.city}
+                      {isGlobal ? `${t("map.hqBadge")} · ${chapter.city}, NJ` : chapter.city}
                     </text>
                   )}
                   <circle cx={chapter.x} cy={chapter.y} r={9} fill="transparent" />
@@ -407,9 +449,15 @@ export default function NetworkMap() {
             <div>
               <p className="font-display text-lg font-bold text-white">
                 {selectedChapter.city}
-                {selectedChapter.hq && (
-                  <span className="ml-2 rounded-full bg-[#ffb457] px-2 py-0.5 align-middle text-[10px] font-bold uppercase tracking-[0.08em] text-night">
-                    HQ
+                {selectedChapter.role && (
+                  <span
+                    className={`ml-2 rounded-full px-2 py-0.5 align-middle text-[10px] font-bold uppercase tracking-[0.08em] text-night ${
+                      selectedChapter.role === "global" ? "bg-[#ffb457]" : "bg-white"
+                    }`}
+                  >
+                    {selectedChapter.role === "global"
+                      ? t("map.hqBadge")
+                      : t("map.regionalHqBadge")}
                   </span>
                 )}
               </p>

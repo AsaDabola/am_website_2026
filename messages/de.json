@@ -206,7 +206,9 @@
       "regionAria": "Karte von {region} mit {count} AM-Chaptern.",
       "captionSouthAsia": "Südasien",
       "captionEastCentralAsia": "Ost- und Zentralasien",
-      "captionSoutheastAsia": "Südostasien"
+      "captionSoutheastAsia": "Südostasien",
+      "hqBadge": "Zentrale",
+      "regionalHqBadge": "Regionalzentrale"
     }
   },
   "Home": {

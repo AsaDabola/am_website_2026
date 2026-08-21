@@ -206,7 +206,9 @@
       "regionAria": "AM 챕터 {count}곳을 표시한 {region} 지도입니다.",
       "captionSouthAsia": "남아시아",
       "captionEastCentralAsia": "동아시아·중앙아시아",
-      "captionSoutheastAsia": "동남아시아"
+      "captionSoutheastAsia": "동남아시아",
+      "hqBadge": "본부",
+      "regionalHqBadge": "지역 본부"
     }
   },
   "Home": {

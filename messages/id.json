@@ -303,7 +303,9 @@
       "regionAria": "Peta {region} yang menampilkan {count} chapter AM.",
       "captionSouthAsia": "Asia Selatan",
       "captionEastCentralAsia": "Asia Timur & Tengah",
-      "captionSoutheastAsia": "Asia Tenggara"
+      "captionSoutheastAsia": "Asia Tenggara",
+      "hqBadge": "Pusat",
+      "regionalHqBadge": "Pusat kawasan"
     }
   },
   "Home": {

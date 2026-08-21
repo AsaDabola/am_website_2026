@@ -206,7 +206,9 @@
       "regionAria": "显示 {count} 个 AM 分会的{region}地图。",
       "captionSouthAsia": "南亚",
       "captionEastCentralAsia": "东亚与中亚",
-      "captionSoutheastAsia": "东南亚"
+      "captionSoutheastAsia": "东南亚",
+      "hqBadge": "总部",
+      "regionalHqBadge": "区域总部"
     }
   },
   "Home": {

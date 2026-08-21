@@ -303,7 +303,9 @@
       "regionAria": "Карта региона «{region}» с отделениями AM ({count}).",
       "captionSouthAsia": "Южная Азия",
       "captionEastCentralAsia": "Восточная и Центральная Азия",
-      "captionSoutheastAsia": "Юго-Восточная Азия"
+      "captionSoutheastAsia": "Юго-Восточная Азия",
+      "hqBadge": "Штаб",
+      "regionalHqBadge": "Рег. штаб"
     }
   },
   "Home": {

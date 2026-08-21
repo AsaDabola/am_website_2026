@@ -303,7 +303,9 @@
       "regionAria": "{region} map showing {count} AM chapters.",
       "captionSouthAsia": "South Asia",
       "captionEastCentralAsia": "East & Central Asia",
-      "captionSoutheastAsia": "Southeast Asia"
+      "captionSoutheastAsia": "Southeast Asia",
+      "hqBadge": "HQ",
+      "regionalHqBadge": "Regional HQ"
     }
   },
   "Home": {

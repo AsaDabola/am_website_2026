@@ -303,7 +303,9 @@
       "regionAria": "{count} AM şubesini gösteren {region} haritası.",
       "captionSouthAsia": "Güney Asya",
       "captionEastCentralAsia": "Doğu ve Orta Asya",
-      "captionSoutheastAsia": "Güneydoğu Asya"
+      "captionSoutheastAsia": "Güneydoğu Asya",
+      "hqBadge": "Merkez",
+      "regionalHqBadge": "Bölge merkezi"
     }
   },
   "Home": {

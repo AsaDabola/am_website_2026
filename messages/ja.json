@@ -206,7 +206,9 @@
       "regionAria": "AMの {count} チャプターを示す{region}の地図です。",
       "captionSouthAsia": "南アジア",
       "captionEastCentralAsia": "東アジア・中央アジア",
-      "captionSoutheastAsia": "東南アジア"
+      "captionSoutheastAsia": "東南アジア",
+      "hqBadge": "本部",
+      "regionalHqBadge": "地域本部"
     }
   },
   "Home": {

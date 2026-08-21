@@ -206,7 +206,9 @@
       "regionAria": "Carte de {region} montrant {count} chapitres d'AM.",
       "captionSouthAsia": "Asie du Sud",
       "captionEastCentralAsia": "Asie de l'Est et centrale",
-      "captionSoutheastAsia": "Asie du Sud-Est"
+      "captionSoutheastAsia": "Asie du Sud-Est",
+      "hqBadge": "Siège",
+      "regionalHqBadge": "Siège régional"
     }
   },
   "Home": {
