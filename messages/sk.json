@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Ten, kto je poslaný s poslaním",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Kto sme",
+    "whatWeDo": "Čo robíme",
+    "getInvolved": "Zapojte sa",
+    "connect": "Spojte sa",
+    "ourNetwork": "Naša sieť",
+    "news": "Novinky",
+    "contactUs": "Kontaktujte nás",
+    "give": "Darovať",
+    "toggleNav": "Otvoriť alebo zavrieť navigačné menu",
+    "whoWeAreMenu": {
+      "whoWeAre": "Kto sme",
+      "ourMission": "Naše poslanie",
+      "statementOfFaith": "Vyznanie viery",
+      "history": "História",
+      "ourFirstChairmen": "Naši prví predsedovia",
+      "membership": "Členstvo",
+      "ourLeadership": "Naše vedenie"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Piliere nášho poslania",
+      "administration": "Správa",
+      "bibleStudyProgram": "Program štúdia Biblie",
+      "fourSpiritualThemes": "Štyri duchovné témy",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Naše služby"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Štúdium Biblie",
+      "groupActivities": "Skupinové aktivity",
+      "volunteer": "Dobrovoľníctvo",
+      "bibleTeacherTraining": "Školenie učiteľov Biblie",
+      "internship": "Stáž",
+      "donate": "Darovať",
+      "onlineBibleStudy": "Online štúdium Biblie",
+      "chapterAffiliation": "Pridruženie pobočky"
+    },
+    "newsMenu": {
+      "featured": "Vybrané",
+      "events": "Podujatia",
+      "editorial": "Články",
+      "photoNews": "Fotoreportáže",
+      "testimony": "Svedectvá"
+    },
+    "megaMenu": {
+      "aboutHeading": "O nás",
+      "whatWeDoHeading": "Čo robíme",
+      "featuredHeading": "Vybrané články",
+      "allArticles": "Všetky články",
+      "ctaBibleStudy": "Začnite študovať Bibliu",
+      "ctaFindChapter": "Nájdite svoju pobočku",
+      "ctaGive": "Darujte dnes"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "O AM",
+        "description": "Kto sme, čomu veríme a odkiaľ pochádzame."
+      },
+      "leadership": {
+        "title": "Vedenie",
+        "description": "Ľudia, ktorí slúžia hnutiu, a ako sa k nemu pripojiť."
+      },
+      "whatWeDo": {
+        "title": "Čo robíme",
+        "description": "Piliere a služby, ktoré nesú poslanie ďalej."
+      },
+      "bibleStudy": {
+        "title": "Program štúdia Biblie",
+        "description": "Cesta v piatich fázach od prvej otázky až po vyslanie."
+      },
+      "getInvolved": {
+        "title": "Zapojte sa",
+        "description": "Nájdite svoje miesto v hnutí, nech ste kdekoľvek."
+      },
+      "supportMission": {
+        "title": "Slúžte a podporte",
+        "description": "Nechajte sa vyškoliť, založte pobočku alebo podporte študentov v teréne."
+      },
+      "latestNews": {
+        "title": "Najnovšie správy",
+        "description": "Príbehy a novinky z celej siete."
+      },
+      "events": {
+        "title": "Podujatia",
+        "description": "Duchovné obnovy, konferencie a stretnutia vo vašom okolí."
+      }
+    },
+    "mobile": {
+      "back": "Späť",
+      "close": "Zavrieť menu",
+      "menu": "Menu"
+    }
+  },
+  "Footer": {
+    "tagline": "Medzidenominačná služba oddaná šíreniu evanjelia až po kraj zeme a svedectvu o večnej láske Pána.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, USA",
+    "email": "info@amintl.org",
+    "whoWeAre": "Kto sme",
+    "whatWeDo": "Čo robíme",
+    "getInvolved": "Zapojte sa",
+    "media": "Médiá",
+    "aboutAM": "O AM",
+    "missionStatement": "Vyhlásenie o poslaní",
+    "statementOfFaith": "Vyznanie viery",
+    "ourHistory": "Naša história",
+    "leadership": "Vedenie",
+    "bibleStudyProgram": "Program štúdia Biblie",
+    "fourSpiritualThemes": "Štyri duchovné témy",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Naše služby",
+    "connectGrowLeadSent": "Spojenie, Rast, Vedenie, Vyslanie",
+    "chapterAffiliation": "Pridruženie pobočky",
+    "ourNetwork": "Naša sieť",
+    "events": "Podujatia",
+    "give": "Darovať",
+    "news": "Novinky",
+    "legacyOfChairman": "Odkaz Ralpha D. Wintera",
+    "contactUs": "Kontaktujte nás",
+    "copyright": "© 2026 Apostolos Missions International. Všetky práva vyhradené.",
+    "contact": "Kontakt"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "Jazyk"
+  },
+  "Common": {
+    "tagline": "Medzidenominačná služba oddaná šíreniu evanjelia až po kraj zeme a svedectvu o večnej láske Pána.",
+    "learnMore": "Zistiť viac",
+    "readMore": "Čítať ďalej",
+    "clickHere": "Kliknite sem",
+    "home": "Domov"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Kto sme",
+    "missionStatement": "Vyhlásenie o poslaní",
+    "statementOfFaith": "Vyznanie viery",
+    "history": "História",
+    "ourFirstChairman": "Náš prvý predseda",
+    "membership": "Členstvo",
+    "leadership": "Vedenie"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Piliere nášho poslania",
+    "administration": "Správa"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Štvrtkové štúdium Biblie",
+    "bibleStudies": "Štúdium Biblie",
+    "groupActivities": "Skupinové aktivity",
+    "volunteer": "Dobrovoľníctvo",
+    "chapterStaff": "Tím pobočky",
+    "bibleTeacherTraining": "Školenie učiteľov Biblie",
+    "internship": "Stáž",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Darovať"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Vybrané správy",
+    "events": "Podujatia",
+    "editorial": "Články",
+    "photoNews": "Fotoreportáže",
+    "testimony": "Svedectvá"
+  },
+  "InPractice": {
+    "eyebrow": "V praxi",
+    "heading": "Štyri veci, ktoré robíme všade, kam prídeme.",
+    "bibleStudyTag": "Štúdium Biblie",
+    "bibleStudyDescription": "Stretnutia v malých aj veľkých skupinách, ktoré stavajú Písmo do stredu študentského života.",
+    "leadershipTrainingTag": "Školenie vedúcich",
+    "leadershipTrainingDescription": "Študenti sa učia viesť svojich rovesníkov a potom vysielať ďalšiu skupinu.",
+    "onlineEducationTag": "Online vzdelávanie",
+    "onlineEducationDescription": "Kurzy AM Academy o Písme, misiológii a medzikultúrnej službe.",
+    "internshipsTripsTag": "Stáže a cesty",
+    "internshipsTripsDescription": "Krátkodobé misijné cesty a stáže, ktoré menia školenie na prax."
+  },
+  "AboutPage": {
+    "heroTitle": "Ako mňa poslal Otec, aj ja posielam vás.",
+    "breadcrumb": "O nás",
+    "paragraph1": "Apostolos Missions International (AM) je medzidenominačná služba oddaná šíreniu evanjelia až po kraj zeme a svedectvu o večnej láske Pána.",
+    "paragraph2Prefix": "Názov",
+    "paragraph2": "(ἀπόστολος) je grécke slovo pre apoštola. Znamená „ten, kto je poslaný s poslaním“ alebo „posol“. Titul „apoštol“ sa v Novom zákone často vzťahuje na dvanástich učeníkov, ktorých vybral Ježiš (Matúš 10,2; Marek 3,14; Lukáš 6,13; Skutky 2,42). Pavol, kedysi prenasledovateľ kresťanstva a neskôr veľký hlásateľ evanjelia, sa predstavoval ako „apoštol“ (Rimanom 1,1; 1. Korinťanom 1,1; 2. Korinťanom 1,1; Galaťanom 1,1; Kolosanom 1,1; 1. Timotejovi 1,1; 2. Timotejovi 1,1; Títovi).",
+    "paragraph3": "Apoštoli sú tí, ktorých Pán posiela, aby naplnili poslanie „hlásať Ježiša Krista a dávať poznať Boha“ celému stvoreniu. Biblický základ apoštolstva nachádzame v mnohých slovách Pána, ktorý vybral prvých apoštolov a poslal ich ako vyslancov vyslaných zastupovať národy. Apoštoli pochopili, že ich život už nepatrí im samým, ale že žijú preto, aby zjavovali Kristovu slávu v tomto padlom svete.",
+    "blockquote": "Ján 20,21 hovorí: „Ježiš im znova povedal: ‚Pokoj vám! Ako mňa poslal Otec, aj ja posielam vás.‘“",
+    "paragraph4": "AM chce ísť v tradícii apoštolov, ktorí žili ako ľudia poslaní zvestovať Božie slovo. Aj každý z nás dostáva od Boha toto povolanie byť poslaný do sveta ako jeho ruky a nohy. Chceme svoj život zasvätiť tomu, aby sme šli v stopách Ježiša a zvestovali evanjelium až po kraj zeme.",
+    "paragraph5": "Tak ako sa nášho života dotkol Pán a premenil ho, aj my chceme ukazovať lásku Pána, ktorá bola preukázaná nám, a stať sa majákom pre všetky jeho stratené deti aj pre našich bratov a sestry.",
+    "readStatementOfFaith": "Prečítajte si naše vyznanie viery",
+    "or": "alebo",
+    "traceHistory": "prejdite našu históriu",
+    "cardStatementOfFaithTitle": "Prečítajte si naše vyznanie viery",
+    "cardMissionStatementTitle": "Vyhlásenie o poslaní"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "Cesta AM",
+    "roadmapHeading": "Čo vás čaká?",
+    "connectTag": "Spojenie",
+    "connectItems": [
+      "Biblia osobne aj online",
+      "Študijné programy"
+    ],
+    "growTag": "Rast",
+    "growItems": [
+      "Skupinové aktivity"
+    ],
+    "leadTag": "Vedenie",
+    "leadItems": [
+      "Dobrovoľníctvo a stáže",
+      "Vedúci pobočiek"
+    ],
+    "sentTag": "Vyslanie",
+    "sentItems": [
+      "Alumni Connect",
+      "Misionári na čiastočný aj plný úväzok",
+      "Učitelia Biblie"
+    ],
+    "connectHeading": "Spojenie",
+    "connectStep1Title": "1. Prihláste sa na odber našich stránok",
+    "connectStep1Body": "Je veľa spôsobov, ako zostať v spojení s AM. Môžete sa prihlásiť na odber na našej hlavnej stránke www.amintl.org a dostávať newslettery. Alebo sa môžete prihlásiť na stránke našej online biblickej školy www.amacademy.org a dostávať najnovšie správy a programy. Pozrite si na našich stránkach našu víziu, činnosť aj programy a kedykoľvek nám napíšte, ak máte otázky.",
+    "connectStep2Title": "2. Dohodnite si stretnutie s naším tímom",
+    "connectStep2BodyPrefix": "Pokojne sa",
+    "connectStep2SignUp": "prihláste",
+    "connectStep2BodySuffix": "tu, ak sa chcete porozprávať s niekým z nášho tímu a získať sprevádzanie na svojej duchovnej ceste. Môžete si dohodnúť stretnutie alebo kontaktovať našich pracovníkov priamo. Mnohí z nich sami prešli študentským životom a rozumejú tomu, čomu študenti čelia. Pomôžu vám nájsť cestu viery, ktorá vám najlepšie sadne.",
+    "connectStep3Title": "3. Prihláste sa na štúdium Biblie",
+    "connectStep3BodyPrefix": "Ak ste pripravení začať náš program štúdia Biblie,",
+    "connectStep3SignUp": "prihláste sa",
+    "connectStep3BodySuffix": "na tejto stránke. Ak nenájdete vyhovujúci termín, pošlite formulár s kurzom a časom, ktoré vám vyhovujú!",
+    "connectStep4Title": "4. Spojte sa s miestnou pobočkou",
+    "connectStep4BodyPrefix": "Ak sa chcete spojiť s kanceláriou a tímom miestnej pobočky, prosím",
+    "connectStep4ContactHere": "napíšte nám tu",
+    "connectStep4BodySuffix": ". Tešíme sa, že sa čoskoro stretneme!",
+    "growHeading": "Rast",
+    "growIntro": "Tak ako rastieme a dospievame cez rôzne fázy detstva, dosahujeme kľúčové míľniky aj v duchovnej zrelosti. AM ponúka množstvo programov a ciest, ktoré majú študentov previesť týmito tromi zásadnými fázami duchovného rastu:",
+    "rebornTitle": "1. Znovuzrodenie",
+    "rebornBody": "Rodíme sa znova skrze zmiernu obeť Ježiša na kríži.",
+    "matureTitle": "1. Dospievanie",
+    "matureBody": "Rastieme a duchovne dospievame tým, že sa sýtime láskou a pravdou od Ježiša.",
+    "fruitfulTitle": "1. Plodnosť",
+    "fruitfulBody": "Prežívame plodnosť života skrze Božie požehnanie, ktoré sa napĺňa v našej zrelej jednote s Kristom Ježišom.",
+    "navigatingTitle": "Zorientovať sa v študentskom živote",
+    "navigatingBody": "Študentský život je vzrušujúci a napĺňajúci, no pri toľkých možnostiach môže pôsobiť aj bezcieľne. Skrze pravdu a modlitbu vám AM pomáha rozpoznať Božiu vôľu a nájsť jasný smer pre váš mimoriadny život.",
+    "nextStepsTitle": "Ďalšie kroky",
+    "nextStepsBody": "Zapájajte sa ďalej do našich programov — využite mnohé príležitosti počuť Slovo, spoločne sa modliť, mať spoločenstvo s bratmi a sestrami vo viere a slúžiť, kým rastiete v evanjeliu.",
+    "leadHeading": "Vedenie",
+    "leadStep1Title": "1. Služba v Kristovej láske",
+    "leadStep1Body": "Ako rastieme, túžime slúžiť tým, ktorí potrebujú pomoc, aby prišli k Ježišovi. A keď slúžime, sami hlbšie rastieme v Kristovej láske.",
+    "leadStep2Title": "2. Požehnanie vedenia",
+    "leadStep2Body": "Ježiš povedal: „Blaženejšie je dávať ako brať“ (Skutky 20,35). Viesť a sprevádzať druhých si vyžaduje múdrosť, modlitbu, obetu a trpezlivosť. Napriek tomu je to požehnané miesto, kde sláva kríža vrcholí.",
+    "leadStep3Title": "3. Požehnanie vedenia",
+    "leadStep3Body": "Hoci sú vysokoškoláci ešte mladí, mimoriadne dary a schopnosti môžu byť objavené a rozvinuté oveľa silnejšie práve vo vedúcich úlohách. Je to krásny proces, v ktorom každý študent skúša a potvrdzuje svoje nebeské dary cez milostiplnú skúsenosť služby a vedenia.",
+    "leadStep4Title": "4. Príležitosti s AM",
+    "leadStep4Body": "AM ponúka študentom pestré príležitosti a úlohy, ako sa zapojiť do služby a vedenia. Pridajte sa k nášmu tímu dobrovoľníkov, pracovníkov a vedúcich pobočiek, učiteľov Biblie a mnohých ďalších. Objavte, čo do vás Ježiš vložil podľa svojho znamenitého plánu.",
+    "sentHeading": "Vyslanie",
+    "sentParagraph1": "Ukončenie štúdia je ďalším významným vykročením do sveta, ktorý sa pred nami otvára. Niektorí z nás budú ďalej študovať alebo sa vyberú profesijnou cestou. Iní sa stanú pracovníkmi AM na plný úväzok, misionármi či duchovnými, ktorí nasledujú Božie povolanie.",
+    "sentParagraph2": "V tomto zásadnom kroku ponúka AM programy, vďaka ktorým môžete zostať v spojení a ďalej slúžiť misii evanjelia prostredníctvom Alumni Connect. AM tiež poskytuje školiace programy a cesty, ako sa stať profesionálnym misijným pracovníkom v AM World Mission.",
+    "sentParagraph3": "Otvárajú sa pred vami rôzne cesty k svetlej budúcnosti. AM si praje kráčať blízko s každým človekom, aby sme spoločne naplnili Veľké poslanie: „Choďte teda a získavajte mi učeníkov vo všetkých národoch a krstite ich v mene Otca i Syna i Ducha Svätého“ (Matúš 28,19).",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "Staňte sa učiteľom Biblie v AM",
+    "sentLinkMissionaries": "Staňte sa misionárom AM",
+    "sentLinkStaff": "Práca na plný úväzok v ústredí AM",
+    "roadmapHeroTitle": "Rast na univerzite: cesta"
+  },
+  "Network": {
+    "breadcrumb": "Naša sieť",
+    "heading": "Naša celosvetová sieť",
+    "joinChapter": "Pripojte sa k pobočke",
+    "partnerWithUs": "Staňte sa partnerom",
+    "exploreEyebrow": "Preskúmajte svet",
+    "regionsHeading": "Regióny",
+    "regionsSubheading": "Prechádzajte podľa regiónu",
+    "siteCount": "{count, plural, one {# stránka} few {# stránky} other {# stránok}}",
+    "communityEyebrow": "Celosvetové spoločenstvo",
+    "chaptersHeading": "Pobočky v najrôznejších mestách a kútoch sveta",
+    "chaptersSoon": "Pobočky čoskoro vzniknú.",
+    "continentSubtitle": "Národné stránky AM v regióne {region}.",
+    "noSitesTitle": "V regióne {region} zatiaľ nie sú žiadne stránky",
+    "noSitesBodyPrefix": "Prítomnosť AM v tomto regióne ešte budujeme. Zastavte sa čoskoro znova, alebo",
+    "noSitesLink": "nám napíšte",
+    "noSitesBodySuffix": ", ak chcete pomôcť nejakú založiť.",
+    "visitSite": "Navštíviť stránku",
+    "regions": {
+      "africa": "Afrika",
+      "asia": "Ázia",
+      "europe": "Európa",
+      "northamerica": "Severná Amerika",
+      "southamerica": "Latinská Amerika a Karibik",
+      "oceania": "Oceánia"
+    },
+    "map": {
+      "world": "Svet",
+      "loading": "Načítava sa…",
+      "zoomIn": "Priblížiť",
+      "clear": "Zrušiť výber",
+      "worldHint": "Prejdite kurzorom na bod alebo ho vyberte, uvidíte mesto — výber priblíži jeho región.",
+      "regionHint": "{count, plural, one {# pobočka} few {# pobočky} other {# pobočiek}} v regióne {region}. Vyberte bod pre podrobnosti alebo sa vráťte na mapu sveta.",
+      "worldAria": "Mapa sveta so všetkými pobočkami AM ({count}). Pomocou tlačidiel regiónov možno priblížiť.",
+      "regionAria": "Mapa regiónu {region} s pobočkami AM ({count}).",
+      "captionSouthAsia": "Južná Ázia",
+      "captionEastCentralAsia": "Východná a stredná Ázia",
+      "captionSoutheastAsia": "Juhovýchodná Ázia",
+      "hqBadge": "Ústredie",
+      "regionalHqBadge": "Regionálne ústredie"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — ten, kto je poslaný",
+      "headingLine1": "Tam, kde",
+      "headingWhere": "Ježišova láska",
+      "headingWeAre": "prekypuje",
+      "joinBibleStudy": "Pripojte sa k štúdiu Biblie",
+      "whoWeAre": "Kto sme",
+      "stat1Value": "2003",
+      "stat1Label": "Vysielame od roku",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, USA",
+      "stat3Value": "Celosvetová",
+      "stat3Label": "Sieť na univerzitách",
+      "dragToExplore": "Potiahnutím preskúmate"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Pripojte sa k nášmu programu štúdia Biblie",
+      "heading": "Cesta v 5 fázach od prvej otázky až po vyslanie.",
+      "description": "Program štúdia Biblie AM v 5 fázach je online program učeníctva a biblického vzdelávania, ktorý vedie študentov usporiadanou cestou spoznávania evanjelia Ježiša Krista a života viery. Program spája študentov s učiteľmi Biblie, ktorí vyučujú v časoch, čo poslucháčom vyhovujú. Vrcholí príležitosťou stať sa dobrovoľníkom, pripraviť sa ako študent-misionár alebo sa jednoducho spolu s AM hlbšie ponoriť do Božieho slova.",
+      "cta": "Začať program"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Pripojte sa k štúdiu Biblie",
+      "joinBibleStudyDescription": "Online program učeníctva a biblického vzdelávania v 5 fázach.",
+      "findCampusTitle": "Nájdite svoju univerzitu",
+      "findCampusDescription": "Naša sieť pobočiek a spoločenstiev.",
+      "getInvolvedTitle": "Zapojte sa",
+      "getInvolvedDescription": "Spojte sa, rastite, veďte a nechajte sa vyslať s AM.",
+      "supportTitle": "Podporte poslanie",
+      "supportDescription": "Darujte, modlite sa a spolupracujte so študentmi v teréne."
+    },
+    "Ministries": {
+      "eyebrow": "Spojenie · Rast · Vedenie · Vyslanie",
+      "heading": "Štyri kroky a každý z nich ideme spolu s vami.",
+      "getInvolved": "Zapojte sa",
+      "learnMore": "Zistiť viac",
+      "connectTitle": "Spojte sa s AM",
+      "connectDescription": "AM ponúka rôzne programy štúdia Biblie, ktoré sýtia náš duchovný život a vzťah s Pánom Ježišom Kristom.",
+      "growTitle": "Rastite s AM",
+      "growDescription": "Zapojte sa do našich skupinových aktivít a dospievajte spoločne v spoločenstve pravdy. Naše skupinové programy dávajú každému študentovi kvalitnú skúsenosť, ako načerpať duchovnú silu.",
+      "leadTitle": "Veďte s AM",
+      "leadDescription": "AM rado privíta študentov, ktorí chcú byť dobrovoľníkmi a slúžiť svojimi Bohom danými darmi v rôznych oblastiach.",
+      "sentTitle": "Vyslaní s AM",
+      "sentDescription": "AM bude kráčať s vami, kým sa vaše vzácne povolanie „byť poslaný“ nenaplní vo vašom živote — aj po ukončení štúdia!",
+      "connectTag": "Spojenie",
+      "growTag": "Rast",
+      "leadTag": "Vedenie",
+      "sentTag": "Vyslanie"
+    },
+    "OurMission": {
+      "eyebrow": "Naše poslanie",
+      "statementPrefix": "Poslaním Apostolos Missions je",
+      "statementEmphasis": "hlásať Ježiša Krista, a to ukrižovaného",
+      "statementSuffix": "— a budovať na Krista zameranú sieť mladých kresťanov pre mobilizáciu misie na univerzitách.",
+      "readFullStatement": "Prečítať celé vyhlásenie o poslaní",
+      "nameOrigin": "Názov apostolos je grécke slovo pre apoštola. Znamená „ten, kto je poslaný s poslaním“.",
+      "history": "To, čo sa začalo ako malá skupina zapálených mladých študentov v Los Angeles v Kalifornii, ktorí túžili šíriť evanjelium a dávať poznať Ježiša, sa stalo celosvetovou organizáciou pôsobiacou na univerzitách po celom svete.",
+      "ourHistory": "Naša história"
+    },
+    "GetInvolved": {
+      "eyebrow": "Zostaňte v spojení",
+      "heading": "Zapojte sa",
+      "bibleStudies": "Štúdium Biblie",
+      "volunteer": "Dobrovoľníctvo",
+      "internship": "Stáž"
+    },
+    "Media": {
+      "eyebrow": "Médiá",
+      "heading": "Vyučovanie, svedectvo a Slovo.",
+      "moreContents": "Ďalší obsah",
+      "playVideo": "Prehrať úvodné video AM",
+      "post1Title": "Štyri duchovné témy – prehľad",
+      "post2Title": "Čo je spasenie? | Sola Fide časť 1 – AM Academy",
+      "post3Title": "Doba učeníctva na sociálnych sieťach: priblížiť študentom skutočnosť evanjelia",
+      "post4Title": "Božie zasľúbenia na nový rok",
+      "post1Date": "5. januára 2026",
+      "post2Date": "27. júna 2023",
+      "post3Date": "3. júna 2022",
+      "post4Date": "2. januára 2022"
+    },
+    "Events": {
+      "eyebrow": "Podujatia",
+      "heading": "Kde sa sieť stretáva.",
+      "allEvents": "Všetky podujatia",
+      "event1Date": "4.–5. apríla",
+      "event1Title": "Veľkonočná duchovná obnova",
+      "event2Date": "18. februára",
+      "event2Title": "Štyridsaťdňová pôstna cesta",
+      "event3Date": "16. januára",
+      "event3Title": "Stretnutie nových vedúcich pobočiek"
+    },
+    "OurNetwork": {
+      "eyebrow": "Naša sieť",
+      "heading": "Možno už na vašej univerzite spoločenstvo je.",
+      "description": "Hľadajte podľa školy alebo mesta. Ak sa vo vašom okolí nič neobjaví, berte to ako pozvanie — pomôžeme vám nejaké založiť.",
+      "startChapter": "Založiť pobočku",
+      "searchPlaceholder": "Hľadať školu alebo mesto",
+      "noMatches": "Zatiaľ žiadna zhoda — napíšte nám a pomôžeme vám začať."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Náš prvý čestný predseda",
+      "followingLegacy": "V stopách",
+      "name": "Dr. Ralph D. Winter",
+      "quoteLine1": "Choďte teda",
+      "quoteLine2": "a získavajte mi učeníkov",
+      "quoteLine3": "vo všetkých národoch…",
+      "quoteReference": "—Matúš 28,19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Spolupracujte s nami",
+      "heading": "Vyšlite niekoho, koho nikdy nestretnete.",
+      "description": "Každý dar približuje štúdium Biblie, školenie a vysielajúce spoločenstvo študentom, ktorí sú pripravení ísť.",
+      "giveToday": "Darujte dnes",
+      "talkToUs": "Porozprávajte sa s nami"
+    },
+    "Newsletter": {
+      "heading": "Správy z univerzít",
+      "description": "Krátky mesačný list: čo študenti vidia, kam AM smeruje ďalej a ako sa modliť.",
+      "cta": "AM Academy"
+    }
+  }
+}

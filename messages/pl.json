@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Ten, który zostaje posłany z misją",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Kim jesteśmy",
+    "whatWeDo": "Co robimy",
+    "getInvolved": "Włącz się",
+    "connect": "Nawiąż kontakt",
+    "ourNetwork": "Nasza sieć",
+    "news": "Aktualności",
+    "contactUs": "Skontaktuj się",
+    "give": "Wesprzyj",
+    "toggleNav": "Otwórz lub zamknij menu nawigacji",
+    "whoWeAreMenu": {
+      "whoWeAre": "Kim jesteśmy",
+      "ourMission": "Nasza misja",
+      "statementOfFaith": "Wyznanie wiary",
+      "history": "Historia",
+      "ourFirstChairmen": "Nasi pierwsi przewodniczący",
+      "membership": "Członkostwo",
+      "ourLeadership": "Nasze kierownictwo"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Filary naszej misji",
+      "administration": "Administracja",
+      "bibleStudyProgram": "Program studium biblijnego",
+      "fourSpiritualThemes": "Cztery tematy duchowe",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Nasze służby"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Studia biblijne",
+      "groupActivities": "Zajęcia grupowe",
+      "volunteer": "Wolontariat",
+      "bibleTeacherTraining": "Szkolenie nauczycieli Biblii",
+      "internship": "Staż",
+      "donate": "Przekaż darowiznę",
+      "onlineBibleStudy": "Studium biblijne online",
+      "chapterAffiliation": "Afiliacja oddziału"
+    },
+    "newsMenu": {
+      "featured": "Wyróżnione",
+      "events": "Wydarzenia",
+      "editorial": "Artykuły",
+      "photoNews": "Fotorelacje",
+      "testimony": "Świadectwa"
+    },
+    "megaMenu": {
+      "aboutHeading": "O nas",
+      "whatWeDoHeading": "Co robimy",
+      "featuredHeading": "Wyróżnione artykuły",
+      "allArticles": "Wszystkie artykuły",
+      "ctaBibleStudy": "Rozpocznij studium biblijne",
+      "ctaFindChapter": "Znajdź swój oddział",
+      "ctaGive": "Wesprzyj dzisiaj"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "O AM",
+        "description": "Kim jesteśmy, w co wierzymy i skąd pochodzimy."
+      },
+      "leadership": {
+        "title": "Kierownictwo",
+        "description": "Ludzie służący ruchowi i sposób, w jaki można do niego należeć."
+      },
+      "whatWeDo": {
+        "title": "Co robimy",
+        "description": "Filary i służby, które niosą misję naprzód."
+      },
+      "bibleStudy": {
+        "title": "Program studium biblijnego",
+        "description": "Pięcioetapowa droga od pierwszego pytania do posłania."
+      },
+      "getInvolved": {
+        "title": "Włącz się",
+        "description": "Znajdź swoje miejsce w ruchu, gdziekolwiek jesteś."
+      },
+      "supportMission": {
+        "title": "Służ i wspieraj",
+        "description": "Szkol się, załóż oddział lub wspieraj studentów w terenie."
+      },
+      "latestNews": {
+        "title": "Najnowsze wiadomości",
+        "description": "Historie i aktualności z całej sieci."
+      },
+      "events": {
+        "title": "Wydarzenia",
+        "description": "Rekolekcje, konferencje i spotkania w twojej okolicy."
+      }
+    },
+    "mobile": {
+      "back": "Wstecz",
+      "close": "Zamknij menu",
+      "menu": "Menu"
+    }
+  },
+  "Footer": {
+    "tagline": "Międzywyznaniowa służba oddana głoszeniu ewangelii aż po krańce ziemi i świadczeniu o wiecznej miłości Pana.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, USA",
+    "email": "info@amintl.org",
+    "whoWeAre": "Kim jesteśmy",
+    "whatWeDo": "Co robimy",
+    "getInvolved": "Włącz się",
+    "media": "Media",
+    "aboutAM": "O AM",
+    "missionStatement": "Deklaracja misji",
+    "statementOfFaith": "Wyznanie wiary",
+    "ourHistory": "Nasza historia",
+    "leadership": "Kierownictwo",
+    "bibleStudyProgram": "Program studium biblijnego",
+    "fourSpiritualThemes": "Cztery tematy duchowe",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Nasze służby",
+    "connectGrowLeadSent": "Kontakt, Wzrost, Przywództwo, Posłanie",
+    "chapterAffiliation": "Afiliacja oddziału",
+    "ourNetwork": "Nasza sieć",
+    "events": "Wydarzenia",
+    "give": "Wesprzyj",
+    "news": "Aktualności",
+    "legacyOfChairman": "Dziedzictwo Ralpha D. Wintera",
+    "contactUs": "Skontaktuj się",
+    "copyright": "© 2026 Apostolos Missions International. Wszelkie prawa zastrzeżone.",
+    "contact": "Kontakt"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "Język"
+  },
+  "Common": {
+    "tagline": "Międzywyznaniowa służba oddana głoszeniu ewangelii aż po krańce ziemi i świadczeniu o wiecznej miłości Pana.",
+    "learnMore": "Dowiedz się więcej",
+    "readMore": "Czytaj dalej",
+    "clickHere": "Kliknij tutaj",
+    "home": "Strona główna"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Kim jesteśmy",
+    "missionStatement": "Deklaracja misji",
+    "statementOfFaith": "Wyznanie wiary",
+    "history": "Historia",
+    "ourFirstChairman": "Nasz pierwszy przewodniczący",
+    "membership": "Członkostwo",
+    "leadership": "Kierownictwo"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Filary naszej misji",
+    "administration": "Administracja"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Czwartkowe studium biblijne",
+    "bibleStudies": "Studia biblijne",
+    "groupActivities": "Zajęcia grupowe",
+    "volunteer": "Wolontariat",
+    "chapterStaff": "Zespół oddziału",
+    "bibleTeacherTraining": "Szkolenie nauczycieli Biblii",
+    "internship": "Staż",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Przekaż darowiznę"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Wyróżnione wiadomości",
+    "events": "Wydarzenia",
+    "editorial": "Artykuły",
+    "photoNews": "Fotorelacje",
+    "testimony": "Świadectwa"
+  },
+  "InPractice": {
+    "eyebrow": "W praktyce",
+    "heading": "Cztery rzeczy, które robimy wszędzie tam, gdzie docieramy.",
+    "bibleStudyTag": "Studium biblijne",
+    "bibleStudyDescription": "Spotkania w małych i dużych grupach, które stawiają Pismo w centrum życia studenckiego.",
+    "leadershipTrainingTag": "Szkolenie liderów",
+    "leadershipTrainingDescription": "Studenci uczą się prowadzić swoich rówieśników, a potem posyłać kolejną grupę.",
+    "onlineEducationTag": "Edukacja online",
+    "onlineEducationDescription": "Kursy AM Academy z Pisma, misjologii i służby międzykulturowej.",
+    "internshipsTripsTag": "Staże i wyjazdy",
+    "internshipsTripsDescription": "Krótkoterminowe wyjazdy misyjne i staże, które zamieniają szkolenie w praktykę."
+  },
+  "AboutPage": {
+    "heroTitle": "Jak Ojciec Mnie posłał, tak i Ja was posyłam.",
+    "breadcrumb": "O nas",
+    "paragraph1": "Apostolos Missions International (AM) to międzywyznaniowa służba oddana głoszeniu ewangelii aż po krańce ziemi i świadczeniu o wiecznej miłości Pana.",
+    "paragraph2Prefix": "Nazwa",
+    "paragraph2": "(ἀπόστολος) to greckie słowo oznaczające apostoła. Znaczy ono „ten, który zostaje posłany z misją” lub „posłaniec”. Tytuł „apostoł” pojawia się w Nowym Testamencie często na określenie Dwunastu uczniów wybranych przez Jezusa (Mt 10,2; Mk 3,14; Łk 6,13; Dz 2,42). Paweł, dawniej prześladowca chrześcijaństwa, a potem wielki głosiciel ewangelii, przedstawiał się jako „apostoł” (Rz 1,1; 1 Kor 1,1; 2 Kor 1,1; Ga 1,1; Kol 1,1; 1 Tm 1,1; 2 Tm 1,1; Tt).",
+    "paragraph3": "Apostołowie to ci, których Pan posyła, by wypełnili misję „głoszenia Jezusa Chrystusa i objawiania Boga” całemu stworzeniu. Biblijny fundament apostolstwa znajdujemy w wielu słowach Pana, który wybrał pierwszych apostołów i posłał ich niczym ambasadorów wysłanych, by reprezentować narody. Apostołowie rozumieli, że ich życie nie należy już do nich samych, lecz że żyją po to, by objawiać chwałę Chrystusa w tym upadłym świecie.",
+    "blockquote": "Ewangelia Jana 20,21 mówi: „A Jezus znowu rzekł do nich: «Pokój wam! Jak Ojciec Mnie posłał, tak i Ja was posyłam»”.",
+    "paragraph4": "AM pragnie iść śladem apostołów, którzy żyli jako ludzie posłani, by głosić Słowo Boże. Każdy z nas również otrzymuje od Boga to powołanie, by zostać posłanym w świat jako Jego ręce i stopy. Chcemy poświęcić nasze życie na to, by iść śladami Jezusa i głosić ewangelię aż po krańce ziemi.",
+    "paragraph5": "Tak jak nasze życie zostało dotknięte i odmienione przez Pana, tak pragniemy objawiać miłość Pana, która została nam okazana, stając się latarnią dla wszystkich Jego zagubionych dzieci oraz dla naszych braci i sióstr.",
+    "readStatementOfFaith": "Przeczytaj nasze wyznanie wiary",
+    "or": "albo",
+    "traceHistory": "poznaj naszą historię",
+    "cardStatementOfFaithTitle": "Przeczytaj nasze wyznanie wiary",
+    "cardMissionStatementTitle": "Deklaracja misji"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "Mapa drogowa AM",
+    "roadmapHeading": "Czego można się spodziewać?",
+    "connectTag": "Kontakt",
+    "connectItems": [
+      "Biblia stacjonarnie i online",
+      "Programy studium"
+    ],
+    "growTag": "Wzrost",
+    "growItems": [
+      "Zajęcia grupowe"
+    ],
+    "leadTag": "Przywództwo",
+    "leadItems": [
+      "Wolontariat i staże",
+      "Liderzy oddziałów"
+    ],
+    "sentTag": "Posłanie",
+    "sentItems": [
+      "Alumni Connect",
+      "Misjonarze w niepełnym i pełnym wymiarze",
+      "Nauczyciele Biblii"
+    ],
+    "connectHeading": "Kontakt",
+    "connectStep1Title": "1. Zapisz się na nasze strony",
+    "connectStep1Body": "Jest wiele sposobów, by pozostać w kontakcie z AM. Możesz zapisać się na naszej głównej stronie www.amintl.org i otrzymywać newslettery. Możesz też zapisać się na stronie naszej internetowej szkoły biblijnej www.amacademy.org i otrzymywać najnowsze wiadomości oraz programy. Zapoznaj się z naszą wizją, działaniami i programami na naszych stronach i napisz do nas w każdej chwili, jeśli masz pytania.",
+    "connectStep2Title": "2. Umów się na spotkanie z naszym zespołem",
+    "connectStep2BodyPrefix": "Możesz",
+    "connectStep2SignUp": "zapisać się",
+    "connectStep2BodySuffix": "tutaj, jeśli chcesz porozmawiać z kimś z naszego zespołu i otrzymać wsparcie na swojej duchowej drodze. Możesz umówić spotkanie albo skontaktować się bezpośrednio. Wielu naszych pracowników zna życie studenckie z doświadczenia i rozumie sytuacje, w jakich znajdują się studenci. Pomogą ci znaleźć drogę wiary najlepiej dopasowaną do ciebie.",
+    "connectStep3Title": "3. Zapisz się na studium biblijne",
+    "connectStep3BodyPrefix": "Jeśli jesteś gotowy rozpocząć nasz program studium biblijnego,",
+    "connectStep3SignUp": "zapisz się",
+    "connectStep3BodySuffix": "na tej stronie. Jeśli nie znajdziesz pasującego terminu, wyślij formularz zgłoszeniowy z preferowanym kursem i godziną!",
+    "connectStep4Title": "4. Nawiąż kontakt z lokalnym oddziałem",
+    "connectStep4BodyPrefix": "Jeśli chcesz nawiązać kontakt z biurem i zespołem lokalnego oddziału,",
+    "connectStep4ContactHere": "napisz do nas tutaj",
+    "connectStep4BodySuffix": ". Nie możemy się doczekać spotkania!",
+    "growHeading": "Wzrost",
+    "growIntro": "Tak jak rośniemy i dojrzewamy przez kolejne etapy dzieciństwa, tak osiągamy ważne kamienie milowe w dojrzałości duchowej. AM oferuje wiele programów i ścieżek zaprojektowanych po to, by prowadzić studentów przez te trzy kluczowe etapy duchowego wzrostu:",
+    "rebornTitle": "1. Narodzeni na nowo",
+    "rebornBody": "Rodzimy się na nowo dzięki odkupieńczej ofierze Jezusa na krzyżu.",
+    "matureTitle": "1. Dojrzali",
+    "matureBody": "Wzrastamy i dojrzewamy duchowo, karmiąc się miłością i prawdą pochodzącą od Jezusa.",
+    "fruitfulTitle": "1. Owocni",
+    "fruitfulBody": "Doświadczamy owocności życia dzięki Bożemu błogosławieństwu, które wypełnia się w naszej dojrzałej jedności z Chrystusem Jezusem.",
+    "navigatingTitle": "Odnaleźć się w życiu studenckim",
+    "navigatingBody": "Życie studenckie jest pasjonujące i satysfakcjonujące, ale przy tylu możliwościach potrafi też wydawać się pozbawione kierunku. Przez prawdę i modlitwę AM pomaga ci rozeznać Bożą wolę i znaleźć jasne wskazówki dla twojego niezwykłego życia.",
+    "nextStepsTitle": "Kolejne kroki",
+    "nextStepsBody": "Uczestnicz dalej w naszych programach — korzystaj z wielu okazji, by słuchać Słowa, wspólnie się modlić, mieć społeczność z braćmi i siostrami w wierze oraz służyć, wzrastając w ewangelii.",
+    "leadHeading": "Przywództwo",
+    "leadStep1Title": "1. Służba w miłości Chrystusa",
+    "leadStep1Body": "W miarę jak wzrastamy, pragniemy służyć tym, którzy potrzebują pomocy, by przyjść do Jezusa. A służąc, sami głębiej wzrastamy w miłości Chrystusa.",
+    "leadStep2Title": "2. Błogosławieństwo przywództwa",
+    "leadStep2Body": "Jezus powiedział: „Więcej szczęścia jest w dawaniu aniżeli w braniu” (Dz 20,35). Prowadzenie i wspieranie innych wymaga mądrości, modlitwy, ofiarności i cierpliwości. Jest to jednak błogosławione miejsce, w którym chwała krzyża osiąga swój szczyt.",
+    "leadStep3Title": "3. Błogosławieństwo przywództwa",
+    "leadStep3Body": "Choć studenci są jeszcze młodzi, wybitne dary i zdolności mogą zostać odkryte i rozwinięte o wiele mocniej właśnie w rolach przywódczych. To piękny proces, w którym każdy student sprawdza i potwierdza swoje niebiańskie dary przez pełne łaski doświadczenie służby i prowadzenia innych.",
+    "leadStep4Title": "4. Możliwości w AM",
+    "leadStep4Body": "AM oferuje studentom różnorodne możliwości i role, by włączyć się w służbę i przywództwo. Dołącz do naszego zespołu wolontariuszy, pracowników i liderów oddziałów, nauczycieli Biblii i wielu innych. Odkryj to, co Jezus w tobie zasiał według swojego doskonałego planu.",
+    "sentHeading": "Posłanie",
+    "sentParagraph1": "Ukończenie studiów to kolejne ważne wyruszenie w świat, który stoi przed nami otworem. Niektórzy z nas będą się dalej kształcić albo wybiorą ścieżkę zawodową. Inni zostaną pracownikami AM na pełen etat, misjonarzami lub duszpasterzami, idąc za Bożym powołaniem.",
+    "sentParagraph2": "Na tym kluczowym etapie AM oferuje programy pozwalające pozostać w kontakcie i nadal służyć misji ewangelii przez Alumni Connect. AM zapewnia także programy i ścieżki szkoleniowe prowadzące do pracy zawodowego pracownika misyjnego w AM World Mission.",
+    "sentParagraph3": "Otwiera się przed tobą wiele dróg ku jasnej przyszłości. AM pragnie iść blisko z każdym, by razem wypełnić Wielkie Posłannictwo: „Idźcie więc i nauczajcie wszystkie narody, udzielając im chrztu w imię Ojca i Syna, i Ducha Świętego” (Mt 28,19).",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "Zostań nauczycielem Biblii w AM",
+    "sentLinkMissionaries": "Zostań misjonarzem AM",
+    "sentLinkStaff": "Praca na pełen etat w centrali AM",
+    "roadmapHeroTitle": "Wzrastanie na kampusie: mapa drogowa"
+  },
+  "Network": {
+    "breadcrumb": "Nasza sieć",
+    "heading": "Nasza globalna sieć",
+    "joinChapter": "Dołącz do oddziału",
+    "partnerWithUs": "Zostań naszym partnerem",
+    "exploreEyebrow": "Poznaj świat",
+    "regionsHeading": "Regiony",
+    "regionsSubheading": "Przeglądaj według regionu",
+    "siteCount": "{count, plural, one {# strona} few {# strony} other {# stron}}",
+    "communityEyebrow": "Wspólnota na całym świecie",
+    "chaptersHeading": "Oddziały w różnych miastach i zakątkach świata",
+    "chaptersSoon": "Oddziały wkrótce ruszą.",
+    "continentSubtitle": "Strony krajowe AM w regionie {region}.",
+    "noSitesTitle": "W regionie {region} nie ma jeszcze stron",
+    "noSitesBodyPrefix": "Wciąż budujemy obecność AM w tym regionie. Zajrzyj wkrótce ponownie albo",
+    "noSitesLink": "napisz do nas",
+    "noSitesBodySuffix": ", jeśli chcesz pomóc rozpocząć.",
+    "visitSite": "Odwiedź stronę",
+    "regions": {
+      "africa": "Afryka",
+      "asia": "Azja",
+      "europe": "Europa",
+      "northamerica": "Ameryka Północna",
+      "southamerica": "Ameryka Łacińska i Karaiby",
+      "oceania": "Oceania"
+    },
+    "map": {
+      "world": "Świat",
+      "loading": "Ładowanie…",
+      "zoomIn": "Przybliż",
+      "clear": "Wyczyść",
+      "worldHint": "Najedź na punkt lub go zaznacz, aby zobaczyć miasto — wybór przybliża jego region.",
+      "regionHint": "{count, plural, one {# oddział} few {# oddziały} other {# oddziałów}} w regionie {region}. Zaznacz punkt, by zobaczyć szczegóły, albo wróć do mapy świata.",
+      "worldAria": "Mapa świata ze wszystkimi oddziałami AM ({count}). Użyj przycisków regionów, aby przybliżyć.",
+      "regionAria": "Mapa regionu {region} z oddziałami AM ({count}).",
+      "captionSouthAsia": "Azja Południowa",
+      "captionEastCentralAsia": "Azja Wschodnia i Środkowa",
+      "captionSoutheastAsia": "Azja Południowo-Wschodnia",
+      "hqBadge": "Centrala",
+      "regionalHqBadge": "Centrala regionalna"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — ten, który zostaje posłany",
+      "headingLine1": "Tam, gdzie",
+      "headingWhere": "miłość Jezusa",
+      "headingWeAre": "wylewa się obficie",
+      "joinBibleStudy": "Dołącz do naszego studium biblijnego",
+      "whoWeAre": "Kim jesteśmy",
+      "stat1Value": "2003",
+      "stat1Label": "Posyłamy od",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, USA",
+      "stat3Value": "Globalna",
+      "stat3Label": "Sieć kampusowa",
+      "dragToExplore": "Przeciągnij, aby odkrywać"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Dołącz do naszego programu studium biblijnego",
+      "heading": "Pięcioetapowa droga od pierwszego pytania do posłania.",
+      "description": "Pięcioetapowy program studium biblijnego AM to internetowy program uczniostwa i edukacji biblijnej, który prowadzi studentów uporządkowaną ścieżką poznawania ewangelii Jezusa Chrystusa i życia wiary. Program łączy studentów z nauczycielami Biblii, którzy prowadzą zajęcia w godzinach dogodnych dla słuchaczy. Kończy się możliwością podjęcia wolontariatu, przygotowania się jako student-misjonarz albo po prostu głębszego zanurzenia się w Słowo Boże razem z AM.",
+      "cta": "Rozpocznij program"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Dołącz do studium biblijnego",
+      "joinBibleStudyDescription": "Pięcioetapowy internetowy program uczniostwa i edukacji biblijnej.",
+      "findCampusTitle": "Znajdź swój kampus",
+      "findCampusDescription": "Nasza sieć oddziałów i wspólnot.",
+      "getInvolvedTitle": "Włącz się",
+      "getInvolvedDescription": "Nawiąż kontakt, wzrastaj, prowadź i daj się posłać z AM.",
+      "supportTitle": "Wesprzyj misję",
+      "supportDescription": "Wspieraj darowizną, módl się i współpracuj ze studentami w terenie."
+    },
+    "Ministries": {
+      "eyebrow": "Kontakt · Wzrost · Przywództwo · Posłanie",
+      "heading": "Cztery kroki, a każdy z nich przechodzimy razem z tobą.",
+      "getInvolved": "Włącz się",
+      "learnMore": "Dowiedz się więcej",
+      "connectTitle": "Nawiąż kontakt z AM",
+      "connectDescription": "AM oferuje różne programy studium biblijnego, które karmią nasze życie duchowe i relację z Panem Jezusem Chrystusem.",
+      "growTitle": "Wzrastaj z AM",
+      "growDescription": "Dołącz do naszych zajęć grupowych i dojrzewaj wspólnie w społeczności prawdy. Nasze programy grupowe dają każdemu studentowi wartościowe doświadczenia, które budują duchową siłę.",
+      "leadTitle": "Prowadź z AM",
+      "leadDescription": "AM z radością przyjmuje studentów, którzy chcą podjąć wolontariat i służyć danymi im przez Boga talentami w różnych obszarach.",
+      "sentTitle": "Posłani z AM",
+      "sentDescription": "AM będzie iść razem z tobą, aż twoje cenne powołanie, by „zostać posłanym”, wypełni się w twoim życiu — także po ukończeniu studiów!",
+      "connectTag": "Kontakt",
+      "growTag": "Wzrost",
+      "leadTag": "Przywództwo",
+      "sentTag": "Posłanie"
+    },
+    "OurMission": {
+      "eyebrow": "Nasza misja",
+      "statementPrefix": "Misją Apostolos Missions jest",
+      "statementEmphasis": "głosić Jezusa Chrystusa, i to ukrzyżowanego",
+      "statementSuffix": "— budując skoncentrowaną na Chrystusie sieć młodych chrześcijan na rzecz mobilizacji misji akademickiej.",
+      "readFullStatement": "Przeczytaj pełną deklarację misji",
+      "nameOrigin": "Nazwa apostolos to greckie słowo oznaczające apostoła. Znaczy ono „ten, który zostaje posłany z misją”.",
+      "history": "To, co zaczęło się jako niewielka grupa oddanych młodych studentów w Los Angeles w Kalifornii, pragnących głosić ewangelię i objawiać Jezusa, stało się globalną organizacją działającą na uczelniach na całym świecie.",
+      "ourHistory": "Nasza historia"
+    },
+    "GetInvolved": {
+      "eyebrow": "Bądź w kontakcie",
+      "heading": "Włącz się",
+      "bibleStudies": "Studia biblijne",
+      "volunteer": "Wolontariat",
+      "internship": "Staż"
+    },
+    "Media": {
+      "eyebrow": "Media",
+      "heading": "Nauczanie, świadectwo i Słowo.",
+      "moreContents": "Więcej materiałów",
+      "playVideo": "Obejrzyj film wprowadzający AM",
+      "post1Title": "Cztery tematy duchowe – przegląd",
+      "post2Title": "Czym jest zbawienie? | Sola Fide część 1 – AM Academy",
+      "post3Title": "Era uczniostwa w mediach społecznościowych: przybliżanie studentom rzeczywistości ewangelii",
+      "post4Title": "Boże obietnice na nowy rok",
+      "post1Date": "5 stycznia 2026",
+      "post2Date": "27 czerwca 2023",
+      "post3Date": "3 czerwca 2022",
+      "post4Date": "2 stycznia 2022"
+    },
+    "Events": {
+      "eyebrow": "Wydarzenia",
+      "heading": "Tam, gdzie spotyka się sieć.",
+      "allEvents": "Wszystkie wydarzenia",
+      "event1Date": "4–5 kwietnia",
+      "event1Title": "Rekolekcje wielkanocne",
+      "event2Date": "18 lutego",
+      "event2Title": "Czterdziestodniowa droga wielkopostna",
+      "event3Date": "16 stycznia",
+      "event3Title": "Spotkanie nowych liderów oddziałów"
+    },
+    "OurNetwork": {
+      "eyebrow": "Nasza sieć",
+      "heading": "Być może na twoim kampusie już jest wspólnota.",
+      "description": "Szukaj po uczelni lub mieście. Jeśli w pobliżu nic się nie pojawi, potraktuj to jako zaproszenie — pomożemy ci założyć nową.",
+      "startChapter": "Załóż oddział",
+      "searchPlaceholder": "Szukaj uczelni lub miasta",
+      "noMatches": "Na razie brak wyników — napisz do nas, a pomożemy ci zacząć."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Nasz pierwszy honorowy przewodniczący",
+      "followingLegacy": "Idąc śladem",
+      "name": "dr Ralph D. Winter",
+      "quoteLine1": "Idźcie więc",
+      "quoteLine2": "i nauczajcie",
+      "quoteLine3": "wszystkie narody…",
+      "quoteReference": "—Mt 28,19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Zostań naszym partnerem",
+      "heading": "Poślij kogoś, kogo nigdy nie spotkasz.",
+      "description": "Każdy dar sprawia, że studium biblijne, szkolenie i posyłająca wspólnota stają się dostępne dla studentów gotowych, by wyruszyć.",
+      "giveToday": "Wesprzyj dzisiaj",
+      "talkToUs": "Porozmawiaj z nami"
+    },
+    "Newsletter": {
+      "heading": "Notatki z kampusów",
+      "description": "Krótki miesięczny list: co widzą studenci, dokąd zmierza AM i jak się modlić.",
+      "cta": "AM Academy"
+    }
+  }
+}

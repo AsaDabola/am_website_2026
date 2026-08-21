@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Iemand die met een opdracht gezonden is",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Wie we zijn",
+    "whatWeDo": "Wat we doen",
+    "getInvolved": "Doe mee",
+    "connect": "Verbinden",
+    "ourNetwork": "Ons netwerk",
+    "news": "Nieuws",
+    "contactUs": "Neem contact op",
+    "give": "Geven",
+    "toggleNav": "Navigatiemenu openen of sluiten",
+    "whoWeAreMenu": {
+      "whoWeAre": "Wie we zijn",
+      "ourMission": "Onze missie",
+      "statementOfFaith": "Geloofsbelijdenis",
+      "history": "Geschiedenis",
+      "ourFirstChairmen": "Onze eerste voorzitters",
+      "membership": "Lidmaatschap",
+      "ourLeadership": "Onze leiding"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "De pijlers van onze missie",
+      "administration": "Bestuur",
+      "bibleStudyProgram": "Bijbelstudieprogramma",
+      "fourSpiritualThemes": "Vier geestelijke thema's",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Onze bedieningen"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Bijbelstudies",
+      "groupActivities": "Groepsactiviteiten",
+      "volunteer": "Vrijwilligerswerk",
+      "bibleTeacherTraining": "Opleiding tot Bijbelleraar",
+      "internship": "Stage",
+      "donate": "Doneren",
+      "onlineBibleStudy": "Online Bijbelstudie",
+      "chapterAffiliation": "Aansluiting van een afdeling"
+    },
+    "newsMenu": {
+      "featured": "Uitgelicht",
+      "events": "Evenementen",
+      "editorial": "Redactioneel",
+      "photoNews": "Fotonieuws",
+      "testimony": "Getuigenissen"
+    },
+    "megaMenu": {
+      "aboutHeading": "Over ons",
+      "whatWeDoHeading": "Wat we doen",
+      "featuredHeading": "Uitgelichte artikelen",
+      "allArticles": "Alle artikelen",
+      "ctaBibleStudy": "Begin een Bijbelstudie",
+      "ctaFindChapter": "Vind je afdeling",
+      "ctaGive": "Geef vandaag"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "Over AM",
+        "description": "Wie we zijn, wat we geloven en waar we vandaan komen."
+      },
+      "leadership": {
+        "title": "Leiding",
+        "description": "De mensen die de beweging dienen en hoe je erbij hoort."
+      },
+      "whatWeDo": {
+        "title": "Wat we doen",
+        "description": "De pijlers en bedieningen die de missie verder dragen."
+      },
+      "bibleStudy": {
+        "title": "Bijbelstudieprogramma",
+        "description": "Een weg in vijf fasen, van je eerste vraag tot gezonden worden."
+      },
+      "getInvolved": {
+        "title": "Doe mee",
+        "description": "Vind je plek in de beweging, waar je ook bent."
+      },
+      "supportMission": {
+        "title": "Dienen en steunen",
+        "description": "Laat je toerusten, start een afdeling of werk samen met studenten in het veld."
+      },
+      "latestNews": {
+        "title": "Laatste nieuws",
+        "description": "Verhalen en updates uit het hele netwerk."
+      },
+      "events": {
+        "title": "Evenementen",
+        "description": "Retraites, conferenties en bijeenkomsten bij jou in de buurt."
+      }
+    },
+    "mobile": {
+      "back": "Terug",
+      "close": "Menu sluiten",
+      "menu": "Menu"
+    }
+  },
+  "Footer": {
+    "tagline": "Een interkerkelijke bediening die zich inzet om het evangelie tot aan de einden der aarde te verspreiden en te getuigen van de eeuwige liefde van de Heer.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, VS",
+    "email": "info@amintl.org",
+    "whoWeAre": "Wie we zijn",
+    "whatWeDo": "Wat we doen",
+    "getInvolved": "Doe mee",
+    "media": "Media",
+    "aboutAM": "Over AM",
+    "missionStatement": "Missieverklaring",
+    "statementOfFaith": "Geloofsbelijdenis",
+    "ourHistory": "Onze geschiedenis",
+    "leadership": "Leiding",
+    "bibleStudyProgram": "Bijbelstudieprogramma",
+    "fourSpiritualThemes": "Vier geestelijke thema's",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Onze bedieningen",
+    "connectGrowLeadSent": "Verbinden, Groeien, Leiden, Gezonden",
+    "chapterAffiliation": "Aansluiting van een afdeling",
+    "ourNetwork": "Ons netwerk",
+    "events": "Evenementen",
+    "give": "Geven",
+    "news": "Nieuws",
+    "legacyOfChairman": "De nalatenschap van Ralph D. Winter",
+    "contactUs": "Neem contact op",
+    "copyright": "© 2026 Apostolos Missions International. Alle rechten voorbehouden.",
+    "contact": "Contact"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "Taal"
+  },
+  "Common": {
+    "tagline": "Een interkerkelijke bediening die zich inzet om het evangelie tot aan de einden der aarde te verspreiden en te getuigen van de eeuwige liefde van de Heer.",
+    "learnMore": "Meer informatie",
+    "readMore": "Lees verder",
+    "clickHere": "Klik hier",
+    "home": "Home"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Wie we zijn",
+    "missionStatement": "Missieverklaring",
+    "statementOfFaith": "Geloofsbelijdenis",
+    "history": "Geschiedenis",
+    "ourFirstChairman": "Onze eerste voorzitter",
+    "membership": "Lidmaatschap",
+    "leadership": "Leiding"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "De pijlers van onze missie",
+    "administration": "Bestuur"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Bijbelstudie op donderdag",
+    "bibleStudies": "Bijbelstudies",
+    "groupActivities": "Groepsactiviteiten",
+    "volunteer": "Vrijwilligerswerk",
+    "chapterStaff": "Team van de afdeling",
+    "bibleTeacherTraining": "Opleiding tot Bijbelleraar",
+    "internship": "Stage",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Doneren"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Uitgelicht nieuws",
+    "events": "Evenementen",
+    "editorial": "Redactioneel",
+    "photoNews": "Fotonieuws",
+    "testimony": "Getuigenissen"
+  },
+  "InPractice": {
+    "eyebrow": "In de praktijk",
+    "heading": "Vier dingen die we overal doen waar we komen.",
+    "bibleStudyTag": "Bijbelstudie",
+    "bibleStudyDescription": "Studie in kleine en grote groepen die de Schrift centraal stelt in het studentenleven.",
+    "leadershipTrainingTag": "Leiderschapstraining",
+    "leadershipTrainingDescription": "Studenten worden begeleid om hun medestudenten te leiden en daarna de volgende groep uit te zenden.",
+    "onlineEducationTag": "Online onderwijs",
+    "onlineEducationDescription": "Cursussen van AM Academy over de Schrift, missiologie en interculturele bediening.",
+    "internshipsTripsTag": "Stages en reizen",
+    "internshipsTripsDescription": "Kortlopende zendingsreizen en stages die training omzetten in praktijk."
+  },
+  "AboutPage": {
+    "heroTitle": "Zoals de Vader mij gezonden heeft, zend ik jullie.",
+    "breadcrumb": "Over ons",
+    "paragraph1": "Apostolos Missions International (AM) is een interkerkelijke bediening die zich inzet om het evangelie tot aan de einden der aarde te verspreiden en te getuigen van de eeuwige liefde van de Heer.",
+    "paragraph2Prefix": "De naam",
+    "paragraph2": "(ἀπόστολος) is het Griekse woord voor apostel. Het betekent \"iemand die met een opdracht gezonden is\" of \"boodschapper\". De titel \"apostel\" komt in het Nieuwe Testament vaak voor als aanduiding van de twaalf discipelen die Jezus aanstelde (Matteüs 10:2, Marcus 3:14, Lucas 6:13, Handelingen 2:42). Paulus, eerst een vervolger van het christendom en later een groot verkondiger van het evangelie, stelde zichzelf voor als \"apostel\" (Romeinen 1:1, 1 Korintiërs 1:1, 2 Korintiërs 1:1, Galaten 1:1, Kolossenzen 1:1, 1 Timoteüs 1:1, 2 Timoteüs 1:1, Titus).",
+    "paragraph3": "Apostelen zijn zij die door de Heer gezonden worden om de opdracht te vervullen om \"Jezus Christus te verkondigen en God bekend te maken\" aan heel de schepping. De Bijbelse grond van het apostelschap ligt in veel woorden van de Heer, die de eerste apostelen uitkoos en hen uitzond als gezanten die naar de volken werden gestuurd. De apostelen begrepen dat hun leven niet langer van henzelf was, maar dat zij leefden om de heerlijkheid van Christus te tonen in deze gebroken wereld.",
+    "blockquote": "Johannes 20:21 zegt: \"Nog eens zei Jezus: 'Ik wens jullie vrede! Zoals de Vader mij heeft uitgezonden, zo zend ik jullie uit.'\"",
+    "paragraph4": "AM wil in het spoor gaan van de apostelen, die leefden als mensen met de opdracht het Woord van God te verkondigen. Ook ieder van ons ontvangt van God deze roeping om als zijn handen en voeten de wereld in gezonden te worden. Wij willen ons leven eraan wijden om Jezus na te volgen en het evangelie te verkondigen tot aan de einden der aarde.",
+    "paragraph5": "Zoals ons leven is aangeraakt en veranderd door de Heer, zo willen wij de liefde van de Heer die ons is getoond zichtbaar maken, en een baken zijn voor al zijn verloren kinderen en voor onze broers en zussen.",
+    "readStatementOfFaith": "Lees onze geloofsbelijdenis",
+    "or": "of",
+    "traceHistory": "volg onze geschiedenis",
+    "cardStatementOfFaithTitle": "Lees onze geloofsbelijdenis",
+    "cardMissionStatementTitle": "Missieverklaring"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "AM-routekaart",
+    "roadmapHeading": "Wat kun je verwachten?",
+    "connectTag": "Verbinden",
+    "connectItems": [
+      "Bijbel op locatie/online",
+      "Studieprogramma's"
+    ],
+    "growTag": "Groeien",
+    "growItems": [
+      "Groepsactiviteiten"
+    ],
+    "leadTag": "Leiden",
+    "leadItems": [
+      "Vrijwilligerswerk en stages",
+      "Afdelingsleiders"
+    ],
+    "sentTag": "Gezonden",
+    "sentItems": [
+      "Alumni Connect",
+      "Zendelingen in deeltijd of voltijd",
+      "Bijbelleraren"
+    ],
+    "connectHeading": "Verbinden",
+    "connectStep1Title": "1. Abonneer je op onze websites",
+    "connectStep1Body": "Er zijn veel manieren om met AM in contact te blijven. Je kunt je abonneren op onze hoofdwebsite, www.amintl.org, en nieuwsbrieven ontvangen. Of je abonneert je op de website van onze online Bijbelschool, www.amacademy.org, en ontvangt het laatste nieuws en de programma's. Bekijk gerust onze visie, activiteiten en programma's op onze websites en mail ons wanneer je vragen hebt.",
+    "connectStep2Title": "2. Meld je aan voor een gesprek met ons team",
+    "connectStep2BodyPrefix": "Je kunt je",
+    "connectStep2SignUp": "aanmelden",
+    "connectStep2BodySuffix": "als je met een van onze medewerkers wilt praten en begeleiding wilt bij je geestelijke weg. Je kunt een afspraak maken of rechtstreeks contact opnemen. Veel van onze medewerkers hebben zelf het studentenleven meegemaakt en begrijpen waar studenten mee te maken krijgen. Zij helpen je de weg te vinden die het beste past bij jouw geloofsweg.",
+    "connectStep3Title": "3. Meld je aan voor Bijbelstudie",
+    "connectStep3BodyPrefix": "Als je klaar bent om met ons Bijbelstudieprogramma te beginnen,",
+    "connectStep3SignUp": "meld je dan aan",
+    "connectStep3BodySuffix": "op deze pagina. Vind je geen passend rooster? Stuur het aanvraagformulier met de cursus en tijd van je voorkeur!",
+    "connectStep4Title": "4. Leg contact met de plaatselijke afdeling",
+    "connectStep4BodyPrefix": "Wil je in contact komen met het kantoor en het team van de plaatselijke afdeling,",
+    "connectStep4ContactHere": "neem dan hier contact op",
+    "connectStep4BodySuffix": ". We ontmoeten je graag binnenkort!",
+    "growHeading": "Groeien",
+    "growIntro": "Zoals we in onze kindertijd door verschillende fasen groeien en volwassen worden, zo bereiken we ook mijlpalen in onze geestelijke volwassenheid. AM biedt tal van programma's en trajecten die studenten begeleiden door deze drie belangrijke fasen van geestelijke groei:",
+    "rebornTitle": "1. Wedergeboren",
+    "rebornBody": "We worden opnieuw geboren door het verzoenende offer van Jezus aan het kruis.",
+    "matureTitle": "1. Volwassen",
+    "matureBody": "We groeien en worden geestelijk volwassen door ons te voeden met de liefde en de waarheid van Jezus.",
+    "fruitfulTitle": "1. Vruchtbaar",
+    "fruitfulBody": "We ervaren de vruchtbaarheid van het leven door Gods zegen, die vervuld wordt in onze volgroeide eenheid met Christus Jezus.",
+    "navigatingTitle": "Je weg vinden in het studentenleven",
+    "navigatingBody": "Het studentenleven is spannend en verrijkend, maar met zoveel keuzes kan het ook richtingloos aanvoelen. Door waarheid en gebed helpt AM je Gods wil te verstaan en heldere richting te vinden voor jouw bijzondere leven.",
+    "nextStepsTitle": "Volgende stappen",
+    "nextStepsBody": "Blijf betrokken bij onze programma's — maak gebruik van de vele mogelijkheden om het Woord te horen, samen te bidden, gemeenschap te hebben met broers en zussen in het geloof en te dienen terwijl je groeit in het evangelie.",
+    "leadHeading": "Leiden",
+    "leadStep1Title": "1. Dienen in de liefde van Christus",
+    "leadStep1Body": "Naarmate we groeien, verlangen we ernaar anderen te dienen die hulp nodig hebben om bij Jezus te komen. En terwijl we dienen, groeien we zelf dieper in de liefde van Christus.",
+    "leadStep2Title": "2. De zegen van leiderschap",
+    "leadStep2Body": "Jezus zei: \"Geven maakt gelukkiger dan ontvangen\" (Handelingen 20:35). Anderen leiden en begeleiden vraagt wijsheid, gebed, offerbereidheid en geduld. Toch is het een gezegende plaats, waar de heerlijkheid van het kruis tot haar hoogtepunt komt.",
+    "leadStep3Title": "3. De zegen van leiderschap",
+    "leadStep3Body": "Hoewel studenten nog jong zijn, kunnen bijzondere gaven en vaardigheden juist in leidinggevende rollen ontdekt en veel krachtiger ontwikkeld worden. Het is een mooi proces waarin elke student zijn hemelse gaven beproeft en bevestigd ziet door de genadevolle ervaring van dienen en leiden.",
+    "leadStep4Title": "4. Mogelijkheden bij AM",
+    "leadStep4Body": "AM biedt studenten uiteenlopende mogelijkheden en rollen om mee te doen in dienen en leidinggeven. Sluit je aan bij ons team van vrijwilligers, afdelingsmedewerkers, afdelingsleiders, Bijbelleraren en nog veel meer. Ontdek wat Jezus in jou geplant heeft volgens zijn voortreffelijke plan.",
+    "sentHeading": "Gezonden",
+    "sentParagraph1": "Afstuderen is opnieuw een belangrijk vertrek naar een wereld die wijd voor ons openligt. Sommigen van ons studeren verder of kiezen een loopbaan. Anderen worden voltijds medewerker van AM, zendeling of voorganger, in antwoord op Gods roeping.",
+    "sentParagraph2": "In deze cruciale stap biedt AM programma's waarmee je verbonden blijft en de zendingsopdracht van het evangelie kunt blijven dienen via Alumni Connect. AM biedt ook opleidingen en trajecten om beroepsmatig zendingswerker en medewerker te worden bij AM World Mission.",
+    "sentParagraph3": "Er staan allerlei wegen voor je open naar een mooie toekomst. AM wil dicht naast ieder mens meelopen om samen de grote opdracht te vervullen: \"Ga dus op weg en maak alle volken tot mijn leerlingen, door hen te dopen in de naam van de Vader en de Zoon en de heilige Geest\" (Matteüs 28:19).",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "Word Bijbelleraar bij AM",
+    "sentLinkMissionaries": "Word zendeling bij AM",
+    "sentLinkStaff": "Voltijds medewerker op het AM-hoofdkantoor",
+    "roadmapHeroTitle": "Groeien op de campus: een routekaart"
+  },
+  "Network": {
+    "breadcrumb": "Ons netwerk",
+    "heading": "Ons wereldwijde netwerk",
+    "joinChapter": "Sluit je aan bij een afdeling",
+    "partnerWithUs": "Werk met ons samen",
+    "exploreEyebrow": "Verken de wereld",
+    "regionsHeading": "Regio's",
+    "regionsSubheading": "Verken per gebied",
+    "siteCount": "{count, plural, =1 {# site} other {# sites}}",
+    "communityEyebrow": "Een wereldwijde gemeenschap",
+    "chaptersHeading": "Afdelingen in uiteenlopende steden en uithoeken van de wereld",
+    "chaptersSoon": "Afdelingen starten binnenkort.",
+    "continentSubtitle": "AM-landensites in {region}.",
+    "noSitesTitle": "Nog geen sites in {region}",
+    "noSitesBodyPrefix": "We zijn de aanwezigheid van AM in deze regio nog aan het opbouwen. Kom binnenkort terug of",
+    "noSitesLink": "neem contact op",
+    "noSitesBodySuffix": "als je wilt helpen er een te starten.",
+    "visitSite": "Bekijk de site",
+    "regions": {
+      "africa": "Afrika",
+      "asia": "Azië",
+      "europe": "Europa",
+      "northamerica": "Noord-Amerika",
+      "southamerica": "Latijns-Amerika en de Cariben",
+      "oceania": "Oceanië"
+    },
+    "map": {
+      "world": "Wereld",
+      "loading": "Laden…",
+      "zoomIn": "Inzoomen",
+      "clear": "Wissen",
+      "worldHint": "Beweeg over een punt of selecteer het om de stad te zien — kies er een om in te zoomen op die regio.",
+      "regionHint": "{count, plural, =1 {# afdeling} other {# afdelingen}} in {region}. Selecteer een punt voor details of ga terug naar de wereldkaart.",
+      "worldAria": "Wereldkaart met alle {count} AM-afdelingen. Gebruik de regioknoppen om in te zoomen.",
+      "regionAria": "Kaart van {region} met {count} AM-afdelingen.",
+      "captionSouthAsia": "Zuid-Azië",
+      "captionEastCentralAsia": "Oost- en Centraal-Azië",
+      "captionSoutheastAsia": "Zuidoost-Azië",
+      "hqBadge": "Hoofdkantoor",
+      "regionalHqBadge": "Regionaal kantoor"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — iemand die gezonden is",
+      "headingLine1": "Waar de",
+      "headingWhere": "liefde van Jezus",
+      "headingWeAre": "overstroomt",
+      "joinBibleStudy": "Doe mee met onze Bijbelstudie",
+      "whoWeAre": "Wie we zijn",
+      "stat1Value": "2003",
+      "stat1Label": "Zendend sinds",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, VS",
+      "stat3Value": "Wereldwijd",
+      "stat3Label": "Campusnetwerk",
+      "dragToExplore": "Sleep om te verkennen"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Doe mee met ons Bijbelstudieprogramma",
+      "heading": "Een weg in 5 fasen, van je eerste vraag tot gezonden worden.",
+      "description": "Het Bijbelstudieprogramma van AM in 5 fasen is een online discipelschaps- en Bijbelonderwijsprogramma dat studenten stap voor stap door het evangelie van Jezus Christus en het leven van geloof leidt. Het programma brengt studenten samen met Bijbelleraren die lesgeven op de tijden die de deelnemer schikken. Het loopt uit op de mogelijkheid om vrijwilliger te worden, je te laten toerusten als student-zendeling of eenvoudigweg dieper in het Woord van God te duiken met AM.",
+      "cta": "Start het programma"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Doe mee met een Bijbelstudie",
+      "joinBibleStudyDescription": "Het online discipelschaps- en Bijbelonderwijsprogramma in 5 fasen.",
+      "findCampusTitle": "Vind je campus",
+      "findCampusDescription": "Ons netwerk van afdelingen en gemeenschappen.",
+      "getInvolvedTitle": "Doe mee",
+      "getInvolvedDescription": "Verbind je, groei, leid en word gezonden met AM.",
+      "supportTitle": "Steun de missie",
+      "supportDescription": "Geef, bid en werk samen met studenten in het veld."
+    },
+    "Ministries": {
+      "eyebrow": "Verbinden · Groeien · Leiden · Gezonden",
+      "heading": "Vier stappen, en we lopen ze allemaal met je mee.",
+      "getInvolved": "Doe mee",
+      "learnMore": "Meer informatie",
+      "connectTitle": "Verbind je met AM",
+      "connectDescription": "AM biedt uiteenlopende Bijbelstudieprogramma's die ons geestelijk leven en onze band met de Heer Jezus Christus voeden.",
+      "growTitle": "Groei met AM",
+      "growDescription": "Doe mee met onze groepsactiviteiten en word samen volwassen in de gemeenschap van de waarheid. Onze groepsprogramma's geven elke student waardevolle ervaringen om geestelijk sterker te worden.",
+      "leadTitle": "Leid met AM",
+      "leadDescription": "AM verwelkomt graag studenten die vrijwilligerswerk willen doen en met hun door God gegeven talenten willen dienen in uiteenlopende afdelingen.",
+      "sentTitle": "Gezonden met AM",
+      "sentDescription": "AM blijft met je meelopen tot jouw kostbare roeping om \"gezonden te worden\" vervuld wordt in je leven, ook na je afstuderen!",
+      "connectTag": "Verbinden",
+      "growTag": "Groeien",
+      "leadTag": "Leiden",
+      "sentTag": "Gezonden"
+    },
+    "OurMission": {
+      "eyebrow": "Onze missie",
+      "statementPrefix": "De missie van Apostolos Missions is",
+      "statementEmphasis": "Jezus Christus en die gekruisigd te verkondigen",
+      "statementSuffix": "— door een op Christus gericht netwerk van jonge christenen op te bouwen voor de mobilisatie van campuszending.",
+      "readFullStatement": "Lees de volledige missieverklaring",
+      "nameOrigin": "De naam apostolos is het Griekse woord voor apostel. Het betekent \"iemand die met een opdracht gezonden is\".",
+      "history": "Wat begon als een kleine groep bevlogen jonge studenten in Los Angeles, Californië, die het evangelie wilden verspreiden en Jezus bekend wilden maken, is uitgegroeid tot een wereldwijde organisatie die werkt op universiteitscampussen over de hele wereld.",
+      "ourHistory": "Onze geschiedenis"
+    },
+    "GetInvolved": {
+      "eyebrow": "Blijf verbonden",
+      "heading": "Doe mee",
+      "bibleStudies": "Bijbelstudies",
+      "volunteer": "Vrijwilligerswerk",
+      "internship": "Stage"
+    },
+    "Media": {
+      "eyebrow": "Media",
+      "heading": "Onderwijs, getuigenis en het Woord.",
+      "moreContents": "Meer content",
+      "playVideo": "Bekijk de introductievideo van AM",
+      "post1Title": "Vier geestelijke thema's – Overzicht",
+      "post2Title": "Wat is redding? | Sola Fide deel 1 – AM Academy",
+      "post3Title": "Het tijdperk van discipelschap via sociale media: studenten verbinden met de werkelijkheid van het evangelie",
+      "post4Title": "Gods beloften voor het nieuwe jaar",
+      "post1Date": "5 januari 2026",
+      "post2Date": "27 juni 2023",
+      "post3Date": "3 juni 2022",
+      "post4Date": "2 januari 2022"
+    },
+    "Events": {
+      "eyebrow": "Evenementen",
+      "heading": "Waar het netwerk samenkomt.",
+      "allEvents": "Alle evenementen",
+      "event1Date": "4–5 april",
+      "event1Title": "Paasretraite",
+      "event2Date": "18 februari",
+      "event2Title": "Veertigdagentocht",
+      "event3Date": "16 januari",
+      "event3Title": "Bijeenkomst van nieuwe afdelingsleiders"
+    },
+    "OurNetwork": {
+      "eyebrow": "Ons netwerk",
+      "heading": "Misschien is er al een gemeenschap op jouw campus.",
+      "description": "Zoek op instelling of stad. Vind je niets in de buurt, zie dat dan als een uitnodiging — we helpen je er een te starten.",
+      "startChapter": "Start een afdeling",
+      "searchPlaceholder": "Zoek op instelling of stad",
+      "noMatches": "Nog geen resultaten — neem contact op en we helpen je er een te starten."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Onze eerste erevoorzitter",
+      "followingLegacy": "In het spoor van",
+      "name": "Dr. Ralph D. Winter",
+      "quoteLine1": "Ga dus op weg",
+      "quoteLine2": "en maak alle volken",
+      "quoteLine3": "tot mijn leerlingen…",
+      "quoteReference": "—Matteüs 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Werk met ons samen",
+      "heading": "Zend iemand die je nooit zult ontmoeten.",
+      "description": "Elke gift brengt Bijbelstudie, training en een zendende gemeenschap binnen bereik van studenten die klaarstaan om te gaan.",
+      "giveToday": "Geef vandaag",
+      "talkToUs": "Praat met ons"
+    },
+    "Newsletter": {
+      "heading": "Berichten van de campussen",
+      "description": "Een korte maandelijkse brief: wat studenten zien, waar AM naartoe gaat en hoe je kunt bidden.",
+      "cta": "AM Academy"
+    }
+  }
+}

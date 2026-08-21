@@ -3,11 +3,12 @@ import { defineRouting } from "next-intl/routing";
 // Locales the site actually ships. Adding another is: add it here, add its
 // label below, and add messages/<locale>.json.
 //
-// The set is driven by lib/countrySites.ts — every G20 mission country should
-// be readable in its own language. The four after `zh` were added for Italy,
-// Russia, Turkey and Indonesia, which were otherwise falling back to English.
-// The M40 half still has gaps; `untranslatedLanguages()` in that file reports
-// which countries are running on a fallback locale.
+// The set is driven by lib/countrySites.ts — a mission country should be
+// readable in its own language. The four after `zh` cover the G20 half (Italy,
+// Russia, Turkey, Indonesia); the nine after those cover the European M40
+// countries. Gaps remain further down that list, and
+// `untranslatedLanguages()` in countrySites.ts reports which countries are
+// still running on a fallback locale.
 export const locales = [
   "en",
   "es",
@@ -21,6 +22,15 @@ export const locales = [
   "ru",
   "tr",
   "id",
+  "nl",
+  "pl",
+  "uk",
+  "cs",
+  "sk",
+  "el",
+  "hu",
+  "ro",
+  "sv",
 ] as const;
 
 export type Locale = (typeof locales)[number];
@@ -40,6 +50,15 @@ export const localeLabels: Record<Locale, string> = {
   ru: "Русский",
   tr: "Türkçe",
   id: "Bahasa Indonesia",
+  nl: "Nederlands",
+  pl: "Polski",
+  uk: "Українська",
+  cs: "Čeština",
+  sk: "Slovenčina",
+  el: "Ελληνικά",
+  hu: "Magyar",
+  ro: "Română",
+  sv: "Svenska",
 };
 
 export const routing = defineRouting({

@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Aki küldetéssel van elküldve",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Kik vagyunk",
+    "whatWeDo": "Mit teszünk",
+    "getInvolved": "Csatlakozz",
+    "connect": "Kapcsolódás",
+    "ourNetwork": "Hálózatunk",
+    "news": "Hírek",
+    "contactUs": "Kapcsolat",
+    "give": "Adományozás",
+    "toggleNav": "Navigációs menü megnyitása vagy bezárása",
+    "whoWeAreMenu": {
+      "whoWeAre": "Kik vagyunk",
+      "ourMission": "Küldetésünk",
+      "statementOfFaith": "Hitvallásunk",
+      "history": "Történet",
+      "ourFirstChairmen": "Első elnökeink",
+      "membership": "Tagság",
+      "ourLeadership": "Vezetőségünk"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Küldetésünk pillérei",
+      "administration": "Igazgatás",
+      "bibleStudyProgram": "Bibliatanulmányozó program",
+      "fourSpiritualThemes": "Négy lelki téma",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Szolgálataink"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Bibliatanulmányozás",
+      "groupActivities": "Csoportos programok",
+      "volunteer": "Önkéntesség",
+      "bibleTeacherTraining": "Bibliatanítói képzés",
+      "internship": "Gyakornokság",
+      "donate": "Adományozás",
+      "onlineBibleStudy": "Online bibliatanulmányozás",
+      "chapterAffiliation": "Csoport csatlakozása"
+    },
+    "newsMenu": {
+      "featured": "Kiemelt",
+      "events": "Események",
+      "editorial": "Írások",
+      "photoNews": "Képriportok",
+      "testimony": "Bizonyságtételek"
+    },
+    "megaMenu": {
+      "aboutHeading": "Rólunk",
+      "whatWeDoHeading": "Mit teszünk",
+      "featuredHeading": "Kiemelt cikkek",
+      "allArticles": "Összes cikk",
+      "ctaBibleStudy": "Kezdj bibliatanulmányozást",
+      "ctaFindChapter": "Találd meg a csoportodat",
+      "ctaGive": "Adományozz még ma"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "Az AM-ről",
+        "description": "Kik vagyunk, mit hiszünk és honnan indultunk."
+      },
+      "leadership": {
+        "title": "Vezetőség",
+        "description": "A mozgalmat szolgáló emberek, és hogyan lehetsz a része."
+      },
+      "whatWeDo": {
+        "title": "Mit teszünk",
+        "description": "A pillérek és szolgálatok, amelyek viszik tovább a küldetést."
+      },
+      "bibleStudy": {
+        "title": "Bibliatanulmányozó program",
+        "description": "Ötlépcsős út az első kérdésedtől az elküldetésig."
+      },
+      "getInvolved": {
+        "title": "Csatlakozz",
+        "description": "Találd meg a helyed a mozgalomban, bárhol is vagy."
+      },
+      "supportMission": {
+        "title": "Szolgálj és támogass",
+        "description": "Képezd magad, indíts csoportot, vagy támogasd a terepen szolgáló hallgatókat."
+      },
+      "latestNews": {
+        "title": "Legfrissebb hírek",
+        "description": "Történetek és hírek a hálózat egészéből."
+      },
+      "events": {
+        "title": "Események",
+        "description": "Lelkigyakorlatok, konferenciák és találkozók a közeledben."
+      }
+    },
+    "mobile": {
+      "back": "Vissza",
+      "close": "Menü bezárása",
+      "menu": "Menü"
+    }
+  },
+  "Footer": {
+    "tagline": "Felekezetközi szolgálat, amely elkötelezett az evangélium hirdetése mellett a föld végső határáig, bizonyságot téve az Úr örök szeretetéről.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, USA",
+    "email": "info@amintl.org",
+    "whoWeAre": "Kik vagyunk",
+    "whatWeDo": "Mit teszünk",
+    "getInvolved": "Csatlakozz",
+    "media": "Média",
+    "aboutAM": "Az AM-ről",
+    "missionStatement": "Küldetésnyilatkozat",
+    "statementOfFaith": "Hitvallás",
+    "ourHistory": "Történetünk",
+    "leadership": "Vezetőség",
+    "bibleStudyProgram": "Bibliatanulmányozó program",
+    "fourSpiritualThemes": "Négy lelki téma",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Szolgálataink",
+    "connectGrowLeadSent": "Kapcsolódás, Növekedés, Vezetés, Elküldetés",
+    "chapterAffiliation": "Csoport csatlakozása",
+    "ourNetwork": "Hálózatunk",
+    "events": "Események",
+    "give": "Adományozás",
+    "news": "Hírek",
+    "legacyOfChairman": "Ralph D. Winter öröksége",
+    "contactUs": "Kapcsolat",
+    "copyright": "© 2026 Apostolos Missions International. Minden jog fenntartva.",
+    "contact": "Kapcsolat"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "Nyelv"
+  },
+  "Common": {
+    "tagline": "Felekezetközi szolgálat, amely elkötelezett az evangélium hirdetése mellett a föld végső határáig, bizonyságot téve az Úr örök szeretetéről.",
+    "learnMore": "Tudj meg többet",
+    "readMore": "Tovább olvasom",
+    "clickHere": "Kattints ide",
+    "home": "Főoldal"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Kik vagyunk",
+    "missionStatement": "Küldetésnyilatkozat",
+    "statementOfFaith": "Hitvallás",
+    "history": "Történet",
+    "ourFirstChairman": "Első elnökünk",
+    "membership": "Tagság",
+    "leadership": "Vezetőség"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Küldetésünk pillérei",
+    "administration": "Igazgatás"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Csütörtöki bibliatanulmányozás",
+    "bibleStudies": "Bibliatanulmányozás",
+    "groupActivities": "Csoportos programok",
+    "volunteer": "Önkéntesség",
+    "chapterStaff": "Csoport munkatársai",
+    "bibleTeacherTraining": "Bibliatanítói képzés",
+    "internship": "Gyakornokság",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Adományozás"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Kiemelt hírek",
+    "events": "Események",
+    "editorial": "Írások",
+    "photoNews": "Képriportok",
+    "testimony": "Bizonyságtételek"
+  },
+  "InPractice": {
+    "eyebrow": "A gyakorlatban",
+    "heading": "Négy dolog, amit mindenütt megteszünk, ahová eljutunk.",
+    "bibleStudyTag": "Bibliatanulmányozás",
+    "bibleStudyDescription": "Kis- és nagycsoportos tanulmányozás, amely az Írást állítja az egyetemi élet középpontjába.",
+    "leadershipTrainingTag": "Vezetőképzés",
+    "leadershipTrainingDescription": "A hallgatókat felkészítjük arra, hogy vezessék társaikat, majd elküldjék a következő csoportot.",
+    "onlineEducationTag": "Online oktatás",
+    "onlineEducationDescription": "Az AM Academy kurzusai az Írásról, a misszológiáról és a kultúrák közötti szolgálatról.",
+    "internshipsTripsTag": "Gyakornokság és utak",
+    "internshipsTripsDescription": "Rövid távú missziós utak és gyakornoki programok, amelyek gyakorlattá formálják a képzést."
+  },
+  "AboutPage": {
+    "heroTitle": "Ahogyan engem küldött az Atya, én is elküldelek titeket.",
+    "breadcrumb": "Rólunk",
+    "paragraph1": "Az Apostolos Missions International (AM) felekezetközi szolgálat, amely elkötelezett az evangélium hirdetése mellett a föld végső határáig, bizonyságot téve az Úr örök szeretetéről.",
+    "paragraph2Prefix": "A név",
+    "paragraph2": "(ἀπόστολος) a görög szó az apostolra. Jelentése: „aki küldetéssel van elküldve”, vagy „küldött”. Az „apostol” cím gyakran szerepel az Újszövetségben a Jézus által kiválasztott tizenkét tanítványra (Máté 10,2; Márk 3,14; Lukács 6,13; ApCsel 2,42). Pál, aki a kereszténység üldözőjéből az evangélium nagy hirdetőjévé lett, „apostolként” mutatkozott be (Róma 1,1; 1Kor 1,1; 2Kor 1,1; Gal 1,1; Kol 1,1; 1Tim 1,1; 2Tim 1,1; Titusz).",
+    "paragraph3": "Az apostolok azok, akiket az Úr küld, hogy betöltsék a küldetést: „hirdetni Jézus Krisztust és megismertetni Istent” az egész teremtett világgal. Az apostolság bibliai alapja az Úr számos szavában található, aki kiválasztotta az első apostolokat, és úgy küldte el őket, mint követeket, akiket a nemzetek képviseletére küldenek. Az apostolok megértették, hogy életük már nem a sajátjuk, hanem azért élnek, hogy Krisztus dicsőségét mutassák meg ebben a bukott világban.",
+    "blockquote": "János 20,21 így szól: „Jézus ismét ezt mondta nekik: »Békesség nektek! Ahogyan engem elküldött az Atya, én is elküldelek titeket.«”",
+    "paragraph4": "Az AM azoknak az apostoloknak a nyomdokain kíván járni, akik Isten Igéjének hirdetésére küldött emberekként éltek. Mindannyian megkapjuk Istentől ezt az elhívást, hogy az ő kezeként és lábaként küldessünk ki a világba. Életünket annak akarjuk szentelni, hogy Jézus nyomában járjunk, és a föld végső határáig hirdessük az evangéliumot.",
+    "paragraph5": "Ahogyan az Úr megérintette és megváltoztatta az életünket, úgy szeretnénk mi is megmutatni az Úrnak azt a szeretetét, amelyet nekünk mutatott: világítótoronnyá lenni minden elveszett gyermeke és testvéreink számára.",
+    "readStatementOfFaith": "Olvasd el hitvallásunkat",
+    "or": "vagy",
+    "traceHistory": "kövesd végig a történetünket",
+    "cardStatementOfFaithTitle": "Olvasd el hitvallásunkat",
+    "cardMissionStatementTitle": "Küldetésnyilatkozat"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "AM útiterv",
+    "roadmapHeading": "Mire számíthatsz?",
+    "connectTag": "Kapcsolódás",
+    "connectItems": [
+      "Biblia személyesen és online",
+      "Tanulmányi programok"
+    ],
+    "growTag": "Növekedés",
+    "growItems": [
+      "Csoportos programok"
+    ],
+    "leadTag": "Vezetés",
+    "leadItems": [
+      "Önkéntesség és gyakornokság",
+      "Csoportvezetők"
+    ],
+    "sentTag": "Elküldetés",
+    "sentItems": [
+      "Alumni Connect",
+      "Rész- és teljes munkaidős misszionáriusok",
+      "Bibliatanítók"
+    ],
+    "connectHeading": "Kapcsolódás",
+    "connectStep1Title": "1. Iratkozz fel oldalainkra",
+    "connectStep1Body": "Sokféleképpen maradhatsz kapcsolatban az AM-mel. Feliratkozhatsz fő oldalunkra, a www.amintl.org címen, és megkapod hírleveleinket. Vagy feliratkozhatsz online bibliaiskolánk oldalára, a www.amacademy.org címen, és megkapod a legfrissebb híreket és programokat. Böngészd szabadon látásunkat, tevékenységeinket és programjainkat az oldalainkon, és írj nekünk bármikor, ha kérdésed van.",
+    "connectStep2Title": "2. Jelentkezz munkatársainkkal való találkozásra",
+    "connectStep2BodyPrefix": "Nyugodtan",
+    "connectStep2SignUp": "jelentkezz",
+    "connectStep2BodySuffix": "itt, ha szeretnél beszélgetni valamelyik munkatársunkkal, és kísérést kapni a lelki utadon. Időpontot is egyeztethetsz, vagy közvetlenül felveheted a kapcsolatot. Sok munkatársunk maga is megélte az egyetemi életet, és érti, mivel szembesülnek a hallgatók. Segítenek megtalálni a hitutadhoz leginkább illő irányt.",
+    "connectStep3Title": "3. Jelentkezz bibliatanulmányozásra",
+    "connectStep3BodyPrefix": "Ha készen állsz elkezdeni a bibliatanulmányozó programunkat,",
+    "connectStep3SignUp": "jelentkezz",
+    "connectStep3BodySuffix": "ezen az oldalon. Ha nem találsz megfelelő időpontot, küldd el a jelentkezési lapot a számodra megfelelő kurzussal és időponttal!",
+    "connectStep4Title": "4. Lépj kapcsolatba a helyi csoporttal",
+    "connectStep4BodyPrefix": "Ha szeretnél kapcsolatba lépni a helyi csoport irodájával és munkatársaival, kérjük,",
+    "connectStep4ContactHere": "írj nekünk itt",
+    "connectStep4BodySuffix": ". Nagyon várjuk, hogy találkozzunk!",
+    "growHeading": "Növekedés",
+    "growIntro": "Ahogyan gyermekkorunk különböző szakaszain át növekszünk és érünk, úgy érünk el fontos mérföldköveket lelki érettségünkben is. Az AM számos programot és utat kínál, amelyek a lelki növekedés e három meghatározó szakaszán vezetik végig a hallgatókat:",
+    "rebornTitle": "1. Újjászületés",
+    "rebornBody": "Újjászületünk Jézus engesztelő áldozata által a kereszten.",
+    "matureTitle": "1. Érés",
+    "matureBody": "Lelkileg növekszünk és érünk, miközben Jézus szeretetéből és igazságából táplálkozunk.",
+    "fruitfulTitle": "1. Gyümölcstermés",
+    "fruitfulBody": "Megtapasztaljuk az élet gyümölcsözőségét Isten áldása által, amely a Krisztus Jézussal való érett egységünkben teljesedik be.",
+    "navigatingTitle": "Eligazodni az egyetemi életben",
+    "navigatingBody": "Az egyetemi élet izgalmas és gazdagító, de a rengeteg lehetőség közepette irány nélkülinek is tűnhet. Az igazság és az imádság által az AM segít felismerni Isten akaratát, és világos irányt találni a te rendkívüli életedhez.",
+    "nextStepsTitle": "Következő lépések",
+    "nextStepsBody": "Kapcsolódj be továbbra is programjainkba — élj a sokféle alkalommal, hogy halld az Igét, együtt imádkozz, közösségben legyél hittestvéreiddel, és szolgálj, miközben növekszel az evangéliumban.",
+    "leadHeading": "Vezetés",
+    "leadStep1Title": "1. Szolgálat Krisztus szeretetében",
+    "leadStep1Body": "Ahogy növekszünk, vágyunk arra, hogy szolgáljuk azokat, akiknek segítségre van szükségük, hogy Jézushoz jussanak. És miközben szolgálunk, mi magunk is mélyebbre növekszünk Krisztus szeretetében.",
+    "leadStep2Title": "2. A vezetés áldása",
+    "leadStep2Body": "Jézus azt mondta: „Nagyobb boldogság adni, mint kapni” (ApCsel 20,35). Másokat vezetni és kísérni bölcsességet, imádságot, áldozatot és türelmet kíván. Mégis áldott hely ez, ahol a kereszt dicsősége teljességre jut.",
+    "leadStep3Title": "3. A vezetés áldása",
+    "leadStep3Body": "Bár az egyetemisták még fiatalok, a kiemelkedő ajándékok és képességek éppen a vezetői szerepekben fedezhetők fel és bontakozhatnak ki sokkal erőteljesebben. Gyönyörű folyamat ez, amelyben minden hallgató a szolgálat és a vezetés kegyelmes tapasztalatán át próbálja ki és erősíti meg mennyei ajándékait.",
+    "leadStep4Title": "4. Lehetőségek az AM-nél",
+    "leadStep4Body": "Az AM sokféle lehetőséget és szerepet kínál a hallgatóknak, hogy részt vegyenek a szolgálatban és a vezetésben. Csatlakozz önkénteseink, csoportmunkatársaink és csoportvezetőink, bibliatanítóink és sok más szolgáló csapatához. Fedezd fel, mit ültetett beléd Jézus az ő kiváló terve szerint.",
+    "sentHeading": "Elküldetés",
+    "sentParagraph1": "Az egyetem elvégzése újabb jelentős indulás a világ felé, amely tágra nyílik előttünk. Néhányan tovább tanulnak vagy szakmai pályát választanak. Mások az AM teljes munkaidős munkatársai, misszionáriusok vagy lelkipásztorok lesznek, követve Isten elhívását.",
+    "sentParagraph2": "Ebben a döntő lépésben az AM olyan programokat kínál, amelyekkel kapcsolatban maradhatsz, és az Alumni Connecten keresztül tovább szolgálhatod az evangélium küldetését. Az AM képzési programokat és utakat is biztosít, hogy hivatásos missziós munkatárs lehess az AM World Missionben.",
+    "sentParagraph3": "Sokféle út nyílik előtted a fényes jövő felé. Az AM szeretne szorosan együtt haladni mindenkivel, hogy közösen töltsük be a nagy misszióparancsot: „Menjetek el tehát, tegyetek tanítvánnyá minden népet, megkeresztelve őket az Atyának, a Fiúnak és a Szentléleknek nevében” (Máté 28,19).",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "Legyél AM bibliatanító",
+    "sentLinkMissionaries": "Legyél AM misszionárius",
+    "sentLinkStaff": "Teljes munkaidős munkatárs az AM központjában",
+    "roadmapHeroTitle": "Növekedés az egyetemen: útiterv"
+  },
+  "Network": {
+    "breadcrumb": "Hálózatunk",
+    "heading": "Globális hálózatunk",
+    "joinChapter": "Csatlakozz egy csoporthoz",
+    "partnerWithUs": "Legyél a partnerünk",
+    "exploreEyebrow": "Fedezd fel a világot",
+    "regionsHeading": "Régiók",
+    "regionsSubheading": "Böngéssz földrajzilag",
+    "siteCount": "{count, plural, other {# oldal}}",
+    "communityEyebrow": "Világméretű közösség",
+    "chaptersHeading": "Csoportok a világ legkülönfélébb városaiban és szegleteiben",
+    "chaptersSoon": "A csoportok hamarosan indulnak.",
+    "continentSubtitle": "Az AM országoldalai ebben a régióban: {region}.",
+    "noSitesTitle": "Ebben a régióban még nincs oldal: {region}",
+    "noSitesBodyPrefix": "Még építjük az AM jelenlétét ebben a régióban. Nézz vissza hamarosan, vagy",
+    "noSitesLink": "vedd fel velünk a kapcsolatot",
+    "noSitesBodySuffix": ", ha segítenél elindítani egyet.",
+    "visitSite": "Oldal megtekintése",
+    "regions": {
+      "africa": "Afrika",
+      "asia": "Ázsia",
+      "europe": "Európa",
+      "northamerica": "Észak-Amerika",
+      "southamerica": "Latin-Amerika és a Karib-térség",
+      "oceania": "Óceánia"
+    },
+    "map": {
+      "world": "Világ",
+      "loading": "Betöltés…",
+      "zoomIn": "Nagyítás",
+      "clear": "Törlés",
+      "worldHint": "Vidd az egeret egy pontra vagy jelöld ki, hogy lásd a várost — a kiválasztás ráközelít a régiójára.",
+      "regionHint": "{count, plural, other {# csoport}} ebben a régióban: {region}. Válassz ki egy pontot a részletekért, vagy térj vissza a világtérképhez.",
+      "worldAria": "Világtérkép az AM mind a {count} csoportjával. A régiógombokkal nagyíthatsz.",
+      "regionAria": "{region} térképe {count} AM-csoporttal.",
+      "captionSouthAsia": "Dél-Ázsia",
+      "captionEastCentralAsia": "Kelet- és Közép-Ázsia",
+      "captionSoutheastAsia": "Délkelet-Ázsia",
+      "hqBadge": "Központ",
+      "regionalHqBadge": "Regionális központ"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — aki el van küldve",
+      "headingLine1": "Ahol",
+      "headingWhere": "Jézus szeretete",
+      "headingWeAre": "túlárad",
+      "joinBibleStudy": "Csatlakozz bibliatanulmányozásunkhoz",
+      "whoWeAre": "Kik vagyunk",
+      "stat1Value": "2003",
+      "stat1Label": "Küldünk ki azóta",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, USA",
+      "stat3Value": "Globális",
+      "stat3Label": "Egyetemi hálózat",
+      "dragToExplore": "Húzd a felfedezéshez"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Csatlakozz bibliatanulmányozó programunkhoz",
+      "heading": "Ötlépcsős út az első kérdéstől az elküldetésig.",
+      "description": "Az AM ötlépcsős bibliatanulmányozó programja online tanítványozó és bibliai képzési program, amely rendszerezett úton vezeti végig a hallgatókat Jézus Krisztus evangéliumának és a hit életének megismerésén. A program bibliatanítókkal hozza össze a hallgatókat, akik a résztvevők időbeosztásához igazodva tanítanak. A végén lehetőség nyílik önkéntességre, hallgató misszionáriusi felkészülésre, vagy egyszerűen arra, hogy az AM-mel együtt mélyebbre merülj Isten Igéjében.",
+      "cta": "Kezdd el a programot"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Csatlakozz egy bibliatanulmányozáshoz",
+      "joinBibleStudyDescription": "Az ötlépcsős online tanítványozó és bibliai képzési program.",
+      "findCampusTitle": "Találd meg az egyetemedet",
+      "findCampusDescription": "Csoportjaink és közösségeink hálózata.",
+      "getInvolvedTitle": "Csatlakozz",
+      "getInvolvedDescription": "Kapcsolódj, növekedj, vezess és legyél elküldve az AM-mel.",
+      "supportTitle": "Támogasd a küldetést",
+      "supportDescription": "Adományozz, imádkozz és állj a terepen szolgáló hallgatók mellé."
+    },
+    "Ministries": {
+      "eyebrow": "Kapcsolódás · Növekedés · Vezetés · Elküldetés",
+      "heading": "Négy lépés, és mindegyiket veled együtt tesszük meg.",
+      "getInvolved": "Csatlakozz",
+      "learnMore": "Tudj meg többet",
+      "connectTitle": "Kapcsolódj az AM-hez",
+      "connectDescription": "Az AM sokféle bibliatanulmányozó programot kínál, amelyek táplálják lelki életünket és az Úr Jézus Krisztussal való kapcsolatunkat.",
+      "growTitle": "Növekedj az AM-mel",
+      "growDescription": "Kapcsolódj be csoportos programjainkba, és érjetek együtt az igazság közösségében. Csoportos programjaink minden hallgatónak értékes tapasztalatot adnak a lelki erő elnyeréséhez.",
+      "leadTitle": "Vezess az AM-mel",
+      "leadDescription": "Az AM örömmel fogadja azokat a hallgatókat, akik önkéntesként szeretnének szolgálni Istentől kapott ajándékaikkal különféle területeken.",
+      "sentTitle": "Elküldve az AM-mel",
+      "sentDescription": "Az AM veled halad tovább, amíg az „elküldetés” drága elhívása be nem teljesedik az életedben — még a diplomaszerzés után is!",
+      "connectTag": "Kapcsolódás",
+      "growTag": "Növekedés",
+      "leadTag": "Vezetés",
+      "sentTag": "Elküldetés"
+    },
+    "OurMission": {
+      "eyebrow": "Küldetésünk",
+      "statementPrefix": "Az Apostolos Missions küldetése, hogy",
+      "statementEmphasis": "Jézus Krisztust hirdesse, mégpedig mint megfeszítettet",
+      "statementSuffix": "— Krisztus-központú hálózatot építve fiatal keresztényekből az egyetemi misszió mozgósítására.",
+      "readFullStatement": "Olvasd el a teljes küldetésnyilatkozatot",
+      "nameOrigin": "Az apostolos név a görög szó az apostolra. Jelentése: „aki küldetéssel van elküldve”.",
+      "history": "Ami a kaliforniai Los Angelesben lelkes fiatal hallgatók kis csoportjaként indult, akik szerették volna hirdetni az evangéliumot és megismertetni Jézust, mára világméretű szervezetté vált, amely a világ egyetemein szolgál.",
+      "ourHistory": "Történetünk"
+    },
+    "GetInvolved": {
+      "eyebrow": "Maradj kapcsolatban",
+      "heading": "Csatlakozz",
+      "bibleStudies": "Bibliatanulmányozás",
+      "volunteer": "Önkéntesség",
+      "internship": "Gyakornokság"
+    },
+    "Media": {
+      "eyebrow": "Média",
+      "heading": "Tanítás, bizonyságtétel és az Ige.",
+      "moreContents": "További tartalmak",
+      "playVideo": "Nézd meg az AM bemutatkozó videóját",
+      "post1Title": "Négy lelki téma – Áttekintés",
+      "post2Title": "Mi az üdvösség? | Sola Fide 1. rész – AM Academy",
+      "post3Title": "A közösségi médiás tanítványozás kora: a hallgatók közelebb vitele az evangélium valóságához",
+      "post4Title": "Isten ígéretei az új évre",
+      "post1Date": "2026. január 5.",
+      "post2Date": "2023. június 27.",
+      "post3Date": "2022. június 3.",
+      "post4Date": "2022. január 2."
+    },
+    "Events": {
+      "eyebrow": "Események",
+      "heading": "Ahol a hálózat összegyűlik.",
+      "allEvents": "Minden esemény",
+      "event1Date": "április 4–5.",
+      "event1Title": "Húsvéti lelkigyakorlat",
+      "event2Date": "február 18.",
+      "event2Title": "Negyvennapos nagyböjti út",
+      "event3Date": "január 16.",
+      "event3Title": "Új csoportvezetők találkozója"
+    },
+    "OurNetwork": {
+      "eyebrow": "Hálózatunk",
+      "heading": "Lehet, hogy már van közösség az egyetemeden.",
+      "description": "Keress intézmény vagy város szerint. Ha a közeledben nem találsz semmit, tekintsd meghívásnak — segítünk elindítani egyet.",
+      "startChapter": "Indíts csoportot",
+      "searchPlaceholder": "Keress intézményt vagy várost",
+      "noMatches": "Egyelőre nincs találat — írj nekünk, és segítünk elindítani egyet."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Első tiszteletbeli elnökünk",
+      "followingLegacy": "Az ő örökségét követve:",
+      "name": "Dr. Ralph D. Winter",
+      "quoteLine1": "Menjetek el tehát,",
+      "quoteLine2": "tegyetek tanítvánnyá",
+      "quoteLine3": "minden népet…",
+      "quoteReference": "—Máté 28,19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Legyél a partnerünk",
+      "heading": "Küldj el valakit, akivel sosem találkozol.",
+      "description": "Minden adomány elérhetővé teszi a bibliatanulmányozást, a képzést és a küldő közösséget azoknak a hallgatóknak, akik készen állnak az indulásra.",
+      "giveToday": "Adományozz még ma",
+      "talkToUs": "Beszélj velünk"
+    },
+    "Newsletter": {
+      "heading": "Jegyzetek az egyetemekről",
+      "description": "Rövid havi levél: mit látnak a hallgatók, merre tart az AM, és hogyan imádkozz.",
+      "cta": "AM Academy"
+    }
+  }
+}

@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Cel care este trimis într-o misiune",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Cine suntem",
+    "whatWeDo": "Ce facem",
+    "getInvolved": "Implică-te",
+    "connect": "Conectează-te",
+    "ourNetwork": "Rețeaua noastră",
+    "news": "Noutăți",
+    "contactUs": "Contactează-ne",
+    "give": "Donează",
+    "toggleNav": "Deschide sau închide meniul de navigare",
+    "whoWeAreMenu": {
+      "whoWeAre": "Cine suntem",
+      "ourMission": "Misiunea noastră",
+      "statementOfFaith": "Mărturisirea de credință",
+      "history": "Istoric",
+      "ourFirstChairmen": "Primii noștri președinți",
+      "membership": "Membri",
+      "ourLeadership": "Conducerea noastră"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Pilonii misiunii noastre",
+      "administration": "Administrație",
+      "bibleStudyProgram": "Programul de studiu biblic",
+      "fourSpiritualThemes": "Patru teme spirituale",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Slujirile noastre"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Studii biblice",
+      "groupActivities": "Activități de grup",
+      "volunteer": "Voluntariat",
+      "bibleTeacherTraining": "Formarea învățătorilor de Biblie",
+      "internship": "Stagiu",
+      "donate": "Donează",
+      "onlineBibleStudy": "Studiu biblic online",
+      "chapterAffiliation": "Afilierea unei filiale"
+    },
+    "newsMenu": {
+      "featured": "Recomandate",
+      "events": "Evenimente",
+      "editorial": "Articole",
+      "photoNews": "Reportaje foto",
+      "testimony": "Mărturii"
+    },
+    "megaMenu": {
+      "aboutHeading": "Despre noi",
+      "whatWeDoHeading": "Ce facem",
+      "featuredHeading": "Articole recomandate",
+      "allArticles": "Toate articolele",
+      "ctaBibleStudy": "Începe un studiu biblic",
+      "ctaFindChapter": "Găsește-ți filiala",
+      "ctaGive": "Donează astăzi"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "Despre AM",
+        "description": "Cine suntem, ce credem și de unde am pornit."
+      },
+      "leadership": {
+        "title": "Conducere",
+        "description": "Oamenii care slujesc mișcarea și cum poți face parte din ea."
+      },
+      "whatWeDo": {
+        "title": "Ce facem",
+        "description": "Pilonii și slujirile care duc misiunea mai departe."
+      },
+      "bibleStudy": {
+        "title": "Programul de studiu biblic",
+        "description": "Un drum în cinci etape, de la prima ta întrebare până la trimitere."
+      },
+      "getInvolved": {
+        "title": "Implică-te",
+        "description": "Găsește-ți locul în mișcare, oriunde te-ai afla."
+      },
+      "supportMission": {
+        "title": "Slujește și sprijină",
+        "description": "Formează-te, deschide o filială sau susține studenții din teren."
+      },
+      "latestNews": {
+        "title": "Ultimele noutăți",
+        "description": "Povești și actualizări din toată rețeaua."
+      },
+      "events": {
+        "title": "Evenimente",
+        "description": "Retrageri, conferințe și întâlniri în apropierea ta."
+      }
+    },
+    "mobile": {
+      "back": "Înapoi",
+      "close": "Închide meniul",
+      "menu": "Meniu"
+    }
+  },
+  "Footer": {
+    "tagline": "O slujire interconfesională dedicată răspândirii evangheliei până la marginile pământului, mărturisind dragostea veșnică a Domnului.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, SUA",
+    "email": "info@amintl.org",
+    "whoWeAre": "Cine suntem",
+    "whatWeDo": "Ce facem",
+    "getInvolved": "Implică-te",
+    "media": "Media",
+    "aboutAM": "Despre AM",
+    "missionStatement": "Declarația de misiune",
+    "statementOfFaith": "Mărturisirea de credință",
+    "ourHistory": "Istoricul nostru",
+    "leadership": "Conducere",
+    "bibleStudyProgram": "Programul de studiu biblic",
+    "fourSpiritualThemes": "Patru teme spirituale",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Slujirile noastre",
+    "connectGrowLeadSent": "Conectare, Creștere, Conducere, Trimitere",
+    "chapterAffiliation": "Afilierea unei filiale",
+    "ourNetwork": "Rețeaua noastră",
+    "events": "Evenimente",
+    "give": "Donează",
+    "news": "Noutăți",
+    "legacyOfChairman": "Moștenirea lui Ralph D. Winter",
+    "contactUs": "Contactează-ne",
+    "copyright": "© 2026 Apostolos Missions International. Toate drepturile rezervate.",
+    "contact": "Contact"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "Limbă"
+  },
+  "Common": {
+    "tagline": "O slujire interconfesională dedicată răspândirii evangheliei până la marginile pământului, mărturisind dragostea veșnică a Domnului.",
+    "learnMore": "Află mai multe",
+    "readMore": "Citește mai mult",
+    "clickHere": "Apasă aici",
+    "home": "Acasă"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Cine suntem",
+    "missionStatement": "Declarația de misiune",
+    "statementOfFaith": "Mărturisirea de credință",
+    "history": "Istoric",
+    "ourFirstChairman": "Primul nostru președinte",
+    "membership": "Membri",
+    "leadership": "Conducere"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Pilonii misiunii noastre",
+    "administration": "Administrație"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Studiul biblic de joi",
+    "bibleStudies": "Studii biblice",
+    "groupActivities": "Activități de grup",
+    "volunteer": "Voluntariat",
+    "chapterStaff": "Echipa filialei",
+    "bibleTeacherTraining": "Formarea învățătorilor de Biblie",
+    "internship": "Stagiu",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Donează"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Noutăți recomandate",
+    "events": "Evenimente",
+    "editorial": "Articole",
+    "photoNews": "Reportaje foto",
+    "testimony": "Mărturii"
+  },
+  "InPractice": {
+    "eyebrow": "În practică",
+    "heading": "Patru lucruri pe care le facem oriunde ajungem.",
+    "bibleStudyTag": "Studiu biblic",
+    "bibleStudyDescription": "Studiu în grupuri mici și mari care pune Scriptura în centrul vieții studențești.",
+    "leadershipTrainingTag": "Formare de lideri",
+    "leadershipTrainingDescription": "Studenții sunt pregătiți să-și conducă colegii, iar apoi să trimită următorul grup.",
+    "onlineEducationTag": "Educație online",
+    "onlineEducationDescription": "Cursuri AM Academy despre Scriptură, misiologie și slujire interculturală.",
+    "internshipsTripsTag": "Stagii și călătorii",
+    "internshipsTripsDescription": "Misiuni de scurtă durată și stagii care transformă formarea în practică."
+  },
+  "AboutPage": {
+    "heroTitle": "Cum M-a trimis pe Mine Tatăl, așa vă trimit și Eu pe voi.",
+    "breadcrumb": "Despre noi",
+    "paragraph1": "Apostolos Missions International (AM) este o slujire interconfesională dedicată răspândirii evangheliei până la marginile pământului, mărturisind dragostea veșnică a Domnului.",
+    "paragraph2Prefix": "Numele",
+    "paragraph2": "(ἀπόστολος) este cuvântul grecesc pentru apostol. Înseamnă „cel care este trimis într-o misiune” sau „mesager”. Titlul „apostol” apare adesea în Noul Testament pentru cei doisprezece ucenici aleși de Isus (Matei 10:2, Marcu 3:14, Luca 6:13, Faptele Apostolilor 2:42). Pavel, din prigonitor al creștinismului devenit mare vestitor al evangheliei, s-a prezentat ca „apostol” (Romani 1:1, 1 Corinteni 1:1, 2 Corinteni 1:1, Galateni 1:1, Coloseni 1:1, 1 Timotei 1:1, 2 Timotei 1:1, Tit).",
+    "paragraph3": "Apostolii sunt cei trimiși de Domnul să împlinească misiunea de a-L „predica pe Isus Hristos și a-L face cunoscut pe Dumnezeu” întregii creații. Temeiul biblic al apostoliei se găsește în multe cuvinte ale Domnului, care i-a ales pe primii apostoli și i-a trimis ca pe niște ambasadori însărcinați să reprezinte neamurile. Apostolii au înțeles că viața lor nu mai era a lor, ci că trăiau pentru a arăta slava lui Hristos în această lume căzută.",
+    "blockquote": "Ioan 20:21 spune: „Isus le-a zis din nou: «Pace vouă! Cum M-a trimis pe Mine Tatăl, așa vă trimit și Eu pe voi.»”",
+    "paragraph4": "AM dorește să urmeze tradiția apostolilor, care au trăit ca oameni trimiși să vestească Cuvântul lui Dumnezeu. Fiecare dintre noi primește de la Dumnezeu această chemare de a fi trimis în lume ca mâinile și picioarele Sale. Vrem să ne dedicăm viața pentru a merge pe urmele lui Isus și a vesti evanghelia până la marginile pământului.",
+    "paragraph5": "Așa cum viețile noastre au fost atinse și schimbate de Domnul, dorim să arătăm dragostea Domnului care ne-a fost arătată nouă, devenind un far pentru toți copiii Săi pierduți și pentru frații și surorile noastre.",
+    "readStatementOfFaith": "Citește mărturisirea noastră de credință",
+    "or": "sau",
+    "traceHistory": "urmărește istoricul nostru",
+    "cardStatementOfFaithTitle": "Citește mărturisirea noastră de credință",
+    "cardMissionStatementTitle": "Declarația de misiune"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "Parcursul AM",
+    "roadmapHeading": "La ce să te aștepți?",
+    "connectTag": "Conectare",
+    "connectItems": [
+      "Biblia în persoană/online",
+      "Programe de studiu"
+    ],
+    "growTag": "Creștere",
+    "growItems": [
+      "Activități de grup"
+    ],
+    "leadTag": "Conducere",
+    "leadItems": [
+      "Voluntariat și stagii",
+      "Lideri de filiale"
+    ],
+    "sentTag": "Trimitere",
+    "sentItems": [
+      "Alumni Connect",
+      "Misionari cu normă parțială și întreagă",
+      "Învățători de Biblie"
+    ],
+    "connectHeading": "Conectare",
+    "connectStep1Title": "1. Abonează-te la site-urile noastre",
+    "connectStep1Body": "Sunt multe moduri de a rămâne conectat cu AM. Te poți abona pe site-ul nostru principal, www.amintl.org, și vei primi buletinele informative. Sau te poți abona pe site-ul școlii noastre biblice online, www.amacademy.org, și vei primi cele mai noi știri și programe. Explorează liber viziunea, activitățile și programele noastre pe site-urile noastre și scrie-ne oricând ai întrebări.",
+    "connectStep2Title": "2. Înscrie-te pentru o întâlnire cu echipa noastră",
+    "connectStep2BodyPrefix": "Poți să te",
+    "connectStep2SignUp": "înscrii",
+    "connectStep2BodySuffix": "aici dacă vrei să vorbești cu unul dintre colegii noștri și să primești îndrumare pe drumul tău spiritual. Poți stabili o întâlnire sau ne poți contacta direct. Mulți dintre colegii noștri au trăit ei înșiși viața studențească și înțeleg contextele cu care se confruntă studenții. Te vor ajuta să găsești parcursul de credință cel mai potrivit pentru tine.",
+    "connectStep3Title": "3. Înscrie-te la studiul biblic",
+    "connectStep3BodyPrefix": "Dacă ești gata să începi programul nostru de studiu biblic,",
+    "connectStep3SignUp": "înscrie-te",
+    "connectStep3BodySuffix": "pe această pagină. Dacă nu găsești un orar potrivit, trimite formularul de cerere cu cursul și ora pe care le preferi!",
+    "connectStep4Title": "4. Ia legătura cu filiala locală",
+    "connectStep4BodyPrefix": "Dacă vrei să iei legătura cu biroul și echipa filialei locale, te rugăm să",
+    "connectStep4ContactHere": "ne scrii aici",
+    "connectStep4BodySuffix": ". Abia așteptăm să ne cunoaștem!",
+    "growHeading": "Creștere",
+    "growIntro": "Așa cum creștem și ne maturizăm prin diferite etape ale copilăriei, atingem repere importante și în maturitatea noastră spirituală. AM oferă numeroase programe și parcursuri concepute să însoțească studenții prin aceste trei etape esențiale ale creșterii spirituale:",
+    "rebornTitle": "1. Nașterea din nou",
+    "rebornBody": "Ne naștem din nou prin jertfa ispășitoare a lui Isus pe cruce.",
+    "matureTitle": "1. Maturizare",
+    "matureBody": "Creștem și ne maturizăm spiritual hrănindu-ne din dragostea și adevărul lui Isus.",
+    "fruitfulTitle": "1. Rodire",
+    "fruitfulBody": "Experimentăm rodnicia vieții prin binecuvântarea lui Dumnezeu, împlinită în unitatea noastră matură cu Hristos Isus.",
+    "navigatingTitle": "Să te orientezi în viața studențească",
+    "navigatingBody": "Viața studențească este captivantă și împlinitoare, dar cu atâtea opțiuni poate părea și fără direcție. Prin adevăr și rugăciune, AM te ajută să discerni voia lui Dumnezeu și să găsești o direcție clară pentru viața ta extraordinară.",
+    "nextStepsTitle": "Pașii următori",
+    "nextStepsBody": "Continuă să participi la programele noastre — profită de numeroasele ocazii de a asculta Cuvântul, de a te ruga împreună cu alții, de a avea părtășie cu frații și surorile în credință și de a sluji în timp ce crești în evanghelie.",
+    "leadHeading": "Conducere",
+    "leadStep1Title": "1. Slujirea în dragostea lui Hristos",
+    "leadStep1Body": "Pe măsură ce creștem, dorim să slujim celor care au nevoie de ajutor ca să vină la Isus. Iar slujind, creștem și noi mai adânc în dragostea lui Hristos.",
+    "leadStep2Title": "2. Binecuvântarea conducerii",
+    "leadStep2Body": "Isus a spus: „Este mai ferice să dai decât să primești” (Faptele Apostolilor 20:35). Să conduci și să îndrumi pe alții cere înțelepciune, rugăciune, jertfă și răbdare. Totuși, este un loc binecuvântat, unde slava crucii ajunge la culme.",
+    "leadStep3Title": "3. Binecuvântarea conducerii",
+    "leadStep3Body": "Deși studenții sunt încă tineri, daruri și abilități deosebite pot fi descoperite și dezvoltate mult mai puternic tocmai în rolurile de conducere. Este un proces frumos, în care fiecare student își încearcă și își confirmă darurile cerești prin experiența plină de har a slujirii și a conducerii.",
+    "leadStep4Title": "4. Oportunități cu AM",
+    "leadStep4Body": "AM oferă studenților oportunități și roluri variate pentru a participa la slujire și conducere. Alătură-te echipei noastre de voluntari, colegilor și liderilor de filiale, învățătorilor de Biblie și multor altora. Descoperă ce a sădit Isus în tine potrivit planului Său desăvârșit.",
+    "sentHeading": "Trimitere",
+    "sentParagraph1": "Absolvirea este o altă plecare importantă către o lume larg deschisă înaintea noastră. Unii dintre noi vor continua studiile sau vor urma o carieră. Alții devin colaboratori cu normă întreagă ai AM, misionari sau slujitori, urmând chemarea lui Dumnezeu.",
+    "sentParagraph2": "În acest pas hotărâtor, AM oferă programe prin care poți rămâne conectat și poți continua să slujești misiunea evangheliei prin Alumni Connect. AM oferă de asemenea programe de formare pentru a deveni lucrător misionar profesionist în AM World Mission.",
+    "sentParagraph3": "Ți se deschid multe drumuri către un viitor luminos. AM dorește să meargă alături de fiecare, pentru a împlini împreună Marea Trimitere: „Duceți-vă și faceți ucenici din toate neamurile, botezându-i în Numele Tatălui și al Fiului și al Sfântului Duh” (Matei 28:19).",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "Devino învățător de Biblie AM",
+    "sentLinkMissionaries": "Devino misionar AM",
+    "sentLinkStaff": "Normă întreagă la sediul AM",
+    "roadmapHeroTitle": "Creșterea în campus: un parcurs"
+  },
+  "Network": {
+    "breadcrumb": "Rețeaua noastră",
+    "heading": "Rețeaua noastră globală",
+    "joinChapter": "Alătură-te unei filiale",
+    "partnerWithUs": "Devino partenerul nostru",
+    "exploreEyebrow": "Explorează lumea",
+    "regionsHeading": "Regiuni",
+    "regionsSubheading": "Explorează geografic",
+    "siteCount": "{count, plural, one {# site} few {# site-uri} other {# de site-uri}}",
+    "communityEyebrow": "O comunitate mondială",
+    "chaptersHeading": "Filiale în orașe și colțuri diverse ale lumii",
+    "chaptersSoon": "Filialele se deschid în curând.",
+    "continentSubtitle": "Site-urile de țară AM din {region}.",
+    "noSitesTitle": "Încă nu există site-uri în {region}",
+    "noSitesBodyPrefix": "Construim în continuare prezența AM în această regiune. Revino în curând sau",
+    "noSitesLink": "ia legătura cu noi",
+    "noSitesBodySuffix": "dacă vrei să ne ajuți să deschidem unul.",
+    "visitSite": "Vizitează site-ul",
+    "regions": {
+      "africa": "Africa",
+      "asia": "Asia",
+      "europe": "Europa",
+      "northamerica": "America de Nord",
+      "southamerica": "America Latină și Caraibe",
+      "oceania": "Oceania"
+    },
+    "map": {
+      "world": "Lume",
+      "loading": "Se încarcă…",
+      "zoomIn": "Mărește",
+      "clear": "Șterge",
+      "worldHint": "Treci cu mouse-ul peste un punct sau selectează-l ca să vezi orașul — alegerea mărește regiunea lui.",
+      "regionHint": "{count, plural, one {# filială} few {# filiale} other {# de filiale}} în {region}. Selectează un punct pentru detalii sau revino la harta lumii.",
+      "worldAria": "Harta lumii cu toate cele {count} filiale AM. Folosește butoanele de regiune pentru a mări.",
+      "regionAria": "Harta regiunii {region} cu {count} filiale AM.",
+      "captionSouthAsia": "Asia de Sud",
+      "captionEastCentralAsia": "Asia de Est și Centrală",
+      "captionSoutheastAsia": "Asia de Sud-Est",
+      "hqBadge": "Sediu",
+      "regionalHqBadge": "Sediu regional"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — cel care este trimis",
+      "headingLine1": "Acolo unde",
+      "headingWhere": "dragostea lui Isus",
+      "headingWeAre": "se revarsă",
+      "joinBibleStudy": "Alătură-te studiului nostru biblic",
+      "whoWeAre": "Cine suntem",
+      "stat1Value": "2003",
+      "stat1Label": "Trimitem din",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, SUA",
+      "stat3Value": "Globală",
+      "stat3Label": "Rețea universitară",
+      "dragToExplore": "Trage pentru a explora"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Alătură-te programului nostru de studiu biblic",
+      "heading": "Un drum în 5 etape, de la prima întrebare până la trimitere.",
+      "description": "Programul de studiu biblic AM în 5 etape este un program online de ucenicie și educație biblică ce conduce studenții printr-un parcurs sistematic de cunoaștere a evangheliei lui Isus Hristos și a vieții de credință. Programul îi pune pe studenți în legătură cu învățători de Biblie care predau după programul fiecărui participant. Se încheie cu ocazia de a face voluntariat, de a te pregăti ca student misionar sau pur și simplu de a pătrunde mai adânc în Cuvântul lui Dumnezeu împreună cu AM.",
+      "cta": "Începe programul"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Alătură-te unui studiu biblic",
+      "joinBibleStudyDescription": "Programul online de ucenicie și educație biblică în 5 etape.",
+      "findCampusTitle": "Găsește-ți campusul",
+      "findCampusDescription": "Rețeaua noastră de filiale și comunități.",
+      "getInvolvedTitle": "Implică-te",
+      "getInvolvedDescription": "Conectează-te, crește, condu și fii trimis alături de AM.",
+      "supportTitle": "Sprijină misiunea",
+      "supportDescription": "Donează, roagă-te și susține studenții din teren."
+    },
+    "Ministries": {
+      "eyebrow": "Conectare · Creștere · Conducere · Trimitere",
+      "heading": "Patru pași, și îi parcurgem pe toți împreună cu tine.",
+      "getInvolved": "Implică-te",
+      "learnMore": "Află mai multe",
+      "connectTitle": "Conectează-te cu AM",
+      "connectDescription": "AM oferă diverse programe de studiu biblic care hrănesc viața noastră spirituală și relația cu Domnul Isus Hristos.",
+      "growTitle": "Crește împreună cu AM",
+      "growDescription": "Participă la activitățile noastre de grup și maturizează-te împreună cu ceilalți în părtășia adevărului. Programele noastre de grup oferă fiecărui student experiențe de calitate pentru a căpăta putere spirituală.",
+      "leadTitle": "Condu împreună cu AM",
+      "leadDescription": "AM îi primește cu bucurie pe studenții care doresc să facă voluntariat și să slujească prin darurile primite de la Dumnezeu în diferite domenii.",
+      "sentTitle": "Trimis împreună cu AM",
+      "sentDescription": "AM va continua să meargă alături de tine până când prețioasa chemare de a „fi trimis” se împlinește în viața ta, chiar și după absolvire!",
+      "connectTag": "Conectare",
+      "growTag": "Creștere",
+      "leadTag": "Conducere",
+      "sentTag": "Trimitere"
+    },
+    "OurMission": {
+      "eyebrow": "Misiunea noastră",
+      "statementPrefix": "Misiunea Apostolos Missions este să",
+      "statementEmphasis": "Îl predice pe Isus Hristos, și pe El răstignit",
+      "statementSuffix": "— cultivând o rețea centrată pe Hristos de tineri creștini pentru mobilizarea misiunii universitare.",
+      "readFullStatement": "Citește declarația de misiune completă",
+      "nameOrigin": "Numele apostolos este cuvântul grecesc pentru apostol. Înseamnă „cel care este trimis într-o misiune”.",
+      "history": "Ceea ce a început ca un mic grup de tineri studenți pasionați din Los Angeles, California, dornici să răspândească evanghelia și să-L facă cunoscut pe Isus, a devenit o organizație globală care lucrează în campusuri universitare din întreaga lume.",
+      "ourHistory": "Istoricul nostru"
+    },
+    "GetInvolved": {
+      "eyebrow": "Rămâi conectat",
+      "heading": "Implică-te",
+      "bibleStudies": "Studii biblice",
+      "volunteer": "Voluntariat",
+      "internship": "Stagiu"
+    },
+    "Media": {
+      "eyebrow": "Media",
+      "heading": "Învățătură, mărturie și Cuvântul.",
+      "moreContents": "Mai mult conținut",
+      "playVideo": "Vezi videoclipul de prezentare AM",
+      "post1Title": "Patru teme spirituale – Prezentare generală",
+      "post2Title": "Ce este mântuirea? | Sola Fide Partea 1 – AM Academy",
+      "post3Title": "Era uceniciei pe rețelele sociale: apropierea studenților de realitatea evangheliei",
+      "post4Title": "Promisiunile lui Dumnezeu pentru noul an",
+      "post1Date": "5 ianuarie 2026",
+      "post2Date": "27 iunie 2023",
+      "post3Date": "3 iunie 2022",
+      "post4Date": "2 ianuarie 2022"
+    },
+    "Events": {
+      "eyebrow": "Evenimente",
+      "heading": "Acolo unde se adună rețeaua.",
+      "allEvents": "Toate evenimentele",
+      "event1Date": "4–5 aprilie",
+      "event1Title": "Retragere de Paști",
+      "event2Date": "18 februarie",
+      "event2Title": "Drumul de 40 de zile al Postului Mare",
+      "event3Date": "16 ianuarie",
+      "event3Title": "Întâlnirea noilor lideri de filiale"
+    },
+    "OurNetwork": {
+      "eyebrow": "Rețeaua noastră",
+      "heading": "Poate că există deja o comunitate în campusul tău.",
+      "description": "Caută după universitate sau oraș. Dacă nu apare nimic în apropiere, ia asta ca pe o invitație — te ajutăm să pornești una.",
+      "startChapter": "Deschide o filială",
+      "searchPlaceholder": "Caută universitate sau oraș",
+      "noMatches": "Încă niciun rezultat — scrie-ne și te ajutăm să începi."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Primul nostru președinte de onoare",
+      "followingLegacy": "Pe urmele lui",
+      "name": "Dr. Ralph D. Winter",
+      "quoteLine1": "Duceți-vă",
+      "quoteLine2": "și faceți ucenici",
+      "quoteLine3": "din toate neamurile…",
+      "quoteReference": "—Matei 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Devino partenerul nostru",
+      "heading": "Trimite pe cineva pe care nu-l vei întâlni niciodată.",
+      "description": "Fiecare dar aduce studiul biblic, formarea și o comunitate care trimite la îndemâna studenților gata să plece.",
+      "giveToday": "Donează astăzi",
+      "talkToUs": "Vorbește cu noi"
+    },
+    "Newsletter": {
+      "heading": "Însemnări din campusuri",
+      "description": "O scrisoare lunară scurtă: ce văd studenții, încotro merge AM mai departe și cum să te rogi.",
+      "cta": "AM Academy"
+    }
+  }
+}

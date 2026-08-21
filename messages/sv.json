@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Den som sänds ut på ett uppdrag",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Vilka vi är",
+    "whatWeDo": "Vad vi gör",
+    "getInvolved": "Engagera dig",
+    "connect": "Ta kontakt",
+    "ourNetwork": "Vårt nätverk",
+    "news": "Nyheter",
+    "contactUs": "Kontakta oss",
+    "give": "Ge en gåva",
+    "toggleNav": "Öppna eller stäng navigeringsmenyn",
+    "whoWeAreMenu": {
+      "whoWeAre": "Vilka vi är",
+      "ourMission": "Vårt uppdrag",
+      "statementOfFaith": "Vår trosbekännelse",
+      "history": "Historia",
+      "ourFirstChairmen": "Våra första ordförande",
+      "membership": "Medlemskap",
+      "ourLeadership": "Vår ledning"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Vårt uppdrags grundpelare",
+      "administration": "Administration",
+      "bibleStudyProgram": "Bibelstudieprogram",
+      "fourSpiritualThemes": "Fyra andliga teman",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Våra verksamheter"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Bibelstudier",
+      "groupActivities": "Gruppaktiviteter",
+      "volunteer": "Volontärarbete",
+      "bibleTeacherTraining": "Utbildning för bibellärare",
+      "internship": "Praktik",
+      "donate": "Ge en gåva",
+      "onlineBibleStudy": "Bibelstudium online",
+      "chapterAffiliation": "Anslutning av lokalgrupp"
+    },
+    "newsMenu": {
+      "featured": "Utvalt",
+      "events": "Evenemang",
+      "editorial": "Artiklar",
+      "photoNews": "Bildreportage",
+      "testimony": "Vittnesbörd"
+    },
+    "megaMenu": {
+      "aboutHeading": "Om oss",
+      "whatWeDoHeading": "Vad vi gör",
+      "featuredHeading": "Utvalda artiklar",
+      "allArticles": "Alla artiklar",
+      "ctaBibleStudy": "Börja ett bibelstudium",
+      "ctaFindChapter": "Hitta din lokalgrupp",
+      "ctaGive": "Ge en gåva idag"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "Om AM",
+        "description": "Vilka vi är, vad vi tror och var vi kommer ifrån."
+      },
+      "leadership": {
+        "title": "Ledning",
+        "description": "Människorna som tjänar rörelsen och hur du blir en del av den."
+      },
+      "whatWeDo": {
+        "title": "Vad vi gör",
+        "description": "Grundpelarna och verksamheterna som för uppdraget vidare."
+      },
+      "bibleStudy": {
+        "title": "Bibelstudieprogram",
+        "description": "En väg i fem faser, från din första fråga till att bli utsänd."
+      },
+      "getInvolved": {
+        "title": "Engagera dig",
+        "description": "Hitta din plats i rörelsen, var du än befinner dig."
+      },
+      "supportMission": {
+        "title": "Tjäna och stötta",
+        "description": "Utbilda dig, starta en lokalgrupp eller stötta studenter i fält."
+      },
+      "latestNews": {
+        "title": "Senaste nytt",
+        "description": "Berättelser och uppdateringar från hela nätverket."
+      },
+      "events": {
+        "title": "Evenemang",
+        "description": "Retreater, konferenser och samlingar nära dig."
+      }
+    },
+    "mobile": {
+      "back": "Tillbaka",
+      "close": "Stäng menyn",
+      "menu": "Meny"
+    }
+  },
+  "Footer": {
+    "tagline": "En interkonfessionell verksamhet som är hängiven att sprida evangeliet till jordens yttersta gräns och vittna om Herrens eviga kärlek.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, USA",
+    "email": "info@amintl.org",
+    "whoWeAre": "Vilka vi är",
+    "whatWeDo": "Vad vi gör",
+    "getInvolved": "Engagera dig",
+    "media": "Media",
+    "aboutAM": "Om AM",
+    "missionStatement": "Uppdragsbeskrivning",
+    "statementOfFaith": "Trosbekännelse",
+    "ourHistory": "Vår historia",
+    "leadership": "Ledning",
+    "bibleStudyProgram": "Bibelstudieprogram",
+    "fourSpiritualThemes": "Fyra andliga teman",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Våra verksamheter",
+    "connectGrowLeadSent": "Kontakt, Växt, Ledarskap, Utsändning",
+    "chapterAffiliation": "Anslutning av lokalgrupp",
+    "ourNetwork": "Vårt nätverk",
+    "events": "Evenemang",
+    "give": "Ge en gåva",
+    "news": "Nyheter",
+    "legacyOfChairman": "Ralph D. Winters arv",
+    "contactUs": "Kontakta oss",
+    "copyright": "© 2026 Apostolos Missions International. Med ensamrätt.",
+    "contact": "Kontakt"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "Språk"
+  },
+  "Common": {
+    "tagline": "En interkonfessionell verksamhet som är hängiven att sprida evangeliet till jordens yttersta gräns och vittna om Herrens eviga kärlek.",
+    "learnMore": "Läs mer",
+    "readMore": "Läs vidare",
+    "clickHere": "Klicka här",
+    "home": "Hem"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Vilka vi är",
+    "missionStatement": "Uppdragsbeskrivning",
+    "statementOfFaith": "Trosbekännelse",
+    "history": "Historia",
+    "ourFirstChairman": "Vår första ordförande",
+    "membership": "Medlemskap",
+    "leadership": "Ledning"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Vårt uppdrags grundpelare",
+    "administration": "Administration"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Torsdagens bibelstudium",
+    "bibleStudies": "Bibelstudier",
+    "groupActivities": "Gruppaktiviteter",
+    "volunteer": "Volontärarbete",
+    "chapterStaff": "Lokalgruppens team",
+    "bibleTeacherTraining": "Utbildning för bibellärare",
+    "internship": "Praktik",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Ge en gåva"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Utvalda nyheter",
+    "events": "Evenemang",
+    "editorial": "Artiklar",
+    "photoNews": "Bildreportage",
+    "testimony": "Vittnesbörd"
+  },
+  "InPractice": {
+    "eyebrow": "I praktiken",
+    "heading": "Fyra saker vi gör överallt där vi kommer.",
+    "bibleStudyTag": "Bibelstudium",
+    "bibleStudyDescription": "Studier i små och stora grupper som sätter Skriften i centrum av studentlivet.",
+    "leadershipTrainingTag": "Ledarträning",
+    "leadershipTrainingDescription": "Studenter tränas att leda sina kurskamrater och sedan sända ut nästa grupp.",
+    "onlineEducationTag": "Utbildning online",
+    "onlineEducationDescription": "Kurser från AM Academy om Skriften, missionsvetenskap och tvärkulturell tjänst.",
+    "internshipsTripsTag": "Praktik och resor",
+    "internshipsTripsDescription": "Korta missionsresor och praktikplatser som gör utbildning till praktik."
+  },
+  "AboutPage": {
+    "heroTitle": "Som Fadern har sänt mig sänder jag er.",
+    "breadcrumb": "Om oss",
+    "paragraph1": "Apostolos Missions International (AM) är en interkonfessionell verksamhet som är hängiven att sprida evangeliet till jordens yttersta gräns och vittna om Herrens eviga kärlek.",
+    "paragraph2Prefix": "Namnet",
+    "paragraph2": "(ἀπόστολος) är det grekiska ordet för apostel. Det betyder ”den som sänds ut på ett uppdrag” eller ”budbärare”. Titeln ”apostel” förekommer ofta i Nya testamentet om de tolv lärjungar som Jesus utsåg (Matteus 10:2, Markus 3:14, Lukas 6:13, Apostlagärningarna 2:42). Paulus, som gick från att förfölja kristendomen till att bli en av evangeliets största förkunnare, presenterade sig som ”apostel” (Romarbrevet 1:1, 1 Korinthierbrevet 1:1, 2 Korinthierbrevet 1:1, Galaterbrevet 1:1, Kolosserbrevet 1:1, 1 Timotheosbrevet 1:1, 2 Timotheosbrevet 1:1, Titusbrevet).",
+    "paragraph3": "Apostlar är de som sänds av Herren för att fullgöra uppdraget att ”förkunna Jesus Kristus och göra Gud känd” för hela skapelsen. Den bibliska grunden för apostlaskapet finns i många av Herrens ord, han som valde ut de första apostlarna och sände dem som sändebud utsända att representera folken. Apostlarna förstod att deras liv inte längre var deras eget, utan att de levde för att visa Kristi härlighet i denna fallna värld.",
+    "blockquote": "Johannes 20:21 säger: ”Jesus sade till dem igen: ’Frid åt er alla. Som Fadern har sänt mig sänder jag er.’”",
+    "paragraph4": "AM vill följa i apostlarnas tradition, de som levde som människor sända att förkunna Guds ord. Var och en av oss får också denna kallelse från Gud att sändas ut i världen som hans händer och fötter. Vi vill ägna våra liv åt att följa i Jesu fotspår och förkunna evangeliet till jordens yttersta gräns.",
+    "paragraph5": "Liksom våra liv har blivit berörda och förvandlade av Herren vill vi visa den kärlek från Herren som visats oss, och bli en fyrbåk för alla hans vilsna barn och för våra bröder och systrar.",
+    "readStatementOfFaith": "Läs vår trosbekännelse",
+    "or": "eller",
+    "traceHistory": "följ vår historia",
+    "cardStatementOfFaithTitle": "Läs vår trosbekännelse",
+    "cardMissionStatementTitle": "Uppdragsbeskrivning"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "AM:s färdplan",
+    "roadmapHeading": "Vad kan du vänta dig?",
+    "connectTag": "Kontakt",
+    "connectItems": [
+      "Bibeln på plats och online",
+      "Studieprogram"
+    ],
+    "growTag": "Växt",
+    "growItems": [
+      "Gruppaktiviteter"
+    ],
+    "leadTag": "Ledarskap",
+    "leadItems": [
+      "Volontärarbete och praktik",
+      "Lokalgruppsledare"
+    ],
+    "sentTag": "Utsändning",
+    "sentItems": [
+      "Alumni Connect",
+      "Missionärer på deltid och heltid",
+      "Bibellärare"
+    ],
+    "connectHeading": "Kontakt",
+    "connectStep1Title": "1. Prenumerera på våra webbplatser",
+    "connectStep1Body": "Det finns många sätt att hålla kontakten med AM. Du kan prenumerera på vår huvudwebbplats, www.amintl.org, och få våra nyhetsbrev. Eller så kan du prenumerera på vår bibelskola online, www.amacademy.org, och få de senaste nyheterna och programmen. Utforska gärna vår vision, våra aktiviteter och våra program på webbplatserna, och mejla oss när som helst om du har frågor.",
+    "connectStep2Title": "2. Boka ett möte med våra medarbetare",
+    "connectStep2BodyPrefix": "Du kan gärna",
+    "connectStep2SignUp": "anmäla dig",
+    "connectStep2BodySuffix": "här om du vill prata med någon av våra medarbetare och få vägledning på din andliga väg. Du kan boka ett möte eller kontakta oss direkt. Många av våra medarbetare har själva levt studentlivet och förstår vad studenter möter. De hjälper dig att hitta den väg i tron som passar dig bäst.",
+    "connectStep3Title": "3. Anmäl dig till bibelstudium",
+    "connectStep3BodyPrefix": "Om du är redo att börja vårt bibelstudieprogram,",
+    "connectStep3SignUp": "anmäl dig",
+    "connectStep3BodySuffix": "på den här sidan. Hittar du ingen tid som passar? Skicka in formuläret med den kurs och den tid du föredrar!",
+    "connectStep4Title": "4. Ta kontakt med den lokala gruppen",
+    "connectStep4BodyPrefix": "Om du vill komma i kontakt med den lokala gruppens kontor och medarbetare,",
+    "connectStep4ContactHere": "hör av dig här",
+    "connectStep4BodySuffix": ". Vi ser fram emot att träffa dig snart!",
+    "growHeading": "Växt",
+    "growIntro": "Precis som vi växer och mognar genom barndomens olika faser når vi viktiga milstolpar i vår andliga mognad. AM erbjuder många program och vägar som är utformade för att leda studenter genom dessa tre avgörande faser av andlig växt:",
+    "rebornTitle": "1. Född på nytt",
+    "rebornBody": "Vi föds på nytt genom Jesu försoningsoffer på korset.",
+    "matureTitle": "1. Mogen",
+    "matureBody": "Vi växer och mognar andligt genom att näras av Jesu kärlek och sanning.",
+    "fruitfulTitle": "1. Fruktbärande",
+    "fruitfulBody": "Vi erfar livets fruktbarhet genom Guds välsignelse, som fullbordas i vår mogna enhet med Kristus Jesus.",
+    "navigatingTitle": "Att hitta rätt i studentlivet",
+    "navigatingBody": "Studentlivet är spännande och givande, men med så många valmöjligheter kan det också kännas riktningslöst. Genom sanning och bön hjälper AM dig att urskilja Guds vilja och finna tydlig vägledning för ditt alldeles egna liv.",
+    "nextStepsTitle": "Nästa steg",
+    "nextStepsBody": "Fortsätt att delta i våra program — ta vara på de många tillfällena att höra Ordet, be tillsammans, ha gemenskap med bröder och systrar i tron och tjäna medan du växer i evangeliet.",
+    "leadHeading": "Ledarskap",
+    "leadStep1Title": "1. Att tjäna i Kristi kärlek",
+    "leadStep1Body": "När vi växer önskar vi tjäna dem som behöver hjälp att komma till Jesus. Och när vi tjänar växer vi själva djupare in i Kristi kärlek.",
+    "leadStep2Title": "2. Ledarskapets välsignelse",
+    "leadStep2Body": "Jesus sade: ”Det är saligare att ge än att få” (Apostlagärningarna 20:35). Att leda och vägleda andra kräver vishet, bön, uppoffring och tålamod. Ändå är det en välsignad plats, där korsets härlighet når sin höjdpunkt.",
+    "leadStep3Title": "3. Ledarskapets välsignelse",
+    "leadStep3Body": "Även om studenter fortfarande är unga kan enastående gåvor och färdigheter upptäckas och utvecklas långt starkare just i ledaruppgifter. Det är en vacker process där varje student prövar och bekräftar sina himmelska gåvor genom den nådefulla erfarenheten av att tjäna och leda.",
+    "leadStep4Title": "4. Möjligheter med AM",
+    "leadStep4Body": "AM erbjuder studenter många olika möjligheter och uppgifter för att delta i tjänst och ledarskap. Bli en del av vårt team av volontärer, lokalgruppsmedarbetare, lokalgruppsledare, bibellärare och mycket annat. Upptäck vad Jesus har planterat i dig enligt sin fullkomliga plan.",
+    "sentHeading": "Utsändning",
+    "sentParagraph1": "Examen är ännu en betydelsefull avfärd mot en värld som ligger vidöppen för oss. Några av oss studerar vidare eller väljer en yrkesbana. Andra blir heltidsmedarbetare i AM, missionärer eller församlingstjänare som följer Guds kallelse.",
+    "sentParagraph2": "I detta avgörande steg erbjuder AM program där du kan hålla kontakten och fortsätta tjäna evangeliets uppdrag genom Alumni Connect. AM erbjuder också utbildningsprogram och vägar för att bli yrkesverksam missionsarbetare och medarbetare i AM World Mission.",
+    "sentParagraph3": "Många vägar öppnar sig för dig mot en ljus framtid. AM vill vandra nära varje människa så att vi tillsammans fullgör missionsbefallningen: ”Gå därför ut och gör alla folk till lärjungar: döp dem i Faderns och Sonens och den heliga Andens namn” (Matteus 28:19).",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "Bli bibellärare i AM",
+    "sentLinkMissionaries": "Bli missionär i AM",
+    "sentLinkStaff": "Heltidsmedarbetare på AM:s huvudkontor",
+    "roadmapHeroTitle": "Att växa på campus: en färdplan"
+  },
+  "Network": {
+    "breadcrumb": "Vårt nätverk",
+    "heading": "Vårt globala nätverk",
+    "joinChapter": "Gå med i en lokalgrupp",
+    "partnerWithUs": "Bli vår partner",
+    "exploreEyebrow": "Utforska världen",
+    "regionsHeading": "Regioner",
+    "regionsSubheading": "Utforska geografiskt",
+    "siteCount": "{count, plural, =1 {# webbplats} other {# webbplatser}}",
+    "communityEyebrow": "En världsomspännande gemenskap",
+    "chaptersHeading": "Lokalgrupper i olika städer och hörn av världen",
+    "chaptersSoon": "Lokalgrupper startar snart.",
+    "continentSubtitle": "AM:s landswebbplatser i {region}.",
+    "noSitesTitle": "Inga webbplatser i {region} ännu",
+    "noSitesBodyPrefix": "Vi bygger fortfarande upp AM:s närvaro i den här regionen. Titta in igen snart, eller",
+    "noSitesLink": "hör av dig",
+    "noSitesBodySuffix": "om du vill hjälpa till att starta en.",
+    "visitSite": "Besök webbplatsen",
+    "regions": {
+      "africa": "Afrika",
+      "asia": "Asien",
+      "europe": "Europa",
+      "northamerica": "Nordamerika",
+      "southamerica": "Latinamerika och Karibien",
+      "oceania": "Oceanien"
+    },
+    "map": {
+      "world": "Världen",
+      "loading": "Laddar…",
+      "zoomIn": "Zooma in",
+      "clear": "Rensa",
+      "worldHint": "För muspekaren över en punkt eller markera den för att se staden — välj en för att zooma in på dess region.",
+      "regionHint": "{count, plural, =1 {# lokalgrupp} other {# lokalgrupper}} i {region}. Välj en punkt för detaljer, eller återvänd till världskartan.",
+      "worldAria": "Världskarta med alla AM:s {count} lokalgrupper. Använd regionknapparna för att zooma in.",
+      "regionAria": "Karta över {region} med {count} lokalgrupper i AM.",
+      "captionSouthAsia": "Sydasien",
+      "captionEastCentralAsia": "Öst- och Centralasien",
+      "captionSoutheastAsia": "Sydostasien",
+      "hqBadge": "Huvudkontor",
+      "regionalHqBadge": "Regionkontor"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — den som sänds ut",
+      "headingLine1": "Där",
+      "headingWhere": "Jesu kärlek",
+      "headingWeAre": "flödar över",
+      "joinBibleStudy": "Var med i vårt bibelstudium",
+      "whoWeAre": "Vilka vi är",
+      "stat1Value": "2003",
+      "stat1Label": "Sänder ut sedan",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, USA",
+      "stat3Value": "Globalt",
+      "stat3Label": "Campusnätverk",
+      "dragToExplore": "Dra för att utforska"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Var med i vårt bibelstudieprogram",
+      "heading": "En väg i 5 faser, från första frågan till att bli utsänd.",
+      "description": "AM:s bibelstudieprogram i 5 faser är ett program för lärjungaskap och bibelundervisning online som leder studenter genom ett systematiskt lärande om Jesu Kristi evangelium och trons liv. Programmet för samman studenter med bibellärare som undervisar efter deltagarnas egna tider. Det avslutas med möjligheten att bli volontär, utbilda sig som studentmissionär eller helt enkelt gå djupare in i Guds ord tillsammans med AM.",
+      "cta": "Starta programmet"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Var med i ett bibelstudium",
+      "joinBibleStudyDescription": "Programmet för lärjungaskap och bibelundervisning online i 5 faser.",
+      "findCampusTitle": "Hitta ditt campus",
+      "findCampusDescription": "Vårt nätverk av lokalgrupper och gemenskaper.",
+      "getInvolvedTitle": "Engagera dig",
+      "getInvolvedDescription": "Ta kontakt, väx, led och bli utsänd med AM.",
+      "supportTitle": "Stötta uppdraget",
+      "supportDescription": "Ge, be och stå med studenter i fält."
+    },
+    "Ministries": {
+      "eyebrow": "Kontakt · Växt · Ledarskap · Utsändning",
+      "heading": "Fyra steg, och vi går varje steg tillsammans med dig.",
+      "getInvolved": "Engagera dig",
+      "learnMore": "Läs mer",
+      "connectTitle": "Ta kontakt med AM",
+      "connectDescription": "AM erbjuder olika bibelstudieprogram som ger näring åt vårt andliga liv och vår relation med Herren Jesus Kristus.",
+      "growTitle": "Väx med AM",
+      "growDescription": "Var med i våra gruppaktiviteter och mogna tillsammans i sanningens gemenskap. Våra gruppprogram ger varje student värdefulla erfarenheter för att få andlig styrka.",
+      "leadTitle": "Led med AM",
+      "leadDescription": "AM välkomnar gärna studenter som vill arbeta som volontärer och tjäna med sina gudagivna gåvor inom olika områden.",
+      "sentTitle": "Utsänd med AM",
+      "sentDescription": "AM fortsätter att vandra med dig tills din dyrbara kallelse att ”bli utsänd” fullbordas i ditt liv — även efter examen!",
+      "connectTag": "Kontakt",
+      "growTag": "Växt",
+      "leadTag": "Ledarskap",
+      "sentTag": "Utsändning"
+    },
+    "OurMission": {
+      "eyebrow": "Vårt uppdrag",
+      "statementPrefix": "Apostolos Missions uppdrag är att",
+      "statementEmphasis": "förkunna Jesus Kristus och honom som korsfäst",
+      "statementSuffix": "— och att bygga ett Kristuscentrerat nätverk av unga kristna för att mobilisera campusmission.",
+      "readFullStatement": "Läs hela uppdragsbeskrivningen",
+      "nameOrigin": "Namnet apostolos är det grekiska ordet för apostel. Det betyder ”den som sänds ut på ett uppdrag”.",
+      "history": "Det som började som en liten grupp brinnande unga studenter i Los Angeles i Kalifornien, som ville sprida evangeliet och göra Jesus känd, har blivit en global organisation som verkar på universitetscampus över hela världen.",
+      "ourHistory": "Vår historia"
+    },
+    "GetInvolved": {
+      "eyebrow": "Håll kontakten",
+      "heading": "Engagera dig",
+      "bibleStudies": "Bibelstudier",
+      "volunteer": "Volontärarbete",
+      "internship": "Praktik"
+    },
+    "Media": {
+      "eyebrow": "Media",
+      "heading": "Undervisning, vittnesbörd och Ordet.",
+      "moreContents": "Mer innehåll",
+      "playVideo": "Spela AM:s introduktionsfilm",
+      "post1Title": "Fyra andliga teman – Översikt",
+      "post2Title": "Vad är frälsning? | Sola Fide del 1 – AM Academy",
+      "post3Title": "Lärjungaskapets tid i sociala medier: att föra studenter närmare evangeliets verklighet",
+      "post4Title": "Guds löften för det nya året",
+      "post1Date": "5 januari 2026",
+      "post2Date": "27 juni 2023",
+      "post3Date": "3 juni 2022",
+      "post4Date": "2 januari 2022"
+    },
+    "Events": {
+      "eyebrow": "Evenemang",
+      "heading": "Där nätverket samlas.",
+      "allEvents": "Alla evenemang",
+      "event1Date": "4–5 april",
+      "event1Title": "Påskretreat",
+      "event2Date": "18 februari",
+      "event2Title": "Fastans 40 dagars vandring",
+      "event3Date": "16 januari",
+      "event3Title": "Möte för nya lokalgruppsledare"
+    },
+    "OurNetwork": {
+      "eyebrow": "Vårt nätverk",
+      "heading": "Kanske finns det redan en gemenskap på ditt campus.",
+      "description": "Sök på lärosäte eller stad. Om inget dyker upp nära dig är det en inbjudan — vi hjälper dig att starta en.",
+      "startChapter": "Starta en lokalgrupp",
+      "searchPlaceholder": "Sök lärosäte eller stad",
+      "noMatches": "Inga träffar ännu — hör av dig så hjälper vi dig att starta en."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Vår första hedersordförande",
+      "followingLegacy": "I arvet efter",
+      "name": "Dr Ralph D. Winter",
+      "quoteLine1": "Gå därför ut",
+      "quoteLine2": "och gör alla folk",
+      "quoteLine3": "till lärjungar…",
+      "quoteReference": "—Matteus 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Bli vår partner",
+      "heading": "Sänd ut någon du aldrig kommer att möta.",
+      "description": "Varje gåva gör bibelstudier, utbildning och en utsändande gemenskap tillgängliga för studenter som är redo att gå.",
+      "giveToday": "Ge en gåva idag",
+      "talkToUs": "Prata med oss"
+    },
+    "Newsletter": {
+      "heading": "Fältanteckningar från campus",
+      "description": "Ett kort månadsbrev: vad studenterna ser, vart AM är på väg härnäst och hur du kan be.",
+      "cta": "AM Academy"
+    }
+  }
+}
