@@ -89,9 +89,9 @@ export default async function VolunteerPage() {
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
-              "/images/get-involved-bible-studies.png",
-              "/images/get-involved-volunteer.png",
-              "/images/get-involved-internship.png",
+              "/images/get-involved-bible-studies.jpg",
+              "/images/get-involved-volunteer.jpg",
+              "/images/get-involved-internship.jpg",
             ].map((src) => (
               <div
                 key={src}

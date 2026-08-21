@@ -12,7 +12,7 @@ import { mediaUrl } from "@/lib/homeBlockTypes";
  * chosen photo cycle away.
  */
 const DEFAULT_SLIDES = [
-  "/images/hero-campus.png",
+  "/images/hero-campus.jpg",
   "/images/hero-slide-hikers.jpg",
   "/images/hero-slide-bible-study.jpg",
   "/images/hero-slide-campus.jpg",
