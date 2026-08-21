@@ -125,11 +125,11 @@ export default async function WhoWeArePage() {
       </article>
 
       <section className="bg-white pb-24">
-        <Container className="max-w-[720px]">
-          <div className="grid gap-6 sm:grid-cols-2">
+        <Container>
+          <div className="grid gap-6 lg:grid-cols-[802fr_448fr]">
             <TenantLink
               href="/about/statement-of-faith"
-              className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
+              className="group relative block h-[320px] overflow-hidden rounded-2xl lg:h-[400px]"
             >
               <Image
                 src="/images/about-statement-faith-card.jpg"
@@ -138,7 +138,8 @@ export default async function WhoWeArePage() {
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
                 sizes="(min-width: 640px) 50vw, 100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <div className="absolute inset-0 bg-[#0d328a]/60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
               <span className="absolute left-6 top-6 font-display text-lg font-bold text-white">
                 {t("cardStatementOfFaithTitle")}
               </span>
@@ -149,7 +150,7 @@ export default async function WhoWeArePage() {
             </TenantLink>
             <TenantLink
               href="/about/mission"
-              className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
+              className="group relative block h-[320px] overflow-hidden rounded-2xl lg:h-[400px]"
             >
               <Image
                 src="/images/about-mission-card.jpg"
@@ -158,7 +159,8 @@ export default async function WhoWeArePage() {
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
                 sizes="(min-width: 640px) 50vw, 100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <div className="absolute inset-0 bg-[#0d328a]/60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
               <span className="absolute left-6 top-6 font-display text-lg font-bold text-white">
                 {t("cardMissionStatementTitle")}
               </span>

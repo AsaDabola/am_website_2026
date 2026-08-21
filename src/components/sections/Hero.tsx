@@ -1,10 +1,22 @@
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
+import HeroSlides from "@/components/sections/HeroSlides";
 import type { HeroData } from "@/lib/homeBlockTypes";
 import { mediaUrl } from "@/lib/homeBlockTypes";
+
+/**
+ * Default rotation for the hero. An editor who sets a background image on the
+ * Hero block in the CMS gets that single image instead, rather than having a
+ * chosen photo cycle away.
+ */
+const DEFAULT_SLIDES = [
+  "/images/hero-campus.png",
+  "/images/hero-slide-hikers.jpg",
+  "/images/hero-slide-bible-study.jpg",
+  "/images/hero-slide-campus.jpg",
+];
 
 export default async function Hero({ data }: { data?: HeroData } = {}) {
   const t = await getTranslations("Home.Hero");
@@ -15,19 +27,13 @@ export default async function Hero({ data }: { data?: HeroData } = {}) {
     { value: data?.stat3?.value ?? t("stat3Value"), label: data?.stat3?.label ?? t("stat3Label") },
   ];
 
-  const backgroundImage = mediaUrl(data?.backgroundImage) ?? "/images/hero-campus.png";
+  const cmsBackground = mediaUrl(data?.backgroundImage);
+  const slides = cmsBackground ? [cmsBackground] : DEFAULT_SLIDES;
 
   return (
     <section className="relative overflow-hidden bg-night">
-      <Image
-        src={backgroundImage}
-        alt=""
-        fill
-        priority
-        className="object-cover opacity-90"
-        sizes="100vw"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-night/70 via-night/20 to-transparent" />
+      <HeroSlides images={slides} />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-night/70 via-night/20 to-transparent" />
 
       <Container className="relative flex min-h-[720px] flex-col justify-center py-24">
         <Eyebrow tone="light">{data?.eyebrow ?? t("eyebrow")}</Eyebrow>
