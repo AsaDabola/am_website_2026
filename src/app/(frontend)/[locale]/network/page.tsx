@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
+import { ArrowRightIcon } from "@/components/ui/icons";
 import PlaceholderPhoto from "@/components/ui/PlaceholderPhoto";
 import { Link } from "@/i18n/navigation";
-import AboutHero from "@/components/about/AboutHero";
+import NetworkMap from "@/components/network/NetworkMap";
+import TenantLink from "@/components/layout/TenantLink";
 import OurNetwork from "@/components/sections/OurNetwork";
 import { regions } from "@/lib/regions";
 import { getActiveTenantCountByContinent, getAllActiveTenantsByContinent } from "@/lib/tenants";
@@ -48,12 +50,43 @@ export default async function NetworkPage() {
 
   return (
     <>
-      <AboutHero
-        crumbs={[{ label: "Home", href: "/" }, { label: "Our Network" }]}
-        title="Our Network"
-        subtitle="Find AM's presence around the world, from campus chapters to country-wide ministries."
-        backgroundImage="/images/network-hero.jpg"
-      />
+      <section className="relative overflow-hidden bg-night py-16">
+        <Container className="relative">
+          <nav aria-label="Breadcrumb" className="text-[13px] text-on-dark/80">
+            <ol className="flex items-center gap-2">
+              <li>
+                <TenantLink href="/" className="hover:text-white">
+                  Home
+                </TenantLink>
+              </li>
+              <li className="opacity-50">/</li>
+              <li>Our Network</li>
+            </ol>
+          </nav>
+
+          <NetworkMap />
+
+          <h1 className="mt-10 text-center font-display text-[38px] font-extrabold uppercase leading-none tracking-[-0.02em] text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,0.9)] sm:text-[58px] lg:text-[72px]">
+            Our Global Network
+          </h1>
+
+          <div className="mt-9 flex flex-wrap justify-center gap-4">
+            <TenantLink
+              href="/get-involved/chapter-affiliation"
+              className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.04em] text-white transition-colors hover:bg-brand-navy"
+            >
+              Join a chapter
+              <ArrowRightIcon />
+            </TenantLink>
+            <TenantLink
+              href="/get-involved/donate"
+              className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.04em] text-white transition-colors hover:bg-white hover:text-ink"
+            >
+              Partner with us
+            </TenantLink>
+          </div>
+        </Container>
+      </section>
 
       <section className="bg-white py-24">
         <Container className="text-center">
