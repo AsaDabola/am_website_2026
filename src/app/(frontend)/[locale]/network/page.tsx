@@ -116,11 +116,11 @@ export default async function NetworkPage() {
                     to={region.to}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                  <span className="absolute bottom-5 left-0 right-0 text-center font-display text-xl font-bold text-white">
+                  <span className="absolute bottom-5 inset-x-0 text-center font-display text-xl font-bold text-white">
                     {t(`regions.${region.slug}`)}
                   </span>
                   {count > 0 && (
-                    <span className="absolute right-3 top-3 rounded-full bg-white/15 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+                    <span className="absolute end-3 top-3 rounded-full bg-white/15 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
                       {t("siteCount", { count })}
                     </span>
                   )}
@@ -140,7 +140,7 @@ export default async function NetworkPage() {
             {t("chaptersHeading")}
           </h2>
 
-          <div className="mt-14 grid gap-x-10 gap-y-12 text-left sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-x-10 gap-y-12 text-start sm:grid-cols-2 lg:grid-cols-4">
             <div className="border-t-2 border-black/10 pt-6">
               <h3 className="font-display text-base font-bold text-ink">
                 {t("regions.northamerica")}

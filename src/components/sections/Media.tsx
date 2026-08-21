@@ -62,7 +62,7 @@ export default async function Media({
       {/* Watermark geometry comes straight from the design: 817 x 363 at
           -6.116deg, overlapping the heading rather than tucked into the
           corner. */}
-      <SentSwooshWatermarkIcon className="pointer-events-none absolute left-[34%] top-16 hidden h-[363px] w-[817px] -rotate-[6.116deg] select-none text-white/20 lg:block" />
+      <SentSwooshWatermarkIcon className="pointer-events-none absolute start-[34%] top-16 hidden h-[363px] w-[817px] -rotate-[6.116deg] select-none text-white/20 lg:block" />
 
       <Container className="relative">
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-start">

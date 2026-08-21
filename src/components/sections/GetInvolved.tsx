@@ -49,10 +49,10 @@ export default async function GetInvolved({ data }: { data?: GetInvolvedData } =
                 sizes="(min-width: 768px) 33vw, 100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-              <span className="absolute bottom-6 left-6 font-display text-2xl font-bold text-white">
+              <span className="absolute bottom-6 start-6 font-display text-2xl font-bold text-white">
                 {card.title}
               </span>
-              <span className="absolute bottom-6 right-6 flex size-11 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm transition-colors group-hover:bg-white/25">
+              <span className="absolute bottom-6 end-6 flex size-11 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm transition-colors group-hover:bg-white/25">
                 <ArrowRightIcon />
               </span>
             </TenantLink>

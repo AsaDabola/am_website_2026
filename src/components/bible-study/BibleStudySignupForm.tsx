@@ -10,7 +10,7 @@ function Label({ children, required }: { children: string; required?: boolean })
   return (
     <label className="mb-1.5 block text-xs font-medium text-ink">
       {children}
-      {required && <span className="ml-0.5 text-brand-blue">*</span>}
+      {required && <span className="ms-0.5 text-brand-blue">*</span>}
     </label>
   );
 }

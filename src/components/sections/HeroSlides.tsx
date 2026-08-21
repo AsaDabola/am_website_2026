@@ -69,7 +69,7 @@ export default function HeroSlides({
       ))}
 
       {images.length > 1 && (
-        <div className="absolute bottom-8 right-6 z-20 flex gap-2.5 lg:right-10">
+        <div className="absolute bottom-8 end-6 z-20 flex gap-2.5 lg:end-10">
           {images.map((src, i) => (
             <button
               key={src}

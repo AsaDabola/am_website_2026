@@ -76,7 +76,7 @@ export const COUNTRY_SITES: CountrySite[] = [
   { country: "Mozambique", continent: "africa", slug: "mozambique", locale: "pt", countryCodes: ["MZ"], nativeLanguages: ["pt"], tier: "m40" },
   { country: "Zambia", city: "Lusaka", continent: "africa", slug: "zambia", locale: "en", countryCodes: ["ZM"], nativeLanguages: ["en"], tier: "m40" },
   { country: "Rwanda", continent: "africa", slug: "rwanda", locale: "en", countryCodes: ["RW"], nativeLanguages: ["rw", "en", "fr", "sw"], tier: "m40" },
-  { country: "Egypt", city: "Cairo", continent: "africa", slug: "egypt", locale: "en", countryCodes: ["EG"], nativeLanguages: ["ar"], tier: "m40" },
+  { country: "Egypt", city: "Cairo", continent: "africa", slug: "egypt", locale: "ar", countryCodes: ["EG"], nativeLanguages: ["ar"], tier: "m40" },
 
   { country: "Austria", continent: "europe", slug: "austria", locale: "de", countryCodes: ["AT"], nativeLanguages: ["de"], tier: "m40" },
   { country: "Belgium", continent: "europe", slug: "belgium", locale: "nl", countryCodes: ["BE"], nativeLanguages: ["nl", "fr", "de"], tier: "m40" },
@@ -101,11 +101,11 @@ export const COUNTRY_SITES: CountrySite[] = [
   { country: "Peru", city: "Lima", continent: "southamerica", slug: "peru", locale: "es", countryCodes: ["PE"], nativeLanguages: ["es"], tier: "m40" },
 
   { country: "Kazakhstan", continent: "asia", slug: "kazakhstan", locale: "ru", countryCodes: ["KZ"], nativeLanguages: ["kk", "ru"], tier: "m40" },
-  { country: "Israel", continent: "asia", slug: "israel", locale: "en", countryCodes: ["IL"], nativeLanguages: ["he", "ar"], tier: "m40" },
-  { country: "United Arab Emirates", continent: "asia", slug: "united-arab-emirates", locale: "en", countryCodes: ["AE"], nativeLanguages: ["ar"], tier: "m40" },
+  { country: "Israel", continent: "asia", slug: "israel", locale: "he", countryCodes: ["IL"], nativeLanguages: ["he", "ar"], tier: "m40" },
+  { country: "United Arab Emirates", continent: "asia", slug: "united-arab-emirates", locale: "ar", countryCodes: ["AE"], nativeLanguages: ["ar"], tier: "m40" },
   { country: "Bangladesh", continent: "asia", slug: "bangladesh", locale: "en", countryCodes: ["BD"], nativeLanguages: ["bn"], tier: "m40" },
   { country: "Nepal", continent: "asia", slug: "nepal", locale: "en", countryCodes: ["NP"], nativeLanguages: ["ne"], tier: "m40" },
-  { country: "Pakistan", continent: "asia", slug: "pakistan", locale: "en", countryCodes: ["PK"], nativeLanguages: ["ur", "en"], tier: "m40" },
+  { country: "Pakistan", continent: "asia", slug: "pakistan", locale: "ur", countryCodes: ["PK"], nativeLanguages: ["ur", "en"], tier: "m40" },
   // The sheet lists Malaysia as "ms" and Myanmar as "my" — those are the
   // language codes, not the country codes, and they are swapped relative to
   // ISO 3166. Corrected here: Malaysia is MY, Myanmar is MM.

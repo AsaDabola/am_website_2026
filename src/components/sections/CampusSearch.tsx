@@ -28,13 +28,13 @@ export default function CampusSearch({
   return (
     <div>
       <label className="relative block">
-        <SearchIcon className="pointer-events-none absolute left-4 top-1/2 size-[18px] -translate-y-1/2 text-white/70" />
+        <SearchIcon className="pointer-events-none absolute start-4 top-1/2 size-[18px] -translate-y-1/2 text-white/70" />
         <input
           type="text"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder={searchPlaceholder}
-          className="w-full rounded-full border border-white/25 bg-white/10 py-4 pl-12 pr-5 text-sm text-white placeholder:text-white/60 backdrop-blur-sm focus:border-white/50 focus:outline-none"
+          className="w-full rounded-full border border-white/25 bg-white/10 py-4 ps-12 pe-5 text-sm text-white placeholder:text-white/60 backdrop-blur-sm focus:border-white/50 focus:outline-none"
         />
       </label>
 

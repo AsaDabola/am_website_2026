@@ -51,7 +51,7 @@ export default async function ChapterAffiliationPage() {
             supporting the local chapter&rsquo;s operations and activities.
           </p>
 
-          <div className="mt-10 flex gap-3 rounded-lg border-l-4 border-[#f0a90a] bg-[#fdf6e7] px-5 py-4">
+          <div className="mt-10 flex gap-3 rounded-lg border-s-4 border-[#f0a90a] bg-[#fdf6e7] px-5 py-4">
             <span
               aria-hidden
               className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-[#f0a90a] text-[10px] font-bold text-white"

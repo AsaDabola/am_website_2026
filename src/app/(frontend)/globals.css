@@ -12,6 +12,33 @@
   --color-footer: #042273;
   --color-mist: #e8eef8;
   --color-on-dark: #e8eef8;
+  --font-body-stack: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display-stack: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Arabic and Hebrew have no glyphs in Inter or Archivo, so under those
+   locales the Noto face leads the stack and the Latin faces stay behind it to
+   cover the brand names and URLs that appear untranslated in the copy. Keyed
+   off `lang` rather than `dir` because the two are not the same question:
+   direction is about layout, this is about which glyphs exist. */
+:root:lang(ar),
+:root:lang(ur) {
+  --font-body-stack: var(--font-noto-arabic), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display-stack: var(--font-noto-arabic), var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root:lang(he) {
+  --font-body-stack: var(--font-noto-hebrew), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display-stack: var(--font-noto-hebrew), var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Archivo carries no Cyrillic or Greek. Inter does, so display headings in
+   Russian, Ukrainian and Greek fall back to it rather than to whatever the
+   system happens to offer. */
+:root:lang(ru),
+:root:lang(uk),
+:root:lang(el) {
+  --font-display-stack: var(--font-archivo), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 @theme inline {
@@ -25,8 +52,8 @@
   --color-footer: var(--color-footer);
   --color-mist: var(--color-mist);
   --color-on-dark: var(--color-on-dark);
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-archivo);
+  --font-sans: var(--font-body-stack);
+  --font-display: var(--font-display-stack);
   --font-lato: var(--font-lato);
 }
 

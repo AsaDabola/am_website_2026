@@ -2,9 +2,13 @@ type IconProps = {
   className?: string;
 };
 
+// Arrows and chevrons point along the reading direction, so they are mirrored
+// under `dir="rtl"`. Handled on the icons themselves rather than at the dozens
+// of call sites that use them.
+
 export function ArrowRightIcon({ className = "size-4" }: IconProps) {
   return (
-    <svg viewBox="0 0 16 16" fill="none" className={className} aria-hidden="true">
+    <svg viewBox="0 0 16 16" fill="none" className={`rtl:-scale-x-100 ${className}`} aria-hidden="true">
       <path
         d="M3.333 8h9.334M8.667 3.667 13 8l-4.333 4.333"
         stroke="currentColor"
@@ -54,7 +58,7 @@ export function SentSwooshWatermarkIcon({ className = "h-[173.5px] w-[391px]" }:
 
 export function ChevronRightIcon({ className = "size-4" }: IconProps) {
   return (
-    <svg viewBox="0 0 16 16" fill="none" className={className} aria-hidden="true">
+    <svg viewBox="0 0 16 16" fill="none" className={`rtl:-scale-x-100 ${className}`} aria-hidden="true">
       <path
         d="m6 3.5 4.5 4.5L6 12.5"
         stroke="currentColor"
@@ -68,7 +72,7 @@ export function ChevronRightIcon({ className = "size-4" }: IconProps) {
 
 export function ArrowLeftIcon({ className = "size-5" }: IconProps) {
   return (
-    <svg viewBox="0 0 16 16" fill="none" className={className} aria-hidden="true">
+    <svg viewBox="0 0 16 16" fill="none" className={`rtl:-scale-x-100 ${className}`} aria-hidden="true">
       <path
         d="M12.667 8H3.333M7.333 12.333 3 8l4.333-4.333"
         stroke="currentColor"

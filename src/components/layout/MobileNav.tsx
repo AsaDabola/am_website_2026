@@ -167,7 +167,7 @@ export default function MobileNav({
               <li key={menu.key}>
                 <button
                   onClick={() => setActiveKey(menu.key)}
-                  className="flex w-full items-center justify-between gap-4 py-5 text-left"
+                  className="flex w-full items-center justify-between gap-4 py-5 text-start"
                 >
                   <span className="font-display text-2xl font-bold text-ink">
                     {menu.label}

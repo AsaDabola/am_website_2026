@@ -147,7 +147,7 @@ export default async function AdministrationPage() {
             Christ.
           </p>
 
-          <div className="mt-14 grid gap-x-10 gap-y-10 text-left sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-x-10 gap-y-10 text-start sm:grid-cols-2 lg:grid-cols-3">
             {departments.map((dept) => (
               <div key={dept.title} className="border-t-2 border-black/10 pt-6">
                 <h3 className="font-display text-base font-bold text-ink">{dept.title}</h3>

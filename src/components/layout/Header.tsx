@@ -123,7 +123,7 @@ export default async function Header() {
           <LanguageSwitcher />
           <TenantLink
             href="/get-involved/donate"
-            className="ml-2 hidden rounded-full bg-brand-navy px-6 py-3 text-sm font-semibold uppercase tracking-[0.04em] text-white hover:bg-brand-navy-light sm:inline-flex"
+            className="ms-2 hidden rounded-full bg-brand-navy px-6 py-3 text-sm font-semibold uppercase tracking-[0.04em] text-white hover:bg-brand-navy-light sm:inline-flex"
           >
             {t("give")}
           </TenantLink>

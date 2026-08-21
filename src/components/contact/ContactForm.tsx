@@ -70,7 +70,7 @@ export default function ContactForm() {
         </div>
         <div className="mt-4">
           <label className="mb-1.5 block text-xs font-medium text-ink">
-            Subject<span className="ml-0.5 text-brand-blue">*</span>
+            Subject<span className="ms-0.5 text-brand-blue">*</span>
           </label>
           <input name="subject" required placeholder="What's this about?" className={inputClass} />
         </div>

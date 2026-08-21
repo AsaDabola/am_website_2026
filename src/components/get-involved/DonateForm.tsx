@@ -89,7 +89,7 @@ export default function DonateForm() {
             Or enter a custom amount
           </label>
           <div className="relative">
-            <span className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-sm text-ink-muted">
+            <span className="pointer-events-none absolute start-3.5 top-1/2 -translate-y-1/2 text-sm text-ink-muted">
               $
             </span>
             <input
@@ -98,7 +98,7 @@ export default function DonateForm() {
               placeholder="Enter amount"
               value={customAmount}
               onChange={(event) => setCustomAmount(event.target.value)}
-              className={`${inputClass} pl-7`}
+              className={`${inputClass} ps-7`}
             />
           </div>
         </div>

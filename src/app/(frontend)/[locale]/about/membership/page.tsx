@@ -131,10 +131,10 @@ export default async function MembershipPage() {
               />
               <div className="absolute inset-0 bg-[#0d328a]/60" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
-              <span className="absolute left-6 top-6 font-display text-lg font-bold text-white">
+              <span className="absolute start-6 top-6 font-display text-lg font-bold text-white">
                 {t("cardStatementOfFaithTitle")}
               </span>
-              <span className="absolute bottom-6 left-6 inline-flex items-center gap-2 rounded-full bg-brand-blue px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.04em] text-white">
+              <span className="absolute bottom-6 start-6 inline-flex items-center gap-2 rounded-full bg-brand-blue px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.04em] text-white">
                 {tCommon("learnMore")}
                 <ArrowRightIcon />
               </span>
@@ -152,10 +152,10 @@ export default async function MembershipPage() {
               />
               <div className="absolute inset-0 bg-[#0d328a]/60" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
-              <span className="absolute left-6 top-6 font-display text-lg font-bold text-white">
+              <span className="absolute start-6 top-6 font-display text-lg font-bold text-white">
                 {t("cardMissionStatementTitle")}
               </span>
-              <span className="absolute bottom-6 left-6 inline-flex items-center gap-2 rounded-full bg-brand-blue px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.04em] text-white">
+              <span className="absolute bottom-6 start-6 inline-flex items-center gap-2 rounded-full bg-brand-blue px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.04em] text-white">
                 {tCommon("learnMore")}
                 <ArrowRightIcon />
               </span>

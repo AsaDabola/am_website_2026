@@ -50,7 +50,7 @@ export default async function HonoraryChairman({
             </Heading>
           </div>
 
-          <div className="flex flex-col items-start gap-1.5 lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:-mt-[65px] lg:gap-[10px] lg:pl-[104px]">
+          <div className="flex flex-col items-start gap-1.5 lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:-mt-[65px] lg:gap-[10px] lg:ps-[104px]">
             {quoteLines.map((line, index) => (
               <span
                 key={line}
@@ -58,7 +58,7 @@ export default async function HonoraryChairman({
               >
                 {line}
                 {index === quoteLines.length - 1 && (
-                  <span className="ml-2 text-[0.5em] font-bold tracking-normal">
+                  <span className="ms-2 text-[0.5em] font-bold tracking-normal">
                     {quoteReference}
                   </span>
                 )}

@@ -31,6 +31,9 @@ export const locales = [
   "hu",
   "ro",
   "sv",
+  "ar",
+  "he",
+  "ur",
 ] as const;
 
 export type Locale = (typeof locales)[number];
@@ -59,7 +62,21 @@ export const localeLabels: Record<Locale, string> = {
   hu: "Magyar",
   ro: "Română",
   sv: "Svenska",
+  ar: "العربية",
+  he: "עברית",
+  ur: "اردو",
 };
+
+/**
+ * Locales written right to left. Everything else is left to right, so this is
+ * a list rather than a full map — adding an RTL locale means adding it here
+ * *and* to `locales` above, or the page will lay out backwards.
+ */
+const RTL_LOCALES = new Set<string>(["ar", "he", "ur"]);
+
+export function directionOf(locale: string): "ltr" | "rtl" {
+  return RTL_LOCALES.has(locale) ? "rtl" : "ltr";
+}
 
 export const routing = defineRouting({
   locales,

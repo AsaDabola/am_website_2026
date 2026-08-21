@@ -53,7 +53,7 @@ export default async function NewsListPage({
           </h1>
 
           {posts.length > 0 ? (
-            <div className="mt-14 grid gap-8 text-left sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-14 grid gap-8 text-start sm:grid-cols-2 lg:grid-cols-3">
               {posts.map((post) => (
                 <ArticleCard
                   key={post.id}

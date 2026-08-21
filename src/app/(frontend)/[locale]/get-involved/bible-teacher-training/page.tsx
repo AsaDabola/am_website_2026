@@ -96,12 +96,12 @@ export default async function BibleTeacherTrainingPage() {
             Steps to Become Bible Teacher
           </h2>
 
-          <div className="mt-14 grid gap-10 text-left sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-10 text-start sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step) => (
               <div key={step.number} className="relative border-t-2 border-black/10 pt-6">
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute right-0 top-2 select-none font-display text-6xl font-bold text-ink/5"
+                  className="pointer-events-none absolute end-0 top-2 select-none font-display text-6xl font-bold text-ink/5"
                 >
                   {step.number}
                 </span>

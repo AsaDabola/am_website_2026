@@ -10,7 +10,7 @@ function Label({ children, required }: { children: string; required?: boolean })
   return (
     <label className="mb-1.5 block text-xs font-medium text-ink">
       {children}
-      {required && <span className="ml-0.5 text-brand-blue">*</span>}
+      {required && <span className="ms-0.5 text-brand-blue">*</span>}
     </label>
   );
 }
@@ -210,7 +210,7 @@ export default function VolunteerApplicationForm() {
           obligation to the participant. By completing and submitting this form to Apostolos
           Missions International you understand and agree to the following:
         </p>
-        <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-ink-muted">
+        <ul className="mt-3 list-disc space-y-1.5 ps-5 text-sm leading-relaxed text-ink-muted">
           <li>
             I will conduct all volunteer activities with high standards and professionalism, and
             will do nothing to cause detriment to the reputation or goodwill of Apostolos Missions
@@ -224,7 +224,7 @@ export default function VolunteerApplicationForm() {
         </ul>
         <p className="mt-4 text-sm font-semibold text-ink">By My Signature Below, I:</p>
         <p className="mt-2 text-sm leading-relaxed text-ink-muted">Understand:</p>
-        <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-ink-muted">
+        <ul className="mt-2 list-disc space-y-1.5 ps-5 text-sm leading-relaxed text-ink-muted">
           <li>
             That Apostolos Missions International is an equal-opportunity employer and does not
             discriminate on the basis of any protected classification (race, gender, national
@@ -236,7 +236,7 @@ export default function VolunteerApplicationForm() {
           </li>
         </ul>
         <p className="mt-2 text-sm leading-relaxed text-ink-muted">Agree to:</p>
-        <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-ink-muted">
+        <ul className="mt-2 list-disc space-y-1.5 ps-5 text-sm leading-relaxed text-ink-muted">
           <li>Furnish the following background information (see next section).</li>
         </ul>
       </div>

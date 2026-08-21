@@ -163,7 +163,7 @@ export default async function PillarsOfMissionPage() {
             {tPractice("heading")}
           </h2>
 
-          <div className="mt-14 grid gap-8 text-left sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-8 text-start sm:grid-cols-2 lg:grid-cols-4">
             {overview.map((item) => (
               <div key={item.tag} className="border-t-2 border-black/10 pt-6">
                 <h3 className="font-display text-base font-bold text-ink">{item.tag}</h3>

@@ -27,7 +27,7 @@ export default function HistoryTimeline({ milestones }: { milestones: Milestone[
       {/* Rail */}
       <div
         aria-hidden
-        className="absolute bottom-3 left-[7px] top-3 w-0.5 rounded-full bg-brand-blue/15"
+        className="absolute bottom-3 start-[7px] top-3 w-0.5 rounded-full bg-brand-blue/15"
       >
         <div
           className="w-full rounded-full bg-brand-blue transition-[height] duration-500 ease-out motion-reduce:transition-none"
@@ -41,10 +41,10 @@ export default function HistoryTimeline({ milestones }: { milestones: Milestone[
           const isPast = index <= openIndex;
 
           return (
-            <li key={item.tag} className="relative pl-10">
+            <li key={item.tag} className="relative ps-10">
               <span
                 aria-hidden
-                className={`absolute left-0 top-[15px] size-4 rounded-full border-2 transition-colors duration-300 ${
+                className={`absolute start-0 top-[15px] size-4 rounded-full border-2 transition-colors duration-300 ${
                   isPast
                     ? "border-brand-blue bg-brand-blue"
                     : "border-brand-blue/30 bg-white"
@@ -57,7 +57,7 @@ export default function HistoryTimeline({ milestones }: { milestones: Milestone[
                   onClick={() => setOpenIndex(index)}
                   aria-expanded={isOpen}
                   aria-controls={`milestone-panel-${index}`}
-                  className="group w-full rounded-lg py-3 text-left transition-colors"
+                  className="group w-full rounded-lg py-3 text-start transition-colors"
                 >
                   <span
                     className={`block text-xs font-semibold uppercase tracking-[0.15em] transition-colors ${

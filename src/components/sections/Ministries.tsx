@@ -143,14 +143,14 @@ export default async function Ministries({ data }: { data?: MinistriesData } = {
                       className="object-cover"
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                     />
-                    <span className="absolute left-3 top-3 rounded-md bg-black/40 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+                    <span className="absolute start-3 top-3 rounded-md bg-black/40 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
                       {step.tag}
                     </span>
                   </>
                 ) : (
                   <>
                     <PlaceholderPhoto className="absolute inset-0" from={step.from} to={step.to} />
-                    <span className="absolute left-3 top-3 rounded-md bg-black/25 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+                    <span className="absolute start-3 top-3 rounded-md bg-black/25 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
                       {step.tag}
                     </span>
                     <span

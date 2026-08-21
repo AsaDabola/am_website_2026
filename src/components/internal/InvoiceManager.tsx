@@ -181,7 +181,7 @@ export default function InvoiceManager({
       <div>
         <h2 className="font-display text-xl font-semibold text-ink">Invoices</h2>
         <div className="mt-4 overflow-x-auto rounded-2xl border border-black/10 bg-white">
-          <table className="w-full min-w-[640px] text-left text-sm">
+          <table className="w-full min-w-[640px] text-start text-sm">
             <thead>
               <tr className="border-b border-black/10 text-xs uppercase tracking-wide text-ink-muted">
                 <th className="px-4 py-3">Partner</th>

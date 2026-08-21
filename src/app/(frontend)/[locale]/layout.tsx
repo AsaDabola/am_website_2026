@@ -2,23 +2,41 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import { Archivo, Inter, Lato } from "next/font/google";
+import { Archivo, Inter, Lato, Noto_Sans_Arabic, Noto_Sans_Hebrew } from "next/font/google";
 import "../globals.css";
-import { routing } from "@/i18n/routing";
+import { routing, directionOf } from "@/i18n/routing";
 import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CountrySuggestionBanner from "@/components/layout/CountrySuggestionBanner";
 
+// Subsets have to cover every script the site ships in, or the browser
+// silently falls back to a system font mid-page. Inter carries Latin, Cyrillic
+// and Greek; Archivo has no Cyrillic or Greek, so the display face falls back
+// for Russian, Ukrainian and Greek headings. Arabic and Hebrew have no
+// coverage in either, hence the Noto faces below.
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext", "cyrillic", "greek", "vietnamese"],
 });
 
 const archivo = Archivo({
   variable: "--font-archivo",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext", "vietnamese"],
   weight: ["500", "600", "700", "800"],
+});
+
+// Arabic, Hebrew and Urdu. Urdu is conventionally set in Nastaliq, but that
+// script needs far more vertical room than this layout gives a line, so it
+// gets the same naskh face as Arabic — readable, and it fits the design.
+const notoArabic = Noto_Sans_Arabic({
+  variable: "--font-noto-arabic",
+  subsets: ["arabic"],
+});
+
+const notoHebrew = Noto_Sans_Hebrew({
+  variable: "--font-noto-hebrew",
+  subsets: ["hebrew"],
 });
 
 // The "Following the Legacy of" line in the Ralph D. Winter banner is
@@ -58,7 +76,8 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${archivo.variable} ${lato.variable} h-full antialiased`}
+      dir={directionOf(locale)}
+      className={`${inter.variable} ${archivo.variable} ${lato.variable} ${notoArabic.variable} ${notoHebrew.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white font-sans text-ink">
         <NextIntlClientProvider>

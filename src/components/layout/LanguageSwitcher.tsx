@@ -35,7 +35,7 @@ export default function LanguageSwitcher({ dark = false }: { dark?: boolean }) {
       </button>
 
       {open && (
-        <ul className="absolute right-0 top-full z-50 mt-2 w-40 rounded-xl border border-black/5 bg-white p-1.5 text-ink shadow-xl">
+        <ul className="absolute end-0 top-full z-50 mt-2 w-40 rounded-xl border border-black/5 bg-white p-1.5 text-ink shadow-xl">
           {locales.map((code) => (
             <li key={code}>
               <button
@@ -45,7 +45,7 @@ export default function LanguageSwitcher({ dark = false }: { dark?: boolean }) {
                   router.replace(pathname, { locale: code });
                   setOpen(false);
                 }}
-                className={`flex w-full items-center rounded-lg px-3 py-2 text-left text-sm hover:bg-mist ${
+                className={`flex w-full items-center rounded-lg px-3 py-2 text-start text-sm hover:bg-mist ${
                   code === locale ? "font-semibold text-brand-navy" : "text-ink"
                 }`}
               >

@@ -30,7 +30,7 @@ function Label({
   return (
     <label className="mb-1.5 block text-xs font-medium text-ink">
       {children}
-      {required && <span className="ml-0.5 text-brand-blue">*</span>}
+      {required && <span className="ms-0.5 text-brand-blue">*</span>}
     </label>
   );
 }
@@ -51,7 +51,7 @@ function FileField({
       <Label required={required}>{label}</Label>
       <label className="flex cursor-pointer items-center justify-between rounded-lg border border-dashed border-black/15 bg-mist px-3.5 py-3 text-sm text-ink-muted transition-colors hover:border-brand-blue">
         <span className="truncate">{file ? file.name : "Choose file…"}</span>
-        <span className="ml-3 shrink-0 text-xs font-semibold uppercase tracking-[0.08em] text-brand-blue">
+        <span className="ms-3 shrink-0 text-xs font-semibold uppercase tracking-[0.08em] text-brand-blue">
           Browse
         </span>
         <input
@@ -710,7 +710,7 @@ export default function ChapterAffiliationForm() {
                     {rows.map(([label, value]) => (
                       <div key={label} className="flex justify-between gap-4">
                         <dt className="text-ink-muted">{label}</dt>
-                        <dd className="text-right text-ink">{value || "—"}</dd>
+                        <dd className="text-end text-ink">{value || "—"}</dd>
                       </div>
                     ))}
                   </dl>

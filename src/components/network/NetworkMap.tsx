@@ -62,6 +62,16 @@ const STARS = Array.from({ length: 90 }, (_, i) => {
 });
 
 /**
+ * Wraps Latin text in a Unicode bidi isolate so it keeps its own order inside
+ * a right-to-left line. Without it the Arabic HQ label renders as
+ * "Trenton, \u0627\u0644\u0645\u0642\u0631" with the "NJ" adrift, because the whole
+ * <text> run is reordered together.
+ */
+function isolate(text: string) {
+  return `\u2068${text}\u2069`;
+}
+
+/**
  * Roughly half the width of a marker's label, in viewBox units. Approximated
  * from the glyph metrics rather than measured, which is all the label
  * declutter below needs.
@@ -432,7 +442,7 @@ export default function NetworkMap() {
                       fontSize={isGlobal ? 8.5 : isRegional ? 8 : 7}
                       fontWeight={isGlobal || isRegional || isActive ? 700 : 500}
                     >
-                      {isGlobal ? `${t("map.hqBadge")} · ${chapter.city}, NJ` : chapter.city}
+                      {isGlobal ? `${t("map.hqBadge")} · ${isolate(`${chapter.city}, NJ`)}` : chapter.city}
                     </text>
                   )}
                   <circle cx={chapter.x} cy={chapter.y} r={9} fill="transparent" />
@@ -451,7 +461,7 @@ export default function NetworkMap() {
                 {selectedChapter.city}
                 {selectedChapter.role && (
                   <span
-                    className={`ml-2 rounded-full px-2 py-0.5 align-middle text-[10px] font-bold uppercase tracking-[0.08em] text-night ${
+                    className={`ms-2 rounded-full px-2 py-0.5 align-middle text-[10px] font-bold uppercase tracking-[0.08em] text-night ${
                       selectedChapter.role === "global" ? "bg-[#ffb457]" : "bg-white"
                     }`}
                   >
