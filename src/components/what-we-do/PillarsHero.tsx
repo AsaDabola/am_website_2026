@@ -50,11 +50,8 @@ export default function PillarsHero({
 }) {
   return (
     <section className="relative overflow-hidden bg-night">
-      {/* Placeholder photo: the design's own background (AdobeStock_279126842)
-          could not be exported from Figma here, so this reuses an existing
-          project image until the original is supplied. */}
       <Image
-        src="/images/about-hero-banner.jpg"
+        src="/images/pillars-hero.jpg"
         alt=""
         fill
         priority
@@ -64,6 +61,9 @@ export default function PillarsHero({
       {/* The band sits over the lower part of the same photo, so the scrim is
           anchored to the bottom rather than covering the whole image. */}
       <div className="absolute inset-x-0 bottom-0 h-[72%] bg-gradient-to-t from-night via-night/90 to-transparent" />
+      {/* The sky in this photo is very bright, so the outlined title and
+          breadcrumbs need their own scrim to stay readable. */}
+      <div className="absolute inset-x-0 top-0 h-[42%] bg-gradient-to-b from-night/55 to-transparent" />
 
       <Container className="relative flex min-h-[720px] flex-col py-14 lg:min-h-[860px]">
         <nav aria-label="Breadcrumb" className="text-[13px] text-on-dark/90">
