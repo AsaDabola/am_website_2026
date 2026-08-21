@@ -1,7 +1,4 @@
-import { WORLD_VIEWBOX } from "./worldDots";
-
-/** Longitude the generated dot map is rotated by; markers must match it. */
-const ROTATION = 100;
+import type { MapView } from "./mapViews/types";
 
 export type Chapter = {
   city: string;
@@ -31,19 +28,22 @@ export const REGION_LABELS: Record<RegionKey, string> = {
 };
 
 /**
- * Projects a coordinate into the dot map's viewbox. The generated map uses a
- * plain equirectangular projection fitted to the full sphere, so this is the
- * same transform d3 applied at build time — kept as arithmetic so no
- * projection library reaches the browser.
+ * Projects a coordinate into a given view's viewbox.
+ *
+ * Every view uses d3's equirectangular projection, which is linear in
+ * longitude and latitude, so reproducing it here is arithmetic — no
+ * projection library needs to reach the browser. Mirrors
+ * scripts/generate-map-views.mjs.
  */
-export function projectToMap(lat: number, lng: number): { x: number; y: number } {
-  let rotated = lng + ROTATION;
+export function projectForView(lat: number, lng: number, view: MapView): { x: number; y: number } {
+  let rotated = lng + view.rotate;
   while (rotated > 180) rotated -= 360;
   while (rotated < -180) rotated += 360;
 
+  const toRad = Math.PI / 180;
   return {
-    x: ((rotated + 180) / 360) * WORLD_VIEWBOX.width,
-    y: ((90 - lat) / 180) * WORLD_VIEWBOX.height,
+    x: view.translate[0] + view.scale * rotated * toRad,
+    y: view.translate[1] - view.scale * lat * toRad,
   };
 }
 

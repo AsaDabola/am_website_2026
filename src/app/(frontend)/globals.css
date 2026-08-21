@@ -39,3 +39,53 @@ body {
      "embossed" text on large display headings, so it's disabled globally. */
   font-synthesis: none;
 }
+
+/* Network map animations. Kept here rather than inline so the keyframes are
+   declared once, and so they can be switched off wholesale for anyone who has
+   asked for reduced motion. */
+@keyframes am-map-flow {
+  to {
+    stroke-dashoffset: -420;
+  }
+}
+@keyframes am-map-pulse {
+  0% {
+    r: 3;
+    stroke-opacity: 0.9;
+  }
+  100% {
+    r: 20;
+    stroke-opacity: 0;
+  }
+}
+@keyframes am-map-twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.am-map-flow {
+  stroke-dasharray: 5 415;
+  animation: am-map-flow 7s linear infinite;
+}
+.am-map-pulse {
+  animation: am-map-pulse 2.8s ease-out infinite;
+}
+.am-map-twinkle {
+  animation: am-map-twinkle 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .am-map-flow,
+  .am-map-pulse,
+  .am-map-twinkle {
+    animation: none;
+  }
+  .am-map-flow {
+    stroke-dasharray: none;
+  }
+}
