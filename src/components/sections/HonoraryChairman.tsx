@@ -5,7 +5,12 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import type { HonoraryChairmanData } from "@/lib/homeBlockTypes";
 import { mediaUrl } from "@/lib/homeBlockTypes";
 
-export default async function HonoraryChairman({ data }: { data?: HonoraryChairmanData } = {}) {
+export default async function HonoraryChairman({
+  data,
+  // On the chairman page this band is the hero, so the name is the page's
+  // top-level heading rather than a section heading on the home page.
+  headingLevel: Heading = "h2",
+}: { data?: HonoraryChairmanData; headingLevel?: "h1" | "h2" } = {}) {
   const t = await getTranslations("Home.HonoraryChairman");
   const name = data?.name ?? t("name");
   const image = mediaUrl(data?.image) ?? "/images/honorary-chairman.png";
@@ -40,9 +45,9 @@ export default async function HonoraryChairman({ data }: { data?: HonoraryChairm
             <p className="font-lato text-lg font-light italic leading-[1.35] tracking-[0.01em] text-white/70 lg:mt-[55px] lg:text-[30px]">
               {data?.followingLegacy ?? t("followingLegacy")}
             </p>
-            <h2 className="mt-2 font-display text-4xl font-extrabold tracking-[-0.03em] text-white sm:text-5xl lg:mt-3 lg:text-[79px] lg:leading-[99.3px] lg:tracking-[-0.0563em]">
+            <Heading className="mt-2 font-display text-4xl font-extrabold tracking-[-0.03em] text-white sm:text-5xl lg:mt-3 lg:text-[79px] lg:leading-[99.3px] lg:tracking-[-0.0563em]">
               {name}
-            </h2>
+            </Heading>
           </div>
 
           <div className="flex flex-col items-start gap-1.5 lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:-mt-[65px] lg:gap-[10px] lg:pl-[104px]">

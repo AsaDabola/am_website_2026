@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
-import AboutHero from "@/components/about/AboutHero";
 import AboutSubNav from "@/components/about/AboutSubNav";
+import HonoraryChairman from "@/components/sections/HonoraryChairman";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 
@@ -15,17 +15,11 @@ export const metadata: Metadata = {
 export default function ChairmanPage() {
   return (
     <>
-      <AboutHero
-        crumbs={[
-          { label: "Home", href: "/" },
-          { label: "About", href: "/about" },
-          { label: "Ralph D. Winter" },
-        ]}
-        title="Ralph D. Winter"
-        subtitle="AM's first honorary chairman, and the missiology the ministry still carries forward."
-        backgroundImage="/images/chairman-hero.jpg"
-      />
+      {/* The design leads this page with the same dark legacy band the home
+          page uses, rather than a photo hero. The section tabs sit above it,
+          matching the other About pages. */}
       <AboutSubNav active="/about/chairman" />
+      <HonoraryChairman headingLevel="h1" />
 
       <article className="bg-white py-20">
         <Container>
