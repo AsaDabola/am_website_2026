@@ -169,6 +169,46 @@
     "photoNews": "Notícias em fotos",
     "testimony": "Testemunho"
   },
+  "Network": {
+    "breadcrumb": "Nossa rede",
+    "heading": "Nossa rede global",
+    "joinChapter": "Participe de um capítulo",
+    "partnerWithUs": "Seja nosso parceiro",
+    "exploreEyebrow": "Explore o mundo",
+    "regionsHeading": "Regiões",
+    "regionsSubheading": "Explore por região",
+    "siteCount": "{count, plural, =1 {# site} other {# sites}}",
+    "communityEyebrow": "Uma comunidade mundial",
+    "chaptersHeading": "Capítulos em cidades e cantos diversos do mundo",
+    "chaptersSoon": "Capítulos em breve.",
+    "continentSubtitle": "Sites nacionais da AM em {region}.",
+    "noSitesTitle": "Ainda não há sites em {region}",
+    "noSitesBodyPrefix": "Ainda estamos construindo a presença da AM nesta região. Volte em breve ou",
+    "noSitesLink": "fale conosco",
+    "noSitesBodySuffix": "se quiser ajudar a iniciar um.",
+    "visitSite": "Visitar o site",
+    "regions": {
+      "africa": "África",
+      "asia": "Ásia",
+      "europe": "Europa",
+      "northamerica": "América do Norte",
+      "southamerica": "América Latina e Caribe",
+      "oceania": "Oceania"
+    },
+    "map": {
+      "world": "Mundo",
+      "loading": "Carregando…",
+      "zoomIn": "Aproximar",
+      "clear": "Limpar",
+      "worldHint": "Passe o cursor ou selecione um ponto para ver a cidade — escolha um para aproximar a região.",
+      "regionHint": "{count, plural, =1 {# capítulo} other {# capítulos}} em {region}. Selecione um ponto para ver detalhes ou volte ao mapa mundial.",
+      "worldAria": "Mapa mundial com os {count} capítulos da AM. Use os botões de região para aproximar.",
+      "regionAria": "Mapa de {region} com {count} capítulos da AM.",
+      "captionSouthAsia": "Ásia do Sul",
+      "captionEastCentralAsia": "Ásia Oriental e Central",
+      "captionSoutheastAsia": "Sudeste Asiático"
+    }
+  },
   "Home": {
     "Hero": {
       "eyebrow": "Apostolos — aquele que é enviado",

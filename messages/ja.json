@@ -169,6 +169,46 @@
     "photoNews": "フォトニュース",
     "testimony": "証し"
   },
+  "Network": {
+    "breadcrumb": "ネットワーク",
+    "heading": "世界のネットワーク",
+    "joinChapter": "チャプターに参加する",
+    "partnerWithUs": "共に歩む",
+    "exploreEyebrow": "世界を見わたす",
+    "regionsHeading": "地域",
+    "regionsSubheading": "地域から探す",
+    "siteCount": "{count, plural, other {# サイト}}",
+    "communityEyebrow": "世界に広がる共同体",
+    "chaptersHeading": "世界各地の都市と地域にあるチャプター",
+    "chaptersSoon": "チャプターは間もなく始まります。",
+    "continentSubtitle": "{region}のAM国別サイト。",
+    "noSitesTitle": "{region}にはまだサイトがありません",
+    "noSitesBodyPrefix": "この地域でのAMの働きは現在準備中です。またお越しいただくか、立ち上げにご協力いただける方は",
+    "noSitesLink": "ご連絡ください",
+    "noSitesBodySuffix": "。",
+    "visitSite": "サイトを見る",
+    "regions": {
+      "africa": "アフリカ",
+      "asia": "アジア",
+      "europe": "ヨーロッパ",
+      "northamerica": "北アメリカ",
+      "southamerica": "ラテンアメリカ・カリブ",
+      "oceania": "オセアニア"
+    },
+    "map": {
+      "world": "世界",
+      "loading": "読み込み中…",
+      "zoomIn": "拡大",
+      "clear": "解除",
+      "worldHint": "点にカーソルを合わせるかフォーカスすると都市が表示され、選ぶとその地域に拡大します。",
+      "regionHint": "{region}に {count} のチャプターがあります。点を選ぶと詳細が表示され、世界地図に戻ることもできます。",
+      "worldAria": "AMの全 {count} チャプターを示す世界地図です。地域ボタンで拡大できます。",
+      "regionAria": "AMの {count} チャプターを示す{region}の地図です。",
+      "captionSouthAsia": "南アジア",
+      "captionEastCentralAsia": "東アジア・中央アジア",
+      "captionSoutheastAsia": "東南アジア"
+    }
+  },
   "Home": {
     "Hero": {
       "eyebrow": "Apostolos — 遣わされた者",

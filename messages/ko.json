@@ -169,6 +169,46 @@
     "photoNews": "포토 뉴스",
     "testimony": "간증"
   },
+  "Network": {
+    "breadcrumb": "네트워크",
+    "heading": "전 세계 네트워크",
+    "joinChapter": "챕터 참여하기",
+    "partnerWithUs": "함께 동역하기",
+    "exploreEyebrow": "세계를 둘러보기",
+    "regionsHeading": "지역",
+    "regionsSubheading": "지역별로 살펴보기",
+    "siteCount": "{count, plural, other {사이트 #곳}}",
+    "communityEyebrow": "전 세계의 공동체",
+    "chaptersHeading": "세계 곳곳의 도시와 지역에 있는 챕터들",
+    "chaptersSoon": "곧 챕터가 시작됩니다.",
+    "continentSubtitle": "{region}의 AM 국가 사이트입니다.",
+    "noSitesTitle": "{region}에는 아직 사이트가 없습니다",
+    "noSitesBodyPrefix": "이 지역에서 AM의 사역을 아직 세워 가는 중입니다. 곧 다시 방문해 주시거나, 함께 시작하고 싶으시다면",
+    "noSitesLink": "문의해 주세요",
+    "noSitesBodySuffix": ".",
+    "visitSite": "사이트 방문",
+    "regions": {
+      "africa": "아프리카",
+      "asia": "아시아",
+      "europe": "유럽",
+      "northamerica": "북아메리카",
+      "southamerica": "라틴아메리카·카리브해",
+      "oceania": "오세아니아"
+    },
+    "map": {
+      "world": "전 세계",
+      "loading": "불러오는 중…",
+      "zoomIn": "확대",
+      "clear": "지우기",
+      "worldHint": "점 위에 마우스를 올리거나 포커스하면 도시가 표시되며, 선택하면 해당 지역으로 확대됩니다.",
+      "regionHint": "{region}에 챕터 {count}곳이 있습니다. 점을 선택하면 자세히 볼 수 있고, 세계 지도로 돌아갈 수도 있습니다.",
+      "worldAria": "AM 챕터 {count}곳을 모두 표시한 세계 지도입니다. 지역 버튼으로 확대할 수 있습니다.",
+      "regionAria": "AM 챕터 {count}곳을 표시한 {region} 지도입니다.",
+      "captionSouthAsia": "남아시아",
+      "captionEastCentralAsia": "동아시아·중앙아시아",
+      "captionSoutheastAsia": "동남아시아"
+    }
+  },
   "Home": {
     "Hero": {
       "eyebrow": "Apostolos — 보냄받은 자",

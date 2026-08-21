@@ -169,6 +169,46 @@
     "photoNews": "Noticias fotográficas",
     "testimony": "Testimonio"
   },
+  "Network": {
+    "breadcrumb": "Nuestra red",
+    "heading": "Nuestra red mundial",
+    "joinChapter": "Únete a un capítulo",
+    "partnerWithUs": "Colabora con nosotros",
+    "exploreEyebrow": "Explora el mundo",
+    "regionsHeading": "Regiones",
+    "regionsSubheading": "Explora por zonas",
+    "siteCount": "{count, plural, =1 {# sitio} other {# sitios}}",
+    "communityEyebrow": "Una comunidad mundial",
+    "chaptersHeading": "Capítulos en ciudades y rincones diversos del mundo",
+    "chaptersSoon": "Capítulos próximamente.",
+    "continentSubtitle": "Sitios nacionales de AM en {region}.",
+    "noSitesTitle": "Todavía no hay sitios en {region}",
+    "noSitesBodyPrefix": "Seguimos construyendo la presencia de AM en esta región. Vuelve pronto o",
+    "noSitesLink": "escríbenos",
+    "noSitesBodySuffix": "si quieres ayudar a iniciar uno.",
+    "visitSite": "Visitar el sitio",
+    "regions": {
+      "africa": "África",
+      "asia": "Asia",
+      "europe": "Europa",
+      "northamerica": "América del Norte",
+      "southamerica": "América Latina y el Caribe",
+      "oceania": "Oceanía"
+    },
+    "map": {
+      "world": "Mundo",
+      "loading": "Cargando…",
+      "zoomIn": "Acercar",
+      "clear": "Borrar",
+      "worldHint": "Pasa el cursor o enfoca un punto para ver la ciudad; selecciona uno para acercarte a su región.",
+      "regionHint": "{count, plural, =1 {# capítulo} other {# capítulos}} en {region}. Selecciona un punto para ver el detalle o vuelve al mapa mundial.",
+      "worldAria": "Mapa mundial con los {count} capítulos de AM. Usa los botones de región para acercarte.",
+      "regionAria": "Mapa de {region} con {count} capítulos de AM.",
+      "captionSouthAsia": "Asia meridional",
+      "captionEastCentralAsia": "Asia oriental y central",
+      "captionSoutheastAsia": "Sudeste asiático"
+    }
+  },
   "Home": {
     "Hero": {
       "eyebrow": "Apostolos — uno que es enviado",

@@ -169,6 +169,46 @@
     "photoNews": "图片新闻",
     "testimony": "见证"
   },
+  "Network": {
+    "breadcrumb": "我们的网络",
+    "heading": "我们的全球网络",
+    "joinChapter": "加入分会",
+    "partnerWithUs": "与我们同工",
+    "exploreEyebrow": "探索世界",
+    "regionsHeading": "地区",
+    "regionsSubheading": "按地区浏览",
+    "siteCount": "{count, plural, other {# 个站点}}",
+    "communityEyebrow": "遍布世界的群体",
+    "chaptersHeading": "分布在世界各地城市与角落的分会",
+    "chaptersSoon": "分会即将成立。",
+    "continentSubtitle": "AM 在{region}的国家站点。",
+    "noSitesTitle": "{region}尚无站点",
+    "noSitesBodyPrefix": "我们仍在这一地区建立 AM 的事工。请稍后再来，或者如果您愿意帮助开创，欢迎",
+    "noSitesLink": "与我们联系",
+    "noSitesBodySuffix": "。",
+    "visitSite": "访问站点",
+    "regions": {
+      "africa": "非洲",
+      "asia": "亚洲",
+      "europe": "欧洲",
+      "northamerica": "北美洲",
+      "southamerica": "拉丁美洲与加勒比地区",
+      "oceania": "大洋洲"
+    },
+    "map": {
+      "world": "全球",
+      "loading": "加载中…",
+      "zoomIn": "放大",
+      "clear": "清除",
+      "worldHint": "将鼠标移到或聚焦某个点即可查看城市，选中后可放大到该地区。",
+      "regionHint": "{region}共有 {count} 个分会。选择一个点查看详情，或返回世界地图。",
+      "worldAria": "显示 AM 全部 {count} 个分会的世界地图。可使用地区按钮放大。",
+      "regionAria": "显示 {count} 个 AM 分会的{region}地图。",
+      "captionSouthAsia": "南亚",
+      "captionEastCentralAsia": "东亚与中亚",
+      "captionSoutheastAsia": "东南亚"
+    }
+  },
   "Home": {
     "Hero": {
       "eyebrow": "Apostolos — 受差遣的人",

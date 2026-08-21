@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import { Link } from "@/i18n/navigation";
 import AboutHero from "@/components/about/AboutHero";
@@ -13,8 +14,9 @@ type Props = { params: Promise<{ continent: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { continent } = await params;
-  const region = regions.find((r) => r.slug === continent);
-  return { title: region ? `${region.label} | AM Network` : "AM Network" };
+  if (!isContinent(continent)) return { title: "AM Network" };
+  const t = await getTranslations("Network");
+  return { title: `${t(`regions.${continent}`)} | AM Network` };
 }
 
 export default async function ContinentPage({ params }: Props) {
@@ -24,18 +26,23 @@ export default async function ContinentPage({ params }: Props) {
   const region = regions.find((r) => r.slug === continent);
   if (!region) notFound();
 
-  const tenants = await getTenantsByContinent(continent);
+  const [t, common, tenants] = await Promise.all([
+    getTranslations("Network"),
+    getTranslations("Common"),
+    getTenantsByContinent(continent),
+  ]);
+  const label = t(`regions.${continent}`);
 
   return (
     <>
       <AboutHero
         crumbs={[
-          { label: "Home", href: "/" },
-          { label: "Our Network", href: "/network" },
-          { label: region.label },
+          { label: common("home"), href: "/" },
+          { label: t("breadcrumb"), href: "/network" },
+          { label },
         ]}
-        title={region.label}
-        subtitle={`AM country sites across ${region.label}.`}
+        title={label}
+        subtitle={t("continentSubtitle", { region: label })}
       />
 
       <section className="bg-white py-24">
@@ -43,15 +50,14 @@ export default async function ContinentPage({ params }: Props) {
           {tenants.length === 0 ? (
             <div className="rounded-2xl bg-mist p-10 text-center">
               <p className="font-display text-xl font-semibold text-ink">
-                No {region.label} sites yet
+                {t("noSitesTitle", { region: label })}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-                We&rsquo;re still building out AM&rsquo;s presence in this region. Check back
-                soon, or{" "}
+                {t("noSitesBodyPrefix")}{" "}
                 <Link href="/contact" className="text-brand-blue underline underline-offset-2">
-                  get in touch
+                  {t("noSitesLink")}
                 </Link>{" "}
-                if you&rsquo;d like to help start one.
+                {t("noSitesBodySuffix")}
               </p>
             </div>
           ) : (
@@ -65,7 +71,7 @@ export default async function ContinentPage({ params }: Props) {
                     <span className="font-display text-lg font-semibold text-ink">
                       {tenant.country}
                     </span>
-                    <span className="text-sm text-brand-blue">Visit site →</span>
+                    <span className="text-sm text-brand-blue">{t("visitSite")} →</span>
                   </Link>
                 </li>
               ))}

@@ -1,0 +1,431 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Bir görevle gönderilen kişi",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Biz Kimiz",
+    "whatWeDo": "Ne Yapıyoruz",
+    "getInvolved": "Katılın",
+    "connect": "Bağlantı Kurun",
+    "ourNetwork": "Ağımız",
+    "news": "Haberler",
+    "contactUs": "Bize Ulaşın",
+    "give": "Bağış Yapın",
+    "toggleNav": "Gezinme menüsünü aç veya kapat",
+    "whoWeAreMenu": {
+      "whoWeAre": "Biz kimiz",
+      "ourMission": "Misyonumuz",
+      "statementOfFaith": "İman açıklamamız",
+      "history": "Tarihçe",
+      "ourFirstChairmen": "İlk başkanlarımız",
+      "membership": "Üyelik",
+      "ourLeadership": "Yönetimimiz"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Misyonumuzun temelleri",
+      "administration": "Yönetim",
+      "bibleStudyProgram": "Kutsal Kitap Çalışma Programı",
+      "fourSpiritualThemes": "Dört Ruhsal Tema",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Hizmetlerimiz"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Kutsal Kitap çalışmaları",
+      "groupActivities": "Grup etkinlikleri",
+      "volunteer": "Gönüllülük",
+      "bibleTeacherTraining": "Kutsal Kitap öğretmeni eğitimi",
+      "internship": "Staj",
+      "donate": "Bağış yapın",
+      "onlineBibleStudy": "Çevrimiçi Kutsal Kitap çalışması",
+      "chapterAffiliation": "Şube bağlantısı"
+    },
+    "newsMenu": {
+      "featured": "Öne çıkanlar",
+      "events": "Etkinlikler",
+      "editorial": "Yazılar",
+      "photoNews": "Foto haber",
+      "testimony": "Tanıklıklar"
+    },
+    "megaMenu": {
+      "aboutHeading": "Hakkımızda",
+      "whatWeDoHeading": "Ne yapıyoruz",
+      "featuredHeading": "Öne çıkan yazılar",
+      "allArticles": "Tüm yazılar",
+      "ctaBibleStudy": "Kutsal Kitap çalışmasına başlayın",
+      "ctaFindChapter": "Şubenizi bulun",
+      "ctaGive": "Bugün bağış yapın"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "AM Hakkında",
+        "description": "Kim olduğumuz, neye inandığımız ve nereden geldiğimiz."
+      },
+      "leadership": {
+        "title": "Yönetim",
+        "description": "Harekete hizmet eden kişiler ve nasıl aramıza katılabileceğiniz."
+      },
+      "whatWeDo": {
+        "title": "Ne Yapıyoruz",
+        "description": "Misyonu ileri taşıyan temeller ve hizmetler."
+      },
+      "bibleStudy": {
+        "title": "Kutsal Kitap Çalışma Programı",
+        "description": "İlk sorunuzdan gönderilmeye uzanan beş aşamalı bir yol."
+      },
+      "getInvolved": {
+        "title": "Katılın",
+        "description": "Nerede olursanız olun, hareket içinde yerinizi bulun."
+      },
+      "supportMission": {
+        "title": "Hizmet Edin ve Destekleyin",
+        "description": "Eğitim alın, bir şube kurun ya da sahadaki öğrencilerle ortak olun."
+      },
+      "latestNews": {
+        "title": "Son Haberler",
+        "description": "Ağın her yerinden hikâyeler ve güncellemeler."
+      },
+      "events": {
+        "title": "Etkinlikler",
+        "description": "Yakınınızdaki kamplar, konferanslar ve buluşmalar."
+      }
+    },
+    "mobile": {
+      "back": "Geri",
+      "close": "Menüyü kapat",
+      "menu": "Menü"
+    }
+  },
+  "Footer": {
+    "tagline": "Rab'bin sonsuz sevgisine tanıklık ederek Müjde'yi dünyanın dört bir yanına ulaştırmaya adanmış, mezhepler üstü bir hizmet.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, ABD",
+    "email": "info@amintl.org",
+    "whoWeAre": "Biz kimiz",
+    "whatWeDo": "Ne yapıyoruz",
+    "getInvolved": "Katılın",
+    "media": "Medya",
+    "aboutAM": "AM Hakkında",
+    "missionStatement": "Misyon bildirisi",
+    "statementOfFaith": "İman açıklaması",
+    "ourHistory": "Tarihçemiz",
+    "leadership": "Yönetim",
+    "bibleStudyProgram": "Kutsal Kitap Çalışma Programı",
+    "fourSpiritualThemes": "Dört Ruhsal Tema",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Hizmetlerimiz",
+    "connectGrowLeadSent": "Bağlan, Büyü, Önder Ol, Gönderil",
+    "chapterAffiliation": "Şube bağlantısı",
+    "ourNetwork": "Ağımız",
+    "events": "Etkinlikler",
+    "give": "Bağış yapın",
+    "news": "Haberler",
+    "legacyOfChairman": "Ralph D. Winter'ın mirası",
+    "contactUs": "Bize ulaşın",
+    "copyright": "© 2026 Apostolos Missions International. Tüm hakları saklıdır.",
+    "contact": "İletişim"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "Dil"
+  },
+  "Common": {
+    "tagline": "Rab'bin sonsuz sevgisine tanıklık ederek Müjde'yi dünyanın dört bir yanına ulaştırmaya adanmış, mezhepler üstü bir hizmet.",
+    "learnMore": "Daha fazla bilgi",
+    "readMore": "Devamını oku",
+    "clickHere": "Buraya tıklayın",
+    "home": "Ana sayfa"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Biz kimiz",
+    "missionStatement": "Misyon bildirisi",
+    "statementOfFaith": "İman açıklaması",
+    "history": "Tarihçe",
+    "ourFirstChairman": "İlk başkanımız",
+    "membership": "Üyelik",
+    "leadership": "Yönetim"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Misyonumuzun Temelleri",
+    "administration": "Yönetim"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Perşembe Kutsal Kitap Çalışması",
+    "bibleStudies": "Kutsal Kitap Çalışmaları",
+    "groupActivities": "Grup Etkinlikleri",
+    "volunteer": "Gönüllülük",
+    "chapterStaff": "Şube Ekibi",
+    "bibleTeacherTraining": "Kutsal Kitap Öğretmeni Eğitimi",
+    "internship": "Staj",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Bağış Yapın"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Öne Çıkan Haberler",
+    "events": "Etkinlikler",
+    "editorial": "Yazılar",
+    "photoNews": "Foto Haber",
+    "testimony": "Tanıklıklar"
+  },
+  "InPractice": {
+    "eyebrow": "Uygulamada",
+    "heading": "Gittiğimiz her yerde yaptığımız dört şey.",
+    "bibleStudyTag": "Kutsal Kitap çalışması",
+    "bibleStudyDescription": "Kutsal Yazılar'ı kampüs yaşamının merkezine koyan küçük ve büyük grup çalışmaları.",
+    "leadershipTrainingTag": "Önderlik eğitimi",
+    "leadershipTrainingDescription": "Öğrenciler önce akranlarına önderlik etmek, sonra da bir sonraki grubu göndermek üzere yetiştirilir.",
+    "onlineEducationTag": "Çevrimiçi eğitim",
+    "onlineEducationDescription": "Kutsal Yazılar, misyonoloji ve kültürler arası hizmet üzerine AM Academy dersleri.",
+    "internshipsTripsTag": "Stajlar ve geziler",
+    "internshipsTripsDescription": "Eğitimi uygulamaya dönüştüren kısa süreli misyon çalışmaları ve stajlar."
+  },
+  "AboutPage": {
+    "heroTitle": "Baba beni gönderdiği gibi, ben de sizi gönderiyorum.",
+    "breadcrumb": "Hakkımızda",
+    "paragraph1": "Apostolos Missions International (AM), Rab'bin sonsuz sevgisine tanıklık ederek Müjde'yi dünyanın dört bir yanına ulaştırmaya adanmış, mezhepler üstü bir hizmettir.",
+    "paragraph2Prefix": "Adımız olan",
+    "paragraph2": "(ἀπόστολος) sözcüğü Grekçede \"elçi\" anlamına gelir. \"Bir görevle gönderilen kişi\" ya da \"haberci\" demektir. \"Elçi\" unvanı Yeni Antlaşma'da çoğu kez İsa'nın seçtiği On İki öğrenciyi anlatmak için geçer (Matta 10:2, Markos 3:14, Luka 6:13, Elçilerin İşleri 2:42). Bir zamanlar Hristiyanlığa zulmederken Müjde'nin büyük bir habercisi olan Pavlus, kendisini \"elçi\" olarak tanıtmıştır (Romalılar 1:1, 1. Korintliler 1:1, 2. Korintliler 1:1, Galatyalılar 1:1, Koloseliler 1:1, 1. Timoteos 1:1, 2. Timoteos 1:1, Titus).",
+    "paragraph3": "Elçiler, tüm yaratılışa \"İsa Mesih'i duyurma ve Tanrı'yı tanıtma\" görevini yerine getirmek üzere Rab tarafından gönderilenlerdir. Elçiliğin Kutsal Kitap'taki temeli, ilk elçileri seçip onları ulusları temsil etmeye gönderilen birer büyükelçi gibi yollayan Rab'bin sözlerinde bulunur. Elçiler, yaşamlarının artık yalnızca kendilerine ait olmadığını; bu düşmüş dünyada Mesih'in yüceliğini göstermek için yaşadıklarını anlamışlardı.",
+    "blockquote": "Yuhanna 20:21 şöyle der: \"İsa yine onlara, 'Size esenlik olsun!' dedi. 'Baba beni gönderdiği gibi, ben de sizi gönderiyorum.'\"",
+    "paragraph4": "AM, Tanrı'nın Sözü'nü duyurma göreviyle yaşayan elçilerin geleneğini sürdürmek ister. Her birimiz de Tanrı'dan, O'nun elleri ve ayakları olarak dünyaya gönderilme çağrısını alırız. Yaşamlarımızı İsa'nın izinden gitmeye ve Müjde'yi dünyanın dört bir yanına duyurmaya adamak istiyoruz.",
+    "paragraph5": "Yaşamlarımız Rab tarafından dokunulup değiştirildiği gibi, bize gösterilen Rab sevgisini de göstermek; O'nun kaybolmuş çocukları ve kardeşlerimiz için bir işaret ışığı olmak istiyoruz.",
+    "readStatementOfFaith": "İman açıklamamızı okuyun",
+    "or": "ya da",
+    "traceHistory": "tarihçemizi izleyin",
+    "cardStatementOfFaithTitle": "İman açıklamamızı okuyun",
+    "cardMissionStatementTitle": "Misyon Bildirisi"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "AM Yol Haritası",
+    "roadmapHeading": "Sizi ne bekliyor?",
+    "connectTag": "Bağlan",
+    "connectItems": [
+      "Yüz yüze/çevrimiçi Kutsal Kitap",
+      "Çalışma programları"
+    ],
+    "growTag": "Büyü",
+    "growItems": [
+      "Grup etkinlikleri"
+    ],
+    "leadTag": "Önder Ol",
+    "leadItems": [
+      "Gönüllülük ve stajlar",
+      "Şube önderleri"
+    ],
+    "sentTag": "Gönderil",
+    "sentItems": [
+      "Alumni Connect",
+      "Yarı/tam zamanlı misyoner personel",
+      "Kutsal Kitap öğretmenleri"
+    ],
+    "connectHeading": "Bağlan",
+    "connectStep1Title": "1. Sitelerimize abone olun",
+    "connectStep1Body": "AM ile bağlantı kurmanın pek çok yolu var. Ana sitemiz www.amintl.org adresine abone olup bültenlerimizi alabilirsiniz. Ya da çevrimiçi Kutsal Kitap okulumuzun sitesi www.amacademy.org adresine abone olup en yeni haberleri ve programları takip edebilirsiniz. Vizyonumuzu, etkinliklerimizi ve programlarımızı sitelerimizden özgürce inceleyin; sorularınız olursa istediğiniz zaman bize yazın.",
+    "connectStep2Title": "2. Ekibimizle tanışmak için kaydolun",
+    "connectStep2BodyPrefix": "Ekibimizden biriyle konuşmak ve ruhsal yolculuğunuzda rehberlik almak isterseniz",
+    "connectStep2SignUp": "buradan kaydolun",
+    "connectStep2BodySuffix": ". Randevu oluşturabilir ya da doğrudan ekibimizle iletişime geçebilirsiniz. Ekip üyelerimizin çoğu kampüs yaşamını bizzat deneyimlemiştir ve öğrencilerin karşılaştığı ortamları iyi bilir. İman yolculuğunuz için en uygun rotayı bulmanıza yardımcı olacaklar.",
+    "connectStep3Title": "3. Kutsal Kitap çalışmasına kaydolun",
+    "connectStep3BodyPrefix": "Kutsal Kitap çalışma programımıza başlamaya hazırsanız,",
+    "connectStep3SignUp": "bu sayfadan",
+    "connectStep3BodySuffix": "kaydolun. Size uygun bir program bulamazsanız, tercih ettiğiniz ders ve saati belirterek istek formunu gönderin!",
+    "connectStep4Title": "4. Yerel şubenizle bağlantı kurun",
+    "connectStep4BodyPrefix": "Yerel şube ofisimiz ve ekibimizle bağlantı kurmak isterseniz lütfen",
+    "connectStep4ContactHere": "buradan bize yazın",
+    "connectStep4BodySuffix": ". Sizinle yakında tanışmayı dört gözle bekliyoruz!",
+    "growHeading": "Büyü",
+    "growIntro": "Çocuklukta farklı evrelerden geçerek büyüyüp olgunlaştığımız gibi, ruhsal olgunlukta da önemli dönüm noktalarına ulaşırız. AM, öğrencilere ruhsal büyümenin bu üç temel evresinde eşlik etmek için tasarlanmış pek çok program ve rota sunar:",
+    "rebornTitle": "1. Yeniden doğuş",
+    "rebornBody": "İsa'nın çarmıhtaki kefaret kurbanı aracılığıyla yeniden doğarız.",
+    "matureTitle": "1. Olgunlaşma",
+    "matureBody": "İsa'dan gelen sevgi ve gerçekle beslenerek ruhsal olarak büyür ve olgunlaşırız.",
+    "fruitfulTitle": "1. Verimlilik",
+    "fruitfulBody": "Mesih İsa ile olgun birliğimizde gerçekleşen Tanrı'nın bereketi aracılığıyla yaşamın verimliliğini deneyimleriz.",
+    "navigatingTitle": "Kampüs yaşamında yön bulmak",
+    "navigatingBody": "Kampüs yaşamı heyecan verici ve doyurucudur; ama bu kadar çok seçenek arasında yönsüz de hissettirebilir. AM, gerçek ve dua aracılığıyla Tanrı'nın isteğini ayırt etmenize ve olağanüstü yaşamınız için net bir yön bulmanıza yardımcı olur.",
+    "nextStepsTitle": "Sonraki adımlar",
+    "nextStepsBody": "Programlarımıza katılmayı sürdürün: Söz'ü işitmek, birlikte dua etmek, iman kardeşlerinizle paydaşlık kurmak ve Müjde'de büyürken hizmet etmek için sunulan pek çok fırsattan yararlanın.",
+    "leadHeading": "Önder Ol",
+    "leadStep1Title": "1. Mesih'in sevgisinde hizmet etmek",
+    "leadStep1Body": "Büyüdükçe, İsa'ya gelmek için yardıma ihtiyacı olanlara hizmet etmeyi arzularız. Hizmet ettikçe de Mesih'in sevgisinde daha derin biçimde büyürüz.",
+    "leadStep2Title": "2. Önderliğin bereketi",
+    "leadStep2Body": "İsa, \"Vermek, almaktan daha büyük mutluluktur\" dedi (Elçilerin İşleri 20:35). Başkalarına önderlik etmek ve yol göstermek bilgelik, dua, özveri ve sabır ister. Yine de burası, çarmıhın yüceliğinin doruğa ulaştığı bereketli bir yerdir.",
+    "leadStep3Title": "3. Önderliğin bereketi",
+    "leadStep3Body": "Üniversite öğrencileri hâlâ genç olsa da, üstün armağanlar ve yetenekler önderlik görevlerinde çok daha güçlü biçimde keşfedilip geliştirilebilir. Her öğrencinin hizmet etme ve önderlik etmenin lütuf dolu deneyimiyle göksel armağanlarını sınayıp doğruladığı güzel bir süreçtir bu.",
+    "leadStep4Title": "4. AM ile fırsatlar",
+    "leadStep4Body": "AM, öğrencilerin hizmete ve önderliğe katılması için çeşitli fırsatlar ve görevler sunar. Gönüllü ekibimize, şube ekibimize ve önderlerimize, Kutsal Kitap öğretmenlerimize ve daha pek çoğuna katılın. İsa'nın kusursuz tasarısına göre içinize ne ektiğini keşfedin.",
+    "sentHeading": "Gönderil",
+    "sentParagraph1": "Üniversiteden mezuniyet, keşfetmemiz için ardına kadar açık bir dünyaya doğru önemli bir yolculuğun daha başlangıcıdır. Kimimiz eğitimini sürdürecek ya da bir kariyer yolu seçecek. Kimimiz de Tanrı'nın çağrısını izleyerek AM'de tam zamanlı personel, misyoner ya da hizmetli olacak.",
+    "sentParagraph2": "Bu kritik adımda AM, Alumni Connect aracılığıyla bağlantıda kalmanızı ve Müjde misyonuna hizmet etmeyi sürdürmenizi sağlayan programlar sunar. AM ayrıca AM World Mission bünyesinde profesyonel misyon çalışanı ve personel olmak için eğitim programları ve rotalar sağlar.",
+    "sentParagraph3": "Aydınlık bir geleceğe doğru önünüzde pek çok seçenek var. AM, Büyük Görev'i birlikte yerine getirmek üzere her bireyle yakından yürümek ister: \"Bu nedenle gidin, bütün ulusları öğrencilerim olarak yetiştirin; onları Baba, Oğul ve Kutsal Ruh'un adıyla vaftiz edin\" (Matta 28:19).",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "AM Kutsal Kitap öğretmeni olun",
+    "sentLinkMissionaries": "AM misyoneri olun",
+    "sentLinkStaff": "AM merkezinde tam zamanlı görev",
+    "roadmapHeroTitle": "Kampüste Büyümek: Bir Yol Haritası"
+  },
+  "Network": {
+    "breadcrumb": "Ağımız",
+    "heading": "Küresel Ağımız",
+    "joinChapter": "Bir şubeye katılın",
+    "partnerWithUs": "Bizimle ortak olun",
+    "exploreEyebrow": "Dünyayı keşfedin",
+    "regionsHeading": "Bölgeler",
+    "regionsSubheading": "Coğrafi olarak keşfedin",
+    "siteCount": "{count, plural, other {# site}}",
+    "communityEyebrow": "Dünya çapında bir topluluk",
+    "chaptersHeading": "Dünyanın dört bir yanındaki şehirlerde ve köşelerde şubeler",
+    "chaptersSoon": "Şubeler yakında açılıyor.",
+    "continentSubtitle": "{region} bölgesindeki AM ülke siteleri.",
+    "noSitesTitle": "{region} bölgesinde henüz site yok",
+    "noSitesBodyPrefix": "Bu bölgede AM'in varlığını hâlâ oluşturuyoruz. Yakında tekrar uğrayın ya da bir tane açmamıza yardım etmek isterseniz",
+    "noSitesLink": "bize ulaşın",
+    "noSitesBodySuffix": ".",
+    "visitSite": "Siteyi ziyaret edin",
+    "regions": {
+      "africa": "Afrika",
+      "asia": "Asya",
+      "europe": "Avrupa",
+      "northamerica": "Kuzey Amerika",
+      "southamerica": "Latin Amerika ve Karayipler",
+      "oceania": "Okyanusya"
+    },
+    "map": {
+      "world": "Dünya",
+      "loading": "Yükleniyor…",
+      "zoomIn": "Yakınlaştır",
+      "clear": "Temizle",
+      "worldHint": "Bir noktanın üzerine gelin ya da odaklanın; şehir görünür, seçtiğinizde o bölgeye yakınlaşır.",
+      "regionHint": "{region} bölgesinde {count} şube var. Ayrıntı için bir nokta seçin ya da dünya haritasına dönün.",
+      "worldAria": "AM'in {count} şubesinin tümünü gösteren dünya haritası. Yakınlaştırmak için bölge düğmelerini kullanın.",
+      "regionAria": "{count} AM şubesini gösteren {region} haritası.",
+      "captionSouthAsia": "Güney Asya",
+      "captionEastCentralAsia": "Doğu ve Orta Asya",
+      "captionSoutheastAsia": "Güneydoğu Asya"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — gönderilen kişi",
+      "headingLine1": "İsa'nın",
+      "headingWhere": "sevgisinin",
+      "headingWeAre": "taştığı yer",
+      "joinBibleStudy": "Kutsal Kitap çalışmamıza katılın",
+      "whoWeAre": "Biz kimiz",
+      "stat1Value": "2003",
+      "stat1Label": "Bu tarihten beri gönderiyoruz",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, ABD",
+      "stat3Value": "Küresel",
+      "stat3Label": "Kampüs ağı",
+      "dragToExplore": "Keşfetmek için sürükleyin"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Kutsal Kitap Çalışma Programımıza katılın",
+      "heading": "İlk sorudan gönderilmeye uzanan 5 aşamalı bir yol.",
+      "description": "AM'in 5 aşamalı Kutsal Kitap Çalışma Programı, öğrencileri İsa Mesih'in Müjdesi'ni ve iman yaşamını düzenli bir akış içinde öğrenmeye yönlendiren çevrimiçi bir öğrencilik ve Kutsal Kitap eğitimi programıdır. Program, öğrencileri dinleyicinin programına göre ders veren Kutsal Kitap öğretmenleriyle bir araya getirir. Gönüllü olma, öğrenci misyoner olarak yetişme ya da AM ile birlikte Tanrı'nın Sözü'ne daha derinden dalma fırsatıyla taçlanır.",
+      "cta": "Programa başlayın"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Bir Kutsal Kitap çalışmasına katılın",
+      "joinBibleStudyDescription": "5 aşamalı çevrimiçi öğrencilik ve Kutsal Kitap eğitimi programı.",
+      "findCampusTitle": "Kampüsünüzü bulun",
+      "findCampusDescription": "Şubelerimizden ve topluluklarımızdan oluşan ağımız.",
+      "getInvolvedTitle": "Katılın",
+      "getInvolvedDescription": "AM ile bağlanın, büyüyün, önder olun ve gönderilin.",
+      "supportTitle": "Misyonu destekleyin",
+      "supportDescription": "Bağış yapın, dua edin ve sahadaki öğrencilerle ortak olun."
+    },
+    "Ministries": {
+      "eyebrow": "Bağlan · Büyü · Önder Ol · Gönderil",
+      "heading": "Dört adım ve her birini sizinle birlikte yürüyoruz.",
+      "getInvolved": "Katılın",
+      "learnMore": "Daha fazla bilgi",
+      "connectTitle": "AM ile bağlantı kurun",
+      "connectDescription": "AM, ruhsal yaşamımızı ve Rab İsa Mesih'le ilişkimizi besleyen çeşitli Kutsal Kitap çalışma programları sunar.",
+      "growTitle": "AM ile büyüyün",
+      "growDescription": "Grup etkinliklerimize katılın ve gerçeğin paydaşlığında birlikte olgunlaşın. Grup programlarımız, her öğrencinin ruhsal güç kazanması için nitelikli deneyimler sunar.",
+      "leadTitle": "AM ile önder olun",
+      "leadDescription": "AM, Tanrı vergisi yetenekleriyle çeşitli bölümlerde gönüllü olarak hizmet etmek isteyen öğrencileri sevinçle karşılar.",
+      "sentTitle": "AM ile gönderilin",
+      "sentDescription": "AM, \"gönderilme\" gibi değerli çağrınız yaşamınızda gerçekleşene dek, mezuniyetinizden sonra bile sizinle birlikte yürümeyi sürdürecek!",
+      "connectTag": "Bağlan",
+      "growTag": "Büyü",
+      "leadTag": "Önder Ol",
+      "sentTag": "Gönderil"
+    },
+    "OurMission": {
+      "eyebrow": "Misyonumuz",
+      "statementPrefix": "Apostolos Missions'ın misyonu,",
+      "statementEmphasis": "İsa Mesih'i ve çarmıha gerilmiş olan O'nu duyurmak",
+      "statementSuffix": "— kampüs misyonunun harekete geçirilmesi için Mesih merkezli bir genç Hristiyanlar ağı yetiştirmektir.",
+      "readFullStatement": "Misyon bildirisinin tamamını okuyun",
+      "nameOrigin": "Apostolos adı Grekçede \"elçi\" anlamına gelir. \"Bir görevle gönderilen kişi\" demektir.",
+      "history": "Kaliforniya, Los Angeles'ta Müjde'yi duyurmaya ve İsa'yı tanıtmaya istekli küçük bir tutkulu öğrenci grubu olarak başlayan hareket, bugün dünyanın dört bir yanındaki üniversite kampüslerinde çalışan küresel bir kuruluşa dönüştü.",
+      "ourHistory": "Tarihçemiz"
+    },
+    "GetInvolved": {
+      "eyebrow": "Bağlantıda Kalın",
+      "heading": "Katılın",
+      "bibleStudies": "Kutsal Kitap Çalışmaları",
+      "volunteer": "Gönüllülük",
+      "internship": "Staj"
+    },
+    "Media": {
+      "eyebrow": "Medya",
+      "heading": "Öğretiş, tanıklık ve Söz.",
+      "moreContents": "Daha fazla içerik",
+      "playVideo": "AM tanıtım videosunu izleyin",
+      "post1Title": "Dört Ruhsal Tema – Genel Bakış",
+      "post2Title": "Kurtuluş nedir? | Sola Fide 1. Bölüm – AM Academy",
+      "post3Title": "Sosyal Medyada Öğrencilik Çağı: Öğrencileri Müjde'nin Gerçekliğiyle Buluşturmak",
+      "post4Title": "Yeni Yıl İçin Tanrı'nın Vaatleri",
+      "post1Date": "5 Ocak 2026",
+      "post2Date": "27 Haziran 2023",
+      "post3Date": "3 Haziran 2022",
+      "post4Date": "2 Ocak 2022"
+    },
+    "Events": {
+      "eyebrow": "Etkinlikler",
+      "heading": "Ağın buluştuğu yer.",
+      "allEvents": "Tüm etkinlikler",
+      "event1Date": "4–5 Nisan",
+      "event1Title": "Paskalya Kampı",
+      "event2Date": "18 Şubat",
+      "event2Title": "40 Günlük Perhiz Yürüyüşü",
+      "event3Date": "16 Ocak",
+      "event3Title": "Yeni Şube Önderleri Buluşması"
+    },
+    "OurNetwork": {
+      "eyebrow": "Ağımız",
+      "heading": "Kampüsünüzde çoktan bir topluluk olabilir.",
+      "description": "Okula ya da şehre göre arayın. Yakınınızda bir sonuç çıkmazsa, bunu bir davet sayın — bir tane kurmanıza yardım edeceğiz.",
+      "startChapter": "Bir şube kurun",
+      "searchPlaceholder": "Okul ya da şehir arayın",
+      "noMatches": "Henüz sonuç yok — bize yazın, kurmanıza yardımcı olalım."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "İlk Onursal Başkanımız",
+      "followingLegacy": "Mirasını sürdürdüğümüz kişi",
+      "name": "Dr. Ralph D. Winter",
+      "quoteLine1": "Bu nedenle gidin,",
+      "quoteLine2": "bütün ulusları",
+      "quoteLine3": "öğrencilerim olarak yetiştirin…",
+      "quoteReference": "—Matta 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Bizimle ortak olun",
+      "heading": "Hiç tanışmayacağınız birini gönderin.",
+      "description": "Her bağış, gitmeye hazır öğrenciler için Kutsal Kitap çalışmasını, eğitimi ve gönderen bir topluluğu ulaşılabilir kılar.",
+      "giveToday": "Bugün bağış yapın",
+      "talkToUs": "Bizimle konuşun"
+    },
+    "Newsletter": {
+      "heading": "Kampüslerden Notlar",
+      "description": "Kısa bir aylık mektup: öğrencilerin gördükleri, AM'in bundan sonra nereye gittiği ve nasıl dua edileceği.",
+      "cta": "AM Academy"
+    }
+  }
+}

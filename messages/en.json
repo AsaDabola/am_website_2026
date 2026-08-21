@@ -266,6 +266,46 @@
     "sentLinkStaff": "Full-Time Staff in AM HQ",
     "roadmapHeroTitle": "Growing on Campus: A Roadmap"
   },
+  "Network": {
+    "breadcrumb": "Our Network",
+    "heading": "Our Global Network",
+    "joinChapter": "Join a chapter",
+    "partnerWithUs": "Partner with us",
+    "exploreEyebrow": "Explore the world",
+    "regionsHeading": "Regions",
+    "regionsSubheading": "Explore geographically",
+    "siteCount": "{count, plural, =1 {# site} other {# sites}}",
+    "communityEyebrow": "A worldwide community",
+    "chaptersHeading": "Chapters in diverse cities and corners of the world",
+    "chaptersSoon": "Chapters launching soon.",
+    "continentSubtitle": "AM country sites across {region}.",
+    "noSitesTitle": "No {region} sites yet",
+    "noSitesBodyPrefix": "We're still building out AM's presence in this region. Check back soon, or",
+    "noSitesLink": "get in touch",
+    "noSitesBodySuffix": "if you'd like to help start one.",
+    "visitSite": "Visit site",
+    "regions": {
+      "africa": "Africa",
+      "asia": "Asia",
+      "europe": "Europe",
+      "northamerica": "North America",
+      "southamerica": "Latin America & Caribbean",
+      "oceania": "Oceania"
+    },
+    "map": {
+      "world": "World",
+      "loading": "Loading…",
+      "zoomIn": "Zoom in",
+      "clear": "Clear",
+      "worldHint": "Hover or focus a point to see the city — select one to zoom into its region.",
+      "regionHint": "{count, plural, =1 {# chapter} other {# chapters}} in {region}. Select a point for detail, or return to the world map.",
+      "worldAria": "World map showing all {count} AM chapters. Use the region buttons to zoom in.",
+      "regionAria": "{region} map showing {count} AM chapters.",
+      "captionSouthAsia": "South Asia",
+      "captionEastCentralAsia": "East & Central Asia",
+      "captionSoutheastAsia": "Southeast Asia"
+    }
+  },
   "Home": {
     "Hero": {
       "eyebrow": "Apostolos — one who is sent",

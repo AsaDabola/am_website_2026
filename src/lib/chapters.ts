@@ -18,15 +18,6 @@ export type RegionKey =
   | "asia"
   | "oceania";
 
-export const REGION_LABELS: Record<RegionKey, string> = {
-  northamerica: "North America",
-  southamerica: "Latin America & Caribbean",
-  europe: "Europe",
-  africa: "Africa",
-  asia: "Asia",
-  oceania: "Oceania",
-};
-
 /**
  * Projects a coordinate into a given view's viewbox.
  *

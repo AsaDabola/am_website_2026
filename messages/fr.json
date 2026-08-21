@@ -169,6 +169,46 @@
     "photoNews": "Actualités en images",
     "testimony": "Témoignage"
   },
+  "Network": {
+    "breadcrumb": "Notre réseau",
+    "heading": "Notre réseau mondial",
+    "joinChapter": "Rejoindre un chapitre",
+    "partnerWithUs": "Devenir partenaire",
+    "exploreEyebrow": "Explorez le monde",
+    "regionsHeading": "Régions",
+    "regionsSubheading": "Explorer par zone géographique",
+    "siteCount": "{count, plural, =1 {# site} other {# sites}}",
+    "communityEyebrow": "Une communauté mondiale",
+    "chaptersHeading": "Des chapitres dans des villes et des recoins variés du monde",
+    "chaptersSoon": "Chapitres bientôt lancés.",
+    "continentSubtitle": "Les sites nationaux d'AM en {region}.",
+    "noSitesTitle": "Pas encore de site en {region}",
+    "noSitesBodyPrefix": "Nous développons encore la présence d'AM dans cette région. Revenez bientôt ou",
+    "noSitesLink": "contactez-nous",
+    "noSitesBodySuffix": "si vous souhaitez aider à en lancer un.",
+    "visitSite": "Visiter le site",
+    "regions": {
+      "africa": "Afrique",
+      "asia": "Asie",
+      "europe": "Europe",
+      "northamerica": "Amérique du Nord",
+      "southamerica": "Amérique latine et Caraïbes",
+      "oceania": "Océanie"
+    },
+    "map": {
+      "world": "Monde",
+      "loading": "Chargement…",
+      "zoomIn": "Zoomer",
+      "clear": "Effacer",
+      "worldHint": "Survolez ou sélectionnez un point pour voir la ville — choisissez-en un pour zoomer sur sa région.",
+      "regionHint": "{count, plural, =1 {# chapitre} other {# chapitres}} en {region}. Sélectionnez un point pour le détail, ou revenez à la carte du monde.",
+      "worldAria": "Carte du monde montrant les {count} chapitres d'AM. Utilisez les boutons de région pour zoomer.",
+      "regionAria": "Carte de {region} montrant {count} chapitres d'AM.",
+      "captionSouthAsia": "Asie du Sud",
+      "captionEastCentralAsia": "Asie de l'Est et centrale",
+      "captionSoutheastAsia": "Asie du Sud-Est"
+    }
+  },
   "Home": {
     "Hero": {
       "eyebrow": "Apostolos — celui qui est envoyé",

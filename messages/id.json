@@ -1,0 +1,431 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Orang yang diutus dalam misi",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Tentang Kami",
+    "whatWeDo": "Apa yang Kami Lakukan",
+    "getInvolved": "Ikut Terlibat",
+    "connect": "Terhubung",
+    "ourNetwork": "Jaringan Kami",
+    "news": "Berita",
+    "contactUs": "Hubungi Kami",
+    "give": "Beri Dukungan",
+    "toggleNav": "Buka atau tutup menu navigasi",
+    "whoWeAreMenu": {
+      "whoWeAre": "Tentang kami",
+      "ourMission": "Misi kami",
+      "statementOfFaith": "Pernyataan iman",
+      "history": "Sejarah",
+      "ourFirstChairmen": "Ketua-ketua pertama kami",
+      "membership": "Keanggotaan",
+      "ourLeadership": "Kepemimpinan kami"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Pilar-pilar misi kami",
+      "administration": "Administrasi",
+      "bibleStudyProgram": "Program Pemahaman Alkitab",
+      "fourSpiritualThemes": "Empat Tema Rohani",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Pelayanan kami"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Pemahaman Alkitab",
+      "groupActivities": "Kegiatan kelompok",
+      "volunteer": "Menjadi relawan",
+      "bibleTeacherTraining": "Pelatihan pengajar Alkitab",
+      "internship": "Magang",
+      "donate": "Berdonasi",
+      "onlineBibleStudy": "Pemahaman Alkitab daring",
+      "chapterAffiliation": "Afiliasi chapter"
+    },
+    "newsMenu": {
+      "featured": "Sorotan",
+      "events": "Acara",
+      "editorial": "Editorial",
+      "photoNews": "Berita foto",
+      "testimony": "Kesaksian"
+    },
+    "megaMenu": {
+      "aboutHeading": "Tentang",
+      "whatWeDoHeading": "Apa yang kami lakukan",
+      "featuredHeading": "Artikel pilihan",
+      "allArticles": "Semua artikel",
+      "ctaBibleStudy": "Mulai pemahaman Alkitab",
+      "ctaFindChapter": "Temukan chapter Anda",
+      "ctaGive": "Beri dukungan hari ini"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "Tentang AM",
+        "description": "Siapa kami, apa yang kami percayai, dan dari mana kami berasal."
+      },
+      "leadership": {
+        "title": "Kepemimpinan",
+        "description": "Orang-orang yang melayani gerakan ini dan cara bergabung."
+      },
+      "whatWeDo": {
+        "title": "Apa yang Kami Lakukan",
+        "description": "Pilar dan pelayanan yang membawa misi ini maju."
+      },
+      "bibleStudy": {
+        "title": "Program Pemahaman Alkitab",
+        "description": "Jalur lima tahap dari pertanyaan pertama Anda hingga diutus."
+      },
+      "getInvolved": {
+        "title": "Ikut Terlibat",
+        "description": "Temukan tempat Anda dalam gerakan ini, di mana pun Anda berada."
+      },
+      "supportMission": {
+        "title": "Melayani & Mendukung",
+        "description": "Berlatih, memulai chapter, atau bermitra dengan mahasiswa di lapangan."
+      },
+      "latestNews": {
+        "title": "Berita Terbaru",
+        "description": "Kisah dan kabar dari seluruh jaringan."
+      },
+      "events": {
+        "title": "Acara",
+        "description": "Retret, konferensi, dan pertemuan di dekat Anda."
+      }
+    },
+    "mobile": {
+      "back": "Kembali",
+      "close": "Tutup menu",
+      "menu": "Menu"
+    }
+  },
+  "Footer": {
+    "tagline": "Pelayanan lintas denominasi yang berkomitmen menyebarkan Injil sampai ke ujung bumi, bersaksi tentang kasih Tuhan yang kekal.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, AS",
+    "email": "info@amintl.org",
+    "whoWeAre": "Tentang kami",
+    "whatWeDo": "Apa yang kami lakukan",
+    "getInvolved": "Ikut terlibat",
+    "media": "Media",
+    "aboutAM": "Tentang AM",
+    "missionStatement": "Pernyataan misi",
+    "statementOfFaith": "Pernyataan iman",
+    "ourHistory": "Sejarah kami",
+    "leadership": "Kepemimpinan",
+    "bibleStudyProgram": "Program Pemahaman Alkitab",
+    "fourSpiritualThemes": "Empat Tema Rohani",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Pelayanan kami",
+    "connectGrowLeadSent": "Terhubung, Bertumbuh, Memimpin, Diutus",
+    "chapterAffiliation": "Afiliasi chapter",
+    "ourNetwork": "Jaringan Kami",
+    "events": "Acara",
+    "give": "Beri dukungan",
+    "news": "Berita",
+    "legacyOfChairman": "Warisan Ralph D. Winter",
+    "contactUs": "Hubungi kami",
+    "copyright": "© 2026 Apostolos Missions International. Seluruh hak cipta dilindungi.",
+    "contact": "Kontak"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "Bahasa"
+  },
+  "Common": {
+    "tagline": "Pelayanan lintas denominasi yang berkomitmen menyebarkan Injil sampai ke ujung bumi, bersaksi tentang kasih Tuhan yang kekal.",
+    "learnMore": "Selengkapnya",
+    "readMore": "Baca selengkapnya",
+    "clickHere": "Klik di sini",
+    "home": "Beranda"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Tentang kami",
+    "missionStatement": "Pernyataan misi",
+    "statementOfFaith": "Pernyataan iman",
+    "history": "Sejarah",
+    "ourFirstChairman": "Ketua pertama kami",
+    "membership": "Keanggotaan",
+    "leadership": "Kepemimpinan"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Pilar-pilar Misi Kami",
+    "administration": "Administrasi"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Pemahaman Alkitab Kamis",
+    "bibleStudies": "Pemahaman Alkitab",
+    "groupActivities": "Kegiatan Kelompok",
+    "volunteer": "Menjadi Relawan",
+    "chapterStaff": "Staf Chapter",
+    "bibleTeacherTraining": "Pelatihan Pengajar Alkitab",
+    "internship": "Magang",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Berdonasi"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Berita Pilihan",
+    "events": "Acara",
+    "editorial": "Editorial",
+    "photoNews": "Berita Foto",
+    "testimony": "Kesaksian"
+  },
+  "InPractice": {
+    "eyebrow": "Dalam praktik",
+    "heading": "Empat hal yang kami lakukan ke mana pun kami pergi.",
+    "bibleStudyTag": "Pemahaman Alkitab",
+    "bibleStudyDescription": "Pemahaman dalam kelompok kecil dan besar yang menempatkan Alkitab di pusat kehidupan kampus.",
+    "leadershipTrainingTag": "Pelatihan kepemimpinan",
+    "leadershipTrainingDescription": "Mahasiswa dibimbing untuk memimpin teman sebayanya, lalu mengutus kelompok berikutnya.",
+    "onlineEducationTag": "Pendidikan daring",
+    "onlineEducationDescription": "Kursus AM Academy tentang Alkitab, misiologi, dan pelayanan lintas budaya.",
+    "internshipsTripsTag": "Magang & perjalanan",
+    "internshipsTripsDescription": "Misi jangka pendek dan magang yang mengubah pelatihan menjadi praktik."
+  },
+  "AboutPage": {
+    "heroTitle": "Sama seperti Bapa mengutus Aku, demikian juga sekarang Aku mengutus kamu.",
+    "breadcrumb": "Tentang",
+    "paragraph1": "Apostolos Missions International (AM) adalah pelayanan lintas denominasi yang berkomitmen menyebarkan Injil sampai ke ujung bumi, bersaksi tentang kasih Tuhan yang kekal.",
+    "paragraph2Prefix": "Nama",
+    "paragraph2": "(ἀπόστολος) adalah kata Yunani untuk rasul. Artinya \"orang yang diutus dalam misi\" atau \"pembawa pesan\". Sebutan \"rasul\" sering muncul dalam Perjanjian Baru untuk menyebut kedua belas murid yang dipilih Yesus (Matius 10:2, Markus 3:14, Lukas 6:13, Kisah Para Rasul 2:42). Paulus, yang dahulu menganiaya kekristenan lalu menjadi pemberita Injil yang besar, memperkenalkan dirinya sebagai \"rasul\" (Roma 1:1, 1 Korintus 1:1, 2 Korintus 1:1, Galatia 1:1, Kolose 1:1, 1 Timotius 1:1, 2 Timotius 1:1, Titus).",
+    "paragraph3": "Para rasul adalah mereka yang diutus Tuhan untuk menggenapi misi \"memberitakan Yesus Kristus dan memperkenalkan Allah\" kepada seluruh ciptaan. Dasar alkitabiah kerasulan terdapat dalam banyak firman Tuhan yang memilih para rasul pertama dan mengutus mereka seperti duta yang dikirim untuk mewakili bangsa-bangsa. Para rasul memahami bahwa hidup mereka bukan lagi milik mereka sendiri, melainkan hidup untuk menyatakan kemuliaan Kristus di dunia yang telah jatuh ini.",
+    "blockquote": "Yohanes 20:21 berkata, \"Maka kata Yesus sekali lagi: 'Damai sejahtera bagi kamu! Sama seperti Bapa mengutus Aku, demikian juga sekarang Aku mengutus kamu.'\"",
+    "paragraph4": "AM ingin mengikuti tradisi para rasul yang hidup sebagai orang-orang yang diutus untuk memberitakan Firman Allah. Kita masing-masing juga menerima panggilan dari Allah untuk diutus ke dunia sebagai tangan dan kaki-Nya. Kami ingin mempersembahkan hidup kami untuk mengikuti jejak Yesus dan memberitakan Injil sampai ke ujung bumi.",
+    "paragraph5": "Sebagaimana hidup kami telah disentuh dan diubahkan oleh Tuhan, kami ingin menyatakan kasih Tuhan yang telah ditunjukkan kepada kami, menjadi terang bagi semua anak-Nya yang terhilang serta bagi saudara-saudari kami.",
+    "readStatementOfFaith": "Baca pernyataan iman kami",
+    "or": "atau",
+    "traceHistory": "telusuri sejarah kami",
+    "cardStatementOfFaithTitle": "Baca pernyataan iman kami",
+    "cardMissionStatementTitle": "Pernyataan Misi"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "Peta Jalan AM",
+    "roadmapHeading": "Apa yang bisa Anda harapkan?",
+    "connectTag": "Terhubung",
+    "connectItems": [
+      "Alkitab tatap muka/daring",
+      "Program pembelajaran"
+    ],
+    "growTag": "Bertumbuh",
+    "growItems": [
+      "Kegiatan kelompok"
+    ],
+    "leadTag": "Memimpin",
+    "leadItems": [
+      "Relawan & magang",
+      "Pemimpin chapter"
+    ],
+    "sentTag": "Diutus",
+    "sentItems": [
+      "Alumni Connect",
+      "Misionaris paruh/penuh waktu",
+      "Pengajar Alkitab"
+    ],
+    "connectHeading": "Terhubung",
+    "connectStep1Title": "1. Berlangganan situs kami",
+    "connectStep1Body": "Ada banyak cara untuk terhubung dengan AM. Anda dapat berlangganan situs utama kami, www.amintl.org, dan menerima buletin. Atau Anda dapat berlangganan situs sekolah Alkitab daring kami, www.amacademy.org, dan menerima kabar serta program terbaru. Silakan menjelajahi visi, kegiatan, dan program kami melalui situs-situs tersebut, dan hubungi kami kapan saja jika ada pertanyaan.",
+    "connectStep2Title": "2. Daftar untuk bertemu staf kami",
+    "connectStep2BodyPrefix": "Silakan",
+    "connectStep2SignUp": "mendaftar",
+    "connectStep2BodySuffix": "di sini jika Anda ingin berbicara dengan salah satu staf kami dan menerima pendampingan dalam perjalanan rohani Anda. Anda dapat membuat janji temu atau langsung menghubungi staf kami. Banyak staf kami memiliki pengalaman kehidupan kampus dan memahami situasi yang dihadapi mahasiswa. Mereka akan membantu Anda menemukan jalur yang paling sesuai untuk perjalanan iman Anda.",
+    "connectStep3Title": "3. Daftar untuk pemahaman Alkitab",
+    "connectStep3BodyPrefix": "Jika Anda siap memulai program pemahaman Alkitab kami,",
+    "connectStep3SignUp": "daftarlah",
+    "connectStep3BodySuffix": "di halaman ini. Jika belum menemukan jadwal yang cocok, kirimkan formulir permintaan dengan kursus dan waktu yang Anda inginkan!",
+    "connectStep4Title": "4. Terhubung dengan chapter setempat",
+    "connectStep4BodyPrefix": "Jika Anda ingin terhubung dengan kantor dan staf chapter setempat, silakan",
+    "connectStep4ContactHere": "hubungi di sini",
+    "connectStep4BodySuffix": ". Kami menantikan pertemuan dengan Anda!",
+    "growHeading": "Bertumbuh",
+    "growIntro": "Sebagaimana kita bertumbuh dan menjadi dewasa melalui berbagai tahap masa kanak-kanak, kita juga mencapai tonggak-tonggak penting dalam kedewasaan rohani. AM menyediakan banyak program dan jalur yang dirancang untuk membimbing mahasiswa melalui tiga tahap penting pertumbuhan rohani ini:",
+    "rebornTitle": "1. Dilahirkan kembali",
+    "rebornBody": "Kita dilahirkan kembali melalui pengorbanan Yesus yang menebus di kayu salib.",
+    "matureTitle": "1. Dewasa",
+    "matureBody": "Kita bertumbuh dan menjadi dewasa secara rohani dengan memelihara kasih dan kebenaran dari Yesus.",
+    "fruitfulTitle": "1. Berbuah",
+    "fruitfulBody": "Kita mengalami hidup yang berbuah melalui berkat Allah, yang digenapi dalam kesatuan kita yang dewasa dengan Kristus Yesus.",
+    "navigatingTitle": "Menavigasi kehidupan kampus",
+    "navigatingBody": "Kehidupan kampus itu menarik dan memuaskan, tetapi dengan begitu banyak pilihan, hidup juga bisa terasa tanpa arah. Melalui kebenaran dan doa, AM membantu Anda memahami kehendak Allah dan menemukan arah yang jelas bagi hidup Anda yang luar biasa.",
+    "nextStepsTitle": "Langkah berikutnya",
+    "nextStepsBody": "Teruslah terlibat dalam program-program kami — manfaatkan berbagai kesempatan untuk mendengar Firman, berdoa bersama, bersekutu dengan saudara-saudari seiman, dan melayani sambil bertumbuh dalam Injil.",
+    "leadHeading": "Memimpin",
+    "leadStep1Title": "1. Melayani dalam kasih Kristus",
+    "leadStep1Body": "Seiring kita bertumbuh, kita rindu melayani mereka yang membutuhkan pertolongan untuk datang kepada Yesus. Saat melayani, kita pun bertumbuh semakin dalam di dalam kasih Kristus.",
+    "leadStep2Title": "2. Berkat kepemimpinan",
+    "leadStep2Body": "Yesus berkata, \"Adalah lebih berbahagia memberi daripada menerima\" (Kisah Para Rasul 20:35). Memimpin dan membimbing orang lain menuntut hikmat, doa, pengorbanan, dan kesabaran. Namun, di sanalah tempat yang penuh berkat, di mana kemuliaan salib mencapai puncaknya.",
+    "leadStep3Title": "3. Berkat kepemimpinan",
+    "leadStep3Body": "Meskipun mahasiswa masih muda, karunia dan kemampuan yang luar biasa dapat ditemukan serta dikembangkan jauh lebih kuat melalui peran kepemimpinan. Ini proses yang indah: setiap mahasiswa menguji dan meneguhkan karunia surgawinya melalui pengalaman anugerah dalam melayani dan memimpin.",
+    "leadStep4Title": "4. Kesempatan bersama AM",
+    "leadStep4Body": "AM menyediakan beragam kesempatan dan peran bagi mahasiswa untuk ikut melayani dan memimpin. Bergabunglah dengan tim relawan, staf chapter, pemimpin chapter, pengajar Alkitab, dan banyak lagi. Temukan apa yang Yesus tanamkan dalam diri Anda menurut rencana-Nya yang sempurna.",
+    "sentHeading": "Diutus",
+    "sentParagraph1": "Kelulusan dari perguruan tinggi adalah keberangkatan penting lainnya menuju dunia yang terbuka lebar untuk kita jelajahi. Sebagian dari kita mungkin melanjutkan pendidikan atau menempuh jalur karier. Sebagian lagi menjadi staf penuh waktu AM, misionaris, atau pelayan yang mengikuti panggilan Allah.",
+    "sentParagraph2": "Pada langkah penting ini, AM menyediakan program agar Anda tetap terhubung dan terus melayani misi Injil melalui Alumni Connect. AM juga menyediakan program dan jalur pelatihan untuk menjadi pekerja misi profesional dan staf di AM World Mission.",
+    "sentParagraph3": "Berbagai pilihan terbuka bagi Anda menuju masa depan yang cerah. AM ingin berjalan berdampingan dengan setiap orang untuk bersama-sama menggenapi Amanat Agung, \"Karena itu pergilah, jadikanlah semua bangsa murid-Ku dan baptislah mereka dalam nama Bapa dan Anak dan Roh Kudus\" (Matius 28:19).",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "Menjadi Pengajar Alkitab AM",
+    "sentLinkMissionaries": "Menjadi Misionaris AM",
+    "sentLinkStaff": "Staf Penuh Waktu di Kantor Pusat AM",
+    "roadmapHeroTitle": "Bertumbuh di Kampus: Sebuah Peta Jalan"
+  },
+  "Network": {
+    "breadcrumb": "Jaringan Kami",
+    "heading": "Jaringan Global Kami",
+    "joinChapter": "Bergabung dengan chapter",
+    "partnerWithUs": "Bermitra dengan kami",
+    "exploreEyebrow": "Jelajahi dunia",
+    "regionsHeading": "Kawasan",
+    "regionsSubheading": "Jelajahi berdasarkan wilayah",
+    "siteCount": "{count, plural, other {# situs}}",
+    "communityEyebrow": "Komunitas di seluruh dunia",
+    "chaptersHeading": "Chapter di berbagai kota dan sudut dunia",
+    "chaptersSoon": "Chapter segera hadir.",
+    "continentSubtitle": "Situs negara AM di {region}.",
+    "noSitesTitle": "Belum ada situs di {region}",
+    "noSitesBodyPrefix": "Kami masih membangun kehadiran AM di kawasan ini. Kunjungi lagi nanti, atau",
+    "noSitesLink": "hubungi kami",
+    "noSitesBodySuffix": "jika Anda ingin membantu memulainya.",
+    "visitSite": "Kunjungi situs",
+    "regions": {
+      "africa": "Afrika",
+      "asia": "Asia",
+      "europe": "Eropa",
+      "northamerica": "Amerika Utara",
+      "southamerica": "Amerika Latin & Karibia",
+      "oceania": "Oseania"
+    },
+    "map": {
+      "world": "Dunia",
+      "loading": "Memuat…",
+      "zoomIn": "Perbesar",
+      "clear": "Hapus",
+      "worldHint": "Arahkan kursor atau fokuskan ke sebuah titik untuk melihat kotanya — pilih satu untuk memperbesar kawasannya.",
+      "regionHint": "Ada {count} chapter di {region}. Pilih sebuah titik untuk detailnya, atau kembali ke peta dunia.",
+      "worldAria": "Peta dunia yang menampilkan seluruh {count} chapter AM. Gunakan tombol kawasan untuk memperbesar.",
+      "regionAria": "Peta {region} yang menampilkan {count} chapter AM.",
+      "captionSouthAsia": "Asia Selatan",
+      "captionEastCentralAsia": "Asia Timur & Tengah",
+      "captionSoutheastAsia": "Asia Tenggara"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — orang yang diutus",
+      "headingLine1": "Tempat",
+      "headingWhere": "kasih Yesus",
+      "headingWeAre": "melimpah",
+      "joinBibleStudy": "Ikuti Pemahaman Alkitab kami",
+      "whoWeAre": "Tentang kami",
+      "stat1Value": "2003",
+      "stat1Label": "Mengutus sejak",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, AS",
+      "stat3Value": "Global",
+      "stat3Label": "Jaringan kampus",
+      "dragToExplore": "Seret untuk menjelajah"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Ikuti Program Pemahaman Alkitab kami",
+      "heading": "Jalur 5 tahap dari pertanyaan pertama hingga diutus.",
+      "description": "Program Pemahaman Alkitab 5 tahap dari AM adalah program pemuridan dan pendidikan Alkitab daring yang menuntun mahasiswa melalui alur belajar yang sistematis tentang Injil Yesus Kristus dan kehidupan iman. Program ini mempertemukan mahasiswa dengan para pengajar Alkitab yang memberikan pengajaran sesuai jadwal peserta. Puncaknya adalah kesempatan untuk menjadi relawan, dilatih sebagai mahasiswa misionaris, atau sekadar mendalami Firman Allah bersama AM.",
+      "cta": "Mulai programnya"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Ikuti pemahaman Alkitab",
+      "joinBibleStudyDescription": "Program pemuridan dan pendidikan Alkitab daring 5 tahap.",
+      "findCampusTitle": "Temukan kampus Anda",
+      "findCampusDescription": "Jaringan chapter dan persekutuan kami.",
+      "getInvolvedTitle": "Ikut terlibat",
+      "getInvolvedDescription": "Terhubung, bertumbuh, memimpin, dan diutus bersama AM.",
+      "supportTitle": "Dukung misi ini",
+      "supportDescription": "Beri dukungan, berdoa, dan bermitra dengan mahasiswa di lapangan."
+    },
+    "Ministries": {
+      "eyebrow": "Terhubung · Bertumbuh · Memimpin · Diutus",
+      "heading": "Empat langkah, dan kami menempuh setiap langkahnya bersama Anda.",
+      "getInvolved": "Ikut terlibat",
+      "learnMore": "Selengkapnya",
+      "connectTitle": "Terhubung dengan AM",
+      "connectDescription": "AM menyediakan beragam program pemahaman Alkitab yang memelihara kehidupan rohani dan hubungan kita dengan Tuhan Yesus Kristus.",
+      "growTitle": "Bertumbuh bersama AM",
+      "growDescription": "Ikutlah dalam Kegiatan Kelompok kami dan bertumbuh dewasa bersama dalam persekutuan kebenaran. Program kelompok kami memberi setiap mahasiswa pengalaman bermutu untuk memperoleh kekuatan rohani.",
+      "leadTitle": "Memimpin bersama AM",
+      "leadDescription": "AM dengan senang hati menyambut mahasiswa yang ingin menjadi relawan dan melayani dengan talenta pemberian Allah di berbagai bidang.",
+      "sentTitle": "Diutus bersama AM",
+      "sentDescription": "AM akan terus berjalan bersama Anda hingga panggilan berharga untuk \"diutus\" digenapi dalam hidup Anda, bahkan setelah Anda lulus!",
+      "connectTag": "Terhubung",
+      "growTag": "Bertumbuh",
+      "leadTag": "Memimpin",
+      "sentTag": "Diutus"
+    },
+    "OurMission": {
+      "eyebrow": "Misi kami",
+      "statementPrefix": "Misi Apostolos Missions adalah",
+      "statementEmphasis": "memberitakan Yesus Kristus yang disalibkan",
+      "statementSuffix": "— sambil menumbuhkan jaringan orang muda Kristen yang berpusat pada Kristus untuk menggerakkan misi kampus.",
+      "readFullStatement": "Baca pernyataan misi selengkapnya",
+      "nameOrigin": "Nama apostolos adalah kata Yunani untuk rasul. Artinya \"orang yang diutus dalam misi\".",
+      "history": "Apa yang bermula sebagai sekelompok kecil mahasiswa muda yang bersemangat di Los Angeles, California, yang rindu menyebarkan Injil dan memperkenalkan Yesus, kini telah menjadi organisasi global yang berkarya di kampus-kampus di seluruh dunia.",
+      "ourHistory": "Sejarah kami"
+    },
+    "GetInvolved": {
+      "eyebrow": "Tetap Terhubung",
+      "heading": "Ikut Terlibat",
+      "bibleStudies": "Pemahaman Alkitab",
+      "volunteer": "Menjadi Relawan",
+      "internship": "Magang"
+    },
+    "Media": {
+      "eyebrow": "Media",
+      "heading": "Pengajaran, kesaksian, dan Firman.",
+      "moreContents": "Konten lainnya",
+      "playVideo": "Putar video pengantar AM",
+      "post1Title": "Empat Tema Rohani – Ikhtisar",
+      "post2Title": "Apa itu Keselamatan? | Sola Fide Bagian 1 – AM Academy",
+      "post3Title": "Era Pemuridan Media Sosial: Menghubungkan Mahasiswa dengan Realitas Injil",
+      "post4Title": "Janji-janji Allah untuk Tahun yang Baru",
+      "post1Date": "5 Januari 2026",
+      "post2Date": "27 Juni 2023",
+      "post3Date": "3 Juni 2022",
+      "post4Date": "2 Januari 2022"
+    },
+    "Events": {
+      "eyebrow": "Acara",
+      "heading": "Tempat jaringan ini berkumpul.",
+      "allEvents": "Semua acara",
+      "event1Date": "4–5 April",
+      "event1Title": "Retret Paskah",
+      "event2Date": "18 Februari",
+      "event2Title": "Perjalanan 40 Hari Prapaskah",
+      "event3Date": "16 Januari",
+      "event3Title": "Pertemuan Pemimpin Chapter Baru"
+    },
+    "OurNetwork": {
+      "eyebrow": "Jaringan kami",
+      "heading": "Mungkin sudah ada persekutuan di kampus Anda.",
+      "description": "Cari berdasarkan kampus atau kota. Jika tidak ada yang muncul di dekat Anda, anggaplah itu undangan — kami akan membantu Anda memulainya.",
+      "startChapter": "Mulai sebuah chapter",
+      "searchPlaceholder": "Cari kampus atau kota",
+      "noMatches": "Belum ada hasil — hubungi kami dan kami akan membantu Anda memulainya."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Ketua Kehormatan Pertama Kami",
+      "followingLegacy": "Mengikuti Warisan",
+      "name": "Dr. Ralph D. Winter",
+      "quoteLine1": "Karena itu pergilah,",
+      "quoteLine2": "jadikanlah murid-Ku",
+      "quoteLine3": "semua bangsa…",
+      "quoteReference": "—Matius 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Bermitra dengan kami",
+      "heading": "Utuslah seseorang yang tak akan pernah Anda temui.",
+      "description": "Setiap pemberian menghadirkan pemahaman Alkitab, pelatihan, dan komunitas yang mengutus bagi mahasiswa yang siap pergi.",
+      "giveToday": "Beri dukungan hari ini",
+      "talkToUs": "Bicara dengan kami"
+    },
+    "Newsletter": {
+      "heading": "Catatan Lapangan dari Kampus",
+      "description": "Surat bulanan singkat: apa yang dilihat para mahasiswa, ke mana AM melangkah selanjutnya, dan bagaimana mendoakannya.",
+      "cta": "AM Academy"
+    }
+  }
+}

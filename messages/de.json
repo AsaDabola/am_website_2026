@@ -169,6 +169,46 @@
     "photoNews": "Fotonachrichten",
     "testimony": "Zeugnis"
   },
+  "Network": {
+    "breadcrumb": "Unser Netzwerk",
+    "heading": "Unser weltweites Netzwerk",
+    "joinChapter": "Einem Chapter beitreten",
+    "partnerWithUs": "Partner werden",
+    "exploreEyebrow": "Die Welt entdecken",
+    "regionsHeading": "Regionen",
+    "regionsSubheading": "Geografisch entdecken",
+    "siteCount": "{count, plural, =1 {# Seite} other {# Seiten}}",
+    "communityEyebrow": "Eine weltweite Gemeinschaft",
+    "chaptersHeading": "Chapter in Städten und Winkeln überall auf der Welt",
+    "chaptersSoon": "Chapter starten in Kürze.",
+    "continentSubtitle": "AM-Länderseiten in {region}.",
+    "noSitesTitle": "Noch keine Seiten in {region}",
+    "noSitesBodyPrefix": "Wir bauen die Präsenz von AM in dieser Region noch auf. Schauen Sie bald wieder vorbei oder",
+    "noSitesLink": "melden Sie sich",
+    "noSitesBodySuffix": ", wenn Sie beim Aufbau helfen möchten.",
+    "visitSite": "Zur Seite",
+    "regions": {
+      "africa": "Afrika",
+      "asia": "Asien",
+      "europe": "Europa",
+      "northamerica": "Nordamerika",
+      "southamerica": "Lateinamerika und Karibik",
+      "oceania": "Ozeanien"
+    },
+    "map": {
+      "world": "Welt",
+      "loading": "Wird geladen…",
+      "zoomIn": "Heranzoomen",
+      "clear": "Zurücksetzen",
+      "worldHint": "Fahren Sie über einen Punkt oder wählen Sie ihn an, um die Stadt zu sehen — ein Klick zoomt in die Region.",
+      "regionHint": "{count, plural, =1 {# Chapter} other {# Chapter}} in {region}. Wählen Sie einen Punkt für Details oder kehren Sie zur Weltkarte zurück.",
+      "worldAria": "Weltkarte mit allen {count} AM-Chaptern. Nutzen Sie die Regionsschaltflächen zum Heranzoomen.",
+      "regionAria": "Karte von {region} mit {count} AM-Chaptern.",
+      "captionSouthAsia": "Südasien",
+      "captionEastCentralAsia": "Ost- und Zentralasien",
+      "captionSoutheastAsia": "Südostasien"
+    }
+  },
   "Home": {
     "Hero": {
       "eyebrow": "Apostolos — einer, der gesandt wird",

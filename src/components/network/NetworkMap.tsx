@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import {
   worldView,
   MAP_VIEW_LOADERS,
@@ -9,7 +10,6 @@ import {
 } from "@/lib/mapViews";
 import {
   CHAPTERS,
-  REGION_LABELS,
   projectForView,
   type Chapter,
   type RegionKey,
@@ -26,19 +26,26 @@ const REGION_ORDER: RegionKey[] = [
 
 type Placed = Chapter & { x: number; y: number; id: string };
 
+/** Width of every generated map view's viewBox — see scripts/generate-map-views.mjs. */
+const WIDTH = 1000;
+
+const CAPTION_FONT_SIZE = 9.5;
+const CAPTION_TRACKING = 1.6;
+
 /**
  * Region captions, anchored to coordinates rather than fixed pixels so they
- * land correctly in whichever view is on screen.
+ * land correctly in whichever view is on screen. The text itself comes from
+ * the messages, so these are keys rather than labels.
  */
-const REGION_CAPTIONS: { label: string; lat: number; lng: number }[] = [
-  { label: "North America", lat: 52, lng: -103 },
-  { label: "Latin America & Caribbean", lat: 15, lng: -83 },
-  { label: "Europe", lat: 58, lng: 14 },
-  { label: "Africa", lat: 14, lng: 19 },
-  { label: "South Asia", lat: 25, lng: 79 },
-  { label: "East & Central Asia", lat: 48, lng: 99 },
-  { label: "Southeast Asia", lat: 6, lng: 109 },
-  { label: "Oceania", lat: -20, lng: 134 },
+const REGION_CAPTIONS: { key: string; lat: number; lng: number }[] = [
+  { key: "regions.northamerica", lat: 52, lng: -103 },
+  { key: "regions.southamerica", lat: 15, lng: -83 },
+  { key: "regions.europe", lat: 58, lng: 14 },
+  { key: "regions.africa", lat: 14, lng: 19 },
+  { key: "map.captionSouthAsia", lat: 25, lng: 79 },
+  { key: "map.captionEastCentralAsia", lat: 48, lng: 99 },
+  { key: "map.captionSoutheastAsia", lat: 6, lng: 109 },
+  { key: "regions.oceania", lat: -20, lng: 134 },
 ];
 
 /** Deterministic star field — a seeded sequence so server and client agree. */
@@ -68,6 +75,7 @@ function arcPath(from: Placed, to: Placed) {
 }
 
 export default function NetworkMap() {
+  const t = useTranslations("Network");
   const [viewKey, setViewKey] = useState<MapViewKey>("world");
   const [view, setView] = useState<MapView>(worldView);
   const [loadingKey, setLoadingKey] = useState<MapViewKey | null>(null);
@@ -161,7 +169,7 @@ export default function NetworkMap() {
               : "border border-white/25 text-white/70 hover:border-white/60 hover:text-white"
           }`}
         >
-          World {CHAPTERS.length}
+          {t("map.world")} {CHAPTERS.length}
         </button>
         {REGION_ORDER.map((key) => (
           <button
@@ -176,7 +184,7 @@ export default function NetworkMap() {
                 : "border border-white/25 text-white/70 hover:border-white/60 hover:text-white"
             }`}
           >
-            {loadingKey === key ? "Loading…" : `${REGION_LABELS[key]} ${counts[key]}`}
+            {loadingKey === key ? t("map.loading") : `${t(`regions.${key}`)} ${counts[key]}`}
           </button>
         ))}
       </div>
@@ -198,8 +206,11 @@ export default function NetworkMap() {
           role="img"
           aria-label={
             isWorld
-              ? `World map showing all ${CHAPTERS.length} AM chapters. Use the region buttons to zoom in.`
-              : `${REGION_LABELS[viewKey as RegionKey]} map showing ${placed.length} AM chapters.`
+              ? t("map.worldAria", { count: CHAPTERS.length })
+              : t("map.regionAria", {
+                  count: placed.length,
+                  region: t(`regions.${viewKey as RegionKey}`),
+                })
           }
         >
           <defs>
@@ -259,22 +270,31 @@ export default function NetworkMap() {
             {REGION_CAPTIONS.map((caption) => {
               const { x, y } = projectForView(caption.lat, caption.lng, view);
               if (x < -60 || x > 1060 || y < 0 || y > 520) return null;
-              // Captions are centre-anchored and some are wide, so they are
-              // held inside a margin rather than allowed to run off the frame.
-              const clampedX = Math.min(Math.max(x, 96), 904);
+
+              // Captions are centre-anchored, so half the label hangs off each
+              // side of x. The margin has to come from the label actually being
+              // drawn, not a constant: translated names run much longer than
+              // the English ones (a fixed clamp let "Восточная и Центральная
+              // Азия" fall off the left edge). Approximated from the glyph
+              // metrics below rather than measured, which is close enough to
+              // keep the text inside the frame.
+              const label = t(caption.key);
+              const halfWidth = (label.length * (CAPTION_FONT_SIZE * 0.72 + CAPTION_TRACKING)) / 2;
+              const margin = Math.min(halfWidth + 6, WIDTH / 2);
+              const clampedX = Math.min(Math.max(x, margin), WIDTH - margin);
               return (
                 <text
-                  key={caption.label}
+                  key={caption.key}
                   x={clampedX}
                   y={y}
                   textAnchor="middle"
                   fill="rgba(232,238,248,0.42)"
-                  fontSize={9.5}
+                  fontSize={CAPTION_FONT_SIZE}
                   fontWeight={600}
-                  letterSpacing="1.6"
+                  letterSpacing={CAPTION_TRACKING}
                   className="uppercase"
                 >
-                  {caption.label}
+                  {t(caption.key)}
                 </text>
               );
             })}
@@ -394,7 +414,7 @@ export default function NetworkMap() {
                 )}
               </p>
               <p className="mt-0.5 text-sm text-on-dark/70">
-                {selectedChapter.country} · {REGION_LABELS[selectedChapter.region]}
+                {selectedChapter.country} · {t(`regions.${selectedChapter.region}`)}
               </p>
             </div>
             {isWorld ? (
@@ -403,7 +423,7 @@ export default function NetworkMap() {
                 onClick={() => goTo(selectedChapter.region)}
                 className="shrink-0 rounded-full border border-white/30 px-4 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-white hover:bg-white hover:text-ink"
               >
-                Zoom in
+                {t("map.zoomIn")}
               </button>
             ) : (
               <button
@@ -411,15 +431,18 @@ export default function NetworkMap() {
                 onClick={() => setSelected(null)}
                 className="shrink-0 text-xs font-semibold uppercase tracking-[0.08em] text-white/60 hover:text-white"
               >
-                Clear
+                {t("map.clear")}
               </button>
             )}
           </div>
         ) : (
           <p className="text-center text-sm text-on-dark/60">
             {isWorld
-              ? "Hover or focus a point to see the city — select one to zoom into its region."
-              : `${placed.length} ${placed.length === 1 ? "chapter" : "chapters"} in ${REGION_LABELS[viewKey as RegionKey]}. Select a point for detail, or return to the world map.`}
+              ? t("map.worldHint")
+              : t("map.regionHint", {
+                  count: placed.length,
+                  region: t(`regions.${viewKey as RegionKey}`),
+                })}
           </p>
         )}
       </div>

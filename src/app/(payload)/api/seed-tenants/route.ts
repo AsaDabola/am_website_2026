@@ -1,79 +1,116 @@
 import config from "@payload-config";
 import { getPayload } from "payload";
 import { NextRequest, NextResponse } from "next/server";
+import { COUNTRY_SITES, LANGUAGE_NAMES, untranslatedLanguages } from "@/lib/countrySites";
 
-// One-time seed for AM's real international chapters. Sourced from the old
-// site's "Our Network" chapter table (61 chapters total), filtered down to
-// the 38 non-US/Canada countries — North America is already covered by the
-// main site, so those chapters belong in the Campuses collection instead,
-// not as country Tenants. Safe to call more than once — skips any slug
-// that already exists. Requires a logged-in admin session. Delete this
-// route once seeded.
-const TENANTS = [
-  { country: "Australia", city: "Sydney", continent: "oceania", slug: "australia", locale: "en", countryCodes: "AU" },
-  { country: "Brazil", city: "São Paulo", continent: "southamerica", slug: "brazil", locale: "pt", countryCodes: "BR" },
-  { country: "Argentina", city: "Buenos Aires", continent: "southamerica", slug: "argentina", locale: "es", countryCodes: "AR" },
-  { country: "Bolivia", city: "La Paz", continent: "southamerica", slug: "bolivia", locale: "es", countryCodes: "BO" },
-  { country: "Colombia", city: "Bogotá", continent: "southamerica", slug: "colombia", locale: "es", countryCodes: "CO" },
-  { country: "Mexico", city: "Mexico City", continent: "southamerica", slug: "mexico", locale: "es", countryCodes: "MX" },
-  { country: "Peru", city: "Lima", continent: "southamerica", slug: "peru", locale: "es", countryCodes: "PE" },
-  { country: "Uruguay", city: "Montevideo", continent: "southamerica", slug: "uruguay", locale: "es", countryCodes: "UY" },
-  { country: "Venezuela", city: "Caracas", continent: "southamerica", slug: "venezuela", locale: "es", countryCodes: "VE" },
-  { country: "Kenya", city: "Nairobi", continent: "africa", slug: "kenya", locale: "en", countryCodes: "KE" },
-  { country: "Uganda", city: "Kampala", continent: "africa", slug: "uganda", locale: "en", countryCodes: "UG" },
-  { country: "Zambia", city: "Lusaka", continent: "africa", slug: "zambia", locale: "en", countryCodes: "ZM" },
-  { country: "Nigeria", city: "Lagos", continent: "africa", slug: "nigeria", locale: "en", countryCodes: "NG" },
-  { country: "Ethiopia", city: "Addis Ababa", continent: "africa", slug: "ethiopia", locale: "en", countryCodes: "ET" },
-  { country: "Egypt", city: "Cairo", continent: "africa", slug: "egypt", locale: "en", countryCodes: "EG" },
-  { country: "Tanzania", city: "Dar es Salaam", continent: "africa", slug: "tanzania", locale: "en", countryCodes: "TZ" },
-  { country: "Zimbabwe", city: "Harare", continent: "africa", slug: "zimbabwe", locale: "en", countryCodes: "ZW" },
-  { country: "Democratic Republic of the Congo", city: "Kinshasa", continent: "africa", slug: "democratic-republic-of-the-congo", locale: "fr", countryCodes: "CD" },
-  { country: "India", city: "Chennai", continent: "asia", slug: "india", locale: "en", countryCodes: "IN" },
-  { country: "Germany", city: "Frankfurt", continent: "europe", slug: "germany", locale: "de", countryCodes: "DE" },
-  { country: "United Kingdom", city: "London", continent: "europe", slug: "united-kingdom", locale: "en", countryCodes: "GB" },
-  { country: "France", city: "Paris", continent: "europe", slug: "france", locale: "fr", countryCodes: "FR" },
-  { country: "Spain", city: "Madrid", continent: "europe", slug: "spain", locale: "es", countryCodes: "ES" },
-  { country: "Ireland", city: "Dublin", continent: "europe", slug: "ireland", locale: "en", countryCodes: "IE" },
-  { country: "Netherlands", city: "Amsterdam", continent: "europe", slug: "netherlands", locale: "en", countryCodes: "NL" },
-  { country: "Poland", city: "Warsaw", continent: "europe", slug: "poland", locale: "en", countryCodes: "PL" },
-  { country: "China", city: "Beijing", continent: "asia", slug: "china", locale: "zh", countryCodes: "CN" },
-  { country: "South Korea", city: "Seoul", continent: "asia", slug: "south-korea", locale: "ko", countryCodes: "KR" },
-  { country: "Japan", city: "Tokyo", continent: "asia", slug: "japan", locale: "ja", countryCodes: "JP" },
-  { country: "Macao", city: "Macao", continent: "asia", slug: "macao", locale: "zh", countryCodes: "MO" },
-  { country: "Mongolia", city: "Ulaanbaatar", continent: "asia", slug: "mongolia", locale: "en", countryCodes: "MN" },
-  { country: "Malaysia", city: "Kuala Lumpur", continent: "asia", slug: "malaysia", locale: "en", countryCodes: "MY" },
-  { country: "Cambodia", city: "Phnom Penh", continent: "asia", slug: "cambodia", locale: "en", countryCodes: "KH" },
-  { country: "Indonesia", city: "Jakarta", continent: "asia", slug: "indonesia", locale: "en", countryCodes: "ID" },
-  { country: "Laos", city: "Vientiane", continent: "asia", slug: "laos", locale: "en", countryCodes: "LA" },
-  { country: "Philippines", city: "Manila", continent: "asia", slug: "philippines", locale: "en", countryCodes: "PH" },
-  { country: "Thailand", city: "Bangkok", continent: "asia", slug: "thailand", locale: "en", countryCodes: "TH" },
-  { country: "Vietnam", city: "Hanoi", continent: "asia", slug: "vietnam", locale: "en", countryCodes: "VN" },
-];
+/**
+ * Seeds the Tenants collection from AM's G20 + M40 mission country list
+ * (src/lib/countrySites.ts) as path-based country sites — one per row, at
+ * /{continent}/{slug}.
+ *
+ * Idempotent: a slug that already exists is updated to match the list rather
+ * than duplicated, so re-running after editing countrySites.ts brings the
+ * database back in line. It never deactivates or deletes anything — chapters
+ * seeded before this list existed (Venezuela, Bolivia, Ireland and so on)
+ * stay exactly as they are.
+ *
+ * POST to seed. GET reports what would change, plus the translation backlog,
+ * without writing. Both require a logged-in admin.
+ */
+
+function toRecord(site: (typeof COUNTRY_SITES)[number]) {
+  return {
+    country: site.country,
+    city: site.city ?? null,
+    continent: site.continent,
+    slug: site.slug,
+    locale: site.locale,
+    countryCodes: site.countryCodes.join(","),
+    languages: site.nativeLanguages.join(","),
+    tier: site.tier,
+    active: true,
+  };
+}
+
+/**
+ * Countries reading the site in a language they do not speak, grouped by the
+ * language they are waiting on. This is the translation backlog — the reason
+ * a country's `locale` may not match its `languages`.
+ */
+function translationBacklog() {
+  const byLanguage = new Map<string, string[]>();
+  for (const site of COUNTRY_SITES) {
+    for (const tag of untranslatedLanguages(site)) {
+      const countries = byLanguage.get(tag) ?? [];
+      countries.push(site.country);
+      byLanguage.set(tag, countries);
+    }
+  }
+  return [...byLanguage.entries()]
+    .map(([tag, countries]) => ({
+      language: LANGUAGE_NAMES[tag] ?? tag,
+      tag,
+      countries: countries.sort(),
+    }))
+    .sort((a, b) => b.countries.length - a.countries.length || a.language.localeCompare(b.language));
+}
+
+async function requireAdmin(request: NextRequest) {
+  const payload = await getPayload({ config });
+  const { user } = await payload.auth({ headers: request.headers });
+  return user ? payload : null;
+}
+
+export async function GET(request: NextRequest) {
+  const payload = await requireAdmin(request);
+  if (!payload) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+  const existing = await payload.find({
+    collection: "tenants",
+    limit: 500,
+    depth: 0,
+    pagination: false,
+  });
+  const known = new Set(existing.docs.map((doc) => doc.slug));
+
+  return NextResponse.json({
+    total: COUNTRY_SITES.length,
+    wouldCreate: COUNTRY_SITES.filter((site) => !known.has(site.slug)).map((site) => site.slug),
+    wouldUpdate: COUNTRY_SITES.filter((site) => known.has(site.slug)).map((site) => site.slug),
+    notInList: existing.docs.filter((doc) => !COUNTRY_SITES.some((site) => site.slug === doc.slug)).map((doc) => doc.slug),
+    translationBacklog: translationBacklog(),
+  });
+}
 
 export async function POST(request: NextRequest) {
-  const payload = await getPayload({ config });
-
-  const { user } = await payload.auth({ headers: request.headers });
-  if (!user) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const payload = await requireAdmin(request);
+  if (!payload) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const created: string[] = [];
-  const skipped: string[] = [];
+  const updated: string[] = [];
 
-  for (const tenant of TENANTS) {
+  for (const site of COUNTRY_SITES) {
+    const data = toRecord(site);
     const existing = await payload.find({
       collection: "tenants",
-      where: { slug: { equals: tenant.slug } },
+      where: { slug: { equals: site.slug } },
       limit: 1,
+      depth: 0,
     });
+
     if (existing.docs.length > 0) {
-      skipped.push(tenant.slug);
-      continue;
+      await payload.update({ collection: "tenants", id: existing.docs[0].id, data });
+      updated.push(site.slug);
+    } else {
+      await payload.create({ collection: "tenants", data });
+      created.push(site.slug);
     }
-    await payload.create({ collection: "tenants", data: { ...tenant, active: true } });
-    created.push(tenant.slug);
   }
 
-  return NextResponse.json({ ok: true, created, skipped });
+  return NextResponse.json({
+    ok: true,
+    created,
+    updated,
+    translationBacklog: translationBacklog(),
+  });
 }

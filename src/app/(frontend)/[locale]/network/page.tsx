@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import { ArrowRightIcon } from "@/components/ui/icons";
@@ -43,7 +44,9 @@ const northAmericaChapters = [
 ];
 
 export default async function NetworkPage() {
-  const [counts, tenantsByContinent] = await Promise.all([
+  const [t, common, counts, tenantsByContinent] = await Promise.all([
+    getTranslations("Network"),
+    getTranslations("Common"),
     getActiveTenantCountByContinent(),
     getAllActiveTenantsByContinent(),
   ]);
@@ -56,18 +59,18 @@ export default async function NetworkPage() {
             <ol className="flex items-center gap-2">
               <li>
                 <TenantLink href="/" className="hover:text-white">
-                  Home
+                  {common("home")}
                 </TenantLink>
               </li>
               <li className="opacity-50">/</li>
-              <li>Our Network</li>
+              <li>{t("breadcrumb")}</li>
             </ol>
           </nav>
 
           <NetworkMap />
 
           <h1 className="mt-10 text-center font-display text-[38px] font-extrabold uppercase leading-none tracking-[-0.02em] text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,0.9)] sm:text-[58px] lg:text-[72px]">
-            Our Global Network
+            {t("heading")}
           </h1>
 
           <div className="mt-9 flex flex-wrap justify-center gap-4">
@@ -75,14 +78,14 @@ export default async function NetworkPage() {
               href="/get-involved/chapter-affiliation"
               className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.04em] text-white transition-colors hover:bg-brand-navy"
             >
-              Join a chapter
+              {t("joinChapter")}
               <ArrowRightIcon />
             </TenantLink>
             <TenantLink
               href="/get-involved/donate"
               className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.04em] text-white transition-colors hover:bg-white hover:text-ink"
             >
-              Partner with us
+              {t("partnerWithUs")}
             </TenantLink>
           </div>
         </Container>
@@ -91,12 +94,12 @@ export default async function NetworkPage() {
       <section className="bg-white py-24">
         <Container className="text-center">
           <div className="flex justify-center">
-            <Eyebrow>Explore the world</Eyebrow>
+            <Eyebrow>{t("exploreEyebrow")}</Eyebrow>
           </div>
           <h1 className="font-display text-4xl font-semibold tracking-[-0.02em] text-ink sm:text-5xl">
-            Regions
+            {t("regionsHeading")}
           </h1>
-          <p className="mt-3 text-base text-ink-muted">Explore geographically</p>
+          <p className="mt-3 text-base text-ink-muted">{t("regionsSubheading")}</p>
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {regions.map((region) => {
@@ -114,11 +117,11 @@ export default async function NetworkPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                   <span className="absolute bottom-5 left-0 right-0 text-center font-display text-xl font-bold text-white">
-                    {region.label}
+                    {t(`regions.${region.slug}`)}
                   </span>
                   {count > 0 && (
                     <span className="absolute right-3 top-3 rounded-full bg-white/15 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
-                      {count} {count === 1 ? "site" : "sites"}
+                      {t("siteCount", { count })}
                     </span>
                   )}
                 </Link>
@@ -131,15 +134,17 @@ export default async function NetworkPage() {
       <section className="bg-mist py-24">
         <Container className="text-center">
           <div className="flex justify-center">
-            <Eyebrow>A worldwide community</Eyebrow>
+            <Eyebrow>{t("communityEyebrow")}</Eyebrow>
           </div>
           <h2 className="mx-auto max-w-2xl font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
-            Chapters in diverse cities and corners of the world
+            {t("chaptersHeading")}
           </h2>
 
           <div className="mt-14 grid gap-x-10 gap-y-12 text-left sm:grid-cols-2 lg:grid-cols-4">
             <div className="border-t-2 border-black/10 pt-6">
-              <h3 className="font-display text-base font-bold text-ink">North America</h3>
+              <h3 className="font-display text-base font-bold text-ink">
+                {t("regions.northamerica")}
+              </h3>
               <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-ink-muted">
                 {northAmericaChapters.map((chapter) => (
                   <li key={chapter}>{chapter}</li>
@@ -153,7 +158,9 @@ export default async function NetworkPage() {
                 const tenants = tenantsByContinent[region.slug];
                 return (
                   <div key={region.slug} className="border-t-2 border-black/10 pt-6">
-                    <h3 className="font-display text-base font-bold text-ink">{region.label}</h3>
+                    <h3 className="font-display text-base font-bold text-ink">
+                      {t(`regions.${region.slug}`)}
+                    </h3>
                     {tenants.length > 0 ? (
                       <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-ink-muted">
                         {tenants.map((tenant) => (
@@ -165,7 +172,7 @@ export default async function NetworkPage() {
                       </ul>
                     ) : (
                       <p className="mt-3 text-sm leading-relaxed text-ink-muted/70">
-                        Chapters launching soon.
+                        {t("chaptersSoon")}
                       </p>
                     )}
                   </div>
