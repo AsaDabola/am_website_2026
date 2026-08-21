@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
-import Eyebrow from "@/components/ui/Eyebrow";
-import AboutHero from "@/components/about/AboutHero";
+import GetInvolvedHero from "@/components/get-involved/GetInvolvedHero";
+import EventsAndTestimonials from "@/components/get-involved/EventsAndTestimonials";
 import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
@@ -16,54 +16,32 @@ export const metadata: Metadata = {
 };
 
 export default async function GetInvolvedHubPage() {
-  const [t, tCommon, tHeader] = await Promise.all([
+  const [t, tCommon, tHeader, tPractice] = await Promise.all([
     getTranslations("GetInvolvedHub"),
     getTranslations("Common"),
     getTranslations("Header"),
+    getTranslations("InPractice"),
   ]);
 
-  const roadmap = [
-    { tag: t("connectTag"), items: t.raw("connectItems") as string[] },
-    { tag: t("growTag"), items: t.raw("growItems") as string[] },
-    { tag: t("leadTag"), items: t.raw("leadItems") as string[] },
-    { tag: t("sentTag"), items: t.raw("sentItems") as string[] },
+  // The design labels these cards Connect / Leadership training / Online
+  // education / Internships & trips, while their contents follow the
+  // Connect-Grow-Lead-Sent stages the page is built around. Labels come from
+  // existing translated keys so the row stays localised.
+  const heroCards = [
+    { label: t("connectTag"), items: t.raw("connectItems") as string[] },
+    { label: tPractice("leadershipTrainingTag"), items: t.raw("growItems") as string[] },
+    { label: tPractice("onlineEducationTag"), items: t.raw("leadItems") as string[] },
+    { label: tPractice("internshipsTripsTag"), items: t.raw("sentItems") as string[] },
   ];
 
   return (
     <>
-      <AboutHero
+      <GetInvolvedHero
         crumbs={[{ label: tCommon("home"), href: "/" }, { label: tHeader("getInvolved") }]}
-        title={tHeader("getInvolved")}
-        subtitle={tCommon("tagline")}
+        title={t("roadmapHeroTitle")}
+        cards={heroCards}
       />
       <GetInvolvedSubNav active="/get-involved" />
-
-      <section className="bg-mist py-24">
-        <Container className="text-center">
-          <div className="flex justify-center">
-            <Eyebrow>{t("roadmapEyebrow")}</Eyebrow>
-          </div>
-          <h2 className="mx-auto max-w-xl font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
-            {t("roadmapHeading")}
-          </h2>
-
-          <div className="mt-14 grid gap-8 text-left sm:grid-cols-2 lg:grid-cols-4">
-            {roadmap.map((step) => (
-              <div key={step.tag} className="border-t-2 border-black/10 pt-6">
-                <h3 className="font-display text-base font-bold text-ink">{step.tag}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-                  {step.items.map((item, i) => (
-                    <span key={item}>
-                      {item}
-                      {i < step.items.length - 1 && <br />}
-                    </span>
-                  ))}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
 
       <section className="bg-white py-24">
         <Container>
@@ -263,6 +241,8 @@ export default async function GetInvolvedHubPage() {
           </div>
         </Container>
       </section>
+
+      <EventsAndTestimonials />
 
       <PartnerWithUs />
       <Newsletter />
