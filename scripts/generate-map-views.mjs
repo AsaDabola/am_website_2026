@@ -86,34 +86,50 @@ const usTopo = JSON.parse(
 const usStates = mesh(usTopo, usTopo.objects.states, (a, b) => a !== b);
 
 /**
- * Fitting to a Polygon is ambiguous: d3-geo reads a ring's winding order to
- * decide which side of the sphere it encloses, and the wrong order silently
- * fits the whole globe instead of the box. Points carry no winding, and
- * equirectangular is linear in lon/lat, so the corners fit the box exactly.
+ * Fits an equirectangular projection to a lonLat box analytically.
+ *
+ * d3's fitExtent cannot be used here: it fits the *rotated* geometry, and for
+ * the world view the corners at -180 and +180 rotate onto the same meridian,
+ * so the longitude span collapses to zero and the fit silently falls back to
+ * latitude only — which pushed Europe and Africa clean off the frame.
+ *
+ * Equirectangular is linear in lon/lat, so the fit is arithmetic: pick the
+ * scale that makes the box fit both axes, then translate so the box centre
+ * lands in the middle of the frame. Verified to reproduce fitExtent exactly
+ * for the region views, where fitExtent was well-behaved.
  */
-function boundsCorners([[west, south], [east, north]]) {
+function fitEquirectangular([[west, south], [east, north]], rotate) {
+  const toRad = Math.PI / 180;
+  const lngSpan = (east - west) * toRad;
+  const latSpan = (north - south) * toRad;
+
+  const scale = Math.min((WIDTH - 2 * PAD) / lngSpan, (HEIGHT - 2 * PAD) / latSpan);
+
+  // Centre of the box in the rotated frame the projection draws in. A
+  // full-world box has no meaningful centre of its own — it covers the sphere
+  // whatever the rotation — so the rotation alone decides what sits mid-frame.
+  let centreLng = 0;
+  if (east - west < 360) {
+    centreLng = (west + east) / 2 + rotate;
+    while (centreLng > 180) centreLng -= 360;
+    while (centreLng < -180) centreLng += 360;
+  }
+  const centreLat = (south + north) / 2;
+
   return {
-    type: "MultiPoint",
-    coordinates: [
-      [west, south],
-      [east, south],
-      [east, north],
-      [west, north],
-    ],
+    scale,
+    translate: [WIDTH / 2 - scale * centreLng * toRad, HEIGHT / 2 + scale * centreLat * toRad],
   };
 }
 
 const out = {};
 
 for (const [name, config] of Object.entries(VIEWS)) {
-  const projection = geoEquirectangular().rotate([config.rotate, 0]);
-  projection.fitExtent(
-    [
-      [PAD, PAD],
-      [WIDTH - PAD, HEIGHT - PAD],
-    ],
-    boundsCorners(config.bounds),
-  );
+  const fit = fitEquirectangular(config.bounds, config.rotate);
+  const projection = geoEquirectangular()
+    .rotate([config.rotate, 0])
+    .scale(fit.scale)
+    .translate(fit.translate);
 
   // Clip to the frame so off-screen geometry is not serialised at all.
   projection.clipExtent([

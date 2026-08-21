@@ -26,6 +26,21 @@ const REGION_ORDER: RegionKey[] = [
 
 type Placed = Chapter & { x: number; y: number; id: string };
 
+/**
+ * Region captions, anchored to coordinates rather than fixed pixels so they
+ * land correctly in whichever view is on screen.
+ */
+const REGION_CAPTIONS: { label: string; lat: number; lng: number }[] = [
+  { label: "North America", lat: 52, lng: -103 },
+  { label: "Latin America & Caribbean", lat: 15, lng: -83 },
+  { label: "Europe", lat: 58, lng: 14 },
+  { label: "Africa", lat: 14, lng: 19 },
+  { label: "South Asia", lat: 25, lng: 79 },
+  { label: "East & Central Asia", lat: 48, lng: 99 },
+  { label: "Southeast Asia", lat: 6, lng: 109 },
+  { label: "Oceania", lat: -20, lng: 134 },
+];
+
 /** Deterministic star field — a seeded sequence so server and client agree. */
 const STARS = Array.from({ length: 90 }, (_, i) => {
   const a = Math.sin(i * 12.9898) * 43758.5453;
@@ -112,9 +127,9 @@ export default function NetworkMap() {
    * always labelled; the rest are taken west to east so the choice is stable.
    */
   const labelledIds = useMemo(() => {
-    if (isWorld) return new Set<string>();
-
-    const MIN_GAP = 26;
+    // The world view packs cities far closer together, so it tolerates a
+    // tighter gap before labels start colliding.
+    const MIN_GAP = isWorld ? 17 : 26;
     const ordered = [...placed].sort((a, b) => {
       if (a.hq !== b.hq) return a.hq ? -1 : 1;
       return a.x - b.x;
@@ -189,9 +204,9 @@ export default function NetworkMap() {
         >
           <defs>
             <linearGradient id="am-arc" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#ffb457" stopOpacity="0.1" />
-              <stop offset="50%" stopColor="#7cc4ff" stopOpacity="0.85" />
-              <stop offset="100%" stopColor="#ffb457" stopOpacity="0.1" />
+              <stop offset="0%" stopColor="#ffb457" stopOpacity="0.85" />
+              <stop offset="45%" stopColor="#7cc4ff" stopOpacity="0.55" />
+              <stop offset="100%" stopColor="#7cc4ff" stopOpacity="0.15" />
             </linearGradient>
             <radialGradient id="am-marker-glow">
               <stop offset="0%" stopColor="#7cc4ff" stopOpacity="0.8" />
@@ -240,6 +255,31 @@ export default function NetworkMap() {
             strokeWidth={0.4}
           />
 
+          <g aria-hidden>
+            {REGION_CAPTIONS.map((caption) => {
+              const { x, y } = projectForView(caption.lat, caption.lng, view);
+              if (x < -60 || x > 1060 || y < 0 || y > 520) return null;
+              // Captions are centre-anchored and some are wide, so they are
+              // held inside a margin rather than allowed to run off the frame.
+              const clampedX = Math.min(Math.max(x, 96), 904);
+              return (
+                <text
+                  key={caption.label}
+                  x={clampedX}
+                  y={y}
+                  textAnchor="middle"
+                  fill="rgba(232,238,248,0.42)"
+                  fontSize={9.5}
+                  fontWeight={600}
+                  letterSpacing="1.6"
+                  className="uppercase"
+                >
+                  {caption.label}
+                </text>
+              );
+            })}
+          </g>
+
           {/* Routes, drawn only where the hub is actually in frame. */}
           {hq && (
             <g fill="none" strokeLinecap="round">
@@ -259,9 +299,9 @@ export default function NetworkMap() {
                       />
                       <path
                         d={d}
-                        stroke="#bfe0ff"
-                        strokeWidth={1.1}
-                        opacity={0.9}
+                        stroke="#ffd8a3"
+                        strokeWidth={1.2}
+                        opacity={0.95}
                         className="am-map-flow"
                       />
                     </g>
@@ -330,7 +370,7 @@ export default function NetworkMap() {
                       fontSize={chapter.hq ? 8.5 : 7}
                       fontWeight={chapter.hq || isActive ? 700 : 500}
                     >
-                      {chapter.city}
+                      {chapter.hq ? `HQ · ${chapter.city}, NJ` : chapter.city}
                     </text>
                   )}
                   <circle cx={chapter.x} cy={chapter.y} r={9} fill="transparent" />
