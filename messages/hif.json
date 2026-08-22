@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Jon ke mission par bheja gais hai",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Hum Kaun Hai",
+    "whatWeDo": "Hum Kaa Karta Hai",
+    "getInvolved": "Saamil Hoi",
+    "connect": "Jurr",
+    "ourNetwork": "Hamaar Network",
+    "news": "Khabar",
+    "contactUs": "Hamse Baat Karo",
+    "give": "Daan Karo",
+    "toggleNav": "Menu kholo ya band karo",
+    "whoWeAreMenu": {
+      "whoWeAre": "Hum kaun hai",
+      "ourMission": "Hamaar mission",
+      "statementOfFaith": "Biswas ke bayaan",
+      "history": "Itihaas",
+      "ourFirstChairmen": "Hamaar Pahila Chairman Log",
+      "membership": "Sadasyata",
+      "ourLeadership": "Hamaar netritva"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Hamaar mission ke khambha",
+      "administration": "Prashaasan",
+      "bibleStudyProgram": "Bible Padhai ke Program",
+      "fourSpiritualThemes": "Chaar Aatmik Bishay",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Hamaar sewa kaam"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Bible padhai",
+      "groupActivities": "Group ke kaam",
+      "volunteer": "Sewa karo",
+      "bibleTeacherTraining": "Bible master ke training",
+      "internship": "Internship",
+      "donate": "Daan karo",
+      "onlineBibleStudy": "Online Bible padhai",
+      "chapterAffiliation": "Chapter se jurao"
+    },
+    "newsMenu": {
+      "featured": "Khaas",
+      "events": "Karyakram",
+      "editorial": "Sampadakiya",
+      "photoNews": "Photo khabar",
+      "testimony": "Gawahi"
+    },
+    "megaMenu": {
+      "aboutHeading": "Hamaar baare me",
+      "whatWeDoHeading": "Hum kaa karta hai",
+      "featuredHeading": "Khaas lekh",
+      "allArticles": "Sab lekh",
+      "ctaBibleStudy": "Bible padhai suru karo",
+      "ctaFindChapter": "Apan chapter khojo",
+      "ctaGive": "Aaj daan karo"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "AM ke baare me",
+        "description": "Hum kaun hai, kaa biswas karta hai aur kahaa se aais hai."
+      },
+      "leadership": {
+        "title": "Netritva",
+        "description": "Jon log ii kaam me sewa karta hai aur tum kaise saamil ho sakta hai."
+      },
+      "whatWeDo": {
+        "title": "Hum Kaa Karta Hai",
+        "description": "Ii khambha aur sewa kaam jon mission ke aage le jaawe hai."
+      },
+      "bibleStudy": {
+        "title": "Bible Padhai ke Program",
+        "description": "Paanch charan ke raasta, tumhaar pahila sawaal se lekar bheja jaay tak."
+      },
+      "getInvolved": {
+        "title": "Saamil Hoi",
+        "description": "Ii kaam me apan jagah khojo, tum jahaa bhi raho."
+      },
+      "supportMission": {
+        "title": "Sewa & Sahaayta",
+        "description": "Training lo, chapter suru karo, ya khet me chhatra log ke saathi bano."
+      },
+      "latestNews": {
+        "title": "Naya Khabar",
+        "description": "Pura network se kahani aur naya khabar."
+      },
+      "events": {
+        "title": "Karyakram",
+        "description": "Retreat, sammelan aur sabha tumhaar lage."
+      }
+    },
+    "mobile": {
+      "back": "Piche",
+      "close": "Menu band karo",
+      "menu": "Menu"
+    }
+  },
+  "Footer": {
+    "tagline": "Ek antar-sampradaayik sewa kaam jon susamachaar ke dhartii ke chhor tak pahunchaay ke liye samarpit hai, aur Prabhu ke anant prem ke gawahi dewe hai.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, USA",
+    "email": "info@amintl.org",
+    "whoWeAre": "Hum kaun hai",
+    "whatWeDo": "Hum kaa karta hai",
+    "getInvolved": "Saamil hoi",
+    "media": "Media",
+    "aboutAM": "AM ke baare me",
+    "missionStatement": "Mission ke bayaan",
+    "statementOfFaith": "Biswas ke bayaan",
+    "ourHistory": "Hamaar itihaas",
+    "leadership": "Netritva",
+    "bibleStudyProgram": "Bible Padhai ke Program",
+    "fourSpiritualThemes": "Chaar Aatmik Bishay",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Hamaar sewa kaam",
+    "connectGrowLeadSent": "Jurr, Barhe, Agua Bano, Bheja Jaao",
+    "chapterAffiliation": "Chapter se jurao",
+    "ourNetwork": "Hamaar Network",
+    "events": "Karyakram",
+    "give": "Daan Karo",
+    "news": "Khabar",
+    "legacyOfChairman": "Ralph D. Winter ke birasat",
+    "contactUs": "Hamse baat karo",
+    "copyright": "© 2026 Apostolos Missions International. Sab adhikar surakshit hai.",
+    "contact": "Sampark"
+  },
+  "Logo": {
+    "international": "Antarrashtriya"
+  },
+  "LanguageSwitcher": {
+    "label": "Bhasa"
+  },
+  "Common": {
+    "tagline": "Ek antar-sampradaayik sewa kaam jon susamachaar ke dhartii ke chhor tak pahunchaay ke liye samarpit hai, aur Prabhu ke anant prem ke gawahi dewe hai.",
+    "learnMore": "Aur jaano",
+    "readMore": "Aur Padho",
+    "clickHere": "Iihaa click karo",
+    "home": "Ghar"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Hum kaun hai",
+    "missionStatement": "Mission ke bayaan",
+    "statementOfFaith": "Biswas ke bayaan",
+    "history": "Itihaas",
+    "ourFirstChairman": "Hamaar Pahila Chairman",
+    "membership": "Sadasyata",
+    "leadership": "Netritva"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Hamaar Mission ke Khambha",
+    "administration": "Prashaasan"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Birispat ke Bible Padhai",
+    "bibleStudies": "Bible Padhai",
+    "groupActivities": "Group ke Kaam",
+    "volunteer": "Sewa Karo",
+    "chapterStaff": "Chapter ke Karmchari",
+    "bibleTeacherTraining": "Bible Master ke Training",
+    "internship": "Internship",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Daan Karo"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Khaas Khabar",
+    "events": "Karyakram",
+    "editorial": "Sampadakiya",
+    "photoNews": "Photo Khabar",
+    "testimony": "Gawahi"
+  },
+  "InPractice": {
+    "eyebrow": "Kaam me",
+    "heading": "Chaar chij jon hum har jagah karta hai.",
+    "bibleStudyTag": "Bible padhai",
+    "bibleStudyDescription": "Chhota aur bara group ke padhai jon Pawitra Shastra ke campus jiwan ke beech me rakhe hai.",
+    "leadershipTrainingTag": "Netritva ke training",
+    "leadershipTrainingDescription": "Chhatra log ke apan saathi log ke agua bane ke sikhaawa jaawe hai, phir agla group ke bhejay ke.",
+    "onlineEducationTag": "Online padhai",
+    "onlineEducationDescription": "AM Academy ke course Pawitra Shastra, mission bidya aur alag sanskriti ke sewa kaam me.",
+    "internshipsTripsTag": "Internship & yatra",
+    "internshipsTripsDescription": "Chhota samay ke mission aur internship jon training ke kaam me badle hai."
+  },
+  "AboutPage": {
+    "heroTitle": "Jaise Pita hamke bhejis, waise hum tumke bhejta hai.",
+    "breadcrumb": "Hamaar baare me",
+    "paragraph1": "Apostolos Missions International (AM) ek antar-sampradaayik sewa kaam hai jon susamachaar ke dhartii ke chhor tak pahunchaay ke liye samarpit hai, aur Prabhu ke anant prem ke gawahi dewe hai.",
+    "paragraph2Prefix": "Ii naam",
+    "paragraph2": "(ἀπόστολος) Greek bhasa ke sabd hai jon ke matlab prerit hai. Iske matlab hai \"jon ke mission par bheja gais hai\" ya \"sandeshvahak.\" \"Prerit\" ke upadhi Naya Niyam me barbar aawe hai jon Yeshu ke chunal Barah chela log ke darsaawe hai (Matti 10:2, Markus 3:14, Luka 6:13, Prerit 2:42). Paul, jon pahile Isai dharm ke satawe rahaa aur baad me susamachaar ke bara pracharak ban gais, apan ke \"prerit\" bataais (Romi 1:1, 1 Kurinthi 1:1, 2 Kurinthi 1:1, Galatiya 1:1, Kulussi 1:1, 1 Timothi 1:1, 2 Timothi 1:1, Titus).",
+    "paragraph3": "Prerit log wahi hai jon ke Prabhu bhejis hai ki uu \"Yeshu Masih ke prachaar kare aur Parmeshwar ke jaanay dewe\" pura srishti ke. Preritai ke Bible ke aadhaar Prabhu ke bahut sab bachan me milta hai, jon pahila prerit log ke chunis aur unke waise bhejis jaise raajdut alag alag desh ke pratinidhitva kare ke bheja jaawe hai. Prerit log samjhta rahaa ki unkar jiwan sirf unkar naahi rahaa, balki uu ii girl duniya me Masih ke mahima dekhaay ke liye jiye rahaa.",
+    "blockquote": "Yuhanna 20:21 me likha hai, \"Yeshu phir se bolis, 'Tumhare upar shanti hoy! Jaise Pita hamke bhejis hai, waise hum bhi tumke bhejta hai.'\" (NIV)",
+    "paragraph4": "AM prerit log ke parampara ke maane chahta hai, jon Parmeshwar ke Bachan ke prachaar kare ke mission le ke jiye rahaa. Hum sab ke bhi Parmeshwar se ii bulaawa milta hai ki hum duniya me Unkar haath aur pair ban ke bheja jaay. Hum apan jiwan ke Yeshu ke pairhaan par chale aur dhartii ke chhor tak Susamachaar ke prachaar kare ke liye samarpit kare chahta hai.",
+    "paragraph5": "Jaise Prabhu hamaar jiwan ke chhuis aur badlis, waise hum uu prem ke dekhaay chahta hai jon hamke mila, aur Unkar sab khoya hua bachcha log aur hamaar bhai bahin log ke liye ek ujiyaar ban jaay.",
+    "readStatementOfFaith": "Hamaar biswas ke bayaan padho",
+    "or": "ya",
+    "traceHistory": "itihaas dekho",
+    "cardStatementOfFaithTitle": "Hamaar Biswas ke bayaan padho",
+    "cardMissionStatementTitle": "Mission ke Bayaan"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "AM ke Raasta",
+    "roadmapHeading": "Kaa umeed hai?",
+    "connectTag": "Jurr",
+    "connectItems": [
+      "Jagah par/Online Bible",
+      "Padhai ke Program"
+    ],
+    "growTag": "Barhe",
+    "growItems": [
+      "Group ke Kaam"
+    ],
+    "leadTag": "Agua Bano",
+    "leadItems": [
+      "Sewa & Internship",
+      "Chapter ke Agua"
+    ],
+    "sentTag": "Bheja Jaao",
+    "sentItems": [
+      "Alumni Connect",
+      "Adha/Pura Samay ke Missionary",
+      "Bible Master"
+    ],
+    "connectHeading": "Jurr",
+    "connectStep1Title": "1. Hamaar Website par Naam Likhao",
+    "connectStep1Body": "AM se jurne ke bahut raasta hai. Tum hamaar mukhya website, www.amintl.org, par naam likhaay ke newsletter paay sakta hai. Ya tum hamaar online Bible school ke website, www.amacademy.org, par naam likhaay ke naya khabar aur program paay sakta hai. Hamaar website par hamaar drishti, kaam aur program dekho aur jab bhi sawaal hoy hamke email karo.",
+    "connectStep2Title": "2. Hamaar Karmchari se Milay ke Naam Likhao",
+    "connectStep2BodyPrefix": "Tum",
+    "connectStep2SignUp": "naam likhaay",
+    "connectStep2BodySuffix": "sakta hai iihaa agar tum hamaar kono karmchari se baat kare chahta hai aur apan aatmik yatra par salaah lena chahta hai. Tum bhent ke samay tay kar sakta hai ya hamaar karmchari se sampark kar sakta hai. Hamaar bahut karmchari campus jiwan me anubhav rakhta hai aur samjhta hai ki college ke chhatra log kaa jhelta hai. Uu tumke tumhaar biswas ke yatra ke liye sabse thik raasta khojay me madad karega.",
+    "connectStep3Title": "3. Bible Padhai ke Liye Naam Likhao",
+    "connectStep3BodyPrefix": "Agar tum hamaar Bible padhai ke program suru kare ke taiyaar hai,",
+    "connectStep3SignUp": "naam likhao",
+    "connectStep3BodySuffix": "ii panna par. Agar tumke thik samay naahi milta, apan pasand ke course aur samay ke saath anurodh form bhejo!",
+    "connectStep4Title": "4. Sthaniya Chapter se Jurao",
+    "connectStep4BodyPrefix": "Agar tum hamaar sthaniya chapter ke daftar aur karmchari se jurna chahta hai, kripa kar ke",
+    "connectStep4ContactHere": "iihaa sampark karo",
+    "connectStep4BodySuffix": ". Hum tumse jaldi milay ke intzaar me hai!",
+    "growHeading": "Barhe",
+    "growIntro": "Jaise hum bachpan ke alag alag charan me barhta aur sayana hota hai, waise hum apan aatmik pakkapan me bhi khaas manzil tak pahunchta hai. AM bahut sab program aur raasta dewe hai jon chhatra log ke aatmik barhotri ke ii tin jaruri charan me le jaay ke banal hai:",
+    "rebornTitle": "1. Naya Janm",
+    "rebornBody": "Hum Yeshu ke Krus par ke prayaschit balidaan se naya janm paata hai.",
+    "matureTitle": "1. Sayana Hona",
+    "matureBody": "Hum Yeshu se milal prem aur satya se pos ke aatmik roop se barhta aur sayana hota hai.",
+    "fruitfulTitle": "1. Phal Lana",
+    "fruitfulBody": "Hum Parmeshwar ke aashish se jiwan ke phal ke anubhav karta hai, jon Masih Yeshu ke saath hamaar sayana ekta me pura hota hai.",
+    "navigatingTitle": "Campus Jiwan me Raasta Khojna",
+    "navigatingBody": "Campus jiwan mazedaar aur santosh dewe wala hai, magar itna sab bikalp hone se, uu bina lakshya ke bhi lag sakta hai. Satya aur prarthana se, AM tumke Parmeshwar ke ichchha samajhay me aur tumhaar anokha jiwan ke liye saaf raasta khojay me madad karta hai.",
+    "nextStepsTitle": "Agla Kadam",
+    "nextStepsBody": "Hamaar program me saamil hote raho—Bachan sune, saath prarthana kare, biswas ke bhai bahin log se sangati kare, aur Susamachaar me barhte hue sewa kare ke alag alag mauka ke faayda uthao.",
+    "leadHeading": "Agua Bano",
+    "leadStep1Title": "1. Masih ke Prem me Sewa Karna",
+    "leadStep1Body": "Jaise hum barhta hai, hum dusra log ke sewa kare chahta hai jinke Yeshu tak aay ke madad chahiye. Jaise hum sewa karta hai, hum bhi Masih ke prem me aur gahra barhta hai.",
+    "leadStep2Title": "2. Netritva ke Aashish",
+    "leadStep2Body": "Yeshu bolis, \"Lene se dena jyada dhanya hai\" (Prerit 20:35). Dusra log ke agua bane aur raasta dekhaay ke liye bidya, prarthana, balidaan aur dhiraj chahiye. Magar ii ek dhanya jagah hai jahaa Krus ke mahima apan chotii par pahunchta hai.",
+    "leadStep3Title": "3. Netritva ke Aashish",
+    "leadStep3Body": "College ke chhatra log abhi jawaan hai, magar netritva ke bhumika me unkar khaas bardaan aur hunar aur bhi jyada takat se khoja aur barhaya jaay sakta hai. Ii ek sundar raasta hai jahaa har chhatra sewa aur netritva ke anugrah bhara anubhav se apan swargiya bardaan ke parakhta aur pakka karta hai.",
+    "leadStep4Title": "4. AM ke Saath Mauka",
+    "leadStep4Body": "AM chhatra log ke sewa aur netritva me saamil hone ke liye bahut sab mauka aur bhumika dewe hai. Hamaar sewak log, Chapter ke karmchari, Chapter ke agua, Bible master aur aur bahut ke team me saamil hoi. Khojo ki Yeshu apan sundar yojana ke anusaar tumhaar bhitar kaa bois hai.",
+    "sentHeading": "Bheja Jaao",
+    "sentParagraph1": "College se pass hona ek aur bara suruaat hai ek khula duniya ke taraf jon hamaar khojay ke liye hai. Hum me se kuchh log aur padhai kare sakta hai ya naukari ke raasta le sakta hai. Hum me se kuchh log AM ke pura samay ke karmchari, missionary ya sewak ban jaawe hai jon Parmeshwar ke bulaawa ke maanta hai.",
+    "sentParagraph2": "Ii jaruri kadam me, AM aisa program dewe hai jisme tum jura rah sakta hai aur Alumni Connect ke jariye Susamachaar ke mission me sewa karta rah sakta hai. AM AM World Mission me pesewar mission karmi aur karmchari bane ke liye training program aur raasta bhi dewe hai.",
+    "sentParagraph3": "Tumhaar liye ek ujjwal bhavishya ke taraf bahut sab bikalp khula hai. AM har ek insaan ke saath lage lage chale chahta hai taaki hum sab ke Maha Aadesh ke liye ek saath laay sake, \"Islie jaao, sab jaati ke chela banao, aur unke Pita, Putra aur Pawitra Aatma ke naam me baptisma do (Matti 28:19).\"",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "AM Bible Master Bano",
+    "sentLinkMissionaries": "AM Missionary Bano",
+    "sentLinkStaff": "AM HQ me Pura Samay ke Karmchari",
+    "roadmapHeroTitle": "Campus par Barhna: Ek Raasta"
+  },
+  "Network": {
+    "breadcrumb": "Hamaar Network",
+    "heading": "Hamaar Duniya Bhar ke Network",
+    "joinChapter": "Chapter me saamil hoi",
+    "partnerWithUs": "Hamaar saathi bano",
+    "exploreEyebrow": "Duniya dekho",
+    "regionsHeading": "Kshetra",
+    "regionsSubheading": "Jagah ke hisaab se dekho",
+    "siteCount": "{count, plural, =1 {# site} other {# site}}",
+    "communityEyebrow": "Ek duniya bhar ke samaaj",
+    "chaptersHeading": "Duniya ke alag alag sahar aur kona me chapter",
+    "chaptersSoon": "Chapter jaldi suru hoy waala hai.",
+    "continentSubtitle": "{region} me AM ke desh ke site.",
+    "noSitesTitle": "{region} ke site abhi tak naahi hai",
+    "noSitesBodyPrefix": "Hum ii kshetra me AM ke upasthiti abhi banaay rahaa hai. Jaldi phir se aao, ya",
+    "noSitesLink": "hamse sampark karo",
+    "noSitesBodySuffix": "agar tum ek suru kare me madad kare chahta hai.",
+    "visitSite": "Site dekho",
+    "regions": {
+      "africa": "Africa",
+      "asia": "Asia",
+      "europe": "Europe",
+      "northamerica": "Uttar America",
+      "southamerica": "Latin America & Caribbean",
+      "oceania": "Oceania"
+    },
+    "map": {
+      "world": "Duniya",
+      "loading": "Load hoy rahaa…",
+      "zoomIn": "Lage karo",
+      "clear": "Saaf karo",
+      "worldHint": "Sahar dekhe ke liye kono bindu par jaao ya chuno — kshetra me lage jaay ke liye ek chuno.",
+      "regionHint": "{region} me {count, plural, =1 {# chapter} other {# chapter}}. Bistaar ke liye bindu chuno, ya duniya ke naksa par wapas jaao.",
+      "worldAria": "Duniya ke naksa jon AM ke sab {count} chapter dekhaawe hai. Lage karay ke liye kshetra ke button use karo.",
+      "regionAria": "{region} ke naksa jon AM ke {count} chapter dekhaawe hai.",
+      "captionSouthAsia": "Dakshin Asia",
+      "captionEastCentralAsia": "Purab & Madhya Asia",
+      "captionSoutheastAsia": "Dakshin-Purab Asia",
+      "hqBadge": "HQ",
+      "regionalHqBadge": "Kshetriya HQ"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — jon ke bheja gais hai",
+      "headingLine1": "Jahaa",
+      "headingWhere": "Yeshu ke Prem",
+      "headingWeAre": "Chhalakta Hai",
+      "joinBibleStudy": "Hamaar Bible Padhai me Saamil Hoi",
+      "whoWeAre": "Hum kaun hai",
+      "stat1Value": "2003",
+      "stat1Label": "Se bhejta aais hai",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, USA",
+      "stat3Value": "Duniya Bhar",
+      "stat3Label": "Campus network",
+      "dragToExplore": "Khichke dekho"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Hamaar Bible Padhai ke Program me Saamil Hoi",
+      "heading": "Pahila sawaal se lekar bheja jaay tak ke 5 charan ke raasta.",
+      "description": "AM ke 5 charan ke Bible Padhai ke Program ek online chela banaay aur Bible sikhaay ke program hai jon chhatra log ke Yeshu Masih ke Susamachaar aur biswas ke jiwan sikhay ke ek kramik raasta par le jaawe hai. Ii program chhatra log ke Bible master log ke saath rakhta hai jon sunay wala ke samay ke hisaab se sikhaawe hai. Iske ant me sewa kare, chhatra missionary ke roop me training lene, ya AM ke saath Parmeshwar ke Bachan me aur gahra jaay ke mauka milta hai.",
+      "cta": "Program suru karo"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Bible padhai me saamil hoi",
+      "joinBibleStudyDescription": "5 charan ke online chela banaay aur Bible sikhaay ke program.",
+      "findCampusTitle": "Apan campus khojo",
+      "findCampusDescription": "Hamaar chapter aur sangati ke network.",
+      "getInvolvedTitle": "Saamil hoi",
+      "getInvolvedDescription": "AM ke saath jurr, barhe, agua bano aur bheja jaao.",
+      "supportTitle": "Mission ke sahaayta karo",
+      "supportDescription": "Daan karo, prarthana karo aur khet me chhatra log ke saathi bano."
+    },
+    "Ministries": {
+      "eyebrow": "Jurr · Barhe · Agua Bano · Bheja Jaao",
+      "heading": "Chaar kadam, aur hum har ek me tumhaar saath chalta hai.",
+      "getInvolved": "Saamil hoi",
+      "learnMore": "Aur jaano",
+      "connectTitle": "AM se jurr",
+      "connectDescription": "AM bahut sab Bible padhai ke program dewe hai jon hamaar aatmik jiwan aur Prabhu Yeshu Masih se hamaar rista ke pos karta hai.",
+      "growTitle": "AM ke saath barhe",
+      "growDescription": "Hamaar Group ke Kaam me saamil hoi aur satya ke sangati me saath sayana bano. Hamaar group ke program har chhatra ke aatmik takat paay ke liye badhiya anubhav dewe hai.",
+      "leadTitle": "AM ke saath agua bano",
+      "leadDescription": "AM khusi se aisa chhatra log ke swaagat karta hai jon sewa kare aur Parmeshwar ke deal hunar se alag alag bibhaag me sewa kare chahta hai.",
+      "sentTitle": "AM ke saath bheja jaao",
+      "sentDescription": "AM tumhaar saath chalta rahega jab tak tumhaar \"bheja jaay\" ke anmol bulaawa tumhaar jiwan me pura naahi hota, college pura hone ke baad bhi!",
+      "connectTag": "Jurr",
+      "growTag": "Barhe",
+      "leadTag": "Agua Bano",
+      "sentTag": "Bheja Jaao"
+    },
+    "OurMission": {
+      "eyebrow": "Hamaar mission",
+      "statementPrefix": "Apostolos Missions ke mission hai",
+      "statementEmphasis": "Yeshu aur Unkar krus par charhaay jaay ke prachaar karna",
+      "statementSuffix": "— aur campus mission ke liye jawaan Isai log ke ek Masih-kendrit network banana.",
+      "readFullStatement": "Pura mission ke bayaan padho",
+      "nameOrigin": "Apostolos naam Greek bhasa ke sabd hai jon ke matlab prerit hai. Iske matlab hai \"jon ke mission par bheja gais hai.\"",
+      "history": "Jon Los Angeles, California me kuchh jos bhara jawaan chhatra log ke chhota group se suru bhais rahaa, jon susamachaar phailaay aur Yeshu ke jaanay dewe chahta rahaa, uu ab ek duniya bhar ke sangathan ban gais hai jon duniya bhar ke university campus par kaam karta hai.",
+      "ourHistory": "Hamaar itihaas"
+    },
+    "GetInvolved": {
+      "eyebrow": "Jurr Jaao",
+      "heading": "Saamil Hoi",
+      "bibleStudies": "Bible Padhai",
+      "volunteer": "Sewa Karo",
+      "internship": "Internship"
+    },
+    "Media": {
+      "eyebrow": "Media",
+      "heading": "Sikhaawa, gawahi aur Bachan.",
+      "moreContents": "Aur samagri",
+      "playVideo": "AM ke parichay video chalao",
+      "post1Title": "Chaar Aatmik Bishay – Sankshep",
+      "post2Title": "Uddhaar kaa hai? | Sola Fide Bhaag 1 – AM Academy",
+      "post3Title": "Social Media par Chela Banaay ke Yug, Chhatra Log ke Susamachaar ke Sachchai se Jurna",
+      "post4Title": "Naya Saal ke Liye Parmeshwar ke Wachan",
+      "post1Date": "5 January 2026",
+      "post2Date": "27 June 2023",
+      "post3Date": "3 June 2022",
+      "post4Date": "2 January 2022"
+    },
+    "Events": {
+      "eyebrow": "Karyakram",
+      "heading": "Jahaa network ikattha hota hai.",
+      "allEvents": "Sab karyakram",
+      "event1Date": "4–5 April",
+      "event1Title": "Easter Retreat",
+      "event2Date": "18 February",
+      "event2Title": "Lent ke 40 Din ke Yatra",
+      "event3Date": "16 January",
+      "event3Title": "Naya Chapter Agua Log ke Bhent"
+    },
+    "OurNetwork": {
+      "eyebrow": "Hamaar network",
+      "heading": "Ho sakta hai tumhaar campus par pahile se ek sangati hoy.",
+      "description": "School ya sahar se khojo. Agar tumhaar lage kuchh naahi milta, uu ek nimantran hai — hum tumke ek suru kare me madad karega.",
+      "startChapter": "Chapter suru karo",
+      "searchPlaceholder": "School ya sahar khojo",
+      "noMatches": "Abhi kuchh naahi mila — hamse sampark karo aur hum tumke ek suru kare me madad karega."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Hamaar Pahila Samaanit Chairman",
+      "followingLegacy": "Ii ke birasat ke maante hue",
+      "name": "Dr. Ralph D. Winter",
+      "quoteLine1": "Islie jaao",
+      "quoteLine2": "aur chela banao",
+      "quoteLine3": "sab jaati ke…",
+      "quoteReference": "—Matti 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Hamaar saathi bano",
+      "heading": "Aisa kono ke bhejo jinse tum kabhi naahi milega.",
+      "description": "Har daan Bible padhai, training aur ek bhejay wala samaaj ke un chhatra log tak pahunchaawe hai jon jaay ke taiyaar hai.",
+      "giveToday": "Aaj daan karo",
+      "talkToUs": "Hamse baat karo"
+    },
+    "Newsletter": {
+      "heading": "Campus se Khet ke Khabar",
+      "description": "Har mahina ke chhota chitthi: chhatra log kaa dekh rahaa hai, AM aage kahaa jaay rahaa hai, aur kaise prarthana kare.",
+      "cta": "AM Academy"
+    }
+  }
+}

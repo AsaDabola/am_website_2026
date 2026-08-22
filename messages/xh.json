@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Lowo uthunyiweyo emsebenzini",
+    "amAcademy": "I-AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Singoobani",
+    "whatWeDo": "Senza Ntoni",
+    "getInvolved": "Zibandakanye",
+    "connect": "Qhagamshelana",
+    "ourNetwork": "Uthungelwano Lwethu",
+    "news": "Iindaba",
+    "contactUs": "Qhagamshelana Nathi",
+    "give": "Nikela",
+    "toggleNav": "Tshintsha imenyu yokukhangela",
+    "whoWeAreMenu": {
+      "whoWeAre": "Singoobani",
+      "ourMission": "Umsebenzi wethu",
+      "statementOfFaith": "Ingxelo yokholo",
+      "history": "Imbali",
+      "ourFirstChairmen": "AbaSihlalo Bethu Bokuqala",
+      "membership": "Ubulungu",
+      "ourLeadership": "Inkokeli yethu"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Iintsika zomsebenzi wethu",
+      "administration": "Ulawulo",
+      "bibleStudyProgram": "Inkqubo Yokufunda IBhayibhile",
+      "fourSpiritualThemes": "Imixholo Emine Yomoya",
+      "amAcademy": "I-AM Academy",
+      "ourMinistries": "Ubulungiseleli bethu"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Ukufunda iBhayibhile",
+      "groupActivities": "Imisebenzi yamaqela",
+      "volunteer": "Volontiya",
+      "bibleTeacherTraining": "Uqeqesho lootitshala beBhayibhile",
+      "internship": "Ukuqeqeshwa emsebenzini",
+      "donate": "Nikela",
+      "onlineBibleStudy": "Ukufunda iBhayibhile kwi-intanethi",
+      "chapterAffiliation": "Ukudibana nesahluko"
+    },
+    "newsMenu": {
+      "featured": "Ebalaselayo",
+      "events": "Iminyhadala",
+      "editorial": "Umhleli",
+      "photoNews": "Iindaba ngemifanekiso",
+      "testimony": "Ubungqina"
+    },
+    "megaMenu": {
+      "aboutHeading": "Malunga",
+      "whatWeDoHeading": "Senza ntoni",
+      "featuredHeading": "Amanqaku abalaselayo",
+      "allArticles": "Onke amanqaku",
+      "ctaBibleStudy": "Qalisa ukufunda iBhayibhile",
+      "ctaFindChapter": "Fumana isahluko sakho",
+      "ctaGive": "Nikela namhlanje"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "Malunga ne-AM",
+        "description": "Singoobani, sikholelwa ntoni kwaye sivela phi."
+      },
+      "leadership": {
+        "title": "Inkokeli",
+        "description": "Abantu abakhonza lo mbutho nendlela yokuba yinxalenye."
+      },
+      "whatWeDo": {
+        "title": "Senza Ntoni",
+        "description": "Iintsika nobulungiseleli obuqhubela phambili umsebenzi."
+      },
+      "bibleStudy": {
+        "title": "Inkqubo Yokufunda IBhayibhile",
+        "description": "Indlela yamanqanaba amahlanu ukusuka kumbuzo wakho wokuqala ukuya ekuthunyweni."
+      },
+      "getInvolved": {
+        "title": "Zibandakanye",
+        "description": "Fumana indawo yakho kulo mbutho, nokuba ukweyiphi na indawo."
+      },
+      "supportMission": {
+        "title": "Khonza & Xhasa",
+        "description": "Qeqesha, qalisa isahluko, okanye sebenzisana nabafundi entsimini."
+      },
+      "latestNews": {
+        "title": "Iindaba Zamva Nje",
+        "description": "Amabali nezihlaziyo ezivela kulo lonke uthungelwano."
+      },
+      "events": {
+        "title": "Iminyhadala",
+        "description": "Iindibano, iinkomfa neentlanganiso ezikufuphi nawe."
+      }
+    },
+    "mobile": {
+      "back": "Emva",
+      "close": "Vala imenyu",
+      "menu": "Imenyu"
+    }
+  },
+  "Footer": {
+    "tagline": "Ubulungiseleli obudibanisa amabandla obuzinikele ekusasazeni iindaba ezilungileyo ukuya ezipheleni zomhlaba, singqina ngothando olungunaphakade lweNkosi.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, USA",
+    "email": "info@amintl.org",
+    "whoWeAre": "Singoobani",
+    "whatWeDo": "Senza ntoni",
+    "getInvolved": "Zibandakanye",
+    "media": "Imidiya",
+    "aboutAM": "Malunga ne-AM",
+    "missionStatement": "Ingxelo yomsebenzi",
+    "statementOfFaith": "Ingxelo yokholo",
+    "ourHistory": "Imbali yethu",
+    "leadership": "Inkokeli",
+    "bibleStudyProgram": "Inkqubo Yokufunda IBhayibhile",
+    "fourSpiritualThemes": "Imixholo Emine Yomoya",
+    "amAcademy": "I-AM Academy",
+    "ourMinistries": "Ubulungiseleli bethu",
+    "connectGrowLeadSent": "Qhagamshelana, Khula, Khokela, Thunywa",
+    "chapterAffiliation": "Ukudibana nesahluko",
+    "ourNetwork": "Uthungelwano Lwethu",
+    "events": "Iminyhadala",
+    "give": "Nikela",
+    "news": "Iindaba",
+    "legacyOfChairman": "Ilifa likaRalph D. Winter",
+    "contactUs": "Qhagamshelana nathi",
+    "copyright": "© 2026 Apostolos Missions International. Onke amalungelo agciniwe.",
+    "contact": "Qhagamshelana"
+  },
+  "Logo": {
+    "international": "Yamazwe Ngamazwe"
+  },
+  "LanguageSwitcher": {
+    "label": "Ulwimi"
+  },
+  "Common": {
+    "tagline": "Ubulungiseleli obudibanisa amabandla obuzinikele ekusasazeni iindaba ezilungileyo ukuya ezipheleni zomhlaba, singqina ngothando olungunaphakade lweNkosi.",
+    "learnMore": "Funda ngakumbi",
+    "readMore": "Funda Ngakumbi",
+    "clickHere": "Cofa apha",
+    "home": "Ekhaya"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Singoobani",
+    "missionStatement": "Ingxelo yomsebenzi",
+    "statementOfFaith": "Ingxelo yokholo",
+    "history": "Imbali",
+    "ourFirstChairman": "USihlalo Wethu Wokuqala",
+    "membership": "Ubulungu",
+    "leadership": "Inkokeli"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Iintsika Zomsebenzi Wethu",
+    "administration": "Ulawulo"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Ukufunda IBhayibhile NgoLwesine",
+    "bibleStudies": "Ukufunda IBhayibhile",
+    "groupActivities": "Imisebenzi Yamaqela",
+    "volunteer": "Volontiya",
+    "chapterStaff": "Abasebenzi Besahluko",
+    "bibleTeacherTraining": "Uqeqesho Lootitshala BeBhayibhile",
+    "internship": "Ukuqeqeshwa Emsebenzini",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Nikela"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Iindaba Ezibalaselayo",
+    "events": "Iminyhadala",
+    "editorial": "Umhleli",
+    "photoNews": "Iindaba Ngemifanekiso",
+    "testimony": "Ubungqina"
+  },
+  "InPractice": {
+    "eyebrow": "Ekusebenzeni",
+    "heading": "Izinto ezine esizenzayo naphi na apho siya khona.",
+    "bibleStudyTag": "Ukufunda iBhayibhile",
+    "bibleStudyDescription": "Ukufunda kumaqela amancinci namakhulu okubeka iZibhalo embindini wobomi basekhampasi.",
+    "leadershipTrainingTag": "Uqeqesho lobunkokeli",
+    "leadershipTrainingDescription": "Abafundi baqeqeshelwa ukukhokela oontanga babo, baze bathumele elinye iqela.",
+    "onlineEducationTag": "Imfundo kwi-intanethi",
+    "onlineEducationDescription": "Iikhosi ze-AM Academy kwiZibhalo, kwisayensi yomsebenzi wobuvangeli nakubulungiseleli beenkcubeko ezahlukeneyo.",
+    "internshipsTripsTag": "Ukuqeqeshwa & uhambo",
+    "internshipsTripsDescription": "Uhambo lomsebenzi wobuvangeli lwexesha elifutshane noqeqesho olutshintsha imfundo ibe sisenzo."
+  },
+  "AboutPage": {
+    "heroTitle": "Njengokuba uBawo endithumile, nam ndiyanithuma.",
+    "breadcrumb": "Malunga",
+    "paragraph1": "I-Apostolos Missions International (AM) bubulungiseleli obudibanisa amabandla obuzinikele ekusasazeni iindaba ezilungileyo ukuya ezipheleni zomhlaba, singqina ngothando olungunaphakade lweNkosi.",
+    "paragraph2Prefix": "Igama elithi",
+    "paragraph2": "(ἀπόστολος) ligama lesiGrike elithetha umpostile. Lithetha \"lowo uthunyiweyo emsebenzini\" okanye \"umthunywa.\" Isibizo esithi \"umpostile\" sivela rhoqo kwiTestamente eNtsha simele abafundi abaLishumi elinesibini abamiselwa nguYesu (Mateyu 10:2, Marko 3:14, Luka 6:13, IZenzo 2:42). UPawulos, owayekhe watshutshisa ubuKrestu waza waba ngumvakalisi omkhulu weendaba ezilungileyo, wazazisa \"njengompostile\" (Roma 1:1, 1 Korinte 1:1, 2 Korinte 1:1, Galati 1:1, Kolose 1:1, 1 Timoti 1:1, 2 Timoti 1:1, Tito).",
+    "paragraph3": "Abapostile ngabo bathunywe yiNkosi ukuze bazalisekise umsebenzi \"wokushumayela uYesu Krestu nokwazisa uThixo\" kwindalo yonke. Isiseko seBhayibhile sobupostile sifumaneka kumazwi amaninzi eNkosi eyakhetha abapostile bokuqala yaza yabathuma njengeenxusa ezithunyelwa ukumela amazwe ahlukeneyo. Abapostile babeqonda ukuba ubomi babo babungebobabo bodwa, kodwa babephilela ukutyhila uzuko lukaKrestu kweli hlabathi liwileyo.",
+    "blockquote": "UYohane 20:21 uthi, \"UYesu waphinda wathi kubo, 'Uxolo malube kuni! Njengokuba uBawo endithumile, nam ndiyanithuma.'\" (NIV)",
+    "paragraph4": "I-AM ifuna ukulandela isithethe sabapostile ababephila njengabantu abanomsebenzi wokuvakalisa iLizwi likaThixo. Ngamnye kuthi ukwafumana obu bizo bevela kuThixo bokuthunyelwa ehlabathini njengezandla neenyawo zaKhe. Sifuna ukunikela ubomi bethu ekulandeleni amanyathelo kaYesu nasekushumayeleni iindaba ezilungileyo kude kube sezipheleni zomhlaba.",
+    "paragraph5": "Kanye njengokuba ubomi bethu buchukunyisiwe batshintshwa yiNkosi, sifuna ukutyhila uthando lweNkosi olwaboniswa kuthi, sibe sisibane kubo bonke abantwana baKhe abalahlekileyo nakubazalwana noodade bethu.",
+    "readStatementOfFaith": "Funda ingxelo yethu yokholo",
+    "or": "okanye",
+    "traceHistory": "landela imbali",
+    "cardStatementOfFaithTitle": "Funda ingxelo yethu yoKholo",
+    "cardMissionStatementTitle": "Ingxelo Yomsebenzi"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "Umzila we-AM",
+    "roadmapHeading": "Kulindeleke ntoni?",
+    "connectTag": "Qhagamshelana",
+    "connectItems": [
+      "IBhayibhile Endaweni/Kwi-intanethi",
+      "Iinkqubo Zokufunda"
+    ],
+    "growTag": "Khula",
+    "growItems": [
+      "Imisebenzi Yamaqela"
+    ],
+    "leadTag": "Khokela",
+    "leadItems": [
+      "Ukuvolontiya & Ukuqeqeshwa",
+      "Iinkokeli Zesahluko"
+    ],
+    "sentTag": "Thunywa",
+    "sentItems": [
+      "Alumni Connect",
+      "Abathunywa Bexesha Elipheleleyo/Elingaphelelanga",
+      "Ootitshala BeBhayibhile"
+    ],
+    "connectHeading": "Qhagamshelana",
+    "connectStep1Title": "1. Bhalisela Amawebhusayithi Ethu",
+    "connectStep1Body": "Zininzi iindlela zokuqhagamshelana ne-AM. Ungabhalisela iwebhusayithi yethu ephambili, www.amintl.org, ufumane iileta zeendaba. Okanye ungabhalisela iwebhusayithi yethu yesikolo seBhayibhile kwi-intanethi, www.amacademy.org, ufumane iindaba nezinkqubo zamva nje. Uvumelekile ukujonga umbono wethu, imisebenzi neenkqubo kumawebhusayithi ethu kwaye usithumelele i-imeyile nanini na ukuba unemibuzo.",
+    "connectStep2Title": "2. Bhalisela Ukudibana Nabasebenzi Bethu",
+    "connectStep2BodyPrefix": "Uvumelekile",
+    "connectStep2SignUp": "ukubhalisa",
+    "connectStep2BodySuffix": "apha ukuba ufuna ukuthetha nomnye wabasebenzi bethu ufumane ulucebiso kuhambo lwakho lokomoya. Ungenza idinga okanye uqhagamshelane nabasebenzi bethu. Uninzi lwabasebenzi bethu lunamava obomi basekhampasi kwaye luyaziqonda iimeko abafundi bezidingidi abajongana nazo. Baza kukunceda ufumane indlela efaneleke kakhulu kuhambo lwakho lokholo.",
+    "connectStep3Title": "3. Bhalisela Ukufunda IBhayibhile",
+    "connectStep3BodyPrefix": "Ukuba ukulungele ukuqalisa inkqubo yethu yokufunda iBhayibhile,",
+    "connectStep3SignUp": "bhalisa",
+    "connectStep3BodySuffix": "kweli phepha. Ukuba awuwufumani umhla okufaneleyo, ngenisa ifomu yesicelo nekhosi nexesha olithandayo!",
+    "connectStep4Title": "4. Qhagamshelana Nesahluko Sasekuhlaleni",
+    "connectStep4BodyPrefix": "Ukuba ufuna ukuqhagamshelana neofisi yethu yesahluko sasekuhlaleni nabasebenzi bayo, nceda",
+    "connectStep4ContactHere": "qhagamshelana apha",
+    "connectStep4BodySuffix": ". Sijonge phambili ekukudibaneni kungekudala!",
+    "growHeading": "Khula",
+    "growIntro": "Kanye njengokuba sikhula size sivuthwe ngamanqanaba ahlukeneyo ebuntwaneni bethu, sifikelela kumanqanaba abalulekileyo ekukhuleni kwethu ngokomoya. I-AM inikezela ngeenkqubo neendlela ezininzi ezenzelwe ukukhokela abafundi kumanqanaba amathathu abalulekileyo okukhula ngokomoya:",
+    "rebornTitle": "1. Zalwa Ngokutsha",
+    "rebornBody": "Sizalwa ngokutsha ngedini locamagusho likaYesu emNqamlezweni.",
+    "matureTitle": "1. Vuthwa",
+    "matureBody": "Sikhula size sivuthwe ngokomoya ngokondliwa luthando nenyaniso evela kuYesu.",
+    "fruitfulTitle": "1. Thwala Isiqhamo",
+    "fruitfulBody": "Sifumana amava esiqhamo sobomi ngentsikelelo kaThixo, ezalisekisiweyo kumanyano lwethu oluvuthiweyo noKrestu Yesu.",
+    "navigatingTitle": "Ukukhokela Ubomi Basekhampasi",
+    "navigatingBody": "Ubomi basekhampasi buyachulumancisa buyanelisa, kodwa ngenxa yokhetho olungaka olukhoyo, bunokuvakala bungenanjongo. Ngenyaniso nangomthandazo, i-AM ikunceda ukuba uqonde intando kaThixo kwaye ufumane isikhokelo esicacileyo sobomi bakho obumangalisayo.",
+    "nextStepsTitle": "Amanyathelo Alandelayo",
+    "nextStepsBody": "Qhubeka uthabathe inxaxheba kwiinkqubo zethu—sebenzisa amathuba ahlukeneyo okuva iLizwi, ukuthandaza kunye, ukuba nobudlelwane nabazalwana noodade bokholo, nokukhonza njengoko ukhula kwiindaba ezilungileyo.",
+    "leadHeading": "Khokela",
+    "leadStep1Title": "1. Ukukhonza Ngothando LukaKrestu",
+    "leadStep1Body": "Njengokuba sikhula, sinqwenela ukukhonza abanye abafuna uncedo lokuza kuYesu. Njengoko sikhonza, nathi sikhula nzulu ngakumbi kuthando lukaKrestu.",
+    "leadStep2Title": "2. Intsikelelo Yobunkokeli",
+    "leadStep2Body": "UYesu wathi, \"Kunoyolo ngakumbi ukupha kunokwamkela\" (IZenzo 20:35). Ukukhokela nokukhapha abanye kufuna ubulumko, umthandazo, idini, nomonde. Noko ke, yindawo esikelelweyo apho uzuko lomNqamlezo lufikelela encotsheni.",
+    "leadStep3Title": "3. Intsikelelo Yobunkokeli",
+    "leadStep3Body": "Nangona abafundi bezidingidi besebatsha, izipho nezakhono ezibalaselayo zinokufunyanwa ziphuhliswe ngamandla ngakumbi kwiindima zobunkokeli. Yinkqubo entle njengokuba umfundi ngamnye evavanya eqinisekisa izipho zakhe zasezulwini ngamava obabalo okukhonza nokukhokela.",
+    "leadStep4Title": "4. Amathuba Ne-AM",
+    "leadStep4Body": "I-AM inikezela ngamathuba neendima ezahlukeneyo zokuba abafundi bathabathe inxaxheba ekukhonzeni nakubunkokeli. Joyina iqela lethu labavolontiya, abasebenzi beSahluko, iinkokeli zeSahluko, ootitshala beBhayibhile, nabanye abaninzi. Fumanisa oko uYesu akutyaleyo kuwe ngokwecebo laKhe elibalaseleyo.",
+    "sentHeading": "Thunywa",
+    "sentParagraph1": "Ukuphumelela edyunivesithi kukumka okunye okubalulekileyo okusinga kwihlabathi elivulekileyo ukuze siliphande. Abanye bethu basenokuqhubeka nemfundo okanye bathabathe indlela yomsebenzi. Abanye bethu bakwaba ngabasebenzi bexesha elipheleleyo be-AM, abathunywa bevangeli, okanye abefundisi belandela ubizo lukaThixo.",
+    "sentParagraph2": "Kweli nyathelo libalulekileyo, i-AM inikezela ngeenkqubo apho ungahlala uqhagamshelene uze uqhubeke ukhonza umsebenzi weendaba ezilungileyo nge-Alumni Connect. I-AM ikwanikezela ngeenkqubo zoqeqesho neendlela zokuba ngabasebenzi bomsebenzi wobuvangeli abanobuchule kwi-AM World Mission.",
+    "sentParagraph3": "Ukhetho oluhlukeneyo luvulekile kuwe ukusinga kwikamva eliqaqambileyo. I-AM inqwenela ukuhamba kufuphi nomntu ngamnye ukuze sizise bonke kunye kuMyalelo Omkhulu, \"Ngoko ke hambani niye kwenza abafundi kuzo zonke iintlanga, nibabhaptiza egameni loYise neloNyana neloMoya oyiNgcwele (Mateyu 28:19).\"",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "Yiba ngutitshala weBhayibhile we-AM",
+    "sentLinkMissionaries": "Yiba ngumthunywa wevangeli we-AM",
+    "sentLinkStaff": "Umsebenzi wexesha elipheleleyo kwi-AM HQ",
+    "roadmapHeroTitle": "Ukukhula Ekhampasini: Umzila"
+  },
+  "Network": {
+    "breadcrumb": "Uthungelwano Lwethu",
+    "heading": "Uthungelwano Lwethu Lwehlabathi",
+    "joinChapter": "Joyina isahluko",
+    "partnerWithUs": "Sebenzisana nathi",
+    "exploreEyebrow": "Phonononga ihlabathi",
+    "regionsHeading": "Imimandla",
+    "regionsSubheading": "Phonononga ngokwendawo",
+    "siteCount": "{count, plural, =1 {indawo enye} other {iindawo ezingu-#}}",
+    "communityEyebrow": "Uluntu lwehlabathi",
+    "chaptersHeading": "Izahluko kwizixeko neenkalo ezahlukeneyo zehlabathi",
+    "chaptersSoon": "Izahluko ziza kuqalisa kungekudala.",
+    "continentSubtitle": "Iindawo zamazwe e-AM kulo lonke elase-{region}.",
+    "noSitesTitle": "Azikho iindawo zase-{region} okwangoku",
+    "noSitesBodyPrefix": "Sisakha ubukho be-AM kulo mmandla. Buya kungekudala, okanye",
+    "noSitesLink": "qhagamshelana nathi",
+    "noSitesBodySuffix": "ukuba ufuna ukunceda ekuqaliseni esinye.",
+    "visitSite": "Tyelela indawo",
+    "regions": {
+      "africa": "IAfrika",
+      "asia": "IAsiya",
+      "europe": "IYurophu",
+      "northamerica": "IMntla Melika",
+      "southamerica": "IAmerika eseMazantsi neKaribbean",
+      "oceania": "IOsheniya"
+    },
+    "map": {
+      "world": "Ihlabathi",
+      "loading": "Iyalayisha…",
+      "zoomIn": "Sondeza",
+      "clear": "Cima",
+      "worldHint": "Beka okanye ukhethe inqaku ukuze ubone isixeko — khetha esinye ukuze usondeze kummandla waso.",
+      "regionHint": "{count, plural, =1 {isahluko esinye} other {izahluko ezingu-#}} e-{region}. Khetha inqaku ukuze ufumane iinkcukacha, okanye ubuyele kwimephu yehlabathi.",
+      "worldAria": "Imephu yehlabathi ebonisa zonke izahluko ze-AM ezingu-{count}. Sebenzisa amaqhosha emimandla ukuze usondeze.",
+      "regionAria": "Imephu ye-{region} ebonisa izahluko ze-AM ezingu-{count}.",
+      "captionSouthAsia": "IAsiya eseMazantsi",
+      "captionEastCentralAsia": "IAsiya eseMpuma nePhakathi",
+      "captionSoutheastAsia": "IAsiya eseMzantsi-Mpuma",
+      "hqBadge": "IKOMKHULU",
+      "regionalHqBadge": "Ikomkhulu lommandla"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — lowo uthunyiweyo",
+      "headingLine1": "Apho",
+      "headingWhere": "Uthando LukaYesu",
+      "headingWeAre": "Luphuphuma",
+      "joinBibleStudy": "Joyina Ukufunda Kwethu IBhayibhile",
+      "whoWeAre": "Singoobani",
+      "stat1Value": "2003",
+      "stat1Label": "Sithumela ukususela",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, USA",
+      "stat3Value": "Ihlabathi",
+      "stat3Label": "Uthungelwano lwasekhampasini",
+      "dragToExplore": "Tsala ukuze uphonononge"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Joyina Inkqubo Yethu Yokufunda IBhayibhile",
+      "heading": "Indlela yamanqanaba amahlanu ukusuka kumbuzo wokuqala ukuya ekuthunyweni.",
+      "description": "Inkqubo ye-AM yokufunda iBhayibhile yamanqanaba amahlanu yinkqubo yokwenza abafundi nemfundo yeBhayibhile kwi-intanethi ekhokela abafundi kutyelelo olucwangcisiweyo lokufunda iindaba ezilungileyo zikaYesu Krestu nobomi bokholo. Le nkqubo idibanisa abafundi nootitshala beBhayibhile abaza kufundisa ngokwexesha lomphulaphuli. Iphelela kwithuba lokuvolontiya, ukuqeqeshelwa ukuba ngumthunywa wevangeli ongumfundi, okanye nje ukungena nzulu eLizwini likaThixo ne-AM.",
+      "cta": "Qalisa inkqubo"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Joyina ukufunda iBhayibhile",
+      "joinBibleStudyDescription": "Inkqubo yamanqanaba amahlanu yokwenza abafundi nemfundo yeBhayibhile kwi-intanethi.",
+      "findCampusTitle": "Fumana ikhampasi yakho",
+      "findCampusDescription": "Uthungelwano lwethu lwezahluko nobudlelwane.",
+      "getInvolvedTitle": "Zibandakanye",
+      "getInvolvedDescription": "Qhagamshelana, khula, khokela uze uthunywe ne-AM.",
+      "supportTitle": "Xhasa umsebenzi",
+      "supportDescription": "Nikela, thandaza uze usebenzisane nabafundi entsimini."
+    },
+    "Ministries": {
+      "eyebrow": "Qhagamshelana · Khula · Khokela · Thunywa",
+      "heading": "Amanyathelo amane, kwaye sihamba nawe kuwo onke.",
+      "getInvolved": "Zibandakanye",
+      "learnMore": "Funda ngakumbi",
+      "connectTitle": "Qhagamshelana ne-AM",
+      "connectDescription": "I-AM inikezela ngeenkqubo ezahlukeneyo zokufunda iBhayibhile ezondla ubomi bethu bokomoya nobudlelwane bethu neNkosi uYesu Krestu.",
+      "growTitle": "Khula ne-AM",
+      "growDescription": "Joyina iMisebenzi yethu Yamaqela uze uvuthwe kunye kubudlelwane benyaniso. Iinkqubo zethu zamaqela zinikezela ngamava omgangatho ophezulu kumfundi ngamnye ukuze afumane amandla okomoya.",
+      "leadTitle": "Khokela ne-AM",
+      "leadDescription": "I-AM iyavuya ukwamkela abafundi abanomdla wokuvolontiya nokukhonza ngezakhono abazinikwe nguThixo kumasebe ahlukeneyo.",
+      "sentTitle": "Thunywa ne-AM",
+      "sentDescription": "I-AM iza kuqhubeka ihamba nawe de ubizo lwakho oluxabisekileyo \"lokuthunywa\" luzaliseke ebomini bakho nasemva kokuphumelela kwakho!",
+      "connectTag": "Qhagamshelana",
+      "growTag": "Khula",
+      "leadTag": "Khokela",
+      "sentTag": "Thunywa"
+    },
+    "OurMission": {
+      "eyebrow": "Umsebenzi wethu",
+      "statementPrefix": "Umsebenzi we-Apostolos Missions kukuba",
+      "statementEmphasis": "sishumayele uYesu ebethelelwe emnqamlezweni",
+      "statementSuffix": "— sakhe uthungelwano lwabantu abatsha abangamaKrestu olujolise kuKrestu ukuze kuhlanganiswe umsebenzi wevangeli wasekhampasini.",
+      "readFullStatement": "Funda ingxelo epheleleyo yomsebenzi",
+      "nameOrigin": "Igama elithi apostolos ligama lesiGrike elithetha umpostile. Lithetha \"lowo uthunyiweyo emsebenzini.\"",
+      "history": "Oko kwaqala njengeqela elincinci labafundi abatsha abanomdla eLos Angeles, eCalifornia, abalangazelela ukusasaza iindaba ezilungileyo nokwazisa uYesu, kuye kwaba ngumbutho wehlabathi osebenza kwiikhampasi zeedyunivesithi kwihlabathi liphela.",
+      "ourHistory": "Imbali yethu"
+    },
+    "GetInvolved": {
+      "eyebrow": "Qhagamshelana",
+      "heading": "Zibandakanye",
+      "bibleStudies": "Ukufunda IBhayibhile",
+      "volunteer": "Volontiya",
+      "internship": "Ukuqeqeshwa Emsebenzini"
+    },
+    "Media": {
+      "eyebrow": "Imidiya",
+      "heading": "Ukufundisa, ubungqina neLizwi.",
+      "moreContents": "Okunye okuqulathiweyo",
+      "playVideo": "Dlala ividiyo yentshayelelo ye-AM",
+      "post1Title": "Imixholo Emine Yomoya – Isishwankathelo",
+      "post2Title": "Luyintoni Usindiso? | Sola Fide Inxalenye 1 – AM Academy",
+      "post3Title": "Ixesha Lokwenza Abafundi Ngeendaba Zoluntu, Ukudibanisa Abafundi Nenyaniso Yeendaba Ezilungileyo",
+      "post4Title": "Izithembiso ZikaThixo Zonyaka Omtsha",
+      "post1Date": "5 Janyuwari 2026",
+      "post2Date": "27 Juni 2023",
+      "post3Date": "3 Juni 2022",
+      "post4Date": "2 Janyuwari 2022"
+    },
+    "Events": {
+      "eyebrow": "Iminyhadala",
+      "heading": "Apho uthungelwano luhlanganisana khona.",
+      "allEvents": "Yonke iminyhadala",
+      "event1Date": "4–5 Epreli",
+      "event1Title": "Indibano YePasika",
+      "event2Date": "18 Februwari",
+      "event2Title": "Uhambo Lweentsuku Ezingama-40 ZeLente",
+      "event3Date": "16 Janyuwari",
+      "event3Title": "Intlanganiso Yeenkokeli Ezintsha Zezahluko"
+    },
+    "OurNetwork": {
+      "eyebrow": "Uthungelwano lwethu",
+      "heading": "Kusenokwenzeka ukuba sele kukho ubudlelwane kwikhampasi yakho.",
+      "description": "Khangela ngesikolo okanye isixeko. Ukuba akukho nto ivelayo kufuphi nawe, esosimemo — siza kukunceda uqalise esinye.",
+      "startChapter": "Qalisa isahluko",
+      "searchPlaceholder": "Khangela isikolo okanye isixeko",
+      "noMatches": "Akukho nto ihambelanayo okwangoku — qhagamshelana nathi size sikuncede uqalise esinye."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "USihlalo Wethu Wokuqala Wembeko",
+      "followingLegacy": "Silandela Ilifa lika",
+      "name": "Gqirha Ralph D. Winter",
+      "quoteLine1": "Ngoko ke hambani",
+      "quoteLine2": "niye kwenza abafundi",
+      "quoteLine3": "kuzo zonke iintlanga…",
+      "quoteReference": "—Mateyu 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Sebenzisana nathi",
+      "heading": "Thumela umntu ongasoze udibane naye.",
+      "description": "Sonke isipho sibeka ukufunda iBhayibhile, uqeqesho noluntu oluthumelayo kufuphi nabafundi abakulungeleyo ukuhamba.",
+      "giveToday": "Nikela namhlanje",
+      "talkToUs": "Thetha nathi"
+    },
+    "Newsletter": {
+      "heading": "Amanqaku Asentsimini Kwiikhampasi",
+      "description": "Ileta emfutshane yenyanga nenyanga: oko abafundi bakubonayo, apho i-AM iya khona, nendlela yokuthandaza.",
+      "cta": "I-AM Academy"
+    }
+  }
+}

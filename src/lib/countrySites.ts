@@ -29,9 +29,15 @@ export type CountrySite = {
   /** URL segment: /{continent}/{slug} */
   slug: string;
   /**
-   * Default site language. Constrained to a locale the site actually ships —
-   * see `nativeLanguages` for what the country really speaks, and
-   * `untranslatedLanguages()` for the gap between the two.
+   * Default site language. Constrained to a locale the site actually ships;
+   * every country now has one, so `untranslatedLanguages()` comes back empty.
+   *
+   * Normally this is `nativeLanguages[0]`. Two countries deviate on purpose:
+   * Haiti and the East Africa Federation open in the language most people
+   * there actually speak (Creole, Swahili) rather than the colonial-era first
+   * entry the sheet lists. South Africa, Singapore and Fiji do list English
+   * first and keep it, since none of their other languages is shared across
+   * the whole student body.
    */
   locale: Locale;
   /** ISO 3166-1 alpha-2 codes this site answers for, for IP geo detection. */
@@ -49,11 +55,11 @@ export const COUNTRY_SITES: CountrySite[] = [
   { country: "Colombia", city: "Bogotá", continent: "southamerica", slug: "colombia", locale: "es", countryCodes: ["CO", "EC", "PA"], nativeLanguages: ["es"], tier: "g20" },
   { country: "France", city: "Paris", continent: "europe", slug: "france", locale: "fr", countryCodes: ["FR"], nativeLanguages: ["fr"], tier: "g20" },
   { country: "Germany", city: "Frankfurt", continent: "europe", slug: "germany", locale: "de", countryCodes: ["DE"], nativeLanguages: ["de"], tier: "g20" },
-  { country: "India", city: "Chennai", continent: "asia", slug: "india", locale: "en", countryCodes: ["IN"], nativeLanguages: ["hi", "en"], tier: "g20" },
+  { country: "India", city: "Chennai", continent: "asia", slug: "india", locale: "hi", countryCodes: ["IN"], nativeLanguages: ["hi", "en"], tier: "g20" },
   { country: "Indonesia", city: "Jakarta", continent: "asia", slug: "indonesia", locale: "id", countryCodes: ["ID"], nativeLanguages: ["id"], tier: "g20" },
   { country: "Italy", continent: "europe", slug: "italy", locale: "it", countryCodes: ["IT"], nativeLanguages: ["it"], tier: "g20" },
   { country: "Japan", city: "Tokyo", continent: "asia", slug: "japan", locale: "ja", countryCodes: ["JP"], nativeLanguages: ["ja"], tier: "g20" },
-  { country: "East Africa Federation", city: "Nairobi", continent: "africa", slug: "east-africa-federation", locale: "en", countryCodes: ["BI", "SS"], nativeLanguages: ["en", "sw", "fr", "rn"], tier: "g20" },
+  { country: "East Africa Federation", city: "Nairobi", continent: "africa", slug: "east-africa-federation", locale: "sw", countryCodes: ["BI", "SS"], nativeLanguages: ["en", "sw", "fr", "rn"], tier: "g20" },
   { country: "South Korea", city: "Seoul", continent: "asia", slug: "south-korea", locale: "ko", countryCodes: ["KR"], nativeLanguages: ["ko"], tier: "g20" },
   { country: "Mexico", city: "Mexico City", continent: "southamerica", slug: "mexico", locale: "es", countryCodes: ["MX"], nativeLanguages: ["es"], tier: "g20" },
   { country: "Nigeria", city: "Lagos", continent: "africa", slug: "nigeria", locale: "en", countryCodes: ["NG"], nativeLanguages: ["en"], tier: "g20" },
@@ -69,13 +75,13 @@ export const COUNTRY_SITES: CountrySite[] = [
   { country: "Angola", continent: "africa", slug: "angola", locale: "pt", countryCodes: ["AO"], nativeLanguages: ["pt"], tier: "m40" },
   { country: "Cameroon", continent: "africa", slug: "cameroon", locale: "fr", countryCodes: ["CM"], nativeLanguages: ["fr", "en"], tier: "m40" },
   { country: "Democratic Republic of the Congo", city: "Kinshasa", continent: "africa", slug: "democratic-republic-of-the-congo", locale: "fr", countryCodes: ["CD"], nativeLanguages: ["fr"], tier: "m40" },
-  { country: "Ethiopia", city: "Addis Ababa", continent: "africa", slug: "ethiopia", locale: "en", countryCodes: ["ET"], nativeLanguages: ["am", "en"], tier: "m40" },
+  { country: "Ethiopia", city: "Addis Ababa", continent: "africa", slug: "ethiopia", locale: "am", countryCodes: ["ET"], nativeLanguages: ["am", "en"], tier: "m40" },
   { country: "Ghana", continent: "africa", slug: "ghana", locale: "en", countryCodes: ["GH"], nativeLanguages: ["en"], tier: "m40" },
   { country: "Côte d’Ivoire", continent: "africa", slug: "cote-divoire", locale: "fr", countryCodes: ["CI"], nativeLanguages: ["fr"], tier: "m40" },
-  { country: "Madagascar", continent: "africa", slug: "madagascar", locale: "fr", countryCodes: ["MG"], nativeLanguages: ["mg", "fr"], tier: "m40" },
+  { country: "Madagascar", continent: "africa", slug: "madagascar", locale: "mg", countryCodes: ["MG"], nativeLanguages: ["mg", "fr"], tier: "m40" },
   { country: "Mozambique", continent: "africa", slug: "mozambique", locale: "pt", countryCodes: ["MZ"], nativeLanguages: ["pt"], tier: "m40" },
   { country: "Zambia", city: "Lusaka", continent: "africa", slug: "zambia", locale: "en", countryCodes: ["ZM"], nativeLanguages: ["en"], tier: "m40" },
-  { country: "Rwanda", continent: "africa", slug: "rwanda", locale: "en", countryCodes: ["RW"], nativeLanguages: ["rw", "en", "fr", "sw"], tier: "m40" },
+  { country: "Rwanda", continent: "africa", slug: "rwanda", locale: "rw", countryCodes: ["RW"], nativeLanguages: ["rw", "en", "fr", "sw"], tier: "m40" },
   { country: "Egypt", city: "Cairo", continent: "africa", slug: "egypt", locale: "ar", countryCodes: ["EG"], nativeLanguages: ["ar"], tier: "m40" },
 
   { country: "Austria", continent: "europe", slug: "austria", locale: "de", countryCodes: ["AT"], nativeLanguages: ["de"], tier: "m40" },
@@ -93,31 +99,31 @@ export const COUNTRY_SITES: CountrySite[] = [
   { country: "Ukraine", continent: "europe", slug: "ukraine", locale: "uk", countryCodes: ["UA"], nativeLanguages: ["uk"], tier: "m40" },
 
   { country: "Dominican Republic", continent: "southamerica", slug: "dominican-republic", locale: "es", countryCodes: ["DO"], nativeLanguages: ["es"], tier: "m40" },
-  { country: "Haiti", continent: "southamerica", slug: "haiti", locale: "fr", countryCodes: ["HT"], nativeLanguages: ["fr", "ht"], tier: "m40" },
+  { country: "Haiti", continent: "southamerica", slug: "haiti", locale: "ht", countryCodes: ["HT"], nativeLanguages: ["fr", "ht"], tier: "m40" },
   { country: "Guatemala", continent: "southamerica", slug: "guatemala", locale: "es", countryCodes: ["GT"], nativeLanguages: ["es"], tier: "m40" },
   { country: "Honduras", continent: "southamerica", slug: "honduras", locale: "es", countryCodes: ["HN"], nativeLanguages: ["es"], tier: "m40" },
   { country: "Argentina", city: "Buenos Aires", continent: "southamerica", slug: "argentina", locale: "es", countryCodes: ["AR"], nativeLanguages: ["es"], tier: "m40" },
   { country: "Chile", continent: "southamerica", slug: "chile", locale: "es", countryCodes: ["CL"], nativeLanguages: ["es"], tier: "m40" },
   { country: "Peru", city: "Lima", continent: "southamerica", slug: "peru", locale: "es", countryCodes: ["PE"], nativeLanguages: ["es"], tier: "m40" },
 
-  { country: "Kazakhstan", continent: "asia", slug: "kazakhstan", locale: "ru", countryCodes: ["KZ"], nativeLanguages: ["kk", "ru"], tier: "m40" },
+  { country: "Kazakhstan", continent: "asia", slug: "kazakhstan", locale: "kk", countryCodes: ["KZ"], nativeLanguages: ["kk", "ru"], tier: "m40" },
   { country: "Israel", continent: "asia", slug: "israel", locale: "he", countryCodes: ["IL"], nativeLanguages: ["he", "ar"], tier: "m40" },
   { country: "United Arab Emirates", continent: "asia", slug: "united-arab-emirates", locale: "ar", countryCodes: ["AE"], nativeLanguages: ["ar"], tier: "m40" },
-  { country: "Bangladesh", continent: "asia", slug: "bangladesh", locale: "en", countryCodes: ["BD"], nativeLanguages: ["bn"], tier: "m40" },
-  { country: "Nepal", continent: "asia", slug: "nepal", locale: "en", countryCodes: ["NP"], nativeLanguages: ["ne"], tier: "m40" },
+  { country: "Bangladesh", continent: "asia", slug: "bangladesh", locale: "bn", countryCodes: ["BD"], nativeLanguages: ["bn"], tier: "m40" },
+  { country: "Nepal", continent: "asia", slug: "nepal", locale: "ne", countryCodes: ["NP"], nativeLanguages: ["ne"], tier: "m40" },
   { country: "Pakistan", continent: "asia", slug: "pakistan", locale: "ur", countryCodes: ["PK"], nativeLanguages: ["ur", "en"], tier: "m40" },
   // The sheet lists Malaysia as "ms" and Myanmar as "my" — those are the
   // language codes, not the country codes, and they are swapped relative to
   // ISO 3166. Corrected here: Malaysia is MY, Myanmar is MM.
-  { country: "Malaysia", city: "Kuala Lumpur", continent: "asia", slug: "malaysia", locale: "en", countryCodes: ["MY"], nativeLanguages: ["ms"], tier: "m40" },
-  { country: "Myanmar", continent: "asia", slug: "myanmar", locale: "en", countryCodes: ["MM"], nativeLanguages: ["my"], tier: "m40" },
-  { country: "Philippines", city: "Manila", continent: "asia", slug: "philippines", locale: "en", countryCodes: ["PH"], nativeLanguages: ["fil", "en"], tier: "m40" },
+  { country: "Malaysia", city: "Kuala Lumpur", continent: "asia", slug: "malaysia", locale: "ms", countryCodes: ["MY"], nativeLanguages: ["ms"], tier: "m40" },
+  { country: "Myanmar", continent: "asia", slug: "myanmar", locale: "my", countryCodes: ["MM"], nativeLanguages: ["my"], tier: "m40" },
+  { country: "Philippines", city: "Manila", continent: "asia", slug: "philippines", locale: "fil", countryCodes: ["PH"], nativeLanguages: ["fil", "en"], tier: "m40" },
   { country: "Singapore", continent: "asia", slug: "singapore", locale: "en", countryCodes: ["SG"], nativeLanguages: ["en", "ms", "zh", "ta"], tier: "m40" },
-  { country: "Thailand", city: "Bangkok", continent: "asia", slug: "thailand", locale: "en", countryCodes: ["TH"], nativeLanguages: ["th"], tier: "m40" },
-  { country: "Vietnam", city: "Hanoi", continent: "asia", slug: "vietnam", locale: "en", countryCodes: ["VN"], nativeLanguages: ["vi"], tier: "m40" },
-  { country: "Mongolia", city: "Ulaanbaatar", continent: "asia", slug: "mongolia", locale: "en", countryCodes: ["MN"], nativeLanguages: ["mn"], tier: "m40" },
+  { country: "Thailand", city: "Bangkok", continent: "asia", slug: "thailand", locale: "th", countryCodes: ["TH"], nativeLanguages: ["th"], tier: "m40" },
+  { country: "Vietnam", city: "Hanoi", continent: "asia", slug: "vietnam", locale: "vi", countryCodes: ["VN"], nativeLanguages: ["vi"], tier: "m40" },
+  { country: "Mongolia", city: "Ulaanbaatar", continent: "asia", slug: "mongolia", locale: "mn", countryCodes: ["MN"], nativeLanguages: ["mn"], tier: "m40" },
   { country: "Taiwan", continent: "asia", slug: "taiwan", locale: "zh", countryCodes: ["TW"], nativeLanguages: ["zh"], tier: "m40" },
-  { country: "Sri Lanka", continent: "asia", slug: "sri-lanka", locale: "en", countryCodes: ["LK"], nativeLanguages: ["si", "ta"], tier: "m40" },
+  { country: "Sri Lanka", continent: "asia", slug: "sri-lanka", locale: "si", countryCodes: ["LK"], nativeLanguages: ["si", "ta"], tier: "m40" },
 
   { country: "New Zealand", continent: "oceania", slug: "new-zealand", locale: "en", countryCodes: ["NZ"], nativeLanguages: ["en"], tier: "m40" },
   { country: "Fiji", continent: "oceania", slug: "fiji", locale: "en", countryCodes: ["FJ"], nativeLanguages: ["en", "fj", "hif"], tier: "m40" },

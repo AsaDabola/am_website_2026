@@ -4,11 +4,11 @@ import { defineRouting } from "next-intl/routing";
 // label below, and add messages/<locale>.json.
 //
 // The set is driven by lib/countrySites.ts — a mission country should be
-// readable in its own language. The four after `zh` cover the G20 half (Italy,
-// Russia, Turkey, Indonesia); the nine after those cover the European M40
-// countries. Gaps remain further down that list, and
-// `untranslatedLanguages()` in countrySites.ts reports which countries are
-// still running on a fallback locale.
+// readable in its own language, so the list grew country by country rather
+// than by speaker count. Roughly grouped: the G20 half, then Europe, then the
+// three RTL locales, then Asia, Africa and the remaining island and creole
+// languages. `untranslatedLanguages()` in countrySites.ts reports any country
+// still running on a fallback locale — it should now come back empty.
 export const locales = [
   "en",
   "es",
@@ -34,6 +34,30 @@ export const locales = [
   "ar",
   "he",
   "ur",
+  "hi",
+  "bn",
+  "ta",
+  "ne",
+  "si",
+  "my",
+  "th",
+  "vi",
+  "fil",
+  "ms",
+  "mn",
+  "kk",
+  "sw",
+  "am",
+  "af",
+  "zu",
+  "xh",
+  "rw",
+  "rn",
+  "mg",
+  "ht",
+  "fj",
+  "hif",
+  "rm",
 ] as const;
 
 export type Locale = (typeof locales)[number];
@@ -65,6 +89,30 @@ export const localeLabels: Record<Locale, string> = {
   ar: "العربية",
   he: "עברית",
   ur: "اردو",
+  hi: "हिन्दी",
+  bn: "বাংলা",
+  ta: "தமிழ்",
+  ne: "नेपाली",
+  si: "සිංහල",
+  my: "မြန်မာ",
+  th: "ไทย",
+  vi: "Tiếng Việt",
+  fil: "Filipino",
+  ms: "Bahasa Melayu",
+  mn: "Монгол",
+  kk: "Қазақша",
+  sw: "Kiswahili",
+  am: "አማርኛ",
+  af: "Afrikaans",
+  zu: "isiZulu",
+  xh: "isiXhosa",
+  rw: "Ikinyarwanda",
+  rn: "Ikirundi",
+  mg: "Malagasy",
+  ht: "Kreyòl Ayisyen",
+  fj: "Na Vosa Vakaviti",
+  hif: "Fiji Hindi",
+  rm: "Rumantsch",
 };
 
 /**

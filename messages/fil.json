@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Ang isinugo sa isang misyon",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Sino Kami",
+    "whatWeDo": "Ang Ginagawa Namin",
+    "getInvolved": "Sumali",
+    "connect": "Kumonekta",
+    "ourNetwork": "Ang Aming Network",
+    "news": "Balita",
+    "contactUs": "Makipag-ugnayan",
+    "give": "Mag-abuloy",
+    "toggleNav": "Buksan o isara ang menu ng nabigasyon",
+    "whoWeAreMenu": {
+      "whoWeAre": "Sino kami",
+      "ourMission": "Ang aming misyon",
+      "statementOfFaith": "Pahayag ng pananampalataya",
+      "history": "Kasaysayan",
+      "ourFirstChairmen": "Ang aming mga unang tagapangulo",
+      "membership": "Pagiging kasapi",
+      "ourLeadership": "Ang aming pamunuan"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Mga haligi ng aming misyon",
+      "administration": "Pangangasiwa",
+      "bibleStudyProgram": "Programa sa Pag-aaral ng Biblia",
+      "fourSpiritualThemes": "Apat na Espirituwal na Tema",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Ang aming mga ministeryo"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Pag-aaral ng Biblia",
+      "groupActivities": "Mga gawaing pangkat",
+      "volunteer": "Pagboboluntaryo",
+      "bibleTeacherTraining": "Pagsasanay ng guro sa Biblia",
+      "internship": "Internship",
+      "donate": "Mag-abuloy",
+      "onlineBibleStudy": "Online na pag-aaral ng Biblia",
+      "chapterAffiliation": "Pagsanib ng chapter"
+    },
+    "newsMenu": {
+      "featured": "Itinatampok",
+      "events": "Mga kaganapan",
+      "editorial": "Mga artikulo",
+      "photoNews": "Balitang larawan",
+      "testimony": "Mga patotoo"
+    },
+    "megaMenu": {
+      "aboutHeading": "Tungkol sa amin",
+      "whatWeDoHeading": "Ang ginagawa namin",
+      "featuredHeading": "Mga itinatampok na artikulo",
+      "allArticles": "Lahat ng artikulo",
+      "ctaBibleStudy": "Simulan ang pag-aaral ng Biblia",
+      "ctaFindChapter": "Hanapin ang iyong chapter",
+      "ctaGive": "Mag-abuloy ngayon"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "Tungkol sa AM",
+        "description": "Sino kami, ano ang aming pinaniniwalaan, at saan kami nagmula."
+      },
+      "leadership": {
+        "title": "Pamunuan",
+        "description": "Ang mga taong naglilingkod sa kilusang ito at kung paano ka makakasama."
+      },
+      "whatWeDo": {
+        "title": "Ang Ginagawa Namin",
+        "description": "Ang mga haligi at ministeryong nagpapatuloy sa misyon."
+      },
+      "bibleStudy": {
+        "title": "Programa sa Pag-aaral ng Biblia",
+        "description": "Limang yugtong landas, mula sa iyong unang tanong hanggang sa pagsugo."
+      },
+      "getInvolved": {
+        "title": "Sumali",
+        "description": "Hanapin ang iyong lugar sa kilusang ito, saan ka man naroroon."
+      },
+      "supportMission": {
+        "title": "Maglingkod at Tumulong",
+        "description": "Magsanay, magsimula ng chapter, o makipagtulungan sa mga estudyante sa larangan."
+      },
+      "latestNews": {
+        "title": "Pinakabagong Balita",
+        "description": "Mga kuwento at update mula sa buong network."
+      },
+      "events": {
+        "title": "Mga Kaganapan",
+        "description": "Mga retreat, kumperensya at pagtitipon malapit sa iyo."
+      }
+    },
+    "mobile": {
+      "back": "Bumalik",
+      "close": "Isara ang menu",
+      "menu": "Menu"
+    }
+  },
+  "Footer": {
+    "tagline": "Isang ministeryong lampas sa denominasyon na nakatuon sa pagpapalaganap ng ebanghelyo hanggang sa dulo ng daigdig, na nagpapatotoo sa walang hanggang pag-ibig ng Panginoon.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, USA",
+    "email": "info@amintl.org",
+    "whoWeAre": "Sino kami",
+    "whatWeDo": "Ang ginagawa namin",
+    "getInvolved": "Sumali",
+    "media": "Media",
+    "aboutAM": "Tungkol sa AM",
+    "missionStatement": "Pahayag ng misyon",
+    "statementOfFaith": "Pahayag ng pananampalataya",
+    "ourHistory": "Ang aming kasaysayan",
+    "leadership": "Pamunuan",
+    "bibleStudyProgram": "Programa sa Pag-aaral ng Biblia",
+    "fourSpiritualThemes": "Apat na Espirituwal na Tema",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Ang aming mga ministeryo",
+    "connectGrowLeadSent": "Kumonekta, Lumago, Manguna, Isugo",
+    "chapterAffiliation": "Pagsanib ng chapter",
+    "ourNetwork": "Ang Aming Network",
+    "events": "Mga kaganapan",
+    "give": "Mag-abuloy",
+    "news": "Balita",
+    "legacyOfChairman": "Ang pamana ni Ralph D. Winter",
+    "contactUs": "Makipag-ugnayan",
+    "copyright": "© 2026 Apostolos Missions International. Nakalaan ang lahat ng karapatan.",
+    "contact": "Kontak"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "Wika"
+  },
+  "Common": {
+    "tagline": "Isang ministeryong lampas sa denominasyon na nakatuon sa pagpapalaganap ng ebanghelyo hanggang sa dulo ng daigdig, na nagpapatotoo sa walang hanggang pag-ibig ng Panginoon.",
+    "learnMore": "Alamin pa",
+    "readMore": "Magbasa pa",
+    "clickHere": "Mag-click dito",
+    "home": "Home"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Sino kami",
+    "missionStatement": "Pahayag ng misyon",
+    "statementOfFaith": "Pahayag ng pananampalataya",
+    "history": "Kasaysayan",
+    "ourFirstChairman": "Ang aming unang tagapangulo",
+    "membership": "Pagiging kasapi",
+    "leadership": "Pamunuan"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Mga Haligi ng Aming Misyon",
+    "administration": "Pangangasiwa"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Pag-aaral ng Biblia tuwing Huwebes",
+    "bibleStudies": "Pag-aaral ng Biblia",
+    "groupActivities": "Mga Gawaing Pangkat",
+    "volunteer": "Pagboboluntaryo",
+    "chapterStaff": "Staff ng Chapter",
+    "bibleTeacherTraining": "Pagsasanay ng Guro sa Biblia",
+    "internship": "Internship",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Mag-abuloy"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Itinatampok na Balita",
+    "events": "Mga Kaganapan",
+    "editorial": "Mga Artikulo",
+    "photoNews": "Balitang Larawan",
+    "testimony": "Mga Patotoo"
+  },
+  "InPractice": {
+    "eyebrow": "Sa praktika",
+    "heading": "Apat na bagay na ginagawa namin saanman kami magpunta.",
+    "bibleStudyTag": "Pag-aaral ng Biblia",
+    "bibleStudyDescription": "Pag-aaral sa maliliit at malalaking grupo na naglalagay sa Kasulatan sa sentro ng buhay sa campus.",
+    "leadershipTrainingTag": "Pagsasanay sa pamumuno",
+    "leadershipTrainingDescription": "Ginagabayan ang mga estudyante na pamunuan ang kanilang mga kasama, at pagkatapos ay isugo ang susunod na grupo.",
+    "onlineEducationTag": "Online na edukasyon",
+    "onlineEducationDescription": "Mga kursong AM Academy sa Kasulatan, misyolohiya at ministeryong lampas-kultura.",
+    "internshipsTripsTag": "Internship at mga biyahe",
+    "internshipsTripsDescription": "Panandaliang misyon at internship na nagbibigay-buhay sa pagsasanay."
+  },
+  "AboutPage": {
+    "heroTitle": "Kung paanong sinugo ako ng Ama, gayon din naman sinusugo ko kayo.",
+    "breadcrumb": "Tungkol sa amin",
+    "paragraph1": "Ang Apostolos Missions International (AM) ay isang ministeryong lampas sa denominasyon na nakatuon sa pagpapalaganap ng ebanghelyo hanggang sa dulo ng daigdig, na nagpapatotoo sa walang hanggang pag-ibig ng Panginoon.",
+    "paragraph2Prefix": "Ang pangalang",
+    "paragraph2": "(ἀπόστολος) ay salitang Griyego para sa apostol. Ibig sabihin nito ay \"ang isinugo sa isang misyon\" o \"sugo\". Madalas lumitaw ang titulong \"apostol\" sa Bagong Tipan para tukuyin ang Labindalawang alagad na hinirang ni Jesus (Mateo 10:2, Marcos 3:14, Lucas 6:13, Mga Gawa 2:42). Si Pablo, dating umuusig sa Kristiyanismo at naging dakilang tagapaghayag ng ebanghelyo, ay nagpakilala sa sarili bilang \"apostol\" (Roma 1:1, 1 Corinto 1:1, 2 Corinto 1:1, Galacia 1:1, Colosas 1:1, 1 Timoteo 1:1, 2 Timoteo 1:1, Tito).",
+    "paragraph3": "Ang mga apostol ay yaong isinusugo ng Panginoon upang tuparin ang misyong \"ipangaral si Jesu-Cristo at ipakilala ang Diyos\" sa buong nilikha. Ang saligang biblikal ng pagka-apostol ay makikita sa maraming salita ng Panginoon na pumili sa mga unang apostol at nagsugo sa kanila tulad ng mga embahador na ipinadala upang kumatawan sa mga bansa. Naunawaan ng mga apostol na ang kanilang buhay ay hindi na kanila, kundi nabubuhay sila upang ipahayag ang kaluwalhatian ni Cristo sa nagkasalang daigdig na ito.",
+    "blockquote": "Sinasabi ng Juan 20:21, \"Muling sinabi sa kanila ni Jesus: 'Sumainyo ang kapayapaan! Kung paanong sinugo ako ng Ama, gayon din naman sinusugo ko kayo.'\"",
+    "paragraph4": "Nais sundin ng AM ang tradisyon ng mga apostol na namuhay bilang mga taong isinugo upang ipahayag ang Salita ng Diyos. Bawat isa sa atin ay tumatanggap din ng tawag na ito mula sa Diyos upang isugo sa mundo bilang mga kamay at paa Niya. Nais naming iukol ang aming buhay sa pagsunod sa mga yapak ni Jesus at sa pangangaral ng Ebanghelyo hanggang sa dulo ng daigdig.",
+    "paragraph5": "Kung paanong hinipo at binago ng Panginoon ang aming buhay, nais naming ipakita ang pag-ibig ng Panginoon na ipinakita sa amin, na nagiging tanglaw para sa lahat ng Kanyang naliligaw na mga anak at sa aming mga kapatid.",
+    "readStatementOfFaith": "Basahin ang aming pahayag ng pananampalataya",
+    "or": "o",
+    "traceHistory": "tuntunin ang aming kasaysayan",
+    "cardStatementOfFaithTitle": "Basahin ang aming pahayag ng pananampalataya",
+    "cardMissionStatementTitle": "Pahayag ng Misyon"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "Roadmap ng AM",
+    "roadmapHeading": "Ano ang maaasahan mo?",
+    "connectTag": "Kumonekta",
+    "connectItems": [
+      "Biblia nang harapan/online",
+      "Mga programa sa pag-aaral"
+    ],
+    "growTag": "Lumago",
+    "growItems": [
+      "Mga gawaing pangkat"
+    ],
+    "leadTag": "Manguna",
+    "leadItems": [
+      "Pagboboluntaryo at internship",
+      "Mga lider ng chapter"
+    ],
+    "sentTag": "Isugo",
+    "sentItems": [
+      "Alumni Connect",
+      "Part-time at full-time na misyonero",
+      "Mga guro sa Biblia"
+    ],
+    "connectHeading": "Kumonekta",
+    "connectStep1Title": "1. Mag-subscribe sa aming mga website",
+    "connectStep1Body": "Maraming paraan upang manatiling konektado sa AM. Maaari kang mag-subscribe sa aming pangunahing website, www.amintl.org, at tumanggap ng mga newsletter. O maaari kang mag-subscribe sa website ng aming online Bible school, www.amacademy.org, at tumanggap ng pinakabagong balita at mga programa. Malaya mong tuklasin ang aming pananaw, mga gawain at programa sa pamamagitan ng aming mga website, at mag-email sa amin anumang oras kung may tanong ka.",
+    "connectStep2Title": "2. Mag-sign up para makilala ang aming staff",
+    "connectStep2BodyPrefix": "Huwag mag-atubiling",
+    "connectStep2SignUp": "mag-sign up",
+    "connectStep2BodySuffix": "dito kung nais mong makausap ang isa sa aming staff at tumanggap ng paggabay sa iyong espirituwal na paglalakbay. Maaari kang mag-set ng appointment o direktang makipag-ugnayan sa aming staff. Marami sa kanila ang dumaan sa buhay-campus at nauunawaan ang kalagayan ng mga estudyante. Tutulungan ka nilang mahanap ang landas na pinakaangkop sa iyong paglalakbay ng pananampalataya.",
+    "connectStep3Title": "3. Mag-sign up para sa pag-aaral ng Biblia",
+    "connectStep3BodyPrefix": "Kung handa ka nang simulan ang aming programa sa pag-aaral ng Biblia,",
+    "connectStep3SignUp": "mag-sign up",
+    "connectStep3BodySuffix": "sa pahinang ito. Kung wala kang makitang bagay na iskedyul, ipadala ang request form kasama ang kursong at oras na iyong nais!",
+    "connectStep4Title": "4. Kumonekta sa lokal na chapter",
+    "connectStep4BodyPrefix": "Kung nais mong kumonekta sa opisina at staff ng lokal na chapter, mangyaring",
+    "connectStep4ContactHere": "makipag-ugnayan dito",
+    "connectStep4BodySuffix": ". Inaabangan naming makilala ka sa lalong madaling panahon!",
+    "growHeading": "Lumago",
+    "growIntro": "Kung paanong lumalaki at nagkakagulang tayo sa iba't ibang yugto ng pagkabata, umaabot din tayo sa mahahalagang yugto sa ating espirituwal na kagulangan. Nag-aalok ang AM ng maraming programa at landas na idinisenyo upang gabayan ang mga estudyante sa tatlong mahahalagang yugtong ito ng espirituwal na paglago:",
+    "rebornTitle": "1. Muling Isinilang",
+    "rebornBody": "Muli tayong isinilang sa pamamagitan ng pantubos na handog ni Jesus sa Krus.",
+    "matureTitle": "1. Nagkakagulang",
+    "matureBody": "Lumalago at nagkakagulang tayo sa espiritu habang pinapakain ng pag-ibig at katotohanan mula kay Jesus.",
+    "fruitfulTitle": "1. Namumunga",
+    "fruitfulBody": "Nararanasan natin ang pagiging mabunga ng buhay sa pamamagitan ng pagpapala ng Diyos, na natutupad sa ating ganap na pakikiisa kay Cristo Jesus.",
+    "navigatingTitle": "Paglalayag sa buhay-campus",
+    "navigatingBody": "Kapana-panabik at kasiya-siya ang buhay sa campus, ngunit sa dami ng pagpipilian ay maaari rin itong maging walang direksyon. Sa pamamagitan ng katotohanan at panalangin, tinutulungan ka ng AM na makilala ang kalooban ng Diyos at makahanap ng malinaw na patnubay para sa iyong pambihirang buhay.",
+    "nextStepsTitle": "Mga Susunod na Hakbang",
+    "nextStepsBody": "Patuloy na makilahok sa aming mga programa — samantalahin ang iba't ibang pagkakataong marinig ang Salita, manalanging magkasama, makisama sa mga kapatid sa pananampalataya, at maglingkod habang lumalago ka sa Ebanghelyo.",
+    "leadHeading": "Manguna",
+    "leadStep1Title": "1. Paglilingkod sa Pag-ibig ni Cristo",
+    "leadStep1Body": "Habang lumalago tayo, ninanais nating paglingkuran ang mga nangangailangan ng tulong upang makalapit kay Jesus. At habang naglilingkod tayo, mas lumalalim din ang ating paglago sa pag-ibig ni Cristo.",
+    "leadStep2Title": "2. Ang Pagpapala ng Pamumuno",
+    "leadStep2Body": "Sinabi ni Jesus, \"Higit na mapalad ang magbigay kaysa tumanggap\" (Mga Gawa 20:35). Ang pamumuno at paggabay sa iba ay nangangailangan ng karunungan, panalangin, sakripisyo at pagtitiis. Gayunman, ito ay isang pinagpalang lugar kung saan umaabot sa rurok ang kaluwalhatian ng Krus.",
+    "leadStep3Title": "3. Ang Pagpapala ng Pamumuno",
+    "leadStep3Body": "Bagaman bata pa ang mga estudyante, ang natatanging mga kaloob at kakayahan ay maaaring matuklasan at mapaunlad nang higit na makapangyarihan sa mga papel ng pamumuno. Isang magandang proseso ito habang sinusubok at pinagtitibay ng bawat estudyante ang kanyang makalangit na mga kaloob sa pamamagitan ng mapagbiyayang karanasan ng paglilingkod at pamumuno.",
+    "leadStep4Title": "4. Mga Pagkakataon sa AM",
+    "leadStep4Body": "Nag-aalok ang AM ng iba't ibang pagkakataon at papel para makilahok ang mga estudyante sa paglilingkod at pamumuno. Sumali sa aming pangkat ng mga boluntaryo, staff ng chapter, lider ng chapter, guro sa Biblia at marami pang iba. Tuklasin ang itinanim ni Jesus sa iyo ayon sa Kanyang napakahusay na plano.",
+    "sentHeading": "Isugo",
+    "sentParagraph1": "Ang pagtatapos sa kolehiyo ay isa pang mahalagang paglisan tungo sa mundong bukas para sa ating tuklasin. Ang ilan sa atin ay magpapatuloy sa pag-aaral o pipili ng landas-karera. Ang ilan naman ay nagiging full-time na staff ng AM, misyonero o ministro, sa pagsunod sa tawag ng Diyos.",
+    "sentParagraph2": "Sa mahalagang hakbang na ito, nag-aalok ang AM ng mga programa upang manatili kang konektado at magpatuloy sa paglilingkod sa misyon ng Ebanghelyo sa pamamagitan ng Alumni Connect. Nagbibigay rin ang AM ng mga programa at landas ng pagsasanay upang maging propesyonal na manggagawang misyonero at staff sa AM World Mission.",
+    "sentParagraph3": "Bukas ang iba't ibang pagpipilian para sa iyo tungo sa maliwanag na kinabukasan. Nais ng AM na lumakad nang malapit sa bawat isa upang magkasama nating tuparin ang Dakilang Utos, \"Kaya't humayo kayo at gawin ninyong alagad ang lahat ng mga bansa, na binabautismuhan sila sa pangalan ng Ama at ng Anak at ng Espiritu Santo\" (Mateo 28:19).",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "Maging Guro sa Biblia ng AM",
+    "sentLinkMissionaries": "Maging Misyonero ng AM",
+    "sentLinkStaff": "Full-Time na Staff sa AM HQ",
+    "roadmapHeroTitle": "Paglago sa Campus: Isang Roadmap"
+  },
+  "Network": {
+    "breadcrumb": "Ang Aming Network",
+    "heading": "Ang Aming Pandaigdigang Network",
+    "joinChapter": "Sumali sa isang chapter",
+    "partnerWithUs": "Makipagtulungan sa amin",
+    "exploreEyebrow": "Tuklasin ang mundo",
+    "regionsHeading": "Mga Rehiyon",
+    "regionsSubheading": "Tuklasin ayon sa rehiyon",
+    "siteCount": "{count, plural, one {# site} other {# na site}}",
+    "communityEyebrow": "Isang pandaigdigang komunidad",
+    "chaptersHeading": "Mga chapter sa iba't ibang lungsod at sulok ng mundo",
+    "chaptersSoon": "Magsisimula na ang mga chapter.",
+    "continentSubtitle": "Mga site ng bansa ng AM sa {region}.",
+    "noSitesTitle": "Wala pang site sa {region}",
+    "noSitesBodyPrefix": "Ginagawa pa namin ang presensya ng AM sa rehiyong ito. Bumalik sa lalong madaling panahon, o",
+    "noSitesLink": "makipag-ugnayan sa amin",
+    "noSitesBodySuffix": "kung nais mong tumulong na magsimula ng isa.",
+    "visitSite": "Bisitahin ang site",
+    "regions": {
+      "africa": "Africa",
+      "asia": "Asya",
+      "europe": "Europa",
+      "northamerica": "Hilagang Amerika",
+      "southamerica": "Latin America at Caribbean",
+      "oceania": "Oceania"
+    },
+    "map": {
+      "world": "Mundo",
+      "loading": "Naglo-load…",
+      "zoomIn": "I-zoom in",
+      "clear": "I-clear",
+      "worldHint": "I-hover o piliin ang isang tuldok upang makita ang lungsod — ang pagpili ay magza-zoom sa rehiyon nito.",
+      "regionHint": "{count} na chapter sa {region}. Pumili ng tuldok para sa detalye, o bumalik sa mapa ng mundo.",
+      "worldAria": "Mapa ng mundo na nagpapakita ng lahat ng {count} chapter ng AM. Gamitin ang mga button ng rehiyon upang mag-zoom.",
+      "regionAria": "Mapa ng {region} na nagpapakita ng {count} chapter ng AM.",
+      "captionSouthAsia": "Timog Asya",
+      "captionEastCentralAsia": "Silangan at Gitnang Asya",
+      "captionSoutheastAsia": "Timog-Silangang Asya",
+      "hqBadge": "Punong Tanggapan",
+      "regionalHqBadge": "Rehiyonal na Tanggapan"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — ang isinugo",
+      "headingLine1": "Kung saan ang",
+      "headingWhere": "pag-ibig ni Jesus",
+      "headingWeAre": "ay umaapaw",
+      "joinBibleStudy": "Sumali sa aming Pag-aaral ng Biblia",
+      "whoWeAre": "Sino kami",
+      "stat1Value": "2003",
+      "stat1Label": "Nagsusugo mula pa noong",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, USA",
+      "stat3Value": "Pandaigdig",
+      "stat3Label": "Network ng campus",
+      "dragToExplore": "I-drag upang tuklasin"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Sumali sa aming Programa sa Pag-aaral ng Biblia",
+      "heading": "Limang yugtong landas mula sa unang tanong hanggang sa pagsugo.",
+      "description": "Ang 5-yugtong Programa sa Pag-aaral ng Biblia ng AM ay isang online na programa ng pagdidisipulo at edukasyong biblikal na gumagabay sa mga estudyante sa maayos na daloy ng pag-aaral ng Ebanghelyo ni Jesu-Cristo at ng buhay ng pananampalataya. Pinagsasama ng programa ang mga estudyante at mga guro sa Biblia na nagtuturo ayon sa iskedyul ng nakikinig. Nagtatapos ito sa pagkakataong magboluntaryo, magsanay bilang estudyanteng misyonero, o simpleng lumalim pa sa Salita ng Diyos kasama ang AM.",
+      "cta": "Simulan ang programa"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Sumali sa isang pag-aaral ng Biblia",
+      "joinBibleStudyDescription": "Ang 5-yugtong online na programa ng pagdidisipulo at edukasyong biblikal.",
+      "findCampusTitle": "Hanapin ang iyong campus",
+      "findCampusDescription": "Ang aming network ng mga chapter at pakikisama.",
+      "getInvolvedTitle": "Sumali",
+      "getInvolvedDescription": "Kumonekta, lumago, manguna at maisugo kasama ang AM.",
+      "supportTitle": "Suportahan ang misyon",
+      "supportDescription": "Mag-abuloy, manalangin at makipagtulungan sa mga estudyante sa larangan."
+    },
+    "Ministries": {
+      "eyebrow": "Kumonekta · Lumago · Manguna · Isugo",
+      "heading": "Apat na hakbang, at sinasabayan ka namin sa bawat isa.",
+      "getInvolved": "Sumali",
+      "learnMore": "Alamin pa",
+      "connectTitle": "Kumonekta sa AM",
+      "connectDescription": "Nag-aalok ang AM ng iba't ibang programa sa pag-aaral ng Biblia na nagpapalusog sa ating espirituwal na buhay at sa ating ugnayan sa Panginoong Jesu-Cristo.",
+      "growTitle": "Lumago kasama ang AM",
+      "growDescription": "Sumali sa aming mga Gawaing Pangkat at magkasamang magkagulang sa pakikisama ng katotohanan. Ang aming mga programang pangkat ay nagbibigay sa bawat estudyante ng mataas na kalidad na karanasan upang magkaroon ng espirituwal na lakas.",
+      "leadTitle": "Manguna kasama ang AM",
+      "leadDescription": "Malugod na tinatanggap ng AM ang mga estudyanteng nais magboluntaryo at maglingkod sa pamamagitan ng mga talentong bigay ng Diyos sa iba't ibang departamento.",
+      "sentTitle": "Isinugo kasama ang AM",
+      "sentDescription": "Patuloy na lalakad ang AM kasama mo hanggang matupad sa iyong buhay ang mahalagang tawag na \"maisugo\", kahit pagkatapos mong magtapos!",
+      "connectTag": "Kumonekta",
+      "growTag": "Lumago",
+      "leadTag": "Manguna",
+      "sentTag": "Isugo"
+    },
+    "OurMission": {
+      "eyebrow": "Ang aming misyon",
+      "statementPrefix": "Ang misyon ng Apostolos Missions ay",
+      "statementEmphasis": "ipangaral si Jesu-Cristo at Siya na ipinako sa krus",
+      "statementSuffix": "— habang nililinang ang isang network ng mga kabataang Kristiyano na nakasentro kay Cristo para sa pagpapakilos ng misyon sa campus.",
+      "readFullStatement": "Basahin ang buong pahayag ng misyon",
+      "nameOrigin": "Ang pangalang apostolos ay salitang Griyego para sa apostol. Ibig sabihin nito ay \"ang isinugo sa isang misyon\".",
+      "history": "Ang nagsimula bilang maliit na grupo ng masisigasig na kabataang estudyante sa Los Angeles, California, na nagnanais ipalaganap ang ebanghelyo at ipakilala si Jesus, ay naging isang pandaigdigang organisasyon na kumikilos sa mga campus ng unibersidad sa buong mundo.",
+      "ourHistory": "Ang aming kasaysayan"
+    },
+    "GetInvolved": {
+      "eyebrow": "Manatiling Konektado",
+      "heading": "Sumali",
+      "bibleStudies": "Pag-aaral ng Biblia",
+      "volunteer": "Pagboboluntaryo",
+      "internship": "Internship"
+    },
+    "Media": {
+      "eyebrow": "Media",
+      "heading": "Pagtuturo, patotoo at ang Salita.",
+      "moreContents": "Higit pang nilalaman",
+      "playVideo": "Panoorin ang panimulang video ng AM",
+      "post1Title": "Apat na Espirituwal na Tema – Buod",
+      "post2Title": "Ano ang Kaligtasan? | Sola Fide Bahagi 1 – AM Academy",
+      "post3Title": "Panahon ng Pagdidisipulo sa Social Media: Pag-uugnay sa mga Estudyante sa Realidad ng Ebanghelyo",
+      "post4Title": "Mga Pangako ng Diyos para sa Bagong Taon",
+      "post1Date": "Enero 5, 2026",
+      "post2Date": "Hunyo 27, 2023",
+      "post3Date": "Hunyo 3, 2022",
+      "post4Date": "Enero 2, 2022"
+    },
+    "Events": {
+      "eyebrow": "Mga Kaganapan",
+      "heading": "Kung saan nagtitipon ang network.",
+      "allEvents": "Lahat ng kaganapan",
+      "event1Date": "Abril 4–5",
+      "event1Title": "Retreat ng Pasko ng Pagkabuhay",
+      "event2Date": "Pebrero 18",
+      "event2Title": "40-Araw na Paglalakbay ng Kuwaresma",
+      "event3Date": "Enero 16",
+      "event3Title": "Pagpupulong ng mga Bagong Lider ng Chapter"
+    },
+    "OurNetwork": {
+      "eyebrow": "Ang aming network",
+      "heading": "Baka mayroon nang pakikisama sa iyong campus.",
+      "description": "Maghanap ayon sa paaralan o lungsod. Kung wala kang makita malapit sa iyo, ituring iyon bilang paanyaya — tutulungan ka naming magsimula ng isa.",
+      "startChapter": "Magsimula ng chapter",
+      "searchPlaceholder": "Maghanap ng paaralan o lungsod",
+      "noMatches": "Wala pang tugma — makipag-ugnayan at tutulungan ka naming magsimula."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Ang Aming Unang Honorary Chairman",
+      "followingLegacy": "Sinusundan ang Pamana ni",
+      "name": "Dr. Ralph D. Winter",
+      "quoteLine1": "Kaya't humayo kayo",
+      "quoteLine2": "at gawin ninyong alagad",
+      "quoteLine3": "ang lahat ng mga bansa…",
+      "quoteReference": "—Mateo 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Makipagtulungan sa amin",
+      "heading": "Magsugo ng taong hindi mo makikilala kailanman.",
+      "description": "Bawat kaloob ay naglalapit ng pag-aaral ng Biblia, pagsasanay at isang komunidad na nagsusugo sa mga estudyanteng handa nang humayo.",
+      "giveToday": "Mag-abuloy ngayon",
+      "talkToUs": "Kausapin kami"
+    },
+    "Newsletter": {
+      "heading": "Mga Tala mula sa mga Campus",
+      "description": "Isang maikling buwanang liham: kung ano ang nakikita ng mga estudyante, kung saan susunod ang AM, at kung paano manalangin.",
+      "cta": "AM Academy"
+    }
+  }
+}

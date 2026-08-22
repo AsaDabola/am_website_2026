@@ -2,7 +2,20 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import { Archivo, Inter, Lato, Noto_Sans_Arabic, Noto_Sans_Hebrew } from "next/font/google";
+import {
+  Archivo,
+  Inter,
+  Lato,
+  Noto_Sans_Arabic,
+  Noto_Sans_Bengali,
+  Noto_Sans_Devanagari,
+  Noto_Sans_Ethiopic,
+  Noto_Sans_Hebrew,
+  Noto_Sans_Myanmar,
+  Noto_Sans_Sinhala,
+  Noto_Sans_Tamil,
+  Noto_Sans_Thai,
+} from "next/font/google";
 import "../globals.css";
 import { routing, directionOf } from "@/i18n/routing";
 import AnnouncementBar from "@/components/layout/AnnouncementBar";
@@ -37,6 +50,51 @@ const notoArabic = Noto_Sans_Arabic({
 const notoHebrew = Noto_Sans_Hebrew({
   variable: "--font-noto-hebrew",
   subsets: ["hebrew"],
+});
+
+// One Noto face per script the Asian and African locales need. Declaring a
+// face costs a stylesheet entry, not a download — the browser only fetches the
+// file once a `:lang()` rule in globals.css actually puts it in front of text.
+// Skipping any of these is not a graceful degradation: Sinhala, Myanmar and
+// Ethiopic have no system font on most desktops, so the page renders as tofu.
+//
+// These are all variable fonts, so they take no `weight` — passing one asks
+// Google for a static file that does not exist and fails the build. Myanmar is
+// the exception: it ships static weights only, so it has to name them.
+const notoDevanagari = Noto_Sans_Devanagari({
+  variable: "--font-noto-devanagari",
+  subsets: ["devanagari"],
+});
+
+const notoBengali = Noto_Sans_Bengali({
+  variable: "--font-noto-bengali",
+  subsets: ["bengali"],
+});
+
+const notoTamil = Noto_Sans_Tamil({
+  variable: "--font-noto-tamil",
+  subsets: ["tamil"],
+});
+
+const notoSinhala = Noto_Sans_Sinhala({
+  variable: "--font-noto-sinhala",
+  subsets: ["sinhala"],
+});
+
+const notoThai = Noto_Sans_Thai({
+  variable: "--font-noto-thai",
+  subsets: ["thai"],
+});
+
+const notoEthiopic = Noto_Sans_Ethiopic({
+  variable: "--font-noto-ethiopic",
+  subsets: ["ethiopic"],
+});
+
+const notoMyanmar = Noto_Sans_Myanmar({
+  variable: "--font-noto-myanmar",
+  subsets: ["myanmar"],
+  weight: ["400", "500", "600", "700"],
 });
 
 // The "Following the Legacy of" line in the Ralph D. Winter banner is
@@ -77,7 +135,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       dir={directionOf(locale)}
-      className={`${inter.variable} ${archivo.variable} ${lato.variable} ${notoArabic.variable} ${notoHebrew.variable} h-full antialiased`}
+      className={`${inter.variable} ${archivo.variable} ${lato.variable} ${notoArabic.variable} ${notoHebrew.variable} ${notoDevanagari.variable} ${notoBengali.variable} ${notoTamil.variable} ${notoSinhala.variable} ${notoThai.variable} ${notoEthiopic.variable} ${notoMyanmar.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white font-sans text-ink">
         <NextIntlClientProvider>

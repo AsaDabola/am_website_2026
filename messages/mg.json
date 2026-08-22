@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Izay nirahina hanatanteraka iraka",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Iza Izahay",
+    "whatWeDo": "Izay Ataonay",
+    "getInvolved": "Mandraisa Anjara",
+    "connect": "Mifandraisa",
+    "ourNetwork": "Ny Tambajotranay",
+    "news": "Vaovao",
+    "contactUs": "Mifandraisa Aminay",
+    "give": "Manomeza",
+    "toggleNav": "Sokafy na akatony ny menio fitetezana",
+    "whoWeAreMenu": {
+      "whoWeAre": "Iza izahay",
+      "ourMission": "Ny irakay",
+      "statementOfFaith": "Fanambarana finoana",
+      "history": "Tantara",
+      "ourFirstChairmen": "Ireo Filoha Voalohany",
+      "membership": "Ho mpikambana",
+      "ourLeadership": "Ny mpitarika anay"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Ny andrin'ny irakay",
+      "administration": "Fitantanana",
+      "bibleStudyProgram": "Fandaharana Fianarana Baiboly",
+      "fourSpiritualThemes": "Lohahevitra Ara-panahy Efatra",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Ny asa fanompoanay"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Fianarana Baiboly",
+      "groupActivities": "Hetsika an-tarika",
+      "volunteer": "Mpilatsaka an-tsitrapo",
+      "bibleTeacherTraining": "Fiofanana mpampianatra Baiboly",
+      "internship": "Fiofanana am-perinasa",
+      "donate": "Manomeza",
+      "onlineBibleStudy": "Fianarana Baiboly an-tserasera",
+      "chapterAffiliation": "Fidirana amin'ny sampana"
+    },
+    "newsMenu": {
+      "featured": "Miavaka",
+      "events": "Hetsika",
+      "editorial": "Editorialy",
+      "photoNews": "Vaovao an-tsary",
+      "testimony": "Fijoroana vavolombelona"
+    },
+    "megaMenu": {
+      "aboutHeading": "Mombamomba",
+      "whatWeDoHeading": "Izay ataonay",
+      "featuredHeading": "Lahatsoratra miavaka",
+      "allArticles": "Lahatsoratra rehetra",
+      "ctaBibleStudy": "Manomboha fianarana Baiboly",
+      "ctaFindChapter": "Tadiavo ny sampanao",
+      "ctaGive": "Manomeza androany"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "Mombamomba ny AM",
+        "description": "Iza izahay, inona no inoanay ary avy aiza izahay."
+      },
+      "leadership": {
+        "title": "Fitarihana",
+        "description": "Ireo olona manompo ny hetsika sy ny fomba hidirana ao."
+      },
+      "whatWeDo": {
+        "title": "Izay Ataonay",
+        "description": "Ny andry sy ny asa fanompoana mampandroso ny iraka."
+      },
+      "bibleStudy": {
+        "title": "Fandaharana Fianarana Baiboly",
+        "description": "Lalana misy dingana dimy manomboka amin'ny fanontanianao voalohany ka hatramin'ny fanirahana anao."
+      },
+      "getInvolved": {
+        "title": "Mandraisa Anjara",
+        "description": "Tadiavo ny toeranao ao amin'ny hetsika, na aiza na aiza misy anao."
+      },
+      "supportMission": {
+        "title": "Manompoa & Manohana",
+        "description": "Miofàna, manomboha sampana, na miaraha miasa amin'ny mpianatra any an-tsaha."
+      },
+      "latestNews": {
+        "title": "Vaovao Farany",
+        "description": "Tantara sy vaovao avy amin'ny tambajotra manerana izao tontolo izao."
+      },
+      "events": {
+        "title": "Hetsika",
+        "description": "Fitokanana, fihaonambe sy fivoriana akaikinao."
+      }
+    },
+    "mobile": {
+      "back": "Hiverina",
+      "close": "Akatony ny menio",
+      "menu": "Menio"
+    }
+  },
+  "Footer": {
+    "tagline": "Asa fanompoana iombonan'ny fiangonana samihafa izay manolo-tena hampiely ny filazantsara hatrany amin'ny faran'ny tany, mijoro ho vavolombelon'ny fitiavana mandrakizain'ny Tompo.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, USA",
+    "email": "info@amintl.org",
+    "whoWeAre": "Iza izahay",
+    "whatWeDo": "Izay ataonay",
+    "getInvolved": "Mandraisa anjara",
+    "media": "Haino aman-jery",
+    "aboutAM": "Mombamomba ny AM",
+    "missionStatement": "Fanambarana iraka",
+    "statementOfFaith": "Fanambarana finoana",
+    "ourHistory": "Ny tantaranay",
+    "leadership": "Fitarihana",
+    "bibleStudyProgram": "Fandaharana Fianarana Baiboly",
+    "fourSpiritualThemes": "Lohahevitra Ara-panahy Efatra",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Ny asa fanompoanay",
+    "connectGrowLeadSent": "Mifandray, Mitombo, Mitarika, Irahina",
+    "chapterAffiliation": "Fidirana amin'ny sampana",
+    "ourNetwork": "Ny Tambajotranay",
+    "events": "Hetsika",
+    "give": "Manomeza",
+    "news": "Vaovao",
+    "legacyOfChairman": "Lova navelan'i Ralph D. Winter",
+    "contactUs": "Mifandraisa aminay",
+    "copyright": "© 2026 Apostolos Missions International. Voatokana ny zo rehetra.",
+    "contact": "Fifandraisana"
+  },
+  "Logo": {
+    "international": "Iraisam-pirenena"
+  },
+  "LanguageSwitcher": {
+    "label": "Fiteny"
+  },
+  "Common": {
+    "tagline": "Asa fanompoana iombonan'ny fiangonana samihafa izay manolo-tena hampiely ny filazantsara hatrany amin'ny faran'ny tany, mijoro ho vavolombelon'ny fitiavana mandrakizain'ny Tompo.",
+    "learnMore": "Fantaro bebe kokoa",
+    "readMore": "Vakio Bebe Kokoa",
+    "clickHere": "Tsindrio eto",
+    "home": "Fandraisana"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Iza izahay",
+    "missionStatement": "Fanambarana iraka",
+    "statementOfFaith": "Fanambarana finoana",
+    "history": "Tantara",
+    "ourFirstChairman": "Ny Filohanay Voalohany",
+    "membership": "Ho mpikambana",
+    "leadership": "Fitarihana"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Ny Andrin'ny Irakay",
+    "administration": "Fitantanana"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Fianarana Baiboly Alakamisy",
+    "bibleStudies": "Fianarana Baiboly",
+    "groupActivities": "Hetsika An-tarika",
+    "volunteer": "Mpilatsaka An-tsitrapo",
+    "chapterStaff": "Mpiasan'ny Sampana",
+    "bibleTeacherTraining": "Fiofanana Mpampianatra Baiboly",
+    "internship": "Fiofanana Am-perinasa",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Manomeza"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Vaovao Miavaka",
+    "events": "Hetsika",
+    "editorial": "Editorialy",
+    "photoNews": "Vaovao An-tsary",
+    "testimony": "Fijoroana Vavolombelona"
+  },
+  "InPractice": {
+    "eyebrow": "Amin'ny fampiharana",
+    "heading": "Zavatra efatra ataonay na aiza na aiza alehanay.",
+    "bibleStudyTag": "Fianarana Baiboly",
+    "bibleStudyDescription": "Fianarana an-tarika kely sy lehibe izay mametraka ny Soratra Masina ho afovoan'ny fiainana an-tokantrano ara-panabeazana.",
+    "leadershipTrainingTag": "Fiofanana fitarihana",
+    "leadershipTrainingDescription": "Ampiofanina ny mpianatra hitarika ny namany, ary avy eo handefa ny vondrona manaraka.",
+    "onlineEducationTag": "Fanabeazana an-tserasera",
+    "onlineEducationDescription": "Taranja AM Academy momba ny Soratra Masina, ny siansan'ny iraka ary ny asa fanompoana manerana kolontsaina.",
+    "internshipsTripsTag": "Fiofanana & dia",
+    "internshipsTripsDescription": "Iraka fohy sy fiofanana am-perinasa izay manova ny fiofanana ho fampiharana."
+  },
+  "AboutPage": {
+    "heroTitle": "Tahaka ny nanirahan'ny Ray Ahy no anirahako anareo.",
+    "breadcrumb": "Mombamomba",
+    "paragraph1": "Ny Apostolos Missions International (AM) dia asa fanompoana iombonan'ny fiangonana samihafa izay manolo-tena hampiely ny filazantsara hatrany amin'ny faran'ny tany, mijoro ho vavolombelon'ny fitiavana mandrakizain'ny Tompo.",
+    "paragraph2Prefix": "Ny anarana",
+    "paragraph2": "(ἀπόστολος) dia teny grika midika hoe apostoly. Midika izany hoe \"izay nirahina hanatanteraka iraka\" na \"iraka.\" Ny anaram-boninahitra hoe \"apostoly\" dia miseho matetika ao amin'ny Testamenta Vaovao mba hanondroana ny mpianatra Roa ambin'ny folo notendren'i Jesosy (Matio 10:2, Marka 3:14, Lioka 6:13, Asan'ny Apostoly 2:42). I Paoly, mpanenjika ny Kristianisma teo aloha izay tonga mpitory lehibe ny filazantsara, dia nampahafantatra ny tenany ho \"apostoly\" (Romana 1:1, 1 Korintiana 1:1, 2 Korintiana 1:1, Galatiana 1:1, Kolosiana 1:1, 1 Timoty 1:1, 2 Timoty 1:1, Titosy).",
+    "paragraph3": "Ny apostoly dia ireo nirahin'ny Tompo hanatanteraka ny iraka \"hitory an'i Jesosy Kristy sy hampahafantatra an'Andriamanitra\" amin'ny zavaboary rehetra. Ny fototra ara-baiboly momba ny maha-apostoly dia hita ao amin'ny teny maro nataon'ny Tompo izay nifidy ny apostoly voalohany ka nandefa azy ireo tahaka ny masoivoho nirahina hisolo tena firenena samihafa. Fantatry ny apostoly fa tsy azy ireo irery ny fiainany, fa velona mba hanambara ny voninahitr'i Kristy amin'ity tontolo lavo ity izy ireo.",
+    "blockquote": "Hoy ny Jaona 20:21: \"Ary hoy indray Jesosy taminy: 'Fiadanana ho anareo! Tahaka ny nanirahan'ny Ray Ahy no anirahako anareo koa.'\" (NIV)",
+    "paragraph4": "Ny AM dia maniry hanaraka ny fomban'ny apostoly izay niaina ho olona manana iraka hitory ny Tenin'Andriamanitra. Samy mandray izany antso izany avy amin'Andriamanitra koa isika tsirairay mba hirahina ho amin'izao tontolo izao ho tanany sy tongony. Maniry hanolotra ny fiainanay hanaraka ny dian'i Jesosy sy hitory ny Filazantsara hatrany amin'ny faran'ny tany izahay.",
+    "paragraph5": "Tahaka ny nikasihan'ny Tompo sy nanovany ny fiainanay, dia maniry hanambara ny fitiavan'ny Tompo naseho taminay izahay, ka ho jiro ho an'ireo zanany very rehetra sy ho an'ny rahalahy sy anabavinay.",
+    "readStatementOfFaith": "Vakio ny fanambarana finoanay",
+    "or": "na",
+    "traceHistory": "araho ny tantara",
+    "cardStatementOfFaithTitle": "Vakio ny fanambarana Finoanay",
+    "cardMissionStatementTitle": "Fanambarana Iraka"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "Sori-dalan'ny AM",
+    "roadmapHeading": "Inona no andrasana?",
+    "connectTag": "Mifandray",
+    "connectItems": [
+      "Baiboly an-toerana/an-tserasera",
+      "Fandaharana Fianarana"
+    ],
+    "growTag": "Mitombo",
+    "growItems": [
+      "Hetsika An-tarika"
+    ],
+    "leadTag": "Mitarika",
+    "leadItems": [
+      "Mpilatsaka An-tsitrapo & Fiofanana",
+      "Mpitarika Sampana"
+    ],
+    "sentTag": "Irahina",
+    "sentItems": [
+      "Alumni Connect",
+      "Misionera Miasa Amin'ny Fotoana Feno/Ampahany",
+      "Mpampianatra Baiboly"
+    ],
+    "connectHeading": "Mifandray",
+    "connectStep1Title": "1. Misoratra Anarana amin'ny Tranonkalanay",
+    "connectStep1Body": "Betsaka ny fomba hifandraisana amin'ny AM. Afaka misoratra anarana amin'ny tranonkalanay lehibe ianao, www.amintl.org, ka handray gazetim-baovao. Na afaka misoratra anarana amin'ny tranonkalan'ny sekoly Baiboly an-tserasera, www.amacademy.org, ka handray ny vaovao sy ny fandaharana farany. Afaka mijery ny fahitanay, ny hetsika ary ny fandaharanay amin'ny tranonkalanay ianao ary mandefasa mailaka aminay amin'ny fotoana rehetra raha manana fanontaniana.",
+    "connectStep2Title": "2. Misoratra Anarana Hihaona amin'ny Mpiasanay",
+    "connectStep2BodyPrefix": "Afaka",
+    "connectStep2SignUp": "misoratra anarana",
+    "connectStep2BodySuffix": "eto ianao raha te hiresaka amin'ny iray amin'ny mpiasanay sy handray torohevitra momba ny diany ara-panahy. Afaka manao fotoana ianao na mifandray amin'ny mpiasanay. Maro amin'ny mpiara-miasa aminay no manana traikefa amin'ny fiainan'ny mpianatra ary mahatakatra ny toe-javatra atrehin'ny mpianatra ambaratonga ambony. Hanampy anao izy ireo hahita ny lalana mifanaraka indrindra amin'ny dian'ny finoanao.",
+    "connectStep3Title": "3. Misoratra Anarana ho amin'ny Fianarana Baiboly",
+    "connectStep3BodyPrefix": "Raha vonona hanomboka ny fandaharana fianarana Baiboly ianao,",
+    "connectStep3SignUp": "misoratra anarana",
+    "connectStep3BodySuffix": "amin'ity pejy ity. Raha tsy mahita fandaharam-potoana mifanaraka aminao ianao, alefaso ny taratasy fangatahana miaraka amin'ny taranja sy fotoana tianao!",
+    "connectStep4Title": "4. Mifandraisa amin'ny Sampana Eo An-toerana",
+    "connectStep4BodyPrefix": "Raha te hifandray amin'ny biraon'ny sampana eo an-toerana sy ny mpiasany ianao, azafady",
+    "connectStep4ContactHere": "mifandraisa eto",
+    "connectStep4BodySuffix": ". Miandrandra ny hihaona aminao tsy ho ela izahay!",
+    "growHeading": "Mitombo",
+    "growIntro": "Tahaka ny itomboanay sy ny fahamatoranay amin'ny dingana samihafa amin'ny fahazazana, dia mahatratra dingana lehibe amin'ny fahamatorana ara-panahy isika. Manolotra fandaharana sy lalana maro natao hitarika ny mpianatra amin'ny tsirairay amin'ireo dingana telo lehibe amin'ny fitomboana ara-panahy ny AM:",
+    "rebornTitle": "1. Ateraka Indray",
+    "rebornBody": "Ateraka indray isika amin'ny alalan'ny sorona fanavotan'i Jesosy teo amin'ny Hazo Fijaliana.",
+    "matureTitle": "1. Matotra",
+    "matureBody": "Mitombo sy matotra ara-panahy isika amin'ny fikolokoloana ny fitiavana sy ny fahamarinana avy amin'i Jesosy.",
+    "fruitfulTitle": "1. Mamoa",
+    "fruitfulBody": "Miaina ny famoazan'ny fiainana isika amin'ny alalan'ny fitahian'Andriamanitra, tanteraka amin'ny firaisanay matotra amin'i Kristy Jesosy.",
+    "navigatingTitle": "Fitondrana ny Fiainan'ny Mpianatra",
+    "navigatingBody": "Mahafinaritra sy mahafa-po ny fiainan'ny mpianatra, saingy noho ny safidy maro dia be, dia mety hahatsapa ho tsy misy tanjona koa. Amin'ny alalan'ny fahamarinana sy ny vavaka, dia manampy anao hamantatra ny sitrapon'Andriamanitra sy hahita tari-dalana mazava ho an'ny fiainanao miavaka ny AM.",
+    "nextStepsTitle": "Dingana Manaraka",
+    "nextStepsBody": "Tohizo ny fandraisana anjara amin'ny fandaharanay—ararao tombony ny fahafahana isan-karazany hihaino ny Teny, hivavaka miaraka, hiara-belona amin'ny rahalahy sy anabavy amin'ny finoana, ary hanompo rehefa mitombo amin'ny Filazantsara ianao.",
+    "leadHeading": "Mitarika",
+    "leadStep1Title": "1. Manompo ao Amin'ny Fitiavan'i Kristy",
+    "leadStep1Body": "Rehefa mitombo isika, dia maniry hanompo ny hafa mila fanampiana hankany amin'i Jesosy. Rehefa manompo isika, dia mitombo lalina kokoa amin'ny fitiavan'i Kristy koa.",
+    "leadStep2Title": "2. Ny Fitahian'ny Fitarihana",
+    "leadStep2Body": "Hoy i Jesosy: \"Mahasambatra kokoa ny manome noho ny mandray\" (Asan'ny Apostoly 20:35). Ny fitarihana sy ny fitondrana ny hafa dia mitaky fahendrena, vavaka, sorona ary faharetana. Kanefa toerana notahiana izay ivon'ny voninahitry ny Hazo Fijaliana izany.",
+    "leadStep3Title": "3. Ny Fitahian'ny Fitarihana",
+    "leadStep3Body": "Na dia mbola tanora aza ny mpianatra ambaratonga ambony, dia azo hita sy ampandrosoina mahery kokoa amin'ny alalan'ny andraikitra fitarihana ny fanomezam-pahasoavana sy ny fahaiza-manao miavaka. Fizotra kanto izany rehefa mitsapa sy manamafy ny fanomezam-pahasoavana avy any an-danitra ny mpianatra tsirairay amin'ny alalan'ny traikefa feno fahasoavan'ny fanompoana sy ny fitarihana.",
+    "leadStep4Title": "4. Fahafahana miaraka amin'ny AM",
+    "leadStep4Body": "Manolotra fahafahana sy andraikitra isan-karazany ho an'ny mpianatra handray anjara amin'ny fanompoana sy ny fitarihana ny AM. Mirotsaha ao amin'ny ekipan'ny mpilatsaka an-tsitrapo, ny mpiasan'ny Sampana, ny mpitarika Sampana, ny mpampianatra Baiboly, ary maro hafa. Fantaro izay nambolen'i Jesosy tao anatinao araka ny drafiny tsara indrindra.",
+    "sentHeading": "Irahina",
+    "sentParagraph1": "Ny fahavitan'ny fianarana ambaratonga ambony dia fiaingana lehibe hafa mankany amin'ny tontolo misokatra ho antsika hozahana. Ny sasany amintsika mety hanohy ny fianarana na hanaraka lalan'asa. Ny sasany amintsika koa dia lasa mpiasa amin'ny fotoana feno ao amin'ny AM, misionera, na mpitandrina manaraka ny antson'Andriamanitra.",
+    "sentParagraph2": "Amin'io dingana manan-danja io, dia manolotra fandaharana ahafahanao mitohy mifandray sy manohy manompo ny iraky ny Filazantsara amin'ny alalan'ny Alumni Connect ny AM. Manome fandaharana fiofanana sy lalana ho lasa mpiasan'ny iraka matihanina sy mpiasa ao amin'ny AM World Mission koa ny AM.",
+    "sentParagraph3": "Safidy isan-karazany no misokatra ho anao mankany amin'ny hoavy mamirapiratra. Maniry hiara-mandeha akaiky amin'ny tsirairay ny AM mba hanangona antsika rehetra ho amin'ny Iraka Lehibe: \"Koa mandehana ianareo, ataovy mpianatra ny firenena rehetra, manao batisa azy amin'ny anaran'ny Ray sy ny Zanaka ary ny Fanahy Masina (Matio 28:19).\"",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "Ho Mpampianatra Baiboly AM",
+    "sentLinkMissionaries": "Ho Misionera AM",
+    "sentLinkStaff": "Mpiasa Amin'ny Fotoana Feno ao amin'ny Foibe AM",
+    "roadmapHeroTitle": "Mitombo Eny An-toerana Fianarana: Sori-dalana"
+  },
+  "Network": {
+    "breadcrumb": "Ny Tambajotranay",
+    "heading": "Ny Tambajotranay Manerantany",
+    "joinChapter": "Midira amin'ny sampana",
+    "partnerWithUs": "Miaraha miasa aminay",
+    "exploreEyebrow": "Zahao izao tontolo izao",
+    "regionsHeading": "Faritra",
+    "regionsSubheading": "Zahao araka ny toerana",
+    "siteCount": "{count, plural, =1 {toerana #} other {toerana #}}",
+    "communityEyebrow": "Fiaraha-monina manerantany",
+    "chaptersHeading": "Sampana any amin'ny tanàna sy zorony samihafa eran-tany",
+    "chaptersSoon": "Sampana hisokatra tsy ho ela.",
+    "continentSubtitle": "Toeran'ny firenena AM manerana ny {region}.",
+    "noSitesTitle": "Mbola tsy misy toerana {region}",
+    "noSitesBodyPrefix": "Mbola manangana ny fisian'ny AM amin'ity faritra ity izahay. Miverena tsy ho ela, na",
+    "noSitesLink": "mifandraisa aminay",
+    "noSitesBodySuffix": "raha te hanampy hanomboka iray ianao.",
+    "visitSite": "Tsidiho ny toerana",
+    "regions": {
+      "africa": "Afrika",
+      "asia": "Azia",
+      "europe": "Eoropa",
+      "northamerica": "Amerika Avaratra",
+      "southamerica": "Amerika Latina & Karaiba",
+      "oceania": "Oseania"
+    },
+    "map": {
+      "world": "Izao tontolo izao",
+      "loading": "Mamaky…",
+      "zoomIn": "Manakaiky",
+      "clear": "Fafao",
+      "worldHint": "Apetraho na safidio ny teboka iray hahitana ny tanàna — safidio iray hanakaikezana ny faritra misy azy.",
+      "regionHint": "{count, plural, =1 {sampana #} other {sampana #}} any {region}. Safidio ny teboka iray hahazoana antsipiriany, na miverena amin'ny sarintanin'izao tontolo izao.",
+      "worldAria": "Sarintanin'izao tontolo izao mampiseho ny sampana AM {count} rehetra. Ampiasao ny bokotry ny faritra hanakaikezana.",
+      "regionAria": "Sarintanin'ny {region} mampiseho sampana AM {count}.",
+      "captionSouthAsia": "Azia Atsimo",
+      "captionEastCentralAsia": "Azia Atsinanana & Afovoany",
+      "captionSoutheastAsia": "Azia Atsimo Atsinanana",
+      "hqBadge": "FOIBE",
+      "regionalHqBadge": "Foibem-paritra"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — izay nirahina",
+      "headingLine1": "Izay itoeran'ny",
+      "headingWhere": "Fitiavan'i Jesosy",
+      "headingWeAre": "Mihoatra",
+      "joinBibleStudy": "Midira amin'ny Fianarana Baiboly",
+      "whoWeAre": "Iza izahay",
+      "stat1Value": "2003",
+      "stat1Label": "Mandefa hatramin'ny",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, USA",
+      "stat3Value": "Manerantany",
+      "stat3Label": "Tambajotry ny toeram-pianarana",
+      "dragToExplore": "Sintomy hijerena"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Midira amin'ny Fandaharana Fianarana Baiboly",
+      "heading": "Lalana misy dingana 5 manomboka amin'ny fanontaniana voalohany ka hatramin'ny fanirahana.",
+      "description": "Ny Fandaharana Fianarana Baiboly misy dingana 5 an'ny AM dia fandaharana fanofanana mpianatra sy fanabeazana Baiboly an-tserasera izay mitarika ny mpianatra amin'ny fizotra rafitra amin'ny fianarana ny Filazantsaran'i Jesosy Kristy sy ny fiainam-pinoana. Manangona ny mpianatra miaraka amin'ny mpampianatra Baiboly izay hanome fampianarana araka ny fandaharam-potoanan'ny mpihaino ny fandaharana. Mifarana amin'ny fahafahana milatsaka an-tsitrapo, miofana ho misionera mpianatra, na midina lalina kokoa fotsiny ao amin'ny Tenin'Andriamanitra miaraka amin'ny AM izy io.",
+      "cta": "Manomboha ny fandaharana"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Midira amin'ny fianarana Baiboly",
+      "joinBibleStudyDescription": "Ny fandaharana fanofanana mpianatra sy fanabeazana Baiboly an-tserasera misy dingana 5.",
+      "findCampusTitle": "Tadiavo ny toeram-pianaranao",
+      "findCampusDescription": "Ny tambajotry ny sampana sy ny fiombonanay.",
+      "getInvolvedTitle": "Mandraisa anjara",
+      "getInvolvedDescription": "Mifandraisa, mitomboa, mitarika ary irahina miaraka amin'ny AM.",
+      "supportTitle": "Tohano ny iraka",
+      "supportDescription": "Manomeza, mivavaha ary miaraha miasa amin'ny mpianatra any an-tsaha."
+    },
+    "Ministries": {
+      "eyebrow": "Mifandray · Mitombo · Mitarika · Irahina",
+      "heading": "Dingana efatra, ary miaraka aminao izahay amin'ny tsirairay.",
+      "getInvolved": "Mandraisa anjara",
+      "learnMore": "Fantaro bebe kokoa",
+      "connectTitle": "Mifandraisa amin'ny AM",
+      "connectDescription": "Manolotra fandaharana fianarana Baiboly isan-karazany izay mamelona ny fiainanay ara-panahy sy ny fifandraisanay amin'i Jesosy Kristy Tompo ny AM.",
+      "growTitle": "Mitomboa miaraka amin'ny AM",
+      "growDescription": "Mirotsaha amin'ny Hetsika An-tarika ary miaraha matotra ao amin'ny fiombonan'ny fahamarinana. Manome traikefa avo lenta ho an'ny mpianatra tsirairay hahazoana hery ara-panahy ny fandaharan'ny vondronay.",
+      "leadTitle": "Mitarika miaraka amin'ny AM",
+      "leadDescription": "Faly mandray ny mpianatra liana hilatsaka an-tsitrapo sy hanompo amin'ny alalan'ny talenta nomen'Andriamanitra azy amin'ny departemanta samihafa ny AM.",
+      "sentTitle": "Irahina miaraka amin'ny AM",
+      "sentDescription": "Hanohy hiaraka aminao ny AM mandra-pahatanterahan'ny antso sarobidinao \"ho irahina\" eo amin'ny fiainanao na dia aorian'ny fahavitan'ny fianaranao aza!",
+      "connectTag": "Mifandray",
+      "growTag": "Mitombo",
+      "leadTag": "Mitarika",
+      "sentTag": "Irahina"
+    },
+    "OurMission": {
+      "eyebrow": "Ny irakay",
+      "statementPrefix": "Ny irak'i Apostolos Missions dia ny",
+      "statementEmphasis": "hitory an'i Jesosy sy Izy voahombo",
+      "statementSuffix": "— manabe tambajotran'ny tanora kristiana mifototra amin'i Kristy ho fanentanana ny iraka eny amin'ny toeram-pianarana.",
+      "readFullStatement": "Vakio ny fanambarana iraka feno",
+      "nameOrigin": "Ny anarana hoe apostolos dia teny grika midika hoe apostoly. Midika izany hoe \"izay nirahina hanatanteraka iraka.\"",
+      "history": "Izay nanomboka ho vondrona kely mpianatra tanora nafana fo tao Los Angeles, Kalifornia, izay naniry hampiely ny filazantsara sy hampahafantatra an'i Jesosy, dia lasa fikambanana manerantany miasa manerana ny toeram-pianarana ambony eran-tany.",
+      "ourHistory": "Ny tantaranay"
+    },
+    "GetInvolved": {
+      "eyebrow": "Mifandraisa",
+      "heading": "Mandraisa Anjara",
+      "bibleStudies": "Fianarana Baiboly",
+      "volunteer": "Mpilatsaka An-tsitrapo",
+      "internship": "Fiofanana Am-perinasa"
+    },
+    "Media": {
+      "eyebrow": "Haino aman-jery",
+      "heading": "Fampianarana, fijoroana vavolombelona ary ny Teny.",
+      "moreContents": "Votoaty hafa",
+      "playVideo": "Alefaso ny lahatsary fampidirana AM",
+      "post1Title": "Lohahevitra Ara-panahy Efatra – Topi-maso",
+      "post2Title": "Inona no atao hoe Famonjena? | Sola Fide Fizarana 1 – AM Academy",
+      "post3Title": "Vanim-potoanan'ny Fanofanana Mpianatra amin'ny Media Sosialy, Fampifandraisana ny Mpianatra amin'ny Zava-misy amin'ny Filazantsara",
+      "post4Title": "Ny Fampanantenan'Andriamanitra ho an'ny Taona Vaovao",
+      "post1Date": "5 Janoary 2026",
+      "post2Date": "27 Jona 2023",
+      "post3Date": "3 Jona 2022",
+      "post4Date": "2 Janoary 2022"
+    },
+    "Events": {
+      "eyebrow": "Hetsika",
+      "heading": "Izay iangonan'ny tambajotra.",
+      "allEvents": "Hetsika rehetra",
+      "event1Date": "4–5 Aprily",
+      "event1Title": "Fitokanana Paska",
+      "event2Date": "18 Febroary",
+      "event2Title": "Dia 40 Andro Karemy",
+      "event3Date": "16 Janoary",
+      "event3Title": "Fivorian'ny Mpitarika Sampana Vaovao"
+    },
+    "OurNetwork": {
+      "eyebrow": "Ny tambajotranay",
+      "heading": "Mety efa misy fiombonana eo amin'ny toeram-pianaranao.",
+      "description": "Karohy araka ny sekoly na tanàna. Raha tsy misy miseho akaikinao, dia fanasana izany — hanampy anao hanomboka iray izahay.",
+      "startChapter": "Manomboha sampana",
+      "searchPlaceholder": "Karohy sekoly na tanàna",
+      "noMatches": "Mbola tsy misy mifanaraka — mifandraisa aminay ka hanampy anao hanomboka iray izahay."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Ny Filoha Voninahitra Voalohany",
+      "followingLegacy": "Manaraka ny Lova navelan'i",
+      "name": "Dr. Ralph D. Winter",
+      "quoteLine1": "Koa mandehana ianareo",
+      "quoteLine2": "ataovy mpianatra",
+      "quoteLine3": "ny firenena rehetra…",
+      "quoteReference": "—Matio 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Miaraha miasa aminay",
+      "heading": "Andefaso olona tsy hihaonanao mihitsy.",
+      "description": "Ny fanomezana tsirairay dia mametraka ny fianarana Baiboly, ny fiofanana ary ny fiaraha-monina mandefa eo an-tanan'ny mpianatra vonona handeha.",
+      "giveToday": "Manomeza androany",
+      "talkToUs": "Miresaha aminay"
+    },
+    "Newsletter": {
+      "heading": "Naoty avy any Amin'ny Toeram-pianarana",
+      "description": "Taratasy fohy isam-bolana: izay hitan'ny mpianatra, izay halehan'ny AM manaraka, ary ny fomba fivavahana.",
+      "cta": "AM Academy"
+    }
+  }
+}

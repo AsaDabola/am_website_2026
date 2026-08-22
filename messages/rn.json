@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Uwarungitswe mu butumwa",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Turi Bande",
+    "whatWeDo": "Ico Dukora",
+    "getInvolved": "Ifadikanye Natwe",
+    "connect": "Huza",
+    "ourNetwork": "Urunani Rwacu",
+    "news": "Amakuru",
+    "contactUs": "Twandikire",
+    "give": "Tanga",
+    "toggleNav": "Ugurura canke ugumye menu",
+    "whoWeAreMenu": {
+      "whoWeAre": "Turi bande",
+      "ourMission": "Ubutumwa bwacu",
+      "statementOfFaith": "Icandikwa c'ukwemera",
+      "history": "Kahise",
+      "ourFirstChairmen": "Abakuru Bacu ba Mbere",
+      "membership": "Kuba umunywanyi",
+      "ourLeadership": "Ubuyobozi bwacu"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Inkingi z'ubutumwa bwacu",
+      "administration": "Ubutegetsi",
+      "bibleStudyProgram": "Porogarama yo Kwiga Bibiliya",
+      "fourSpiritualThemes": "Ivyiyumviro Bine vy'Impwemu",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Ibikorwa vyacu"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Kwiga Bibiliya",
+      "groupActivities": "Ibikorwa vy'imigwi",
+      "volunteer": "Kwitanga ku bushake",
+      "bibleTeacherTraining": "Amahugurwa y'abigisha Bibiliya",
+      "internship": "Ukwimenyereza akazi",
+      "donate": "Tanga imfashanyo",
+      "onlineBibleStudy": "Kwiga Bibiliya kuri internet",
+      "chapterAffiliation": "Kwifadikanya n'ishami"
+    },
+    "newsMenu": {
+      "featured": "Ibihambaye",
+      "events": "Ibirori",
+      "editorial": "Icandikwa c'umwanditsi",
+      "photoNews": "Amakuru mu mafoto",
+      "testimony": "Ivyabona"
+    },
+    "megaMenu": {
+      "aboutHeading": "Ibidukwiye",
+      "whatWeDoHeading": "Ico dukora",
+      "featuredHeading": "Ivyandikwa bihambaye",
+      "allArticles": "Ivyandikwa vyose",
+      "ctaBibleStudy": "Tangura kwiga Bibiliya",
+      "ctaFindChapter": "Rondera ishami ryawe",
+      "ctaGive": "Tanga uno musi"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "Ibijanye na AM",
+        "description": "Turi bande, ico twemera n'aho twavuye."
+      },
+      "leadership": {
+        "title": "Ubuyobozi",
+        "description": "Abantu bakorera uwu mugwi n'ukuntu wowinjiramwo."
+      },
+      "whatWeDo": {
+        "title": "Ico Dukora",
+        "description": "Inkingi n'ibikorwa biteza imbere ubutumwa."
+      },
+      "bibleStudy": {
+        "title": "Porogarama yo Kwiga Bibiliya",
+        "description": "Inzira y'ibice bitanu uhereye ku kibazo cawe ca mbere ugashika ku kurungikwa."
+      },
+      "getInvolved": {
+        "title": "Ifadikanye Natwe",
+        "description": "Rondera ikibanza cawe muri uwu mugwi, aho woba uri hose."
+      },
+      "supportMission": {
+        "title": "Korera & Shigikira",
+        "description": "Hugurwa, tangura ishami, canke ufadikanye n'abanyeshure mu murima."
+      },
+      "latestNews": {
+        "title": "Amakuru Agezweho",
+        "description": "Inkuru n'amakuru mashasha ava mu runani rwose."
+      },
+      "events": {
+        "title": "Ibirori",
+        "description": "Amahugurwa, amanama n'ivyegeranyo hafi yawe."
+      }
+    },
+    "mobile": {
+      "back": "Subira inyuma",
+      "close": "Gumya menu",
+      "menu": "Menu"
+    }
+  },
+  "Footer": {
+    "tagline": "Igikorwa gihuza amadini cishimikiye gukwiza ubutumwa bwiza gushika ku mpera z'isi, cishingira urukundo rw'ibihe bidahera rw'Umukama.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, USA",
+    "email": "info@amintl.org",
+    "whoWeAre": "Turi bande",
+    "whatWeDo": "Ico dukora",
+    "getInvolved": "Ifadikanye natwe",
+    "media": "Ibimenyeshamakuru",
+    "aboutAM": "Ibijanye na AM",
+    "missionStatement": "Icandikwa c'ubutumwa",
+    "statementOfFaith": "Icandikwa c'ukwemera",
+    "ourHistory": "Kahise kacu",
+    "leadership": "Ubuyobozi",
+    "bibleStudyProgram": "Porogarama yo Kwiga Bibiliya",
+    "fourSpiritualThemes": "Ivyiyumviro Bine vy'Impwemu",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Ibikorwa vyacu",
+    "connectGrowLeadSent": "Huza, Kura, Yobora, Rungikwa",
+    "chapterAffiliation": "Kwifadikanya n'ishami",
+    "ourNetwork": "Urunani Rwacu",
+    "events": "Ibirori",
+    "give": "Tanga",
+    "news": "Amakuru",
+    "legacyOfChairman": "Intoranwa ya Ralph D. Winter",
+    "contactUs": "Twandikire",
+    "copyright": "© 2026 Apostolos Missions International. Uburenganzira bwose burakingiwe.",
+    "contact": "Aho twandikira"
+  },
+  "Logo": {
+    "international": "Mpuzamakungu"
+  },
+  "LanguageSwitcher": {
+    "label": "Ururimi"
+  },
+  "Common": {
+    "tagline": "Igikorwa gihuza amadini cishimikiye gukwiza ubutumwa bwiza gushika ku mpera z'isi, cishingira urukundo rw'ibihe bidahera rw'Umukama.",
+    "learnMore": "Menya vyinshi",
+    "readMore": "Soma Vyinshi",
+    "clickHere": "Fyonda ng'aha",
+    "home": "Ahabanza"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Turi bande",
+    "missionStatement": "Icandikwa c'ubutumwa",
+    "statementOfFaith": "Icandikwa c'ukwemera",
+    "history": "Kahise",
+    "ourFirstChairman": "Umukuru Wacu wa Mbere",
+    "membership": "Kuba umunywanyi",
+    "leadership": "Ubuyobozi"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Inkingi z'Ubutumwa Bwacu",
+    "administration": "Ubutegetsi"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Kwiga Bibiliya ku wa Kane",
+    "bibleStudies": "Kwiga Bibiliya",
+    "groupActivities": "Ibikorwa vy'Imigwi",
+    "volunteer": "Kwitanga ku Bushake",
+    "chapterStaff": "Abakozi b'Ishami",
+    "bibleTeacherTraining": "Amahugurwa y'Abigisha Bibiliya",
+    "internship": "Ukwimenyereza Akazi",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Tanga imfashanyo"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Amakuru Ahambaye",
+    "events": "Ibirori",
+    "editorial": "Icandikwa c'Umwanditsi",
+    "photoNews": "Amakuru mu Mafoto",
+    "testimony": "Ivyabona"
+  },
+  "InPractice": {
+    "eyebrow": "Mu bikorwa",
+    "heading": "Ibintu bine dukora aho tugeze hose.",
+    "bibleStudyTag": "Kwiga Bibiliya",
+    "bibleStudyDescription": "Kwiga mu migwi mito n'iminini bishira Ivyanditswe hagati mu buzima bwa kaminuza.",
+    "leadershipTrainingTag": "Amahugurwa y'ubuyobozi",
+    "leadershipTrainingDescription": "Abanyeshure barahugurirwa kuyobora bagenzi babo, hanyuma bakarungika umugwi ukurikira.",
+    "onlineEducationTag": "Inyigisho kuri internet",
+    "onlineEducationDescription": "Amasomo ya AM Academy ku Vyanditswe, ku bumenyi bw'ubutumwa no ku gikorwa kinyura mu mico itandukanye.",
+    "internshipsTripsTag": "Ukwimenyereza & ingendo",
+    "internshipsTripsDescription": "Ubutumwa bw'igihe gito n'ukwimenyereza akazi bihindura amahugurwa mu bikorwa."
+  },
+  "AboutPage": {
+    "heroTitle": "Nk'uko Data yandungitse, nanje ndabarungika.",
+    "breadcrumb": "Ibidukwiye",
+    "paragraph1": "Apostolos Missions International (AM) ni igikorwa gihuza amadini cishimikiye gukwiza ubutumwa bwiza gushika ku mpera z'isi, cishingira urukundo rw'ibihe bidahera rw'Umukama.",
+    "paragraph2Prefix": "Izina",
+    "paragraph2": "(ἀπόστολος) ni ijambo ry'Ikigiriki risobanura intumwa. Risobanura \"uwarungitswe mu butumwa\" canke \"intumwa.\" Izina \"intumwa\" rikunda kuboneka mu Isezerano Rishasha rihagararira abigishwa Cumi na Babiri Yezu yatoye (Matayo 10:2, Mariko 3:14, Luka 6:13, Ivyakozwe 2:42). Paulo, uwahoze ahama Ubukirisu hanyuma akaba umuvugizi akomeye w'ubutumwa bwiza, yaravuze ko ari \"intumwa\" (Abaroma 1:1, 1 Abakorinto 1:1, 2 Abakorinto 1:1, Abagalatiya 1:1, Abakolosayi 1:1, 1 Timoteyo 1:1, 2 Timoteyo 1:1, Tito).",
+    "paragraph3": "Intumwa ni abarungitswe n'Umukama kugira ngo barangize ubutumwa bwo \"kwamamaza Yezu Kristu no kumenyekanisha Imana\" ku biremwa vyose. Ishimikiro rya Bibiliya ry'ubutumwa riboneka mu majambo menshi y'Umukama yatoye intumwa za mbere maze akazirungika nk'intumwa zirungitswe guhagararira ibihugu bitandukanye. Intumwa zaratahura ko ubuzima bwazo atari ubwazo gusa, ariko ko zabaho kugira ngo zerekane ubuninahazwa bwa Kristu muri iyi si yaguye.",
+    "blockquote": "Yohana 20:21 hagira hati, \"Yezu yongera kubabwira ati, 'Amahoro abe kuri mwebwe! Nk'uko Data yandungitse, nanje ndabarungika.'\" (NIV)",
+    "paragraph4": "AM ishaka gukurikira umugenzo w'intumwa zabayeho nk'abantu bafise ubutumwa bwo kwamamaza Ijambo ry'Imana. Umwe wese muri twebwe na we arahabwa uwu muhamagaro uva ku Mana wo kurungikwa mw'isi nk'amaboko n'ibirenge vyayo. Turashaka gutanga ubuzima bwacu kugira ngo dukurikire ibirenge vya Yezu tunamamaze Ubutumwa Bwiza gushika ku mpera z'isi.",
+    "paragraph5": "Nk'uko ubuzima bwacu bwakozweko bugahindurwa n'Umukama, turashaka kwerekana urukundo rw'Umukama rwatweretswe, tukaba umuco ku bana biwe bose bazimiye no ku bavukanyi bacu.",
+    "readStatementOfFaith": "Soma icandikwa cacu c'ukwemera",
+    "or": "canke",
+    "traceHistory": "kurikirana kahise",
+    "cardStatementOfFaithTitle": "Soma icandikwa cacu c'Ukwemera",
+    "cardMissionStatementTitle": "Icandikwa c'Ubutumwa"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "Inzira ya AM",
+    "roadmapHeading": "N'ibiki vyitezwe?",
+    "connectTag": "Huza",
+    "connectItems": [
+      "Bibiliya ku kigo/kuri internet",
+      "Porogarama z'Amasomo"
+    ],
+    "growTag": "Kura",
+    "growItems": [
+      "Ibikorwa vy'Imigwi"
+    ],
+    "leadTag": "Yobora",
+    "leadItems": [
+      "Kwitanga ku Bushake & Ukwimenyereza",
+      "Abayobozi b'Amashami"
+    ],
+    "sentTag": "Rungikwa",
+    "sentItems": [
+      "Alumni Connect",
+      "Abamisiyonari bo mu Gihe Cuzuye/Kigufi",
+      "Abigisha Bibiliya"
+    ],
+    "connectHeading": "Huza",
+    "connectStep1Title": "1. Iyandikishe ku Rubuga Rwacu",
+    "connectStep1Body": "Hariho uburyo bwinshi bwo guhuzwa na AM. Urashobora kwiyandikisha ku rubuga rwacu nyamukuru, www.amintl.org, ugahabwa amakuru. Canke urashobora kwiyandikisha ku rubuga rw'ishure rya Bibiliya rikorera kuri internet, www.amacademy.org, ugahabwa amakuru na porogarama bigezweho. Urashobora kuraba icerekezo cacu, ibikorwa na porogarama vyacu ku mbuga zacu kandi ukatwandikira igihe cose ufise ibibazo.",
+    "connectStep2Title": "2. Iyandikishe kugira Uhure n'Abakozi Bacu",
+    "connectStep2BodyPrefix": "Urashobora",
+    "connectStep2SignUp": "kwiyandikisha",
+    "connectStep2BodySuffix": "ng'aha nimba ushaka kuyaga n'umwe mu bakozi bacu ukagirwa impanuro ku rugendo rwawe rw'impwemu. Urashobora gutegura umwanya w'inama canke kuyaga n'abakozi bacu. Benshi mu bakozi bacu bafise uburambe mu buzima bwa kaminuza kandi baratahura ibihe abanyeshure ba kaminuza banyuramwo. Bazogufasha kuronka inzira ibereye urugendo rwawe rw'ukwemera.",
+    "connectStep3Title": "3. Iyandikishe ku Isomo rya Bibiliya",
+    "connectStep3BodyPrefix": "Nimba witeguye gutangura porogarama yacu yo kwiga Bibiliya,",
+    "connectStep3SignUp": "iyandikishe",
+    "connectStep3BodySuffix": "kuri uru rupapuro. Nimba udaronse ingene bibereye, rungika ifishi y'ubusabe irimwo isomo n'umwanya ukunda!",
+    "connectStep4Title": "4. Huza n'Ishami ryo mu Karere",
+    "connectStep4BodyPrefix": "Nimba ushaka guhuzwa n'ibiro vy'ishami ryacu ryo mu karere n'abakozi baryo, ndakwinginze",
+    "connectStep4ContactHere": "twandikire ng'aha",
+    "connectStep4BodySuffix": ". Turindiriye guhura nawe vuba!",
+    "growHeading": "Kura",
+    "growIntro": "Nk'uko dukura tugakura tunyuze mu bice bitandukanye vy'ubwana bwacu, turashika ku ntambwe z'ingenzi mu bukuze bwacu bw'impwemu. AM itanga porogarama n'inzira nyinshi vyagenewe kuyobora abanyeshure banyuze muri kimwe kimwe muri ivyo bice bitatu vy'ingenzi vyo gukura mu mpwemu:",
+    "rebornTitle": "1. Kuvuka Ubugira Kabiri",
+    "rebornBody": "Turavuka ubugira kabiri biciye ku gitambo c'impongano ca Yezu ku Musaraba.",
+    "matureTitle": "1. Gukura",
+    "matureBody": "Turakura tukagira ubukuze mu mpwemu biciye ku kugaburirwa urukundo n'ukuri biva kuri Yezu.",
+    "fruitfulTitle": "1. Kwama Ivyamwa",
+    "fruitfulBody": "Turumva ukwama kw'ubuzima biciye ku mugisha w'Imana, urangizwa mu bumwe bwacu bukuze na Kristu Yezu.",
+    "navigatingTitle": "Kuyobora Ubuzima bwa Kaminuza",
+    "navigatingBody": "Ubuzima bwa kaminuza burahimbaye kandi buranyura, ariko kubera amahitamwo menshi ariho, bushobora no kwumvikana nk'ubudafise icerekezo. Biciye ku kuri no ku gusenga, AM iragufasha gutahura ugushaka kw'Imana no kuronka ubuyobozi butomoye bw'ubuzima bwawe budasanzwe.",
+    "nextStepsTitle": "Intambwe Zikurikira",
+    "nextStepsBody": "Bandanya kwitaba porogarama zacu—koresha uturyo dutandukanye two kwumva Ijambo, gusenga hamwe, kubana n'abavukanyi b'ukwemera, no gukorera igihe ukura mu Butumwa Bwiza.",
+    "leadHeading": "Yobora",
+    "leadStep1Title": "1. Gukorera mu Rukundo rwa Kristu",
+    "leadStep1Body": "Uko dukura, turipfuza gukorera abandi bakeneye imfashanyo kugira ngo bashike kuri Yezu. Uko dukorera, natwe turakura cane mu rukundo rwa Kristu.",
+    "leadStep2Title": "2. Umuhezagiro w'Ubuyobozi",
+    "leadStep2Body": "Yezu yavuze ati, \"Guha ni umuhezagiro kuruta guhabwa\" (Ivyakozwe 20:35). Kuyobora no kwerekeza abandi birasaba ubukerebutsi, ugusenga, igitambo, no kwihangana. Ariko, ni ikibanza gihezagiwe aho ubuninahazwa bw'Umusaraba bushika ku mpera.",
+    "leadStep3Title": "3. Umuhezagiro w'Ubuyobozi",
+    "leadStep3Body": "Naho abanyeshure ba kaminuza bakiri bato, ingabirano n'ubuhinga bidasanzwe birashobora kuvumburwa no guteza imbere cane biciye ku bikorwa vy'ubuyobozi. Ni inzira nziza uko umunyeshure wese agerageza kandi agashimangira ingabirano ziwe zo mw'ijuru biciye ku burambe bwuzuye ubuntu bwo gukorera no kuyobora.",
+    "leadStep4Title": "4. Uturyo muri AM",
+    "leadStep4Body": "AM itanga uturyo n'ibikorwa bitandukanye kugira ngo abanyeshure bitabe gukorera no kuyobora. Injira mu mugwi wacu w'abitanga ku bushake, abakozi b'Amashami, abayobozi b'Amashami, abigisha Bibiliya, n'abandi benshi. Menya ico Yezu yateye muri wewe hisunzwe umugambi wiwe mwiza.",
+    "sentHeading": "Rungikwa",
+    "sentParagraph1": "Kurangiza kaminuza ni iyindi ntango y'ingenzi yerekeza mw'isi yaguye dushobora gushakisha. Bamwe muri twebwe barashobora kubandanya amasomo canke gukurikira inzira y'akazi. Bamwe muri twebwe na bo baba abakozi ba AM bo mu gihe cuzuye, abamisiyonari, canke abapasitori bakurikira umuhamagaro w'Imana.",
+    "sentParagraph2": "Muri iyi ntambwe y'ingenzi, AM itanga porogarama ushobora kubandanya guhuzwa no kubandanya gukorera ubutumwa bw'Ubutumwa Bwiza biciye kuri Alumni Connect. AM itanga na porogarama z'amahugurwa n'inzira zo kuba abakozi b'ubutumwa b'inararibonye n'abakozi muri AM World Mission.",
+    "sentParagraph3": "Amahitamwo atandukanye arakwuguruwe yerekeza kw'ejo hazoza heza. AM yipfuza kugendana hafi n'umuntu wese kugira ngo tuzane bose hamwe ku Rutegeko Rukuru, \"Nuko mugende muhindure amahanga yose abigishwa, mubabatiza mw'izina rya Data n'iry'Umwana n'iry'Impwemu Yera (Matayo 28:19).\"",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "Kuba Umwigisha wa Bibiliya wa AM",
+    "sentLinkMissionaries": "Kuba Umumisiyonari wa AM",
+    "sentLinkStaff": "Umukozi wo mu Gihe Cuzuye ku Cicaro ca AM",
+    "roadmapHeroTitle": "Gukurira kuri Kaminuza: Inzira"
+  },
+  "Network": {
+    "breadcrumb": "Urunani Rwacu",
+    "heading": "Urunani Rwacu kw'Isi Yose",
+    "joinChapter": "Injira mw'ishami",
+    "partnerWithUs": "Fadikanya natwe",
+    "exploreEyebrow": "Rondera mw'isi",
+    "regionsHeading": "Uturere",
+    "regionsSubheading": "Rondera wisunze ikibanza",
+    "siteCount": "{count, plural, =1 {urubuga #} other {imbuga #}}",
+    "communityEyebrow": "Umuryango wo kw'isi yose",
+    "chaptersHeading": "Amashami mu bisagara n'imfuruka zitandukanye z'isi",
+    "chaptersSoon": "Amashami agiye gutangura vuba.",
+    "continentSubtitle": "Imbuga z'ibihugu vya AM muri {region}.",
+    "noSitesTitle": "Nta mbuga za {region} ziraboneka",
+    "noSitesBodyPrefix": "Turacyubaka AM muri aka karere. Garuka vuba, canke",
+    "noSitesLink": "twandikire",
+    "noSitesBodySuffix": "nimba wipfuza gufasha gutangura rimwe.",
+    "visitSite": "Sura urubuga",
+    "regions": {
+      "africa": "Afrika",
+      "asia": "Aziya",
+      "europe": "Uburaya",
+      "northamerica": "Amerika y'Uburaruko",
+      "southamerica": "Amerika y'Epfo na Karayibe",
+      "oceania": "Oseyaniya"
+    },
+    "map": {
+      "world": "Isi",
+      "loading": "Biratangura…",
+      "zoomIn": "Egereza",
+      "clear": "Futa",
+      "worldHint": "Shira canke uhitemwo agatobo kugira urabe igisagara — hitamwo kamwe wegereze akarere kako.",
+      "regionHint": "{count, plural, =1 {ishami #} other {amashami #}} muri {region}. Hitamwo agatobo kugira urabe ibisobanuro, canke usubire ku karata k'isi.",
+      "worldAria": "Ikarata y'isi yerekana amashami yose {count} ya AM. Koresha buto z'uturere kugira wegereze.",
+      "regionAria": "Ikarata ya {region} yerekana amashami {count} ya AM.",
+      "captionSouthAsia": "Aziya y'Ubumanuko",
+      "captionEastCentralAsia": "Aziya y'Ubuseruko no Hagati",
+      "captionSoutheastAsia": "Aziya y'Ubumanuko bw'Ubuseruko",
+      "hqBadge": "ICICARO",
+      "regionalHqBadge": "Icicaro c'akarere"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — uwarungitswe",
+      "headingLine1": "Aho",
+      "headingWhere": "Urukundo rwa Yezu",
+      "headingWeAre": "Rusesekara",
+      "joinBibleStudy": "Injira mw'Isomo rya Bibiliya",
+      "whoWeAre": "Turi bande",
+      "stat1Value": "2003",
+      "stat1Label": "Turungika kuva",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, USA",
+      "stat3Value": "Kw'Isi Yose",
+      "stat3Label": "Urunani rwa kaminuza",
+      "dragToExplore": "Kwega kugira urabe"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Injira muri Porogarama Yacu yo Kwiga Bibiliya",
+      "heading": "Inzira y'ibice 5 uhereye ku kibazo ca mbere ugashika ku kurungikwa.",
+      "description": "Porogarama ya AM yo Kwiga Bibiliya y'ibice 5 ni porogarama yo guhindura abigishwa n'inyigisho za Bibiliya bikorwa kuri internet, iyobora abanyeshure banyuze mu nzira ishinze yo kwiga Ubutumwa Bwiza bwa Yezu Kristu n'ubuzima bw'ukwemera. Iyi porogarama ihuza abanyeshure n'abigisha Bibiliya bazotanga inyigisho bisunze ingene umwumvirizi ashoboye. Irangira n'akaryo ko kwitanga ku bushake, kwimenyereza kuba umumisiyonari w'umunyeshure, canke gusa kwibiza mw'Ijambo ry'Imana hamwe na AM.",
+      "cta": "Tangura porogarama"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Injira mw'isomo rya Bibiliya",
+      "joinBibleStudyDescription": "Porogarama y'ibice 5 yo guhindura abigishwa n'inyigisho za Bibiliya kuri internet.",
+      "findCampusTitle": "Rondera kaminuza yawe",
+      "findCampusDescription": "Urunani rwacu rw'amashami n'imiryango.",
+      "getInvolvedTitle": "Ifadikanye natwe",
+      "getInvolvedDescription": "Huza, kura, yobora kandi urungikwe hamwe na AM.",
+      "supportTitle": "Shigikira ubutumwa",
+      "supportDescription": "Tanga, senga kandi ufadikanye n'abanyeshure mu murima."
+    },
+    "Ministries": {
+      "eyebrow": "Huza · Kura · Yobora · Rungikwa",
+      "heading": "Intambwe zine, kandi tugendana nawe muri imwe imwe.",
+      "getInvolved": "Ifadikanye natwe",
+      "learnMore": "Menya vyinshi",
+      "connectTitle": "Huza na AM",
+      "connectDescription": "AM itanga porogarama zitandukanye zo kwiga Bibiliya ziteza imbere ubuzima bwacu bw'impwemu n'ubucuti bwacu n'Umukama Yezu Kristu.",
+      "growTitle": "Kura hamwe na AM",
+      "growDescription": "Injira mu Bikorwa vyacu vy'Imigwi kandi mukurire hamwe mu bumwe bw'ukuri. Porogarama zacu z'imigwi zitanga uburambe bufise agaciro ku munyeshure wese kugira aronke inguvu z'impwemu.",
+      "leadTitle": "Yobora hamwe na AM",
+      "leadDescription": "AM iranezerwa kwakira abanyeshure bipfuza kwitanga ku bushake no gukorera biciye ku ngabirano Imana yabahaye mu mashami atandukanye.",
+      "sentTitle": "Rungikwa hamwe na AM",
+      "sentDescription": "AM izobandanya kugendana nawe gushika umuhamagaro wawe w'agaciro wo \"kurungikwa\" urangiye mu buzima bwawe n'inyuma yo kurangiza amasomo!",
+      "connectTag": "Huza",
+      "growTag": "Kura",
+      "leadTag": "Yobora",
+      "sentTag": "Rungikwa"
+    },
+    "OurMission": {
+      "eyebrow": "Ubutumwa bwacu",
+      "statementPrefix": "Ubutumwa bwa Apostolos Missions ni",
+      "statementEmphasis": "kwamamaza Yezu n'ukuntu yabambwe",
+      "statementSuffix": "— dushinga urunani rw'urwaruka rw'Abakirisu rwisunze Kristu kugira ngo hakoranywe ubutumwa bwa kaminuza.",
+      "readFullStatement": "Soma icandikwa cuzuye c'ubutumwa",
+      "nameOrigin": "Izina apostolos ni ijambo ry'Ikigiriki risobanura intumwa. Risobanura \"uwarungitswe mu butumwa.\"",
+      "history": "Ico catanguye nk'agatsinda gato k'abanyeshure batoyi bafise umwete i Los Angeles, muri Kaliforuniya, bashaka gukwiza ubutumwa bwiza no kumenyekanisha Yezu, cabaye umuryango wo kw'isi yose ukorera muri kaminuza zo kw'isi hose.",
+      "ourHistory": "Kahise kacu"
+    },
+    "GetInvolved": {
+      "eyebrow": "Huza",
+      "heading": "Ifadikanye Natwe",
+      "bibleStudies": "Kwiga Bibiliya",
+      "volunteer": "Kwitanga ku Bushake",
+      "internship": "Ukwimenyereza Akazi"
+    },
+    "Media": {
+      "eyebrow": "Ibimenyeshamakuru",
+      "heading": "Inyigisho, ivyabona n'Ijambo.",
+      "moreContents": "Ibindi birimwo",
+      "playVideo": "Kina videwo y'intangamarara ya AM",
+      "post1Title": "Ivyiyumviro Bine vy'Impwemu – Incamake",
+      "post2Title": "Agakiza n'Iki? | Sola Fide Igice ca 1 – AM Academy",
+      "post3Title": "Igihe co Guhindura Abigishwa ku Mbuga Ngurukanabumenyi, Guhuza Abanyeshure n'Ukuri kw'Ubutumwa Bwiza",
+      "post4Title": "Amasezerano y'Imana ku Mwaka Mushasha",
+      "post1Date": "5 Nzero 2026",
+      "post2Date": "27 Ruheshi 2023",
+      "post3Date": "3 Ruheshi 2022",
+      "post4Date": "2 Nzero 2022"
+    },
+    "Events": {
+      "eyebrow": "Ibirori",
+      "heading": "Aho urunani rukoranira.",
+      "allEvents": "Ibirori vyose",
+      "event1Date": "4–5 Ndamukiza",
+      "event1Title": "Amahugurwa ya Pasika",
+      "event2Date": "18 Ruhuhuma",
+      "event2Title": "Urugendo rw'Imisi 40 rwa Karema",
+      "event3Date": "16 Nzero",
+      "event3Title": "Inama y'Abayobozi Bashasha b'Amashami"
+    },
+    "OurNetwork": {
+      "eyebrow": "Urunani rwacu",
+      "heading": "Birashoboka ko hariho umuryango usanzwe kuri kaminuza yawe.",
+      "description": "Rondera wisunze ishure canke igisagara. Nimba ata kiboneka hafi yawe, ni ubutumire — tuzogufasha gutangura rimwe.",
+      "startChapter": "Tangura ishami",
+      "searchPlaceholder": "Rondera ishure canke igisagara",
+      "noMatches": "Nta kiboneka ubu — twandikire tuzogufasha gutangura rimwe."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Umukuru Wacu wa Mbere w'Iteka",
+      "followingLegacy": "Dukurikira Intoranwa ya",
+      "name": "Dr. Ralph D. Winter",
+      "quoteLine1": "Nuko mugende",
+      "quoteLine2": "muhindure abigishwa",
+      "quoteLine3": "mu mahanga yose…",
+      "quoteReference": "—Matayo 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Fadikanya natwe",
+      "heading": "Rungika umuntu utazokwigera uhura na we.",
+      "description": "Ingabirano yose ishira kwiga Bibiliya, amahugurwa n'umuryango urungika mu maboko y'abanyeshure biteguye kugenda.",
+      "giveToday": "Tanga uno musi",
+      "talkToUs": "Yaga natwe"
+    },
+    "Newsletter": {
+      "heading": "Ivyandikwa Bivuye kuri Kaminuza",
+      "description": "Ikete rigufi rya buri kwezi: ico abanyeshure baraba, aho AM igiye ubutaha, n'ukuntu wosenga.",
+      "cta": "AM Academy"
+    }
+  }
+}

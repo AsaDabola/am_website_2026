@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Yule anayetumwa kwa utume",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Sisi ni nani",
+    "whatWeDo": "Tunachofanya",
+    "getInvolved": "Jiunge nasi",
+    "connect": "Ungana",
+    "ourNetwork": "Mtandao wetu",
+    "news": "Habari",
+    "contactUs": "Wasiliana nasi",
+    "give": "Toa",
+    "toggleNav": "Fungua au funga menyu ya urambazaji",
+    "whoWeAreMenu": {
+      "whoWeAre": "Sisi ni nani",
+      "ourMission": "Utume wetu",
+      "statementOfFaith": "Tamko la imani",
+      "history": "Historia",
+      "ourFirstChairmen": "Wenyeviti wetu wa kwanza",
+      "membership": "Uanachama",
+      "ourLeadership": "Uongozi wetu"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Nguzo za utume wetu",
+      "administration": "Utawala",
+      "bibleStudyProgram": "Mpango wa Kujifunza Biblia",
+      "fourSpiritualThemes": "Mada Nne za Kiroho",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Huduma zetu"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Mafunzo ya Biblia",
+      "groupActivities": "Shughuli za vikundi",
+      "volunteer": "Kujitolea",
+      "bibleTeacherTraining": "Mafunzo ya walimu wa Biblia",
+      "internship": "Mafunzo kazini",
+      "donate": "Toa",
+      "onlineBibleStudy": "Kujifunza Biblia mtandaoni",
+      "chapterAffiliation": "Kujiunga kwa tawi"
+    },
+    "newsMenu": {
+      "featured": "Zilizoteuliwa",
+      "events": "Matukio",
+      "editorial": "Makala",
+      "photoNews": "Habari za picha",
+      "testimony": "Ushuhuda"
+    },
+    "megaMenu": {
+      "aboutHeading": "Kuhusu",
+      "whatWeDoHeading": "Tunachofanya",
+      "featuredHeading": "Makala teule",
+      "allArticles": "Makala zote",
+      "ctaBibleStudy": "Anza kujifunza Biblia",
+      "ctaFindChapter": "Tafuta tawi lako",
+      "ctaGive": "Toa leo"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "Kuhusu AM",
+        "description": "Sisi ni nani, tunaamini nini, na tumetoka wapi."
+      },
+      "leadership": {
+        "title": "Uongozi",
+        "description": "Watu wanaohudumia harakati hii na jinsi ya kujiunga."
+      },
+      "whatWeDo": {
+        "title": "Tunachofanya",
+        "description": "Nguzo na huduma zinazopeleka utume mbele."
+      },
+      "bibleStudy": {
+        "title": "Mpango wa Kujifunza Biblia",
+        "description": "Njia ya hatua tano, kutoka swali lako la kwanza hadi kutumwa."
+      },
+      "getInvolved": {
+        "title": "Jiunge nasi",
+        "description": "Pata nafasi yako katika harakati hii, popote ulipo."
+      },
+      "supportMission": {
+        "title": "Hudumu na Uunge Mkono",
+        "description": "Jifunze, anzisha tawi, au shirikiana na wanafunzi walioko uwandani."
+      },
+      "latestNews": {
+        "title": "Habari za Karibuni",
+        "description": "Hadithi na taarifa kutoka kote katika mtandao."
+      },
+      "events": {
+        "title": "Matukio",
+        "description": "Mafungo, mikutano na makusanyiko karibu nawe."
+      }
+    },
+    "mobile": {
+      "back": "Rudi",
+      "close": "Funga menyu",
+      "menu": "Menyu"
+    }
+  },
+  "Footer": {
+    "tagline": "Huduma ya madhehebu mbalimbali iliyojitoa kueneza injili hadi miisho ya dunia, ikishuhudia upendo wa milele wa Bwana.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, Marekani",
+    "email": "info@amintl.org",
+    "whoWeAre": "Sisi ni nani",
+    "whatWeDo": "Tunachofanya",
+    "getInvolved": "Jiunge nasi",
+    "media": "Vyombo vya habari",
+    "aboutAM": "Kuhusu AM",
+    "missionStatement": "Tamko la utume",
+    "statementOfFaith": "Tamko la imani",
+    "ourHistory": "Historia yetu",
+    "leadership": "Uongozi",
+    "bibleStudyProgram": "Mpango wa Kujifunza Biblia",
+    "fourSpiritualThemes": "Mada Nne za Kiroho",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Huduma zetu",
+    "connectGrowLeadSent": "Ungana, Kua, Ongoza, Tumwa",
+    "chapterAffiliation": "Kujiunga kwa tawi",
+    "ourNetwork": "Mtandao wetu",
+    "events": "Matukio",
+    "give": "Toa",
+    "news": "Habari",
+    "legacyOfChairman": "Urithi wa Ralph D. Winter",
+    "contactUs": "Wasiliana nasi",
+    "copyright": "© 2026 Apostolos Missions International. Haki zote zimehifadhiwa.",
+    "contact": "Mawasiliano"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "Lugha"
+  },
+  "Common": {
+    "tagline": "Huduma ya madhehebu mbalimbali iliyojitoa kueneza injili hadi miisho ya dunia, ikishuhudia upendo wa milele wa Bwana.",
+    "learnMore": "Jifunze zaidi",
+    "readMore": "Soma zaidi",
+    "clickHere": "Bofya hapa",
+    "home": "Mwanzo"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Sisi ni nani",
+    "missionStatement": "Tamko la utume",
+    "statementOfFaith": "Tamko la imani",
+    "history": "Historia",
+    "ourFirstChairman": "Mwenyekiti wetu wa kwanza",
+    "membership": "Uanachama",
+    "leadership": "Uongozi"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Nguzo za Utume Wetu",
+    "administration": "Utawala"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Kujifunza Biblia Alhamisi",
+    "bibleStudies": "Mafunzo ya Biblia",
+    "groupActivities": "Shughuli za Vikundi",
+    "volunteer": "Kujitolea",
+    "chapterStaff": "Wafanyakazi wa Tawi",
+    "bibleTeacherTraining": "Mafunzo ya Walimu wa Biblia",
+    "internship": "Mafunzo Kazini",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Toa"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Habari Teule",
+    "events": "Matukio",
+    "editorial": "Makala",
+    "photoNews": "Habari za Picha",
+    "testimony": "Ushuhuda"
+  },
+  "InPractice": {
+    "eyebrow": "Katika vitendo",
+    "heading": "Mambo manne tunayofanya kila mahali tunapoenda.",
+    "bibleStudyTag": "Kujifunza Biblia",
+    "bibleStudyDescription": "Mafunzo katika vikundi vidogo na vikubwa yanayoweka Maandiko katikati ya maisha ya chuo.",
+    "leadershipTrainingTag": "Mafunzo ya uongozi",
+    "leadershipTrainingDescription": "Wanafunzi wanaandaliwa kuwaongoza wenzao, kisha kutuma kundi linalofuata.",
+    "onlineEducationTag": "Elimu mtandaoni",
+    "onlineEducationDescription": "Kozi za AM Academy kuhusu Maandiko, umisionari na huduma ya tamaduni mbalimbali.",
+    "internshipsTripsTag": "Mafunzo kazini na safari",
+    "internshipsTripsDescription": "Misheni fupi na mafunzo kazini yanayogeuza mafunzo kuwa vitendo."
+  },
+  "AboutPage": {
+    "heroTitle": "Kama vile Baba alivyonituma mimi, nami nawatuma ninyi.",
+    "breadcrumb": "Kuhusu",
+    "paragraph1": "Apostolos Missions International (AM) ni huduma ya madhehebu mbalimbali iliyojitoa kueneza injili hadi miisho ya dunia, ikishuhudia upendo wa milele wa Bwana.",
+    "paragraph2Prefix": "Jina",
+    "paragraph2": "(ἀπόστολος) ni neno la Kiyunani linalomaanisha mtume. Linamaanisha \"yule anayetumwa kwa utume\" au \"mjumbe\". Cheo \"mtume\" hujitokeza mara nyingi katika Agano Jipya kwa wanafunzi kumi na wawili waliochaguliwa na Yesu (Mathayo 10:2, Marko 3:14, Luka 6:13, Matendo 2:42). Paulo, aliyekuwa mtesaji wa Ukristo kisha akawa mhubiri mkuu wa injili, alijitambulisha kama \"mtume\" (Warumi 1:1, 1 Wakorintho 1:1, 2 Wakorintho 1:1, Wagalatia 1:1, Wakolosai 1:1, 1 Timotheo 1:1, 2 Timotheo 1:1, Tito).",
+    "paragraph3": "Mitume ni wale wanaotumwa na Bwana kutimiza utume wa \"kumhubiri Yesu Kristo na kumjulisha Mungu\" kwa viumbe vyote. Msingi wa kibiblia wa utume unapatikana katika maneno mengi ya Bwana aliyewachagua mitume wa kwanza na kuwatuma kama mabalozi waliopelekwa kuwakilisha mataifa. Mitume walielewa kwamba maisha yao hayakuwa yao tena, bali waliishi ili kudhihirisha utukufu wa Kristo katika ulimwengu huu ulioanguka.",
+    "blockquote": "Yohana 20:21 inasema, \"Yesu akawaambia tena, 'Amani iwe kwenu! Kama vile Baba alivyonituma mimi, nami nawatuma ninyi.'\"",
+    "paragraph4": "AM inatamani kufuata mapokeo ya mitume walioishi kama watu waliotumwa kuhubiri Neno la Mungu. Kila mmoja wetu pia hupokea wito huu kutoka kwa Mungu wa kutumwa ulimwenguni kama mikono na miguu yake. Tunataka kuweka wakfu maisha yetu kufuata nyayo za Yesu na kuhubiri Injili hadi miisho ya dunia.",
+    "paragraph5": "Kama vile maisha yetu yalivyoguswa na kubadilishwa na Bwana, tunatamani kudhihirisha upendo wa Bwana tuliouonyeshwa, tukiwa mwanga kwa watoto wake wote waliopotea na kwa ndugu na dada zetu.",
+    "readStatementOfFaith": "Soma tamko letu la imani",
+    "or": "au",
+    "traceHistory": "fuatilia historia yetu",
+    "cardStatementOfFaithTitle": "Soma tamko letu la imani",
+    "cardMissionStatementTitle": "Tamko la Utume"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "Ramani ya AM",
+    "roadmapHeading": "Utegemee nini?",
+    "connectTag": "Ungana",
+    "connectItems": [
+      "Biblia ana kwa ana/mtandaoni",
+      "Mipango ya masomo"
+    ],
+    "growTag": "Kua",
+    "growItems": [
+      "Shughuli za vikundi"
+    ],
+    "leadTag": "Ongoza",
+    "leadItems": [
+      "Kujitolea na mafunzo kazini",
+      "Viongozi wa matawi"
+    ],
+    "sentTag": "Tumwa",
+    "sentItems": [
+      "Alumni Connect",
+      "Wamisionari wa muda na wa kudumu",
+      "Walimu wa Biblia"
+    ],
+    "connectHeading": "Ungana",
+    "connectStep1Title": "1. Jisajili kwenye tovuti zetu",
+    "connectStep1Body": "Kuna njia nyingi za kuungana na AM. Unaweza kujisajili kwenye tovuti yetu kuu, www.amintl.org, na kupokea majarida yetu. Au unaweza kujisajili kwenye tovuti ya shule yetu ya Biblia mtandaoni, www.amacademy.org, na kupokea habari na mipango mipya. Tembelea kwa uhuru maono, shughuli na mipango yetu kupitia tovuti zetu, na tuandikie wakati wowote ukiwa na maswali.",
+    "connectStep2Title": "2. Jisajili kukutana na wafanyakazi wetu",
+    "connectStep2BodyPrefix": "Unaweza",
+    "connectStep2SignUp": "kujisajili",
+    "connectStep2BodySuffix": "hapa ikiwa unataka kuzungumza na mmoja wa wafanyakazi wetu na kupata mwongozo katika safari yako ya kiroho. Unaweza kupanga miadi au kuwasiliana moja kwa moja. Wengi wa wafanyakazi wetu wamepitia maisha ya chuo na wanaelewa hali wanazokutana nazo wanafunzi. Watakusaidia kupata njia inayokufaa zaidi katika safari yako ya imani.",
+    "connectStep3Title": "3. Jisajili kwa masomo ya Biblia",
+    "connectStep3BodyPrefix": "Ikiwa uko tayari kuanza mpango wetu wa kujifunza Biblia,",
+    "connectStep3SignUp": "jisajili",
+    "connectStep3BodySuffix": "kwenye ukurasa huu. Usipopata ratiba inayokufaa, tuma fomu ya ombi ukiandika kozi na wakati unaoupendelea!",
+    "connectStep4Title": "4. Ungana na tawi la karibu",
+    "connectStep4BodyPrefix": "Ikiwa unataka kuungana na ofisi na wafanyakazi wa tawi la karibu, tafadhali",
+    "connectStep4ContactHere": "wasiliana nasi hapa",
+    "connectStep4BodySuffix": ". Tunatazamia kukutana nawe hivi karibuni!",
+    "growHeading": "Kua",
+    "growIntro": "Kama vile tunavyokua na kukomaa kupitia hatua tofauti za utoto, tunafikia hatua muhimu katika ukomavu wetu wa kiroho. AM inatoa mipango na njia nyingi zilizoandaliwa kuwaongoza wanafunzi kupitia hatua hizi tatu muhimu za ukuaji wa kiroho:",
+    "rebornTitle": "1. Kuzaliwa Upya",
+    "rebornBody": "Tunazaliwa upya kupitia dhabihu ya upatanisho ya Yesu msalabani.",
+    "matureTitle": "1. Kukomaa",
+    "matureBody": "Tunakua na kukomaa kiroho tukilishwa upendo na kweli kutoka kwa Yesu.",
+    "fruitfulTitle": "1. Kuzaa Matunda",
+    "fruitfulBody": "Tunapata matunda ya maisha kupitia baraka ya Mungu, inayotimizwa katika umoja wetu uliokomaa na Kristo Yesu.",
+    "navigatingTitle": "Kupitia maisha ya chuo",
+    "navigatingBody": "Maisha ya chuo yanavutia na kutosheleza, lakini kwa chaguo nyingi hivyo yanaweza pia kuonekana bila mwelekeo. Kupitia kweli na maombi, AM inakusaidia kutambua mapenzi ya Mungu na kupata mwongozo wazi kwa maisha yako ya pekee.",
+    "nextStepsTitle": "Hatua Zinazofuata",
+    "nextStepsBody": "Endelea kushiriki katika mipango yetu — tumia fursa mbalimbali za kusikia Neno, kuomba pamoja, kushirikiana na ndugu na dada katika imani, na kuhudumu unapokua katika Injili.",
+    "leadHeading": "Ongoza",
+    "leadStep1Title": "1. Kuhudumu katika Upendo wa Kristo",
+    "leadStep1Body": "Tunapokua, tunatamani kuwahudumia wale wanaohitaji msaada ili kumjia Yesu. Na tunapohudumu, sisi pia tunakua zaidi katika upendo wa Kristo.",
+    "leadStep2Title": "2. Baraka ya Uongozi",
+    "leadStep2Body": "Yesu alisema, \"Ni heri zaidi kutoa kuliko kupokea\" (Matendo 20:35). Kuongoza na kuwaelekeza wengine kunahitaji hekima, maombi, kujitoa na uvumilivu. Hata hivyo ni mahali pa baraka, ambapo utukufu wa msalaba unafikia kilele chake.",
+    "leadStep3Title": "3. Baraka ya Uongozi",
+    "leadStep3Body": "Ingawa wanafunzi wa chuo bado ni vijana, vipawa na ustadi bora vinaweza kugunduliwa na kukuzwa kwa nguvu zaidi kupitia nafasi za uongozi. Ni mchakato mzuri ambapo kila mwanafunzi hujaribu na kuthibitisha vipawa vyake vya mbinguni kupitia uzoefu wa neema wa kuhudumu na kuongoza.",
+    "leadStep4Title": "4. Fursa na AM",
+    "leadStep4Body": "AM inatoa fursa na nafasi mbalimbali kwa wanafunzi kushiriki katika huduma na uongozi. Jiunge na timu yetu ya wanaojitolea, wafanyakazi wa matawi, viongozi wa matawi, walimu wa Biblia na wengine wengi. Gundua kile ambacho Yesu amepanda ndani yako kulingana na mpango wake bora.",
+    "sentHeading": "Tumwa",
+    "sentParagraph1": "Kuhitimu chuo ni kuanza safari nyingine muhimu kuelekea ulimwengu uliofunguka mbele yetu. Baadhi yetu wataendelea na masomo au kufuata njia ya kazi. Wengine watakuwa wafanyakazi wa kudumu wa AM, wamisionari au watumishi, wakifuata wito wa Mungu.",
+    "sentParagraph2": "Katika hatua hii muhimu, AM inatoa mipango inayokuwezesha kubaki umeunganishwa na kuendelea kuhudumia utume wa injili kupitia Alumni Connect. AM pia inatoa mipango ya mafunzo na njia za kuwa mfanyakazi wa kitaalamu wa misheni katika AM World Mission.",
+    "sentParagraph3": "Njia mbalimbali zimefunguka mbele yako kuelekea siku zijazo zenye mwanga. AM inatamani kutembea karibu na kila mtu ili pamoja tutimize Agizo Kuu, \"Basi enendeni, mkawafanye mataifa yote kuwa wanafunzi, mkiwabatiza kwa jina la Baba, na Mwana, na Roho Mtakatifu\" (Mathayo 28:19).",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "Kuwa Mwalimu wa Biblia wa AM",
+    "sentLinkMissionaries": "Kuwa Mmisionari wa AM",
+    "sentLinkStaff": "Mfanyakazi wa Kudumu Makao Makuu ya AM",
+    "roadmapHeroTitle": "Kukua Chuoni: Ramani ya Njia"
+  },
+  "Network": {
+    "breadcrumb": "Mtandao wetu",
+    "heading": "Mtandao Wetu wa Dunia",
+    "joinChapter": "Jiunge na tawi",
+    "partnerWithUs": "Shirikiana nasi",
+    "exploreEyebrow": "Chunguza dunia",
+    "regionsHeading": "Kanda",
+    "regionsSubheading": "Chunguza kwa eneo",
+    "siteCount": "{count, plural, one {tovuti #} other {tovuti #}}",
+    "communityEyebrow": "Jumuiya ya dunia nzima",
+    "chaptersHeading": "Matawi katika miji na pembe mbalimbali za dunia",
+    "chaptersSoon": "Matawi yanaanza hivi karibuni.",
+    "continentSubtitle": "Tovuti za nchi za AM katika {region}.",
+    "noSitesTitle": "Bado hakuna tovuti katika {region}",
+    "noSitesBodyPrefix": "Bado tunajenga uwepo wa AM katika eneo hili. Rudi hivi karibuni, au",
+    "noSitesLink": "wasiliana nasi",
+    "noSitesBodySuffix": "ikiwa ungependa kusaidia kuanzisha moja.",
+    "visitSite": "Tembelea tovuti",
+    "regions": {
+      "africa": "Afrika",
+      "asia": "Asia",
+      "europe": "Ulaya",
+      "northamerica": "Amerika Kaskazini",
+      "southamerica": "Amerika Kusini na Karibi",
+      "oceania": "Oceania"
+    },
+    "map": {
+      "world": "Dunia",
+      "loading": "Inapakia…",
+      "zoomIn": "Kuza",
+      "clear": "Futa",
+      "worldHint": "Weka kishale juu ya kitone au kichague ili kuona mji — kuchagua hukuza eneo lake.",
+      "regionHint": "Matawi {count} katika {region}. Chagua kitone kuona maelezo, au rudi kwenye ramani ya dunia.",
+      "worldAria": "Ramani ya dunia inayoonyesha matawi yote {count} ya AM. Tumia vitufe vya kanda kukuza.",
+      "regionAria": "Ramani ya {region} inayoonyesha matawi {count} ya AM.",
+      "captionSouthAsia": "Asia Kusini",
+      "captionEastCentralAsia": "Asia Mashariki na ya Kati",
+      "captionSoutheastAsia": "Asia ya Kusini-Mashariki",
+      "hqBadge": "Makao Makuu",
+      "regionalHqBadge": "Makao ya Kanda"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — yule anayetumwa",
+      "headingLine1": "Mahali ambapo",
+      "headingWhere": "upendo wa Yesu",
+      "headingWeAre": "unafurika",
+      "joinBibleStudy": "Jiunge na masomo yetu ya Biblia",
+      "whoWeAre": "Sisi ni nani",
+      "stat1Value": "2003",
+      "stat1Label": "Tunatuma tangu",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, Marekani",
+      "stat3Value": "Kimataifa",
+      "stat3Label": "Mtandao wa vyuo",
+      "dragToExplore": "Buruta kuchunguza"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Jiunge na Mpango wetu wa Kujifunza Biblia",
+      "heading": "Njia ya hatua 5 kutoka swali la kwanza hadi kutumwa.",
+      "description": "Mpango wa Kujifunza Biblia wa AM wa hatua 5 ni mpango wa mtandaoni wa ufuasi na elimu ya Biblia unaowaongoza wanafunzi katika mtiririko wa utaratibu wa kujifunza Injili ya Yesu Kristo na maisha ya imani. Mpango huu huwaunganisha wanafunzi na walimu wa Biblia wanaofundisha kulingana na ratiba ya msikilizaji. Unahitimishwa kwa fursa ya kujitolea, kufunzwa kama mwanafunzi mmisionari, au kwa urahisi kuzama zaidi katika Neno la Mungu pamoja na AM.",
+      "cta": "Anza mpango"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Jiunge na masomo ya Biblia",
+      "joinBibleStudyDescription": "Mpango wa mtandaoni wa ufuasi na elimu ya Biblia wa hatua 5.",
+      "findCampusTitle": "Tafuta chuo chako",
+      "findCampusDescription": "Mtandao wetu wa matawi na ushirika.",
+      "getInvolvedTitle": "Jiunge nasi",
+      "getInvolvedDescription": "Ungana, kua, ongoza na utumwe pamoja na AM.",
+      "supportTitle": "Unga mkono utume",
+      "supportDescription": "Toa, omba na shirikiana na wanafunzi walioko uwandani."
+    },
+    "Ministries": {
+      "eyebrow": "Ungana · Kua · Ongoza · Tumwa",
+      "heading": "Hatua nne, nasi tunatembea kila moja pamoja nawe.",
+      "getInvolved": "Jiunge nasi",
+      "learnMore": "Jifunze zaidi",
+      "connectTitle": "Ungana na AM",
+      "connectDescription": "AM inatoa mipango mbalimbali ya kujifunza Biblia inayolisha maisha yetu ya kiroho na uhusiano wetu na Bwana Yesu Kristo.",
+      "growTitle": "Kua pamoja na AM",
+      "growDescription": "Jiunge na Shughuli zetu za Vikundi na mkomae pamoja katika ushirika wa kweli. Mipango yetu ya vikundi inampa kila mwanafunzi uzoefu bora wa kupata nguvu za kiroho.",
+      "leadTitle": "Ongoza pamoja na AM",
+      "leadDescription": "AM inafurahi kuwakaribisha wanafunzi wanaotaka kujitolea na kuhudumu kwa vipawa walivyopewa na Mungu katika idara mbalimbali.",
+      "sentTitle": "Tumwa pamoja na AM",
+      "sentDescription": "AM itaendelea kutembea nawe hadi wito wako wa thamani wa \"kutumwa\" utimie maishani mwako, hata baada ya kuhitimu!",
+      "connectTag": "Ungana",
+      "growTag": "Kua",
+      "leadTag": "Ongoza",
+      "sentTag": "Tumwa"
+    },
+    "OurMission": {
+      "eyebrow": "Utume wetu",
+      "statementPrefix": "Utume wa Apostolos Missions ni",
+      "statementEmphasis": "kumhubiri Yesu Kristo, naye amesulubiwa",
+      "statementSuffix": "— tukikuza mtandao wa vijana Wakristo unaomlenga Kristo kwa ajili ya kuhamasisha utume wa vyuoni.",
+      "readFullStatement": "Soma tamko kamili la utume",
+      "nameOrigin": "Jina apostolos ni neno la Kiyunani linalomaanisha mtume. Linamaanisha \"yule anayetumwa kwa utume\".",
+      "history": "Kile kilichoanza kama kikundi kidogo cha vijana wanafunzi wenye shauku huko Los Angeles, California, waliotamani kueneza injili na kumjulisha Yesu, kimekuwa shirika la kimataifa linalofanya kazi katika vyuo vikuu duniani kote.",
+      "ourHistory": "Historia yetu"
+    },
+    "GetInvolved": {
+      "eyebrow": "Endelea Kuungana",
+      "heading": "Jiunge nasi",
+      "bibleStudies": "Mafunzo ya Biblia",
+      "volunteer": "Kujitolea",
+      "internship": "Mafunzo kazini"
+    },
+    "Media": {
+      "eyebrow": "Vyombo vya habari",
+      "heading": "Mafundisho, ushuhuda na Neno.",
+      "moreContents": "Maudhui zaidi",
+      "playVideo": "Tazama video ya utangulizi ya AM",
+      "post1Title": "Mada Nne za Kiroho – Muhtasari",
+      "post2Title": "Wokovu ni nini? | Sola Fide Sehemu ya 1 – AM Academy",
+      "post3Title": "Enzi ya Ufuasi kwa Mitandao ya Kijamii: Kuwaunganisha Wanafunzi na Uhalisia wa Injili",
+      "post4Title": "Ahadi za Mungu kwa Mwaka Mpya",
+      "post1Date": "5 Januari 2026",
+      "post2Date": "27 Juni 2023",
+      "post3Date": "3 Juni 2022",
+      "post4Date": "2 Januari 2022"
+    },
+    "Events": {
+      "eyebrow": "Matukio",
+      "heading": "Mahali mtandao unapokusanyika.",
+      "allEvents": "Matukio yote",
+      "event1Date": "4–5 Aprili",
+      "event1Title": "Mafungo ya Pasaka",
+      "event2Date": "18 Februari",
+      "event2Title": "Safari ya Siku 40 za Kwaresima",
+      "event3Date": "16 Januari",
+      "event3Title": "Mkutano wa Viongozi Wapya wa Matawi"
+    },
+    "OurNetwork": {
+      "eyebrow": "Mtandao wetu",
+      "heading": "Huenda tayari kuna ushirika katika chuo chako.",
+      "description": "Tafuta kwa chuo au mji. Kama hakuna kinachopatikana karibu nawe, chukulia hiyo kama mwaliko — tutakusaidia kuanzisha mmoja.",
+      "startChapter": "Anzisha tawi",
+      "searchPlaceholder": "Tafuta chuo au mji",
+      "noMatches": "Bado hakuna matokeo — wasiliana nasi na tutakusaidia kuanzisha."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Mwenyekiti Wetu wa Kwanza wa Heshima",
+      "followingLegacy": "Tukifuata Urithi wa",
+      "name": "Dkt. Ralph D. Winter",
+      "quoteLine1": "Basi enendeni,",
+      "quoteLine2": "mkawafanye mataifa yote",
+      "quoteLine3": "kuwa wanafunzi…",
+      "quoteReference": "—Mathayo 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Shirikiana nasi",
+      "heading": "Mtume mtu ambaye hutakutana naye kamwe.",
+      "description": "Kila zawadi huleta masomo ya Biblia, mafunzo na jumuiya inayotuma karibu na wanafunzi walio tayari kwenda.",
+      "giveToday": "Toa leo",
+      "talkToUs": "Zungumza nasi"
+    },
+    "Newsletter": {
+      "heading": "Taarifa kutoka Vyuoni",
+      "description": "Barua fupi ya kila mwezi: wanafunzi wanaona nini, AM inaelekea wapi, na jinsi ya kuomba.",
+      "cta": "AM Academy"
+    }
+  }
+}

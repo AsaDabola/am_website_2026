@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · O koya e talai ena dua na itavi",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "O Keimami",
+    "whatWeDo": "Na Ka Keimami Cakava",
+    "getInvolved": "Vakaitavi",
+    "connect": "Semati",
+    "ourNetwork": "Na Noda Iwiliwili",
+    "news": "Itukutuku",
+    "contactUs": "Veitaratara",
+    "give": "Solia",
+    "toggleNav": "Dolava se sogota na menu",
+    "whoWeAreMenu": {
+      "whoWeAre": "O keimami",
+      "ourMission": "Na neimami itavi",
+      "statementOfFaith": "Na ivakamacala ni vakabauta",
+      "history": "Itukutuku makawa",
+      "ourFirstChairmen": "Na Neimami iLiuliu Taumada",
+      "membership": "Lewe ni matatavola",
+      "ourLeadership": "Na neimami iliuliu"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Na duru ni neimami itavi",
+      "administration": "Veiliutaki",
+      "bibleStudyProgram": "Porokaramu ni Vuli iVolatabu",
+      "fourSpiritualThemes": "Va na Ulutaga Vakayalo",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Na neimami veiqaravi"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Vuli iVolatabu",
+      "groupActivities": "Cakacaka vakamataqali",
+      "volunteer": "Veiqaravi ena yalo savasava",
+      "bibleTeacherTraining": "Vakavulici ni qasenivuli iVolatabu",
+      "internship": "Vakatovolei ena cakacaka",
+      "donate": "Solia na ivotavota",
+      "onlineBibleStudy": "Vuli iVolatabu ena itaviqaravi",
+      "chapterAffiliation": "Semati ki na tabana"
+    },
+    "newsMenu": {
+      "featured": "Vakabibitaki",
+      "events": "Soqo",
+      "editorial": "Ivakamacala ni dauvolaivola",
+      "photoNews": "Itukutuku vakaiyaloyalo",
+      "testimony": "Ivakadinadina"
+    },
+    "megaMenu": {
+      "aboutHeading": "Me baleta",
+      "whatWeDoHeading": "Na ka keimami cakava",
+      "featuredHeading": "Ulutaga vakabibitaki",
+      "allArticles": "Na ulutaga kece",
+      "ctaBibleStudy": "Tekivuna e dua na vuli iVolatabu",
+      "ctaFindChapter": "Vakasaqarai na nomu tabana",
+      "ctaGive": "Solia nikua"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "Me baleta na AM",
+        "description": "O keimami, na ka keimami vakabauta kei na vanua keimami lako mai kina."
+      },
+      "leadership": {
+        "title": "Veiliutaki",
+        "description": "Na tamata era veiqaravi ena cakacaka kei na sala mo vakaitavi kina."
+      },
+      "whatWeDo": {
+        "title": "Na Ka Keimami Cakava",
+        "description": "Na duru kei na veiqaravi era kauta toso na itavi."
+      },
+      "bibleStudy": {
+        "title": "Porokaramu ni Vuli iVolatabu",
+        "description": "E dua na sala e lima na ivakarau mai na nomu taro imatai me yacova na nomu talai."
+      },
+      "getInvolved": {
+        "title": "Vakaitavi",
+        "description": "Vakasaqarai na nomu vanua ena cakacaka oqo, se mani vanua cava o tiko kina."
+      },
+      "supportMission": {
+        "title": "Veiqaravi & Tokoni",
+        "description": "Vakavulici, tekivuna e dua na tabana, se veitokoni kei ira na gonevuli ena vanua ni cakacaka."
+      },
+      "latestNews": {
+        "title": "Itukutuku Vou",
+        "description": "Italanoa kei na itukutuku vou mai na iwiliwili taucoko."
+      },
+      "events": {
+        "title": "Soqo",
+        "description": "Vakacegu, bose kei na soqoni volekati iko."
+      }
+    },
+    "mobile": {
+      "back": "Lesu tale",
+      "close": "Sogota na menu",
+      "menu": "Menu"
+    }
+  },
+  "Footer": {
+    "tagline": "E dua na veiqaravi vakalotu veiwekani e yalataka me kauta na kosipeli me yacova na iyalayala kei vuravura, ka vakadinadinataka na loloma tawamudu ni Turaga.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, USA",
+    "email": "info@amintl.org",
+    "whoWeAre": "O keimami",
+    "whatWeDo": "Na ka keimami cakava",
+    "getInvolved": "Vakaitavi",
+    "media": "Itukutuku",
+    "aboutAM": "Me baleta na AM",
+    "missionStatement": "Ivakamacala ni itavi",
+    "statementOfFaith": "Ivakamacala ni vakabauta",
+    "ourHistory": "Na neimami itukutuku makawa",
+    "leadership": "Veiliutaki",
+    "bibleStudyProgram": "Porokaramu ni Vuli iVolatabu",
+    "fourSpiritualThemes": "Va na Ulutaga Vakayalo",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Na neimami veiqaravi",
+    "connectGrowLeadSent": "Semati, Tubu, Liutaki, Talai",
+    "chapterAffiliation": "Semati ki na tabana",
+    "ourNetwork": "Na Noda Iwiliwili",
+    "events": "Soqo",
+    "give": "Solia",
+    "news": "Itukutuku",
+    "legacyOfChairman": "Na ivotavota i Ralph D. Winter",
+    "contactUs": "Veitaratara",
+    "copyright": "© 2026 Apostolos Missions International. Sa taqomaki na dodonu kece.",
+    "contact": "Veitaratara"
+  },
+  "Logo": {
+    "international": "Vakavuravura"
+  },
+  "LanguageSwitcher": {
+    "label": "Vosa"
+  },
+  "Common": {
+    "tagline": "E dua na veiqaravi vakalotu veiwekani e yalataka me kauta na kosipeli me yacova na iyalayala kei vuravura, ka vakadinadinataka na loloma tawamudu ni Turaga.",
+    "learnMore": "Vulica na kena levu cake",
+    "readMore": "Wilika na Kena Levu Cake",
+    "clickHere": "Kilika eke",
+    "home": "Itabatikoro"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "O keimami",
+    "missionStatement": "Ivakamacala ni itavi",
+    "statementOfFaith": "Ivakamacala ni vakabauta",
+    "history": "Itukutuku makawa",
+    "ourFirstChairman": "Na Neimami iLiuliu Taumada",
+    "membership": "Lewe ni matatavola",
+    "leadership": "Veiliutaki"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Na Duru ni Neimami Itavi",
+    "administration": "Veiliutaki"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Vuli iVolatabu ni Lotulailai",
+    "bibleStudies": "Vuli iVolatabu",
+    "groupActivities": "Cakacaka Vakamataqali",
+    "volunteer": "Veiqaravi ena Yalo Savasava",
+    "chapterStaff": "Vakailesilesi ni Tabana",
+    "bibleTeacherTraining": "Vakavulici ni Qasenivuli iVolatabu",
+    "internship": "Vakatovolei ena Cakacaka",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Solia na Ivotavota"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Itukutuku Vakabibitaki",
+    "events": "Soqo",
+    "editorial": "Ivakamacala ni Dauvolaivola",
+    "photoNews": "Itukutuku Vakaiyaloyalo",
+    "testimony": "Ivakadinadina"
+  },
+  "InPractice": {
+    "eyebrow": "Ena veicakacakataki",
+    "heading": "Va na ka keimami cakava ena veivanua kece keimami lako kina.",
+    "bibleStudyTag": "Vuli iVolatabu",
+    "bibleStudyDescription": "Vuli vakailalai kei na vakalevu ka vakatikora na iVolatabu ena maliwa ni bula vakavuli.",
+    "leadershipTrainingTag": "Vakavulici ni veiliutaki",
+    "leadershipTrainingDescription": "Era vakavulici na gonevuli mera liutaki ira na wekadra, oti mera talai ira tale na imatabose tarava.",
+    "onlineEducationTag": "Vuli ena itaviqaravi",
+    "onlineEducationDescription": "Na vuli ni AM Academy ena iVolatabu, na vuli ni itavi kei na veiqaravi vakaveivanua.",
+    "internshipsTripsTag": "Vakatovolei & ilakolako",
+    "internshipsTripsDescription": "Itavi lekaleka kei na vakatovolei ena cakacaka era vakavuna na vakavulici me yaco me cakacaka dina."
+  },
+  "AboutPage": {
+    "heroTitle": "Me vaka na nona talai au na Tamana, au sa talai kemuni tale ga.",
+    "breadcrumb": "Me baleta",
+    "paragraph1": "Na Apostolos Missions International (AM) e dua na veiqaravi vakalotu veiwekani e yalataka me kauta na kosipeli me yacova na iyalayala kei vuravura, ka vakadinadinataka na loloma tawamudu ni Turaga.",
+    "paragraph2Prefix": "Na yaca",
+    "paragraph2": "(ἀπόστολος) e vosa vakirisi ni yapositolo. E kena ibalebale \"o koya e talai ena dua na itavi\" se \"italai.\" Na yaca \"yapositolo\" e dau basika ena Veiyalayalati Vou me vakamatanataka na Tinikarua na tisaipeli erau digitaki ira o Jisu (Maciu 10:2, Marika 3:14, Luke 6:13, Cakacaka 2:42). O Paula, e dau vakacacani ira na lotu Vakarisito ena gauna makawa ka mani yaco me dua na dautukutuku levu ni kosipeli, a vakamacalataki koya me \"yapositolo\" (Roma 1:1, 1 Korinica 1:1, 2 Korinica 1:1, Kalatia 1:1, Kolosa 1:1, 1 Timoci 1:1, 2 Timoci 1:1, Taito).",
+    "paragraph3": "Na yapositolo era o ira era talai mai vua na Turaga mera vakayacora na itavi ni \"vunautaka o Jisu Karisito ka vakatakila na Kalou\" vei ira na ka bulia kece. Na yavu vakaivolatabu ni yapositolo e kune ena levu na vosa ni Turaga ka digitaki ira na yapositolo taumada ka talai ira me vaka na matataki era talai mera matataka na veimatanitu duidui. Era kila na yapositolo ni nodra bula e sega ni nodra ga, ia era bula mera vakatakila na lagilagi i Karisito ena vuravura oqo sa lutu.",
+    "blockquote": "E kaya na Joni 20:21, \"A sa qai kaya tale vei ira o Jisu, 'Me tiko na vakacegu vei kemuni! Me vaka na nona talai au na Tamana, au sa talai kemuni tale ga.'\" (NIV)",
+    "paragraph4": "E gadreva na AM me muria na ivakarau ni yapositolo era bula me vaka na tamata era tu ena dua na itavi mera vunautaka na Vosa ni Kalou. Eda taucoko eda ciqoma tale ga na kacivi oqo mai vua na Kalou mo da talai ki vuravura me nona liga kei na yavana. Keimami gadreva me keimami solia na neimami bula me muri na yava i Jisu ka vunautaka na Kosipeli me yacova na iyalayala kei vuravura.",
+    "paragraph5": "Me vaka ni sa tarai ka veisautaka na neimami bula na Turaga, keimami gadreva me vakatakilai na loloma ni Turaga ka vakaraitaki vei keimami, ka yaco me rarama vei ira kece na luvena sa yali kei ira na wekada tagane kei na yalewa.",
+    "readStatementOfFaith": "Wilika na neimami ivakamacala ni vakabauta",
+    "or": "se",
+    "traceHistory": "vakadidike na itukutuku makawa",
+    "cardStatementOfFaithTitle": "Wilika na neimami ivakamacala ni Vakabauta",
+    "cardMissionStatementTitle": "Ivakamacala ni Itavi"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "Na Sala ni AM",
+    "roadmapHeading": "Na cava e namaki?",
+    "connectTag": "Semati",
+    "connectItems": [
+      "iVolatabu ena vanua/ena itaviqaravi",
+      "Porokaramu ni Vuli"
+    ],
+    "growTag": "Tubu",
+    "growItems": [
+      "Cakacaka Vakamataqali"
+    ],
+    "leadTag": "Liutaki",
+    "leadItems": [
+      "Veiqaravi ena Yalo Savasava & Vakatovolei",
+      "iLiuliu ni Tabana"
+    ],
+    "sentTag": "Talai",
+    "sentItems": [
+      "Alumni Connect",
+      "Daukaulotu ni Gauna Taucoko/Vakatikitiki",
+      "Qasenivuli iVolatabu"
+    ],
+    "connectHeading": "Semati",
+    "connectStep1Title": "1. Vola Yacamu ena Neimami Mataveilawa",
+    "connectStep1Body": "E levu na sala mo semati kina kei na AM. O rawa ni vola yacamu ena neimami mataveilawa levu, www.amintl.org, ka ciqoma na ivola ni itukutuku. Se o rawa ni vola yacamu ena mataveilawa ni neimami koronivuli iVolatabu ena itaviqaravi, www.amacademy.org, ka ciqoma na itukutuku vou kei na porokaramu. Mo dau raica na neimami rai, cakacaka kei na porokaramu ena neimami mataveilawa ka vola mai vei keimami ena gauna cava ga ke tiko e nomu taro.",
+    "connectStep2Title": "2. Vola Yacamu mo Sotavi Ira na Neimami Vakailesilesi",
+    "connectStep2BodyPrefix": "Mo",
+    "connectStep2SignUp": "vola yacamu",
+    "connectStep2BodySuffix": "eke ke o via veivosaki kei dua na neimami vakailesilesi ka ciqoma na ivakasala ena nomu ilakolako vakayalo. O rawa ni vakarautaka e dua na gauna ni veisotataki se veitaratara kei ira na neimami vakailesilesi. E levu na neimami vakailesilesi era sa dau bula ena bula vakavuli ka kila na ituvaki era sotava na gonevuli ni univesiti. Era na vukei iko mo kunea na sala e veiganiti duadua kei na nomu ilakolako ni vakabauta.",
+    "connectStep3Title": "3. Vola Yacamu ena Vuli iVolatabu",
+    "connectStep3BodyPrefix": "Ke o sa vakarau me tekivu na neimami porokaramu ni vuli iVolatabu,",
+    "connectStep3SignUp": "vola yacamu",
+    "connectStep3BodySuffix": "ena tabana oqo. Ke o sega ni kunea e dua na gauna e veiganiti kei iko, vakauta mai na ivola ni kerekere kei na vuli kei na gauna o vinakata!",
+    "connectStep4Title": "4. Semati kei na Tabana ena Nomu Vanua",
+    "connectStep4BodyPrefix": "Ke o via semati kei na neimami valenivolavola ni tabana kei ira na vakailesilesi, yalovinaka",
+    "connectStep4ContactHere": "veitaratara eke",
+    "connectStep4BodySuffix": ". Keimami waraki iko mo sotavi keimami ena gauna vata!",
+    "growHeading": "Tubu",
+    "growIntro": "Me vaka eda tubu ka matua ena veitabagauna duidui ni noda gone, eda yacova na veitikina bibi ena noda matua vakayalo. E vakarautaka na AM e levu na porokaramu kei na sala era buli mera dusimaki ira na gonevuli ena veitikina bibi e tolu ni tubu vakayalo:",
+    "rebornTitle": "1. Sucu Vou",
+    "rebornBody": "Eda sucu vou ena isoro ni veivakabulai i Jisu ena Kauveilatai.",
+    "matureTitle": "1. Matua",
+    "matureBody": "Eda tubu ka matua vakayalo ena noda vakania na loloma kei na dina mai vua o Jisu.",
+    "fruitfulTitle": "1. Vuavuaicake",
+    "fruitfulBody": "Eda vakila na kena vuavuaicake na bula ena veivakalougatataki ni Kalou, ka vakayacori ena noda duavata matua kei Karisito Jisu.",
+    "navigatingTitle": "Vakayacora na Bula Vakavuli",
+    "navigatingBody": "E marautaki ka vakacegui na bula vakavuli, ia ena levu ni ka e rawa ni digitaki, e rawa tale ga ni vakila me sega ni tiko e kena inaki. Ena dina kei na masu, e vukei iko na AM mo kila na loma ni Kalou ka kunea na dusidusi matata ni nomu bula duatani.",
+    "nextStepsTitle": "Na Ka me Cakava Tarava",
+    "nextStepsBody": "Tomana na nomu vakaitavi ena neimami porokaramu—vakayagataka na veigauna duidui mo rogoca kina na Vosa, masu vata, veimaliwai kei ira na wekamu vakabauta, ka veiqaravi ena nomu tubu ena Kosipeli.",
+    "leadHeading": "Liutaki",
+    "leadStep1Title": "1. Veiqaravi ena Loloma i Karisito",
+    "leadStep1Body": "Ena noda tubu, eda gadreva me da veiqaravi vei ira era gadreva na veivuke mera lako vei Jisu. Ena noda veiqaravi, eda tubu titobu tale ga ena loloma i Karisito.",
+    "leadStep2Title": "2. Na Veivakalougatataki ni Veiliutaki",
+    "leadStep2Body": "E kaya o Jisu, \"Sa ka ni veivakalougatataki cake na solia ka sivia na ciqoma\" (Cakacaka 20:35). Na veiliutaki kei na dusimaki ira na tani e gadreva na vuku, na masu, na isoro, kei na vosota. Ia, e dua na vanua vakalougatataki e cavuta kina na lagilagi ni Kauveilatai.",
+    "leadStep3Title": "3. Na Veivakalougatataki ni Veiliutaki",
+    "leadStep3Body": "Dina ga ni ra se gone na gonevuli ni univesiti, e rawa ni kune ka vakatubura vakaukauwa cake na isolisoli kei na kila duatani ena veitutu ni veiliutaki. E dua na sala totoka ni veivakayacori ena nona vakatovolea ka vakadinadinataka na gonevuli yadua na nona isolisoli vakalomalagi ena vakila ni loloma soli wale ni veiqaravi kei na veiliutaki.",
+    "leadStep4Title": "4. Na Gauna Vinaka kei na AM",
+    "leadStep4Body": "E vakarautaka na AM e levu na gauna vinaka kei na itavi mera vakaitavi kina na gonevuli ena veiqaravi kei na veiliutaki. Curu ki na neimami imatabose ni veiqaravi ena yalo savasava, vakailesilesi ni Tabana, iliuliu ni Tabana, qasenivuli iVolatabu, kei na levu tale. Kunea na ka a tea o Jisu ena lomamu me vaka na nona ituvatuva vinaka.",
+    "sentHeading": "Talai",
+    "sentParagraph1": "Na vakacavari ni univesiti e dua tale na itekitekivu bibi ki na vuravura e dola tu me da vakadidike kina. E so vei keda era na tomana na vuli se muria e dua na sala ni cakacaka. E so vei keda era yaco tale ga me vakailesilesi ni gauna taucoko ni AM, daukaulotu, se italatala era muria na kacivi ni Kalou.",
+    "sentParagraph2": "Ena itikotiko bibi oqo, e vakarautaka na AM e so na porokaramu mo semati tiko kina ka tomana na veiqaravi ena itavi ni Kosipeli ena Alumni Connect. E vakarautaka tale ga na AM na porokaramu ni vakavulici kei na sala mo yaco kina me dauveiqaravi kei na vakailesilesi ena AM World Mission.",
+    "sentParagraph3": "E levu na digidigi e dola vei iko ki na mataka vinaka. E gadreva na AM me lako voleka vata kei ira yadua me kumuni keda kece vata ena iVakaro Levu, \"Dou lako, ka vakatisaipelitaki ira na veimatanitu kece, ka papitaisotaki ira ena yaca ni Tamana, kei na Luvena, kei na Yalo Tabu (Maciu 28:19).\"",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "Yaco mo Qasenivuli iVolatabu ni AM",
+    "sentLinkMissionaries": "Yaco mo Daukaulotu ni AM",
+    "sentLinkStaff": "Vakailesilesi ni Gauna Taucoko ena Valenivolavola Levu ni AM",
+    "roadmapHeroTitle": "Tubu ena Vanua Vakavuli: E Dua na Sala"
+  },
+  "Network": {
+    "breadcrumb": "Na Noda Iwiliwili",
+    "heading": "Na Noda Iwiliwili Vakavuravura",
+    "joinChapter": "Curu ki na dua na tabana",
+    "partnerWithUs": "Veitokoni kei keimami",
+    "exploreEyebrow": "Vakadidike na vuravura",
+    "regionsHeading": "Veiyasana",
+    "regionsSubheading": "Vakadidike vakavanua",
+    "siteCount": "{count, plural, =1 {# na mataveilawa} other {# na mataveilawa}}",
+    "communityEyebrow": "E dua na matatamata vakavuravura",
+    "chaptersHeading": "Tabana ena veikoro kei na veitutu duidui e vuravura",
+    "chaptersSoon": "Era na tekivu vakatotolo na tabana.",
+    "continentSubtitle": "Na mataveilawa ni vanua ni AM ena {region}.",
+    "noSitesTitle": "Sega ni tiko e dua na mataveilawa ni {region}",
+    "noSitesBodyPrefix": "Keimami se tara tiko na tu ni AM ena yasana oqo. Lesu mai vakatotolo, se",
+    "noSitesLink": "veitaratara mai",
+    "noSitesBodySuffix": "ke o via vukea me tekivu e dua.",
+    "visitSite": "Sikova na mataveilawa",
+    "regions": {
+      "africa": "Aferika",
+      "asia": "Esia",
+      "europe": "Urope",
+      "northamerica": "Amerika Vualiku",
+      "southamerica": "Amerika Latina & Karibia",
+      "oceania": "Oseniea"
+    },
+    "map": {
+      "world": "Vuravura",
+      "loading": "Sa vakarau…",
+      "zoomIn": "Vakavolekataka",
+      "clear": "Bokoca",
+      "worldHint": "Biuta se digitaka e dua na itutu mo raica kina na koro — digitaka e dua mo vakavolekataka kina na kena yasana.",
+      "regionHint": "{count, plural, =1 {# na tabana} other {# na tabana}} ena {region}. Digitaka e dua na itutu me vakamacala vakamatailalai, se lesu ki na mape ni vuravura.",
+      "worldAria": "Mape ni vuravura ka vakaraitaka kece na {count} na tabana ni AM. Vakayagataka na batini yasana mo vakavolekataka kina.",
+      "regionAria": "Mape ni {region} ka vakaraitaka na {count} na tabana ni AM.",
+      "captionSouthAsia": "Esia Ceva",
+      "captionEastCentralAsia": "Esia Tokalau & Loma",
+      "captionSoutheastAsia": "Esia Ceva Tokalau",
+      "hqBadge": "VALE LEVU",
+      "regionalHqBadge": "Vale levu ni yasana"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — o koya e talai",
+      "headingLine1": "Na vanua e",
+      "headingWhere": "Loloma i Jisu",
+      "headingWeAre": "Sinai Kina",
+      "joinBibleStudy": "Curu ki na Neimami Vuli iVolatabu",
+      "whoWeAre": "O keimami",
+      "stat1Value": "2003",
+      "stat1Label": "Keimami talai mai na",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, USA",
+      "stat3Value": "Vakavuravura",
+      "stat3Label": "Iwiliwili ni vanua vakavuli",
+      "dragToExplore": "Dreta mo vakadidike"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Curu ki na Neimami Porokaramu ni Vuli iVolatabu",
+      "heading": "E dua na sala e 5 na ivakarau mai na taro imatai me yacova na talai.",
+      "description": "Na Porokaramu ni Vuli iVolatabu e 5 na ivakarau ni AM e dua na porokaramu ni vakatisaipelitaki kei na vuli iVolatabu ena itaviqaravi ka dusimaki ira na gonevuli ena dua na sala vakatulewa ni vulica na Kosipeli i Jisu Karisito kei na bula ni vakabauta. E vakasoqoni ira vata na gonevuli kei ira na qasenivuli iVolatabu era na vakavulica me vaka na gauna ni dauvakarorogo. E vakacavari ena gauna vinaka me veiqaravi ena yalo savasava, me vakavulici me dua na gonevuli daukaulotu, se me titobu ga ena Vosa ni Kalou kei na AM.",
+      "cta": "Tekivuna na porokaramu"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Curu ki na dua na vuli iVolatabu",
+      "joinBibleStudyDescription": "Na porokaramu e 5 na ivakarau ni vakatisaipelitaki kei na vuli iVolatabu ena itaviqaravi.",
+      "findCampusTitle": "Vakasaqarai na nomu vanua vakavuli",
+      "findCampusDescription": "Na neimami iwiliwili ni tabana kei na veimaliwai.",
+      "getInvolvedTitle": "Vakaitavi",
+      "getInvolvedDescription": "Semati, tubu, liutaki ka talai kei na AM.",
+      "supportTitle": "Tokona na itavi",
+      "supportDescription": "Solia, masu ka veitokoni kei ira na gonevuli ena vanua ni cakacaka."
+    },
+    "Ministries": {
+      "eyebrow": "Semati · Tubu · Liutaki · Talai",
+      "heading": "Va na itikotiko, ka keimami lako vata kei iko ena dua yadua.",
+      "getInvolved": "Vakaitavi",
+      "learnMore": "Vulica na kena levu cake",
+      "connectTitle": "Semati kei na AM",
+      "connectDescription": "E vakarautaka na AM e vuqa na porokaramu ni vuli iVolatabu era vakania na noda bula vakayalo kei na noda veiwekani kei na Turaga o Jisu Karisito.",
+      "growTitle": "Tubu kei na AM",
+      "growDescription": "Curu ki na neimami Cakacaka Vakamataqali ka matua vata ena veimaliwai ni dina. Na neimami porokaramu vakamataqali e vakarautaka na ka vinaka sara vei ira yadua na gonevuli mera rawata kina na kaukaua vakayalo.",
+      "leadTitle": "Liutaki kei na AM",
+      "leadDescription": "E marau na AM me ciqomi ira na gonevuli era gadreva mera veiqaravi ena yalo savasava ka veiqaravi ena isolisoli e soli vei ira mai vua na Kalou ena veitabana duidui.",
+      "sentTitle": "Talai kei na AM",
+      "sentDescription": "Ena tomana tiko na AM ni lako vata kei iko me yacova ni sa vakayacori ena nomu bula na nomu kacivi talei ni \"talai\" ka vakabibi ni sa oti na nomu vakacavari!",
+      "connectTag": "Semati",
+      "growTag": "Tubu",
+      "leadTag": "Liutaki",
+      "sentTag": "Talai"
+    },
+    "OurMission": {
+      "eyebrow": "Na neimami itavi",
+      "statementPrefix": "Na itavi ni Apostolos Missions me",
+      "statementEmphasis": "vunautaki Jisu kei na nona vakoti",
+      "statementSuffix": "— ka vakatubura e dua na iwiliwili ni itabagone lotu Vakarisito e vakatikori Karisito ena kena maliwa me vakatoso na itavi ena veivanua vakavuli.",
+      "readFullStatement": "Wilika na ivakamacala taucoko ni itavi",
+      "nameOrigin": "Na yaca apostolos e vosa vakirisi ni yapositolo. E kena ibalebale \"o koya e talai ena dua na itavi.\"",
+      "history": "Na ka a tekivu me dua na imatabose lailai ni itabagone gugumatua mai Los Angeles, California, era gadreva me kau na kosipeli ka vakatakila o Jisu, sa yaco me dua na isoqosoqo vakavuravura e cakacaka ena veiunivesiti e vuravura raraba.",
+      "ourHistory": "Na neimami itukutuku makawa"
+    },
+    "GetInvolved": {
+      "eyebrow": "Semati Mai",
+      "heading": "Vakaitavi",
+      "bibleStudies": "Vuli iVolatabu",
+      "volunteer": "Veiqaravi ena Yalo Savasava",
+      "internship": "Vakatovolei ena Cakacaka"
+    },
+    "Media": {
+      "eyebrow": "Itukutuku",
+      "heading": "Veivakavulici, ivakadinadina kei na Vosa.",
+      "moreContents": "Na kena levu cake",
+      "playVideo": "Vakatakarilaka na vidio ni ivakamacala ni AM",
+      "post1Title": "Va na Ulutaga Vakayalo – Ivakarau Lekaleka",
+      "post2Title": "Na Cava na Veivakabulai? | Sola Fide Wase 1 – AM Academy",
+      "post3Title": "Na Gauna ni Vakatisaipelitaki ena Mataveilawa Veimaliwai, Semati Ira na Gonevuli ki na Dina ni Kosipeli",
+      "post4Title": "Na Vosa ni Yalayala ni Kalou ena Yabaki Vou",
+      "post1Date": "5 Janueri 2026",
+      "post2Date": "27 June 2023",
+      "post3Date": "3 June 2022",
+      "post4Date": "2 Janueri 2022"
+    },
+    "Events": {
+      "eyebrow": "Soqo",
+      "heading": "Na vanua era soqoni kina na iwiliwili.",
+      "allEvents": "Na soqo kece",
+      "event1Date": "4–5 Epereli",
+      "event1Title": "Vakacegu ni Siga ni Tucake Tale",
+      "event2Date": "18 Feperueri",
+      "event2Title": "Lakolako ni 40 na Siga ni Lente",
+      "event3Date": "16 Janueri",
+      "event3Title": "Bose ni iLiuliu Vou ni Tabana"
+    },
+    "OurNetwork": {
+      "eyebrow": "Na neimami iwiliwili",
+      "heading": "E rairai sa tiko e dua na veimaliwai ena nomu vanua vakavuli.",
+      "description": "Vakasaqara ena koronivuli se koro. Ke sega ni basika e dua e voleka vei iko, sa dua na sureti oya — keimami na vukei iko mo tekivuna e dua.",
+      "startChapter": "Tekivuna e dua na tabana",
+      "searchPlaceholder": "Vakasaqara na koronivuli se koro",
+      "noMatches": "Sega ni tiko e dua e veiganiti — veitaratara mai ka keimami na vukei iko mo tekivuna e dua."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Na Neimami iLiuliu Dokai Taumada",
+      "followingLegacy": "Muria na Ivotavota i",
+      "name": "Dr. Ralph D. Winter",
+      "quoteLine1": "Dou lako",
+      "quoteLine2": "ka vakatisaipelitaki ira",
+      "quoteLine3": "na veimatanitu kece…",
+      "quoteReference": "—Maciu 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Veitokoni kei keimami",
+      "heading": "Talai e dua ko na sega ni sotavi rawa.",
+      "description": "Na isolisoli yadua e biuta na vuli iVolatabu, na vakavulici kei na matatamata dautalai ena ligadra na gonevuli era sa vakarau me ra lako.",
+      "giveToday": "Solia nikua",
+      "talkToUs": "Veivosaki kei keimami"
+    },
+    "Newsletter": {
+      "heading": "Itukutuku mai na Veivanua Vakavuli",
+      "description": "E dua na ivola lekaleka ena vula yadua: na ka era raica na gonevuli, na vanua e lako kina na AM, kei na sala me masulaki kina.",
+      "cta": "AM Academy"
+    }
+  }
+}

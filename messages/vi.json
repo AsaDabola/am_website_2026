@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Người được sai đi trong sứ mạng",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Chúng tôi là ai",
+    "whatWeDo": "Chúng tôi làm gì",
+    "getInvolved": "Tham gia",
+    "connect": "Kết nối",
+    "ourNetwork": "Mạng lưới của chúng tôi",
+    "news": "Tin tức",
+    "contactUs": "Liên hệ",
+    "give": "Dâng hiến",
+    "toggleNav": "Mở hoặc đóng menu điều hướng",
+    "whoWeAreMenu": {
+      "whoWeAre": "Chúng tôi là ai",
+      "ourMission": "Sứ mạng của chúng tôi",
+      "statementOfFaith": "Tuyên ngôn đức tin",
+      "history": "Lịch sử",
+      "ourFirstChairmen": "Các chủ tịch đầu tiên",
+      "membership": "Thành viên",
+      "ourLeadership": "Ban lãnh đạo"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Các trụ cột của sứ mạng",
+      "administration": "Ban điều hành",
+      "bibleStudyProgram": "Chương trình Học Kinh Thánh",
+      "fourSpiritualThemes": "Bốn Chủ đề Thuộc linh",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Các mục vụ của chúng tôi"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Học Kinh Thánh",
+      "groupActivities": "Sinh hoạt nhóm",
+      "volunteer": "Tình nguyện",
+      "bibleTeacherTraining": "Đào tạo giáo viên Kinh Thánh",
+      "internship": "Thực tập",
+      "donate": "Dâng hiến",
+      "onlineBibleStudy": "Học Kinh Thánh trực tuyến",
+      "chapterAffiliation": "Gia nhập chi hội"
+    },
+    "newsMenu": {
+      "featured": "Nổi bật",
+      "events": "Sự kiện",
+      "editorial": "Bài viết",
+      "photoNews": "Phóng sự ảnh",
+      "testimony": "Lời chứng"
+    },
+    "megaMenu": {
+      "aboutHeading": "Giới thiệu",
+      "whatWeDoHeading": "Chúng tôi làm gì",
+      "featuredHeading": "Bài viết nổi bật",
+      "allArticles": "Tất cả bài viết",
+      "ctaBibleStudy": "Bắt đầu học Kinh Thánh",
+      "ctaFindChapter": "Tìm chi hội của bạn",
+      "ctaGive": "Dâng hiến hôm nay"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "Về AM",
+        "description": "Chúng tôi là ai, chúng tôi tin điều gì và chúng tôi đến từ đâu."
+      },
+      "leadership": {
+        "title": "Ban lãnh đạo",
+        "description": "Những người phục vụ phong trào này và cách bạn có thể tham gia."
+      },
+      "whatWeDo": {
+        "title": "Chúng tôi làm gì",
+        "description": "Những trụ cột và mục vụ đưa sứ mạng tiến về phía trước."
+      },
+      "bibleStudy": {
+        "title": "Chương trình Học Kinh Thánh",
+        "description": "Hành trình năm giai đoạn, từ câu hỏi đầu tiên đến khi được sai đi."
+      },
+      "getInvolved": {
+        "title": "Tham gia",
+        "description": "Tìm chỗ đứng của bạn trong phong trào này, dù bạn ở đâu."
+      },
+      "supportMission": {
+        "title": "Phục vụ & Hỗ trợ",
+        "description": "Được huấn luyện, mở một chi hội, hoặc đồng hành với sinh viên nơi tiền tuyến."
+      },
+      "latestNews": {
+        "title": "Tin mới nhất",
+        "description": "Những câu chuyện và cập nhật từ khắp mạng lưới."
+      },
+      "events": {
+        "title": "Sự kiện",
+        "description": "Các kỳ tĩnh nguyện, hội nghị và buổi nhóm gần bạn."
+      }
+    },
+    "mobile": {
+      "back": "Quay lại",
+      "close": "Đóng menu",
+      "menu": "Menu"
+    }
+  },
+  "Footer": {
+    "tagline": "Một mục vụ liên hệ phái tận hiến cho việc rao truyền Phúc Âm đến tận cùng trái đất, làm chứng về tình yêu đời đời của Chúa.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, Hoa Kỳ",
+    "email": "info@amintl.org",
+    "whoWeAre": "Chúng tôi là ai",
+    "whatWeDo": "Chúng tôi làm gì",
+    "getInvolved": "Tham gia",
+    "media": "Truyền thông",
+    "aboutAM": "Về AM",
+    "missionStatement": "Tuyên ngôn sứ mạng",
+    "statementOfFaith": "Tuyên ngôn đức tin",
+    "ourHistory": "Lịch sử của chúng tôi",
+    "leadership": "Ban lãnh đạo",
+    "bibleStudyProgram": "Chương trình Học Kinh Thánh",
+    "fourSpiritualThemes": "Bốn Chủ đề Thuộc linh",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Các mục vụ của chúng tôi",
+    "connectGrowLeadSent": "Kết nối, Tăng trưởng, Dẫn dắt, Được sai đi",
+    "chapterAffiliation": "Gia nhập chi hội",
+    "ourNetwork": "Mạng lưới của chúng tôi",
+    "events": "Sự kiện",
+    "give": "Dâng hiến",
+    "news": "Tin tức",
+    "legacyOfChairman": "Di sản của Ralph D. Winter",
+    "contactUs": "Liên hệ",
+    "copyright": "© 2026 Apostolos Missions International. Bảo lưu mọi quyền.",
+    "contact": "Liên hệ"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "Ngôn ngữ"
+  },
+  "Common": {
+    "tagline": "Một mục vụ liên hệ phái tận hiến cho việc rao truyền Phúc Âm đến tận cùng trái đất, làm chứng về tình yêu đời đời của Chúa.",
+    "learnMore": "Tìm hiểu thêm",
+    "readMore": "Đọc tiếp",
+    "clickHere": "Nhấn vào đây",
+    "home": "Trang chủ"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Chúng tôi là ai",
+    "missionStatement": "Tuyên ngôn sứ mạng",
+    "statementOfFaith": "Tuyên ngôn đức tin",
+    "history": "Lịch sử",
+    "ourFirstChairman": "Chủ tịch đầu tiên của chúng tôi",
+    "membership": "Thành viên",
+    "leadership": "Ban lãnh đạo"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Các Trụ cột của Sứ mạng",
+    "administration": "Ban điều hành"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Học Kinh Thánh thứ Năm",
+    "bibleStudies": "Học Kinh Thánh",
+    "groupActivities": "Sinh hoạt Nhóm",
+    "volunteer": "Tình nguyện",
+    "chapterStaff": "Nhân sự Chi hội",
+    "bibleTeacherTraining": "Đào tạo Giáo viên Kinh Thánh",
+    "internship": "Thực tập",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Dâng hiến"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Tin nổi bật",
+    "events": "Sự kiện",
+    "editorial": "Bài viết",
+    "photoNews": "Phóng sự ảnh",
+    "testimony": "Lời chứng"
+  },
+  "InPractice": {
+    "eyebrow": "Trong thực tế",
+    "heading": "Bốn điều chúng tôi làm ở mọi nơi mình đến.",
+    "bibleStudyTag": "Học Kinh Thánh",
+    "bibleStudyDescription": "Học theo nhóm nhỏ và nhóm lớn, đặt Kinh Thánh vào trung tâm đời sống sinh viên.",
+    "leadershipTrainingTag": "Đào tạo lãnh đạo",
+    "leadershipTrainingDescription": "Sinh viên được hướng dẫn để dẫn dắt bạn học, rồi sai phái nhóm kế tiếp.",
+    "onlineEducationTag": "Giáo dục trực tuyến",
+    "onlineEducationDescription": "Các khóa học AM Academy về Kinh Thánh, truyền giáo học và mục vụ liên văn hóa.",
+    "internshipsTripsTag": "Thực tập & chuyến đi",
+    "internshipsTripsDescription": "Các chuyến truyền giáo ngắn hạn và kỳ thực tập biến việc huấn luyện thành thực hành."
+  },
+  "AboutPage": {
+    "heroTitle": "Như Cha đã sai ta, ta cũng sai các ngươi.",
+    "breadcrumb": "Giới thiệu",
+    "paragraph1": "Apostolos Missions International (AM) là một mục vụ liên hệ phái tận hiến cho việc rao truyền Phúc Âm đến tận cùng trái đất, làm chứng về tình yêu đời đời của Chúa.",
+    "paragraph2Prefix": "Tên gọi",
+    "paragraph2": "(ἀπόστολος) là từ Hy Lạp chỉ sứ đồ. Nó có nghĩa là \"người được sai đi trong sứ mạng\" hay \"sứ giả\". Danh xưng \"sứ đồ\" xuất hiện nhiều lần trong Tân Ước để chỉ mười hai môn đồ được Chúa Giê-xu chọn (Ma-thi-ơ 10:2, Mác 3:14, Lu-ca 6:13, Công vụ 2:42). Phao-lô, từ kẻ bắt bớ Cơ Đốc giáo trở thành người rao giảng Phúc Âm vĩ đại, đã tự giới thiệu mình là \"sứ đồ\" (Rô-ma 1:1, 1 Cô-rinh-tô 1:1, 2 Cô-rinh-tô 1:1, Ga-la-ti 1:1, Cô-lô-se 1:1, 1 Ti-mô-thê 1:1, 2 Ti-mô-thê 1:1, Tít).",
+    "paragraph3": "Sứ đồ là những người được Chúa sai đi để hoàn thành sứ mạng \"rao giảng Chúa Giê-xu Christ và bày tỏ Đức Chúa Trời\" cho cả tạo vật. Nền tảng Kinh Thánh của chức sứ đồ nằm trong nhiều lời của Chúa, Đấng đã chọn các sứ đồ đầu tiên và sai họ đi như những đại sứ được phái đi đại diện cho các dân tộc. Các sứ đồ hiểu rằng đời sống họ không còn thuộc về chính mình, nhưng họ sống để bày tỏ vinh hiển của Đấng Christ trong thế giới sa ngã này.",
+    "blockquote": "Giăng 20:21 chép: \"Ngài lại phán cùng môn đồ rằng: 'Bình an cho các ngươi! Như Cha đã sai ta, ta cũng sai các ngươi.'\"",
+    "paragraph4": "AM mong muốn tiếp nối truyền thống của các sứ đồ, những người đã sống như những người được sai đi rao truyền Lời Đức Chúa Trời. Mỗi chúng ta cũng nhận lấy sự kêu gọi này từ Đức Chúa Trời để được sai vào thế gian như tay và chân của Ngài. Chúng tôi muốn dâng đời sống mình để bước theo dấu chân Chúa Giê-xu và rao truyền Phúc Âm cho đến tận cùng trái đất.",
+    "paragraph5": "Cũng như đời sống chúng tôi đã được Chúa chạm đến và biến đổi, chúng tôi mong muốn bày tỏ tình yêu của Chúa đã được tỏ ra cho mình, trở nên ngọn hải đăng cho mọi con cái lạc mất của Ngài và cho anh chị em chúng tôi.",
+    "readStatementOfFaith": "Đọc tuyên ngôn đức tin của chúng tôi",
+    "or": "hoặc",
+    "traceHistory": "tìm hiểu lịch sử của chúng tôi",
+    "cardStatementOfFaithTitle": "Đọc tuyên ngôn đức tin của chúng tôi",
+    "cardMissionStatementTitle": "Tuyên ngôn Sứ mạng"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "Lộ trình AM",
+    "roadmapHeading": "Bạn có thể mong đợi điều gì?",
+    "connectTag": "Kết nối",
+    "connectItems": [
+      "Kinh Thánh trực tiếp/trực tuyến",
+      "Các chương trình học"
+    ],
+    "growTag": "Tăng trưởng",
+    "growItems": [
+      "Sinh hoạt nhóm"
+    ],
+    "leadTag": "Dẫn dắt",
+    "leadItems": [
+      "Tình nguyện & thực tập",
+      "Trưởng chi hội"
+    ],
+    "sentTag": "Được sai đi",
+    "sentItems": [
+      "Alumni Connect",
+      "Giáo sĩ bán thời gian và toàn thời gian",
+      "Giáo viên Kinh Thánh"
+    ],
+    "connectHeading": "Kết nối",
+    "connectStep1Title": "1. Đăng ký nhận tin từ các trang của chúng tôi",
+    "connectStep1Body": "Có nhiều cách để giữ liên lạc với AM. Bạn có thể đăng ký trên trang chính www.amintl.org và nhận bản tin. Hoặc đăng ký trên trang trường Kinh Thánh trực tuyến www.amacademy.org để nhận tin tức và chương trình mới nhất. Hãy tự do tìm hiểu tầm nhìn, hoạt động và chương trình của chúng tôi qua các trang này, và viết thư cho chúng tôi bất cứ lúc nào nếu bạn có thắc mắc.",
+    "connectStep2Title": "2. Đăng ký gặp gỡ nhân sự của chúng tôi",
+    "connectStep2BodyPrefix": "Bạn có thể",
+    "connectStep2SignUp": "đăng ký",
+    "connectStep2BodySuffix": "tại đây nếu muốn trò chuyện với một nhân sự của chúng tôi và nhận sự đồng hành trên hành trình thuộc linh. Bạn có thể hẹn gặp hoặc liên hệ trực tiếp. Nhiều nhân sự của chúng tôi từng trải qua đời sống sinh viên và hiểu những hoàn cảnh sinh viên đối diện. Họ sẽ giúp bạn tìm ra con đường phù hợp nhất cho hành trình đức tin của mình.",
+    "connectStep3Title": "3. Đăng ký học Kinh Thánh",
+    "connectStep3BodyPrefix": "Nếu bạn đã sẵn sàng bắt đầu chương trình học Kinh Thánh của chúng tôi, hãy",
+    "connectStep3SignUp": "đăng ký",
+    "connectStep3BodySuffix": "trên trang này. Nếu không tìm thấy lịch phù hợp, hãy gửi mẫu yêu cầu kèm khóa học và thời gian bạn mong muốn!",
+    "connectStep4Title": "4. Kết nối với chi hội địa phương",
+    "connectStep4BodyPrefix": "Nếu bạn muốn kết nối với văn phòng và nhân sự chi hội địa phương, vui lòng",
+    "connectStep4ContactHere": "liên hệ tại đây",
+    "connectStep4BodySuffix": ". Chúng tôi mong sớm được gặp bạn!",
+    "growHeading": "Tăng trưởng",
+    "growIntro": "Cũng như chúng ta lớn lên và trưởng thành qua các giai đoạn khác nhau của tuổi thơ, chúng ta cũng đạt tới những cột mốc quan trọng trong sự trưởng thành thuộc linh. AM cung cấp nhiều chương trình và lộ trình được thiết kế để dẫn dắt sinh viên qua ba giai đoạn thiết yếu này của sự tăng trưởng thuộc linh:",
+    "rebornTitle": "1. Được tái sinh",
+    "rebornBody": "Chúng ta được sinh lại nhờ sinh tế chuộc tội của Chúa Giê-xu trên thập tự giá.",
+    "matureTitle": "1. Trưởng thành",
+    "matureBody": "Chúng ta tăng trưởng và trưởng thành thuộc linh khi được nuôi dưỡng bằng tình yêu và lẽ thật từ Chúa Giê-xu.",
+    "fruitfulTitle": "1. Kết quả",
+    "fruitfulBody": "Chúng ta kinh nghiệm sự kết quả của đời sống qua phước hạnh của Đức Chúa Trời, được trọn vẹn trong sự hiệp một trưởng thành với Christ Giê-xu.",
+    "navigatingTitle": "Định hướng trong đời sống sinh viên",
+    "navigatingBody": "Đời sống sinh viên thật thú vị và trọn vẹn, nhưng với quá nhiều lựa chọn, nó cũng có thể trở nên mất phương hướng. Qua lẽ thật và sự cầu nguyện, AM giúp bạn phân định ý muốn của Đức Chúa Trời và tìm được sự hướng dẫn rõ ràng cho đời sống phi thường của mình.",
+    "nextStepsTitle": "Các bước tiếp theo",
+    "nextStepsBody": "Hãy tiếp tục tham gia các chương trình của chúng tôi — tận dụng nhiều cơ hội để nghe Lời Chúa, cùng cầu nguyện, thông công với anh chị em trong đức tin, và phục vụ khi bạn tăng trưởng trong Phúc Âm.",
+    "leadHeading": "Dẫn dắt",
+    "leadStep1Title": "1. Phục vụ trong tình yêu của Đấng Christ",
+    "leadStep1Body": "Khi tăng trưởng, chúng ta khao khát phục vụ những người cần được giúp đỡ để đến với Chúa Giê-xu. Và khi phục vụ, chính chúng ta cũng tăng trưởng sâu hơn trong tình yêu của Đấng Christ.",
+    "leadStep2Title": "2. Phước hạnh của sự lãnh đạo",
+    "leadStep2Body": "Chúa Giê-xu phán: \"Ban cho thì có phước hơn là nhận lãnh\" (Công vụ 20:35). Dẫn dắt và hướng dẫn người khác đòi hỏi sự khôn ngoan, cầu nguyện, hy sinh và kiên nhẫn. Tuy vậy, đó là nơi phước hạnh, nơi vinh hiển của thập tự giá lên đến đỉnh cao.",
+    "leadStep3Title": "3. Phước hạnh của sự lãnh đạo",
+    "leadStep3Body": "Dù sinh viên còn trẻ, những ân tứ và khả năng nổi bật có thể được khám phá và phát triển mạnh mẽ hơn nhiều qua các vai trò lãnh đạo. Đó là một tiến trình đẹp đẽ khi mỗi sinh viên thử nghiệm và xác nhận ân tứ thiên thượng của mình qua kinh nghiệm ân điển của việc phục vụ và dẫn dắt.",
+    "leadStep4Title": "4. Cơ hội cùng AM",
+    "leadStep4Body": "AM cung cấp nhiều cơ hội và vai trò để sinh viên tham gia phục vụ và lãnh đạo. Hãy gia nhập đội tình nguyện viên, nhân sự chi hội, trưởng chi hội, giáo viên Kinh Thánh và nhiều vai trò khác. Hãy khám phá điều Chúa Giê-xu đã gieo trong bạn theo kế hoạch tuyệt vời của Ngài.",
+    "sentHeading": "Được sai đi",
+    "sentParagraph1": "Tốt nghiệp đại học là một lần lên đường quan trọng khác hướng tới thế giới rộng mở trước mắt chúng ta. Một số người sẽ học tiếp hoặc theo con đường nghề nghiệp. Một số khác trở thành nhân sự toàn thời gian của AM, giáo sĩ hoặc mục sư, theo tiếng gọi của Đức Chúa Trời.",
+    "sentParagraph2": "Trong bước ngoặt quan trọng này, AM cung cấp những chương trình giúp bạn giữ kết nối và tiếp tục phục vụ sứ mạng Phúc Âm qua Alumni Connect. AM cũng cung cấp các chương trình huấn luyện và lộ trình để trở thành người phục vụ truyền giáo chuyên nghiệp và nhân sự trong AM World Mission.",
+    "sentParagraph3": "Nhiều con đường đang mở ra trước bạn hướng tới một tương lai tươi sáng. AM mong muốn đồng hành gần gũi với mỗi người để cùng nhau hoàn thành Đại Mạng Lệnh: \"Vậy, hãy đi dạy dỗ muôn dân, hãy nhân danh Đức Cha, Đức Con, và Đức Thánh Linh mà làm phép báp-têm cho họ\" (Ma-thi-ơ 28:19).",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "Trở thành Giáo viên Kinh Thánh của AM",
+    "sentLinkMissionaries": "Trở thành Giáo sĩ của AM",
+    "sentLinkStaff": "Nhân sự Toàn thời gian tại Trụ sở AM",
+    "roadmapHeroTitle": "Tăng trưởng trong Đại học: Một Lộ trình"
+  },
+  "Network": {
+    "breadcrumb": "Mạng lưới của chúng tôi",
+    "heading": "Mạng lưới Toàn cầu của Chúng tôi",
+    "joinChapter": "Gia nhập một chi hội",
+    "partnerWithUs": "Đồng hành cùng chúng tôi",
+    "exploreEyebrow": "Khám phá thế giới",
+    "regionsHeading": "Khu vực",
+    "regionsSubheading": "Khám phá theo khu vực",
+    "siteCount": "{count, plural, other {# trang}}",
+    "communityEyebrow": "Một cộng đồng toàn cầu",
+    "chaptersHeading": "Các chi hội tại nhiều thành phố và góc trời khác nhau",
+    "chaptersSoon": "Các chi hội sắp ra mắt.",
+    "continentSubtitle": "Các trang quốc gia của AM tại {region}.",
+    "noSitesTitle": "Chưa có trang nào tại {region}",
+    "noSitesBodyPrefix": "Chúng tôi vẫn đang xây dựng sự hiện diện của AM tại khu vực này. Hãy trở lại sớm, hoặc",
+    "noSitesLink": "liên hệ với chúng tôi",
+    "noSitesBodySuffix": "nếu bạn muốn giúp khởi đầu một chi hội.",
+    "visitSite": "Xem trang",
+    "regions": {
+      "africa": "Châu Phi",
+      "asia": "Châu Á",
+      "europe": "Châu Âu",
+      "northamerica": "Bắc Mỹ",
+      "southamerica": "Mỹ Latinh và Caribe",
+      "oceania": "Châu Đại Dương"
+    },
+    "map": {
+      "world": "Thế giới",
+      "loading": "Đang tải…",
+      "zoomIn": "Phóng to",
+      "clear": "Xóa",
+      "worldHint": "Di chuột hoặc chọn một điểm để xem thành phố — chọn một điểm sẽ phóng to khu vực của nó.",
+      "regionHint": "{count} chi hội tại {region}. Chọn một điểm để xem chi tiết, hoặc quay lại bản đồ thế giới.",
+      "worldAria": "Bản đồ thế giới hiển thị toàn bộ {count} chi hội của AM. Dùng các nút khu vực để phóng to.",
+      "regionAria": "Bản đồ {region} hiển thị {count} chi hội của AM.",
+      "captionSouthAsia": "Nam Á",
+      "captionEastCentralAsia": "Đông Á và Trung Á",
+      "captionSoutheastAsia": "Đông Nam Á",
+      "hqBadge": "Trụ sở",
+      "regionalHqBadge": "Trụ sở khu vực"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — người được sai đi",
+      "headingLine1": "Nơi",
+      "headingWhere": "tình yêu Chúa Giê-xu",
+      "headingWeAre": "tuôn tràn",
+      "joinBibleStudy": "Tham gia học Kinh Thánh cùng chúng tôi",
+      "whoWeAre": "Chúng tôi là ai",
+      "stat1Value": "2003",
+      "stat1Label": "Sai phái từ năm",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, Hoa Kỳ",
+      "stat3Value": "Toàn cầu",
+      "stat3Label": "Mạng lưới đại học",
+      "dragToExplore": "Kéo để khám phá"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Tham gia Chương trình Học Kinh Thánh của chúng tôi",
+      "heading": "Hành trình 5 giai đoạn từ câu hỏi đầu tiên đến khi được sai đi.",
+      "description": "Chương trình Học Kinh Thánh 5 giai đoạn của AM là chương trình môn đồ hóa và giáo dục Kinh Thánh trực tuyến, dẫn dắt sinh viên qua tiến trình học tập có hệ thống về Phúc Âm của Chúa Giê-xu Christ và đời sống đức tin. Chương trình kết nối sinh viên với các giáo viên Kinh Thánh giảng dạy theo lịch của người học. Chương trình khép lại với cơ hội tình nguyện, được huấn luyện làm sinh viên giáo sĩ, hoặc đơn giản là đào sâu hơn vào Lời Đức Chúa Trời cùng AM.",
+      "cta": "Bắt đầu chương trình"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Tham gia một lớp học Kinh Thánh",
+      "joinBibleStudyDescription": "Chương trình môn đồ hóa và giáo dục Kinh Thánh trực tuyến 5 giai đoạn.",
+      "findCampusTitle": "Tìm trường của bạn",
+      "findCampusDescription": "Mạng lưới chi hội và nhóm thông công của chúng tôi.",
+      "getInvolvedTitle": "Tham gia",
+      "getInvolvedDescription": "Kết nối, tăng trưởng, dẫn dắt và được sai đi cùng AM.",
+      "supportTitle": "Hỗ trợ sứ mạng",
+      "supportDescription": "Dâng hiến, cầu nguyện và đồng hành với sinh viên nơi tiền tuyến."
+    },
+    "Ministries": {
+      "eyebrow": "Kết nối · Tăng trưởng · Dẫn dắt · Được sai đi",
+      "heading": "Bốn bước, và chúng tôi đi cùng bạn từng bước một.",
+      "getInvolved": "Tham gia",
+      "learnMore": "Tìm hiểu thêm",
+      "connectTitle": "Kết nối với AM",
+      "connectDescription": "AM cung cấp nhiều chương trình học Kinh Thánh nuôi dưỡng đời sống thuộc linh và mối quan hệ của chúng ta với Chúa Giê-xu Christ.",
+      "growTitle": "Tăng trưởng cùng AM",
+      "growDescription": "Hãy tham gia các Sinh hoạt Nhóm của chúng tôi và cùng trưởng thành trong sự thông công của lẽ thật. Các chương trình nhóm mang đến cho mỗi sinh viên trải nghiệm chất lượng để nhận được sức mạnh thuộc linh.",
+      "leadTitle": "Dẫn dắt cùng AM",
+      "leadDescription": "AM vui mừng chào đón các sinh viên mong muốn tình nguyện và phục vụ bằng ân tứ Chúa ban trong nhiều lĩnh vực khác nhau.",
+      "sentTitle": "Được sai đi cùng AM",
+      "sentDescription": "AM sẽ tiếp tục đồng hành với bạn cho đến khi sự kêu gọi quý báu \"được sai đi\" được ứng nghiệm trong đời sống bạn, ngay cả sau khi tốt nghiệp!",
+      "connectTag": "Kết nối",
+      "growTag": "Tăng trưởng",
+      "leadTag": "Dẫn dắt",
+      "sentTag": "Được sai đi"
+    },
+    "OurMission": {
+      "eyebrow": "Sứ mạng của chúng tôi",
+      "statementPrefix": "Sứ mạng của Apostolos Missions là",
+      "statementEmphasis": "rao giảng Chúa Giê-xu Christ và Ngài bị đóng đinh",
+      "statementSuffix": "— đồng thời gây dựng một mạng lưới Cơ Đốc nhân trẻ lấy Đấng Christ làm trung tâm để huy động sứ mạng trong các trường đại học.",
+      "readFullStatement": "Đọc toàn văn tuyên ngôn sứ mạng",
+      "nameOrigin": "Tên gọi apostolos là từ Hy Lạp chỉ sứ đồ. Nó có nghĩa là \"người được sai đi trong sứ mạng\".",
+      "history": "Điều khởi đầu từ một nhóm nhỏ sinh viên trẻ đầy nhiệt huyết tại Los Angeles, California, khao khát rao truyền Phúc Âm và bày tỏ Chúa Giê-xu, nay đã trở thành một tổ chức toàn cầu hoạt động trong các trường đại học khắp thế giới.",
+      "ourHistory": "Lịch sử của chúng tôi"
+    },
+    "GetInvolved": {
+      "eyebrow": "Giữ kết nối",
+      "heading": "Tham gia",
+      "bibleStudies": "Học Kinh Thánh",
+      "volunteer": "Tình nguyện",
+      "internship": "Thực tập"
+    },
+    "Media": {
+      "eyebrow": "Truyền thông",
+      "heading": "Giảng dạy, lời chứng và Lời Chúa.",
+      "moreContents": "Thêm nội dung",
+      "playVideo": "Xem video giới thiệu AM",
+      "post1Title": "Bốn Chủ đề Thuộc linh – Tổng quan",
+      "post2Title": "Sự cứu rỗi là gì? | Sola Fide Phần 1 – AM Academy",
+      "post3Title": "Kỷ nguyên môn đồ hóa qua mạng xã hội: Đưa sinh viên đến gần thực tại Phúc Âm",
+      "post4Title": "Những lời hứa của Đức Chúa Trời cho năm mới",
+      "post1Date": "5 tháng 1, 2026",
+      "post2Date": "27 tháng 6, 2023",
+      "post3Date": "3 tháng 6, 2022",
+      "post4Date": "2 tháng 1, 2022"
+    },
+    "Events": {
+      "eyebrow": "Sự kiện",
+      "heading": "Nơi mạng lưới cùng nhóm lại.",
+      "allEvents": "Tất cả sự kiện",
+      "event1Date": "4–5 tháng 4",
+      "event1Title": "Kỳ tĩnh nguyện Phục Sinh",
+      "event2Date": "18 tháng 2",
+      "event2Title": "Hành trình 40 ngày Mùa Chay",
+      "event3Date": "16 tháng 1",
+      "event3Title": "Buổi họp các Trưởng Chi hội mới"
+    },
+    "OurNetwork": {
+      "eyebrow": "Mạng lưới của chúng tôi",
+      "heading": "Có thể đã có một nhóm thông công tại trường bạn.",
+      "description": "Tìm theo trường hoặc thành phố. Nếu không có kết quả nào gần bạn, hãy xem đó là một lời mời — chúng tôi sẽ giúp bạn khởi đầu.",
+      "startChapter": "Khởi đầu một chi hội",
+      "searchPlaceholder": "Tìm trường hoặc thành phố",
+      "noMatches": "Chưa có kết quả — hãy liên hệ và chúng tôi sẽ giúp bạn khởi đầu."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Chủ tịch Danh dự Đầu tiên của Chúng tôi",
+      "followingLegacy": "Tiếp nối di sản của",
+      "name": "TS. Ralph D. Winter",
+      "quoteLine1": "Vậy, hãy đi",
+      "quoteLine2": "dạy dỗ",
+      "quoteLine3": "muôn dân…",
+      "quoteReference": "—Ma-thi-ơ 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Đồng hành cùng chúng tôi",
+      "heading": "Hãy sai đi một người bạn sẽ không bao giờ gặp.",
+      "description": "Mỗi món quà đưa việc học Kinh Thánh, sự huấn luyện và một cộng đồng sai phái đến gần những sinh viên đã sẵn sàng lên đường.",
+      "giveToday": "Dâng hiến hôm nay",
+      "talkToUs": "Trò chuyện với chúng tôi"
+    },
+    "Newsletter": {
+      "heading": "Ghi chép từ các trường đại học",
+      "description": "Một lá thư ngắn hằng tháng: sinh viên đang thấy điều gì, AM sẽ đi đâu tiếp theo, và cầu nguyện như thế nào.",
+      "cta": "AM Academy"
+    }
+  }
+}

@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "አፖስቶሎስ · በተልእኮ የተላከው",
+    "amAcademy": "AM አካዳሚ"
+  },
+  "Header": {
+    "whoWeAre": "እኛ ማን ነን",
+    "whatWeDo": "ምን እናደርጋለን",
+    "getInvolved": "ይሳተፉ",
+    "connect": "ይገናኙ",
+    "ourNetwork": "አውታረ መረባችን",
+    "news": "ዜና",
+    "contactUs": "ያግኙን",
+    "give": "ይለግሱ",
+    "toggleNav": "የአሰሳ ምናሌን ክፈት ወይም ዝጋ",
+    "whoWeAreMenu": {
+      "whoWeAre": "እኛ ማን ነን",
+      "ourMission": "ተልእኮአችን",
+      "statementOfFaith": "የእምነት መግለጫ",
+      "history": "ታሪክ",
+      "ourFirstChairmen": "የመጀመሪያዎቹ ሊቀ መናብርታችን",
+      "membership": "አባልነት",
+      "ourLeadership": "አመራራችን"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "የተልእኮአችን ምሰሶዎች",
+      "administration": "አስተዳደር",
+      "bibleStudyProgram": "የመጽሐፍ ቅዱስ ጥናት መርሐ ግብር",
+      "fourSpiritualThemes": "አራት መንፈሳዊ ጭብጦች",
+      "amAcademy": "AM አካዳሚ",
+      "ourMinistries": "አገልግሎቶቻችን"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "የመጽሐፍ ቅዱስ ጥናቶች",
+      "groupActivities": "የቡድን እንቅስቃሴዎች",
+      "volunteer": "በጎ ፈቃደኝነት",
+      "bibleTeacherTraining": "የመጽሐፍ ቅዱስ መምህራን ስልጠና",
+      "internship": "የልምምድ ስራ",
+      "donate": "ይለግሱ",
+      "onlineBibleStudy": "የመስመር ላይ መጽሐፍ ቅዱስ ጥናት",
+      "chapterAffiliation": "የቅርንጫፍ አባልነት"
+    },
+    "newsMenu": {
+      "featured": "የተመረጡ",
+      "events": "ዝግጅቶች",
+      "editorial": "ጽሑፎች",
+      "photoNews": "የፎቶ ዜና",
+      "testimony": "ምስክርነቶች"
+    },
+    "megaMenu": {
+      "aboutHeading": "ስለ እኛ",
+      "whatWeDoHeading": "ምን እናደርጋለን",
+      "featuredHeading": "የተመረጡ ጽሑፎች",
+      "allArticles": "ሁሉም ጽሑፎች",
+      "ctaBibleStudy": "የመጽሐፍ ቅዱስ ጥናት ይጀምሩ",
+      "ctaFindChapter": "ቅርንጫፍዎን ያግኙ",
+      "ctaGive": "ዛሬ ይለግሱ"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "ስለ AM",
+        "description": "እኛ ማን ነን፣ ምን እናምናለን፣ ከየት መጣን።"
+      },
+      "leadership": {
+        "title": "አመራር",
+        "description": "ይህን እንቅስቃሴ የሚያገለግሉ ሰዎችና እርስዎ እንዴት መቀላቀል እንደሚችሉ።"
+      },
+      "whatWeDo": {
+        "title": "ምን እናደርጋለን",
+        "description": "ተልእኮውን ወደፊት የሚያራምዱ ምሰሶዎችና አገልግሎቶች።"
+      },
+      "bibleStudy": {
+        "title": "የመጽሐፍ ቅዱስ ጥናት መርሐ ግብር",
+        "description": "ከመጀመሪያ ጥያቄዎ እስከ መላክ ድረስ የአምስት ደረጃ መንገድ።"
+      },
+      "getInvolved": {
+        "title": "ይሳተፉ",
+        "description": "የትም ቢሆኑ በዚህ እንቅስቃሴ ውስጥ ቦታዎን ያግኙ።"
+      },
+      "supportMission": {
+        "title": "ያገልግሉ እና ይደግፉ",
+        "description": "ስልጠና ይውሰዱ፣ ቅርንጫፍ ይጀምሩ፣ ወይም በመስክ ላይ ካሉ ተማሪዎች ጋር ይተባበሩ።"
+      },
+      "latestNews": {
+        "title": "የቅርብ ጊዜ ዜና",
+        "description": "ከመላው አውታረ መረብ የመጡ ታሪኮችና ዝመናዎች።"
+      },
+      "events": {
+        "title": "ዝግጅቶች",
+        "description": "በአቅራቢያዎ የሚደረጉ የጸሎት ማፈግፈጊያዎች፣ ጉባኤዎችና ስብሰባዎች።"
+      }
+    },
+    "mobile": {
+      "back": "ተመለስ",
+      "close": "ምናሌን ዝጋ",
+      "menu": "ምናሌ"
+    }
+  },
+  "Footer": {
+    "tagline": "የጌታን ዘላለማዊ ፍቅር እየመሰከረ ወንጌልን እስከ ምድር ዳርቻ ለማዳረስ የተሰጠ ኅብረ-ቤተ እምነት አገልግሎት።",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "ትሬንተን፣ ኒው ጀርሲ፣ አሜሪካ",
+    "email": "info@amintl.org",
+    "whoWeAre": "እኛ ማን ነን",
+    "whatWeDo": "ምን እናደርጋለን",
+    "getInvolved": "ይሳተፉ",
+    "media": "ሚዲያ",
+    "aboutAM": "ስለ AM",
+    "missionStatement": "የተልእኮ መግለጫ",
+    "statementOfFaith": "የእምነት መግለጫ",
+    "ourHistory": "ታሪካችን",
+    "leadership": "አመራር",
+    "bibleStudyProgram": "የመጽሐፍ ቅዱስ ጥናት መርሐ ግብር",
+    "fourSpiritualThemes": "አራት መንፈሳዊ ጭብጦች",
+    "amAcademy": "AM አካዳሚ",
+    "ourMinistries": "አገልግሎቶቻችን",
+    "connectGrowLeadSent": "መገናኘት፣ ማደግ፣ መምራት፣ መላክ",
+    "chapterAffiliation": "የቅርንጫፍ አባልነት",
+    "ourNetwork": "አውታረ መረባችን",
+    "events": "ዝግጅቶች",
+    "give": "ይለግሱ",
+    "news": "ዜና",
+    "legacyOfChairman": "የራልፍ ዲ. ዊንተር ውርስ",
+    "contactUs": "ያግኙን",
+    "copyright": "© 2026 Apostolos Missions International። መብቱ በሙሉ የተጠበቀ ነው።",
+    "contact": "አድራሻ"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "ቋንቋ"
+  },
+  "Common": {
+    "tagline": "የጌታን ዘላለማዊ ፍቅር እየመሰከረ ወንጌልን እስከ ምድር ዳርቻ ለማዳረስ የተሰጠ ኅብረ-ቤተ እምነት አገልግሎት።",
+    "learnMore": "ተጨማሪ ይወቁ",
+    "readMore": "ተጨማሪ ያንብቡ",
+    "clickHere": "እዚህ ይጫኑ",
+    "home": "መነሻ"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "እኛ ማን ነን",
+    "missionStatement": "የተልእኮ መግለጫ",
+    "statementOfFaith": "የእምነት መግለጫ",
+    "history": "ታሪክ",
+    "ourFirstChairman": "የመጀመሪያው ሊቀ መንበራችን",
+    "membership": "አባልነት",
+    "leadership": "አመራር"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "የተልእኮአችን ምሰሶዎች",
+    "administration": "አስተዳደር"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "የሐሙስ መጽሐፍ ቅዱስ ጥናት",
+    "bibleStudies": "የመጽሐፍ ቅዱስ ጥናቶች",
+    "groupActivities": "የቡድን እንቅስቃሴዎች",
+    "volunteer": "በጎ ፈቃደኝነት",
+    "chapterStaff": "የቅርንጫፍ ሠራተኞች",
+    "bibleTeacherTraining": "የመጽሐፍ ቅዱስ መምህራን ስልጠና",
+    "internship": "የልምምድ ስራ",
+    "alumniConnect": "Alumni Connect",
+    "donate": "ይለግሱ"
+  },
+  "NewsSubNav": {
+    "featuredNews": "የተመረጡ ዜናዎች",
+    "events": "ዝግጅቶች",
+    "editorial": "ጽሑፎች",
+    "photoNews": "የፎቶ ዜና",
+    "testimony": "ምስክርነቶች"
+  },
+  "InPractice": {
+    "eyebrow": "በተግባር",
+    "heading": "በምንሄድበት ሁሉ የምናደርጋቸው አራት ነገሮች።",
+    "bibleStudyTag": "የመጽሐፍ ቅዱስ ጥናት",
+    "bibleStudyDescription": "ቅዱሳት መጻሕፍትን በካምፓስ ሕይወት መሃል የሚያስቀምጥ የትንንሽና የትላልቅ ቡድን ጥናት።",
+    "leadershipTrainingTag": "የአመራር ስልጠና",
+    "leadershipTrainingDescription": "ተማሪዎች እኩዮቻቸውን እንዲመሩ፣ ከዚያም ቀጣዩን ቡድን እንዲልኩ ይሰለጥናሉ።",
+    "onlineEducationTag": "የመስመር ላይ ትምህርት",
+    "onlineEducationDescription": "በቅዱሳት መጻሕፍት፣ በተልእኮ ጥናትና በባህል ተሻጋሪ አገልግሎት ላይ የAM አካዳሚ ኮርሶች።",
+    "internshipsTripsTag": "የልምምድ ስራና ጉዞዎች",
+    "internshipsTripsDescription": "ስልጠናን ወደ ተግባር የሚቀይሩ አጭር ጊዜ ተልእኮዎችና የልምምድ ስራዎች።"
+  },
+  "AboutPage": {
+    "heroTitle": "አብ እኔን እንደ ላከኝ እኔ ደግሞ እናንተን እልካችኋለሁ።",
+    "breadcrumb": "ስለ እኛ",
+    "paragraph1": "Apostolos Missions International (AM) የጌታን ዘላለማዊ ፍቅር እየመሰከረ ወንጌልን እስከ ምድር ዳርቻ ለማዳረስ የተሰጠ ኅብረ-ቤተ እምነት አገልግሎት ነው።",
+    "paragraph2Prefix": "ስሙ",
+    "paragraph2": "(ἀπόστολος) ሐዋርያ ለሚለው የግሪክ ቃል ነው። ትርጉሙም \"በተልእኮ የተላከው\" ወይም \"መልእክተኛ\" ማለት ነው። \"ሐዋርያ\" የሚለው ማዕረግ በአዲስ ኪዳን ውስጥ ኢየሱስ የመረጣቸውን አሥራ ሁለቱን ደቀ መዛሙርት ለማመልከት ብዙ ጊዜ ይመጣል (ማቴዎስ 10፡2፣ ማርቆስ 3፡14፣ ሉቃስ 6፡13፣ የሐዋርያት ሥራ 2፡42)። ክርስትናን ያሳድድ የነበረውና በኋላ የወንጌል ታላቅ አዋጅ ነጋሪ የሆነው ጳውሎስ ራሱን \"ሐዋርያ\" ብሎ ያስተዋውቅ ነበር (ሮሜ 1፡1፣ 1 ቆሮንቶስ 1፡1፣ 2 ቆሮንቶስ 1፡1፣ ገላትያ 1፡1፣ ቆላስይስ 1፡1፣ 1 ጢሞቴዎስ 1፡1፣ 2 ጢሞቴዎስ 1፡1፣ ቲቶ)።",
+    "paragraph3": "ሐዋርያት ማለት ለፍጥረት ሁሉ \"ኢየሱስ ክርስቶስን የመስበክና እግዚአብሔርን የማሳወቅ\" ተልእኮ ለመፈጸም በጌታ የተላኩ ናቸው። የሐዋርያነት መጽሐፍ ቅዱሳዊ መሠረት፣ የመጀመሪያዎቹን ሐዋርያት መርጦ አሕዛብን ወክለው እንደሚላኩ አምባሳደሮች የላካቸው የጌታ ብዙ ቃላት ውስጥ ይገኛል። ሐዋርያት ሕይወታቸው ከእንግዲህ የራሳቸው እንዳልሆነ፣ ይልቁንም በዚህ በወደቀ ዓለም የክርስቶስን ክብር ለመግለጥ እንደሚኖሩ ተረድተዋል።",
+    "blockquote": "ዮሐንስ 20፡21 እንዲህ ይላል፦ \"ኢየሱስም ዳግመኛ፦ 'ሰላም ለእናንተ ይሁን፤ አብ እኔን እንደ ላከኝ እኔ ደግሞ እናንተን እልካችኋለሁ' አላቸው።\"",
+    "paragraph4": "AM የእግዚአብሔርን ቃል ለመስበክ እንደተላኩ ሰዎች የኖሩትን የሐዋርያትን ትውፊት መከተል ይፈልጋል። እያንዳንዳችንም እንደ እጆቹና እግሮቹ ወደ ዓለም እንድንላክ ይህን ጥሪ ከእግዚአብሔር እንቀበላለን። የኢየሱስን ፈለግ ተከትለን ወንጌልን እስከ ምድር ዳርቻ ለመስበክ ሕይወታችንን መስጠት እንፈልጋለን።",
+    "paragraph5": "ጌታ ሕይወታችንን እንደነካውና እንደለወጠው፣ ለእኛ የተገለጠውን የጌታን ፍቅር መግለጥ እንፈልጋለን፤ ለጠፉት ልጆቹ ሁሉና ለወንድሞቻችንና እኅቶቻችን መብራት መሆን እንፈልጋለን።",
+    "readStatementOfFaith": "የእምነት መግለጫችንን ያንብቡ",
+    "or": "ወይም",
+    "traceHistory": "ታሪካችንን ይከታተሉ",
+    "cardStatementOfFaithTitle": "የእምነት መግለጫችንን ያንብቡ",
+    "cardMissionStatementTitle": "የተልእኮ መግለጫ"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "የAM የመንገድ ካርታ",
+    "roadmapHeading": "ምን ሊጠብቁ ይችላሉ?",
+    "connectTag": "መገናኘት",
+    "connectItems": [
+      "በአካልና በመስመር ላይ መጽሐፍ ቅዱስ",
+      "የጥናት መርሐ ግብሮች"
+    ],
+    "growTag": "ማደግ",
+    "growItems": [
+      "የቡድን እንቅስቃሴዎች"
+    ],
+    "leadTag": "መምራት",
+    "leadItems": [
+      "በጎ ፈቃደኝነትና የልምምድ ስራ",
+      "የቅርንጫፍ መሪዎች"
+    ],
+    "sentTag": "መላክ",
+    "sentItems": [
+      "Alumni Connect",
+      "የትርፍ ሰዓትና የሙሉ ሰዓት ሚስዮናውያን",
+      "የመጽሐፍ ቅዱስ መምህራን"
+    ],
+    "connectHeading": "መገናኘት",
+    "connectStep1Title": "1. ድረ ገጾቻችንን ይመዝገቡ",
+    "connectStep1Body": "ከAM ጋር ለመገናኘት ብዙ መንገዶች አሉ። ዋና ድረ ገጻችን www.amintl.org ላይ ተመዝግበው መጽሔቶቻችንን መቀበል ይችላሉ። ወይም የመስመር ላይ የመጽሐፍ ቅዱስ ትምህርት ቤታችን ድረ ገጽ www.amacademy.org ላይ ተመዝግበው የቅርብ ጊዜ ዜናዎችንና መርሐ ግብሮችን መቀበል ይችላሉ። ራእያችንን፣ እንቅስቃሴዎቻችንንና መርሐ ግብሮቻችንን በድረ ገጾቻችን በነጻነት ይመልከቱ፤ ጥያቄ ካለዎት በማንኛውም ጊዜ ይጻፉልን።",
+    "connectStep2Title": "2. ከሠራተኞቻችን ጋር ለመገናኘት ይመዝገቡ",
+    "connectStep2BodyPrefix": "ከሠራተኞቻችን ከአንዱ ጋር መነጋገርና በመንፈሳዊ ጉዞዎ አጃቢነት ማግኘት ከፈለጉ እዚህ",
+    "connectStep2SignUp": "ይመዝገቡ",
+    "connectStep2BodySuffix": "። ቀጠሮ ማስያዝ ወይም በቀጥታ ማግኘት ይችላሉ። ብዙዎቹ ሠራተኞቻችን የካምፓስ ሕይወትን በራሳቸው አልፈውበታል፤ ተማሪዎች የሚያጋጥማቸውን ሁኔታ ይረዳሉ። ለእምነት ጉዞዎ በጣም የሚስማማውን መንገድ እንዲያገኙ ይረዱዎታል።",
+    "connectStep3Title": "3. ለመጽሐፍ ቅዱስ ጥናት ይመዝገቡ",
+    "connectStep3BodyPrefix": "የመጽሐፍ ቅዱስ ጥናት መርሐ ግብራችንን ለመጀመር ዝግጁ ከሆኑ በዚህ ገጽ ላይ",
+    "connectStep3SignUp": "ይመዝገቡ",
+    "connectStep3BodySuffix": "። የሚስማማዎት ፕሮግራም ካላገኙ የሚመርጡትን ኮርስና ሰዓት ጠቅሰው የጥያቄ ቅጹን ይላኩ!",
+    "connectStep4Title": "4. ከአካባቢው ቅርንጫፍ ጋር ይገናኙ",
+    "connectStep4BodyPrefix": "ከአካባቢው ቅርንጫፍ ጽሕፈት ቤትና ሠራተኞች ጋር መገናኘት ከፈለጉ እባክዎ",
+    "connectStep4ContactHere": "እዚህ ያግኙን",
+    "connectStep4BodySuffix": "። በቅርቡ ልናገኝዎት እንጓጓለን!",
+    "growHeading": "ማደግ",
+    "growIntro": "በልጅነት የተለያዩ ደረጃዎች እያለፍን እንደምናድግና እንደምንበስል፣ በመንፈሳዊ ብስለታችንም ወሳኝ ምዕራፎች ላይ እንደርሳለን። AM ተማሪዎችን በእነዚህ ሦስት ወሳኝ የመንፈሳዊ ዕድገት ደረጃዎች ለመምራት የተዘጋጁ በርካታ መርሐ ግብሮችንና መንገዶችን ያቀርባል፦",
+    "rebornTitle": "1. ዳግም መወለድ",
+    "rebornBody": "በመስቀል ላይ በኢየሱስ የማስተስረያ መስዋዕት ዳግም እንወለዳለን።",
+    "matureTitle": "1. መብሰል",
+    "matureBody": "ከኢየሱስ በሚመጣ ፍቅርና እውነት እየተመገብን በመንፈሳዊ እናድጋለን፣ እንበስላለን።",
+    "fruitfulTitle": "1. ፍሬያማ መሆን",
+    "fruitfulBody": "ከክርስቶስ ኢየሱስ ጋር ባለን የበሰለ አንድነት በሚፈጸመው የእግዚአብሔር በረከት የሕይወትን ፍሬያማነት እንለማመዳለን።",
+    "navigatingTitle": "በካምፓስ ሕይወት ውስጥ መንገድ ማግኘት",
+    "navigatingBody": "የካምፓስ ሕይወት አስደሳችና አርኪ ነው፤ ሆኖም በብዙ ምርጫዎች መካከል አቅጣጫ የለሽ ሆኖ ሊሰማ ይችላል። በእውነትና በጸሎት AM የእግዚአብሔርን ፈቃድ እንዲለዩና ለልዩ ሕይወትዎ ግልጽ መመሪያ እንዲያገኙ ይረዳዎታል።",
+    "nextStepsTitle": "ቀጣይ እርምጃዎች",
+    "nextStepsBody": "በመርሐ ግብሮቻችን መሳተፍዎን ይቀጥሉ — ቃሉን ለመስማት፣ አብረው ለመጸለይ፣ በእምነት ከወንድሞችና እኅቶች ጋር ኅብረት ለማድረግና በወንጌል እያደጉ ለማገልገል ያሉትን ልዩ ልዩ አጋጣሚዎች ይጠቀሙ።",
+    "leadHeading": "መምራት",
+    "leadStep1Title": "1. በክርስቶስ ፍቅር ማገልገል",
+    "leadStep1Body": "እያደግን ስንሄድ ወደ ኢየሱስ ለመምጣት እርዳታ የሚያስፈልጋቸውን ለማገልገል እንናፍቃለን። ስናገለግልም እኛው ራሳችን በክርስቶስ ፍቅር ውስጥ ይበልጥ እናድጋለን።",
+    "leadStep2Title": "2. የአመራር በረከት",
+    "leadStep2Body": "ኢየሱስ \"ከመቀበል ይልቅ መስጠት የበለጠ ብፁዕ ነው\" አለ (የሐዋርያት ሥራ 20፡35)። ሌሎችን መምራትና መምከር ጥበብን፣ ጸሎትን፣ መስዋዕትነትንና ትዕግሥትን ይጠይቃል። ሆኖም የመስቀሉ ክብር ጫፍ ላይ የሚደርስበት የተባረከ ስፍራ ነው።",
+    "leadStep3Title": "3. የአመራር በረከት",
+    "leadStep3Body": "ተማሪዎች ገና ወጣቶች ቢሆኑም፣ ልዩ ስጦታዎችና ችሎታዎች በአመራር ኃላፊነቶች በኩል ይበልጥ በኃይል ሊገኙና ሊዳብሩ ይችላሉ። እያንዳንዱ ተማሪ በአገልግሎትና በአመራር ጸጋ በተሞላ ተሞክሮ የሰማያዊ ስጦታዎቹን የሚፈትንበትና የሚያረጋግጥበት ውብ ሂደት ነው።",
+    "leadStep4Title": "4. ከAM ጋር ያሉ አጋጣሚዎች",
+    "leadStep4Body": "AM ተማሪዎች በአገልግሎትና በአመራር እንዲሳተፉ ልዩ ልዩ አጋጣሚዎችንና ኃላፊነቶችን ያቀርባል። ከበጎ ፈቃደኞች ቡድናችን፣ ከቅርንጫፍ ሠራተኞችና መሪዎች፣ ከመጽሐፍ ቅዱስ መምህራንና ከሌሎችም ብዙዎች ጋር ይቀላቀሉ። ኢየሱስ በበላይ ዕቅዱ መሠረት በእርስዎ ውስጥ የዘራውን ያግኙ።",
+    "sentHeading": "መላክ",
+    "sentParagraph1": "ከዩኒቨርሲቲ መመረቅ በፊታችን ወደተከፈተው ዓለም ሌላ ጉልህ መነሳት ነው። አንዳንዶቻችን ትምህርታችንን እንቀጥላለን ወይም የሙያ መንገድ እንመርጣለን። አንዳንዶቻችን የእግዚአብሔርን ጥሪ ተከትለን የAM የሙሉ ሰዓት ሠራተኞች፣ ሚስዮናውያን ወይም አገልጋዮች እንሆናለን።",
+    "sentParagraph2": "በዚህ ወሳኝ እርምጃ AM በAlumni Connect በኩል ተገናኝተው እንዲቆዩና የወንጌልን ተልእኮ ማገልገልዎን እንዲቀጥሉ የሚያስችሉ መርሐ ግብሮችን ያቀርባል። እንዲሁም በAM World Mission ውስጥ ሙያዊ የተልእኮ ሠራተኛ ለመሆን የስልጠና መርሐ ግብሮችንና መንገዶችን ያዘጋጃል።",
+    "sentParagraph3": "ወደ ብሩህ ወደፊት የሚያመሩ ልዩ ልዩ አማራጮች በፊትዎ ተከፍተዋል። \"እንግዲህ ሂዱና አሕዛብን ሁሉ በአብ በወልድና በመንፈስ ቅዱስ ስም እያጠመቃችኋቸው ደቀ መዛሙርት አድርጓቸው\" (ማቴዎስ 28፡19) የሚለውን ታላቁን ተልእኮ አብረን ለመፈጸም AM ከእያንዳንዱ ሰው ጋር በቅርበት መጓዝ ይፈልጋል።",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "የAM የመጽሐፍ ቅዱስ መምህር ይሁኑ",
+    "sentLinkMissionaries": "የAM ሚስዮናዊ ይሁኑ",
+    "sentLinkStaff": "በAM ዋና መሥሪያ ቤት የሙሉ ሰዓት ሠራተኛ",
+    "roadmapHeroTitle": "በካምፓስ ማደግ፦ የመንገድ ካርታ"
+  },
+  "Network": {
+    "breadcrumb": "አውታረ መረባችን",
+    "heading": "ዓለም አቀፍ አውታረ መረባችን",
+    "joinChapter": "ቅርንጫፍ ይቀላቀሉ",
+    "partnerWithUs": "ከእኛ ጋር ይተባበሩ",
+    "exploreEyebrow": "ዓለምን ይመልከቱ",
+    "regionsHeading": "ክልሎች",
+    "regionsSubheading": "በክልል ይመልከቱ",
+    "siteCount": "{count, plural, other {# ድረ ገጽ}}",
+    "communityEyebrow": "ዓለም አቀፍ ማኅበረሰብ",
+    "chaptersHeading": "በዓለም የተለያዩ ከተሞችና ማዕዘናት ውስጥ ያሉ ቅርንጫፎች",
+    "chaptersSoon": "ቅርንጫፎች በቅርቡ ይጀምራሉ።",
+    "continentSubtitle": "በ{region} ውስጥ ያሉ የAM የአገር ድረ ገጾች።",
+    "noSitesTitle": "በ{region} ውስጥ እስካሁን ድረ ገጾች የሉም",
+    "noSitesBodyPrefix": "በዚህ ክልል የAM ሥራን አሁንም እየገነባን ነው። በቅርቡ ተመልሰው ይምጡ፣ ወይም አንዱን ለመጀመር መርዳት ከፈለጉ",
+    "noSitesLink": "ያግኙን",
+    "noSitesBodySuffix": "።",
+    "visitSite": "ድረ ገጹን ይጎብኙ",
+    "regions": {
+      "africa": "አፍሪካ",
+      "asia": "እስያ",
+      "europe": "አውሮፓ",
+      "northamerica": "ሰሜን አሜሪካ",
+      "southamerica": "ላቲን አሜሪካና ካሪቢያን",
+      "oceania": "ኦሺኒያ"
+    },
+    "map": {
+      "world": "ዓለም",
+      "loading": "በመጫን ላይ…",
+      "zoomIn": "አጉላ",
+      "clear": "አጽዳ",
+      "worldHint": "ከተማውን ለማየት በአንድ ነጥብ ላይ ጠቋሚውን ያንቀሳቅሱ ወይም ይምረጡት — መምረጥ ክልሉን ያጎላል።",
+      "regionHint": "በ{region} ውስጥ {count} ቅርንጫፎች። ዝርዝር ለማየት አንድ ነጥብ ይምረጡ፣ ወይም ወደ ዓለም ካርታ ይመለሱ።",
+      "worldAria": "ሁሉንም {count} የAM ቅርንጫፎች የሚያሳይ የዓለም ካርታ። ለማጉላት የክልል ቁልፎችን ይጠቀሙ።",
+      "regionAria": "{count} የAM ቅርንጫፎችን የሚያሳይ የ{region} ካርታ።",
+      "captionSouthAsia": "ደቡብ እስያ",
+      "captionEastCentralAsia": "ምሥራቅና መካከለኛ እስያ",
+      "captionSoutheastAsia": "ደቡብ ምሥራቅ እስያ",
+      "hqBadge": "ዋና መሥሪያ ቤት",
+      "regionalHqBadge": "የክልል መሥሪያ ቤት"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "አፖስቶሎስ — የተላከው",
+      "headingLine1": "የኢየሱስ",
+      "headingWhere": "ፍቅር",
+      "headingWeAre": "የሚጎርፍበት",
+      "joinBibleStudy": "የመጽሐፍ ቅዱስ ጥናታችንን ይቀላቀሉ",
+      "whoWeAre": "እኛ ማን ነን",
+      "stat1Value": "2003",
+      "stat1Label": "ጀምሮ እንልካለን",
+      "stat2Value": "ትሬንተን",
+      "stat2Label": "ኒው ጀርሲ፣ አሜሪካ",
+      "stat3Value": "ዓለም አቀፍ",
+      "stat3Label": "የካምፓስ አውታረ መረብ",
+      "dragToExplore": "ለመመልከት ይጎትቱ"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "የመጽሐፍ ቅዱስ ጥናት መርሐ ግብራችንን ይቀላቀሉ",
+      "heading": "ከመጀመሪያው ጥያቄ እስከ መላክ ድረስ የ5 ደረጃ መንገድ።",
+      "description": "የAM የ5 ደረጃ የመጽሐፍ ቅዱስ ጥናት መርሐ ግብር ተማሪዎችን የኢየሱስ ክርስቶስን ወንጌልና የእምነት ሕይወት በተደራጀ ፍሰት እንዲማሩ የሚመራ የመስመር ላይ ደቀ መዝሙርነትና የመጽሐፍ ቅዱስ ትምህርት መርሐ ግብር ነው። መርሐ ግብሩ ተማሪዎችን በአድማጩ የጊዜ ሰሌዳ መሠረት ከሚያስተምሩ የመጽሐፍ ቅዱስ መምህራን ጋር ያገናኛል። በበጎ ፈቃደኝነት ለማገልገል፣ እንደ ተማሪ ሚስዮናዊ ለመሰልጠን፣ ወይም በቀላሉ ከAM ጋር በእግዚአብሔር ቃል ውስጥ ይበልጥ ለመግባት በሚሰጥ አጋጣሚ ይጠናቀቃል።",
+      "cta": "መርሐ ግብሩን ይጀምሩ"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "የመጽሐፍ ቅዱስ ጥናት ይቀላቀሉ",
+      "joinBibleStudyDescription": "የ5 ደረጃ የመስመር ላይ ደቀ መዝሙርነትና የመጽሐፍ ቅዱስ ትምህርት መርሐ ግብር።",
+      "findCampusTitle": "ካምፓስዎን ያግኙ",
+      "findCampusDescription": "የቅርንጫፎቻችንና የኅብረቶቻችን አውታረ መረብ።",
+      "getInvolvedTitle": "ይሳተፉ",
+      "getInvolvedDescription": "ከAM ጋር ይገናኙ፣ ያድጉ፣ ይምሩ እና ይላኩ።",
+      "supportTitle": "ተልእኮውን ይደግፉ",
+      "supportDescription": "ይለግሱ፣ ይጸልዩ እና በመስክ ላይ ካሉ ተማሪዎች ጋር ይተባበሩ።"
+    },
+    "Ministries": {
+      "eyebrow": "መገናኘት · ማደግ · መምራት · መላክ",
+      "heading": "አራት እርምጃዎች፤ እያንዳንዱን ከእርስዎ ጋር እንጓዛለን።",
+      "getInvolved": "ይሳተፉ",
+      "learnMore": "ተጨማሪ ይወቁ",
+      "connectTitle": "ከAM ጋር ይገናኙ",
+      "connectDescription": "AM መንፈሳዊ ሕይወታችንንና ከጌታ ኢየሱስ ክርስቶስ ጋር ያለንን ግንኙነት የሚያሳድጉ ልዩ ልዩ የመጽሐፍ ቅዱስ ጥናት መርሐ ግብሮችን ያቀርባል።",
+      "growTitle": "ከAM ጋር ያድጉ",
+      "growDescription": "የቡድን እንቅስቃሴዎቻችንን ይቀላቀሉና በእውነት ኅብረት አብረው ይብሰሉ። የቡድን መርሐ ግብሮቻችን ለእያንዳንዱ ተማሪ መንፈሳዊ ብርታት ለማግኘት ጥራት ያለው ተሞክሮ ይሰጣሉ።",
+      "leadTitle": "ከAM ጋር ይምሩ",
+      "leadDescription": "AM በበጎ ፈቃደኝነት ማገልገልና በእግዚአብሔር በተሰጣቸው ተሰጥኦዎች በተለያዩ ክፍሎች ማገልገል የሚፈልጉ ተማሪዎችን በደስታ ይቀበላል።",
+      "sentTitle": "ከAM ጋር ይላኩ",
+      "sentDescription": "\"መላክ\" የሚለው ውድ ጥሪዎ በሕይወትዎ እስኪፈጸም ድረስ — ከተመረቁ በኋላም ቢሆን — AM ከእርስዎ ጋር መጓዙን ይቀጥላል!",
+      "connectTag": "መገናኘት",
+      "growTag": "ማደግ",
+      "leadTag": "መምራት",
+      "sentTag": "መላክ"
+    },
+    "OurMission": {
+      "eyebrow": "ተልእኮአችን",
+      "statementPrefix": "የApostolos Missions ተልእኮ",
+      "statementEmphasis": "ኢየሱስ ክርስቶስን እርሱም እንደተሰቀለ መስበክ",
+      "statementSuffix": "— የካምፓስ ተልእኮን ለማንቀሳቀስ ክርስቶስ ተኮር የወጣት ክርስቲያኖች አውታረ መረብ እያዳበረ ነው።",
+      "readFullStatement": "ሙሉውን የተልእኮ መግለጫ ያንብቡ",
+      "nameOrigin": "apostolos የሚለው ስም ሐዋርያ ለሚለው የግሪክ ቃል ነው። ትርጉሙም \"በተልእኮ የተላከው\" ማለት ነው።",
+      "history": "ወንጌልን ለማዳረስና ኢየሱስን ለማሳወቅ ይጓጉ በነበሩ ጥቂት ወጣት ተማሪዎች ቡድን በሎስ አንጀለስ፣ ካሊፎርኒያ የተጀመረው ነገር ዛሬ በዓለም ዙሪያ ባሉ ዩኒቨርሲቲዎች የሚሠራ ዓለም አቀፍ ድርጅት ሆኗል።",
+      "ourHistory": "ታሪካችን"
+    },
+    "GetInvolved": {
+      "eyebrow": "ተገናኝተው ይቆዩ",
+      "heading": "ይሳተፉ",
+      "bibleStudies": "የመጽሐፍ ቅዱስ ጥናቶች",
+      "volunteer": "በጎ ፈቃደኝነት",
+      "internship": "የልምምድ ስራ"
+    },
+    "Media": {
+      "eyebrow": "ሚዲያ",
+      "heading": "ትምህርት፣ ምስክርነትና ቃሉ።",
+      "moreContents": "ተጨማሪ ይዘቶች",
+      "playVideo": "የAM መግቢያ ቪዲዮን ይመልከቱ",
+      "post1Title": "አራት መንፈሳዊ ጭብጦች – አጠቃላይ እይታ",
+      "post2Title": "መዳን ምንድን ነው? | Sola Fide ክፍል 1 – AM አካዳሚ",
+      "post3Title": "የማኅበራዊ ሚዲያ ደቀ መዝሙርነት ዘመን፦ ተማሪዎችን ወደ ወንጌል እውነታ ማቅረብ",
+      "post4Title": "ለአዲሱ ዓመት የእግዚአብሔር ተስፋዎች",
+      "post1Date": "ጥር 5፣ 2026",
+      "post2Date": "ሰኔ 27፣ 2023",
+      "post3Date": "ሰኔ 3፣ 2022",
+      "post4Date": "ጥር 2፣ 2022"
+    },
+    "Events": {
+      "eyebrow": "ዝግጅቶች",
+      "heading": "አውታረ መረቡ የሚሰበሰብበት።",
+      "allEvents": "ሁሉም ዝግጅቶች",
+      "event1Date": "ሚያዝያ 4–5",
+      "event1Title": "የትንሣኤ ማፈግፈጊያ",
+      "event2Date": "የካቲት 18",
+      "event2Title": "የ40 ቀን የጾም ጉዞ",
+      "event3Date": "ጥር 16",
+      "event3Title": "የአዲስ ቅርንጫፍ መሪዎች ስብሰባ"
+    },
+    "OurNetwork": {
+      "eyebrow": "አውታረ መረባችን",
+      "heading": "በካምፓስዎ ውስጥ ኅብረት አስቀድሞ ሊኖር ይችላል።",
+      "description": "በተቋም ወይም በከተማ ይፈልጉ። በአቅራቢያዎ ምንም ካልተገኘ እንደ ግብዣ ይቁጠሩት — አንዱን እንዲጀምሩ እንረዳዎታለን።",
+      "startChapter": "ቅርንጫፍ ይጀምሩ",
+      "searchPlaceholder": "ተቋም ወይም ከተማ ይፈልጉ",
+      "noMatches": "እስካሁን ውጤት የለም — ያግኙን፣ ለመጀመር እንረዳዎታለን።"
+    },
+    "HonoraryChairman": {
+      "eyebrow": "የመጀመሪያው የክብር ሊቀ መንበራችን",
+      "followingLegacy": "ውርሱን በመከተል",
+      "name": "ዶ/ር ራልፍ ዲ. ዊንተር",
+      "quoteLine1": "እንግዲህ ሂዱና",
+      "quoteLine2": "አሕዛብን ሁሉ",
+      "quoteLine3": "ደቀ መዛሙርት አድርጓቸው…",
+      "quoteReference": "—ማቴዎስ 28፡19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "ከእኛ ጋር ይተባበሩ",
+      "heading": "ፈጽሞ የማያገኙትን ሰው ይላኩ።",
+      "description": "እያንዳንዱ ስጦታ የመጽሐፍ ቅዱስ ጥናትን፣ ስልጠናንና የሚልክ ማኅበረሰብን ለመሄድ ዝግጁ ለሆኑ ተማሪዎች ያቀርባል።",
+      "giveToday": "ዛሬ ይለግሱ",
+      "talkToUs": "ያነጋግሩን"
+    },
+    "Newsletter": {
+      "heading": "ከካምፓሶች የመጡ ማስታወሻዎች",
+      "description": "አጭር ወርሃዊ ደብዳቤ፦ ተማሪዎች ምን እያዩ ነው፣ AM ቀጥሎ ወዴት እያመራ ነው፣ እንዴት መጸለይ እንደሚቻል።",
+      "cta": "AM አካዳሚ"
+    }
+  }
+}

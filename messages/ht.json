@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Youn ki voye an misyon",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Kiyès Nou Ye",
+    "whatWeDo": "Sa Nou Fè",
+    "getInvolved": "Patisipe",
+    "connect": "Konekte",
+    "ourNetwork": "Rezo Nou An",
+    "news": "Nouvèl",
+    "contactUs": "Kontakte Nou",
+    "give": "Bay",
+    "toggleNav": "Ouvri oswa fèmen meni navigasyon an",
+    "whoWeAreMenu": {
+      "whoWeAre": "Kiyès nou ye",
+      "ourMission": "Misyon nou",
+      "statementOfFaith": "Deklarasyon lafwa",
+      "history": "Istwa",
+      "ourFirstChairmen": "Premye Prezidan Nou Yo",
+      "membership": "Manm",
+      "ourLeadership": "Direksyon nou"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Pilye misyon nou",
+      "administration": "Administrasyon",
+      "bibleStudyProgram": "Pwogram Etid Biblik",
+      "fourSpiritualThemes": "Kat Tèm Espirityèl",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Ministè nou yo"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Etid biblik",
+      "groupActivities": "Aktivite an gwoup",
+      "volunteer": "Volontè",
+      "bibleTeacherTraining": "Fòmasyon pwofesè Bib",
+      "internship": "Estaj",
+      "donate": "Fè yon don",
+      "onlineBibleStudy": "Etid biblik sou entènèt",
+      "chapterAffiliation": "Afilyasyon chapit"
+    },
+    "newsMenu": {
+      "featured": "An vedèt",
+      "events": "Evènman",
+      "editorial": "Editoryal",
+      "photoNews": "Nouvèl an foto",
+      "testimony": "Temwayaj"
+    },
+    "megaMenu": {
+      "aboutHeading": "Konsènan",
+      "whatWeDoHeading": "Sa nou fè",
+      "featuredHeading": "Atik an vedèt",
+      "allArticles": "Tout atik",
+      "ctaBibleStudy": "Kòmanse yon etid biblik",
+      "ctaFindChapter": "Jwenn chapit ou",
+      "ctaGive": "Bay jodi a"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "Konsènan AM",
+        "description": "Kiyès nou ye, sa nou kwè ak kote nou soti."
+      },
+      "leadership": {
+        "title": "Direksyon",
+        "description": "Moun k ap sèvi mouvman an ak kijan pou w fè pati li."
+      },
+      "whatWeDo": {
+        "title": "Sa Nou Fè",
+        "description": "Pilye yo ak ministè yo k ap pouse misyon an pi devan."
+      },
+      "bibleStudy": {
+        "title": "Pwogram Etid Biblik",
+        "description": "Yon chemen senk faz depi premye kesyon w rive nan moman yo voye w."
+      },
+      "getInvolved": {
+        "title": "Patisipe",
+        "description": "Jwenn plas ou nan mouvman an, kèlkeswa kote ou ye."
+      },
+      "supportMission": {
+        "title": "Sèvi & Sipòte",
+        "description": "Fòme, kòmanse yon chapit, oswa vin patnè ak etidyan sou teren an."
+      },
+      "latestNews": {
+        "title": "Dènye Nouvèl",
+        "description": "Istwa ak nouvèl ki soti toupatou nan rezo a."
+      },
+      "events": {
+        "title": "Evènman",
+        "description": "Retrèt, konferans ak rasanbleman toupre ou."
+      }
+    },
+    "mobile": {
+      "back": "Retounen",
+      "close": "Fèmen meni an",
+      "menu": "Meni"
+    }
+  },
+  "Footer": {
+    "tagline": "Yon ministè entèdenominasyonèl ki angaje pou gaye levanjil la jouk nan dènye bout latè, k ap temwaye lanmou etènèl Senyè a.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, USA",
+    "email": "info@amintl.org",
+    "whoWeAre": "Kiyès nou ye",
+    "whatWeDo": "Sa nou fè",
+    "getInvolved": "Patisipe",
+    "media": "Medya",
+    "aboutAM": "Konsènan AM",
+    "missionStatement": "Deklarasyon misyon",
+    "statementOfFaith": "Deklarasyon lafwa",
+    "ourHistory": "Istwa nou",
+    "leadership": "Direksyon",
+    "bibleStudyProgram": "Pwogram Etid Biblik",
+    "fourSpiritualThemes": "Kat Tèm Espirityèl",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Ministè nou yo",
+    "connectGrowLeadSent": "Konekte, Grandi, Dirije, Voye",
+    "chapterAffiliation": "Afilyasyon chapit",
+    "ourNetwork": "Rezo Nou An",
+    "events": "Evènman",
+    "give": "Bay",
+    "news": "Nouvèl",
+    "legacyOfChairman": "Eritaj Ralph D. Winter",
+    "contactUs": "Kontakte nou",
+    "copyright": "© 2026 Apostolos Missions International. Tout dwa rezève.",
+    "contact": "Kontak"
+  },
+  "Logo": {
+    "international": "Entènasyonal"
+  },
+  "LanguageSwitcher": {
+    "label": "Lang"
+  },
+  "Common": {
+    "tagline": "Yon ministè entèdenominasyonèl ki angaje pou gaye levanjil la jouk nan dènye bout latè, k ap temwaye lanmou etènèl Senyè a.",
+    "learnMore": "Aprann plis",
+    "readMore": "Li Plis",
+    "clickHere": "Klike isit la",
+    "home": "Akèy"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Kiyès nou ye",
+    "missionStatement": "Deklarasyon misyon",
+    "statementOfFaith": "Deklarasyon lafwa",
+    "history": "Istwa",
+    "ourFirstChairman": "Premye Prezidan Nou",
+    "membership": "Manm",
+    "leadership": "Direksyon"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Pilye Misyon Nou",
+    "administration": "Administrasyon"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Etid Biblik Jedi",
+    "bibleStudies": "Etid Biblik",
+    "groupActivities": "Aktivite an Gwoup",
+    "volunteer": "Volontè",
+    "chapterStaff": "Anplwaye Chapit",
+    "bibleTeacherTraining": "Fòmasyon Pwofesè Bib",
+    "internship": "Estaj",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Fè yon don"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Nouvèl an Vedèt",
+    "events": "Evènman",
+    "editorial": "Editoryal",
+    "photoNews": "Nouvèl an Foto",
+    "testimony": "Temwayaj"
+  },
+  "InPractice": {
+    "eyebrow": "Nan pratik",
+    "heading": "Kat bagay nou fè tout kote nou ale.",
+    "bibleStudyTag": "Etid biblik",
+    "bibleStudyDescription": "Etid an ti gwoup ak an gwo gwoup ki mete Ekriti a nan sant lavi kanpis la.",
+    "leadershipTrainingTag": "Fòmasyon lidèchip",
+    "leadershipTrainingDescription": "Etidyan yo resevwa akonpayman pou dirije kanmarad yo, epi apre sa pou voye gwoup ki vin apre a.",
+    "onlineEducationTag": "Edikasyon sou entènèt",
+    "onlineEducationDescription": "Kou AM Academy nan Ekriti, misyoloji ak ministè entèkiltirèl.",
+    "internshipsTripsTag": "Estaj & vwayaj",
+    "internshipsTripsDescription": "Misyon kout tèm ak estaj ki transfòme fòmasyon an pratik."
+  },
+  "AboutPage": {
+    "heroTitle": "Menm jan Papa a te voye m, mwen voye nou.",
+    "breadcrumb": "Konsènan",
+    "paragraph1": "Apostolos Missions International (AM) se yon ministè entèdenominasyonèl ki angaje pou gaye levanjil la jouk nan dènye bout latè, k ap temwaye lanmou etènèl Senyè a.",
+    "paragraph2Prefix": "Non an",
+    "paragraph2": "(ἀπόστολος) se mo grèk pou apot. Li vle di \"youn ki voye an misyon\" oswa \"mesaje.\" Tit \"apot\" la parèt souvan nan Nouvo Testaman an pou reprezante Douz disip Jezi te chwazi yo (Matye 10:2, Mak 3:14, Lik 6:13, Travay 2:42). Pòl, yon ansyen pèsekitè krisyanis ki te vin yon gwo eral levanjil la, te prezante tèt li kòm yon \"apot\" (Women 1:1, 1 Korentyen 1:1, 2 Korentyen 1:1, Galat 1:1, Kolosyen 1:1, 1 Timote 1:1, 2 Timote 1:1, Tit).",
+    "paragraph3": "Apot yo se moun Senyè a voye pou akonpli misyon \"preche Jezi Kris epi fè moun konnen Bondye\" bay tout kreyasyon an. Fondasyon biblik apostola a jwenn nan anpil pawòl Senyè a ki te chwazi premye apot yo epi voye yo tankou anbasadè yo voye pou reprezante diferan nasyon. Apot yo te konprann lavi yo pa t pou yo sèlman, men yo te viv pou revele glwa Kris la nan mond tonbe sa a.",
+    "blockquote": "Jan 20:21 di, \"Jezi di yo ankò, 'Lapè avèk nou! Menm jan Papa a te voye m, mwen menm mwen voye nou.'\" (NIV)",
+    "paragraph4": "AM vle swiv tradisyon apot yo ki te viv kòm moun ki gen yon misyon pou pwoklame Pawòl Bondye a. Chak nan nou resevwa apèl sa a nan men Bondye tou pou nou voye nou nan mond lan kòm men l ak pye l. Nou vle konsakre lavi nou pou swiv tras Jezi epi pwoklame Levanjil la jouk nan dènye bout latè.",
+    "paragraph5": "Menm jan Senyè a te touche epi chanje lavi nou, nou vle revele lanmou Senyè a te montre nou an, epi vin yon limyè pou tout pitit li ki pèdi yo ak pou frè ak sè nou yo.",
+    "readStatementOfFaith": "Li deklarasyon lafwa nou",
+    "or": "oswa",
+    "traceHistory": "swiv istwa a",
+    "cardStatementOfFaithTitle": "Li deklarasyon Lafwa nou",
+    "cardMissionStatementTitle": "Deklarasyon Misyon"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "Fèy Wout AM",
+    "roadmapHeading": "Kisa yo atann?",
+    "connectTag": "Konekte",
+    "connectItems": [
+      "Bib sou plas/sou entènèt",
+      "Pwogram Etid"
+    ],
+    "growTag": "Grandi",
+    "growItems": [
+      "Aktivite an Gwoup"
+    ],
+    "leadTag": "Dirije",
+    "leadItems": [
+      "Volontè & Estaj",
+      "Lidè Chapit"
+    ],
+    "sentTag": "Voye",
+    "sentItems": [
+      "Alumni Connect",
+      "Misyonè Anplwaye Pasyèl/Aplentan",
+      "Pwofesè Bib"
+    ],
+    "connectHeading": "Konekte",
+    "connectStep1Title": "1. Abòne w ak Sit Entènèt Nou Yo",
+    "connectStep1Body": "Gen anpil fason pou konekte ak AM. Ou ka abòne w ak sit prensipal nou an, www.amintl.org, epi resevwa bilten nouvèl. Oswa ou ka abòne w ak sit lekòl biblik sou entènèt nou an, www.amacademy.org, epi resevwa dènye nouvèl ak pwogram yo. Santi w lib pou eksplore vizyon nou, aktivite nou ak pwogram nou yo atravè sit nou yo epi voye imèl ban nou nenpòt lè si ou gen kesyon.",
+    "connectStep2Title": "2. Enskri pou Rankontre Anplwaye Nou Yo",
+    "connectStep2BodyPrefix": "Santi w lib pou",
+    "connectStep2SignUp": "enskri",
+    "connectStep2BodySuffix": "isit la si ou vle pale ak youn nan anplwaye nou yo epi resevwa konsèy sou vwayaj espirityèl ou. Ou ka pran yon randevou oswa kontakte anplwaye nou yo. Anpil nan manm ekip nou yo gen eksperyans nan lavi kanpis epi yo konprann kontèks etidyan inivèsite yo ap fè fas. Y ap ede w jwenn wout ki pi apwopriye pou vwayaj lafwa ou.",
+    "connectStep3Title": "3. Enskri pou Etid Biblik",
+    "connectStep3BodyPrefix": "Si ou pare pou kòmanse pwogram etid biblik nou an,",
+    "connectStep3SignUp": "enskri",
+    "connectStep3BodySuffix": "sou paj sa a. Si ou pa jwenn yon orè ki bon pou ou, voye fòm demann lan ak kou ak lè ou pito!",
+    "connectStep4Title": "4. Konekte ak Chapit Lokal la",
+    "connectStep4BodyPrefix": "Si ou vle konekte ak biwo chapit lokal nou an ak anplwaye li yo, tanpri",
+    "connectStep4ContactHere": "kontakte isit la",
+    "connectStep4BodySuffix": ". Nou pa ka tann pou nou rankontre w byento!",
+    "growHeading": "Grandi",
+    "growIntro": "Menm jan nou grandi epi nou vin gran atravè diferan etap nan anfans nou, nou rive nan etap kle nan matirite espirityèl nou. AM ofri anpil pwogram ak wout ki fèt pou gide etidyan yo atravè chak nan twa etap enpòtan sa yo nan kwasans espirityèl:",
+    "rebornTitle": "1. Fèt Ankò",
+    "rebornBody": "Nou fèt ankò atravè sakrifis ekspyatwa Jezi sou Kwa a.",
+    "matureTitle": "1. Vin Gran",
+    "matureBody": "Nou grandi epi nou vin gran espirityèlman lè nou nouri lanmou ak verite ki soti nan Jezi.",
+    "fruitfulTitle": "1. Bay Fwi",
+    "fruitfulBody": "Nou fè eksperyans fekondite lavi a atravè benediksyon Bondye, ki akonpli nan inyon mati nou ak Kris Jezi.",
+    "navigatingTitle": "Navige Lavi Kanpis",
+    "navigatingBody": "Lavi kanpis eksitan epi satisfezan, men avèk tout chwa ki disponib yo, li ka santi san direksyon tou. Atravè verite ak lapriyè, AM ede w disène volonte Bondye epi jwenn yon direksyon klè pou lavi ekstraòdinè ou.",
+    "nextStepsTitle": "Pwochen Etap",
+    "nextStepsBody": "Kontinye patisipe nan pwogram nou yo—pwofite divès opòtinite pou tande Pawòl la, priye ansanm, pataje ak frè ak sè nan lafwa, epi sèvi pandan w ap grandi nan Levanjil la.",
+    "leadHeading": "Dirije",
+    "leadStep1Title": "1. Sèvi nan Lanmou Kris la",
+    "leadStep1Body": "Pandan n ap grandi, nou vle sèvi lòt moun ki bezwen èd pou vin jwenn Jezi. Pandan n ap sèvi, nou grandi pi fon nan lanmou Kris la tou.",
+    "leadStep2Title": "2. Benediksyon Lidèchip la",
+    "leadStep2Body": "Jezi te di, \"Gen plis benediksyon nan bay pase nan resevwa\" (Travay 20:35). Dirije epi gide lòt moun mande sajès, lapriyè, sakrifis ak pasyans. Sepandan, se yon plas beni kote glwa Kwa a rive nan pwen ki pi wo a.",
+    "leadStep3Title": "3. Benediksyon Lidèchip la",
+    "leadStep3Body": "Menmsi etidyan inivèsite yo toujou jèn, don ak konpetans eksepsyonèl ka dekouvri epi devlope ak plis fòs atravè wòl lidèchip. Se yon bèl pwosesis pandan chak etidyan ap teste epi konfime don selès yo atravè eksperyans gras sèvi ak dirije.",
+    "leadStep4Title": "4. Opòtinite ak AM",
+    "leadStep4Body": "AM ofri divès opòtinite ak wòl pou etidyan patisipe nan sèvis ak lidèchip. Rejwenn ekip volontè nou yo, anplwaye Chapit, lidè Chapit, pwofesè Bib, ak anpil lòt. Dekouvri sa Jezi plante nan ou selon plan ekselan li.",
+    "sentHeading": "Voye",
+    "sentParagraph1": "Fini inivèsite se yon lòt depa enpòtan nan yon mond ki laj epi louvri pou nou eksplore. Kèk nan nou ka kontinye etid yo oswa pran wout yon karyè. Kèk nan nou vin anplwaye aplentan AM, misyonè, oswa pastè k ap swiv apèl Bondye.",
+    "sentParagraph2": "Nan etap enpòtan sa a, AM ofri pwogram kote ou ka rete konekte epi kontinye sèvi misyon Levanjil la atravè Alumni Connect. AM bay pwogram fòmasyon ak wout pou vin travayè misyon pwofesyonèl ak anplwaye nan AM World Mission.",
+    "sentParagraph3": "Divès opsyon louvri pou ou nan direksyon yon avni klere. AM vle mache pre ak chak moun pou rasanble nou tout ansanm pou Gran Misyon an, \"Se poutèt sa, ale, fè disip nan tout nasyon, batize yo nan non Papa a, Pitit la ak Sentespri a (Matye 28:19).\"",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "Vin Pwofesè Bib AM",
+    "sentLinkMissionaries": "Vin Misyonè AM",
+    "sentLinkStaff": "Anplwaye Aplentan nan Katye Jeneral AM",
+    "roadmapHeroTitle": "Grandi sou Kanpis la: Yon Fèy Wout"
+  },
+  "Network": {
+    "breadcrumb": "Rezo Nou An",
+    "heading": "Rezo Mondyal Nou An",
+    "joinChapter": "Rejwenn yon chapit",
+    "partnerWithUs": "Vin patnè ak nou",
+    "exploreEyebrow": "Eksplore mond lan",
+    "regionsHeading": "Rejyon",
+    "regionsSubheading": "Eksplore jeyografikman",
+    "siteCount": "{count, plural, =1 {# sit} other {# sit}}",
+    "communityEyebrow": "Yon kominote mondyal",
+    "chaptersHeading": "Chapit nan divès vil ak kwen mond lan",
+    "chaptersSoon": "Chapit k ap louvri byento.",
+    "continentSubtitle": "Sit peyi AM atravè {region}.",
+    "noSitesTitle": "Poko gen sit {region}",
+    "noSitesBodyPrefix": "Nou toujou ap bati prezans AM nan rejyon sa a. Retounen byento, oswa",
+    "noSitesLink": "kontakte nou",
+    "noSitesBodySuffix": "si ou ta renmen ede kòmanse youn.",
+    "visitSite": "Vizite sit la",
+    "regions": {
+      "africa": "Afrik",
+      "asia": "Azi",
+      "europe": "Ewòp",
+      "northamerica": "Amerik di Nò",
+      "southamerica": "Amerik Latin & Karayib",
+      "oceania": "Oseyani"
+    },
+    "map": {
+      "world": "Mond",
+      "loading": "Chajman…",
+      "zoomIn": "Zoume",
+      "clear": "Efase",
+      "worldHint": "Pase sou oswa chwazi yon pwen pou wè vil la — chwazi youn pou zoume nan rejyon li.",
+      "regionHint": "{count, plural, =1 {# chapit} other {# chapit}} nan {region}. Chwazi yon pwen pou detay, oswa retounen nan kat mond lan.",
+      "worldAria": "Kat mond lan k ap montre tout {count} chapit AM yo. Sèvi ak bouton rejyon yo pou zoume.",
+      "regionAria": "Kat {region} k ap montre {count} chapit AM.",
+      "captionSouthAsia": "Azi di Sid",
+      "captionEastCentralAsia": "Azi de Lès & Santral",
+      "captionSoutheastAsia": "Azi di Sidès",
+      "hqBadge": "KJ",
+      "regionalHqBadge": "Katye jeneral rejyonal"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — youn ki voye",
+      "headingLine1": "Kote",
+      "headingWhere": "Lanmou Jezi a",
+      "headingWeAre": "Debòde",
+      "joinBibleStudy": "Rejwenn Etid Biblik Nou An",
+      "whoWeAre": "Kiyès nou ye",
+      "stat1Value": "2003",
+      "stat1Label": "N ap voye depi",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, USA",
+      "stat3Value": "Mondyal",
+      "stat3Label": "Rezo kanpis",
+      "dragToExplore": "Rale pou eksplore"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Rejwenn Pwogram Etid Biblik Nou An",
+      "heading": "Yon chemen 5 faz depi premye kesyon an rive nan moman yo voye w.",
+      "description": "Pwogram Etid Biblik 5 faz AM la se yon pwogram disipla ak edikasyon biblik sou entènèt ki mennen etidyan yo atravè yon chemen sistematik pou aprann Levanjil Jezi Kris la ak lavi lafwa a. Pwogram nan gwoupe etidyan yo ak pwofesè Bib ki bay ansèyman selon orè moun k ap koute a. Li fini ak opòtinite pou fè volontarya, pou fòme kòm etidyan misyonè, oswa tou senpleman pou plonje pi fon nan Pawòl Bondye a ak AM.",
+      "cta": "Kòmanse pwogram nan"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Rejwenn yon etid biblik",
+      "joinBibleStudyDescription": "Pwogram disipla ak edikasyon biblik 5 faz sou entènèt la.",
+      "findCampusTitle": "Jwenn kanpis ou",
+      "findCampusDescription": "Rezo chapit ak fratènite nou yo.",
+      "getInvolvedTitle": "Patisipe",
+      "getInvolvedDescription": "Konekte, grandi, dirije epi vin voye ak AM.",
+      "supportTitle": "Sipòte misyon an",
+      "supportDescription": "Bay, priye epi vin patnè ak etidyan sou teren an."
+    },
+    "Ministries": {
+      "eyebrow": "Konekte · Grandi · Dirije · Voye",
+      "heading": "Kat etap, epi nou mache chak nan yo avèk ou.",
+      "getInvolved": "Patisipe",
+      "learnMore": "Aprann plis",
+      "connectTitle": "Konekte ak AM",
+      "connectDescription": "AM ofri divès pwogram etid biblik ki nouri lavi espirityèl nou ak relasyon nou ak Senyè Jezi Kris la.",
+      "growTitle": "Grandi ak AM",
+      "growDescription": "Rejwenn Aktivite an Gwoup nou yo epi vin gran ansanm nan fratènite verite a. Pwogram gwoup nou yo bay eksperyans wo kalite pou chak etidyan jwenn fòs espirityèl.",
+      "leadTitle": "Dirije ak AM",
+      "leadDescription": "AM kontan akeyi etidyan ki enterese fè volontarya epi sèvi atravè talan Bondye ba yo nan divès depatman.",
+      "sentTitle": "Voye ak AM",
+      "sentDescription": "AM ap kontinye mache avèk ou jouk apèl presye ou pou \"vin voye\" a akonpli nan lavi w menm apre ou fini etid ou!",
+      "connectTag": "Konekte",
+      "growTag": "Grandi",
+      "leadTag": "Dirije",
+      "sentTag": "Voye"
+    },
+    "OurMission": {
+      "eyebrow": "Misyon nou",
+      "statementPrefix": "Misyon Apostolos Missions se pou",
+      "statementEmphasis": "preche Jezi epi li krisifye",
+      "statementSuffix": "— pandan n ap devlope yon rezo jèn kretyen ki santre sou Kris pou mobilize misyon kanpis la.",
+      "readFullStatement": "Li deklarasyon misyon konplè a",
+      "nameOrigin": "Non apostolos la se mo grèk pou apot. Li vle di \"youn ki voye an misyon.\"",
+      "history": "Sa ki te kòmanse kòm yon ti gwoup jèn etidyan pasyone nan Los Angeles, Kalifòni, ki te anvi gaye levanjil la epi fè moun konnen Jezi, vin tounen yon òganizasyon mondyal k ap travay atravè kanpis inivèsite toupatou nan mond lan.",
+      "ourHistory": "Istwa nou"
+    },
+    "GetInvolved": {
+      "eyebrow": "Vin Konekte",
+      "heading": "Patisipe",
+      "bibleStudies": "Etid Biblik",
+      "volunteer": "Volontè",
+      "internship": "Estaj"
+    },
+    "Media": {
+      "eyebrow": "Medya",
+      "heading": "Ansèyman, temwayaj ak Pawòl la.",
+      "moreContents": "Plis kontni",
+      "playVideo": "Jwe videyo entwodiksyon AM la",
+      "post1Title": "Kat Tèm Espirityèl – Apèsi",
+      "post2Title": "Kisa Sali a Ye? | Sola Fide Pati 1 – AM Academy",
+      "post3Title": "Epòk Disipla sou Rezo Sosyal, Konekte Etidyan ak Reyalite Levanjil la",
+      "post4Title": "Pwomès Bondye pou Nouvèl Ane a",
+      "post1Date": "5 janvye 2026",
+      "post2Date": "27 jen 2023",
+      "post3Date": "3 jen 2022",
+      "post4Date": "2 janvye 2022"
+    },
+    "Events": {
+      "eyebrow": "Evènman",
+      "heading": "Kote rezo a rasanble.",
+      "allEvents": "Tout evènman",
+      "event1Date": "4–5 avril",
+      "event1Title": "Retrèt Pak",
+      "event2Date": "18 fevriye",
+      "event2Title": "Mach 40 Jou Karèm",
+      "event3Date": "16 janvye",
+      "event3Title": "Reyinyon Nouvo Lidè Chapit yo"
+    },
+    "OurNetwork": {
+      "eyebrow": "Rezo nou an",
+      "heading": "Gendwa gen deja yon fratènite sou kanpis ou.",
+      "description": "Chèche pa lekòl oswa vil. Si anyen pa parèt toupre w, se yon envitasyon — n ap ede w kòmanse youn.",
+      "startChapter": "Kòmanse yon chapit",
+      "searchPlaceholder": "Chèche lekòl oswa vil",
+      "noMatches": "Poko gen rezilta — kontakte nou epi n ap ede w kòmanse youn."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Premye Prezidan Onorè Nou",
+      "followingLegacy": "N ap Swiv Eritaj",
+      "name": "Dr. Ralph D. Winter",
+      "quoteLine1": "Se poutèt sa ale",
+      "quoteLine2": "epi fè disip",
+      "quoteLine3": "nan tout nasyon…",
+      "quoteReference": "—Matye 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Vin patnè ak nou",
+      "heading": "Voye yon moun ou p ap janm rankontre.",
+      "description": "Chak don mete etid biblik, fòmasyon ak yon kominote k ap voye alapòte etidyan ki pare pou ale.",
+      "giveToday": "Bay jodi a",
+      "talkToUs": "Pale ak nou"
+    },
+    "Newsletter": {
+      "heading": "Nòt Teren ki soti nan Kanpis yo",
+      "description": "Yon ti lèt chak mwa: sa etidyan yo wè, kote AM prale apre, ak kijan pou priye.",
+      "cta": "AM Academy"
+    }
+  }
+}

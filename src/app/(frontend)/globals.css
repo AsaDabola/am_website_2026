@@ -32,12 +32,68 @@
   --font-display-stack: var(--font-noto-hebrew), var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Same arrangement for the Asian and African scripts. Each Noto face leads its
+   own locales; Inter and Archivo stay behind it so the Latin brand names, URLs
+   and untranslated proper nouns in the copy keep the site's own typography.
+   Hindi and Nepali share Devanagari; Tamil serves both Sri Lanka's Tamil
+   readers and Singapore. */
+:root:lang(hi),
+:root:lang(ne) {
+  --font-body-stack: var(--font-noto-devanagari), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display-stack: var(--font-noto-devanagari), var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root:lang(bn) {
+  --font-body-stack: var(--font-noto-bengali), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display-stack: var(--font-noto-bengali), var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root:lang(ta) {
+  --font-body-stack: var(--font-noto-tamil), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display-stack: var(--font-noto-tamil), var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root:lang(si) {
+  --font-body-stack: var(--font-noto-sinhala), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display-stack: var(--font-noto-sinhala), var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root:lang(th) {
+  --font-body-stack: var(--font-noto-thai), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display-stack: var(--font-noto-thai), var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root:lang(am) {
+  --font-body-stack: var(--font-noto-ethiopic), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display-stack: var(--font-noto-ethiopic), var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root:lang(my) {
+  --font-body-stack: var(--font-noto-myanmar), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display-stack: var(--font-noto-myanmar), var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* The language switcher shows every language's name in its own script while
+   the page around it is still in one locale, so the `:root:lang()` rules above
+   never fire for those labels and the browser falls back to whatever system
+   font it can find — which shapes Burmese and Sinhala badly, or not at all.
+   Naming every face in one stack lets the browser pick per glyph. */
+.font-script-list {
+  font-family:
+    var(--font-inter), var(--font-noto-arabic), var(--font-noto-hebrew),
+    var(--font-noto-devanagari), var(--font-noto-bengali), var(--font-noto-tamil),
+    var(--font-noto-sinhala), var(--font-noto-thai), var(--font-noto-ethiopic),
+    var(--font-noto-myanmar), ui-sans-serif, system-ui, sans-serif;
+}
+
 /* Archivo carries no Cyrillic or Greek. Inter does, so display headings in
    Russian, Ukrainian and Greek fall back to it rather than to whatever the
-   system happens to offer. */
+   system happens to offer. Mongolian and Kazakh are Cyrillic too. */
 :root:lang(ru),
 :root:lang(uk),
-:root:lang(el) {
+:root:lang(el),
+:root:lang(mn),
+:root:lang(kk) {
   --font-display-stack: var(--font-archivo), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 

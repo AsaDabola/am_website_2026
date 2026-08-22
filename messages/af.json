@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Die een wat op 'n sending gestuur word",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Wie ons is",
+    "whatWeDo": "Wat ons doen",
+    "getInvolved": "Raak betrokke",
+    "connect": "Kontak",
+    "ourNetwork": "Ons netwerk",
+    "news": "Nuus",
+    "contactUs": "Kontak ons",
+    "give": "Gee",
+    "toggleNav": "Maak die navigasiekieslys oop of toe",
+    "whoWeAreMenu": {
+      "whoWeAre": "Wie ons is",
+      "ourMission": "Ons sending",
+      "statementOfFaith": "Geloofsbelydenis",
+      "history": "Geskiedenis",
+      "ourFirstChairmen": "Ons eerste voorsitters",
+      "membership": "Lidmaatskap",
+      "ourLeadership": "Ons leierskap"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Die pilare van ons sending",
+      "administration": "Administrasie",
+      "bibleStudyProgram": "Bybelstudieprogram",
+      "fourSpiritualThemes": "Vier Geestelike Temas",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Ons bedieninge"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Bybelstudies",
+      "groupActivities": "Groepaktiwiteite",
+      "volunteer": "Vrywilligerswerk",
+      "bibleTeacherTraining": "Opleiding vir Bybelonderwysers",
+      "internship": "Internskap",
+      "donate": "Skenk",
+      "onlineBibleStudy": "Aanlyn Bybelstudie",
+      "chapterAffiliation": "Aansluiting van 'n tak"
+    },
+    "newsMenu": {
+      "featured": "Uitgelig",
+      "events": "Geleenthede",
+      "editorial": "Artikels",
+      "photoNews": "Fotonuus",
+      "testimony": "Getuienisse"
+    },
+    "megaMenu": {
+      "aboutHeading": "Oor ons",
+      "whatWeDoHeading": "Wat ons doen",
+      "featuredHeading": "Uitgesoekte artikels",
+      "allArticles": "Alle artikels",
+      "ctaBibleStudy": "Begin 'n Bybelstudie",
+      "ctaFindChapter": "Vind jou tak",
+      "ctaGive": "Gee vandag"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "Oor AM",
+        "description": "Wie ons is, wat ons glo en waar ons vandaan kom."
+      },
+      "leadership": {
+        "title": "Leierskap",
+        "description": "Die mense wat die beweging dien en hoe jy kan deel word."
+      },
+      "whatWeDo": {
+        "title": "Wat ons doen",
+        "description": "Die pilare en bedieninge wat die sending vorentoe dra."
+      },
+      "bibleStudy": {
+        "title": "Bybelstudieprogram",
+        "description": "'n Pad in vyf fases, van jou eerste vraag tot om gestuur te word."
+      },
+      "getInvolved": {
+        "title": "Raak betrokke",
+        "description": "Vind jou plek in die beweging, waar jy ook al is."
+      },
+      "supportMission": {
+        "title": "Dien en ondersteun",
+        "description": "Kry opleiding, begin 'n tak, of vennoot met studente in die veld."
+      },
+      "latestNews": {
+        "title": "Jongste nuus",
+        "description": "Stories en opdaterings van reg oor die netwerk."
+      },
+      "events": {
+        "title": "Geleenthede",
+        "description": "Toevlugte, konferensies en byeenkomste naby jou."
+      }
+    },
+    "mobile": {
+      "back": "Terug",
+      "close": "Sluit kieslys",
+      "menu": "Kieslys"
+    }
+  },
+  "Footer": {
+    "tagline": "'n Interkerklike bediening wat toegewy is om die evangelie tot aan die eindes van die aarde te versprei en van die Here se ewige liefde te getuig.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, VSA",
+    "email": "info@amintl.org",
+    "whoWeAre": "Wie ons is",
+    "whatWeDo": "Wat ons doen",
+    "getInvolved": "Raak betrokke",
+    "media": "Media",
+    "aboutAM": "Oor AM",
+    "missionStatement": "Sendingverklaring",
+    "statementOfFaith": "Geloofsbelydenis",
+    "ourHistory": "Ons geskiedenis",
+    "leadership": "Leierskap",
+    "bibleStudyProgram": "Bybelstudieprogram",
+    "fourSpiritualThemes": "Vier Geestelike Temas",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Ons bedieninge",
+    "connectGrowLeadSent": "Kontak, Groei, Lei, Gestuur",
+    "chapterAffiliation": "Aansluiting van 'n tak",
+    "ourNetwork": "Ons netwerk",
+    "events": "Geleenthede",
+    "give": "Gee",
+    "news": "Nuus",
+    "legacyOfChairman": "Die nalatenskap van Ralph D. Winter",
+    "contactUs": "Kontak ons",
+    "copyright": "© 2026 Apostolos Missions International. Alle regte voorbehou.",
+    "contact": "Kontak"
+  },
+  "Logo": {
+    "international": "International"
+  },
+  "LanguageSwitcher": {
+    "label": "Taal"
+  },
+  "Common": {
+    "tagline": "'n Interkerklike bediening wat toegewy is om die evangelie tot aan die eindes van die aarde te versprei en van die Here se ewige liefde te getuig.",
+    "learnMore": "Lees meer",
+    "readMore": "Lees verder",
+    "clickHere": "Klik hier",
+    "home": "Tuis"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Wie ons is",
+    "missionStatement": "Sendingverklaring",
+    "statementOfFaith": "Geloofsbelydenis",
+    "history": "Geskiedenis",
+    "ourFirstChairman": "Ons eerste voorsitter",
+    "membership": "Lidmaatskap",
+    "leadership": "Leierskap"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Die Pilare van Ons Sending",
+    "administration": "Administrasie"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Donderdag se Bybelstudie",
+    "bibleStudies": "Bybelstudies",
+    "groupActivities": "Groepaktiwiteite",
+    "volunteer": "Vrywilligerswerk",
+    "chapterStaff": "Takpersoneel",
+    "bibleTeacherTraining": "Opleiding vir Bybelonderwysers",
+    "internship": "Internskap",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Skenk"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Uitgesoekte nuus",
+    "events": "Geleenthede",
+    "editorial": "Artikels",
+    "photoNews": "Fotonuus",
+    "testimony": "Getuienisse"
+  },
+  "InPractice": {
+    "eyebrow": "In die praktyk",
+    "heading": "Vier dinge wat ons oral doen waar ons kom.",
+    "bibleStudyTag": "Bybelstudie",
+    "bibleStudyDescription": "Studie in klein en groot groepe wat die Skrif in die middel van kampuslewe plaas.",
+    "leadershipTrainingTag": "Leierskapsopleiding",
+    "leadershipTrainingDescription": "Studente word toegerus om hul medestudente te lei, en dan die volgende groep uit te stuur.",
+    "onlineEducationTag": "Aanlyn onderrig",
+    "onlineEducationDescription": "AM Academy-kursusse oor die Skrif, sendingwetenskap en kruiskulturele bediening.",
+    "internshipsTripsTag": "Internskappe en reise",
+    "internshipsTripsDescription": "Korttermynsending en internskappe wat opleiding in praktyk omskep."
+  },
+  "AboutPage": {
+    "heroTitle": "Soos die Vader My gestuur het, stuur Ek julle ook.",
+    "breadcrumb": "Oor ons",
+    "paragraph1": "Apostolos Missions International (AM) is 'n interkerklike bediening wat toegewy is om die evangelie tot aan die eindes van die aarde te versprei en van die Here se ewige liefde te getuig.",
+    "paragraph2Prefix": "Die naam",
+    "paragraph2": "(ἀπόστολος) is die Griekse woord vir apostel. Dit beteken \"die een wat op 'n sending gestuur word\" of \"boodskapper\". Die titel \"apostel\" kom dikwels in die Nuwe Testament voor vir die twaalf dissipels wat Jesus aangestel het (Matteus 10:2, Markus 3:14, Lukas 6:13, Handelinge 2:42). Paulus, wat van 'n vervolger van die Christendom 'n groot verkondiger van die evangelie geword het, het homself as \"apostel\" voorgestel (Romeine 1:1, 1 Korintiërs 1:1, 2 Korintiërs 1:1, Galasiërs 1:1, Kolossense 1:1, 1 Timoteus 1:1, 2 Timoteus 1:1, Titus).",
+    "paragraph3": "Apostels is diegene wat deur die Here gestuur word om die sending te vervul om \"Jesus Christus te verkondig en God bekend te maak\" aan die hele skepping. Die Bybelse grondslag van die apostelskap lê in baie woorde van die Here, wat die eerste apostels gekies en hulle uitgestuur het soos gesante wat gestuur word om nasies te verteenwoordig. Die apostels het verstaan dat hulle lewe nie meer hulle eie was nie, maar dat hulle geleef het om die heerlikheid van Christus in hierdie gevalle wêreld te openbaar.",
+    "blockquote": "Johannes 20:21 sê: \"Jesus sê toe weer vir hulle: 'Vrede vir julle! Soos die Vader My gestuur het, stuur Ek julle ook.'\"",
+    "paragraph4": "AM wil in die tradisie van die apostels staan, wat geleef het as mense wat gestuur is om die Woord van God te verkondig. Elkeen van ons ontvang ook hierdie roeping van God om as sy hande en voete die wêreld in gestuur te word. Ons wil ons lewens daaraan wy om in Jesus se voetspore te volg en die Evangelie tot aan die eindes van die aarde te verkondig.",
+    "paragraph5": "Net soos ons lewens deur die Here aangeraak en verander is, wil ons die liefde van die Here wat aan ons bewys is, openbaar en 'n baken word vir al sy verlore kinders en vir ons broers en susters.",
+    "readStatementOfFaith": "Lees ons geloofsbelydenis",
+    "or": "of",
+    "traceHistory": "volg ons geskiedenis",
+    "cardStatementOfFaithTitle": "Lees ons geloofsbelydenis",
+    "cardMissionStatementTitle": "Sendingverklaring"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "AM-padkaart",
+    "roadmapHeading": "Wat kan jy verwag?",
+    "connectTag": "Kontak",
+    "connectItems": [
+      "Bybel persoonlik/aanlyn",
+      "Studieprogramme"
+    ],
+    "growTag": "Groei",
+    "growItems": [
+      "Groepaktiwiteite"
+    ],
+    "leadTag": "Lei",
+    "leadItems": [
+      "Vrywilligerswerk en internskappe",
+      "Takleiers"
+    ],
+    "sentTag": "Gestuur",
+    "sentItems": [
+      "Alumni Connect",
+      "Deeltydse en voltydse sendelinge",
+      "Bybelonderwysers"
+    ],
+    "connectHeading": "Kontak",
+    "connectStep1Title": "1. Teken in op ons webwerwe",
+    "connectStep1Body": "Daar is baie maniere om met AM in verbinding te bly. Jy kan op ons hoofwebwerf, www.amintl.org, inteken en nuusbriewe ontvang. Of jy kan op ons aanlyn Bybelskool se webwerf, www.amacademy.org, inteken en die jongste nuus en programme ontvang. Blaai gerus deur ons visie, aktiwiteite en programme op ons webwerwe, en stuur ons enige tyd 'n e-pos as jy vrae het.",
+    "connectStep2Title": "2. Skryf in om ons personeel te ontmoet",
+    "connectStep2BodyPrefix": "Voel vry om",
+    "connectStep2SignUp": "in te skryf",
+    "connectStep2BodySuffix": "hier as jy met een van ons personeellede wil gesels en begeleiding op jou geestelike pad wil ontvang. Jy kan 'n afspraak maak of ons personeel direk kontak. Baie van ons personeel het self kampuslewe beleef en verstaan die omstandighede wat studente in die gesig staar. Hulle sal jou help om die pad te vind wat die beste by jou geloofsreis pas.",
+    "connectStep3Title": "3. Skryf in vir Bybelstudie",
+    "connectStep3BodyPrefix": "As jy gereed is om ons Bybelstudieprogram te begin,",
+    "connectStep3SignUp": "skryf in",
+    "connectStep3BodySuffix": "op hierdie bladsy. As jy nie 'n gepaste rooster kry nie, stuur die versoekvorm met jou voorkeurkursus en -tyd!",
+    "connectStep4Title": "4. Skakel met die plaaslike tak",
+    "connectStep4BodyPrefix": "As jy met die kantoor en personeel van die plaaslike tak wil skakel, kontak ons asseblief",
+    "connectStep4ContactHere": "hier",
+    "connectStep4BodySuffix": ". Ons sien uit daarna om jou binnekort te ontmoet!",
+    "growHeading": "Groei",
+    "growIntro": "Net soos ons deur verskillende fases van die kinderjare groei en volwasse word, bereik ons ook belangrike mylpale in ons geestelike volwassenheid. AM bied talle programme en roetes wat ontwerp is om studente deur hierdie drie noodsaaklike fases van geestelike groei te begelei:",
+    "rebornTitle": "1. Weergebore",
+    "rebornBody": "Ons word weergebore deur Jesus se versoenende offer aan die kruis.",
+    "matureTitle": "1. Volwasse",
+    "matureBody": "Ons groei en word geestelik volwasse deur ons met die liefde en waarheid van Jesus te voed.",
+    "fruitfulTitle": "1. Vrugbaar",
+    "fruitfulBody": "Ons ervaar die vrugbaarheid van die lewe deur God se seën, wat vervul word in ons volwasse eenheid met Christus Jesus.",
+    "navigatingTitle": "Om jou pad in kampuslewe te vind",
+    "navigatingBody": "Kampuslewe is opwindend en vervullend, maar met soveel keuses kan dit ook doelloos voel. Deur waarheid en gebed help AM jou om God se wil te onderskei en duidelike leiding vir jou buitengewone lewe te vind.",
+    "nextStepsTitle": "Volgende stappe",
+    "nextStepsBody": "Bly betrokke by ons programme — maak gebruik van die vele geleenthede om die Woord te hoor, saam te bid, gemeenskap met broers en susters in die geloof te hê en te dien terwyl jy in die Evangelie groei.",
+    "leadHeading": "Lei",
+    "leadStep1Title": "1. Dien in die liefde van Christus",
+    "leadStep1Body": "Namate ons groei, verlang ons om diegene te dien wat hulp nodig het om by Jesus uit te kom. En terwyl ons dien, groei ons self dieper in die liefde van Christus.",
+    "leadStep2Title": "2. Die seën van leierskap",
+    "leadStep2Body": "Jesus het gesê: \"Om te gee, maak 'n mens gelukkiger as om te ontvang\" (Handelinge 20:35). Om ander te lei en te begelei verg wysheid, gebed, opoffering en geduld. Tog is dit 'n geseënde plek waar die heerlikheid van die kruis sy hoogtepunt bereik.",
+    "leadStep3Title": "3. Die seën van leierskap",
+    "leadStep3Body": "Hoewel studente nog jonk is, kan uitstaande gawes en vaardighede juis deur leiersrolle ontdek en veel kragtiger ontwikkel word. Dit is 'n pragtige proses waarin elke student sy hemelse gawes toets en bevestig deur die genadevolle ervaring van dien en lei.",
+    "leadStep4Title": "4. Geleenthede by AM",
+    "leadStep4Body": "AM bied studente uiteenlopende geleenthede en rolle om aan diens en leierskap deel te neem. Sluit aan by ons span vrywilligers, takpersoneel, takleiers, Bybelonderwysers en vele meer. Ontdek wat Jesus volgens sy uitnemende plan in jou geplant het.",
+    "sentHeading": "Gestuur",
+    "sentParagraph1": "Om te gradueer is nog 'n betekenisvolle vertrek na 'n wêreld wat wyd voor ons oop lê. Sommige van ons sal verder studeer of 'n loopbaan volg. Ander word voltydse AM-personeel, sendelinge of bedienaars, in antwoord op God se roeping.",
+    "sentParagraph2": "In hierdie beslissende stap bied AM programme waarmee jy verbonde kan bly en die sending van die Evangelie deur Alumni Connect kan bly dien. AM bied ook opleidingsprogramme en roetes om 'n professionele sendingwerker en personeellid by AM World Mission te word.",
+    "sentParagraph3": "Verskeie moontlikhede staan vir jou oop na 'n helder toekoms. AM wil naby elke mens loop sodat ons saam die Groot Opdrag kan vervul: \"Gaan dan na al die nasies toe en maak die mense my dissipels: doop hulle in die Naam van die Vader en die Seun en die Heilige Gees\" (Matteus 28:19).",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "Word 'n AM-Bybelonderwyser",
+    "sentLinkMissionaries": "Word 'n AM-sendeling",
+    "sentLinkStaff": "Voltydse personeel by AM se hoofkantoor",
+    "roadmapHeroTitle": "Groei op kampus: 'n Padkaart"
+  },
+  "Network": {
+    "breadcrumb": "Ons netwerk",
+    "heading": "Ons wêreldwye netwerk",
+    "joinChapter": "Sluit by 'n tak aan",
+    "partnerWithUs": "Vennoot met ons",
+    "exploreEyebrow": "Verken die wêreld",
+    "regionsHeading": "Streke",
+    "regionsSubheading": "Verken geografies",
+    "siteCount": "{count, plural, one {# werf} other {# werwe}}",
+    "communityEyebrow": "'n Wêreldwye gemeenskap",
+    "chaptersHeading": "Takke in uiteenlopende stede en hoeke van die wêreld",
+    "chaptersSoon": "Takke begin binnekort.",
+    "continentSubtitle": "AM se landswerwe in {region}.",
+    "noSitesTitle": "Nog geen werwe in {region} nie",
+    "noSitesBodyPrefix": "Ons bou nog AM se teenwoordigheid in hierdie streek. Kom binnekort weer, of",
+    "noSitesLink": "kontak ons",
+    "noSitesBodySuffix": "as jy wil help om een te begin.",
+    "visitSite": "Besoek werf",
+    "regions": {
+      "africa": "Afrika",
+      "asia": "Asië",
+      "europe": "Europa",
+      "northamerica": "Noord-Amerika",
+      "southamerica": "Latyns-Amerika en die Karibiese Eilande",
+      "oceania": "Oseanië"
+    },
+    "map": {
+      "world": "Wêreld",
+      "loading": "Laai tans…",
+      "zoomIn": "Zoem in",
+      "clear": "Vee uit",
+      "worldHint": "Beweeg oor 'n punt of kies dit om die stad te sien — 'n keuse zoem in op sy streek.",
+      "regionHint": "{count, plural, one {# tak} other {# takke}} in {region}. Kies 'n punt vir besonderhede, of keer terug na die wêreldkaart.",
+      "worldAria": "Wêreldkaart wat al {count} AM-takke wys. Gebruik die streekknoppies om in te zoem.",
+      "regionAria": "Kaart van {region} wat {count} AM-takke wys.",
+      "captionSouthAsia": "Suid-Asië",
+      "captionEastCentralAsia": "Oos- en Sentraal-Asië",
+      "captionSoutheastAsia": "Suidoos-Asië",
+      "hqBadge": "Hoofkantoor",
+      "regionalHqBadge": "Streekkantoor"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — die een wat gestuur word",
+      "headingLine1": "Waar die",
+      "headingWhere": "liefde van Jesus",
+      "headingWeAre": "oorvloei",
+      "joinBibleStudy": "Sluit aan by ons Bybelstudie",
+      "whoWeAre": "Wie ons is",
+      "stat1Value": "2003",
+      "stat1Label": "Stuur uit sedert",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, VSA",
+      "stat3Value": "Wêreldwyd",
+      "stat3Label": "Kampusnetwerk",
+      "dragToExplore": "Sleep om te verken"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Sluit aan by ons Bybelstudieprogram",
+      "heading": "'n Pad in 5 fases, van die eerste vraag tot om gestuur te word.",
+      "description": "AM se Bybelstudieprogram in 5 fases is 'n aanlyn dissipelskaps- en Bybelonderrigprogram wat studente deur 'n stelselmatige vloei lei om die Evangelie van Jesus Christus en die geloofslewe te leer ken. Die program bring studente saam met Bybelonderwysers wat volgens die luisteraar se rooster onderrig gee. Dit loop uit op die geleentheid om vrywilliger te word, as studentsendeling opgelei te word, of eenvoudig dieper in die Woord van God te delf saam met AM.",
+      "cta": "Begin die program"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Sluit aan by 'n Bybelstudie",
+      "joinBibleStudyDescription": "Die aanlyn dissipelskaps- en Bybelonderrigprogram in 5 fases.",
+      "findCampusTitle": "Vind jou kampus",
+      "findCampusDescription": "Ons netwerk van takke en gemeenskappe.",
+      "getInvolvedTitle": "Raak betrokke",
+      "getInvolvedDescription": "Kontak, groei, lei en word gestuur saam met AM.",
+      "supportTitle": "Ondersteun die sending",
+      "supportDescription": "Gee, bid en vennoot met studente in die veld."
+    },
+    "Ministries": {
+      "eyebrow": "Kontak · Groei · Lei · Gestuur",
+      "heading": "Vier stappe, en ons loop elkeen saam met jou.",
+      "getInvolved": "Raak betrokke",
+      "learnMore": "Lees meer",
+      "connectTitle": "Skakel met AM",
+      "connectDescription": "AM bied uiteenlopende Bybelstudieprogramme wat ons geestelike lewe en ons verhouding met die Here Jesus Christus voed.",
+      "growTitle": "Groei saam met AM",
+      "growDescription": "Sluit aan by ons Groepaktiwiteite en word saam volwasse in die gemeenskap van die waarheid. Ons groepprogramme gee elke student waardevolle ervarings om geestelike krag op te doen.",
+      "leadTitle": "Lei saam met AM",
+      "leadDescription": "AM verwelkom graag studente wat vrywilligerswerk wil doen en met hul Godgegewe talente in verskillende afdelings wil dien.",
+      "sentTitle": "Gestuur saam met AM",
+      "sentDescription": "AM sal saam met jou aanstap totdat jou kosbare roeping om \"gestuur te word\" in jou lewe vervul is, selfs ná jou graduering!",
+      "connectTag": "Kontak",
+      "growTag": "Groei",
+      "leadTag": "Lei",
+      "sentTag": "Gestuur"
+    },
+    "OurMission": {
+      "eyebrow": "Ons sending",
+      "statementPrefix": "Apostolos Missions se sending is om",
+      "statementEmphasis": "Jesus Christus en Hom as gekruisigde te verkondig",
+      "statementSuffix": "— terwyl 'n Christus-gesentreerde netwerk van jong Christene gekweek word vir die mobilisering van kampussending.",
+      "readFullStatement": "Lees die volledige sendingverklaring",
+      "nameOrigin": "Die naam apostolos is die Griekse woord vir apostel. Dit beteken \"die een wat op 'n sending gestuur word\".",
+      "history": "Wat begin het as 'n klein groepie passievolle jong studente in Los Angeles, Kalifornië, wat gretig was om die evangelie te versprei en Jesus bekend te maak, het 'n wêreldwye organisasie geword wat op universiteitskampusse regoor die wêreld werk.",
+      "ourHistory": "Ons geskiedenis"
+    },
+    "GetInvolved": {
+      "eyebrow": "Bly Verbonde",
+      "heading": "Raak betrokke",
+      "bibleStudies": "Bybelstudies",
+      "volunteer": "Vrywilligerswerk",
+      "internship": "Internskap"
+    },
+    "Media": {
+      "eyebrow": "Media",
+      "heading": "Onderrig, getuienis en die Woord.",
+      "moreContents": "Meer inhoud",
+      "playVideo": "Speel die AM-inleidingsvideo",
+      "post1Title": "Vier Geestelike Temas – Oorsig",
+      "post2Title": "Wat is verlossing? | Sola Fide Deel 1 – AM Academy",
+      "post3Title": "Die era van dissipelskap op sosiale media: om studente aan die werklikheid van die Evangelie te verbind",
+      "post4Title": "God se beloftes vir die nuwe jaar",
+      "post1Date": "5 Januarie 2026",
+      "post2Date": "27 Junie 2023",
+      "post3Date": "3 Junie 2022",
+      "post4Date": "2 Januarie 2022"
+    },
+    "Events": {
+      "eyebrow": "Geleenthede",
+      "heading": "Waar die netwerk bymekaarkom.",
+      "allEvents": "Alle geleenthede",
+      "event1Date": "4–5 April",
+      "event1Title": "Paastoevlug",
+      "event2Date": "18 Februarie",
+      "event2Title": "Veertigdaagse Lydenstyd-wandeling",
+      "event3Date": "16 Januarie",
+      "event3Title": "Byeenkoms van nuwe takleiers"
+    },
+    "OurNetwork": {
+      "eyebrow": "Ons netwerk",
+      "heading": "Daar is dalk reeds 'n gemeenskap op jou kampus.",
+      "description": "Soek volgens instelling of stad. As niks naby jou opduik nie, sien dit as 'n uitnodiging — ons sal jou help om een te begin.",
+      "startChapter": "Begin 'n tak",
+      "searchPlaceholder": "Soek instelling of stad",
+      "noMatches": "Nog geen resultate nie — kontak ons en ons help jou om te begin."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Ons eerste ere-voorsitter",
+      "followingLegacy": "In die voetspore van",
+      "name": "Dr. Ralph D. Winter",
+      "quoteLine1": "Gaan dan",
+      "quoteLine2": "na al die nasies toe",
+      "quoteLine3": "en maak hulle my dissipels…",
+      "quoteReference": "—Matteus 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Vennoot met ons",
+      "heading": "Stuur iemand wat jy nooit sal ontmoet nie.",
+      "description": "Elke gawe bring Bybelstudie, opleiding en 'n stuurgemeenskap binne bereik van studente wat gereed is om te gaan.",
+      "giveToday": "Gee vandag",
+      "talkToUs": "Gesels met ons"
+    },
+    "Newsletter": {
+      "heading": "Veldnotas van die kampusse",
+      "description": "'n Kort maandelikse brief: wat studente sien, waarheen AM volgende op pad is, en hoe om te bid.",
+      "cta": "AM Academy"
+    }
+  }
+}

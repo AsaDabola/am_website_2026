@@ -1,0 +1,433 @@
+{
+  "AnnouncementBar": {
+    "tagline": "Apostolos · Quel ch'è tramess en missiun",
+    "amAcademy": "AM Academy"
+  },
+  "Header": {
+    "whoWeAre": "Tgi che nus essan",
+    "whatWeDo": "Tge che nus fain",
+    "getInvolved": "S'engaschar",
+    "connect": "Colliar",
+    "ourNetwork": "Nossa Rait",
+    "news": "Novitads",
+    "contactUs": "Contactar",
+    "give": "Donar",
+    "toggleNav": "Avrir u serrar il menu da navigaziun",
+    "whoWeAreMenu": {
+      "whoWeAre": "Tgi che nus essan",
+      "ourMission": "Nossa missiun",
+      "statementOfFaith": "Decleraziun da la cardientscha",
+      "history": "Istorgia",
+      "ourFirstChairmen": "Noss emprims presidents",
+      "membership": "Commembranza",
+      "ourLeadership": "Nossa direcziun"
+    },
+    "whatWeDoMenu": {
+      "pillarsOfMission": "Ils pilasters da nossa missiun",
+      "administration": "Administraziun",
+      "bibleStudyProgram": "Program da studi biblic",
+      "fourSpiritualThemes": "Quatter temas spiritualas",
+      "amAcademy": "AM Academy",
+      "ourMinistries": "Noss ministeris"
+    },
+    "getInvolvedMenu": {
+      "bibleStudies": "Studis biblics",
+      "groupActivities": "Activitads da gruppa",
+      "volunteer": "Voluntariat",
+      "bibleTeacherTraining": "Furmaziun da magisters da bibla",
+      "internship": "Praticum",
+      "donate": "Far ina donaziun",
+      "onlineBibleStudy": "Studi biblic online",
+      "chapterAffiliation": "Affiliaziun ad ina secziun"
+    },
+    "newsMenu": {
+      "featured": "En evidenza",
+      "events": "Eveniments",
+      "editorial": "Editorial",
+      "photoNews": "Novitads en fotos",
+      "testimony": "Testimoni"
+    },
+    "megaMenu": {
+      "aboutHeading": "Davart nus",
+      "whatWeDoHeading": "Tge che nus fain",
+      "featuredHeading": "Artitgels en evidenza",
+      "allArticles": "Tut ils artitgels",
+      "ctaBibleStudy": "Cumenzar in studi biblic",
+      "ctaFindChapter": "Chattar tia secziun",
+      "ctaGive": "Donar oz"
+    },
+    "groups": {
+      "aboutAm": {
+        "title": "Davart AM",
+        "description": "Tgi che nus essan, tge che nus crain e nua che nus vegnin."
+      },
+      "leadership": {
+        "title": "Direcziun",
+        "description": "Las persunas che servan il moviment e co dvantar part da quel."
+      },
+      "whatWeDo": {
+        "title": "Tge che nus fain",
+        "description": "Ils pilasters ed ils ministeris che portan la missiun vinavant."
+      },
+      "bibleStudy": {
+        "title": "Program da studi biblic",
+        "description": "In percurs da tschintg fasas da tia emprima dumonda fin ad esser tramess."
+      },
+      "getInvolved": {
+        "title": "S'engaschar",
+        "description": "Chatta tia plazza en il moviment, nua ch'i saja che ti es."
+      },
+      "supportMission": {
+        "title": "Servir e sustegnair",
+        "description": "Sa furmar, cumenzar ina secziun u colavurar cun students sin il champ."
+      },
+      "latestNews": {
+        "title": "Ultimas novitads",
+        "description": "Istorgias ed actualisaziuns da l'entira rait."
+      },
+      "events": {
+        "title": "Eveniments",
+        "description": "Retretgas, conferenzas e radunanzas datiers da tai."
+      }
+    },
+    "mobile": {
+      "back": "Enavos",
+      "close": "Serrar il menu",
+      "menu": "Menu"
+    }
+  },
+  "Footer": {
+    "tagline": "In ministeri interconfessiunal ch'è engaschà da derasar l'evangeli fin a la fin dal mund, testimoniond l'amur etern dal Segner.",
+    "orgName": "Apostolos Missions International",
+    "orgLocation": "Trenton, New Jersey, USA",
+    "email": "info@amintl.org",
+    "whoWeAre": "Tgi che nus essan",
+    "whatWeDo": "Tge che nus fain",
+    "getInvolved": "S'engaschar",
+    "media": "Medias",
+    "aboutAM": "Davart AM",
+    "missionStatement": "Decleraziun da missiun",
+    "statementOfFaith": "Decleraziun da la cardientscha",
+    "ourHistory": "Nossa istorgia",
+    "leadership": "Direcziun",
+    "bibleStudyProgram": "Program da studi biblic",
+    "fourSpiritualThemes": "Quatter temas spiritualas",
+    "amAcademy": "AM Academy",
+    "ourMinistries": "Noss ministeris",
+    "connectGrowLeadSent": "Colliar, Crescher, Manar, Vegnir tramess",
+    "chapterAffiliation": "Affiliaziun ad ina secziun",
+    "ourNetwork": "Nossa Rait",
+    "events": "Eveniments",
+    "give": "Donar",
+    "news": "Novitads",
+    "legacyOfChairman": "L'ierta da Ralph D. Winter",
+    "contactUs": "Contactar",
+    "copyright": "© 2026 Apostolos Missions International. Tut ils dretgs resalvads.",
+    "contact": "Contact"
+  },
+  "Logo": {
+    "international": "Internaziunal"
+  },
+  "LanguageSwitcher": {
+    "label": "Lingua"
+  },
+  "Common": {
+    "tagline": "In ministeri interconfessiunal ch'è engaschà da derasar l'evangeli fin a la fin dal mund, testimoniond l'amur etern dal Segner.",
+    "learnMore": "Ulteriuras infurmaziuns",
+    "readMore": "Leger dapli",
+    "clickHere": "Cliccar qua",
+    "home": "Pagina iniziala"
+  },
+  "AboutSubNav": {
+    "whoWeAre": "Tgi che nus essan",
+    "missionStatement": "Decleraziun da missiun",
+    "statementOfFaith": "Decleraziun da la cardientscha",
+    "history": "Istorgia",
+    "ourFirstChairman": "Noss emprim president",
+    "membership": "Commembranza",
+    "leadership": "Direcziun"
+  },
+  "WhatWeDoSubNav": {
+    "pillarsOfMission": "Ils pilasters da nossa missiun",
+    "administration": "Administraziun"
+  },
+  "GetInvolvedSubNav": {
+    "thursdayBibleStudy": "Studi biblic dal gievgia",
+    "bibleStudies": "Studis biblics",
+    "groupActivities": "Activitads da gruppa",
+    "volunteer": "Voluntariat",
+    "chapterStaff": "Persunal da la secziun",
+    "bibleTeacherTraining": "Furmaziun da magisters da bibla",
+    "internship": "Praticum",
+    "alumniConnect": "Alumni Connect",
+    "donate": "Far ina donaziun"
+  },
+  "NewsSubNav": {
+    "featuredNews": "Novitads en evidenza",
+    "events": "Eveniments",
+    "editorial": "Editorial",
+    "photoNews": "Novitads en fotos",
+    "testimony": "Testimoni"
+  },
+  "InPractice": {
+    "eyebrow": "En la pratica",
+    "heading": "Quatter chaussas che nus fain dapertut nua che nus giain.",
+    "bibleStudyTag": "Studi biblic",
+    "bibleStudyDescription": "Studi en pitschnas e grondas gruppas che metta la Scrittira en il center da la vita da campus.",
+    "leadershipTrainingTag": "Furmaziun da direcziun",
+    "leadershipTrainingDescription": "Ils students vegnan accumpagnads per manar lur collegas e lura per trametter la proxima gruppa.",
+    "onlineEducationTag": "Furmaziun online",
+    "onlineEducationDescription": "Curs da la AM Academy en Scrittira, missiologia e ministeri interculturel.",
+    "internshipsTripsTag": "Praticums e viadis",
+    "internshipsTripsDescription": "Missiuns da curta durada e praticums che transfurman la furmaziun en pratica."
+  },
+  "AboutPage": {
+    "heroTitle": "Sco il Bab ha tramess mai, uschia tramett jau vus.",
+    "breadcrumb": "Davart nus",
+    "paragraph1": "Apostolos Missions International (AM) è in ministeri interconfessiunal ch'è engaschà da derasar l'evangeli fin a la fin dal mund, testimoniond l'amur etern dal Segner.",
+    "paragraph2Prefix": "Il num",
+    "paragraph2": "(ἀπόστολος) è il pled grec per apostel. El signifitga \"quel ch'è tramess en missiun\" u \"messadier.\" Il titel \"apostel\" cumpara savens en il Nov Testament per represchentar ils Dudesch discipuls numnads da Jesus (Matteus 10:2, Marcus 3:14, Lucas 6:13, Acts 2:42). Paulus, in anteriur persecutur da la cristianadad ch'è daventà in grond herold da l'evangeli, s'ha preschentà sco \"apostel\" (Romans 1:1, 1 Corinters 1:1, 2 Corinters 1:1, Galaters 1:1, Colossers 1:1, 1 Timoteus 1:1, 2 Timoteus 1:1, Titus).",
+    "paragraph3": "Ils apostels èn quels ch'èn tramess dal Segner per ademplir la missiun da \"predegiar Jesus Cristus e far enconuschent Dieu\" a l'entira creaziun. Il fundament biblic da l'apostolat sa chatta en blers pleds dal Segner ch'ha tschernì ils emprims apostels ed als ha tramess sco ambassadurs mandads per represchentar differentas naziuns. Ils apostels han chapì che lur vita n'era betg mo la lur, mabain ch'els vivevan per revelar la gloria da Cristus en quest mund crudà.",
+    "blockquote": "Johannes 20:21 di: \"Puspè ha Jesus ditg: 'Pasch cun vus! Sco il Bab ha tramess mai, uschia tramett jau vus.'\" (NIV)",
+    "paragraph4": "AM vul suandar la tradiziun dals apostels ch'han vivì sco glieud en missiun per proclamar il Pled da Dieu. Mintga in da nus retscheiva era questa vocaziun da Dieu, per vegnir tramess en il mund sco Sias mauns e Sias peis. Nus vulain dedicar nossa vita per suandar las fastizs da Jesus e proclamar l'Evangeli fin a la fin dal mund.",
+    "paragraph5": "Uschia sco nossa vita è vegnida tutgada e midada dal Segner, uschia vulain nus revelar l'amur dal Segner che nus vain survegnì, e daventar in lumin per tut Sias uffants pers e per noss frars e nossas soras.",
+    "readStatementOfFaith": "Leger nossa decleraziun da la cardientscha",
+    "or": "u",
+    "traceHistory": "suandar l'istorgia",
+    "cardStatementOfFaithTitle": "Leger nossa decleraziun da la cardientscha",
+    "cardMissionStatementTitle": "Decleraziun da missiun"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "Il percurs da AM",
+    "roadmapHeading": "Tge vegn spetgà?",
+    "connectTag": "Colliar",
+    "connectItems": [
+      "Bibla sin plaz/online",
+      "Programs da studi"
+    ],
+    "growTag": "Crescher",
+    "growItems": [
+      "Activitads da gruppa"
+    ],
+    "leadTag": "Manar",
+    "leadItems": [
+      "Voluntariat e praticums",
+      "Manaders da secziun"
+    ],
+    "sentTag": "Vegnir tramess",
+    "sentItems": [
+      "Alumni Connect",
+      "Missiunaris a temp parzial u a temp cumplet",
+      "Magisters da bibla"
+    ],
+    "connectHeading": "Colliar",
+    "connectStep1Title": "1. Abunar nossas paginas d'internet",
+    "connectStep1Body": "I dat bleras pussaivladads da vegnir en contact cun AM. Ti pos abunar nossa pagina d'internet principala, www.amintl.org, e retschaiver newsletters. U ti pos abunar la pagina da nossa scola biblica online, www.amacademy.org, e retschaiver las ultimas novitads e programs. Guarda tranquilamain nossa visiun, nossas activitads e noss programs sin nossas paginas d'internet e scriva ins in e-mail da tut temp, sche ti has dumondas.",
+    "connectStep2Title": "2. S'annunziar per inscuntrar noss persunal",
+    "connectStep2BodyPrefix": "Ti pos",
+    "connectStep2SignUp": "t'annunziar",
+    "connectStep2BodySuffix": "qua, sche ti vuls discurrer cun in da noss collavuraturs e retschaiver cussegliaziun sin tes viadi spiritual. Ti pos fixar in termin u contactar noss persunal. Blers da noss collavuraturs han experientscha en la vita da campus e chapeschan las situaziuns che students d'universitad rescuntran. Els t'gidan a chattar il percurs il pli adattà per tes viadi da cardientscha.",
+    "connectStep3Title": "3. S'annunziar per il studi biblic",
+    "connectStep3BodyPrefix": "Sche ti es pront per cumenzar noss program da studi biblic,",
+    "connectStep3SignUp": "annunzia tai",
+    "connectStep3BodySuffix": "sin questa pagina. Sche ti na chattas betg in urari ch'è adattà, tramet il formular da dumonda cun tes curs e tes temp preferì!",
+    "connectStep4Title": "4. Colliar cun la secziun locala",
+    "connectStep4BodyPrefix": "Sche ti vuls vegnir en contact cun noss biro da secziun local e cun ses persunal, per plaschair",
+    "connectStep4ContactHere": "contactar qua",
+    "connectStep4BodySuffix": ". Nus ans allegrain da t'inscuntrar bainprest!",
+    "growHeading": "Crescher",
+    "growIntro": "Uschia sco nus creschain e maturain tras differentas fasas da nossa uffanza, uschia cuntanschain nus era etappas centralas en nossa maturitad spirituala. AM porscha numerus programs e percurs concepids per accumpagnar ils students tras mintgina da questas trais fasas essenzialas da la creschientscha spirituala:",
+    "rebornTitle": "1. Renaschì",
+    "rebornBody": "Nus vegnin renaschids tras il sacrifizi expiatoric da Jesus sin la crusch.",
+    "matureTitle": "1. Matur",
+    "matureBody": "Nus creschain e maturain spiritualmain, alimentads da l'amur e da la vardad da Jesus.",
+    "fruitfulTitle": "1. Fritgaivel",
+    "fruitfulBody": "Nus experimentain la fritgaivladad da la vita tras la benedicziun da Dieu, ademplida en nossa unitad matura cun Cristus Jesus.",
+    "navigatingTitle": "Navigar la vita da campus",
+    "navigatingBody": "La vita da campus è excitanta e cuntentanta, ma cun uschè bleras schelziglias a disposiziun, po ella era parair senza direcziun. Tras vardad ed uraziun gida AM a discerner la voluntad da Dieu ed a chattar ina direcziun clera per tia vita extraordinaria.",
+    "nextStepsTitle": "Proxims pass",
+    "nextStepsBody": "Participescha vinavant a noss programs — profitescha da las bleras occasiuns per udir il Pled, per urar ensemen, per avair communitad cun frars e soras en la cardientscha e per servir entant che ti creschas en l'Evangeli.",
+    "leadHeading": "Manar",
+    "leadStep1Title": "1. Servir en l'amur da Cristus",
+    "leadStep1Body": "Entant che nus creschain, giavischain nus da servir auters che dovran agid per vegnir tar Jesus. Entant che nus servin, creschain nus era pli profundamain en l'amur da Cristus.",
+    "leadStep2Title": "2. La benedicziun da la direcziun",
+    "leadStep2Body": "Jesus ha ditg: \"Igl è pli beà da dar che da retschaiver\" (Acts 20:35). Manar ed accumpagnar auters pretenda savida, uraziun, sacrifizi e pazienza. Ma igl è in lieu beà, nua che la gloria da la crusch cuntanscha ses culmen.",
+    "leadStep3Title": "3. La benedicziun da la direcziun",
+    "leadStep3Body": "Schebain ch'ils students d'universitad èn anc giuvens, pon dunativs e talents excellents vegnir scuvrids e sviluppads anc pli fermamain tras rollas da direcziun. Igl è in process bel, cur che mintga student examinescha e conferma ses dunativs celests tras l'experientscha da grazia dal servir e dal manar.",
+    "leadStep4Title": "4. Occasiuns cun AM",
+    "leadStep4Body": "AM porscha differentas occasiuns e rollas per che students possan participar al servetsch ed a la direcziun. Fa part da nossa squadra da voluntaris, dal persunal da secziun, dals manaders da secziun, dals magisters da bibla e da blers auters. Scuvra tge che Jesus ha plantà en tai tenor Ses plan excellent.",
+    "sentHeading": "Vegnir tramess",
+    "sentParagraph1": "La finiziun da l'universitad è ina ulteriura partenza impurtanta vers in mund vast ed avert, che nus pudain explorar. Insaquants da nus vegnan forsa a cuntinuar la furmaziun u a prender in percurs professiunal. Insaquants da nus dvantan era collavuraturs a temp cumplet da AM, missiunaris u pastuors che suandan la vocaziun da Dieu.",
+    "sentParagraph2": "En quest pass decisiv porscha AM programs cun ils quals ti pos restar collià e cuntinuar a servir la missiun da l'Evangeli tras Alumni Connect. AM porscha era programs da furmaziun e percurs per dvantar collavuratur da missiun professiunal e persunal en AM World Mission.",
+    "sentParagraph3": "Differentas opziuns èn avertas per tai vers in avegnir clar. AM giavischa da chaminar datiers cun mintga singula persuna per manar nus tuts ensemen vers la Gronda Missiun: \"Giai perquai ed instruì tut ils pievels, els batigiond en il num dal Bab e dal Figl e dal Spiert Sonch (Matteus 28:19).\"",
+    "sentLinkAlumniConnect": "Alumni Connect",
+    "sentLinkBibleTeachers": "Dvantar magister da bibla da AM",
+    "sentLinkMissionaries": "Dvantar missiunari da AM",
+    "sentLinkStaff": "Collavuratur a temp cumplet en la sedia principala da AM",
+    "roadmapHeroTitle": "Crescher sin il campus: in percurs"
+  },
+  "Network": {
+    "breadcrumb": "Nossa Rait",
+    "heading": "Nossa rait globala",
+    "joinChapter": "Sa participar ad ina secziun",
+    "partnerWithUs": "Colavurar cun nus",
+    "exploreEyebrow": "Explorar il mund",
+    "regionsHeading": "Regiuns",
+    "regionsSubheading": "Explorar geograficamain",
+    "siteCount": "{count, plural, =1 {# pagina} other {# paginas}}",
+    "communityEyebrow": "Ina communitad mundiala",
+    "chaptersHeading": "Secziuns en differentas citads e chantuns dal mund",
+    "chaptersSoon": "Secziuns vegnan avertas bainprest.",
+    "continentSubtitle": "Paginas naziunalas da AM en {region}.",
+    "noSitesTitle": "Anc naginas paginas en {region}",
+    "noSitesBodyPrefix": "Nus construin anc la preschientscha da AM en questa regiun. Turnescha bainprest u",
+    "noSitesLink": "contactescha nus",
+    "noSitesBodySuffix": "sche ti vuls gidar a cumenzar ina.",
+    "visitSite": "Visitar la pagina",
+    "regions": {
+      "africa": "Africa",
+      "asia": "Asia",
+      "europe": "Europa",
+      "northamerica": "America dal Nord",
+      "southamerica": "America Latina e Caribica",
+      "oceania": "Oceania"
+    },
+    "map": {
+      "world": "Mund",
+      "loading": "Chargiar…",
+      "zoomIn": "Zoomar",
+      "clear": "Stizzar",
+      "worldHint": "Passa cun il mieur u tscherna in punct per vesair la citad — tscherna in per zoomar en sia regiun.",
+      "regionHint": "{count, plural, =1 {# secziun} other {# secziuns}} en {region}. Tscherna in punct per detagls u turnescha a la charta dal mund.",
+      "worldAria": "Charta dal mund che mussa tut las {count} secziuns da AM. Utilisescha ils buttuns da regiun per zoomar.",
+      "regionAria": "Charta da {region} che mussa {count} secziuns da AM.",
+      "captionSouthAsia": "Asia dal Sid",
+      "captionEastCentralAsia": "Asia da l'Ost e centrala",
+      "captionSoutheastAsia": "Asia dal Sidost",
+      "hqBadge": "SEDIA",
+      "regionalHqBadge": "Sedia regiunala"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Apostolos — quel ch'è tramess",
+      "headingLine1": "Nua che",
+      "headingWhere": "l'amur da Jesus",
+      "headingWeAre": "Deborda",
+      "joinBibleStudy": "Sa participar a noss studi biblic",
+      "whoWeAre": "Tgi che nus essan",
+      "stat1Value": "2003",
+      "stat1Label": "Nus tramettain dapi",
+      "stat2Value": "Trenton",
+      "stat2Label": "New Jersey, USA",
+      "stat3Value": "Global",
+      "stat3Label": "Rait da campus",
+      "dragToExplore": "Tira per explorar"
+    },
+    "BibleStudyProgram": {
+      "eyebrow": "Sa participar a noss program da studi biblic",
+      "heading": "In percurs da 5 fasas da l'emprima dumonda fin ad esser tramess.",
+      "description": "Il program da studi biblic da 5 fasas da AM è in program online da discipulat e da furmaziun biblica che maina ils students tras in svilup sistematic da l'emprender da l'Evangeli da Jesus Cristus e da la vita da cardientscha. Il program raduna ils students cun magisters da bibla che dattan l'instrucziun tenor l'urari da l'auditur. El culminescha en l'occasiun da far voluntariat, da sa furmar sco student missiunari u simplamain d'approfundar il Pled da Dieu cun AM.",
+      "cta": "Cumenzar il program"
+    },
+    "QuickLinks": {
+      "joinBibleStudyTitle": "Sa participar ad in studi biblic",
+      "joinBibleStudyDescription": "Il program online da discipulat e da furmaziun biblica da 5 fasas.",
+      "findCampusTitle": "Chattar tes campus",
+      "findCampusDescription": "Nossa rait da secziuns e da communitads.",
+      "getInvolvedTitle": "S'engaschar",
+      "getInvolvedDescription": "Colliar, crescher, manar e vegnir tramess cun AM.",
+      "supportTitle": "Sustegnair la missiun",
+      "supportDescription": "Donar, urar e colavurar cun students sin il champ."
+    },
+    "Ministries": {
+      "eyebrow": "Colliar · Crescher · Manar · Vegnir tramess",
+      "heading": "Quatter pass, e nus chaminain mintgin da quels cun tai.",
+      "getInvolved": "S'engaschar",
+      "learnMore": "Ulteriuras infurmaziuns",
+      "connectTitle": "Colliar cun AM",
+      "connectDescription": "AM porscha differents programs da studi biblic che nutreschan nossa vita spirituala e nossa relaziun cun il Segner Jesus Cristus.",
+      "growTitle": "Crescher cun AM",
+      "growDescription": "Fa part da nossas activitads da gruppa e maturescha ensemen en la communitad da la vardad. Noss programs da gruppa porschan experientschas da auta qualitad per che mintga student possa survegnir forza spirituala.",
+      "leadTitle": "Manar cun AM",
+      "leadDescription": "AM è ludaivla da beneventar students ch'èn interessads a far voluntariat ed a servir cun lur talents dads da Dieu en differents secturs.",
+      "sentTitle": "Vegnir tramess cun AM",
+      "sentDescription": "AM vegn a chaminar vinavant cun tai fin che tia vocaziun preziusa d'\"esser tramess\" è ademplida en tia vita — era suenter tia finiziun da l'universitad!",
+      "connectTag": "Colliar",
+      "growTag": "Crescher",
+      "leadTag": "Manar",
+      "sentTag": "Vegnir tramess"
+    },
+    "OurMission": {
+      "eyebrow": "Nossa missiun",
+      "statementPrefix": "La missiun da Apostolos Missions è da",
+      "statementEmphasis": "predegiar Jesus ed el crucifitgà",
+      "statementSuffix": "— promovend ina rait da giuvens cristians centrada sin Cristus per la mobilisaziun da la missiun da campus.",
+      "readFullStatement": "Leger la decleraziun da missiun cumpletta",
+      "nameOrigin": "Il num apostolos è il pled grec per apostel. El signifitga \"quel ch'è tramess en missiun.\"",
+      "history": "Quai ch'ha cumenzà sco ina pitschna gruppa da giuvens students passiunads a Los Angeles, California, ch'eran fermamain motivads da derasar l'evangeli e da far enconuschent Jesus, è daventà ina organisaziun globala ch'è activa sin campus universitars en il mund entir.",
+      "ourHistory": "Nossa istorgia"
+    },
+    "GetInvolved": {
+      "eyebrow": "Vegnir en contact",
+      "heading": "S'engaschar",
+      "bibleStudies": "Studis biblics",
+      "volunteer": "Voluntariat",
+      "internship": "Praticum"
+    },
+    "Media": {
+      "eyebrow": "Medias",
+      "heading": "Instrucziun, testimoni ed il Pled.",
+      "moreContents": "Ulteriurs cuntegns",
+      "playVideo": "Far ir il video d'introducziun da AM",
+      "post1Title": "Quatter temas spiritualas – survista",
+      "post2Title": "Tge è la salvezza? | Sola Fide part 1 – AM Academy",
+      "post3Title": "L'epoca dal discipulat sin las medias socialas: colliar students cun la realitad da l'Evangeli",
+      "post4Title": "Las empermischuns da Dieu per il nov onn",
+      "post1Date": "5 da schaner 2026",
+      "post2Date": "27 da zercladur 2023",
+      "post3Date": "3 da zercladur 2022",
+      "post4Date": "2 da schaner 2022"
+    },
+    "Events": {
+      "eyebrow": "Eveniments",
+      "heading": "Nua che la rait sa raduna.",
+      "allEvents": "Tut ils eveniments",
+      "event1Date": "4–5 d'avrigl",
+      "event1Title": "Retretga da Pasca",
+      "event2Date": "18 da favrer",
+      "event2Title": "Chaminada da 40 dis da quaraisma",
+      "event3Date": "16 da schaner",
+      "event3Title": "Radunanza dals nov manaders da secziun"
+    },
+    "OurNetwork": {
+      "eyebrow": "Nossa rait",
+      "heading": "Forsa dat i gia ina communitad sin tes campus.",
+      "description": "Tschertga tenor scola u citad. Sche i na cumpara nagut datiers da tai, è quai in invit — nus t'gidain a cumenzar ina.",
+      "startChapter": "Cumenzar ina secziun",
+      "searchPlaceholder": "Tschertgar scola u citad",
+      "noMatches": "Anc naginas correspundenzas — contactescha nus e nus t'gidain a cumenzar ina."
+    },
+    "HonoraryChairman": {
+      "eyebrow": "Noss emprim president d'onur",
+      "followingLegacy": "Suandond l'ierta da",
+      "name": "Dr. Ralph D. Winter",
+      "quoteLine1": "Giai perquai",
+      "quoteLine2": "ed instruì",
+      "quoteLine3": "tut ils pievels…",
+      "quoteReference": "—Matteus 28:19"
+    },
+    "PartnerWithUs": {
+      "eyebrow": "Colavurar cun nus",
+      "heading": "Trametta insatgi che ti na vegns mai ad inscuntrar.",
+      "description": "Mintga don metta studi biblic, furmaziun ed ina communitad che tramet a la purtada da students ch'èn pronts da partir.",
+      "giveToday": "Donar oz",
+      "talkToUs": "Discurrer cun nus"
+    },
+    "Newsletter": {
+      "heading": "Notizias dals campus",
+      "description": "Ina curta brev mensila: tge ch'ils students vesan, nua che AM va vinavant e co urar.",
+      "cta": "AM Academy"
+    }
+  }
+}

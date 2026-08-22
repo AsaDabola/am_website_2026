@@ -35,11 +35,19 @@ export default function LanguageSwitcher({ dark = false }: { dark?: boolean }) {
       </button>
 
       {open && (
-        <ul className="absolute end-0 top-full z-50 mt-2 w-40 rounded-xl border border-black/5 bg-white p-1.5 text-ink shadow-xl">
+        // The site ships ~50 locales, so this list is far taller than the
+        // viewport as a single column: it needs both the height cap (or the
+        // tail is unreachable below the fold) and the second column (or the
+        // scroll is long enough that nobody reaches the bottom of it).
+        <ul className="font-script-list absolute end-0 top-full z-50 mt-2 grid max-h-[70vh] w-44 grid-cols-1 gap-x-1 overflow-y-auto overscroll-contain rounded-xl border border-black/5 bg-white p-1.5 text-ink shadow-xl sm:w-88 sm:grid-cols-2">
           {locales.map((code) => (
             <li key={code}>
               <button
                 type="button"
+                // Each label is written in its own language, so tag it as such
+                // — it drives font fallback above and stops a screen reader
+                // reading "Français" with the surrounding locale's voice.
+                lang={code}
                 onMouseDown={(event) => {
                   event.preventDefault();
                   router.replace(pathname, { locale: code });
