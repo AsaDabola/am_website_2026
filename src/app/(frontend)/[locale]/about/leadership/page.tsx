@@ -25,7 +25,7 @@ const featuredLeaders = [
     name: "Rani Reid",
     title: "Executive Director",
     bio: "Rani Reid is our Executive Director who steers and leads the administration, mission and operation of AM world mission.",
-    image: null,
+    image: "/images/leader-reid.jpg",
   },
 ];
 
