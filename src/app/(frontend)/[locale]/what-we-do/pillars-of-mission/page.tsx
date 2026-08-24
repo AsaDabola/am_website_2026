@@ -74,15 +74,21 @@ export default async function PillarsOfMissionPage() {
 
       <section className="overflow-hidden bg-night-deep py-20">
         <Container>
-          <h2 className="text-center font-display text-[32px] font-extrabold uppercase leading-none tracking-[-0.02em] text-transparent [-webkit-text-stroke:1.5px_rgba(255,255,255,0.55)] sm:text-[52px] lg:text-[68px]">
+          {/* The same ghost treatment as the page title above it: Archivo
+              Black, sentence case, outlined in the brand blue. The design
+              sets it at 96px, but it draws this page on a 1450px content
+              column against the 1120px every other page here uses — at 96px
+              the line breaks in two, and the whole point of it is the one
+              unbroken sweep, so it is sized to hold that instead. */}
+          <h2 className="text-center font-display text-[32px] font-black leading-none tracking-[-0.02em] text-transparent [-webkit-text-stroke:2px_var(--color-brand-blue)] sm:text-[52px] lg:text-[68px]">
             One Movement, Every Nation
           </h2>
 
-          {/* The photograph is a landscape frame with its caption sitting
+          {/* The photograph is a 3:2 landscape frame with its caption sitting
               under it, not a bare 4:3 tile, and the halves are even. */}
           <div className="mt-14 grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
             <figure className="m-0">
-              <div className="relative aspect-[3/2] overflow-hidden rounded-lg">
+              <div className="relative aspect-[3/2] overflow-hidden rounded-2xl">
                 <Image
                   src="/images/pillars-intro-1.jpg"
                   alt=""
@@ -91,25 +97,23 @@ export default async function PillarsOfMissionPage() {
                   sizes="(min-width: 1024px) 50vw, 100vw"
                 />
               </div>
-              <figcaption className="mt-3 text-xs text-on-dark/70">
-                The Gospel. The Power of God unto Salvation.
+              <figcaption className="mt-4 text-sm text-white">
+                The Gospel The Power of God unto Salvation.
               </figcaption>
             </figure>
 
             <div>
               <Eyebrow tone="light">Who we are</Eyebrow>
-              {/* "Our Mission" is the label and the sentence under it is the
-                  mission — the design sets only the second line bold. */}
-              <h3 className="font-display text-2xl font-medium leading-[1.2] tracking-[-0.02em] text-white sm:text-[32px]">
+              {/* One heading, both lines at Archivo Bold 32px — the design
+                  does not step the label down from the mission under it. */}
+              <h3 className="font-display text-2xl font-bold leading-[1.2] tracking-[-0.02em] text-[#f3f4f6] sm:text-[32px]">
                 Our Mission
                 <br />
-                <span className="font-bold">
-                  Preach the gospel, make disciples, equip leaders, and send them out.
-                </span>
+                Preach the gospel, make disciples, equip leaders, and send them out.
               </h3>
 
-              <div className="mt-8 grid gap-8 sm:grid-cols-2">
-                <p className="text-sm leading-relaxed text-on-dark/80">
+              <div className="mt-12 grid gap-10 sm:grid-cols-2">
+                <p className="text-base leading-[1.6] text-white">
                   Apostolos Missions International (AM) is an interdenominational ministry
                   committed to spreading the gospel to the ends of the earth, testifying to the
                   eternal love of the Lord.
@@ -122,7 +126,7 @@ export default async function PillarsOfMissionPage() {
                   former persecutor of Christianity turning to a great herald of the gospel,
                   introduced himself as an &ldquo;apostle.&rdquo;
                 </p>
-                <p className="text-sm leading-relaxed text-on-dark/80">
+                <p className="text-base leading-[1.6] text-white">
                   Apostles are those who are sent by the Lord Jesus to fulfill the mission of
                   &ldquo;preaching Jesus Christ and making God known&rdquo; to the whole
                   creation. Biblical foundation of apostleship is found in many words of the Lord
