@@ -3,7 +3,6 @@ import Image from "next/image";
 import { getTranslations } from "@/i18n/content";
 import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
-import { ArrowRightIcon } from "@/components/ui/icons";
 import AboutHero from "@/components/about/AboutHero";
 import AboutSubNav from "@/components/about/AboutSubNav";
 import PullQuote from "@/components/about/PullQuote";
@@ -51,6 +50,57 @@ const practiceCards = [
     text: "#c8d8ec",
   },
 ] as const;
+
+/**
+ * One of the two picture cards that close the page. The button is not a real
+ * button — the whole card is the link — so it is a span styled as one, which
+ * keeps a single focus stop and avoids a nested interactive element.
+ */
+function CardLink({
+  href,
+  image,
+  base,
+  wash,
+  title,
+  action,
+  titleClassName = "",
+}: {
+  href: string;
+  image: string;
+  base: string;
+  wash: string;
+  title: string;
+  action: string;
+  titleClassName?: string;
+}) {
+  return (
+    <TenantLink
+      href={href}
+      className="group relative block h-[320px] overflow-hidden rounded-[20px] lg:h-[400px]"
+      style={{ backgroundColor: base }}
+    >
+      <Image
+        src={image}
+        alt=""
+        fill
+        className="object-cover transition-transform duration-300 group-hover:scale-105"
+        sizes="(min-width: 1024px) 640px, 100vw"
+      />
+      <div className="absolute inset-0" style={{ backgroundColor: wash }} />
+      <span
+        className={`absolute start-6 top-6 font-display text-2xl font-extrabold text-[#f3f4f6] lg:start-12 lg:top-12 lg:text-[32px] ${titleClassName}`}
+      >
+        {title}
+      </span>
+      {/* Design pins the button 300px from the card top; on the shorter
+          mobile card that would fall off the bottom, so it is anchored to the
+          bottom edge at the distance those two work out to. */}
+      <span className="absolute bottom-6 start-6 inline-flex items-center justify-center rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold uppercase text-[#f3f4f6] lg:bottom-[59px] lg:start-12">
+        {action}
+      </span>
+    </TenantLink>
+  );
+}
 
 export default async function WhoWeArePage() {
   const [t, tCommon, tPractice] = await Promise.all([
@@ -149,53 +199,42 @@ export default async function WhoWeArePage() {
         </Container>
       </article>
 
+      {/* Two cards on white. The design lays these out 1280px wide — wider
+          than the 1104px text column above them — so they get their own
+          wrapper rather than the standard Container. A negative margin would
+          have been shorter but overflows the viewport between lg and 1360. */}
       <section className="bg-white pb-24">
-        <Container>
-          <div className="grid gap-6 lg:grid-cols-[802fr_448fr]">
-            <TenantLink
+        <div className="mx-auto w-full max-w-[1360px] px-6 lg:px-10">
+          <div className="grid gap-6 lg:grid-cols-[802fr_454fr]">
+            <CardLink
               href="/about/statement-of-faith"
-              className="group relative block h-[320px] overflow-hidden rounded-2xl lg:h-[400px]"
-            >
-              <Image
-                src="/images/about-statement-faith-card.jpg"
-                alt=""
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                sizes="(min-width: 640px) 50vw, 100vw"
-              />
-              <div className="absolute inset-0 bg-[#0d328a]/60" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
-              <span className="absolute start-6 top-6 font-display text-lg font-bold text-white">
-                {t("cardStatementOfFaithTitle")}
-              </span>
-              <span className="absolute bottom-6 start-6 inline-flex items-center gap-2 rounded-full bg-brand-blue px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.04em] text-white">
-                {tCommon("learnMore")}
-                <ArrowRightIcon />
-              </span>
-            </TenantLink>
-            <TenantLink
+              image="/images/about-statement-faith-card.jpg"
+              // Each card washes its photo in a different blue: the wide one
+              // in #0d328a, the narrow one in the darker night.
+              base="#1449c6"
+              wash="rgba(13,50,138,0.6)"
+              title={t("cardStatementOfFaithTitle")}
+              action={tCommon("learnMore")}
+            />
+            <CardLink
               href="/about/mission"
-              className="group relative block h-[320px] overflow-hidden rounded-2xl lg:h-[400px]"
-            >
-              <Image
-                src="/images/about-mission-card.jpg"
-                alt=""
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                sizes="(min-width: 640px) 50vw, 100vw"
-              />
-              <div className="absolute inset-0 bg-[#0d328a]/60" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
-              <span className="absolute start-6 top-6 font-display text-lg font-bold text-white">
-                {t("cardMissionStatementTitle")}
-              </span>
-              <span className="absolute bottom-6 start-6 inline-flex items-center gap-2 rounded-full bg-brand-blue px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.04em] text-white">
-                {tCommon("learnMore")}
-                <ArrowRightIcon />
-              </span>
-            </TenantLink>
+              image="/images/about-mission-card.jpg"
+              base="#0d328a"
+              // Design says night at 60%. The stand-in photo in this slot is
+              // a dark worship scene that already has a wash baked into the
+              // file, so 60% on top of it darkens twice and the picture
+              // disappears — the same double-darkening the hero had. Held at
+              // 35% until the design's own (much brighter) photo lands, at
+              // which point this should go back to 0.6.
+              wash="rgba(5,10,46,0.35)"
+              title={t("cardMissionStatementTitle")}
+              action={tCommon("learnMore")}
+              // The design holds this title to 252px so it breaks over two
+              // lines; a longer translation simply takes a third.
+              titleClassName="max-w-[252px]"
+            />
           </div>
-        </Container>
+        </div>
       </section>
 
       <PartnerWithUs />
