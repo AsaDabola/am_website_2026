@@ -33,10 +33,13 @@ const inter = Inter({
   subsets: ["latin", "latin-ext", "cyrillic", "greek", "vietnamese"],
 });
 
+// 900 is Archivo Black, which the About hero is set in. Without it the
+// browser synthesises the weight from 800 and the outlined letterforms come
+// out visibly thinner than the design.
 const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin", "latin-ext", "vietnamese"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["500", "600", "700", "800", "900"],
 });
 
 // Arabic, Hebrew and Urdu. Urdu is conventionally set in Nastaliq, but that

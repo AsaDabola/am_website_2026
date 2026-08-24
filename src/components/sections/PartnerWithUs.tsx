@@ -19,10 +19,13 @@ export default async function PartnerWithUs({ data }: { data?: PartnerWithUsData
       <Container className="flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
         <div>
           <Eyebrow>{data?.eyebrow ?? t("eyebrow")}</Eyebrow>
-          <h2 className="max-w-lg font-display text-4xl font-semibold tracking-[-0.02em] text-ink sm:text-5xl">
+          {/* Widths are the design's, and they are what set the line breaks:
+              432px turns the heading into "Send someone you / will never
+              meet." rather than carrying "will" up to the first line. */}
+          <h2 className="max-w-[432px] font-display text-4xl font-semibold tracking-[-0.028em] text-ink sm:text-5xl">
             {data?.heading ?? t("heading")}
           </h2>
-          <p className="mt-4 max-w-md text-base leading-relaxed text-ink-muted">
+          <p className="mt-4 max-w-[607px] text-base leading-relaxed text-ink-muted">
             {data?.description ?? t("description")}
           </p>
         </div>

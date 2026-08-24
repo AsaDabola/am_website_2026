@@ -64,21 +64,34 @@ export default async function WhoWeArePage() {
         backgroundImage="/images/about-hero-cross.jpg"
         size="large"
         titleVariant="ghost"
+        titleCase="sentence"
         align="center"
       >
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {/* The design's card row is 1140px — a little wider than the 1120px
+            text column it sits under — which is what gives each card the
+            273px that keeps "Leadership training" on one line. Subgrid then
+            pins every header to the same height, so a language that does wrap
+            the header still leaves the four card bodies aligned. */}
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:-mx-[10px] lg:grid-cols-4 lg:grid-rows-[auto_1fr]">
           {practiceCards.map((card) => (
-            <div key={card.tag} className="overflow-hidden rounded-lg">
+            <div
+              key={card.tag}
+              className="grid grid-rows-[auto_1fr] overflow-hidden rounded-lg lg:row-span-2 lg:grid-rows-subgrid"
+            >
+              {/* Inter rather than the display face, at the design's 20px —
+                  the header is set in the body font here. No `nowrap`: the
+                  design can assume one line for English, but a longer
+                  translation should grow the card rather than spill out. */}
               <div
-                className="flex items-center justify-center px-4 py-3.5"
+                className="flex items-center justify-center p-5"
                 style={{ backgroundColor: card.header }}
               >
-                <span className="font-display text-sm font-extrabold uppercase tracking-[0.04em] text-white">
+                <span className="text-center text-xl font-extrabold uppercase text-white">
                   {tPractice(card.tag)}
                 </span>
               </div>
-              <div className="px-4 py-4" style={{ backgroundColor: card.panel }}>
-                <p className="text-center text-xs leading-[1.6]" style={{ color: card.text }}>
+              <div className="px-5 py-6" style={{ backgroundColor: card.panel }}>
+                <p className="text-center text-sm leading-[1.6]" style={{ color: card.text }}>
                   {tPractice(card.body)}
                 </p>
               </div>
