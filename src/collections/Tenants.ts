@@ -1,5 +1,11 @@
 import type { CollectionConfig } from "payload";
+import type { TextFieldSingleValidation } from "payload";
 import { locales, localeLabels } from "@/i18n/routing";
+import {
+  formatCountryCodes,
+  isValidCountryCode,
+  parseCountryCodes,
+} from "@/lib/countryCodes";
 
 // A Tenant is one of the ~60 country sites (e.g. amintl.org/europe/germany).
 // Everything else in the multi-tenant system (Pages, and the syndication
@@ -58,6 +64,55 @@ export const Tenants: CollectionConfig = {
         description:
           "Comma-separated ISO country codes this tenant matches for IP-based geo detection, e.g. \"DE\" or \"DE,AT\". A code must belong to exactly one tenant.",
       },
+      // A visitor is sent to a country site on the strength of this field, so
+      // a typo here does not fail loudly — it just quietly stops a country
+      // from ever resolving, or hands its traffic to a neighbour. Both are
+      // rejected at save time rather than left to be noticed in analytics.
+      hooks: {
+        beforeValidate: [
+          ({ value }) => {
+            const codes = parseCountryCodes(value);
+            return codes.length > 0 ? formatCountryCodes(codes) : value;
+          },
+        ],
+      },
+      validate: (async (value, { req, id }) => {
+        const codes = parseCountryCodes(value);
+        if (codes.length === 0) return true;
+
+        const bad = codes.filter((code) => !isValidCountryCode(code));
+        if (bad.length > 0) {
+          return `Not valid ISO 3166-1 alpha-2 codes: ${bad.join(", ")}. Use two letters per country, e.g. "DE,AT".`;
+        }
+
+        // Cross-tenant uniqueness. Payload's `unique` only covers the whole
+        // field, which would happily allow "DE,AT" alongside "AT".
+        const others = await req.payload.find({
+          collection: "tenants",
+          where: id ? { id: { not_equals: id } } : {},
+          limit: 1000,
+          depth: 0,
+        });
+
+        const clashes: string[] = [];
+        for (const other of others.docs) {
+          const taken = parseCountryCodes(
+            (other as unknown as { countryCodes?: string | null }).countryCodes,
+          );
+          for (const code of codes) {
+            if (taken.includes(code)) {
+              clashes.push(
+                `${code} (already on ${(other as unknown as { country: string }).country})`,
+              );
+            }
+          }
+        }
+        if (clashes.length > 0) {
+          return `A country code can only belong to one country site. Already taken: ${clashes.join(", ")}.`;
+        }
+
+        return true;
+      }) as TextFieldSingleValidation,
     },
     {
       name: "languages",

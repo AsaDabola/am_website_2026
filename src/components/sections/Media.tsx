@@ -1,4 +1,5 @@
-import { getLocale, getTranslations } from "next-intl/server";
+import { getLocale } from "next-intl/server";
+import { getTranslations } from "@/i18n/content";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";

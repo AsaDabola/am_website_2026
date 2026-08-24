@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations } from "@/i18n/content";
 import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
 import { ArrowRightIcon } from "@/components/ui/icons";

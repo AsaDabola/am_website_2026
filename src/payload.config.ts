@@ -15,6 +15,7 @@ import { Ministries } from "./collections/Ministries";
 import { BibleStudySignups } from "./collections/BibleStudySignups";
 import { VolunteerApplications } from "./collections/VolunteerApplications";
 import { Tenants } from "./collections/Tenants";
+import { TenantContent } from "./collections/TenantContent";
 import { Pages } from "./collections/Pages";
 import { ContactMessages } from "./collections/ContactMessages";
 import { DonationIntents } from "./collections/DonationIntents";
@@ -42,6 +43,7 @@ export default buildConfig({
     BibleStudySignups,
     VolunteerApplications,
     Tenants,
+    TenantContent,
     Pages,
     ContactMessages,
     DonationIntents,

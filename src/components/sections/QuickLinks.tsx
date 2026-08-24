@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations } from "@/i18n/content";
 import Container from "@/components/ui/Container";
 import { Link } from "@/i18n/navigation";
 import TenantLink from "@/components/layout/TenantLink";

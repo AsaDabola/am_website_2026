@@ -1,4 +1,4 @@
-import type { CollectionConfig } from "payload";
+import type { CollectionConfig, TextFieldSingleValidation } from "payload";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { homeBlocks } from "./blocks/homeBlocks";
 
@@ -24,11 +24,21 @@ export const Pages: CollectionConfig = {
     {
       name: "slug",
       type: "text",
-      required: true,
       admin: {
         description:
-          "URL path segment(s), e.g. \"our-story\" or \"programs/summer-camp\". Leave empty only for a tenant's home page.",
+          "URL path segment(s), e.g. \"our-story\" or \"programs/summer-camp\". Leave empty only for a home page.",
       },
+      // Not `required`, because a home page is addressed by its parent path
+      // and must have an empty slug. Marking it required contradicted that
+      // and made every home page impossible to save — which is why the main
+      // site had no Home page to clone from. Everything else still needs one.
+      validate: ((value, { siblingData }) => {
+        const isHome = (siblingData as { isHome?: boolean } | undefined)?.isHome;
+        if (isHome) return true;
+        return typeof value === "string" && value.trim().length > 0
+          ? true
+          : "Required, unless this is a home page.";
+      }) as TextFieldSingleValidation,
     },
     {
       name: "tenant",

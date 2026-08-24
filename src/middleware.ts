@@ -11,12 +11,20 @@ const intlMiddleware = createMiddleware(routing);
 const GEO_COOKIE = "am-geo-checked";
 const ONE_YEAR = 60 * 60 * 24 * 365;
 
-// Matches the bare homepage under any locale — "/", "/de", "/ko", etc. —
+// Matches the bare homepage under any locale — "/", "/de", "/ko", "/fil" —
 // with or without a trailing slash. Deep links (e.g. a search result
 // landing on /about) are left alone; CountrySuggestionBanner handles
 // those with a dismissible suggestion instead of a hard redirect.
+//
+// Built from the locale list rather than a `[a-z]{2}` pattern, which
+// silently stopped matching when the first three-letter locales (fil, hif)
+// shipped: visitors landing on /fil skipped the geo redirect entirely.
+const LOCALE_SEGMENTS = new Set<string>(routing.locales);
+
 function isRootPath(pathname: string): boolean {
-  return /^\/([a-z]{2})?\/?$/.test(pathname);
+  const segments = pathname.split("/").filter(Boolean);
+  if (segments.length === 0) return true;
+  return segments.length === 1 && LOCALE_SEGMENTS.has(segments[0]);
 }
 
 type GeoTenant = { country: string; continent: string; slug: string; locale?: string };

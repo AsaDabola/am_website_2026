@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations } from "@/i18n/content";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import type { NewsletterData } from "@/lib/homeBlockTypes";

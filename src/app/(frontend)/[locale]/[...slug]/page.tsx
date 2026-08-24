@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { NextIntlClientProvider } from "next-intl";
+import { setRequestTenant } from "@/lib/tenantContent";
+import { getContentMessages } from "@/i18n/content";
 import PageRenderer from "@/components/pages/PageRenderer";
 import Media from "@/components/sections/Media";
 import Events from "@/components/sections/Events";
@@ -82,6 +85,12 @@ export default async function DynamicPage({ params }: Props) {
   if (!resolved) notFound();
   const { tenant, page, isTenantRoute } = resolved;
 
+  // Declare which country is being rendered before any content below runs, so
+  // the tenant-aware `getTranslations` in @/i18n/content layers this
+  // country's copy changes over the main version. Off a country route this
+  // stays null and everything reads the main copy.
+  setRequestTenant(isTenantRoute && tenant ? String(tenant.id) : null);
+
   // Every country site has one language it's meant to be browsed in
   // (Tenant.locale). Landing on it under a different locale — e.g. a link
   // that dropped the prefix, or a visitor's browser default — redirects to
@@ -98,6 +107,18 @@ export default async function DynamicPage({ params }: Props) {
 
   const isTenantHome = isTenantRoute && slug.length === 2;
 
+  // Server components pick up this country's copy through the request store
+  // above, but client components ("use client" subnavs, the network map) read
+  // their messages from a provider instead. On a country route the subtree
+  // gets its own provider carrying the merged catalogue, so both halves of
+  // the page say the same thing.
+  const wrap = async (node: React.ReactNode) =>
+    isTenantRoute ? (
+      <NextIntlClientProvider messages={await getContentMessages()}>{node}</NextIntlClientProvider>
+    ) : (
+      node
+    );
+
   // A country site's home route renders the same rich, block-based
   // homepage as the main site — scoped to that tenant's own posts, events,
   // and chapters. An editor customizes it per country by authoring a home
@@ -108,23 +129,23 @@ export default async function DynamicPage({ params }: Props) {
     const tenantId = String(tenant!.id);
 
     if (page?.sections?.length) {
-      return <>{page.sections.map((block) => renderHomeBlock(block, tenantId))}</>;
+      return wrap(<>{page.sections.map((block) => renderHomeBlock(block, tenantId))}</>);
     }
 
     if (page) {
       const crumbs = [{ label: "Home", href: "/" }, { label: tenant!.country }];
-      return (
+      return wrap(
         <>
           <PageRenderer page={page} crumbs={crumbs} />
           <Media tenantId={tenantId} />
           <Events tenantId={tenantId} />
           <PartnerWithUs />
           <Newsletter />
-        </>
+        </>,
       );
     }
 
-    return <DefaultHomeBlocks tenantId={tenantId} />;
+    return wrap(<DefaultHomeBlocks tenantId={tenantId} />);
   }
 
   // No country-specific Page authored yet — serve the main site's version of
@@ -134,7 +155,7 @@ export default async function DynamicPage({ params }: Props) {
     const loadStaticPage = getTenantStaticPage(resolved.restSlug);
     if (loadStaticPage) {
       const { default: StaticPage } = await loadStaticPage();
-      return <StaticPage />;
+      return wrap(<StaticPage />);
     }
   }
 
@@ -148,10 +169,10 @@ export default async function DynamicPage({ params }: Props) {
       ]
     : [{ label: "Home", href: "/" }, { label: page.title }];
 
-  return (
+  return wrap(
     <>
       <PageRenderer page={page} crumbs={crumbs} />
       <Newsletter />
-    </>
+    </>,
   );
 }
