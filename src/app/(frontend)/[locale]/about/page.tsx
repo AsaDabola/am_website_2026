@@ -22,7 +22,13 @@ export const metadata: Metadata = {
  * than being theme tokens, so they stay literal.
  */
 const practiceCards = [
-  { tag: "bibleStudyTag", body: "bibleStudyDescription", header: "#2abfbf", panel: "#1a4040", text: "#e0f7f7" },
+  {
+    tag: "bibleStudyTag",
+    body: "bibleStudyDescription",
+    header: "#2abfbf",
+    panel: "#1a4040",
+    text: "#e0f7f7",
+  },
   {
     tag: "leadershipTrainingTag",
     body: "leadershipTrainingDescription",
@@ -59,10 +65,9 @@ export default async function WhoWeArePage() {
           above the hero image, rather than below it. */}
       <AboutSubNav active="/about" />
       <AboutHero
-        crumbs={[{ label: tCommon("home"), href: "/" }, { label: t("breadcrumb") }]}
         title={t("heroTitle")}
         backgroundImage="/images/about-hero-cross.jpg"
-        size="large"
+        size="tall"
         titleVariant="ghost"
         titleCase="sentence"
         align="center"
@@ -90,8 +95,14 @@ export default async function WhoWeArePage() {
                   {tPractice(card.tag)}
                 </span>
               </div>
-              <div className="px-5 py-6" style={{ backgroundColor: card.panel }}>
-                <p className="text-center text-sm leading-[1.6]" style={{ color: card.text }}>
+              <div
+                className="px-5 py-6"
+                style={{ backgroundColor: card.panel }}
+              >
+                <p
+                  className="text-center text-sm leading-[1.6]"
+                  style={{ color: card.text }}
+                >
                   {tPractice(card.body)}
                 </p>
               </div>
@@ -105,7 +116,8 @@ export default async function WhoWeArePage() {
           <div className="space-y-6 text-base leading-relaxed text-ink">
             <p>{t("paragraph1")}</p>
             <p>
-              {t("paragraph2Prefix")} <em className="italic">apostolos</em> {t("paragraph2")}
+              {t("paragraph2Prefix")} <em className="italic">apostolos</em>{" "}
+              {t("paragraph2")}
             </p>
             <p>{t("paragraph3")}</p>
           </div>
