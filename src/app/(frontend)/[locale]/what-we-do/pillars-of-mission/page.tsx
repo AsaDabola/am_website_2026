@@ -45,10 +45,11 @@ const pillars = [
   {
     title: "Mission",
     image: "/images/pillars-mission.jpg",
+    // Tightened in the design — the same three beats, but half the clauses.
     paragraphs: [
-      "Thriving campus mission powerfully advances our world mission. AM is highly dedicated to the work of spreading the Gospel and fulfilling the Great Commission by going into all nations. Through AM, numerous youth are taking the distinctive role of participating in local mission while in school or long-term mission after graduation.",
-      "AM staff, volunteers, and members use their talents and gifts to participate in God’s mission of teaching the Gospel and making disciples among the youth of the world. Our small/large group Bible studies, leadership training, online education, Internships and short-term mission trips provide countless opportunities for young people to participate in God’s mission.",
-      "In line with campus mission, AM continues to build channels that reinforce our World Mission effort to keep expanding, so join our endeavor to reach the unreached groups!",
+      "Thriving campus mission powerfully advances our world mission. AM is dedicated to spreading the Gospel and fulfilling the Great Commission by going into all nations.",
+      "Through AM, young people have opportunities to participate in local mission while in school and pursue long-term mission after graduation. Our Bible studies, leadership training, online education, internships, and short-term mission trips equip young people to use their gifts in God’s mission.",
+      "As we strengthen our campus mission, AM continues to build channels that expand our world mission and reach the unreached. Join us in reaching the unreached!",
     ],
   },
 ];
@@ -84,37 +85,58 @@ export default async function PillarsOfMissionPage() {
             One Movement, Every Nation
           </h2>
 
-          <div className="mt-14 grid items-start gap-10 lg:grid-cols-[440px_1fr] lg:gap-16">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-              <Image
-                src="/images/pillars-intro-1.jpg"
-                alt=""
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 440px, 100vw"
-              />
-            </div>
+          {/* The photograph is a landscape frame with its caption sitting
+              under it, not a bare 4:3 tile, and the halves are even. */}
+          <div className="mt-14 grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
+            <figure className="m-0">
+              <div className="relative aspect-[3/2] overflow-hidden rounded-lg">
+                <Image
+                  src="/images/pillars-intro-1.jpg"
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+              </div>
+              <figcaption className="mt-3 text-xs text-on-dark/70">
+                The Gospel. The Power of God unto Salvation.
+              </figcaption>
+            </figure>
 
             <div>
               <Eyebrow tone="light">Who we are</Eyebrow>
-              <h3 className="font-display text-2xl font-bold leading-[1.2] tracking-[-0.02em] text-white sm:text-[32px]">
+              {/* "Our Mission" is the label and the sentence under it is the
+                  mission — the design sets only the second line bold. */}
+              <h3 className="font-display text-2xl font-medium leading-[1.2] tracking-[-0.02em] text-white sm:text-[32px]">
                 Our Mission
                 <br />
-                Preach the gospel, make disciples, equip leaders, and send them out.
+                <span className="font-bold">
+                  Preach the gospel, make disciples, equip leaders, and send them out.
+                </span>
               </h3>
 
               <div className="mt-8 grid gap-8 sm:grid-cols-2">
                 <p className="text-sm leading-relaxed text-on-dark/80">
-                  AM International is a world-wide community of believers dedicated towards the
-                  spreading of the Gospel across university campuses. The youth are the leaders
-                  of today, therefore, AM seeks to empower today&rsquo;s youth with the Word of
-                  God, leadership skills, and Christian values so that they may lead with the
-                  power of truth.
+                  Apostolos Missions International (AM) is an interdenominational ministry
+                  committed to spreading the gospel to the ends of the earth, testifying to the
+                  eternal love of the Lord.
+                  <br />
+                  <br />
+                  The name <em className="italic">apostolos</em> (ἀπόστολος) is the Greek word
+                  for apostle. It means &ldquo;one who is sent on a mission&rdquo; or
+                  &ldquo;messenger.&rdquo; The title &ldquo;apostle&rdquo; often comes out in the
+                  New Testament to represent the Twelve disciples appointed by Jesus. Paul, a
+                  former persecutor of Christianity turning to a great herald of the gospel,
+                  introduced himself as an &ldquo;apostle.&rdquo;
                 </p>
                 <p className="text-sm leading-relaxed text-on-dark/80">
-                  The name apostolos is the Greek word for apostle. It means &ldquo;one who is
-                  sent on a mission.&rdquo; We do this through 4 pillars of mission which aim to
-                  fulfill the dream of Jesus and the vision of the Gospel across the world.
+                  Apostles are those who are sent by the Lord Jesus to fulfill the mission of
+                  &ldquo;preaching Jesus Christ and making God known&rdquo; to the whole
+                  creation. Biblical foundation of apostleship is found in many words of the Lord
+                  who selected first apostles and sent them out like the ambassadors dispatched
+                  to represent different nations. Apostles understood that their lives were not
+                  just their own, but they lived to reveal the glory of Christ in this fallen
+                  world.
                 </p>
               </div>
             </div>
@@ -122,15 +144,20 @@ export default async function PillarsOfMissionPage() {
         </Container>
       </section>
 
-      {pillars.map((pillar, index) => (
+      {/* All four run on white in the design — the alternating mist band this
+          page used to stripe them with is not in it. The columns are an even
+          split rather than a narrow image beside a wide text block: the
+          photograph is a 386px square held to the left of its half, and the
+          prose starts a shade past the midpoint. */}
+      {pillars.map((pillar) => (
         <section
           key={pillar.title}
           id={pillar.title.toLowerCase()}
-          className={`scroll-mt-24 ${index % 2 === 0 ? "bg-white py-20" : "bg-mist py-20"}`}
+          className="scroll-mt-24 bg-white py-20"
         >
           <Container>
-            <div className="grid items-start gap-10 lg:grid-cols-[386px_1fr] lg:gap-16">
-              <div className="relative aspect-square overflow-hidden rounded-2xl">
+            <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
+              <div className="relative aspect-square w-full max-w-[386px] overflow-hidden rounded-lg">
                 <Image
                   src={pillar.image}
                   alt={pillar.title}
@@ -140,10 +167,13 @@ export default async function PillarsOfMissionPage() {
                 />
               </div>
               <div>
-                <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink">
+                {/* Archivo SemiBold 34/40 in the design, and the prose under it
+                    is near-black at 17/24 rather than the muted grey this page
+                    was setting it in. */}
+                <h2 className="font-display text-[34px] font-semibold leading-10 tracking-[-0.02em] text-ink">
                   {pillar.title}
                 </h2>
-                <div className="mt-6 space-y-4 text-sm leading-relaxed text-ink-muted">
+                <div className="mt-6 space-y-6 text-[17px] leading-6 text-ink">
                   {pillar.paragraphs.map((p, i) => (
                     <p key={i}>{p}</p>
                   ))}
