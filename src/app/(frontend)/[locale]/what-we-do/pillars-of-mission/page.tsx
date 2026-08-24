@@ -69,14 +69,7 @@ export default async function PillarsOfMissionPage() {
 
   return (
     <>
-      <PillarsHero
-        crumbs={[
-          { label: "Home", href: "/" },
-          { label: tHeader("whatWeDo") },
-          { label: tHeader("whatWeDoMenu.pillarsOfMission") },
-        ]}
-        title={tHeader("whatWeDo")}
-      />
+      <PillarsHero title={tHeader("whatWeDo")} />
       <WhatWeDoSubNav active="/what-we-do/pillars-of-mission" />
 
       <section className="overflow-hidden bg-night-deep py-20">

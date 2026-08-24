@@ -1,5 +1,4 @@
 import Image from "next/image";
-import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
 
 /**
@@ -39,15 +38,7 @@ const PILLAR_CARDS = [
   },
 ] as const;
 
-type Crumb = { label: string; href?: string };
-
-export default function PillarsHero({
-  crumbs,
-  title,
-}: {
-  crumbs: Crumb[];
-  title: string;
-}) {
+export default function PillarsHero({ title }: { title: string }) {
   return (
     <section className="relative overflow-hidden bg-night">
       <Image
@@ -58,32 +49,24 @@ export default function PillarsHero({
         className="object-cover"
         sizes="100vw"
       />
-      {/* The band sits over the lower part of the same photo, so the scrim is
-          anchored to the bottom rather than covering the whole image. */}
-      <div className="absolute inset-x-0 bottom-0 h-[72%] bg-gradient-to-t from-night via-night/90 to-transparent" />
-      {/* The sky in this photo is very bright, so the outlined title and
-          breadcrumbs need their own scrim to stay readable. */}
-      <div className="absolute inset-x-0 top-0 h-[42%] bg-gradient-to-b from-night/55 to-transparent" />
+      {/* One gradient, anchored to the bottom, exactly as the design draws it:
+          it darkens only the band the text and cards sit on and leaves the
+          sky and the water at full strength. The second scrim that used to
+          lie over the top 42% went with the breadcrumb — the blue-outlined
+          title reads on the bright sky without it, and it was draining the
+          colour out of the middle of the photograph. */}
+      <div className="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-night via-night/85 to-transparent" />
 
-      <Container className="relative flex min-h-[720px] flex-col py-14 lg:min-h-[860px]">
-        <nav aria-label="Breadcrumb" className="text-[13px] text-on-dark/90">
-          <ol className="flex items-center gap-2">
-            {crumbs.map((crumb, index) => (
-              <li key={crumb.label} className="flex items-center gap-2">
-                {index > 0 && <span className="opacity-50">/</span>}
-                {crumb.href ? (
-                  <TenantLink href={crumb.href} className="hover:text-white">
-                    {crumb.label}
-                  </TenantLink>
-                ) : (
-                  <span>{crumb.label}</span>
-                )}
-              </li>
-            ))}
-          </ol>
-        </nav>
-
-        <h1 className="mt-14 text-center font-display text-[52px] font-extrabold uppercase leading-none tracking-[-0.02em] text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,0.85)] sm:text-[80px] lg:text-[104px]">
+      {/* The design carries no breadcrumb here — the section tabs sitting
+          directly under the hero do the wayfinding — and gives the frame a
+          2:3 crop, 1280px on its 1920 canvas. */}
+      <Container className="relative flex min-h-[720px] flex-col py-14 lg:min-h-[960px]">
+        {/* Archivo Black 96px in sentence case, outlined in the brand blue
+            rather than the white the About-family ghost titles use — against
+            this hero's bright sky a white rule would barely register. It is
+            centred inside a block anchored to the content edge, not across
+            the page, which is what sets it left of centre in the design. */}
+        <h1 className="max-w-[896px] text-center font-display text-[52px] font-black leading-none tracking-[-0.02em] text-transparent [-webkit-text-stroke:2px_var(--color-brand-blue)] sm:text-[72px] lg:text-[96px]">
           {title}
         </h1>
 
