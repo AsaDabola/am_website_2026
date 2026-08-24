@@ -16,38 +16,66 @@ export const metadata: Metadata = {
   description: "What it means to belong to the AM network as a chapter or an individual.",
 };
 
+/**
+ * The five membership tiers, as the design draws them: a solid colour band
+ * carrying the name over a darker body carrying the description, rather than
+ * the single gradient block these were before. Each tier gets its own trio of
+ * hexes — they run from teal at Newcomer to near-black navy at Leader, so the
+ * row reads as a progression — and none of them sit in the token palette,
+ * which is why they are written out here.
+ */
 const tiers = [
   {
     label: "Newcomer",
-    description: "Joins our bible programs, group activities and others.",
-    from: "#14b8a6",
-    to: "#0f3d3a",
+    description: "Joins our bible programs, group activities and others",
+    header: "#2abfbf",
+    body: "#1a4040",
+    text: "#e0f7f7",
   },
   {
     label: "Registered",
-    description: "Joins consistent activities and shares Statement of Faith.",
-    from: "#2a5eec",
-    to: "#0d1f52",
+    description: "Joins consistent activities and shares Statement of Faith",
+    header: "#3b82f6",
+    body: "#1a2a4a",
+    text: "#dbeafe",
   },
   {
     label: "Volunteer",
     description: "Actively serves God through ministry activities.",
-    from: "#4d8df6",
-    to: "#153a7a",
+    header: "#4b7aae",
+    body: "#1a2535",
+    text: "#d1e4f5",
   },
   {
     label: "Staff",
     description: "Passionately seeking God's calling for ministry vocation.",
-    from: "#1449c6",
-    to: "#0a1a4d",
+    header: "#1e3a5f",
+    body: "#0f1f35",
+    text: "#c8d8ec",
   },
   {
     label: "Leader",
-    description: "Participating in serving leadership.",
-    from: "#0a0e26",
-    to: "#050a2e",
+    description: "Participating in serving leadership",
+    header: "#052652",
+    body: "#0f1f35",
+    text: "#c8d8ec",
   },
 ];
+
+/**
+ * The bulleted runs under "applicants must:", "means that you:" and "members
+ * receive:". Plain discs at the design's 16px/1.65, with the marker muted so
+ * the bullet does not compete with the text.
+ */
+function Bullets({ items }: { items: string[] }) {
+  return (
+    <ul className="list-disc ps-6 marker:text-ink-muted">
+      {items.map((item) => (
+        <li key={item.slice(0, 48)}>{item}</li>
+      ))}
+    </ul>
+  );
+}
 
 export default async function MembershipPage() {
   const [t, tCommon] = await Promise.all([
@@ -57,50 +85,109 @@ export default async function MembershipPage() {
 
   return (
     <>
+      {/* No breadcrumb and no standfirst: the design gives this hero the same
+          treatment as Who-we-are — the full 964px of the photograph, the page
+          name in outline over it, and nothing else but the tier row. The
+          section tabs immediately below do the wayfinding the breadcrumb was
+          doing. The photograph here is the one the design was drawn over, but
+          its lawn is bright all the way down where Who-we-are's rock is dark,
+          so it takes the deeper wash — the design darkens the bottom of this
+          frame hard, and without it the outlined title all but vanishes into
+          the grass. */}
       <AboutHero
-        crumbs={[{ label: "Home", href: "/" }, { label: "About", href: "/about" }, { label: "Membership" }]}
         title="Membership"
-        subtitle="What it means to belong to the AM network as a chapter or an individual."
         backgroundImage="/images/membership-hero.jpg"
-        size="large"
+        size="tall"
+        wash="deep"
         titleVariant="ghost"
+        titleCase="sentence"
       >
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {tiers.map((tier) => (
-            <div
-              key={tier.label}
-              className="rounded-lg px-4 py-3"
-              style={{ backgroundImage: `linear-gradient(160deg, ${tier.from}, ${tier.to})` }}
-            >
-              <p className="font-display text-xs font-bold uppercase tracking-[0.08em] text-white">
-                {tier.label}
-              </p>
-              <p className="mt-1 text-[11px] leading-snug text-white/75">{tier.description}</p>
+            <div key={tier.label} className="flex flex-col overflow-hidden rounded-lg">
+              <div className="p-5 text-center" style={{ backgroundColor: tier.header }}>
+                {/* Inter ExtraBold in the design, not the display face. */}
+                <p className="text-xl font-extrabold uppercase text-white">{tier.label}</p>
+              </div>
+              <div
+                className="flex-1 px-5 py-6 text-center"
+                style={{ backgroundColor: tier.body }}
+              >
+                <p className="text-sm leading-[1.6]" style={{ color: tier.text }}>
+                  {tier.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </AboutHero>
       <AboutSubNav active="/about/membership" />
 
+      {/* Unlike Mission statement and Statement of faith, this design does not
+          pull the prose into the 720px measure — it runs the full content
+          column, and sets its headings as bold body text rather than the 28px
+          display heading those pages use. Broken out of the single block
+          paragraph this page carried before, which ran the eligibility rules,
+          the benefits and the offering together into one wall. */}
       <article className="bg-white py-20">
-        <Container className="max-w-[720px]">
-          <p className="text-base leading-relaxed text-ink-muted">
-            Qualifications for membership includes being over the age of 18 and regularly
-            attending Bible programs for at least one month at your local AM chapter. Membership
-            is open primarily to current students of the university, but also to university
-            alumni, faculty, and staff. Becoming a member indicates that you share and agree with
-            the AM Statement of Faith and Mission Statement. A member is also one who wishes to
-            uphold the values of the Christian faith in their lives and support the work of
-            God&rsquo;s Kingdom here on earth. Current students must be registered to their
-            university chapter by filling out the application and having it signed by their
-            chapter leader. AM members benefit from full access to the AM resources and
-            facilities. They can also join AM leadership meetings, conventions, and retreats.
-            Members of AM are recommended to give a monthly offering to their chapters. The
-            amount of the offering is of their choice. 100% of the donations go towards
-            supporting the local chapter&rsquo;s operations and activities.
-          </p>
+        <Container>
+          <div className="text-base leading-[1.65] text-ink">
+            <h2 className="font-bold">AM Membership Qualifications &amp; Benefits</h2>
 
-          <div className="my-10">
+            <h3 className="mt-6 font-bold">Eligibility</h3>
+            <p>To become an AM member, applicants must:</p>
+            <Bullets
+              items={[
+                "Be 18 years of age or older.",
+                "Regularly attend Bible programs at their local AM chapter for at least one month.",
+                "Primarily be a current university student, while university alumni, faculty, and staff are also welcome to apply.",
+              ]}
+            />
+
+            <p className="mt-6 font-bold">Becoming an AM member means that you:</p>
+            <Bullets
+              items={[
+                "Agree with and affirm the AM Statement of Faith and Mission Statement.",
+                "Desire to uphold the values of the Christian faith in your daily life.",
+                "Desire to support and participate in the work of God’s Kingdom on earth.",
+                "Seek to grow spiritually through fellowship, Bible study, service, and participation in AM activities.",
+              ]}
+            />
+
+            {/* The design leaves this one heading unbolded and prefixed with
+                ***, which is the designer marking it to be set like the three
+                around it rather than copy to render. */}
+            <h3 className="mt-6 font-bold">University Chapter Registration</h3>
+            <p>
+              Current university students must be registered with their respective AM university
+              chapter. Registration requires completing the membership application and obtaining
+              the signature of the local chapter leader.
+            </p>
+
+            <h3 className="mt-6 font-bold">Membership Benefits</h3>
+            <p>AM members receive:</p>
+            <Bullets
+              items={[
+                "Full access to AM resources and facilities.",
+                "Opportunities to participate in AM leadership meetings.",
+                "Invitations to AM conventions, retreats, and other special events.",
+                "Opportunities to serve and participate more actively in the mission and ministry of their local chapter.",
+              ]}
+            />
+
+            <h3 className="mt-6 font-bold">Monthly Offering</h3>
+            <p>
+              AM members are encouraged to give a monthly offering to their local chapter as an
+              expression of support for its ministry and activities. The amount is entirely
+              voluntary and determined by each member.
+            </p>
+            <p>
+              100% of offerings and donations are used to support the operations, ministry, and
+              activities of the local AM chapter.
+            </p>
+          </div>
+
+          <div className="mt-10">
             <PullQuote>
               John 20:21 says, &ldquo;Again Jesus said, &lsquo;Peace be with you! As the Father
               has sent me, I am sending you.&rsquo;&rdquo; (NIV)

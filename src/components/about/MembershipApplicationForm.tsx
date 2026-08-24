@@ -135,7 +135,9 @@ export default function MembershipApplicationForm() {
         </div>
 
         <div>
-          <Label>Message / Notes</Label>
+          {/* "Testimony" in the design. The field behind it is still
+              `message`, which is what the collection stores. */}
+          <Label>Testimony</Label>
           <textarea
             name="message"
             rows={4}

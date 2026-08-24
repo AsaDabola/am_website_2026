@@ -11,6 +11,7 @@ export default function AboutHero({
   subtitle,
   backgroundImage = "/images/about-hero-banner.jpg",
   size = "default",
+  wash,
   titleVariant = "solid",
   titleCase = "upper",
   align = "left",
@@ -33,6 +34,14 @@ export default function AboutHero({
    * of their own checked yet, so they keep the height they had.
    */
   size?: "default" | "large" | "tall";
+  /**
+   * How hard to darken the photograph. Height used to decide this on its own,
+   * on the assumption that a tall hero was the Who-we-are one — but Membership
+   * is tall too, and its design darkens the bottom of the frame much further,
+   * because its outlined title sits over a sunlit lawn rather than dark rock.
+   * Left unset, the old rule stands, so every existing hero is unchanged.
+   */
+  wash?: "light" | "deep";
   titleVariant?: "solid" | "ghost";
   /**
    * Casing of a ghost title. The Who-we-are design sets its hero in sentence
@@ -45,6 +54,7 @@ export default function AboutHero({
 }) {
   const isLarge = size === "large" || size === "tall";
   const isTall = size === "tall";
+  const isLightWash = (wash ?? (isTall ? "light" : "deep")) === "light";
   const isCentered = align === "center";
   const isSentenceGhost = titleVariant === "ghost" && titleCase === "sentence";
 
@@ -69,13 +79,13 @@ export default function AboutHero({
             // Two faint blue tints, top-right then bottom-left, then the wash.
             "radial-gradient(60% 45% at 80% 0%, rgba(77,141,246,0.16) 0%, rgba(77,141,246,0) 58%)",
             "radial-gradient(52% 34% at 0% 100%, rgba(20,73,198,0.10) 0%, rgba(20,73,198,0) 60%)",
-            // The design's wash is 0.10 → 0.20, calibrated against the photo
-            // it was drawn over. The Who-we-are hero uses that exact photo, so
-            // it gets the exact wash; the shorter heroes are running stand-in
-            // images that are brighter than the ones in the design, and at
-            // 0.20 their white subtitle stops being readable. Those keep the
-            // full-strength image and take a deeper wash instead.
-            isTall
+            // The Who-we-are wash is 0.10 → 0.20, calibrated against the photo
+            // it was drawn over, and that hero uses that exact photo. The
+            // shorter heroes are running stand-in images that are brighter
+            // than the ones in the design, and at 0.20 their white subtitle
+            // stops being readable; they keep the full-strength image and take
+            // the deeper wash instead. See `wash` for who gets which.
+            isLightWash
               ? "linear-gradient(180deg, rgba(5,7,13,0.10) 0%, rgba(8,14,27,0.20) 100%)"
               : "linear-gradient(180deg, rgba(5,7,13,0.28) 0%, rgba(8,14,27,0.52) 100%)",
           ].join(", "),
