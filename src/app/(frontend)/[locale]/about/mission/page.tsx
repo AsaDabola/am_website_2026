@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Container from "@/components/ui/Container";
 import AboutHero from "@/components/about/AboutHero";
 import AboutSubNav from "@/components/about/AboutSubNav";
@@ -9,8 +10,44 @@ import Newsletter from "@/components/sections/Newsletter";
 export const metadata: Metadata = {
   title: "Mission Statement | AM International",
   description:
-    "A worldwide community of believers dedicated to the spreading of the Gospel across university campuses.",
+    "The convictions AM holds in common across every campus, chapter and country.",
 };
+
+/**
+ * Section heading — Archivo SemiBold 28px in the design, a step down from the
+ * page title rather than the 3xl the page used before.
+ */
+function SectionHeading({ children }: { children: ReactNode }) {
+  return (
+    <h2 className="font-display text-[28px] font-semibold tracking-[-0.028em] text-ink">
+      {children}
+    </h2>
+  );
+}
+
+/** The standfirst under each heading: Inter 21px, muted, 1.6 line height. */
+function Lead({ children }: { children: ReactNode }) {
+  return <p className="mt-3 text-[21px] leading-[1.6] text-ink-muted">{children}</p>;
+}
+
+/**
+ * The "Our Mission / Our Identity / Our Response" summary that closes each
+ * section. A description list rather than paragraphs, because that is what it
+ * is — a term and its definition — and the design sets the terms in bold with
+ * no gap between the pairs.
+ */
+function SummaryList({ items }: { items: { term: string; detail: ReactNode }[] }) {
+  return (
+    <dl className="mt-6 text-base leading-[1.65] text-ink">
+      {items.map(({ term, detail }) => (
+        <div key={term}>
+          <dt className="font-bold">{term}</dt>
+          <dd>{detail}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
 
 export default function MissionStatementPage() {
   return (
@@ -22,97 +59,155 @@ export default function MissionStatementPage() {
           { label: "Mission statement" },
         ]}
         title="Mission statement"
-        subtitle="A worldwide community of believers dedicated to the spreading of the Gospel across university campuses."
+        subtitle="The convictions AM holds in common across every campus, chapter and country."
         backgroundImage="/images/mission-hero.jpg"
       />
       <AboutSubNav active="/about/mission" />
 
       <article className="bg-white py-20">
         <Container className="max-w-[720px] space-y-20">
-          <div>
-            <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink">
-              Our Mission
-            </h2>
-            <p className="mt-3 text-xl leading-relaxed text-ink-muted">
-              Preach the gospel, make disciples, equip leaders, and send them
-              out.
-            </p>
+          <section>
+            <SectionHeading>Our Mission</SectionHeading>
+            <Lead>
+              Preach the gospel, make disciples, equip leaders, and send them out.
+              <br />
+              Called to Be Sent
+            </Lead>
 
-            <div className="mt-8 space-y-6 text-base leading-relaxed text-ink">
+            <div className="mt-8 space-y-6 text-base leading-[1.65] text-ink">
               <p>
-                Apostolos Missions International (AM) is an
-                interdenominational ministry committed to spreading the
-                gospel to the ends of the earth, testifying to the eternal
-                love of the Lord.
+                The mission of Apostolos Missions begins with a simple but
+                powerful truth: we are called to be sent.
               </p>
               <p>
-                The name <em className="italic">apostolos</em> (ἀπόστολος) is
-                the Greek word for apostle. It means &ldquo;one who is sent
-                on a mission&rdquo; or &ldquo;messenger.&rdquo; The title
-                &ldquo;apostle&rdquo; often comes out in the New Testament to
-                represent the Twelve disciples appointed by Jesus (Matthew
-                10:2, Mark 3:14, Luke 6:13, Acts 2:42). Paul, a former
-                persecutor of Christianity turning to a great herald of the
-                gospel, introduced himself as an &ldquo;apostle&rdquo;
-                (Romans 1:1, 1 Corinthians 1:1, 2 Corinthians 1:1, Galatians
-                1:1, Colossians 1:1, 1 Timothy 1:1, 2 Timothy 1:1, Titus).
+                The name <em className="italic">Apostolos</em> (ἀπόστολος) is a
+                Greek word meaning &ldquo;one who is sent&rdquo; or
+                &ldquo;messenger.&rdquo; An apostle was someone sent with a
+                specific purpose and mission, just as a representative is sent to
+                carry out the will of the one who sends them.
               </p>
               <p>
-                Apostles are those who are sent by the Lord Jesus to fulfill
-                the mission of &ldquo;preaching Jesus Christ and making God
-                known&rdquo; to the whole creation. Biblical foundation of
-                apostleship is found in many words of the Lord who selected
-                first apostles and sent them out like the ambassadors
-                dispatched to represent different nations. Apostles
-                understood that their lives were not just their own, but
-                they lived to reveal the glory of Christ in this fallen
-                world.
+                Jesus said, &ldquo;You did not choose me, but I chose you and
+                appointed you&rdquo; (John 15:16). He also said, &ldquo;As you
+                sent me into the world, I have sent them into the world&rdquo;
+                (John 17:18).
+              </p>
+              <p>
+                These words reveal the foundation of our mission. Following
+                Christ is not only about receiving salvation; it is also about
+                receiving His calling to go and make Him known. At AM, we believe
+                that every believer is called to participate in God&rsquo;s
+                mission. We seek to live according to the identity of{" "}
+                <em className="italic">apostolos</em>&mdash;people who have been
+                chosen, called, and sent by Christ.
               </p>
             </div>
 
             <div className="mt-8">
               <PullQuote>
-                John 20:21 says, &ldquo;Again Jesus said, &lsquo;Peace be
-                with you! As the Father has sent me, I am sending
-                you.&rsquo;&rdquo; (NIV)
+                John 20:21 says, &ldquo;Again Jesus said, &lsquo;Peace be with
+                you! As the Father has sent me, I am sending you.&rsquo;&rdquo;
+                (NIV)
               </PullQuote>
             </div>
-          </div>
 
-          <div>
-            <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink">
-              Our Vision
-            </h2>
-            <p className="mt-3 text-xl leading-relaxed text-ink-muted">
-              Revitalize Thriving Campus Ministries! Preach Jesus All Over
-              the World!
+            <p className="mt-8 text-base leading-[1.65] text-ink">
+              Our mission is to proclaim Jesus Christ and make God known to the
+              ends of the earth through evangelism, discipleship, Bible study,
+              prayer, fellowship, and ministry.
             </p>
 
-            <div className="mt-8 space-y-6 text-base leading-relaxed text-ink">
-              <p>
-                AM wishes to follow the tradition of the apostles who lived
-                as people on a mission to proclaim the Word of God. Each of
-                us also receive this calling from God to be sent out into
-                the world as his hands and feet. We wish to dedicate our
-                lives to follow the footsteps of Jesus and proclaim the
-                Gospel until the ends of the earth.
-              </p>
-              <p>
-                Just as our lives have been touched and changed by the Lord,
-                we wish to reveal the love of the Lord that was shown to us,
-                becoming a beacon for all of His lost children and our
-                fellow brothers and sisters.
-              </p>
-            </div>
+            <SummaryList
+              items={[
+                {
+                  term: "Our Mission",
+                  detail:
+                    "To proclaim Jesus Christ and make God known to the ends of the earth.",
+                },
+                {
+                  term: "Our Identity",
+                  detail: "Chosen by Christ. Called by Christ. Sent by Christ.",
+                },
+                {
+                  term: "Our Response",
+                  detail: "Go. Make disciples. Share the Gospel. Make God known.",
+                },
+              ]}
+            />
+          </section>
+
+          <section>
+            <SectionHeading>Our Vision</SectionHeading>
+            <Lead>
+              A Generation Sent by Christ
+              <br />
+              Preach Jesus All Over the World!
+            </Lead>
+
+            <p className="mt-8 text-base leading-[1.65] text-ink">
+              At the heart of our vision is Jesus Christ Himself. Our message, our
+              mission, and our ministry are not centered on ourselves, but on
+              knowing Christ and making Him known.
+            </p>
 
             <div className="mt-8">
               <PullQuote>
-                &ldquo;For I resolved to know nothing while I was with you
-                except Jesus Christ and him crucified.&rdquo;
+                &ldquo;For I resolved to know nothing while I was with you except
+                Jesus Christ and him crucified.&rdquo;
                 <br />- 1 Corinthians 2:2
               </PullQuote>
             </div>
-          </div>
+
+            <div className="mt-8 space-y-6 text-base leading-[1.65] text-ink">
+              <p>
+                Apostolos Missions envisions a generation of students and young
+                people who encounter Jesus Christ, grow in God&rsquo;s Word,
+                discover their identity and calling in Him, and faithfully live as
+                those who have been sent.
+              </p>
+              <p>
+                We desire to see young people become deeply rooted in Christ
+                through Bible study, prayer, fellowship, discipleship, and
+                mission, growing not only as followers of Jesus but also as
+                faithful messengers of the Gospel.
+              </p>
+              <p>
+                Our vision is especially focused on reaching college campuses and
+                the next generation. We desire to see students encounter Jesus,
+                experience the truth of God&rsquo;s Word, discover their God-given
+                identity and purpose, and become equipped to make Him known
+                wherever He sends them.
+              </p>
+              <p>
+                We believe the mission does not end when someone receives the
+                Gospel. Those who have been sent by Christ are called to send
+                others. Through this multiplication, Apostolos Mission hopes to
+                see the Gospel carried from campuses to communities and from one
+                generation to the next.
+              </p>
+            </div>
+
+            <SummaryList
+              items={[
+                {
+                  term: "Our Vision",
+                  detail:
+                    "To see a generation that knows Christ, lives in His truth, and is sent to make Him known.",
+                },
+                {
+                  term: "Our Hope",
+                  detail: (
+                    <>
+                      Students transformed by Christ.
+                      <br />
+                      Believers rooted in His Word.
+                      <br />A generation sent with the Gospel.
+                    </>
+                  ),
+                },
+              ]}
+            />
+          </section>
         </Container>
       </article>
 
