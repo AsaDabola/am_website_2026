@@ -66,11 +66,34 @@ async function requireAdmin(request: NextRequest) {
  * which reads in a browser console as "Unexpected end of JSON input" and says
  * nothing about what actually failed. Whatever goes wrong now comes back as
  * JSON you can read.
+ *
+ * The chain matters as much as the message: a database failure surfaces as a
+ * Drizzle "Failed query: select …" that quotes the SQL and names nothing,
+ * while the Postgres error underneath it — the missing column, the bad type —
+ * is on `cause`. So the causes are unwrapped too, along with the `code` and
+ * `detail` a pg error carries.
  */
+function describe(error: unknown): string[] {
+  const chain: string[] = [];
+  let current: unknown = error;
+
+  for (let depth = 0; current && depth < 5; depth += 1) {
+    if (current instanceof Error) {
+      const { code, detail } = current as Error & { code?: string; detail?: string };
+      chain.push([current.message, code && `[${code}]`, detail].filter(Boolean).join(" "));
+      current = (current as { cause?: unknown }).cause;
+    } else {
+      chain.push(String(current));
+      break;
+    }
+  }
+
+  return chain;
+}
+
 function failed(error: unknown) {
-  const message = error instanceof Error ? error.message : String(error);
   console.error("[seed-tenants]", error);
-  return NextResponse.json({ ok: false, error: message }, { status: 500 });
+  return NextResponse.json({ ok: false, error: describe(error) }, { status: 500 });
 }
 
 /** Every existing tenant's slug → id, in one query rather than one per row. */
