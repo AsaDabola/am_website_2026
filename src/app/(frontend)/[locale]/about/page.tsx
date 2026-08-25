@@ -220,13 +220,12 @@ export default async function WhoWeArePage() {
               href="/about/mission"
               image="/images/about-mission-card.jpg"
               base="#0d328a"
-              // Design says night at 60%. The stand-in photo in this slot is
-              // a dark worship scene that already has a wash baked into the
-              // file, so 60% on top of it darkens twice and the picture
-              // disappears — the same double-darkening the hero had. Held at
-              // 35% until the design's own (much brighter) photo lands, at
-              // which point this should go back to 0.6.
-              wash="rgba(5,10,46,0.35)"
+              // Night at 60%, as the design draws it. The stand-in this held
+              // before was a dark worship scene with a wash already baked into
+              // the file, so 60% darkened it twice and the picture disappeared;
+              // it ran at 35% until the design's own photo arrived. That photo
+              // is here now and is lit from behind, so it takes the full wash.
+              wash="rgba(5,10,46,0.6)"
               title={t("cardMissionStatementTitle")}
               action={tCommon("learnMore")}
               // The design holds this title to 252px so it breaks over two
