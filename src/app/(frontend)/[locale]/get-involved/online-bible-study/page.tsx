@@ -6,6 +6,7 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import AboutHero from "@/components/about/AboutHero";
 import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
+import EventsAndTestimonials from "@/components/sections/EventsAndTestimonials";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 
@@ -84,6 +85,8 @@ export default async function OnlineBibleStudyPage() {
           </Button>
         </Container>
       </section>
+
+      <EventsAndTestimonials />
 
       <PartnerWithUs />
       <Newsletter />
