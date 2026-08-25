@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Bhasa"
   },
+  "CountrySwitcher": {
+    "label": "Desh",
+    "international": "International"
+  },
   "Common": {
     "tagline": "Ek antar-sampradaayik sewa kaam jon susamachaar ke dhartii ke chhor tak pahunchaay ke liye samarpit hai, aur Prabhu ke anant prem ke gawahi dewe hai.",
     "learnMore": "Aur jaano",
@@ -275,6 +279,9 @@
     "regionsHeading": "Kshetra",
     "regionsSubheading": "Jagah ke hisaab se dekho",
     "siteCount": "{count, plural, =1 {# site} other {# site}}",
+    "countriesEyebrow": "Har desh",
+    "countriesHeading": "Apan desh chuno",
+    "countriesSubheading": "Duniya bhar me {count} desh ke site",
     "communityEyebrow": "Ek duniya bhar ke samaaj",
     "chaptersHeading": "Duniya ke alag alag sahar aur kona me chapter",
     "chaptersSoon": "Chapter jaldi suru hoy waala hai.",

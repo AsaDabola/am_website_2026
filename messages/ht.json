@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Lang"
   },
+  "CountrySwitcher": {
+    "label": "Peyi",
+    "international": "Entènasyonal"
+  },
   "Common": {
     "tagline": "Yon ministè entèdenominasyonèl ki angaje pou gaye levanjil la jouk nan dènye bout latè, k ap temwaye lanmou etènèl Senyè a.",
     "learnMore": "Aprann plis",
@@ -275,6 +279,9 @@
     "regionsHeading": "Rejyon",
     "regionsSubheading": "Eksplore jeyografikman",
     "siteCount": "{count, plural, =1 {# sit} other {# sit}}",
+    "countriesEyebrow": "Chak peyi",
+    "countriesHeading": "Chwazi peyi ou",
+    "countriesSubheading": "{count} sit peyi atravè lemond",
     "communityEyebrow": "Yon kominote mondyal",
     "chaptersHeading": "Chapit nan divès vil ak kwen mond lan",
     "chaptersSoon": "Chapit k ap louvri byento.",

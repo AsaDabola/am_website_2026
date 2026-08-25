@@ -10,6 +10,12 @@ import TenantLink from "@/components/layout/TenantLink";
 import OurNetwork from "@/components/sections/OurNetwork";
 import { regions } from "@/lib/regions";
 import { getActiveTenantCountByContinent, getAllActiveTenantsByContinent } from "@/lib/tenants";
+import {
+  getCountryDirectory,
+  groupByContinent,
+  type DirectoryCountry,
+} from "@/lib/countryDirectory";
+import { flagSrc } from "@/lib/countryFlags";
 
 export const revalidate = 60;
 
@@ -43,13 +49,54 @@ const northAmericaChapters = [
   "Canada, Vancouver",
 ];
 
+/**
+ * One country in the directory: flag, name, and the chapter city where the
+ * sheet names one. Linked only where the site actually resolves — see
+ * getCountryDirectory.
+ */
+function CountryRow({ country }: { country: DirectoryCountry }) {
+  const inner = (
+    <>
+      {country.flag ? (
+        // Static SVG at a fixed 20px; the image optimiser has nothing to do.
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={flagSrc(country.flag)}
+          alt=""
+          width={20}
+          height={14}
+          className="mt-0.5 h-3.5 w-5 shrink-0 rounded-[2px] object-cover ring-1 ring-black/10"
+        />
+      ) : (
+        <span className="mt-0.5 h-3.5 w-5 shrink-0 rounded-[2px] bg-mist ring-1 ring-black/10" />
+      )}
+      <span>
+        {country.country}
+        {country.city ? <span className="text-ink-muted">, {country.city}</span> : null}
+      </span>
+    </>
+  );
+
+  const className = "flex items-start gap-2.5 py-1 text-sm leading-relaxed";
+
+  return country.live ? (
+    <Link href={`/${country.key}`} className={`${className} text-ink hover:text-brand-blue`}>
+      {inner}
+    </Link>
+  ) : (
+    <span className={`${className} text-ink-muted`}>{inner}</span>
+  );
+}
+
 export default async function NetworkPage() {
-  const [t, common, counts, tenantsByContinent] = await Promise.all([
+  const [t, common, counts, tenantsByContinent, countries] = await Promise.all([
     getTranslations("Network"),
     getTranslations("Common"),
     getActiveTenantCountByContinent(),
     getAllActiveTenantsByContinent(),
+    getCountryDirectory(),
   ]);
+  const countriesByRegion = groupByContinent(countries);
 
   return (
     <>
@@ -125,6 +172,45 @@ export default async function NetworkPage() {
                     </span>
                   )}
                 </Link>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
+
+      {/* The full country list, from the static sheet rather than the CMS, so
+          every one of the sixty is here whatever the database holds. A country
+          links to its site once a tenant exists for it; the rest are listed
+          but not linked, so the directory is never a page of 404s. */}
+      <section className="bg-white pb-24">
+        <Container>
+          <div className="flex justify-center">
+            <Eyebrow>{t("countriesEyebrow")}</Eyebrow>
+          </div>
+          <h2 className="text-center font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
+            {t("countriesHeading")}
+          </h2>
+          <p className="mt-3 text-center text-base text-ink-muted">
+            {t("countriesSubheading", { count: countries.length })}
+          </p>
+
+          <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            {regions.map((region) => {
+              const list = countriesByRegion[region.slug];
+              if (list.length === 0) return null;
+              return (
+                <div key={region.slug} className="border-t-2 border-black/10 pt-6">
+                  <h3 className="font-display text-base font-bold text-ink">
+                    {t(`regions.${region.slug}`)}
+                  </h3>
+                  <ul className="mt-4 space-y-1">
+                    {list.map((country) => (
+                      <li key={country.key}>
+                        <CountryRow country={country} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               );
             })}
           </div>

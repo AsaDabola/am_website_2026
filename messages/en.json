@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Language"
   },
+  "CountrySwitcher": {
+    "label": "Country",
+    "international": "International"
+  },
   "Common": {
     "tagline": "An interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord.",
     "learnMore": "Learn more",
@@ -275,6 +279,9 @@
     "regionsHeading": "Regions",
     "regionsSubheading": "Explore geographically",
     "siteCount": "{count, plural, =1 {# site} other {# sites}}",
+    "countriesEyebrow": "Every country",
+    "countriesHeading": "Choose your country",
+    "countriesSubheading": "{count} country sites around the world",
     "communityEyebrow": "A worldwide community",
     "chaptersHeading": "Chapters in diverse cities and corners of the world",
     "chaptersSoon": "Chapters launching soon.",

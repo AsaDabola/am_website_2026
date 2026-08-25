@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Lingua"
   },
+  "CountrySwitcher": {
+    "label": "Pajais",
+    "international": "Internaziunal"
+  },
   "Common": {
     "tagline": "In ministeri interconfessiunal ch'è engaschà da derasar l'evangeli fin a la fin dal mund, testimoniond l'amur etern dal Segner.",
     "learnMore": "Ulteriuras infurmaziuns",
@@ -275,6 +279,9 @@
     "regionsHeading": "Regiuns",
     "regionsSubheading": "Explorar geograficamain",
     "siteCount": "{count, plural, =1 {# pagina} other {# paginas}}",
+    "countriesEyebrow": "Mintga pajais",
+    "countriesHeading": "Tscherna tes pajais",
+    "countriesSubheading": "{count} paginas naziunalas en il mund",
     "communityEyebrow": "Ina communitad mundiala",
     "chaptersHeading": "Secziuns en differentas citads e chantuns dal mund",
     "chaptersSoon": "Secziuns vegnan avertas bainprest.",

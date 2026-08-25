@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "语言"
   },
+  "CountrySwitcher": {
+    "label": "国家",
+    "international": "国际"
+  },
   "Common": {
     "tagline": "AM 是一个跨宗派的福音机构，致力于将福音传到地极，为主永恒的爱作见证。",
     "learnMore": "了解更多",
@@ -178,6 +182,9 @@
     "regionsHeading": "地区",
     "regionsSubheading": "按地区浏览",
     "siteCount": "{count, plural, other {# 个站点}}",
+    "countriesEyebrow": "每个国家",
+    "countriesHeading": "选择您的国家",
+    "countriesSubheading": "全球 {count} 个国家站点",
     "communityEyebrow": "遍布世界的群体",
     "chaptersHeading": "分布在世界各地城市与角落的分会",
     "chaptersSoon": "分会即将成立。",

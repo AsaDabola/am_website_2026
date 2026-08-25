@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Ulwimi"
   },
+  "CountrySwitcher": {
+    "label": "Ilizwe",
+    "international": "Ehlabathini"
+  },
   "Common": {
     "tagline": "Ubulungiseleli obudibanisa amabandla obuzinikele ekusasazeni iindaba ezilungileyo ukuya ezipheleni zomhlaba, singqina ngothando olungunaphakade lweNkosi.",
     "learnMore": "Funda ngakumbi",
@@ -275,6 +279,9 @@
     "regionsHeading": "Imimandla",
     "regionsSubheading": "Phonononga ngokwendawo",
     "siteCount": "{count, plural, =1 {indawo enye} other {iindawo ezingu-#}}",
+    "countriesEyebrow": "Lonke ilizwe",
+    "countriesHeading": "Khetha ilizwe lakho",
+    "countriesSubheading": "Iisayithi zamazwe ezingu-{count} ehlabathini",
     "communityEyebrow": "Uluntu lwehlabathi",
     "chaptersHeading": "Izahluko kwizixeko neenkalo ezahlukeneyo zehlabathi",
     "chaptersSoon": "Izahluko ziza kuqalisa kungekudala.",

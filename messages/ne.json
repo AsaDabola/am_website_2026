@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "भाषा"
   },
+  "CountrySwitcher": {
+    "label": "देश",
+    "international": "अन्तर्राष्ट्रिय"
+  },
   "Common": {
     "tagline": "प्रभुको अनन्त प्रेमको गवाही दिँदै पृथ्वीको अन्तिम छेउसम्म सुसमाचार फैलाउन समर्पित एक अन्तर-सम्प्रदायिक सेवा।",
     "learnMore": "थप जान्नुहोस्",
@@ -275,6 +279,9 @@
     "regionsHeading": "क्षेत्रहरू",
     "regionsSubheading": "क्षेत्रअनुसार हेर्नुहोस्",
     "siteCount": "{count, plural, one {# साइट} other {# साइट}}",
+    "countriesEyebrow": "हरेक देश",
+    "countriesHeading": "आफ्नो देश छान्नुहोस्",
+    "countriesSubheading": "विश्वभर {count} देश साइटहरू",
     "communityEyebrow": "विश्वभरको समुदाय",
     "chaptersHeading": "संसारका विविध सहर र कुनाहरूमा शाखाहरू",
     "chaptersSoon": "शाखाहरू चाँडै सुरु हुँदैछन्।",

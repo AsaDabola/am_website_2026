@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "زبان"
   },
+  "CountrySwitcher": {
+    "label": "ملک",
+    "international": "بین الاقوامی"
+  },
   "Common": {
     "tagline": "ایک بین المسالک خدمت جو خداوند کی ابدی محبت کی گواہی دیتے ہوئے زمین کی انتہا تک انجیل پہنچانے کے لیے وقف ہے۔",
     "learnMore": "مزید جانیں",
@@ -275,6 +279,9 @@
     "regionsHeading": "خطے",
     "regionsSubheading": "خطے کے لحاظ سے دیکھیں",
     "siteCount": "{count, plural, one {# سائٹ} other {# سائٹس}}",
+    "countriesEyebrow": "ہر ملک",
+    "countriesHeading": "اپنا ملک منتخب کریں",
+    "countriesSubheading": "دنیا بھر میں {count} ملکی سائٹس",
     "communityEyebrow": "دنیا بھر میں پھیلی جماعت",
     "chaptersHeading": "دنیا کے مختلف شہروں اور گوشوں میں شاخیں",
     "chaptersSoon": "شاخیں جلد شروع ہو رہی ہیں۔",

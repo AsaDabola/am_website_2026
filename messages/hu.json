@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Nyelv"
   },
+  "CountrySwitcher": {
+    "label": "Ország",
+    "international": "Nemzetközi"
+  },
   "Common": {
     "tagline": "Felekezetközi szolgálat, amely elkötelezett az evangélium hirdetése mellett a föld végső határáig, bizonyságot téve az Úr örök szeretetéről.",
     "learnMore": "Tudj meg többet",
@@ -275,6 +279,9 @@
     "regionsHeading": "Régiók",
     "regionsSubheading": "Böngéssz földrajzilag",
     "siteCount": "{count, plural, other {# oldal}}",
+    "countriesEyebrow": "Minden ország",
+    "countriesHeading": "Válassza ki országát",
+    "countriesSubheading": "{count} országoldal világszerte",
     "communityEyebrow": "Világméretű közösség",
     "chaptersHeading": "Csoportok a világ legkülönfélébb városaiban és szegleteiben",
     "chaptersSoon": "A csoportok hamarosan indulnak.",

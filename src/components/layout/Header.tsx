@@ -5,9 +5,11 @@ import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
 import Logo from "@/components/ui/Logo";
 import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
+import CountrySwitcher from "@/components/layout/CountrySwitcher";
 import MobileNav from "@/components/layout/MobileNav";
 import { ArrowRightIcon, ChevronDownIcon, NavIcon } from "@/components/ui/icons";
 import { getNavigation } from "@/components/layout/navigation";
+import { getCountryDirectory } from "@/lib/countryDirectory";
 
 /** Picks the country-aware or plain link depending on where the target lives. */
 function NavAnchor({
@@ -32,6 +34,13 @@ function NavAnchor({
 export default async function Header() {
   const t = await getTranslations("Header");
   const { menus, plainLinks } = await getNavigation();
+
+  // Only the three fields the switcher renders cross to the client — the full
+  // sheet carries language lists and geo codes it has no use for.
+  const countries = await getCountryDirectory();
+  const switcherCountries = countries
+    .filter((country) => country.live)
+    .map(({ country, key, flag }) => ({ country, key, flag }));
 
   return (
     // `sticky` makes this the containing block for the dropdown panels below,
@@ -120,6 +129,7 @@ export default async function Header() {
         </nav>
 
         <div className="flex items-center gap-1">
+          <CountrySwitcher countries={switcherCountries} />
           <LanguageSwitcher />
           <TenantLink
             href="/get-involved/donate"

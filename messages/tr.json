@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Dil"
   },
+  "CountrySwitcher": {
+    "label": "Ülke",
+    "international": "Uluslararası"
+  },
   "Common": {
     "tagline": "Rab'bin sonsuz sevgisine tanıklık ederek Müjde'yi dünyanın dört bir yanına ulaştırmaya adanmış, mezhepler üstü bir hizmet.",
     "learnMore": "Daha fazla bilgi",
@@ -275,6 +279,9 @@
     "regionsHeading": "Bölgeler",
     "regionsSubheading": "Coğrafi olarak keşfedin",
     "siteCount": "{count, plural, other {# site}}",
+    "countriesEyebrow": "Her ülke",
+    "countriesHeading": "Ülkenizi seçin",
+    "countriesSubheading": "Dünya genelinde {count} ülke sitesi",
     "communityEyebrow": "Dünya çapında bir topluluk",
     "chaptersHeading": "Dünyanın dört bir yanındaki şehirlerde ve köşelerde şubeler",
     "chaptersSoon": "Şubeler yakında açılıyor.",

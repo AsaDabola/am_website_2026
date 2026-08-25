@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Ngôn ngữ"
   },
+  "CountrySwitcher": {
+    "label": "Quốc gia",
+    "international": "Quốc tế"
+  },
   "Common": {
     "tagline": "Một mục vụ liên hệ phái tận hiến cho việc rao truyền Phúc Âm đến tận cùng trái đất, làm chứng về tình yêu đời đời của Chúa.",
     "learnMore": "Tìm hiểu thêm",
@@ -275,6 +279,9 @@
     "regionsHeading": "Khu vực",
     "regionsSubheading": "Khám phá theo khu vực",
     "siteCount": "{count, plural, other {# trang}}",
+    "countriesEyebrow": "Mọi quốc gia",
+    "countriesHeading": "Chọn quốc gia của bạn",
+    "countriesSubheading": "{count} trang quốc gia trên khắp thế giới",
     "communityEyebrow": "Một cộng đồng toàn cầu",
     "chaptersHeading": "Các chi hội tại nhiều thành phố và góc trời khác nhau",
     "chaptersSoon": "Các chi hội sắp ra mắt.",

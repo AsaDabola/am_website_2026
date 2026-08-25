@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Taal"
   },
+  "CountrySwitcher": {
+    "label": "Land",
+    "international": "Internationaal"
+  },
   "Common": {
     "tagline": "Een interkerkelijke bediening die zich inzet om het evangelie tot aan de einden der aarde te verspreiden en te getuigen van de eeuwige liefde van de Heer.",
     "learnMore": "Meer informatie",
@@ -275,6 +279,9 @@
     "regionsHeading": "Regio's",
     "regionsSubheading": "Verken per gebied",
     "siteCount": "{count, plural, =1 {# site} other {# sites}}",
+    "countriesEyebrow": "Elk land",
+    "countriesHeading": "Kies uw land",
+    "countriesSubheading": "{count} landensites wereldwijd",
     "communityEyebrow": "Een wereldwijde gemeenschap",
     "chaptersHeading": "Afdelingen in uiteenlopende steden en uithoeken van de wereld",
     "chaptersSoon": "Afdelingen starten binnenkort.",

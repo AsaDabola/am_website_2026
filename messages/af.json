@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Taal"
   },
+  "CountrySwitcher": {
+    "label": "Land",
+    "international": "Internasionaal"
+  },
   "Common": {
     "tagline": "'n Interkerklike bediening wat toegewy is om die evangelie tot aan die eindes van die aarde te versprei en van die Here se ewige liefde te getuig.",
     "learnMore": "Lees meer",
@@ -275,6 +279,9 @@
     "regionsHeading": "Streke",
     "regionsSubheading": "Verken geografies",
     "siteCount": "{count, plural, one {# werf} other {# werwe}}",
+    "countriesEyebrow": "Elke land",
+    "countriesHeading": "Kies jou land",
+    "countriesSubheading": "{count} landwebwerwe regoor die wêreld",
     "communityEyebrow": "'n Wêreldwye gemeenskap",
     "chaptersHeading": "Takke in uiteenlopende stede en hoeke van die wêreld",
     "chaptersSoon": "Takke begin binnekort.",

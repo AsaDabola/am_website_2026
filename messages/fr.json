@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Langue"
   },
+  "CountrySwitcher": {
+    "label": "Pays",
+    "international": "International"
+  },
   "Common": {
     "tagline": "Un ministère interconfessionnel engagé à répandre l'évangile jusqu'aux extrémités de la terre, témoignant de l'amour éternel du Seigneur.",
     "learnMore": "En savoir plus",
@@ -178,6 +182,9 @@
     "regionsHeading": "Régions",
     "regionsSubheading": "Explorer par zone géographique",
     "siteCount": "{count, plural, =1 {# site} other {# sites}}",
+    "countriesEyebrow": "Chaque pays",
+    "countriesHeading": "Choisissez votre pays",
+    "countriesSubheading": "{count} sites nationaux dans le monde",
     "communityEyebrow": "Une communauté mondiale",
     "chaptersHeading": "Des chapitres dans des villes et des recoins variés du monde",
     "chaptersSoon": "Chapitres bientôt lancés.",

@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Jazyk"
   },
+  "CountrySwitcher": {
+    "label": "Země",
+    "international": "Mezinárodní"
+  },
   "Common": {
     "tagline": "Mezidenominační služba oddaná šíření evangelia až na sám konec země a svědectví o věčné lásce Páně.",
     "learnMore": "Zjistit více",
@@ -275,6 +279,9 @@
     "regionsHeading": "Regiony",
     "regionsSubheading": "Procházejte podle regionu",
     "siteCount": "{count, plural, one {# web} few {# weby} other {# webů}}",
+    "countriesEyebrow": "Každá země",
+    "countriesHeading": "Vyberte svou zemi",
+    "countriesSubheading": "{count} zemských webů po celém světě",
     "communityEyebrow": "Celosvětové společenství",
     "chaptersHeading": "Pobočky v nejrůznějších městech a koutech světa",
     "chaptersSoon": "Pobočky brzy vzniknou.",

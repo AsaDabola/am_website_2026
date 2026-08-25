@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "שפה"
   },
+  "CountrySwitcher": {
+    "label": "מדינה",
+    "international": "בינלאומי"
+  },
   "Common": {
     "tagline": "שירות בין־זרמי המחויב להפצת הבשורה עד קצה הארץ, ומעיד על אהבתו הנצחית של האדון.",
     "learnMore": "מידע נוסף",
@@ -275,6 +279,9 @@
     "regionsHeading": "אזורים",
     "regionsSubheading": "עיינו לפי אזור",
     "siteCount": "{count, plural, one {אתר אחד} two {# אתרים} other {# אתרים}}",
+    "countriesEyebrow": "כל מדינה",
+    "countriesHeading": "בחרו את המדינה שלכם",
+    "countriesSubheading": "{count} אתרי מדינות ברחבי העולם",
     "communityEyebrow": "קהילה עולמית",
     "chaptersHeading": "סניפים בערים ובפינות מגוונות של העולם",
     "chaptersSoon": "סניפים ייפתחו בקרוב.",

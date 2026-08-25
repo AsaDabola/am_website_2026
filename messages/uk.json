@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Мова"
   },
+  "CountrySwitcher": {
+    "label": "Країна",
+    "international": "Міжнародний"
+  },
   "Common": {
     "tagline": "Міжконфесійне служіння, віддане поширенню Євангелія аж до краю землі та свідченню про вічну любов Господа.",
     "learnMore": "Дізнатися більше",
@@ -275,6 +279,9 @@
     "regionsHeading": "Регіони",
     "regionsSubheading": "Пошук за регіоном",
     "siteCount": "{count, plural, one {# сайт} few {# сайти} other {# сайтів}}",
+    "countriesEyebrow": "Кожна країна",
+    "countriesHeading": "Оберіть свою країну",
+    "countriesSubheading": "{count} країнових сайтів у всьому світі",
     "communityEyebrow": "Всесвітня спільнота",
     "chaptersHeading": "Осередки в найрізноманітніших містах і куточках світу",
     "chaptersSoon": "Осередки відкриються найближчим часом.",

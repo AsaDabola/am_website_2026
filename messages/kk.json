@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Тіл"
   },
+  "CountrySwitcher": {
+    "label": "Ел",
+    "international": "Халықаралық"
+  },
   "Common": {
     "tagline": "Иеміздің мәңгілік сүйіспеншілігіне куә бола отырып, ізгі хабарды жер шетіне дейін таратуға арналған конфессияаралық қызмет.",
     "learnMore": "Толығырақ",
@@ -275,6 +279,9 @@
     "regionsHeading": "Аймақтар",
     "regionsSubheading": "Аймақ бойынша қарау",
     "siteCount": "{count, plural, other {# сайт}}",
+    "countriesEyebrow": "Әр ел",
+    "countriesHeading": "Еліңізді таңдаңыз",
+    "countriesSubheading": "Әлем бойынша {count} ел сайты",
     "communityEyebrow": "Бүкіл әлемдік қауым",
     "chaptersHeading": "Әлемнің түрлі қалалары мен түкпірлеріндегі бөлімшелер",
     "chaptersSoon": "Бөлімшелер жақында ашылады.",

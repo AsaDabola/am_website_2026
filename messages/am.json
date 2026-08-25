@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "ቋንቋ"
   },
+  "CountrySwitcher": {
+    "label": "አገር",
+    "international": "ዓለም አቀፍ"
+  },
   "Common": {
     "tagline": "የጌታን ዘላለማዊ ፍቅር እየመሰከረ ወንጌልን እስከ ምድር ዳርቻ ለማዳረስ የተሰጠ ኅብረ-ቤተ እምነት አገልግሎት።",
     "learnMore": "ተጨማሪ ይወቁ",
@@ -275,6 +279,9 @@
     "regionsHeading": "ክልሎች",
     "regionsSubheading": "በክልል ይመልከቱ",
     "siteCount": "{count, plural, other {# ድረ ገጽ}}",
+    "countriesEyebrow": "እያንዳንዱ አገር",
+    "countriesHeading": "አገርዎን ይምረጡ",
+    "countriesSubheading": "{count} የአገር ድረ-ገጾች በዓለም ዙሪያ",
     "communityEyebrow": "ዓለም አቀፍ ማኅበረሰብ",
     "chaptersHeading": "በዓለም የተለያዩ ከተሞችና ማዕዘናት ውስጥ ያሉ ቅርንጫፎች",
     "chaptersSoon": "ቅርንጫፎች በቅርቡ ይጀምራሉ።",

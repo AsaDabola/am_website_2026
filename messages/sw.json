@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Lugha"
   },
+  "CountrySwitcher": {
+    "label": "Nchi",
+    "international": "Kimataifa"
+  },
   "Common": {
     "tagline": "Huduma ya madhehebu mbalimbali iliyojitoa kueneza injili hadi miisho ya dunia, ikishuhudia upendo wa milele wa Bwana.",
     "learnMore": "Jifunze zaidi",
@@ -275,6 +279,9 @@
     "regionsHeading": "Kanda",
     "regionsSubheading": "Chunguza kwa eneo",
     "siteCount": "{count, plural, one {tovuti #} other {tovuti #}}",
+    "countriesEyebrow": "Kila nchi",
+    "countriesHeading": "Chagua nchi yako",
+    "countriesSubheading": "Tovuti {count} za nchi duniani kote",
     "communityEyebrow": "Jumuiya ya dunia nzima",
     "chaptersHeading": "Matawi katika miji na pembe mbalimbali za dunia",
     "chaptersSoon": "Matawi yanaanza hivi karibuni.",

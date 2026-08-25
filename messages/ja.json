@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "言語"
   },
+  "CountrySwitcher": {
+    "label": "国",
+    "international": "インターナショナル"
+  },
   "Common": {
     "tagline": "地の果てまで福音を伝え、主の永遠の愛を証しすることに献身する、超教派の宣教団体です。",
     "learnMore": "詳しく見る",
@@ -178,6 +182,9 @@
     "regionsHeading": "地域",
     "regionsSubheading": "地域から探す",
     "siteCount": "{count, plural, other {# サイト}}",
+    "countriesEyebrow": "すべての国",
+    "countriesHeading": "国を選択",
+    "countriesSubheading": "世界各地の{count}の国別サイト",
     "communityEyebrow": "世界に広がる共同体",
     "chaptersHeading": "世界各地の都市と地域にあるチャプター",
     "chaptersSoon": "チャプターは間もなく始まります。",

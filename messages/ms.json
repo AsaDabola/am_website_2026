@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Bahasa"
   },
+  "CountrySwitcher": {
+    "label": "Negara",
+    "international": "Antarabangsa"
+  },
   "Common": {
     "tagline": "Pelayanan merentas denominasi yang komited menyebarkan Injil hingga ke hujung bumi, bersaksi tentang kasih Tuhan yang kekal.",
     "learnMore": "Ketahui lebih lanjut",
@@ -275,6 +279,9 @@
     "regionsHeading": "Wilayah",
     "regionsSubheading": "Terokai mengikut wilayah",
     "siteCount": "{count, plural, other {# laman}}",
+    "countriesEyebrow": "Setiap negara",
+    "countriesHeading": "Pilih negara anda",
+    "countriesSubheading": "{count} tapak negara di seluruh dunia",
     "communityEyebrow": "Komuniti seluruh dunia",
     "chaptersHeading": "Cawangan di pelbagai bandar dan pelosok dunia",
     "chaptersSoon": "Cawangan akan bermula tidak lama lagi.",

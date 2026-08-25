@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "ဘာသာစကား"
   },
+  "CountrySwitcher": {
+    "label": "နိုင်ငံ",
+    "international": "နိုင်ငံတကာ"
+  },
   "Common": {
     "tagline": "သခင်ဘုရား၏ ထာဝရမေတ္တာကို သက်သေခံလျက်၊ မြေကြီးစွန်းတိုင်အောင် ဧဝံဂေလိတရားကို ဖြန့်ဝေရန် ဆက်ကပ်အပ်နှံထားသော ဂိုဏ်းပေါင်းစုံဆိုင်ရာ ဓမ္မအမှုတစ်ခု။",
     "learnMore": "ပိုမိုလေ့လာရန်",
@@ -275,6 +279,9 @@
     "regionsHeading": "ဒေသများ",
     "regionsSubheading": "ဒေသအလိုက် လေ့လာပါ",
     "siteCount": "{count, plural, other {ဆိုက် #}}",
+    "countriesEyebrow": "နိုင်ငံတိုင်း",
+    "countriesHeading": "သင့်နိုင်ငံကို ရွေးပါ",
+    "countriesSubheading": "ကမ္ဘာတစ်ဝှမ်း နိုင်ငံဆိုက် {count} ခု",
     "communityEyebrow": "ကမ္ဘာတစ်ဝှမ်း အသိုက်အဝန်း",
     "chaptersHeading": "ကမ္ဘာ့မြို့များနှင့် ဒေသအသီးသီးရှိ ဌာနခွဲများ",
     "chaptersSoon": "ဌာနခွဲများ မကြာမီ စတင်ပါမည်။",

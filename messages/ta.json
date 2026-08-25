@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "மொழி"
   },
+  "CountrySwitcher": {
+    "label": "நாடு",
+    "international": "சர்வதேச"
+  },
   "Common": {
     "tagline": "கர்த்தரின் நித்திய அன்பிற்குச் சாட்சி பகர்ந்து, பூமியின் கடைசி எல்லைவரை நற்செய்தியைப் பரப்ப அர்ப்பணிக்கப்பட்ட சபைகளுக்கிடையேயான ஊழியம்.",
     "learnMore": "மேலும் அறிக",
@@ -275,6 +279,9 @@
     "regionsHeading": "பகுதிகள்",
     "regionsSubheading": "பகுதி வாரியாக ஆராயுங்கள்",
     "siteCount": "{count, plural, one {# தளம்} other {# தளங்கள்}}",
+    "countriesEyebrow": "ஒவ்வொரு நாடும்",
+    "countriesHeading": "உங்கள் நாட்டைத் தேர்ந்தெடுங்கள்",
+    "countriesSubheading": "உலகெங்கிலும் {count} நாட்டுத் தளங்கள்",
     "communityEyebrow": "உலகெங்கிலும் ஒரு சமூகம்",
     "chaptersHeading": "உலகின் பல்வேறு நகரங்களிலும் மூலைகளிலும் கிளைகள்",
     "chaptersSoon": "கிளைகள் விரைவில் தொடங்குகின்றன.",

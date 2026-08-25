@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Jazyk"
   },
+  "CountrySwitcher": {
+    "label": "Krajina",
+    "international": "Medzinárodné"
+  },
   "Common": {
     "tagline": "Medzidenominačná služba oddaná šíreniu evanjelia až po kraj zeme a svedectvu o večnej láske Pána.",
     "learnMore": "Zistiť viac",
@@ -275,6 +279,9 @@
     "regionsHeading": "Regióny",
     "regionsSubheading": "Prechádzajte podľa regiónu",
     "siteCount": "{count, plural, one {# stránka} few {# stránky} other {# stránok}}",
+    "countriesEyebrow": "Každá krajina",
+    "countriesHeading": "Vyberte si krajinu",
+    "countriesSubheading": "{count} krajinských stránok po celom svete",
     "communityEyebrow": "Celosvetové spoločenstvo",
     "chaptersHeading": "Pobočky v najrôznejších mestách a kútoch sveta",
     "chaptersSoon": "Pobočky čoskoro vzniknú.",

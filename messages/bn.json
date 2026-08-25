@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "ভাষা"
   },
+  "CountrySwitcher": {
+    "label": "দেশ",
+    "international": "আন্তর্জাতিক"
+  },
   "Common": {
     "tagline": "একটি আন্তঃসম্প্রদায়িক পরিচর্যা, যা প্রভুর অনন্ত প্রেমের সাক্ষ্য দিয়ে পৃথিবীর প্রান্ত পর্যন্ত সুসমাচার ছড়িয়ে দিতে নিবেদিত।",
     "learnMore": "আরও জানুন",
@@ -275,6 +279,9 @@
     "regionsHeading": "অঞ্চল",
     "regionsSubheading": "অঞ্চল অনুযায়ী দেখুন",
     "siteCount": "{count, plural, one {# সাইট} other {# সাইট}}",
+    "countriesEyebrow": "প্রতিটি দেশ",
+    "countriesHeading": "আপনার দেশ বেছে নিন",
+    "countriesSubheading": "বিশ্বজুড়ে {count}টি দেশের সাইট",
     "communityEyebrow": "বিশ্বজুড়ে এক সম্প্রদায়",
     "chaptersHeading": "বিশ্বের নানা শহর ও প্রান্তে শাখা",
     "chaptersSoon": "শাখা শীঘ্রই শুরু হচ্ছে।",

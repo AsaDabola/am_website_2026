@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Γλώσσα"
   },
+  "CountrySwitcher": {
+    "label": "Χώρα",
+    "international": "Διεθνές"
+  },
   "Common": {
     "tagline": "Μια διομολογιακή διακονία αφιερωμένη στη διάδοση του ευαγγελίου ως τα πέρατα της γης, μαρτυρώντας την αιώνια αγάπη του Κυρίου.",
     "learnMore": "Μάθετε περισσότερα",
@@ -275,6 +279,9 @@
     "regionsHeading": "Περιοχές",
     "regionsSubheading": "Εξερευνήστε γεωγραφικά",
     "siteCount": "{count, plural, =1 {# ιστότοπος} other {# ιστότοποι}}",
+    "countriesEyebrow": "Κάθε χώρα",
+    "countriesHeading": "Επιλέξτε τη χώρα σας",
+    "countriesSubheading": "{count} ιστότοποι χωρών παγκοσμίως",
     "communityEyebrow": "Μια παγκόσμια κοινότητα",
     "chaptersHeading": "Παραρτήματα σε διάφορες πόλεις και γωνιές του κόσμου",
     "chaptersSoon": "Τα παραρτήματα ξεκινούν σύντομα.",

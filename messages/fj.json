@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Vosa"
   },
+  "CountrySwitcher": {
+    "label": "Vanua",
+    "international": "Vuravura"
+  },
   "Common": {
     "tagline": "E dua na veiqaravi vakalotu veiwekani e yalataka me kauta na kosipeli me yacova na iyalayala kei vuravura, ka vakadinadinataka na loloma tawamudu ni Turaga.",
     "learnMore": "Vulica na kena levu cake",
@@ -275,6 +279,9 @@
     "regionsHeading": "Veiyasana",
     "regionsSubheading": "Vakadidike vakavanua",
     "siteCount": "{count, plural, =1 {# na mataveilawa} other {# na mataveilawa}}",
+    "countriesEyebrow": "Na vanua kece",
+    "countriesHeading": "Digitaka na nomu vanua",
+    "countriesSubheading": "{count} na iwebusaiti ni vanua e vuravura",
     "communityEyebrow": "E dua na matatamata vakavuravura",
     "chaptersHeading": "Tabana ena veikoro kei na veitutu duidui e vuravura",
     "chaptersSoon": "Era na tekivu vakatotolo na tabana.",

@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Хэл"
   },
+  "CountrySwitcher": {
+    "label": "Улс",
+    "international": "Олон улсын"
+  },
   "Common": {
     "tagline": "Эзний мөнхийн хайрыг гэрчилж, дэлхийн хязгаар хүртэл сайн мэдээг түгээхэд зориулагдсан урсгал хоорондын үйлчлэл.",
     "learnMore": "Дэлгэрэнгүй",
@@ -275,6 +279,9 @@
     "regionsHeading": "Бүс нутаг",
     "regionsSubheading": "Бүс нутгаар үзэх",
     "siteCount": "{count, plural, other {# сайт}}",
+    "countriesEyebrow": "Бүх улс",
+    "countriesHeading": "Улсаа сонгоно уу",
+    "countriesSubheading": "Дэлхий даяар {count} улсын сайт",
     "communityEyebrow": "Дэлхий даяарх нийгэмлэг",
     "chaptersHeading": "Дэлхийн олон хот, булан тохойд буй салбарууд",
     "chaptersSoon": "Салбарууд удахгүй нээгдэнэ.",

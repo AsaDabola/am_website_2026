@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "भाषा"
   },
+  "CountrySwitcher": {
+    "label": "देश",
+    "international": "अंतर्राष्ट्रीय"
+  },
   "Common": {
     "tagline": "एक अंतर-सांप्रदायिक सेवकाई जो प्रभु के अनंत प्रेम की गवाही देते हुए पृथ्वी की छोर तक सुसमाचार फैलाने के लिए समर्पित है।",
     "learnMore": "और जानें",
@@ -275,6 +279,9 @@
     "regionsHeading": "क्षेत्र",
     "regionsSubheading": "क्षेत्र के अनुसार देखें",
     "siteCount": "{count, plural, one {# साइट} other {# साइटें}}",
+    "countriesEyebrow": "हर देश",
+    "countriesHeading": "अपना देश चुनें",
+    "countriesSubheading": "दुनिया भर में {count} देश साइटें",
     "communityEyebrow": "दुनिया भर का समुदाय",
     "chaptersHeading": "दुनिया के विविध शहरों और कोनों में शाखाएँ",
     "chaptersSoon": "शाखाएँ शीघ्र शुरू हो रही हैं।",

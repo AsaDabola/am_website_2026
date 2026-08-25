@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Язык"
   },
+  "CountrySwitcher": {
+    "label": "Страна",
+    "international": "Международный"
+  },
   "Common": {
     "tagline": "Межконфессиональное служение, посвящённое распространению Евангелия до края земли и свидетельству о вечной любви Господа.",
     "learnMore": "Узнать больше",
@@ -275,6 +279,9 @@
     "regionsHeading": "Регионы",
     "regionsSubheading": "Поиск по регионам",
     "siteCount": "{count, plural, one {# сайт} few {# сайта} other {# сайтов}}",
+    "countriesEyebrow": "Каждая страна",
+    "countriesHeading": "Выберите свою страну",
+    "countriesSubheading": "{count} страновых сайтов по всему миру",
     "communityEyebrow": "Всемирное сообщество",
     "chaptersHeading": "Отделения в самых разных городах и уголках мира",
     "chaptersSoon": "Отделения откроются в ближайшее время.",

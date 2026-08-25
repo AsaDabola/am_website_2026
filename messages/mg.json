@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Fiteny"
   },
+  "CountrySwitcher": {
+    "label": "Firenena",
+    "international": "Iraisam-pirenena"
+  },
   "Common": {
     "tagline": "Asa fanompoana iombonan'ny fiangonana samihafa izay manolo-tena hampiely ny filazantsara hatrany amin'ny faran'ny tany, mijoro ho vavolombelon'ny fitiavana mandrakizain'ny Tompo.",
     "learnMore": "Fantaro bebe kokoa",
@@ -275,6 +279,9 @@
     "regionsHeading": "Faritra",
     "regionsSubheading": "Zahao araka ny toerana",
     "siteCount": "{count, plural, =1 {toerana #} other {toerana #}}",
+    "countriesEyebrow": "Firenena tsirairay",
+    "countriesHeading": "Safidio ny firenenao",
+    "countriesSubheading": "Tranokala firenena {count} manerantany",
     "communityEyebrow": "Fiaraha-monina manerantany",
     "chaptersHeading": "Sampana any amin'ny tanàna sy zorony samihafa eran-tany",
     "chaptersSoon": "Sampana hisokatra tsy ho ela.",

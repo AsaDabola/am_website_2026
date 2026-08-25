@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Ururimi"
   },
+  "CountrySwitcher": {
+    "label": "Igihugu",
+    "international": "Mpuzamahanga"
+  },
   "Common": {
     "tagline": "Umurimo uhuza amadini utanga umwete wo gukwiza ubutumwa bwiza kugeza ku mpera z'isi, buhamya urukundo rw'iteka rw'Umwami.",
     "learnMore": "Menya byinshi",
@@ -275,6 +279,9 @@
     "regionsHeading": "Uturere",
     "regionsSubheading": "Shakashaka ukurikije ahantu",
     "siteCount": "{count, plural, =1 {urubuga #} other {imbuga #}}",
+    "countriesEyebrow": "Buri gihugu",
+    "countriesHeading": "Hitamo igihugu cyawe",
+    "countriesSubheading": "Imbuga {count} z'ibihugu ku isi hose",
     "communityEyebrow": "Umuryango wo ku isi yose",
     "chaptersHeading": "Amashami mu migi n'impande zitandukanye z'isi",
     "chaptersSoon": "Amashami agiye gutangira vuba.",

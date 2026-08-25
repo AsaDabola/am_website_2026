@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Limbă"
   },
+  "CountrySwitcher": {
+    "label": "Țară",
+    "international": "Internațional"
+  },
   "Common": {
     "tagline": "O slujire interconfesională dedicată răspândirii evangheliei până la marginile pământului, mărturisind dragostea veșnică a Domnului.",
     "learnMore": "Află mai multe",
@@ -275,6 +279,9 @@
     "regionsHeading": "Regiuni",
     "regionsSubheading": "Explorează geografic",
     "siteCount": "{count, plural, one {# site} few {# site-uri} other {# de site-uri}}",
+    "countriesEyebrow": "Fiecare țară",
+    "countriesHeading": "Alegeți-vă țara",
+    "countriesSubheading": "{count} site-uri naționale în întreaga lume",
     "communityEyebrow": "O comunitate mondială",
     "chaptersHeading": "Filiale în orașe și colțuri diverse ale lumii",
     "chaptersSoon": "Filialele se deschid în curând.",

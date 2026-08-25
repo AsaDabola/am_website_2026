@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Språk"
   },
+  "CountrySwitcher": {
+    "label": "Land",
+    "international": "Internationell"
+  },
   "Common": {
     "tagline": "En interkonfessionell verksamhet som är hängiven att sprida evangeliet till jordens yttersta gräns och vittna om Herrens eviga kärlek.",
     "learnMore": "Läs mer",
@@ -275,6 +279,9 @@
     "regionsHeading": "Regioner",
     "regionsSubheading": "Utforska geografiskt",
     "siteCount": "{count, plural, =1 {# webbplats} other {# webbplatser}}",
+    "countriesEyebrow": "Varje land",
+    "countriesHeading": "Välj ditt land",
+    "countriesSubheading": "{count} landssajter världen över",
     "communityEyebrow": "En världsomspännande gemenskap",
     "chaptersHeading": "Lokalgrupper i olika städer och hörn av världen",
     "chaptersSoon": "Lokalgrupper startar snart.",

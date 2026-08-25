@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Ururimi"
   },
+  "CountrySwitcher": {
+    "label": "Igihugu",
+    "international": "Mpuzamakungu"
+  },
   "Common": {
     "tagline": "Igikorwa gihuza amadini cishimikiye gukwiza ubutumwa bwiza gushika ku mpera z'isi, cishingira urukundo rw'ibihe bidahera rw'Umukama.",
     "learnMore": "Menya vyinshi",
@@ -275,6 +279,9 @@
     "regionsHeading": "Uturere",
     "regionsSubheading": "Rondera wisunze ikibanza",
     "siteCount": "{count, plural, =1 {urubuga #} other {imbuga #}}",
+    "countriesEyebrow": "Igihugu cose",
+    "countriesHeading": "Hitamwo igihugu cawe",
+    "countriesSubheading": "Imbuga {count} z'ibihugu kw'isi yose",
     "communityEyebrow": "Umuryango wo kw'isi yose",
     "chaptersHeading": "Amashami mu bisagara n'imfuruka zitandukanye z'isi",
     "chaptersSoon": "Amashami agiye gutangura vuba.",

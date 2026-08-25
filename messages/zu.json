@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Ulimi"
   },
+  "CountrySwitcher": {
+    "label": "Izwe",
+    "international": "Umhlaba wonke"
+  },
   "Common": {
     "tagline": "Inkonzo ehlanganisa amabandla ezinikele ekusakazeni ivangeli kuze kufike emikhawulweni yomhlaba, ifakaza ngothando lweNkosi olungunaphakade.",
     "learnMore": "Funda kabanzi",
@@ -275,6 +279,9 @@
     "regionsHeading": "Izifunda",
     "regionsSubheading": "Hlola ngokwezifunda",
     "siteCount": "{count, plural, one {isayithi elingu-#} other {amasayithi angu-#}}",
+    "countriesEyebrow": "Wonke amazwe",
+    "countriesHeading": "Khetha izwe lakho",
+    "countriesSubheading": "Amasayithi amazwe angu-{count} emhlabeni wonke",
     "communityEyebrow": "Umphakathi womhlaba wonke",
     "chaptersHeading": "Amagatsha emadolobheni nasezingoxini ezahlukene zomhlaba",
     "chaptersSoon": "Amagatsha aqala maduze.",

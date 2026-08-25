@@ -94,3 +94,27 @@ export async function getActiveTenantCountByContinent(): Promise<Record<string, 
     return {};
   }
 }
+
+/**
+ * `{continent}/{slug}` for every active tenant.
+ *
+ * The country directory is built from the static COUNTRY_SITES list so it is
+ * complete whatever the CMS holds, but only a country with a tenant behind it
+ * actually resolves at /{continent}/{slug} — see the catch-all route. This is
+ * what lets the directory link the ones that resolve and leave the rest as
+ * plain text rather than shipping links to 404s.
+ */
+export async function getActiveTenantKeys(): Promise<Set<string>> {
+  try {
+    const payload = await getPayload({ config });
+    const result = await payload.find({
+      collection: "tenants",
+      where: { active: { equals: true } },
+      limit: 1000,
+      depth: 0,
+    });
+    return new Set(result.docs.map((t) => `${t.continent}/${t.slug}`));
+  } catch {
+    return new Set();
+  }
+}

@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "언어"
   },
+  "CountrySwitcher": {
+    "label": "국가",
+    "international": "인터내셔널"
+  },
   "Common": {
     "tagline": "땅끝까지 복음을 전하며 주님의 영원한 사랑을 증거하는 데 헌신하는 초교파 선교단체입니다.",
     "learnMore": "자세히 보기",
@@ -178,6 +182,9 @@
     "regionsHeading": "지역",
     "regionsSubheading": "지역별로 살펴보기",
     "siteCount": "{count, plural, other {사이트 #곳}}",
+    "countriesEyebrow": "모든 국가",
+    "countriesHeading": "국가를 선택하세요",
+    "countriesSubheading": "전 세계 {count}개 국가 사이트",
     "communityEyebrow": "전 세계의 공동체",
     "chaptersHeading": "세계 곳곳의 도시와 지역에 있는 챕터들",
     "chaptersSoon": "곧 챕터가 시작됩니다.",

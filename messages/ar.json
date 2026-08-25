@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "اللغة"
   },
+  "CountrySwitcher": {
+    "label": "البلد",
+    "international": "دولي"
+  },
   "Common": {
     "tagline": "خدمة مسكونية مكرَّسة لنشر الإنجيل إلى أقاصي الأرض، شاهدةً لمحبة الرب الأبدية.",
     "learnMore": "اعرف المزيد",
@@ -275,6 +279,9 @@
     "regionsHeading": "المناطق",
     "regionsSubheading": "استكشف حسب المنطقة",
     "siteCount": "{count, plural, other {# موقعًا}}",
+    "countriesEyebrow": "كل بلد",
+    "countriesHeading": "اختر بلدك",
+    "countriesSubheading": "{count} موقعًا قطريًا حول العالم",
     "communityEyebrow": "جماعة حول العالم",
     "chaptersHeading": "فروع في مدن وأصقاع متنوّعة من العالم",
     "chaptersSoon": "الفروع تنطلق قريبًا.",

@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "ภาษา"
   },
+  "CountrySwitcher": {
+    "label": "ประเทศ",
+    "international": "นานาชาติ"
+  },
   "Common": {
     "tagline": "พันธกิจข้ามนิกายที่ทุ่มเทประกาศข่าวประเสริฐจนถึงที่สุดปลายแผ่นดินโลก เป็นพยานถึงความรักนิรันดร์ขององค์พระผู้เป็นเจ้า",
     "learnMore": "อ่านเพิ่มเติม",
@@ -275,6 +279,9 @@
     "regionsHeading": "ภูมิภาค",
     "regionsSubheading": "สำรวจตามภูมิภาค",
     "siteCount": "{count, plural, other {# เว็บไซต์}}",
+    "countriesEyebrow": "ทุกประเทศ",
+    "countriesHeading": "เลือกประเทศของคุณ",
+    "countriesSubheading": "{count} เว็บไซต์ประเทศทั่วโลก",
     "communityEyebrow": "ชุมชนทั่วโลก",
     "chaptersHeading": "สาขาในเมืองและมุมต่าง ๆ ของโลก",
     "chaptersSoon": "สาขาจะเปิดเร็ว ๆ นี้",

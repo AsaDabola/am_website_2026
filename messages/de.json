@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Sprache"
   },
+  "CountrySwitcher": {
+    "label": "Land",
+    "international": "International"
+  },
   "Common": {
     "tagline": "Ein konfessionsübergreifender Dienst, der sich verpflichtet hat, das Evangelium bis an die Enden der Erde zu verbreiten und von der ewigen Liebe des Herrn zu zeugen.",
     "learnMore": "Mehr erfahren",
@@ -178,6 +182,9 @@
     "regionsHeading": "Regionen",
     "regionsSubheading": "Geografisch entdecken",
     "siteCount": "{count, plural, =1 {# Seite} other {# Seiten}}",
+    "countriesEyebrow": "Jedes Land",
+    "countriesHeading": "Wählen Sie Ihr Land",
+    "countriesSubheading": "{count} Länderseiten weltweit",
     "communityEyebrow": "Eine weltweite Gemeinschaft",
     "chaptersHeading": "Chapter in Städten und Winkeln überall auf der Welt",
     "chaptersSoon": "Chapter starten in Kürze.",

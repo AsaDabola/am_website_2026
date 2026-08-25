@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Język"
   },
+  "CountrySwitcher": {
+    "label": "Kraj",
+    "international": "Międzynarodowy"
+  },
   "Common": {
     "tagline": "Międzywyznaniowa służba oddana głoszeniu ewangelii aż po krańce ziemi i świadczeniu o wiecznej miłości Pana.",
     "learnMore": "Dowiedz się więcej",
@@ -275,6 +279,9 @@
     "regionsHeading": "Regiony",
     "regionsSubheading": "Przeglądaj według regionu",
     "siteCount": "{count, plural, one {# strona} few {# strony} other {# stron}}",
+    "countriesEyebrow": "Każdy kraj",
+    "countriesHeading": "Wybierz swój kraj",
+    "countriesSubheading": "{count} witryn krajowych na całym świecie",
     "communityEyebrow": "Wspólnota na całym świecie",
     "chaptersHeading": "Oddziały w różnych miastach i zakątkach świata",
     "chaptersSoon": "Oddziały wkrótce ruszą.",

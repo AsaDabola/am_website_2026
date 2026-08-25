@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "භාෂාව"
   },
+  "CountrySwitcher": {
+    "label": "රට",
+    "international": "ජාත්‍යන්තර"
+  },
   "Common": {
     "tagline": "ස්වාමීන්ගේ සදාකාලික ප්‍රේමයට සාක්ෂි දරමින්, පොළොවේ කෙළවර දක්වා ශුභාරංචිය පතුරුවා හැරීමට කැපවූ අන්තර්-සභා සේවාවකි.",
     "learnMore": "වැඩිදුර දැනගන්න",
@@ -275,6 +279,9 @@
     "regionsHeading": "කලාප",
     "regionsSubheading": "කලාපය අනුව ගවේෂණය කරන්න",
     "siteCount": "{count, plural, one {අඩවි #} other {අඩවි #}}",
+    "countriesEyebrow": "සෑම රටක්ම",
+    "countriesHeading": "ඔබේ රට තෝරන්න",
+    "countriesSubheading": "ලොව පුරා රට අඩවි {count}ක්",
     "communityEyebrow": "ලොව පුරා ප්‍රජාවක්",
     "chaptersHeading": "ලොව විවිධ නගරවල සහ කොනවල ශාඛා",
     "chaptersSoon": "ශාඛා ඉක්මනින් ආරම්භ වේ.",

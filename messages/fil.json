@@ -131,6 +131,10 @@
   "LanguageSwitcher": {
     "label": "Wika"
   },
+  "CountrySwitcher": {
+    "label": "Bansa",
+    "international": "Internasyonal"
+  },
   "Common": {
     "tagline": "Isang ministeryong lampas sa denominasyon na nakatuon sa pagpapalaganap ng ebanghelyo hanggang sa dulo ng daigdig, na nagpapatotoo sa walang hanggang pag-ibig ng Panginoon.",
     "learnMore": "Alamin pa",
@@ -275,6 +279,9 @@
     "regionsHeading": "Mga Rehiyon",
     "regionsSubheading": "Tuklasin ayon sa rehiyon",
     "siteCount": "{count, plural, one {# site} other {# na site}}",
+    "countriesEyebrow": "Bawat bansa",
+    "countriesHeading": "Piliin ang iyong bansa",
+    "countriesSubheading": "{count} sityo ng bansa sa buong mundo",
     "communityEyebrow": "Isang pandaigdigang komunidad",
     "chaptersHeading": "Mga chapter sa iba't ibang lungsod at sulok ng mundo",
     "chaptersSoon": "Magsisimula na ang mga chapter.",
