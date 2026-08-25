@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { isContinent } from "@/lib/continents";
+import { isTenantAwareHref } from "@/lib/tenantRoutes";
 import { flagSrc } from "@/lib/countryFlags";
 import { ChevronDownIcon } from "@/components/ui/icons";
 
@@ -12,21 +13,26 @@ export type SwitcherCountry = {
   /** "{continent}/{slug}" — also the path the site lives at. */
   key: string;
   flag: string | null;
+  /** The country's own language, which switching to it also switches to. */
+  locale: string;
 };
 
 /**
  * Country picker, sitting beside the language picker in the header.
  *
- * Language and country are two different axes here and the switchers stay
- * separate because of it: a country site has a default language but any of
- * them can be read in any of the site's locales, so changing country must not
- * silently change language, and vice versa.
+ * The two stay separate controls because the axes are separate: picking a
+ * country sets a sensible language, but every country site can be read in any
+ * of the site's locales, so the language picker still has to stand on its own.
  *
- * Switching keeps the path you are on where the destination serves it. The
- * country prefix is a path segment (/europe/germany/about), so moving from
- * one country to another is a matter of swapping that prefix — but only the
- * routes in TENANT_ROUTES exist on a country site, so anything else drops
- * back to that country's home rather than 404ing.
+ * Switching keeps the page you are on. The country prefix is a path segment
+ * (/europe/germany/about), so moving between countries is a matter of
+ * swapping that prefix — but only the routes in TENANT_ROUTES exist on a
+ * country site, so a page that does not exist there drops to that country's
+ * home rather than 404ing.
+ *
+ * It also switches language, to the country's own: arriving on the German
+ * site in German is what someone picking "Germany" means, and the language
+ * switcher is right there to read it in something else.
  */
 export default function CountrySwitcher({
   countries,
@@ -50,14 +56,19 @@ export default function CountrySwitcher({
   const current = countries.find((c) => c.key === currentKey);
   const label = current ? current.country : t("international");
 
-  function go(key: string) {
-    // The main site serves every route, so leaving a country keeps the page;
-    // entering or changing one only keeps it if that page exists there, which
-    // TenantLink's route list decides. Rather than duplicate that list here,
-    // the switcher lands on the country home — it is the honest destination
-    // and it is never a 404.
-    const target = key ? `/${key}` : rest === "/" ? "/" : rest;
-    router.push(target);
+  function go(key: string, locale?: string) {
+    // `rest` is the page within the site — "/about" on /europe/germany/about,
+    // and the whole path when on the main site. A country site only serves
+    // the routes in TENANT_ROUTES, so it carries over only when it is one of
+    // them; anything else (the shared news feed, the network directory) lands
+    // on that country's home instead of a 404. The main site serves
+    // everything, so leaving a country always keeps the page.
+    const carried = isTenantAwareHref(rest) ? rest : "/";
+    const target = key ? (carried === "/" ? `/${key}` : `/${key}${carried}`) : rest || "/";
+
+    // Picking a country switches language with it; picking International
+    // leaves the language alone, since it has no language of its own.
+    router.push(target, locale ? { locale } : undefined);
     setOpen(false);
   }
 
@@ -126,7 +137,7 @@ export default function CountrySwitcher({
                 type="button"
                 onMouseDown={(event) => {
                   event.preventDefault();
-                  go(c.key);
+                  go(c.key, c.locale);
                 }}
                 className={`flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-start text-sm hover:bg-mist ${
                   c.key === currentKey ? "font-semibold text-brand-navy" : "text-ink"

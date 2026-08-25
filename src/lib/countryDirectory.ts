@@ -11,6 +11,8 @@ export type DirectoryCountry = {
   /** "{continent}/{slug}", which is also the site's path. */
   key: string;
   flag: string | null;
+  /** The country's own default language. */
+  locale: string;
   /** A tenant exists for it, so /{continent}/{slug} resolves. */
   live: boolean;
 };
@@ -35,6 +37,7 @@ export async function getCountryDirectory(): Promise<DirectoryCountry[]> {
       slug: site.slug,
       key,
       flag: flagCodeFor(site),
+      locale: site.locale,
       live: liveKeys.has(key),
     };
   }).sort((a, b) => a.country.localeCompare(b.country));
