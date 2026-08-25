@@ -61,56 +61,83 @@ async function requireAdmin(request: NextRequest) {
   return user ? payload : null;
 }
 
-export async function GET(request: NextRequest) {
-  const payload = await requireAdmin(request);
-  if (!payload) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+/**
+ * Anything thrown in here used to escape as a bare 500 with an empty body,
+ * which reads in a browser console as "Unexpected end of JSON input" and says
+ * nothing about what actually failed. Whatever goes wrong now comes back as
+ * JSON you can read.
+ */
+function failed(error: unknown) {
+  const message = error instanceof Error ? error.message : String(error);
+  console.error("[seed-tenants]", error);
+  return NextResponse.json({ ok: false, error: message }, { status: 500 });
+}
 
-  const existing = await payload.find({
+/** Every existing tenant's slug → id, in one query rather than one per row. */
+async function existingBySlug(payload: Awaited<ReturnType<typeof getPayload>>) {
+  const result = await payload.find({
     collection: "tenants",
-    limit: 500,
+    limit: 1000,
     depth: 0,
     pagination: false,
   });
-  const known = new Set(existing.docs.map((doc) => doc.slug));
+  return new Map(result.docs.map((doc) => [doc.slug as string, doc.id]));
+}
 
-  return NextResponse.json({
-    total: COUNTRY_SITES.length,
-    wouldCreate: COUNTRY_SITES.filter((site) => !known.has(site.slug)).map((site) => site.slug),
-    wouldUpdate: COUNTRY_SITES.filter((site) => known.has(site.slug)).map((site) => site.slug),
-    notInList: existing.docs.filter((doc) => !COUNTRY_SITES.some((site) => site.slug === doc.slug)).map((doc) => doc.slug),
-    translationBacklog: translationBacklog(),
-  });
+export async function GET(request: NextRequest) {
+  try {
+    const payload = await requireAdmin(request);
+    if (!payload) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+    const known = await existingBySlug(payload);
+
+    return NextResponse.json({
+      total: COUNTRY_SITES.length,
+      wouldCreate: COUNTRY_SITES.filter((site) => !known.has(site.slug)).map((site) => site.slug),
+      wouldUpdate: COUNTRY_SITES.filter((site) => known.has(site.slug)).map((site) => site.slug),
+      notInList: [...known.keys()].filter(
+        (slug) => !COUNTRY_SITES.some((site) => site.slug === slug),
+      ),
+      translationBacklog: translationBacklog(),
+    });
+  } catch (error) {
+    return failed(error);
+  }
 }
 
 export async function POST(request: NextRequest) {
-  const payload = await requireAdmin(request);
-  if (!payload) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  try {
+    const payload = await requireAdmin(request);
+    if (!payload) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const created: string[] = [];
-  const updated: string[] = [];
+    // One lookup for the whole set, then a write per row — sixty-odd rows used
+    // to mean sixty-odd extra reads, and on a serverless function with a short
+    // execution limit that is time this does not need to spend.
+    const known = await existingBySlug(payload);
 
-  for (const site of COUNTRY_SITES) {
-    const data = toRecord(site);
-    const existing = await payload.find({
-      collection: "tenants",
-      where: { slug: { equals: site.slug } },
-      limit: 1,
-      depth: 0,
-    });
+    const created: string[] = [];
+    const updated: string[] = [];
 
-    if (existing.docs.length > 0) {
-      await payload.update({ collection: "tenants", id: existing.docs[0].id, data });
-      updated.push(site.slug);
-    } else {
-      await payload.create({ collection: "tenants", data });
-      created.push(site.slug);
+    for (const site of COUNTRY_SITES) {
+      const data = toRecord(site);
+      const id = known.get(site.slug);
+
+      if (id !== undefined) {
+        await payload.update({ collection: "tenants", id, data });
+        updated.push(site.slug);
+      } else {
+        await payload.create({ collection: "tenants", data });
+        created.push(site.slug);
+      }
     }
-  }
 
-  return NextResponse.json({
-    ok: true,
-    created,
-    updated,
-    translationBacklog: translationBacklog(),
-  });
+    return NextResponse.json({
+      ok: true,
+      created,
+      updated,
+      translationBacklog: translationBacklog(),
+    });
+  } catch (error) {
+    return failed(error);
+  }
 }
