@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "migrate": "payload migrate",
-    "migrate:create": "payload migrate:create",
-    "migrate:status": "payload migrate:status"
+    "migrate": "NODE_OPTIONS='--import tsx' payload migrate --disable-transpile",
+    "migrate:create": "NODE_OPTIONS='--import tsx' payload migrate:create --disable-transpile",
+    "migrate:status": "NODE_OPTIONS='--import tsx' payload migrate:status --disable-transpile"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.88.0",
@@ -39,6 +39,7 @@
     "eslint-config-next": "16.3.1",
     "tailwindcss": "^4",
     "topojson-client": "^3.1.0",
+    "tsx": "^4.23.12",
     "typescript": "^5",
     "us-atlas": "^3.0.1",
     "world-atlas": "^2.0.2"
