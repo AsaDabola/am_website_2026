@@ -81,6 +81,43 @@ function initials(name: string) {
     .toUpperCase();
 }
 
+/**
+ * Every portrait on this page is the same tile: square, 10px corners, over a
+ * pale blue gradient that shows through as the person's initials when no
+ * photograph has been supplied. The design draws it that way in all three
+ * sections rather than giving each its own crop.
+ */
+function Portrait({
+  image,
+  name,
+  sizes,
+  className = "",
+  initialsClassName = "text-[34px]",
+}: {
+  image?: string | null;
+  name: string;
+  sizes: string;
+  className?: string;
+  initialsClassName?: string;
+}) {
+  return (
+    <div
+      className={`relative aspect-square overflow-hidden rounded-[10px] ${className}`}
+      style={{ backgroundImage: "linear-gradient(127deg, #e5edf6 0%, #cddbee 71%)" }}
+    >
+      {image ? (
+        <Image src={image} alt={name} fill className="object-cover" sizes={sizes} />
+      ) : (
+        <span
+          className={`flex size-full items-center justify-center font-display font-extrabold text-[#93a7be] ${initialsClassName}`}
+        >
+          {initials(name)}
+        </span>
+      )}
+    </div>
+  );
+}
+
 const leaderKinds = [
   {
     number: "01",
@@ -139,33 +176,26 @@ export default function LeadershipPage() {
             The people behind the sending.
           </h2>
 
-          <div className="mt-10 space-y-12">
+          <div className="mt-10">
             {featuredLeaders.map((leader) => (
               <div
                 key={leader.name}
-                className="flex flex-col gap-8 border-t border-black/10 pt-10 first:border-t-0 first:pt-0 sm:flex-row"
+                className="flex flex-col gap-10 border-t border-[#11182a]/[0.12] py-9 first:border-t-0 first:pt-0 sm:flex-row"
               >
-                {/* Not everyone has a portrait in the design yet, so those
-                    without one fall back to an initials tile. */}
-                <div className="relative aspect-[258/215] w-full shrink-0 overflow-hidden rounded-xl bg-mist sm:w-[258px]">
-                  {leader.image ? (
-                    <Image
-                      src={leader.image}
-                      alt={leader.name}
-                      fill
-                      className="object-cover"
-                      sizes="258px"
-                    />
-                  ) : (
-                    <span className="flex size-full items-center justify-center font-display text-3xl font-bold text-brand-blue/40">
-                      {initials(leader.name)}
-                    </span>
-                  )}
-                </div>
-                <div>
-                  <p className="font-display text-xl font-bold text-ink">{leader.name}</p>
-                  <p className="mt-2 text-sm font-semibold text-brand-blue">{leader.title}</p>
-                  <p className="mt-4 max-w-[760px] text-sm leading-relaxed text-ink-muted">
+                <Portrait
+                  image={leader.image}
+                  name={leader.name}
+                  sizes="258px"
+                  className="w-full shrink-0 sm:w-[258px]"
+                />
+                <div className="flex flex-col gap-[7px] pt-1">
+                  <p className="font-display text-[23px] font-extrabold leading-[24.38px] tracking-[-0.035em] text-ink">
+                    {leader.name}
+                  </p>
+                  <p className="text-[14.5px] font-semibold leading-6 text-brand-blue">
+                    {leader.title}
+                  </p>
+                  <p className="max-w-[760px] text-[14.5px] leading-[23.9px] text-ink-muted">
                     {leader.bio}
                   </p>
                 </div>
@@ -175,32 +205,35 @@ export default function LeadershipPage() {
         </Container>
       </section>
 
-      <section className="bg-mist py-20">
+      <section className="bg-white py-20">
         <Container className="max-w-[1104px]">
           <Eyebrow>HQ Staff &amp; Coordinators</Eyebrow>
           <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
             Holding the day to day.
           </h2>
 
+          {/* No card around these in the design — the portrait sits straight
+              on the page with its text beneath, the same tile the featured
+              rows above use. */}
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {hqStaff.map((person) => (
-              <div key={person.name} className="overflow-hidden rounded-2xl bg-white">
-                <div className="relative aspect-[352/215] w-full">
-                  <Image
-                    src={person.image}
-                    alt={person.name}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  />
-                </div>
-                <div className="p-6">
-                  <p className="font-display text-lg font-bold text-ink">{person.name}</p>
-                  <p className="mt-1 text-sm font-semibold text-brand-blue">{person.title}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">{person.bio}</p>
+              <div key={person.name} className="flex flex-col">
+                <Portrait
+                  image={person.image}
+                  name={person.name}
+                  sizes="(min-width: 1024px) 258px, (min-width: 640px) 50vw, 100vw"
+                />
+                <div className="flex flex-col gap-[7px] pt-[18px]">
+                  <p className="font-display text-[19px] font-extrabold leading-[22px] tracking-[-0.032em] text-ink">
+                    {person.name}
+                  </p>
+                  <p className="text-[13.5px] font-semibold leading-[19px] text-brand-blue">
+                    {person.title}
+                  </p>
+                  <p className="text-[13.5px] leading-[21.5px] text-ink-muted">{person.bio}</p>
                   <TenantLink
                     href={`mailto:${person.email}`}
-                    className="mt-3 inline-block text-sm text-brand-blue underline underline-offset-2"
+                    className="text-[12.5px] font-semibold leading-[19px] text-ink hover:text-brand-blue"
                   >
                     {person.email}
                   </TenantLink>
@@ -221,15 +254,12 @@ export default function LeadershipPage() {
           <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 lg:grid-cols-5">
             {coordinators.map((person) => (
               <div key={person.name} className="text-center">
-                <div className="relative mx-auto aspect-square w-full overflow-hidden rounded-2xl bg-mist">
-                  <Image
-                    src={person.image}
-                    alt={person.name}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 202px, 40vw"
-                  />
-                </div>
+                <Portrait
+                  image={person.image}
+                  name={person.name}
+                  sizes="(min-width: 1024px) 202px, 40vw"
+                  initialsClassName="text-2xl"
+                />
                 <p className="mt-4 text-sm font-semibold text-ink">{person.name}</p>
                 <p className="mt-1 text-xs text-ink-muted">{person.region}</p>
               </div>
@@ -238,7 +268,9 @@ export default function LeadershipPage() {
         </Container>
       </section>
 
-      <section className="bg-mist py-20">
+      {/* The design runs the whole page white below the hero — no alternating
+          mist bands — so the rules and the rows carry the separation. */}
+      <section className="bg-white py-20">
         <Container className="max-w-[1104px]">
           <Eyebrow>Across the Network</Eyebrow>
           <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
