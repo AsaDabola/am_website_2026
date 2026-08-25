@@ -32,7 +32,7 @@ export default async function OnlineBibleStudyPage() {
         ]}
         title={tHeader("getInvolved")}
         subtitle={t("tagline")}
-        backgroundImage="/images/group-activities-hero.jpg"
+        backgroundImage="/images/online-bible-study-hero.jpg"
       />
       <GetInvolvedSubNav active="/get-involved/online-bible-study" />
 
