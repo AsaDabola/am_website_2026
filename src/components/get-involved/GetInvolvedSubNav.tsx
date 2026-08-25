@@ -5,7 +5,7 @@ import Container from "@/components/ui/Container";
 export default function GetInvolvedSubNav({ active }: { active: string }) {
   const t = useTranslations("GetInvolvedSubNav");
   const getInvolvedTabs = [
-    { label: t("thursdayBibleStudy"), href: "/get-involved/online-bible-study" },
+    { label: t("onlineBibleStudy"), href: "/get-involved/online-bible-study" },
     { label: t("bibleStudies"), href: "/bible-study" },
     { label: t("groupActivities"), href: "/get-involved/group-activities" },
     { label: t("volunteer"), href: "/get-involved/volunteer" },
