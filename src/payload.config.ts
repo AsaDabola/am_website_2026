@@ -62,10 +62,18 @@ export default buildConfig({
     pool: {
       connectionString: getDatabaseUri(),
     },
-    // This project has no migrations yet, so let Payload sync the schema
-    // straight from the collection configs — including in production.
-    // Once the schema settles, switch to `payload migrate` and drop this.
+    // Schema sync for local work only. This is NOT a production mechanism,
+    // whatever the setting suggests: the adapter gates it on
+    // `NODE_ENV !== 'production'` and ignores it on a deployed build. A column
+    // added to a collection therefore reaches a local database by itself and
+    // never reaches the deployed one, which is how production ended up without
+    // `tenants.languages` and failing every query that selected it.
+    //
+    // Deployed schema changes go through `npm run migrate:create` (writes a
+    // migration into src/migrations against whatever database you point it at)
+    // and `npm run migrate` to apply it.
     push: true,
+    migrationDir: path.resolve(dirname, "migrations"),
   }),
   plugins: [
     vercelBlobStorage({
