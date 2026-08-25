@@ -3,7 +3,7 @@ import Image from "next/image";
 import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
-import AboutHero from "@/components/about/AboutHero";
+import LeadershipHero from "@/components/about/LeadershipHero";
 import AboutSubNav from "@/components/about/AboutSubNav";
 import { ArrowRightIcon } from "@/components/ui/icons";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
@@ -111,15 +111,25 @@ const leaderKinds = [
 export default function LeadershipPage() {
   return (
     <>
-      <AboutHero
+      <LeadershipHero
         crumbs={[
           { label: "Home", href: "/" },
-          { label: "About", href: "/about" },
+          { label: "Who We Are", href: "/about" },
           { label: "Leadership" },
         ]}
+        eyebrow="Our Leadership"
         title="Servants, sent and given."
-        subtitle="Our mission is possible through God-given servants who join our team from all across the world. We work in unity with chapter leaders, field missionaries, Bible teachers and local staff — and we are glad to introduce those who carry that leadership for the Gospel movement."
-      />
+      >
+        Our mission is possible through God-given servants who join our team from all across
+        the world. We work in unity with{" "}
+        {/* The four roles are set in white medium against the paragraph's
+            softer white — they are the list the page then walks through. */}
+        <span className="font-medium text-white">
+          chapter leaders, field missionaries, Bible teachers and local staff
+        </span>{" "}
+        &mdash; and we are glad to introduce those who carry that leadership for the Gospel
+        movement.
+      </LeadershipHero>
       <AboutSubNav active="/about/leadership" />
 
       <section className="bg-white py-20">
