@@ -90,6 +90,7 @@ quietly switched off.
 | `fix-tenants-schema.sql` | Adds `tenants.languages` and the other early missing columns. |
 | `fix-tenant-footer-columns.sql` | Adds `tenants.org_name`, `address`, `contact_email`. |
 | `add-continent-syndication.sql` | Adds the `shareWithContinents` tables for Posts and Events. |
+| `catch-up-missing-collections.sql` | The big one. Four whole collections and 40 locale values that never reached the deployed database. |
 | `copy-flags.mjs` | Copies country flag SVGs into `public/flags`. |
 
 ## A note on connection strings
