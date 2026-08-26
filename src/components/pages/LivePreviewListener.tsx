@@ -11,15 +11,22 @@ import { useRouter } from "next/navigation";
  * knows how to turn a changed document into markup. Refreshing re-runs that
  * and swaps in the new tree without losing scroll position.
  *
- * Harmless outside the admin — the listener only ever hears from a parent
- * frame that is the Payload editor, and there is no parent frame otherwise.
+ * `serverURL` is the target origin of a postMessage, and an empty string is
+ * not a valid one: it throws on mount, uncaught, which replaces every page
+ * this sits on with Next's "This page couldn't load". NEXT_PUBLIC_SERVER_URL
+ * is not set on every deployment — payload.config.ts is written to allow for
+ * exactly that — so when it is missing this renders nothing rather than
+ * mounting with "". The cost is that Live Preview will not refresh until the
+ * variable is set; the alternative was a blank site.
+ *
+ * The check reads an inlined NEXT_PUBLIC_ value, so the server and the client
+ * reach the same answer and there is no hydration mismatch.
  */
 export default function LivePreviewListener() {
   const router = useRouter();
-  return (
-    <RefreshRouteOnSave
-      refresh={() => router.refresh()}
-      serverURL={process.env.NEXT_PUBLIC_SERVER_URL || ""}
-    />
-  );
+  const serverURL = process.env.NEXT_PUBLIC_SERVER_URL;
+
+  if (!serverURL) return null;
+
+  return <RefreshRouteOnSave refresh={() => router.refresh()} serverURL={serverURL} />;
 }
