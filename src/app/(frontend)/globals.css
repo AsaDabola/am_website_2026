@@ -120,6 +120,7 @@
   --font-sans: var(--font-body-stack);
   --font-display: var(--font-display-stack);
   --font-lato: var(--font-lato);
+  --font-quote: var(--font-playfair);
 }
 
 body {

@@ -3,9 +3,7 @@ import { getTranslations } from "@/i18n/content";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
-import TenantLink from "@/components/layout/TenantLink";
 import {
-  PeopleIcon,
   BookIcon,
   MonitorIcon,
   PaletteIcon,
@@ -14,6 +12,7 @@ import {
 import AboutHero from "@/components/about/AboutHero";
 import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
 import VolunteerApplicationForm from "@/components/get-involved/VolunteerApplicationForm";
+import EventsAndTestimonials from "@/components/sections/EventsAndTestimonials";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 
@@ -23,39 +22,36 @@ export const metadata: Metadata = {
     "AM is always happy to welcome family in Christ interested in volunteering in our mission.",
 };
 
+/**
+ * Four roles, all of them things a volunteer actually does. The fifth tile
+ * this page used to carry — "Your Gift", linking to the donate page — is gone
+ * with the design: giving money is not volunteering, and sitting it in a row
+ * of roles asked the reader to compare the two.
+ */
 const categories = [
   {
-    title: "Chapter Volunteer",
-    Icon: PeopleIcon,
-    href: "/get-involved/volunteer#apply",
+    title: "Mission Volunteer",
+    Icon: HeartIcon,
     description:
-      "Serve alongside a local AM chapter — hosting Bible studies, organizing events, and walking with students on campus.",
+      "Serve and support local campus chapters by organizing fellowship events, bible study meetings, and coordinating outreach activities to connect students with Christ.",
   },
   {
     title: "Bible Teacher",
     Icon: BookIcon,
-    href: "/get-involved/volunteer#apply",
     description:
-      "Teach and lead Bible study groups, helping students grow in Scripture and in their walk with Christ.",
+      "Guide others on a transformative spiritual journey. Instruct and mentor seekers and believers through structured curriculum, helping them establish a solid scriptural foundation.",
   },
   {
     title: "Online Content Developers",
     Icon: MonitorIcon,
-    href: "/get-involved/volunteer#apply",
     description:
-      "Help build and maintain AM's digital presence — website, social media, and online resources.",
+      "Utilize your creative design, writing, or web development skills to produce inspiring online media, manage social channels, and expand the digital presence of our ministries.",
   },
   {
     title: "IT & Design",
     Icon: PaletteIcon,
-    href: "/get-involved/volunteer#apply",
-    description: "Support AM's technology and creative needs, from systems to graphic design.",
-  },
-  {
-    title: "Your Gift",
-    Icon: HeartIcon,
-    href: "/get-involved/donate",
-    description: "Give financially to fuel Bible study, training, and sending students out.",
+    description:
+      "Gospel spreads much faster than before as IT advances rapidly. If you have skills in IT and Web Design, join us now to bring even more excellent outcomes soon in sharing the Good News of Jesus.",
   },
 ];
 
@@ -78,28 +74,30 @@ export default async function VolunteerPage() {
       />
       <GetInvolvedSubNav active="/get-involved/volunteer" />
 
-      <section className="bg-mist py-20">
-        <Container className="max-w-[900px] text-center">
+      <section className="bg-paper py-20">
+        <Container className="text-center">
           <div className="flex justify-center">
-            <Eyebrow>What we do</Eyebrow>
+            <Eyebrow>Get Involved</Eyebrow>
           </div>
           <h1 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
             Volunteer
           </h1>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+          {/* 400 x 348 in the design — landscape, not the squares this was
+              cropping to, which cut the tops off the group shots. */}
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {[
-              "/images/get-involved-bible-studies.jpg",
-              "/images/get-involved-volunteer.jpg",
-              "/images/get-involved-internship.jpg",
-            ].map((src) => (
+              { src: "/images/volunteer-calling.jpg", alt: "Students leading worship at an AM chapter gathering" },
+              { src: "/images/volunteer-team.jpg", alt: "Two volunteers on the welcome desk at an AM event" },
+              { src: "/images/volunteer-worship.jpg", alt: "An AM chapter worship team after a service" },
+            ].map(({ src, alt }) => (
               <div
                 key={src}
-                className="relative aspect-square overflow-hidden rounded-xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.1)]"
+                className="relative aspect-[400/348] overflow-hidden rounded-xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.1)]"
               >
                 <Image
                   src={src}
-                  alt=""
+                  alt={alt}
                   fill
                   className="object-cover"
                   sizes="(min-width: 640px) 33vw, 100vw"
@@ -108,39 +106,85 @@ export default async function VolunteerPage() {
             ))}
           </div>
 
-          <p className="mx-auto mt-10 max-w-[733px] text-base leading-relaxed text-ink-muted">
-            AM is always happy to welcome family in Christ interested in volunteering in our
-            mission for a period of time. We believe that God has given unique gifts to each
-            person and they can be used preciously for the glory of God.
-          </p>
+          {/* The quotation mark is decorative and sits outside the measure, so
+              it is aria-hidden and absolutely placed rather than being read
+              out ahead of the sentence it decorates. */}
+          <figure className="relative mx-auto mt-16 flex max-w-[1106px] flex-col items-center gap-6 py-6">
+            <span
+              aria-hidden
+              className="pointer-events-none absolute -top-2 left-0 font-quote text-[96px] font-semibold leading-none text-ink-muted/35 sm:-left-12"
+            >
+              &ldquo;
+            </span>
+            <blockquote className="font-quote text-2xl italic leading-[34px] text-ink-muted">
+              My concern is not with closed doors; my concern is with the doors that are open
+              which we do not enter.
+            </blockquote>
+            <figcaption className="text-sm font-medium leading-[22px] text-ink-muted/75">
+              Dr. Ralph D. Winter, Perspectives on the World Christian Movement
+            </figcaption>
+            <p className="text-base leading-[26px] text-ink-muted">
+              AM is always happy to welcome family in Christ interested in volunteering in our
+              mission for a period of time. We believe that God has given unique gifts to each
+              person and they can be used preciously for the glory of God.
+            </p>
+          </figure>
         </Container>
       </section>
 
+      {/* Four across at the design's width, all reading down rather than
+          across, so the columns line up under one another. Not links any more
+          — each names a way to serve and the one application below covers all
+          four, so a link per column would have sent four routes to one form. */}
       <section className="bg-white py-24">
         <Container>
-          <div className="mx-auto grid max-w-[813px] gap-x-10 gap-y-14 sm:grid-cols-2">
-            {categories.map(({ title, Icon, href, description }) => (
-              <TenantLink key={title} href={href} className="group text-center">
-                <span className="mx-auto flex size-16 items-center justify-center rounded-full bg-mist text-brand-blue transition-colors group-hover:bg-brand-blue group-hover:text-white">
-                  <Icon className="size-8" />
+          <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
+            {categories.map(({ title, Icon, description }) => (
+              <div key={title} className="text-center">
+                <span className="mx-auto flex size-20 items-center justify-center rounded-full bg-mist text-brand-navy-deep">
+                  <Icon className="size-9" />
                 </span>
                 <h3 className="mt-6 font-display text-lg font-bold tracking-[-0.02em] text-ink">
                   {title}
                 </h3>
-                <p className="mx-auto mt-3 max-w-[348px] text-sm leading-relaxed text-ink-muted">
-                  {description}
-                </p>
-              </TenantLink>
+                <p className="mt-6 text-sm leading-relaxed text-ink-muted">{description}</p>
+              </div>
             ))}
           </div>
         </Container>
       </section>
 
       <section id="apply" className="bg-mist py-24">
-        <Container className="mx-auto max-w-[887px]">
-          <VolunteerApplicationForm />
+        <Container>
+          <div className="text-center">
+            <div className="flex justify-center">
+              <Eyebrow>Join the Mission</Eyebrow>
+            </div>
+            <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
+              Volunteer Application
+            </h2>
+            <p className="mx-auto mt-8 max-w-[982px] text-base leading-relaxed text-ink-muted">
+              AM operates under four main areas generally referred to as education, media,
+              public relations, and administration. Volunteer and intern posts can vary from
+              leadership roles to shadowing positions. A manual and application for volunteers
+              and potential interns can be received upon request. Feel free to contact{" "}
+              <a
+                href="mailto:mission@amintl.org"
+                className="font-medium text-brand-navy-deep underline underline-offset-2"
+              >
+                mission@amintl.org
+              </a>{" "}
+              for more information.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-14 max-w-[887px]">
+            <VolunteerApplicationForm />
+          </div>
         </Container>
       </section>
+
+      <EventsAndTestimonials />
 
       <PartnerWithUs />
       <Newsletter />

@@ -15,6 +15,7 @@ import {
   Noto_Sans_Sinhala,
   Noto_Sans_Tamil,
   Noto_Sans_Thai,
+  Playfair_Display,
 } from "next/font/google";
 import "../globals.css";
 import { routing, directionOf } from "@/i18n/routing";
@@ -40,6 +41,17 @@ const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin", "latin-ext", "vietnamese"],
   weight: ["500", "600", "700", "800", "900"],
+});
+
+// The pull-quote face, and only that: an italic serif for the quoted line and
+// the oversized quotation mark beside it. Two weights, no italics beyond the
+// one the quote needs. Latin only — a locale outside that falls back to the
+// body serif stack, which is the right outcome for a decorative face.
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "600"],
+  style: ["normal", "italic"],
 });
 
 // Arabic, Hebrew and Urdu. Urdu is conventionally set in Nastaliq, but that
@@ -138,7 +150,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       dir={directionOf(locale)}
-      className={`${inter.variable} ${archivo.variable} ${lato.variable} ${notoArabic.variable} ${notoHebrew.variable} ${notoDevanagari.variable} ${notoBengali.variable} ${notoTamil.variable} ${notoSinhala.variable} ${notoThai.variable} ${notoEthiopic.variable} ${notoMyanmar.variable} h-full antialiased`}
+      className={`${inter.variable} ${archivo.variable} ${lato.variable} ${playfair.variable} ${notoArabic.variable} ${notoHebrew.variable} ${notoDevanagari.variable} ${notoBengali.variable} ${notoTamil.variable} ${notoSinhala.variable} ${notoThai.variable} ${notoEthiopic.variable} ${notoMyanmar.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white font-sans text-ink">
         <NextIntlClientProvider>
