@@ -3,13 +3,12 @@ import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import { ArrowRightIcon } from "@/components/ui/icons";
-import PlaceholderPhoto from "@/components/ui/PlaceholderPhoto";
 import { Link } from "@/i18n/navigation";
 import NetworkMap from "@/components/network/NetworkMap";
 import TenantLink from "@/components/layout/TenantLink";
 import OurNetwork from "@/components/sections/OurNetwork";
 import { regions } from "@/lib/regions";
-import { getActiveTenantCountByContinent, getAllActiveTenantsByContinent } from "@/lib/tenants";
+import { getAllActiveTenantsByContinent } from "@/lib/tenants";
 import {
   getCountryDirectory,
   groupByContinent,
@@ -89,10 +88,9 @@ function CountryRow({ country }: { country: DirectoryCountry }) {
 }
 
 export default async function NetworkPage() {
-  const [t, common, counts, tenantsByContinent, countries] = await Promise.all([
+  const [t, common, tenantsByContinent, countries] = await Promise.all([
     getTranslations("Network"),
     getTranslations("Common"),
-    getActiveTenantCountByContinent(),
     getAllActiveTenantsByContinent(),
     getCountryDirectory(),
   ]);
@@ -149,51 +147,12 @@ export default async function NetworkPage() {
         </Container>
       </section>
 
-      <section className="bg-white py-24">
-        <Container className="text-center">
-          <div className="flex justify-center">
-            <Eyebrow>{t("exploreEyebrow")}</Eyebrow>
-          </div>
-          <h1 className="font-display text-4xl font-semibold tracking-[-0.02em] text-ink sm:text-5xl">
-            {t("regionsHeading")}
-          </h1>
-          <p className="mt-3 text-base text-ink-muted">{t("regionsSubheading")}</p>
-
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {regions.map((region) => {
-              const count = counts[region.slug] ?? 0;
-              return (
-                <Link
-                  key={region.slug}
-                  href={`/network/${region.slug}`}
-                  className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
-                >
-                  <PlaceholderPhoto
-                    className="absolute inset-0 transition-transform duration-300 group-hover:scale-105"
-                    from={region.from}
-                    to={region.to}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                  <span className="absolute bottom-5 inset-x-0 text-center font-display text-xl font-bold text-white">
-                    {t(`regions.${region.slug}`)}
-                  </span>
-                  {count > 0 && (
-                    <span className="absolute end-3 top-3 rounded-full bg-white/15 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
-                      {t("siteCount", { count })}
-                    </span>
-                  )}
-                </Link>
-              );
-            })}
-          </div>
-        </Container>
-      </section>
-
       {/* The full country list, from the static sheet rather than the CMS, so
           every one of the sixty is here whatever the database holds. A country
           links to its site once a tenant exists for it; the rest are listed
-          but not linked, so the directory is never a page of 404s. */}
-      <section className="bg-white pb-24">
+          but not linked, so the directory is never a page of 404s.
+ */}
+      <section className="bg-white py-24">
         <Container>
           <div className="flex justify-center">
             <Eyebrow>{t("countriesEyebrow")}</Eyebrow>
