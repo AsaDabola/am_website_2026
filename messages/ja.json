@@ -283,7 +283,15 @@
       "heading": "参加する",
       "bibleStudies": "聖書study",
       "volunteer": "ボランティア",
-      "internship": "インターンシップ"
+      "internship": "インターンシップ",
+      "missionTrip": "Mission Trip",
+      "missionTripDescription": "Short trips that carry the gospel across a border — students serving alongside a local chapter, and coming home changed by it.",
+      "shortTermMission": "Short-term Mission",
+      "shortTermMissionDescription": "A season set aside for mission. Three months at our headquarters learning the work from the inside, in the field and in the classroom.",
+      "discipleshipTraining": "Discipleship Training",
+      "discipleshipTrainingDescription": "Phase 5 of our Bible study program, for students ready to disciple others and pass on what they have been given.",
+      "volunteering": "Volunteering",
+      "volunteeringDescription": "Serve with the talents God gave you — education, media, public relations and administration all need hands at every chapter."
     },
     "Media": {
       "eyebrow": "メディア",

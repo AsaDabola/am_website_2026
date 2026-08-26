@@ -69,7 +69,7 @@ export type OurMissionData = {
 export type GetInvolvedData = {
   eyebrow?: string;
   heading?: string;
-  cards?: { title?: string; href?: string; image?: MediaRef }[];
+  cards?: { title?: string; description?: string; href?: string; image?: MediaRef }[];
 };
 
 export type MediaSectionData = {

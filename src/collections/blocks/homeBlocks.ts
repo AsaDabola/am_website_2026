@@ -111,9 +111,13 @@ export const GetInvolvedBlock: Block = {
       name: "cards",
       type: "array",
       minRows: 1,
-      maxRows: 3,
+      maxRows: 4,
       fields: [
         { name: "title", type: "text", required: true },
+        // Optional so the row still renders for the cards authored before the
+        // design added a body to each one. A card without it simply shows the
+        // photo and the title.
+        { name: "description", type: "textarea" },
         { name: "href", type: "text", required: true },
         { name: "image", type: "upload", relationTo: "media", required: true },
       ],
