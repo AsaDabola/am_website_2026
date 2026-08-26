@@ -40,6 +40,23 @@ if (!connectionString) {
   process.exit(1);
 }
 
+// `vercel env pull` writes a literal placeholder for any variable marked
+// sensitive in the project, rather than its value. It looks like a real env
+// file until something tries to use it, at which point the failure is a DNS
+// lookup for a host parsed out of the placeholder text — which names nothing.
+if (!/^postgres(ql)?:\/\//.test(connectionString)) {
+  console.error(
+    `${found} does not hold a Postgres connection string — it starts with ` +
+      `"${connectionString.slice(0, 20)}".\n\n` +
+      "If that reads [SENSITIVE], Vercel redacted it on pull because the variable\n" +
+      "is marked sensitive. Copy the real string from the Neon dashboard (or\n" +
+      "Vercel > Storage > your database > .env.local tab) and either paste it into\n" +
+      ".env.local or pass it inline:\n\n" +
+      `  POSTGRES_URL='postgres://…' node ${process.argv[1]} ${file}`,
+  );
+  process.exit(1);
+}
+
 const sql = readFileSync(file, "utf8");
 
 // Only for the log line, so never let it stop the run: pg accepts forms that
