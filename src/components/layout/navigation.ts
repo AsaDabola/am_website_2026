@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations } from "@/i18n/content";
 import type { NavIconName } from "@/components/ui/icons";
 
 export type NavLink = {
