@@ -71,6 +71,12 @@ export default async function VolunteerPage() {
         ]}
         title={tHeader("getInvolved")}
         subtitle={t("tagline")}
+        // Without this the hero falls through to AboutHero's default banner,
+        // which is the seabird — a stock shot belonging to no page in
+        // particular. The fourth of the supplied photographs is a group
+        // setting out with packs, which is what volunteering with AM looks
+        // like from the outside.
+        backgroundImage="/images/volunteer-hero.jpg"
       />
       <GetInvolvedSubNav active="/get-involved/volunteer" />
 
