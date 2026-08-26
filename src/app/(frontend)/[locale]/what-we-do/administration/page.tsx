@@ -91,6 +91,10 @@ export default async function AdministrationPage() {
         ]}
         title={tHeader("whatWeDo")}
         subtitle={t("tagline")}
+        // The starfield the design puts behind What We Do. Until now this was
+        // the last page with no hero of its own, so it was showing the Get
+        // Involved seabird from AboutHero's default.
+        backgroundImage="/images/administration-hero.jpg"
       />
       <WhatWeDoSubNav active="/what-we-do/administration" />
 
@@ -104,15 +108,23 @@ export default async function AdministrationPage() {
           </h1>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
-            {["/images/admin-intro-1.jpg", "/images/admin-intro-2.jpg", "/images/admin-intro-3.jpg"].map(
-              (src) => (
+            {/* The design's order, which is not the order these were in: a
+                chapter outdoors, staff working, then someone teaching. The
+                middle one is new; the table shot that used to sit third is no
+                longer shown, since the row has three places. */}
+            {[
+              { src: "/images/admin-intro-2.jpg", alt: "Students at an AM chapter gathering" },
+              { src: "/images/admin-intro-laptop.jpg", alt: "AM staff working together at a laptop" },
+              { src: "/images/admin-intro-1.jpg", alt: "An AM staff member speaking at a lectern" },
+            ].map(
+              ({ src, alt }) => (
                 <div
                   key={src}
                   className="relative aspect-square overflow-hidden rounded-xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.1)]"
                 >
                   <Image
                     src={src}
-                    alt=""
+                    alt={alt}
                     fill
                     className="object-cover"
                     sizes="(min-width: 640px) 33vw, 100vw"
