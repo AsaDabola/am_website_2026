@@ -157,3 +157,23 @@ export function untranslatedLanguages(site: CountrySite): string[] {
 export function countrySiteHref(site: CountrySite): string {
   return `/${site.continent}/${site.slug}`;
 }
+
+/**
+ * What a country's footer calls itself before anyone has edited it —
+ * "Apostolos Missions France" rather than head office's name.
+ *
+ * Every country gets this the moment its site exists, because a footer that
+ * says "Apostolos Missions International, Trenton, New Jersey" on the French
+ * site is not a neutral placeholder, it is wrong. The seed writes it into the
+ * Tenant so it shows up in the admin as ordinary editable text, and the
+ * country directory derives the same string, so a country reads correctly
+ * whether or not the seed has run since it was added. Both call this, so the
+ * two can't drift.
+ *
+ * Only the name is defaulted. Address and contact stay empty and fall back to
+ * head office's, because a made-up street address or an invented
+ * france@amintl.org that bounces is worse than an honest fallback.
+ */
+export function defaultOrgName(country: string): string {
+  return `Apostolos Missions ${country}`;
+}

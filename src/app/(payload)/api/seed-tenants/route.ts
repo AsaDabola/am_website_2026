@@ -1,7 +1,12 @@
 import config from "@payload-config";
 import { getPayload } from "payload";
 import { NextRequest, NextResponse } from "next/server";
-import { COUNTRY_SITES, LANGUAGE_NAMES, untranslatedLanguages } from "@/lib/countrySites";
+import {
+  COUNTRY_SITES,
+  LANGUAGE_NAMES,
+  defaultOrgName,
+  untranslatedLanguages,
+} from "@/lib/countrySites";
 
 /**
  * Seeds the Tenants collection from AM's G20 + M40 mission country list
@@ -30,6 +35,24 @@ function toRecord(site: (typeof COUNTRY_SITES)[number]) {
     tier: site.tier,
     active: true,
   };
+}
+
+/**
+ * The fields a country owns rather than inherits from this list.
+ *
+ * `orgName` is seeded so every country's footer names that country from the
+ * day its site exists, but it is the sort of thing a national office will want
+ * to reword — "Apostolos Missions Deutschland", say. So it is written when the
+ * tenant is created and, on re-runs, only filled in where it is still blank.
+ * An edit made in the admin survives every future seed; clearing the field
+ * puts the default back on the next run.
+ */
+function editableDefaults(
+  site: (typeof COUNTRY_SITES)[number],
+  existing?: { orgName?: string | null },
+) {
+  if (existing?.orgName) return {};
+  return { orgName: defaultOrgName(site.country) };
 }
 
 /**
@@ -96,7 +119,11 @@ function failed(error: unknown) {
   return NextResponse.json({ ok: false, error: describe(error) }, { status: 500 });
 }
 
-/** Every existing tenant's slug → id, in one query rather than one per row. */
+/**
+ * Every existing tenant by slug, in one query rather than one per row. Carries
+ * `orgName` as well as the id, so a re-run can tell an edited footer name from
+ * a blank one without going back to the database per country.
+ */
 async function existingBySlug(payload: Awaited<ReturnType<typeof getPayload>>) {
   const result = await payload.find({
     collection: "tenants",
@@ -104,7 +131,12 @@ async function existingBySlug(payload: Awaited<ReturnType<typeof getPayload>>) {
     depth: 0,
     pagination: false,
   });
-  return new Map(result.docs.map((doc) => [doc.slug as string, doc.id]));
+  return new Map(
+    result.docs.map((doc) => [
+      doc.slug as string,
+      { id: doc.id, orgName: (doc as { orgName?: string | null }).orgName },
+    ]),
+  );
 }
 
 export async function GET(request: NextRequest) {
@@ -147,12 +179,12 @@ export async function POST(request: NextRequest) {
     // unwritten and reported one error with no indication of which country
     // caused it. Now every country is attempted and the failures are named.
     for (const site of COUNTRY_SITES) {
-      const data = toRecord(site);
-      const id = known.get(site.slug);
+      const existing = known.get(site.slug);
+      const data = { ...toRecord(site), ...editableDefaults(site, existing) };
 
       try {
-        if (id !== undefined) {
-          await payload.update({ collection: "tenants", id, data });
+        if (existing !== undefined) {
+          await payload.update({ collection: "tenants", id: existing.id, data });
           updated.push(site.slug);
         } else {
           await payload.create({ collection: "tenants", data });

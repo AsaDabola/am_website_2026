@@ -1,4 +1,4 @@
-import { COUNTRY_SITES } from "./countrySites";
+import { COUNTRY_SITES, defaultOrgName } from "./countrySites";
 import { flagCodeFor } from "./countryFlags";
 import { CONTINENTS, type Continent } from "./continents";
 import { getActiveTenantRows } from "./tenants";
@@ -44,7 +44,10 @@ export async function getCountryDirectory(): Promise<DirectoryCountry[]> {
       flag: flagCodeFor(site),
       locale: site.locale,
       live: rows.has(key),
-      orgName: row?.orgName,
+      // Falls back to the country's own name, not head office's — see
+      // defaultOrgName. Only a country that has actually been edited in the
+      // admin overrides it.
+      orgName: row?.orgName || defaultOrgName(site.country),
       address: row?.address,
       contactEmail: row?.contactEmail,
     };
