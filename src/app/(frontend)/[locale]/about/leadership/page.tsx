@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import LeadershipHero from "@/components/about/LeadershipHero";
@@ -14,61 +13,68 @@ export const metadata: Metadata = {
   description: "Servants, sent and given — the people who steer AM's mission worldwide.",
 };
 
-const featuredLeaders = [
+/**
+ * Everyone on one grid, in the order the design lays them out: the executive
+ * director, then the regional coordinators west to east, then headquarters
+ * staff. The earlier version of this page split the same people across three
+ * sections with three different treatments — a wide row with a biography, a
+ * four-up card with a biography and an email, and a small five-up tile — which
+ * read as three ranks. The design collapses them into one tile so the page
+ * shows a team rather than a hierarchy.
+ */
+const people: {
+  name: string;
+  role: string;
+  image: string;
+  /** Force this person to open a new row at the five-column width. */
+  startsRow?: boolean;
+}[] = [
+  { name: "Rani Reid", role: "Executive Director", image: "/images/leader-reid.jpg" },
+
+  { name: "Cowin Hodges", role: "USA & Canada", image: "/images/coord-cowin-hodges.jpg" },
+  { name: "Andrea Rico", role: "South America", image: "/images/coord-andrea-rico.jpg" },
+  { name: "Joel Lee", role: "Asia Pacific", image: "/images/coord-joel-lee.jpg" },
+  { name: "Mara Onyeama", role: "Europe", image: "/images/coord-mara-onyeama.jpg" },
+  { name: "Jonathan Xie", role: "China", image: "/images/coord-jonathan-xie.jpg" },
+  { name: "Priya Vaya", role: "South Asia", image: "/images/coord-priya-vaya.jpg" },
+  { name: "Samuel Kwizera", role: "Africa", image: "/images/coord-samuel-kwizera.jpg" },
+  { name: "Khiaghie Koropa", role: "Oceania", image: "/images/coord-khiaghie-koropa.jpg" },
+
+  // Headquarters starts its own row in the design rather than running on from
+  // the coordinators, which is the only thing separating the two groups now
+  // that they share a tile. Only at the five-column width — below that the
+  // grid rewraps anyway and a forced break would leave a hole.
+  {
+    name: "Asa Daboh",
+    role: "HQ Staff",
+    image: "/images/hq-asa-daboh.jpg",
+    startsRow: true,
+  },
+  { name: "Ruth Jigmedsuren", role: "HQ Staff", image: "/images/hq-ruth-jigmedsuren.jpg" },
+  {
+    name: "Can Liu",
+    role: "Director of Chinese Mission in USA",
+    image: "/images/hq-can-liu.jpg",
+  },
+  {
+    name: "Vanessa Eusebio",
+    role: "Online Evangelism Coordinator",
+    image: "/images/hq-vanessa-eusebio.jpg",
+  },
+];
+
+/**
+ * Kept out of the grid on purpose: the design gives this one person a wide
+ * row with a portrait at 258px and room for a paragraph, below a rule. It is
+ * the only biography left on the page.
+ */
+const advisors = [
   {
     name: "Rev. Dr. Paul DeVries",
     title: "Senior Leader and Advisor",
     bio: "Dr. DeVries provides profound wisdom and spiritual guidance for our mission in many areas. Dr. Paul is also President of the New York Divinity School, and has over 25 years of leadership experience in Christian higher education administration, including at Wheaton College, Northern Baptist Theological Seminary and the Seminary of the East.",
     image: "/images/leader-paul-devries.jpg",
   },
-  {
-    name: "Rani Reid",
-    title: "Executive Director",
-    bio: "Rani Reid is our Executive Director who steers and leads the administration, mission and operation of AM world mission.",
-    image: "/images/leader-reid.jpg",
-  },
-];
-
-const hqStaff = [
-  {
-    name: "Asa Daboh",
-    title: "HQ Staff",
-    bio: "Asa Daboh serves as our HQ staff, overseeing chapter involvement, property management, and assisting with HQ operations.",
-    email: "asa@amintl.org",
-    image: "/images/hq-asa-daboh.jpg",
-  },
-  {
-    name: "Ruth Jigmedsuren",
-    title: "HQ Staff",
-    bio: "Ruth Jigmedsuren serves as our HQ staff, overseeing on-campus chapter involvement and assisting with HQ operations.",
-    email: "ruth@amintl.org",
-    image: "/images/hq-ruth-jigmedsuren.jpg",
-  },
-  {
-    name: "Can Liu",
-    title: "Director of Chinese Mission in USA",
-    bio: "Can Liu is our Director of the Chinese mission in the United States. He creates edifying, empowering, and nourishing Biblical programs for overseas Chinese students studying in US colleges based on his faith journey from China with many testimonies and stories of grace.",
-    email: "can@amintl.org",
-    image: "/images/hq-can-liu.jpg",
-  },
-  {
-    name: "Vanessa Eusebio",
-    title: "Online Evangelism Coordinator",
-    bio: "Vanessa Eusebio serves AM as a leader of online evangelism and outreach, using her gift of creativity and IT skills to promote Gospel programs and events in the United States and beyond.",
-    email: "vanessa.e@amintl.org",
-    image: "/images/hq-vanessa-eusebio.jpg",
-  },
-];
-
-const coordinators = [
-  { name: "Cowin Hodges", region: "USA & Canada", image: "/images/coord-cowin-hodges.jpg" },
-  { name: "Andrea Rico", region: "South America", image: "/images/coord-andrea-rico.jpg" },
-  { name: "Joel Lee", region: "Asia Pacific", image: "/images/coord-joel-lee.jpg" },
-  { name: "Mara Onyeama", region: "Europe", image: "/images/coord-mara-onyeama.jpg" },
-  { name: "Jonathan Xie", region: "China", image: "/images/coord-jonathan-xie.jpg" },
-  { name: "Priya Vaya", region: "South Asia", image: "/images/coord-priya-vaya.jpg" },
-  { name: "Samuel Kwizera", region: "Africa", image: "/images/coord-samuel-kwizera.jpg" },
-  { name: "Khiaghie Koropa", region: "Oceania", image: "/images/coord-khiaghie-koropa.jpg" },
 ];
 
 function initials(name: string) {
@@ -82,10 +88,10 @@ function initials(name: string) {
 }
 
 /**
- * Every portrait on this page is the same tile: square, 10px corners, over a
+ * Every portrait on this page is the same tile: square, 8px corners, over a
  * pale blue gradient that shows through as the person's initials when no
- * photograph has been supplied. The design draws it that way in all three
- * sections rather than giving each its own crop.
+ * photograph has been supplied. One tile for the grid and for the advisor row
+ * alike — the design gives neither its own crop.
  */
 function Portrait({
   image,
@@ -102,7 +108,7 @@ function Portrait({
 }) {
   return (
     <div
-      className={`relative aspect-square overflow-hidden rounded-[10px] ${className}`}
+      className={`relative aspect-square overflow-hidden rounded-[8px] ${className}`}
       style={{ backgroundImage: "linear-gradient(127deg, #e5edf6 0%, #cddbee 71%)" }}
     >
       {image ? (
@@ -176,11 +182,36 @@ export default function LeadershipPage() {
             The people behind the sending.
           </h2>
 
-          <div className="mt-10">
-            {featuredLeaders.map((leader) => (
+          {/* Five across at the design's 1104px container, where a 201.6px
+              tile and a 24px gutter come out exact. Two across on a phone so
+              a face stays large enough to recognise. */}
+          <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-11 sm:grid-cols-3 lg:grid-cols-5">
+            {people.map((person) => (
+              <div
+                key={`${person.name}-${person.role}`}
+                className={`flex flex-col text-center ${person.startsRow ? "lg:col-start-1" : ""}`}
+              >
+                <Portrait
+                  image={person.image}
+                  name={person.name}
+                  sizes="(min-width: 1024px) 202px, (min-width: 640px) 30vw, 45vw"
+                  initialsClassName="text-2xl"
+                />
+                <p className="pt-4 font-display text-base font-extrabold leading-5 tracking-[-0.025em] text-ink">
+                  {person.name}
+                </p>
+                <p className="pt-[5px] text-sm leading-5 text-ink-muted">{person.role}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* The one biography the design keeps, under a rule: a wide row
+              rather than a tile, because the paragraph needs the width. */}
+          <div className="mt-20">
+            {advisors.map((leader) => (
               <div
                 key={leader.name}
-                className="flex flex-col gap-10 border-t border-[#11182a]/[0.12] py-9 first:border-t-0 first:pt-0 sm:flex-row"
+                className="flex flex-col gap-10 border-t border-ink/[0.12] pt-9 sm:flex-row"
               >
                 <Portrait
                   image={leader.image}
@@ -199,69 +230,6 @@ export default function LeadershipPage() {
                     {leader.bio}
                   </p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-white py-20">
-        <Container className="max-w-[1104px]">
-          <Eyebrow>HQ Staff &amp; Coordinators</Eyebrow>
-          <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
-            Holding the day to day.
-          </h2>
-
-          {/* No card around these in the design — the portrait sits straight
-              on the page with its text beneath, the same tile the featured
-              rows above use. */}
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {hqStaff.map((person) => (
-              <div key={person.name} className="flex flex-col">
-                <Portrait
-                  image={person.image}
-                  name={person.name}
-                  sizes="(min-width: 1024px) 258px, (min-width: 640px) 50vw, 100vw"
-                />
-                <div className="flex flex-col gap-[7px] pt-[18px]">
-                  <p className="font-display text-[19px] font-extrabold leading-[22px] tracking-[-0.032em] text-ink">
-                    {person.name}
-                  </p>
-                  <p className="text-[13.5px] font-semibold leading-[19px] text-brand-blue">
-                    {person.title}
-                  </p>
-                  <p className="text-[13.5px] leading-[21.5px] text-ink-muted">{person.bio}</p>
-                  <TenantLink
-                    href={`mailto:${person.email}`}
-                    className="text-[12.5px] font-semibold leading-[19px] text-ink hover:text-brand-blue"
-                  >
-                    {person.email}
-                  </TenantLink>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-white py-20">
-        <Container className="max-w-[1104px]">
-          <Eyebrow>AM Global</Eyebrow>
-          <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
-            Coordinators, region by region.
-          </h2>
-
-          <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 lg:grid-cols-5">
-            {coordinators.map((person) => (
-              <div key={person.name} className="text-center">
-                <Portrait
-                  image={person.image}
-                  name={person.name}
-                  sizes="(min-width: 1024px) 202px, 40vw"
-                  initialsClassName="text-2xl"
-                />
-                <p className="mt-4 text-sm font-semibold text-ink">{person.name}</p>
-                <p className="mt-1 text-xs text-ink-muted">{person.region}</p>
               </div>
             ))}
           </div>
