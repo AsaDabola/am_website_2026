@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { usePathname, useRouter } from "@/i18n/navigation";
-import { isContinent } from "@/lib/continents";
+import { usePathname } from "@/i18n/navigation";
+import { defaultLocale } from "@/i18n/routing";
+import { countryFromPath } from "@/lib/currentCountry";
 import { isTenantAwareHref } from "@/lib/tenantRoutes";
 import { flagSrc } from "@/lib/countryFlags";
 import { ChevronDownIcon } from "@/components/ui/icons";
@@ -13,26 +14,22 @@ export type SwitcherCountry = {
   /** "{continent}/{slug}" — also the path the site lives at. */
   key: string;
   flag: string | null;
-  /** The country's own language, which switching to it also switches to. */
+  /** The country's own language, which opening it also opens it in. */
   locale: string;
 };
 
 /**
  * Country picker, sitting beside the language picker in the header.
  *
- * The two stay separate controls because the axes are separate: picking a
- * country sets a sensible language, but every country site can be read in any
- * of the site's locales, so the language picker still has to stand on its own.
+ * It only opens on the main site. Each country site is presented as its own
+ * organisation, so once you are on one there is no picker to take you to a
+ * different country — just the name of the one you are on. The language picker
+ * beside it keeps working there, because reading a country's site in another
+ * language is a different question from being on a different country's site.
  *
- * Switching keeps the page you are on. The country prefix is a path segment
- * (/europe/germany/about), so moving between countries is a matter of
- * swapping that prefix — but only the routes in TENANT_ROUTES exist on a
- * country site, so a page that does not exist there drops to that country's
- * home rather than 404ing.
- *
- * It also switches language, to the country's own: arriving on the German
- * site in German is what someone picking "Germany" means, and the language
- * switcher is right there to read it in something else.
+ * Every country opens in a new tab, for the same reason: leaving amintl.org
+ * for AM Germany should feel like arriving somewhere, not like the page you
+ * were on changing underneath you.
  */
 export default function CountrySwitcher({
   countries,
@@ -43,46 +40,17 @@ export default function CountrySwitcher({
 }) {
   const t = useTranslations("CountrySwitcher");
   const pathname = usePathname();
-  const router = useRouter();
   const [open, setOpen] = useState(false);
 
-  // usePathname() from next-intl is already locale-stripped, so the first two
-  // segments are the country prefix when there is one.
-  const segments = pathname.split("/").filter(Boolean);
-  const onCountrySite = segments.length >= 2 && isContinent(segments[0]);
-  const currentKey = onCountrySite ? `${segments[0]}/${segments[1]}` : "";
-  const rest = onCountrySite ? `/${segments.slice(2).join("/")}` : pathname;
-
-  const current = countries.find((c) => c.key === currentKey);
-  const label = current ? current.country : t("international");
-
-  function go(key: string, locale?: string) {
-    // `rest` is the page within the site — "/about" on /europe/germany/about,
-    // and the whole path when on the main site. A country site only serves
-    // the routes in TENANT_ROUTES, so it carries over only when it is one of
-    // them; anything else (the shared news feed, the network directory) lands
-    // on that country's home instead of a 404. The main site serves
-    // everything, so leaving a country always keeps the page.
-    const carried = isTenantAwareHref(rest) ? rest : "/";
-    const target = key ? (carried === "/" ? `/${key}` : `/${key}${carried}`) : rest || "/";
-
-    // Picking a country switches language with it; picking International
-    // leaves the language alone, since it has no language of its own.
-    router.push(target, locale ? { locale } : undefined);
-    setOpen(false);
-  }
-
+  const here = countryFromPath(pathname);
+  const current = here ? countries.find((c) => c.key === here.key) : undefined;
   const textColor = dark ? "text-ink" : "text-white";
 
-  return (
-    <div className="relative">
-      <button
-        type="button"
-        aria-label={t("label")}
-        aria-expanded={open}
-        onClick={() => setOpen((v) => !v)}
-        onBlur={() => setTimeout(() => setOpen(false), 150)}
-        className={`flex items-center gap-1.5 rounded-md px-2.5 py-2 text-sm font-medium ${textColor} hover:opacity-80`}
+  // On a country site: the name of the country, and nothing to open.
+  if (here) {
+    return (
+      <span
+        className={`flex items-center gap-1.5 px-2.5 py-2 text-sm font-medium ${textColor}`}
       >
         {current?.flag ? (
           // Flags are static SVGs at a fixed 20px, so the image optimiser has
@@ -96,7 +64,44 @@ export default function CountrySwitcher({
             className="h-3.5 w-5 shrink-0 rounded-[2px] object-cover"
           />
         ) : null}
-        <span className="max-w-[9rem] truncate">{label}</span>
+        <span className="max-w-[9rem] truncate">{current?.country ?? here.slug}</span>
+      </span>
+    );
+  }
+
+  /**
+   * The page within the site. A country site only serves the routes in
+   * TENANT_ROUTES, so the current page carries over only when it is one of
+   * them; anything else — the shared news feed, the network directory — opens
+   * that country's home rather than a 404.
+   *
+   * The locale is the country's own: arriving on the German site in German is
+   * what picking "Germany" means, and its language switcher is right there.
+   * `localePrefix` is "as-needed", so the default locale takes no prefix.
+   */
+  function hrefFor(country: SwitcherCountry): string {
+    const carried = isTenantAwareHref(pathname) ? pathname : "/";
+    const path = carried === "/" ? `/${country.key}` : `/${country.key}${carried}`;
+    return country.locale === defaultLocale ? path : `/${country.locale}${path}`;
+  }
+
+  return (
+    // Closing on the container's blur rather than the button's: the rows are
+    // real links now, and a timer racing the click would sometimes swallow it.
+    <div
+      className="relative"
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setOpen(false);
+      }}
+    >
+      <button
+        type="button"
+        aria-label={t("label")}
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+        className={`flex items-center gap-1.5 rounded-md px-2.5 py-2 text-sm font-medium ${textColor} hover:opacity-80`}
+      >
+        <span className="max-w-[9rem] truncate">{t("international")}</span>
         {/* No globe on this one: the language switcher beside it already
             carries one, and two identical globes side by side say nothing
             about which is which. */}
@@ -109,16 +114,8 @@ export default function CountrySwitcher({
         // list uses.
         <ul className="absolute end-0 top-full z-50 mt-2 grid max-h-[70vh] w-64 grid-cols-1 gap-x-1 overflow-y-auto overscroll-contain rounded-xl border border-black/5 bg-white p-1.5 text-ink shadow-xl sm:w-[30rem] sm:grid-cols-2">
           <li className="sm:col-span-2">
-            <button
-              type="button"
-              onMouseDown={(event) => {
-                event.preventDefault();
-                go("");
-              }}
-              className={`flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-start text-sm hover:bg-mist ${
-                current ? "text-ink" : "font-semibold text-brand-navy"
-              }`}
-            >
+            {/* Where you already are, so it marks the spot rather than links. */}
+            <span className="flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-semibold text-brand-navy">
               <svg viewBox="0 0 20 20" fill="none" className="size-4 shrink-0" aria-hidden="true">
                 <circle cx="10" cy="10" r="7.5" stroke="currentColor" strokeWidth={1.4} />
                 <path
@@ -128,20 +125,19 @@ export default function CountrySwitcher({
                 />
               </svg>
               {t("international")}
-            </button>
+            </span>
           </li>
 
           {countries.map((c) => (
             <li key={c.key}>
-              <button
-                type="button"
-                onMouseDown={(event) => {
-                  event.preventDefault();
-                  go(c.key, c.locale);
-                }}
-                className={`flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-start text-sm hover:bg-mist ${
-                  c.key === currentKey ? "font-semibold text-brand-navy" : "text-ink"
-                }`}
+              {/* A real link, not a scripted push: a new tab is the point, and
+                  middle-click and "open in new window" should work too. */}
+              <a
+                href={hrefFor(c)}
+                target="_blank"
+                rel="noopener"
+                onClick={() => setOpen(false)}
+                className="flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-start text-sm text-ink hover:bg-mist"
               >
                 {c.flag ? (
                   // eslint-disable-next-line @next/next/no-img-element
@@ -156,7 +152,7 @@ export default function CountrySwitcher({
                   <span className="h-3.5 w-5 shrink-0 rounded-[2px] bg-mist" />
                 )}
                 <span className="truncate">{c.country}</span>
-              </button>
+              </a>
             </li>
           ))}
         </ul>
