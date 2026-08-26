@@ -176,8 +176,14 @@ export default function AboutHero({
               {subtitle}
             </p>
           )}
-          {children}
         </div>
+
+        {/* A sibling of the title rather than part of it, so a hero that
+            centres its title can still carry a block along the bottom of the
+            frame — which is what the Join our Bible Studies design draws.
+            Where the title is not centred the two sit together as before, and
+            the Who-we-are card row is unmoved. */}
+        {children}
       </Container>
     </section>
   );

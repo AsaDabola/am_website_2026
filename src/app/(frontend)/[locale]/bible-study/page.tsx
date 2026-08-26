@@ -5,6 +5,7 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import PlaceholderPhoto from "@/components/ui/PlaceholderPhoto";
 import AboutHero from "@/components/about/AboutHero";
+import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 
@@ -88,6 +89,10 @@ export default function BibleStudyPage() {
         titleVariant="ghost"
         align="center"
       />
+      {/* Both Bible study pages sit inside Get Involved and the design gives
+          each the section's tabs under the hero, with Bible Studies marked —
+          the join page is a step within it rather than a tab of its own. */}
+      <GetInvolvedSubNav active="/bible-study" />
 
       <section className="bg-mist py-20">
         <Container className="max-w-[720px] text-center">

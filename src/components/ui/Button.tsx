@@ -2,13 +2,25 @@ import { ReactNode } from "react";
 import TenantLink from "@/components/layout/TenantLink";
 import { ArrowRightIcon } from "./icons";
 
-type Variant = "solid" | "solidNavy" | "outlineLight" | "outlineBlue" | "ghostLight" | "ghostDark";
+type Variant =
+  | "solid"
+  | "solidNavy"
+  | "outlineLight"
+  | "outlineWhite"
+  | "outlineBlue"
+  | "ghostLight"
+  | "ghostDark";
 
 const variantClasses: Record<Variant, string> = {
   solid: "bg-brand-blue text-white hover:bg-brand-navy",
   solidNavy: "bg-brand-navy text-white hover:bg-brand-blue",
   outlineLight:
     "border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20",
+  // A full-strength white rule and nothing behind it. `outlineLight` softens
+  // the border and fills it, which suits a button sitting on a busy part of a
+  // photograph; this one is drawn over the quiet floor of a hero and the
+  // design wants the outline to read as a line, not a chip.
+  outlineWhite: "border border-white text-white hover:bg-white hover:text-ink",
   outlineBlue: "border border-brand-blue/40 text-brand-blue hover:bg-brand-blue/5",
   ghostLight: "text-white/90 hover:text-white",
   ghostDark: "text-brand-blue hover:text-brand-navy",
