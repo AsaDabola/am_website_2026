@@ -22,8 +22,17 @@ export default function JoinBibleStudyPage() {
           { label: "Join our Bible Studies" },
         ]}
         title="Join our Bible Studies"
-        backgroundImage="/images/hero-slide-bible-study.jpg"
-        size="large"
+        backgroundImage="/images/bible-study-join-hero.jpg"
+        // The design draws this one at 964px rather than the shorter hero the
+        // rest of the section uses — the photograph is the invitation — and
+        // centres the title rather than sitting it on the floor of the frame.
+        size="tall"
+        titlePlacement="middle"
+        // The raised hands are lit against a projection screen, so the middle
+        // of this photograph is the brightest part of it. A tall hero would
+        // normally take the light wash; this one needs the deeper one or the
+        // white title washes out exactly where it lands.
+        wash="deep"
         titleVariant="ghost"
         align="center"
       />

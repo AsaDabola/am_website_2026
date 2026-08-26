@@ -15,6 +15,7 @@ export default function AboutHero({
   titleVariant = "solid",
   titleCase = "upper",
   align = "left",
+  titlePlacement = "bottom",
   children,
 }: {
   /**
@@ -50,6 +51,15 @@ export default function AboutHero({
    */
   titleCase?: "upper" | "sentence";
   align?: "left" | "center";
+  /**
+   * Where the title sits down the height of a tall hero. "bottom" is the
+   * Who-we-are arrangement, which keeps the title off the sky and over the
+   * rock. "middle" is what the Join our Bible Studies design draws, where the
+   * photograph has no quiet band to sit the title in and it is centred
+   * instead. Ignored by the shorter heroes, which have no room to place
+   * anything.
+   */
+  titlePlacement?: "bottom" | "middle";
   children?: ReactNode;
 }) {
   const isLarge = size === "large" || size === "tall";
@@ -129,7 +139,10 @@ export default function AboutHero({
           </nav>
         )}
 
-        <div>
+        {/* `flex-1` only matters when the title is asked to sit in the middle
+            of a tall hero; everywhere else the container's own justification
+            has already placed this block and growing it changes nothing. */}
+        <div className={titlePlacement === "middle" ? "flex flex-1 flex-col justify-center" : ""}>
           <h1
             className={[
               titleVariant === "ghost"

@@ -24,7 +24,7 @@ type Track = {
 
 const tracks: Track[] = [
   {
-    title: "Phase 1 — Sola Fide",
+    title: "Phase 1 — Book of Romans, chapters 1–8",
     image: "/images/bible-study-sola-fide.jpg",
     from: "#2a5eec",
     to: "#0d1f52",
@@ -32,7 +32,7 @@ const tracks: Track[] = [
       "Sola Fide — \"faith alone\" — lays the foundation of the gospel: who Jesus is, what He did on the cross, and what it means to trust in Him alone for salvation.",
   },
   {
-    title: "Phase 2 — Bible Core",
+    title: "Phase 2 — Bible Core: the Four Spiritual Laws",
     image: "/images/bible-study-bible-core.jpg",
     from: "#3a6cd8",
     to: "#0d1f52",
@@ -40,7 +40,7 @@ const tracks: Track[] = [
       "Bible Core builds a working foundation in Scripture — how the Bible fits together as one story, and how to read and study it for yourself.",
   },
   {
-    title: "Phase 3(1) — The Path of the Ancestors' Faith",
+    title: "Phase 3(1) — The Ancestors of Faith",
     image: "/images/bible-study-faith.jpg",
     from: "#4d8df6",
     to: "#0d1f52",
@@ -56,7 +56,7 @@ const tracks: Track[] = [
       "A practical study of prayer, community, and discipleship — the everyday habits and disciplines of following Jesus.",
   },
   {
-    title: "Phase 4 — Only Jesus",
+    title: "Phase 4 — Only Jesus: Gospel Studies",
     image: "/images/bible-study-only-jesus.jpg",
     from: "#2a5eec",
     to: "#0d1f52",
@@ -64,7 +64,7 @@ const tracks: Track[] = [
       "A deeper look at the person and work of Christ, preparing students to understand and articulate what they believe, and why.",
   },
   {
-    title: "Discipleship Track",
+    title: "Phase 5 — Discipleship Track",
     image: "/images/bible-study-discipleship-track.jpg",
     from: "#0d1f52",
     to: "#050a2e",
@@ -83,7 +83,7 @@ export default function BibleStudyPage() {
           { label: "Bible Studies" },
         ]}
         title="Bible Studies"
-        backgroundImage="/images/hero-slide-bible-study.jpg"
+        backgroundImage="/images/bible-study-hero.jpg"
         size="large"
         titleVariant="ghost"
         align="center"
@@ -99,10 +99,10 @@ export default function BibleStudyPage() {
             spiritual life and relationship with the Lord Jesus. These Bible studies were
             created to guide each person to mature in faith and truth so that everyone can be
             equipped to serve Jesus and His Kingdom. We are currently offering six tracks of
-            Bible Study Programs: Phase 1 Sola Fide, Phase 2 Bible Core, Phase 3(1) The Path of
-            the Ancestors&rsquo; Faith, Phase 3(2) Basics of Christian Life, Phase 4 Only Jesus
-            and Discipleship Track. Sign up for our Bible studies today by filling out the
-            request form and our teachers will contact you with further information.
+            Bible Study Programs: Phase 1 the Book of Romans, Phase 2 Bible Core, Phase 3(1)
+            The Ancestors of Faith, Phase 3(2) Basics of Christian Life, Phase 4 Only Jesus,
+            and Phase 5 the Discipleship Track. Sign up for our Bible studies today by filling
+            out the request form and our teachers will contact you with further information.
           </p>
           <Button href="/bible-study/join" variant="solid" className="mt-9">
             Click here to Join our Bible Studies Today!
