@@ -67,7 +67,10 @@ const activities = [
 ];
 
 export default async function GroupActivitiesPage() {
-  const tHeader = await getTranslations("Header");
+  const [t, tHeader] = await Promise.all([
+    getTranslations("Common"),
+    getTranslations("Header"),
+  ]);
 
   return (
     <>
@@ -77,12 +80,27 @@ export default async function GroupActivitiesPage() {
           { label: tHeader("getInvolved"), href: "/get-involved" },
           { label: "Group Activities" },
         ]}
-        title="Group Activities"
+        // The section's name, solid and left-aligned with the tagline under
+        // it — the same hero every other Get Involved page carries, and what
+        // the design draws. This page was the only one setting a ghost,
+        // centred title of its own name, which both broke the row and left
+        // nothing for the page title below the tabs to say.
+        title={tHeader("getInvolved")}
+        subtitle={t("tagline")}
         backgroundImage="/images/group-activities-hero.jpg"
-        titleVariant="ghost"
-        align="center"
       />
       <GetInvolvedSubNav active="/get-involved/group-activities" />
+
+      {/* The page's own name, below the tabs rather than in the hero. Archivo
+          SemiBold at the design's 45px — the same setting the Events &
+          Testimonials heading uses. */}
+      <section className="bg-white pt-20">
+        <Container>
+          <h1 className="font-display text-[34px] font-semibold leading-[1.15] tracking-[-0.01em] text-ink sm:text-[45px]">
+            Group Activities
+          </h1>
+        </Container>
+      </section>
 
       {activities.map((item, index) => (
         <section
