@@ -125,6 +125,7 @@ nothing to do with the database you came to inspect.
 | `catch-up-missing-collections.sql` | The big one. Four whole collections and 40 locale values that never reached the deployed database. |
 | `add-internship-applications.sql` | Adds the Internship Applications collection. |
 | `add-get-involved-card-description.sql` | Adds `description` to the Get Involved cards, and the message keys it introduced. |
+| `add-admin-roles.sql` | Adds roles and per-country permissions to Users. **Run this before deploying the access rules** — without it nobody can sign in to /admin. |
 | `copy-flags.mjs` | Copies country flag SVGs into `public/flags`. |
 
 ## A note on connection strings

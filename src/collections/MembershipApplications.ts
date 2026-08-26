@@ -1,17 +1,14 @@
 import type { CollectionConfig } from "payload";
+import { hideUnlessGranted, sectionAccess } from "@/lib/adminAccess";
 
 export const MembershipApplications: CollectionConfig = {
   slug: "membership-applications",
   admin: {
+    hidden: hideUnlessGranted("membership-applications"),
     useAsTitle: "fullName",
     defaultColumns: ["fullName", "email", "chapter", "membershipTier", "createdAt"],
   },
-  access: {
-    create: () => true,
-    read: ({ req: { user } }) => Boolean(user),
-    update: ({ req: { user } }) => Boolean(user),
-    delete: ({ req: { user } }) => Boolean(user),
-  },
+  access: sectionAccess("membership-applications", { publicCreate: true }),
   fields: [
     {
       type: "row",

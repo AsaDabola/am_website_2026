@@ -1,4 +1,5 @@
 import type { CollectionConfig, TextFieldSingleValidation } from "payload";
+import { enforceTenantScope, hideUnlessGranted, tenantScopedAccess } from "@/lib/adminAccess";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { homeBlocks } from "./blocks/homeBlocks";
 
@@ -11,14 +12,13 @@ import { homeBlocks } from "./blocks/homeBlocks";
 export const Pages: CollectionConfig = {
   slug: "pages",
   admin: {
+    hidden: hideUnlessGranted("pages"),
     useAsTitle: "title",
     defaultColumns: ["title", "slug", "tenant", "published"],
     description:
       "Add, edit, or remove pages without a code deploy. Pages with no tenant belong to the main amintl.org site.",
   },
-  access: {
-    read: () => true,
-  },
+  access: tenantScopedAccess("pages"),
   fields: [
     { name: "title", type: "text", required: true },
     {
@@ -44,6 +44,7 @@ export const Pages: CollectionConfig = {
       name: "tenant",
       type: "relationship",
       relationTo: "tenants",
+      hooks: { beforeChange: [enforceTenantScope] },
       admin: { description: "Leave empty for a page on the main amintl.org site." },
     },
     {

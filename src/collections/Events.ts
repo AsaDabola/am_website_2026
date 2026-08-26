@@ -1,15 +1,15 @@
 import type { CollectionConfig } from "payload";
+import { hideUnlessGranted, tenantScopedAccess } from "@/lib/adminAccess";
 import { syndicationFields } from "./fields/syndication";
 
 export const Events: CollectionConfig = {
   slug: "events",
   admin: {
+    hidden: hideUnlessGranted("events"),
     useAsTitle: "title",
     defaultColumns: ["title", "dateLabel", "startDate", "tenant"],
   },
-  access: {
-    read: () => true,
-  },
+  access: tenantScopedAccess("events"),
   fields: [
     {
       name: "title",

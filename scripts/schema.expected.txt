@@ -464,8 +464,18 @@ users.lock_until timestamp with time zone
 users.login_attempts numeric
 users.reset_password_expiration timestamp with time zone
 users.reset_password_token character varying
+users.role enum_users_role
 users.salt character varying
 users.updated_at timestamp with time zone
+users_rels.id integer
+users_rels.order integer
+users_rels.parent_id integer
+users_rels.path character varying
+users_rels.tenants_id integer
+users_sections.id integer
+users_sections.order integer
+users_sections.parent_id integer
+users_sections.value enum_users_sections
 users_sessions._order integer
 users_sessions._parent_id integer
 users_sessions.created_at timestamp with time zone
@@ -523,6 +533,8 @@ ENUM enum_tenant_content_overrides_key = AboutPage.blockquote,AboutPage.breadcru
 ENUM enum_tenants_continent = africa,asia,europe,northamerica,southamerica,oceania
 ENUM enum_tenants_locale = en,es,fr,de,pt,ko,ja,zh,it,ru,tr,id,nl,pl,uk,cs,sk,el,hu,ro,sv,ar,he,ur,hi,bn,ta,ne,si,my,th,vi,fil,ms,mn,kk,sw,am,af,zu,xh,rw,rn,mg,ht,fj,hif,rm
 ENUM enum_tenants_tier = g20,m40
+ENUM enum_users_role = super-admin,country-admin
+ENUM enum_users_sections = pages,posts,events,campuses,tenant-content,media,ministries,bible-study-signups,volunteer-applications,internship-applications,chapter-affiliations,membership-applications,contact-messages,donation-intents
 ENUM enum_volunteer_applications_q1_convicted = Yes,No
 ENUM enum_volunteer_applications_q2_sexual_offense = Yes,No
 ENUM enum_volunteer_applications_q3_reported_agency = Yes,No

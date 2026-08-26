@@ -1,4 +1,5 @@
 import type { CollectionConfig } from "payload";
+import { enforceTenantScope, hideUnlessGranted, tenantScopedAccess } from "@/lib/adminAccess";
 import { locales, localeLabels } from "@/i18n/routing";
 import { DEFAULT_BY_KEY, MESSAGE_KEY_OPTIONS, humanizeKey } from "@/lib/messageKeys";
 
@@ -20,15 +21,14 @@ export const TenantContent: CollectionConfig = {
     plural: "Country copy",
   },
   admin: {
+    hidden: hideUnlessGranted("tenant-content"),
     useAsTitle: "label",
     defaultColumns: ["label", "tenant", "locale", "updatedAt"],
     description:
       "Change wording for one country site. Anything not listed here keeps following the main amintl.org copy.",
     group: "Content",
   },
-  access: {
-    read: () => true,
-  },
+  access: tenantScopedAccess("tenant-content"),
   fields: [
     {
       name: "label",
@@ -58,6 +58,7 @@ export const TenantContent: CollectionConfig = {
       name: "tenant",
       type: "relationship",
       relationTo: "tenants",
+      hooks: { beforeChange: [enforceTenantScope] },
       required: true,
       index: true,
       admin: { description: "The country site these changes apply to." },

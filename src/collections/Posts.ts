@@ -1,16 +1,16 @@
 import type { CollectionConfig } from "payload";
+import { hideUnlessGranted, tenantScopedAccess } from "@/lib/adminAccess";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { syndicationFields } from "./fields/syndication";
 
 export const Posts: CollectionConfig = {
   slug: "posts",
   admin: {
+    hidden: hideUnlessGranted("posts"),
     useAsTitle: "title",
     defaultColumns: ["title", "category", "publishedDate", "tenant"],
   },
-  access: {
-    read: () => true,
-  },
+  access: tenantScopedAccess("posts"),
   fields: [
     {
       name: "title",

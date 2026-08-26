@@ -1,14 +1,14 @@
 import type { CollectionConfig } from "payload";
+import { hideUnlessGranted, sectionAccess } from "@/lib/adminAccess";
 
 export const Ministries: CollectionConfig = {
   slug: "ministries",
   admin: {
+    hidden: hideUnlessGranted("ministries"),
     useAsTitle: "title",
     defaultColumns: ["tag", "title", "order"],
   },
-  access: {
-    read: () => true,
-  },
+  access: sectionAccess("ministries", { publicRead: true }),
   fields: [
     {
       name: "tag",

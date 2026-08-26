@@ -1,4 +1,5 @@
 import type { CollectionConfig } from "payload";
+import { hideUnlessGranted, sectionAccess } from "@/lib/adminAccess";
 
 // Deliberately has no payment-card fields. Raw card numbers must never
 // touch our own database — that's a serious PCI-compliance and security
@@ -8,15 +9,11 @@ import type { CollectionConfig } from "payload";
 export const DonationIntents: CollectionConfig = {
   slug: "donation-intents",
   admin: {
+    hidden: hideUnlessGranted("donation-intents"),
     useAsTitle: "email",
     defaultColumns: ["fullName", "email", "amount", "frequency", "status", "createdAt"],
   },
-  access: {
-    create: () => true,
-    read: ({ req: { user } }) => Boolean(user),
-    update: ({ req: { user } }) => Boolean(user),
-    delete: ({ req: { user } }) => Boolean(user),
-  },
+  access: sectionAccess("donation-intents", { publicCreate: true }),
   fields: [
     { name: "fullName", type: "text", required: true },
     { name: "email", type: "email", required: true },

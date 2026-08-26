@@ -1,4 +1,5 @@
 import type { CollectionConfig } from "payload";
+import { superAdminOnly } from "@/lib/adminAccess";
 
 // Billing contacts for chapters/partner organizations we invoice through
 // Stripe Invoicing — separate from the public Campuses directory since
@@ -9,12 +10,7 @@ export const Partners: CollectionConfig = {
     useAsTitle: "name",
     defaultColumns: ["name", "contactEmail", "type"],
   },
-  access: {
-    read: ({ req: { user } }) => Boolean(user),
-    create: ({ req: { user } }) => Boolean(user),
-    update: ({ req: { user } }) => Boolean(user),
-    delete: ({ req: { user } }) => Boolean(user),
-  },
+  access: superAdminOnly,
   fields: [
     { name: "name", type: "text", required: true, admin: { description: "Chapter or partner organization name." } },
     { name: "contactName", type: "text" },

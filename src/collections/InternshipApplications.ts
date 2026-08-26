@@ -1,4 +1,5 @@
 import type { CollectionConfig } from "payload";
+import { hideUnlessGranted, sectionAccess } from "@/lib/adminAccess";
 
 /**
  * Submissions from the internship application on
@@ -13,17 +14,13 @@ import type { CollectionConfig } from "payload";
 export const InternshipApplications: CollectionConfig = {
   slug: "internship-applications",
   admin: {
+    hidden: hideUnlessGranted("internship-applications"),
     useAsTitle: "email",
     defaultColumns: ["firstName", "lastName", "program", "email", "createdAt"],
     description:
       "Applications to the summer, short-term and long-term internships. Read-only in practice — reply to the applicant by email.",
   },
-  access: {
-    create: () => true,
-    read: ({ req: { user } }) => Boolean(user),
-    update: ({ req: { user } }) => Boolean(user),
-    delete: ({ req: { user } }) => Boolean(user),
-  },
+  access: sectionAccess("internship-applications", { publicCreate: true }),
   fields: [
     {
       type: "row",

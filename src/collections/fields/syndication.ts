@@ -1,5 +1,6 @@
 import type { Field } from "payload";
 import { CONTINENT_OPTIONS } from "@/lib/continents";
+import { enforceTenantScope } from "@/lib/adminAccess";
 
 // Shared by any collection that should be able to flow across the
 // multi-tenant network (Posts, Events, ...). `tenant` null means the
@@ -14,6 +15,8 @@ export const syndicationFields: Field[] = [
     name: "tenant",
     type: "relationship",
     relationTo: "tenants",
+    // A country admin can only file this under one of their own countries.
+    hooks: { beforeChange: [enforceTenantScope] },
     admin: {
       position: "sidebar",
       description: "Which country site this was authored on. Leave empty for the main amintl.org site.",

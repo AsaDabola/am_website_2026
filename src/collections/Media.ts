@@ -1,11 +1,11 @@
 import type { CollectionConfig } from "payload";
+import { hideUnlessGranted, sectionAccess } from "@/lib/adminAccess";
 
 export const Media: CollectionConfig = {
   slug: "media",
-  access: {
-    read: () => true,
-  },
+  access: sectionAccess("media", { publicRead: true }),
   admin: {
+    hidden: hideUnlessGranted("media"),
     useAsTitle: "alt",
   },
   fields: [

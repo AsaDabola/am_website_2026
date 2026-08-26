@@ -1,17 +1,14 @@
 import type { CollectionConfig } from "payload";
+import { hideUnlessGranted, sectionAccess } from "@/lib/adminAccess";
 
 export const BibleStudySignups: CollectionConfig = {
   slug: "bible-study-signups",
   admin: {
+    hidden: hideUnlessGranted("bible-study-signups"),
     useAsTitle: "email",
     defaultColumns: ["firstName", "lastName", "email", "createdAt"],
   },
-  access: {
-    create: () => true,
-    read: ({ req: { user } }) => Boolean(user),
-    update: ({ req: { user } }) => Boolean(user),
-    delete: ({ req: { user } }) => Boolean(user),
-  },
+  access: sectionAccess("bible-study-signups", { publicCreate: true }),
   fields: [
     {
       type: "row",

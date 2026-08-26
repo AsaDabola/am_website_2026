@@ -1,17 +1,14 @@
 import type { CollectionConfig } from "payload";
+import { hideUnlessGranted, sectionAccess } from "@/lib/adminAccess";
 
 export const VolunteerApplications: CollectionConfig = {
   slug: "volunteer-applications",
   admin: {
+    hidden: hideUnlessGranted("volunteer-applications"),
     useAsTitle: "email",
     defaultColumns: ["fullName", "email", "createdAt"],
   },
-  access: {
-    create: () => true,
-    read: ({ req: { user } }) => Boolean(user),
-    update: ({ req: { user } }) => Boolean(user),
-    delete: ({ req: { user } }) => Boolean(user),
-  },
+  access: sectionAccess("volunteer-applications", { publicCreate: true }),
   fields: [
     { name: "fullName", type: "text", required: true },
     { name: "address", type: "text", required: true },

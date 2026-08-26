@@ -1,4 +1,5 @@
 import type { CollectionConfig } from "payload";
+import { tenantsAccess } from "@/lib/adminAccess";
 import type { TextFieldSingleValidation } from "payload";
 import { locales, localeLabels } from "@/i18n/routing";
 import { CONTINENT_OPTIONS } from "@/lib/continents";
@@ -20,9 +21,7 @@ export const Tenants: CollectionConfig = {
     description:
       "One entry per country site. The URL is /{continent}/{slug}, e.g. continent 'europe' + slug 'germany' -> amintl.org/europe/germany.",
   },
-  access: {
-    read: () => true,
-  },
+  access: tenantsAccess,
   fields: [
     { name: "country", type: "text", required: true, admin: { description: 'e.g. "Germany"' } },
     { name: "city", type: "text", admin: { description: 'Main chapter city, e.g. "Frankfurt" — shown on the Our Network page.' } },

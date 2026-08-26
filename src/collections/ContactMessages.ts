@@ -1,17 +1,14 @@
 import type { CollectionConfig } from "payload";
+import { hideUnlessGranted, sectionAccess } from "@/lib/adminAccess";
 
 export const ContactMessages: CollectionConfig = {
   slug: "contact-messages",
   admin: {
+    hidden: hideUnlessGranted("contact-messages"),
     useAsTitle: "subject",
     defaultColumns: ["name", "email", "subject", "createdAt"],
   },
-  access: {
-    create: () => true,
-    read: ({ req: { user } }) => Boolean(user),
-    update: ({ req: { user } }) => Boolean(user),
-    delete: ({ req: { user } }) => Boolean(user),
-  },
+  access: sectionAccess("contact-messages", { publicCreate: true }),
   fields: [
     { name: "name", type: "text", required: true },
     { name: "email", type: "email", required: true },

@@ -1,17 +1,14 @@
 import type { CollectionConfig } from "payload";
+import { hideUnlessGranted, sectionAccess } from "@/lib/adminAccess";
 
 export const ChapterAffiliations: CollectionConfig = {
   slug: "chapter-affiliations",
   admin: {
+    hidden: hideUnlessGranted("chapter-affiliations"),
     useAsTitle: "targetUniversity",
     defaultColumns: ["targetUniversity", "city", "country", "applicationType", "createdAt"],
   },
-  access: {
-    create: () => true,
-    read: ({ req: { user } }) => Boolean(user),
-    update: ({ req: { user } }) => Boolean(user),
-    delete: ({ req: { user } }) => Boolean(user),
-  },
+  access: sectionAccess("chapter-affiliations", { publicCreate: true }),
   fields: [
     {
       name: "applicationType",

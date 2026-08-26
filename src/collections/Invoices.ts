@@ -1,4 +1,5 @@
 import type { CollectionConfig } from "payload";
+import { superAdminOnly } from "@/lib/adminAccess";
 
 // Mirrors a Stripe Invoice sent to a Partner (chapter/partner-org billing).
 // Created by /api/invoices/create, kept in sync by the Stripe webhook
@@ -9,12 +10,7 @@ export const Invoices: CollectionConfig = {
     useAsTitle: "stripeInvoiceId",
     defaultColumns: ["partner", "status", "amountDue", "dueDate", "createdAt"],
   },
-  access: {
-    read: ({ req: { user } }) => Boolean(user),
-    create: ({ req: { user } }) => Boolean(user),
-    update: ({ req: { user } }) => Boolean(user),
-    delete: ({ req: { user } }) => Boolean(user),
-  },
+  access: superAdminOnly,
   fields: [
     { name: "partner", type: "relationship", relationTo: "partners", required: true },
     { name: "memo", type: "textarea", admin: { description: "Shown to the partner on the invoice." } },
