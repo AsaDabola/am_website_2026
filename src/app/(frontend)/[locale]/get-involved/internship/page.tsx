@@ -3,9 +3,10 @@ import { getTranslations } from "@/i18n/content";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
-import Button from "@/components/ui/Button";
 import AboutHero from "@/components/about/AboutHero";
 import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
+import InternshipApplicationForm from "@/components/get-involved/InternshipApplicationForm";
+import EventsAndTestimonials from "@/components/sections/EventsAndTestimonials";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 
@@ -111,31 +112,19 @@ export default async function InternshipPage() {
             </div>
           ))}
 
-          <div className="grid gap-8 lg:grid-cols-[340px_1fr] lg:gap-16">
-            <div>
-              <h2 className="font-display text-3xl font-bold tracking-[-0.02em] text-ink">
-                Application
-              </h2>
-              <span className="mt-8 block h-1 w-14 rounded-full bg-brand-blue" />
-            </div>
-            <div>
-              <p className="text-sm leading-relaxed text-ink-muted">
-                If you are interested in any of our internship programs, please fill out the
-                application form and we will contact you upon reviewing your application.{" "}
-                <a
-                  href="https://amintl.org/apply-now/"
-                  className="text-brand-blue underline underline-offset-2"
-                >
-                  https://amintl.org/apply-now/
-                </a>
-              </p>
-              <Button href="https://amintl.org/apply-now/" variant="solid" className="mt-6">
-                Apply now
-              </Button>
-            </div>
-          </div>
         </Container>
       </section>
+
+      {/* The application itself, rather than a link off to the old site. It
+          writes into the internship-applications collection, so a submission
+          arrives in /admin instead of wherever apply-now used to send it. */}
+      <section id="apply" className="bg-paper py-24">
+        <Container className="max-w-[1200px]">
+          <InternshipApplicationForm />
+        </Container>
+      </section>
+
+      <EventsAndTestimonials />
 
       <PartnerWithUs />
       <Newsletter />

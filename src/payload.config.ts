@@ -14,6 +14,7 @@ import { Posts } from "./collections/Posts";
 import { Ministries } from "./collections/Ministries";
 import { BibleStudySignups } from "./collections/BibleStudySignups";
 import { VolunteerApplications } from "./collections/VolunteerApplications";
+import { InternshipApplications } from "./collections/InternshipApplications";
 import { Tenants } from "./collections/Tenants";
 import { TenantContent } from "./collections/TenantContent";
 import { Pages } from "./collections/Pages";
@@ -65,6 +66,7 @@ export default buildConfig({
     Ministries,
     BibleStudySignups,
     VolunteerApplications,
+    InternshipApplications,
     Tenants,
     TenantContent,
     Pages,

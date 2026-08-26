@@ -95,6 +95,38 @@ events_share_with_continents.id integer
 events_share_with_continents.order integer
 events_share_with_continents.parent_id integer
 events_share_with_continents.value enum_events_share_with_continents
+internship_applications.agrees_to_terms boolean
+internship_applications.church_name character varying
+internship_applications.city character varying
+internship_applications.confirms_accurate boolean
+internship_applications.country character varying
+internship_applications.created_at timestamp with time zone
+internship_applications.date_of_birth character varying
+internship_applications.education_level enum_internship_applications_education_level
+internship_applications.email character varying
+internship_applications.faith_journey character varying
+internship_applications.first_name character varying
+internship_applications.how_did_you_hear character varying
+internship_applications.id integer
+internship_applications.last_name character varying
+internship_applications.leader_contact character varying
+internship_applications.leader_name character varying
+internship_applications.phone character varying
+internship_applications.preferred_start_date character varying
+internship_applications.program enum_internship_applications_program
+internship_applications.reference1_email character varying
+internship_applications.reference1_name character varying
+internship_applications.reference1_phone character varying
+internship_applications.reference1_relationship character varying
+internship_applications.reference2_email character varying
+internship_applications.reference2_name character varying
+internship_applications.reference2_phone character varying
+internship_applications.reference2_relationship character varying
+internship_applications.state_province character varying
+internship_applications.street_address character varying
+internship_applications.updated_at timestamp with time zone
+internship_applications.why_this_program character varying
+internship_applications.zip_code character varying
 invoices.amount_due numeric
 invoices.amount_paid numeric
 invoices.created_at timestamp with time zone
@@ -344,6 +376,7 @@ payload_locked_documents_rels.contact_messages_id integer
 payload_locked_documents_rels.donation_intents_id integer
 payload_locked_documents_rels.events_id integer
 payload_locked_documents_rels.id integer
+payload_locked_documents_rels.internship_applications_id integer
 payload_locked_documents_rels.invoices_id integer
 payload_locked_documents_rels.media_id integer
 payload_locked_documents_rels.membership_applications_id integer
@@ -475,6 +508,8 @@ ENUM enum_chapter_affiliations_chartered = Yes,No
 ENUM enum_donation_intents_frequency = One-Time,Monthly,Yearly
 ENUM enum_donation_intents_status = pending,completed,failed
 ENUM enum_events_share_with_continents = africa,asia,europe,northamerica,southamerica,oceania
+ENUM enum_internship_applications_education_level = high-school,some-college,undergraduate,postgraduate,other
+ENUM enum_internship_applications_program = summer,short-term,long-term
 ENUM enum_invoices_status = draft,open,paid,void,uncollectible
 ENUM enum_membership_applications_membership_tier = Newcomer,Registered,Volunteer,Staff,Leader
 ENUM enum_membership_applications_statement_of_faith_agreement = I agree and share the AM Statement of Faith
