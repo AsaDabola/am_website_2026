@@ -3,6 +3,7 @@ import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import HeroSlides from "@/components/sections/HeroSlides";
+import HeroStats from "@/components/sections/HeroStats";
 import type { HeroData } from "@/lib/homeBlockTypes";
 import { mediaUrl } from "@/lib/homeBlockTypes";
 
@@ -59,16 +60,7 @@ export default async function Hero({ data }: { data?: HeroData } = {}) {
           </Button>
         </div>
 
-        <div className="mt-16 flex max-w-xl divide-x divide-white/30 border-t border-white/30 pt-6">
-          {stats.map((stat) => (
-            <div key={stat.label} className="px-6 first:ps-0">
-              <p className="font-display text-2xl font-semibold tracking-[-0.02em] text-white">
-                {stat.value}
-              </p>
-              <p className="mt-1 text-[13px] text-on-dark">{stat.label}</p>
-            </div>
-          ))}
-        </div>
+        <HeroStats stats={stats} />
       </Container>
     </section>
   );

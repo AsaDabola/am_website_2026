@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "@/i18n/navigation";
-import { isContinent } from "@/lib/continents";
+import { countryFromPath, HEAD_OFFICE_KEYS } from "@/lib/currentCountry";
 import { flagSrc } from "@/lib/countryFlags";
 
 export type FooterCountry = {
@@ -39,16 +39,17 @@ export default function FooterOrg({
   defaultAddress: string;
   defaultEmail: string;
 }) {
-  const segments = usePathname().split("/").filter(Boolean);
-  const key =
-    segments.length >= 2 && isContinent(segments[0])
-      ? `${segments[0]}/${segments[1]}`
-      : "";
-  const current = key ? countries.find((c) => c.key === key) : undefined;
+  const here = countryFromPath(usePathname());
+  const current = here ? countries.find((c) => c.key === here.key) : undefined;
 
   const orgName = current?.orgName || defaultOrgName;
-  const address = current?.address || defaultAddress;
   const email = current?.contactEmail || defaultEmail;
+
+  // Head office's address is head office's. A country site shows it only if it
+  // speaks for head office; otherwise it shows the address it has entered, or
+  // no address line at all rather than pointing visitors at New Jersey.
+  const inheritsHeadOffice = !here || HEAD_OFFICE_KEYS.has(here.key);
+  const address = current?.address || (inheritsHeadOffice ? defaultAddress : "");
 
   return (
     <p className="mt-6 text-sm leading-relaxed text-on-dark/70">
@@ -67,7 +68,7 @@ export default function FooterOrg({
         {orgName}
       </span>
       {/* The address is free text and may run to several lines. */}
-      <span className="mt-1 block whitespace-pre-line">{address}</span>
+      {address ? <span className="mt-1 block whitespace-pre-line">{address}</span> : null}
       <a href={`mailto:${email}`} className="underline underline-offset-2">
         {email}
       </a>

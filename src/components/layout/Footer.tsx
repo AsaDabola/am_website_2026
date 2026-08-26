@@ -1,5 +1,6 @@
 import { getTranslations } from "@/i18n/content";
 import FooterOrg from "@/components/layout/FooterOrg";
+import FooterCopyright from "@/components/layout/FooterCopyright";
 import { getCountryDirectory } from "@/lib/countryDirectory";
 import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
@@ -114,7 +115,11 @@ export default async function Footer() {
 
       <div className="border-t border-white/[0.15]">
         <Container className="flex flex-col items-center justify-between gap-4 py-6 text-[13px] text-on-dark/45 sm:flex-row">
-          <p>{t("copyright")}</p>
+          <FooterCopyright
+            template={t.raw("copyright") as string}
+            countries={footerCountries}
+            defaultOrgName={t("orgName")}
+          />
           <div className="flex gap-6">
             <TenantLink href="/about/statement-of-faith" className="hover:text-on-dark/80">
               {t("statementOfFaith")}
