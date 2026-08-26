@@ -1,5 +1,5 @@
 import type { CollectionConfig } from "payload";
-import { tenantsAccess } from "@/lib/adminAccess";
+import { isSuperAdmin, tenantsAccess } from "@/lib/adminAccess";
 import type { TextFieldSingleValidation } from "payload";
 import { locales, localeLabels } from "@/i18n/routing";
 import { CONTINENT_OPTIONS } from "@/lib/continents";
@@ -16,6 +16,10 @@ import {
 export const Tenants: CollectionConfig = {
   slug: "tenants",
   admin: {
+    // Readable by anyone — the country switcher, the network map and every
+    // tenant route resolve through it — but there is nothing here a country
+    // admin can act on, so it stays out of their sidebar.
+    hidden: ({ user }) => !isSuperAdmin(user),
     useAsTitle: "country",
     defaultColumns: ["country", "continent", "slug", "locale", "active"],
     description:

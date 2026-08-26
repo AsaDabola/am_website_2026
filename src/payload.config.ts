@@ -18,6 +18,7 @@ import { InternshipApplications } from "./collections/InternshipApplications";
 import { Tenants } from "./collections/Tenants";
 import { TenantContent } from "./collections/TenantContent";
 import { Pages } from "./collections/Pages";
+import { livePreviewUrl } from "./lib/livePreviewUrl";
 import { ContactMessages } from "./collections/ContactMessages";
 import { DonationIntents } from "./collections/DonationIntents";
 import { Partners } from "./collections/Partners";
@@ -56,6 +57,28 @@ export default buildConfig({
   ].filter((origin): origin is string => Boolean(origin)),
   admin: {
     user: Users.slug,
+    /**
+     * The page beside the form, updating as it is edited.
+     *
+     * This plus the blocks field's own drag handles is the Shopify editor's
+     * shape: a list of sections you reorder by dragging, with the real page
+     * rendering next to it. Reordering, adding and removing sections is done
+     * in the sidebar list, not on the canvas.
+     */
+    livePreview: {
+      collections: ["pages"],
+      breakpoints: [
+        { label: "Mobile", name: "mobile", width: 390, height: 844 },
+        { label: "Tablet", name: "tablet", width: 768, height: 1024 },
+        { label: "Desktop", name: "desktop", width: 1440, height: 900 },
+      ],
+      url: ({ data, req }) =>
+        livePreviewUrl({
+          data: data as Record<string, unknown>,
+          payload: req.payload,
+          serverURL: process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000",
+        }),
+    },
   },
   collections: [
     Users,

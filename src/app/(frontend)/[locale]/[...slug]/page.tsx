@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { setRequestTenant } from "@/lib/tenantContent";
 import { getContentMessages } from "@/i18n/content";
 import PageRenderer from "@/components/pages/PageRenderer";
+import LivePreviewListener from "@/components/pages/LivePreviewListener";
 import Media from "@/components/sections/Media";
 import Events from "@/components/sections/Events";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
@@ -116,12 +117,23 @@ export default async function DynamicPage({ params }: Props) {
   // their messages from a provider instead. On a country route the subtree
   // gets its own provider carrying the merged catalogue, so both halves of
   // the page say the same thing.
-  const wrap = async (node: React.ReactNode) =>
-    isTenantRoute ? (
-      <NextIntlClientProvider messages={await getContentMessages()}>{node}</NextIntlClientProvider>
-    ) : (
-      node
+  const wrap = async (node: React.ReactNode) => {
+    // Every branch below returns through here, so the admin's Live Preview
+    // listener only needs mounting once.
+    const withPreview = (
+      <>
+        <LivePreviewListener />
+        {node}
+      </>
     );
+    return isTenantRoute ? (
+      <NextIntlClientProvider messages={await getContentMessages()}>
+        {withPreview}
+      </NextIntlClientProvider>
+    ) : (
+      withPreview
+    );
+  };
 
   // A country site's home route renders the same rich, block-based
   // homepage as the main site — scoped to that tenant's own posts, events,
