@@ -131,6 +131,36 @@ export const Tenants: CollectionConfig = {
       ],
       admin: { description: "Which half of AM's G20 + M40 mission country list this came from." },
     },
+    /**
+     * Footer identity. Each falls back to the main site's wording when left
+     * empty, so a country only fills in what it actually differs on — the same
+     * principle as the Country copy collection, but kept here because these
+     * three belong to the country itself rather than to a page's text.
+     */
+    {
+      name: "orgName",
+      type: "text",
+      admin: {
+        description:
+          'Organisation name in this country\'s footer, e.g. "Apostolos Missions France". Leave empty to use the main site\'s name.',
+      },
+    },
+    {
+      name: "address",
+      type: "textarea",
+      admin: {
+        description:
+          "Postal address for this country's footer. Leave empty to use the main site's address.",
+      },
+    },
+    {
+      name: "contactEmail",
+      type: "email",
+      admin: {
+        description:
+          "Contact address for this country's footer. Leave empty to use info@amintl.org.",
+      },
+    },
     { name: "active", type: "checkbox", defaultValue: true },
   ],
   defaultSort: "country",

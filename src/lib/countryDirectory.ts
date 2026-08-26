@@ -1,7 +1,7 @@
 import { COUNTRY_SITES } from "./countrySites";
 import { flagCodeFor } from "./countryFlags";
 import { CONTINENTS, type Continent } from "./continents";
-import { getActiveTenantKeys } from "./tenants";
+import { getActiveTenantRows } from "./tenants";
 
 export type DirectoryCountry = {
   country: string;
@@ -15,6 +15,10 @@ export type DirectoryCountry = {
   locale: string;
   /** A tenant exists for it, so /{continent}/{slug} resolves. */
   live: boolean;
+  /** Footer identity, where the country has filled it in. */
+  orgName?: string;
+  address?: string;
+  contactEmail?: string;
 };
 
 /**
@@ -26,10 +30,11 @@ export type DirectoryCountry = {
  * not are still listed, just not as links.
  */
 export async function getCountryDirectory(): Promise<DirectoryCountry[]> {
-  const liveKeys = await getActiveTenantKeys();
+  const rows = await getActiveTenantRows();
 
   return COUNTRY_SITES.map((site) => {
     const key = `${site.continent}/${site.slug}`;
+    const row = rows.get(key);
     return {
       country: site.country,
       city: site.city,
@@ -38,7 +43,10 @@ export async function getCountryDirectory(): Promise<DirectoryCountry[]> {
       key,
       flag: flagCodeFor(site),
       locale: site.locale,
-      live: liveKeys.has(key),
+      live: rows.has(key),
+      orgName: row?.orgName,
+      address: row?.address,
+      contactEmail: row?.contactEmail,
     };
   }).sort((a, b) => a.country.localeCompare(b.country));
 }

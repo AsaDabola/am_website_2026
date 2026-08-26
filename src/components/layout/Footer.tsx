@@ -1,4 +1,6 @@
 import { getTranslations } from "@/i18n/content";
+import FooterOrg from "@/components/layout/FooterOrg";
+import { getCountryDirectory } from "@/lib/countryDirectory";
 import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
 import Logo from "@/components/ui/Logo";
@@ -13,6 +15,18 @@ const socials = [
 
 export default async function Footer() {
   const t = await getTranslations("Footer");
+
+  // Only the live countries, and only the fields the footer shows.
+  const footerCountries = (await getCountryDirectory())
+    .filter((c) => c.live)
+    .map(({ key, country, flag, orgName, address, contactEmail }) => ({
+      key,
+      country,
+      flag,
+      orgName,
+      address,
+      contactEmail,
+    }));
 
   const columns = [
     {
@@ -60,18 +74,12 @@ export default async function Footer() {
           <p className="mt-6 text-sm leading-relaxed text-on-dark/70">
             {t("tagline")}
           </p>
-          <p className="mt-6 text-sm leading-relaxed text-on-dark/70">
-            {t("orgName")}
-            <br />
-            {t("orgLocation")}
-            <br />
-            {/* The address comes from the copy, so the link has to follow it —
-                hardcoding info@amintl.org meant a country could change the
-                address it displays and still send mail to head office. */}
-            <a href={`mailto:${t("email")}`} className="underline underline-offset-2">
-              {t("email")}
-            </a>
-          </p>
+          <FooterOrg
+            countries={footerCountries}
+            defaultOrgName={t("orgName")}
+            defaultAddress={t("orgLocation")}
+            defaultEmail={t("email")}
+          />
           <div className="mt-6 flex gap-3">
             {socials.map(({ label, href, Icon }) => (
               <a

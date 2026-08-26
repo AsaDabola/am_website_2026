@@ -1,3 +1,4 @@
+import { cache } from "react";
 import config from "@payload-config";
 import { getPayload } from "payload";
 
@@ -105,6 +106,21 @@ export async function getActiveTenantCountByContinent(): Promise<Record<string, 
  * plain text rather than shipping links to 404s.
  */
 export async function getActiveTenantKeys(): Promise<Set<string>> {
+  return new Set((await getActiveTenantRows()).keys());
+}
+
+export type TenantRow = {
+  orgName?: string;
+  address?: string;
+  contactEmail?: string;
+};
+
+/**
+ * Active tenants keyed by "{continent}/{slug}", carrying the fields a country
+ * can override in its footer. One query serves both this and the directory's
+ * live check, so asking for either costs the same request.
+ */
+export const getActiveTenantRows = cache(async (): Promise<Map<string, TenantRow>> => {
   try {
     const payload = await getPayload({ config });
     const result = await payload.find({
@@ -113,8 +129,17 @@ export async function getActiveTenantKeys(): Promise<Set<string>> {
       limit: 1000,
       depth: 0,
     });
-    return new Set(result.docs.map((t) => `${t.continent}/${t.slug}`));
+    return new Map(
+      result.docs.map((t) => [
+        `${t.continent}/${t.slug}`,
+        {
+          orgName: (t as { orgName?: string | null }).orgName ?? undefined,
+          address: (t as { address?: string | null }).address ?? undefined,
+          contactEmail: (t as { contactEmail?: string | null }).contactEmail ?? undefined,
+        },
+      ]),
+    );
   } catch {
-    return new Set();
+    return new Map();
   }
-}
+});

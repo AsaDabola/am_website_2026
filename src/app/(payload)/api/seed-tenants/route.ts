@@ -140,24 +140,34 @@ export async function POST(request: NextRequest) {
 
     const created: string[] = [];
     const updated: string[] = [];
+    const failed: { slug: string; error: string[] }[] = [];
 
+    // Per country rather than all-or-nothing. One bad row used to abort the
+    // whole run, so a single unseedable country left the other sixty-seven
+    // unwritten and reported one error with no indication of which country
+    // caused it. Now every country is attempted and the failures are named.
     for (const site of COUNTRY_SITES) {
       const data = toRecord(site);
       const id = known.get(site.slug);
 
-      if (id !== undefined) {
-        await payload.update({ collection: "tenants", id, data });
-        updated.push(site.slug);
-      } else {
-        await payload.create({ collection: "tenants", data });
-        created.push(site.slug);
+      try {
+        if (id !== undefined) {
+          await payload.update({ collection: "tenants", id, data });
+          updated.push(site.slug);
+        } else {
+          await payload.create({ collection: "tenants", data });
+          created.push(site.slug);
+        }
+      } catch (error) {
+        failed.push({ slug: site.slug, error: describe(error) });
       }
     }
 
     return NextResponse.json({
-      ok: true,
+      ok: failed.length === 0,
       created,
       updated,
+      failed,
       translationBacklog: translationBacklog(),
     });
   } catch (error) {
