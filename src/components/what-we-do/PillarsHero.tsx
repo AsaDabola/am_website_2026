@@ -49,13 +49,26 @@ export default function PillarsHero({ title }: { title: string }) {
         className="object-cover"
         sizes="100vw"
       />
-      {/* One gradient, anchored to the bottom, exactly as the design draws it:
-          it darkens only the band the text and cards sit on and leaves the
-          sky and the water at full strength. The second scrim that used to
-          lie over the top 42% went with the breadcrumb — the blue-outlined
-          title reads on the bright sky without it, and it was draining the
-          colour out of the middle of the photograph. */}
-      <div className="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-night via-night/85 to-transparent" />
+      {/*
+        The design's own gradient, taken from its inspect panel rather than
+        approximated: clear for the top three quarters, then a blue that comes
+        up to 0.85 at the foot. It is a blue wash over the photograph, not the
+        near-black scrim this carried before, so the grass and the sea keep
+        their colour all the way down.
+
+        Spelled out inline because it is four stops of one specific colour —
+        as a Tailwind arbitrary value it would be a single unreadable token,
+        and the point of copying it verbatim is that it stays comparable to
+        the design.
+      */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(89, 140, 209, 0), rgba(89, 140, 209, 0) 75%, rgba(89, 140, 209, 0.5) 90%, rgba(89, 140, 209, 0.85))",
+        }}
+      />
 
       {/* The design carries no breadcrumb here — the header's What We Do menu
           does the wayfinding — and gives the frame a 2:3 crop, 1280px on its

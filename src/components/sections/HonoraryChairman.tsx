@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "@/i18n/content";
 import Container from "@/components/ui/Container";
+import TenantLink from "@/components/layout/TenantLink";
 import Eyebrow from "@/components/ui/Eyebrow";
 import type { HonoraryChairmanData } from "@/lib/homeBlockTypes";
 import { mediaUrl } from "@/lib/homeBlockTypes";
@@ -22,6 +23,25 @@ export default async function HonoraryChairman({
   ];
   const quoteReference = data?.quoteReference ?? t("quoteReference");
 
+  /**
+   * On the chairman's own page this band is the hero, and a link from a page
+   * to itself is a dead end — so the whole thing becomes a link only where it
+   * is a section pointing somewhere, which is the home page.
+   *
+   * One link around the whole band rather than one on the photo and another on
+   * the name: both go to the same place, and three identical links in a row is
+   * a worse thing to hear read out than it is to look at.
+   */
+  const isOwnPage = Heading === "h1";
+  const Band = ({ children }: { children: React.ReactNode }) =>
+    isOwnPage ? (
+      <>{children}</>
+    ) : (
+      <TenantLink href="/about/chairman" className="group block">
+        {children}
+      </TenantLink>
+    );
+
   // Desktop metrics come from the Figma frame (1920w x 733h): the photo is a
   // 425px square flush with the right edge of the content column and sitting
   // higher than any of the text; the quote is indented past the name and rides
@@ -29,43 +49,45 @@ export default async function HonoraryChairman({
   return (
     <section className="bg-night-deep py-16 lg:pb-[105px] lg:pt-[77px]">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[1fr_425px] lg:gap-x-6 lg:gap-y-0">
-          <div className="relative aspect-square w-full max-w-[425px] overflow-hidden rounded-2xl lg:col-start-2 lg:row-start-1 lg:max-w-none">
-            <Image
-              src={image}
-              alt={name}
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 425px, 100vw"
-            />
-          </div>
+        <Band>
+          <div className="grid gap-10 lg:grid-cols-[1fr_425px] lg:gap-x-6 lg:gap-y-0">
+            <div className="relative aspect-square w-full max-w-[425px] overflow-hidden rounded-2xl lg:col-start-2 lg:row-start-1 lg:max-w-none">
+              <Image
+                src={image}
+                alt={name}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                sizes="(min-width: 1024px) 425px, 100vw"
+              />
+            </div>
 
-          <div className="lg:col-start-1 lg:row-start-1 lg:pt-[82px]">
-            <Eyebrow tone="light">{data?.eyebrow ?? t("eyebrow")}</Eyebrow>
-            <p className="font-lato text-lg font-light italic leading-[1.35] tracking-[0.01em] text-white/70 lg:mt-[55px] lg:text-[30px]">
-              {data?.followingLegacy ?? t("followingLegacy")}
-            </p>
-            <Heading className="mt-2 font-display text-4xl font-extrabold tracking-[-0.03em] text-white sm:text-5xl lg:mt-3 lg:text-[79px] lg:leading-[99.3px] lg:tracking-[-0.0563em]">
-              {name}
-            </Heading>
-          </div>
+            <div className="lg:col-start-1 lg:row-start-1 lg:pt-[82px]">
+              <Eyebrow tone="light">{data?.eyebrow ?? t("eyebrow")}</Eyebrow>
+              <p className="font-lato text-lg font-light italic leading-[1.35] tracking-[0.01em] text-white/70 lg:mt-[55px] lg:text-[30px]">
+                {data?.followingLegacy ?? t("followingLegacy")}
+              </p>
+              <Heading className="mt-2 font-display text-4xl font-extrabold tracking-[-0.03em] text-white sm:text-5xl lg:mt-3 lg:text-[79px] lg:leading-[99.3px] lg:tracking-[-0.0563em]">
+                {name}
+              </Heading>
+            </div>
 
-          <div className="flex flex-col items-start gap-1.5 lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:-mt-[65px] lg:gap-[10px] lg:ps-[104px]">
-            {quoteLines.map((line, index) => (
-              <span
-                key={line}
-                className="bg-brand-blue px-2 py-0.5 font-display text-xl font-extrabold uppercase leading-[1.15] tracking-[-0.02em] text-white sm:text-2xl lg:px-3 lg:py-[2px] lg:text-[46.2px] lg:leading-[53.16px] lg:tracking-[-0.035em]"
-              >
-                {line}
-                {index === quoteLines.length - 1 && (
-                  <span className="ms-2 text-[0.5em] font-bold tracking-normal">
-                    {quoteReference}
-                  </span>
-                )}
-              </span>
-            ))}
+            <div className="flex flex-col items-start gap-1.5 lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:-mt-[65px] lg:gap-[10px] lg:ps-[104px]">
+              {quoteLines.map((line, index) => (
+                <span
+                  key={line}
+                  className="bg-brand-blue px-2 py-0.5 font-display text-xl font-extrabold uppercase leading-[1.15] tracking-[-0.02em] text-white sm:text-2xl lg:px-3 lg:py-[2px] lg:text-[46.2px] lg:leading-[53.16px] lg:tracking-[-0.035em]"
+                >
+                  {line}
+                  {index === quoteLines.length - 1 && (
+                    <span className="ms-2 text-[0.5em] font-bold tracking-normal">
+                      {quoteReference}
+                    </span>
+                  )}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        </Band>
       </Container>
     </section>
   );
