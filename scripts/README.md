@@ -87,20 +87,28 @@ the page has no error to show you. To find out which collection and which
 column, without reading a schema diff:
 
 ```bash
-POSTGRES_URL='<connection string>' node --import tsx scripts/probe-collections.mts
+POSTGRES_URL='<connection string>' node scripts/probe-collections.mjs
 ```
 
-It runs the same query the list view runs, once per collection, and prints the
-failures:
+It is the drift diff above, grouped by the screen each gap breaks:
 
 ```
-FAIL  pages
-pages: column pages__blocks_getInvolved_cards.description does not exist
+FAIL  Pages  (1)
+FAIL  Country copy  (8)
+
+Pages:
+  column pages_blocks_get_involved_cards.description does not exist
 ```
 
-Read-only, and safe against the deployed database — `find` with limit 1, and
-`NODE_ENV` forced to production so `push` cannot fire. Exits non-zero if
-anything failed, so it works in a deploy check.
+Read-only, and safe against the deployed database — two SELECTs against
+`information_schema`. Exits non-zero if anything is missing, so it works in a
+deploy check.
+
+Plain `.mjs` with no Payload import, on purpose. Asking Payload the same
+question means loading its config through a TypeScript loader, and
+`payload/dist/bin/loadEnv.js` destructures a CommonJS default export that comes
+back undefined under tsx — the diagnostic then fails for a reason that has
+nothing to do with the database you came to inspect.
 
 ## The files
 
@@ -108,7 +116,7 @@ anything failed, so it works in a deploy check.
 | --- | --- |
 | `push-schema.mts` | Boots Payload in development so `push` builds the schema. **Never point at production.** |
 | `inventory-schema.mjs` | Read-only. Prints every table, column and enum, for diffing. |
-| `probe-collections.mts` | Read-only. Runs each admin list view's query and names the collections that fail. |
+| `probe-collections.mjs` | Read-only. Names the collection whose admin screen each missing column breaks. |
 | `schema.expected.txt` | Committed snapshot of what the collections currently describe. |
 | `run-sql.mjs` | Applies a `.sql` file to the database in `POSTGRES_URL`. |
 | `fix-tenants-schema.sql` | Adds `tenants.languages` and the other early missing columns. |
