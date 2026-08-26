@@ -27,7 +27,10 @@ if (!file) {
 // would be worse than one that fails to start.
 const ALIASES = ["DATABASE_URI", "POSTGRES_URL", "DATABASE_URL", "POSTGRES_PRISMA_URL"];
 const found = ALIASES.find((name) => process.env[name]);
-const connectionString = found && process.env[found];
+
+// Some env files quote the value and some tooling keeps the quotes, which
+// makes the string unparseable while looking perfectly fine on screen.
+const connectionString = found && process.env[found].trim().replace(/^["']|["']$/g, "");
 
 if (!connectionString) {
   console.error(
@@ -38,7 +41,16 @@ if (!connectionString) {
 }
 
 const sql = readFileSync(file, "utf8");
-const { host } = new URL(connectionString);
+
+// Only for the log line, so never let it stop the run: pg accepts forms that
+// URL does not, and Node redacts the value in the resulting error, which makes
+// a crash here both fatal and uninformative.
+let host = "(unparsed)";
+try {
+  host = new URL(connectionString).host;
+} catch {
+  host = `${connectionString.slice(0, 11)}…`;
+}
 console.log(`Running ${file} against ${host} (from ${found})`);
 
 const client = new pg.Client({
