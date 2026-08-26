@@ -29,7 +29,30 @@ const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 export default buildConfig({
-  serverURL: process.env.NEXT_PUBLIC_SERVER_URL,
+  // "" rather than undefined when unset: Payload appends serverURL to the csrf
+  // allowlist unless it is exactly "", so an unset variable would put
+  // `undefined` on the list and then match no origin at all — locking out every
+  // cookie-authenticated write instead of allowing them.
+  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || "",
+  /**
+   * Origins whose cookies Payload will honour.
+   *
+   * This only bites on requests that carry an `Origin` header — which browsers
+   * send on POST but not on a same-origin GET. That is why a mismatch here
+   * shows up as reads working and writes returning 401, rather than as being
+   * logged out.
+   *
+   * Vercel serves the admin on more than one hostname (the project domain, and
+   * a unique URL per deployment), so a single configured serverURL cannot cover
+   * them. Each is added from the environment Vercel provides.
+   */
+  csrf: [
+    process.env.NEXT_PUBLIC_SERVER_URL,
+    process.env.VERCEL_PROJECT_PRODUCTION_URL &&
+      `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`,
+    process.env.VERCEL_URL && `https://${process.env.VERCEL_URL}`,
+    "http://localhost:3000",
+  ].filter((origin): origin is string => Boolean(origin)),
   admin: {
     user: Users.slug,
   },
