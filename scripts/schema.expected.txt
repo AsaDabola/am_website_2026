@@ -1,0 +1,495 @@
+bible_study_signups.age enum_bible_study_signups_age
+bible_study_signups.comments character varying
+bible_study_signups.created_at timestamp with time zone
+bible_study_signups.email character varying
+bible_study_signups.first_name character varying
+bible_study_signups.graduation_year character varying
+bible_study_signups.how_did_you_hear enum_bible_study_signups_how_did_you_hear
+bible_study_signups.id integer
+bible_study_signups.last_name character varying
+bible_study_signups.marital_status enum_bible_study_signups_marital_status
+bible_study_signups.phone character varying
+bible_study_signups.preferred_times character varying
+bible_study_signups.school_name character varying
+bible_study_signups.testimony character varying
+bible_study_signups.updated_at timestamp with time zone
+bible_study_signups.why_study_bible character varying
+campuses.active boolean
+campuses.created_at timestamp with time zone
+campuses.id integer
+campuses.location character varying
+campuses.name character varying
+campuses.tenant_id integer
+campuses.updated_at timestamp with time zone
+chapter_affiliations.application_type enum_chapter_affiliations_application_type
+chapter_affiliations.attestation boolean
+chapter_affiliations.charter_letter_id integer
+chapter_affiliations.chartered enum_chapter_affiliations_chartered
+chapter_affiliations.city character varying
+chapter_affiliations.constitution_file_id integer
+chapter_affiliations.country character varying
+chapter_affiliations.created_at timestamp with time zone
+chapter_affiliations.delay_reason character varying
+chapter_affiliations.id integer
+chapter_affiliations.leader_email character varying
+chapter_affiliations.leader_name character varying
+chapter_affiliations.leader_phone character varying
+chapter_affiliations.leader_role character varying
+chapter_affiliations.leadership_changes character varying
+chapter_affiliations.member_count character varying
+chapter_affiliations.member_list_file_id integer
+chapter_affiliations.start_date character varying
+chapter_affiliations.target_university character varying
+chapter_affiliations.updated_at timestamp with time zone
+chapter_affiliations_additional_leaders._order integer
+chapter_affiliations_additional_leaders._parent_id integer
+chapter_affiliations_additional_leaders.email character varying
+chapter_affiliations_additional_leaders.id character varying
+chapter_affiliations_additional_leaders.name character varying
+chapter_affiliations_additional_leaders.phone character varying
+chapter_affiliations_additional_leaders.role character varying
+chapter_affiliations_members._order integer
+chapter_affiliations_members._parent_id integer
+chapter_affiliations_members.email character varying
+chapter_affiliations_members.id character varying
+chapter_affiliations_members.name character varying
+contact_messages.created_at timestamp with time zone
+contact_messages.email character varying
+contact_messages.id integer
+contact_messages.message character varying
+contact_messages.name character varying
+contact_messages.phone character varying
+contact_messages.subject character varying
+contact_messages.updated_at timestamp with time zone
+donation_intents.amount numeric
+donation_intents.created_at timestamp with time zone
+donation_intents.email character varying
+donation_intents.frequency enum_donation_intents_frequency
+donation_intents.full_name character varying
+donation_intents.id integer
+donation_intents.status enum_donation_intents_status
+donation_intents.stripe_customer_id character varying
+donation_intents.stripe_payment_intent_id character varying
+donation_intents.stripe_session_id character varying
+donation_intents.stripe_subscription_id character varying
+donation_intents.updated_at timestamp with time zone
+events.cover_image_id integer
+events.created_at timestamp with time zone
+events.date_label character varying
+events.excerpt character varying
+events.id integer
+events.location character varying
+events.share_with_all_tenants boolean
+events.share_with_main_site boolean
+events.slug character varying
+events.start_date timestamp with time zone
+events.tenant_id integer
+events.title character varying
+events.updated_at timestamp with time zone
+events_rels.id integer
+events_rels.order integer
+events_rels.parent_id integer
+events_rels.path character varying
+events_rels.tenants_id integer
+events_share_with_continents.id integer
+events_share_with_continents.order integer
+events_share_with_continents.parent_id integer
+events_share_with_continents.value enum_events_share_with_continents
+invoices.amount_due numeric
+invoices.amount_paid numeric
+invoices.created_at timestamp with time zone
+invoices.due_date timestamp with time zone
+invoices.hosted_invoice_url character varying
+invoices.id integer
+invoices.invoice_pdf character varying
+invoices.memo character varying
+invoices.partner_id integer
+invoices.status enum_invoices_status
+invoices.stripe_customer_id character varying
+invoices.stripe_invoice_id character varying
+invoices.updated_at timestamp with time zone
+invoices_line_items._order integer
+invoices_line_items._parent_id integer
+invoices_line_items.amount numeric
+invoices_line_items.description character varying
+invoices_line_items.id character varying
+media.alt character varying
+media.created_at timestamp with time zone
+media.filename character varying
+media.filesize numeric
+media.focal_x numeric
+media.focal_y numeric
+media.height numeric
+media.id integer
+media.mime_type character varying
+media.sizes_card_filename character varying
+media.sizes_card_filesize numeric
+media.sizes_card_height numeric
+media.sizes_card_mime_type character varying
+media.sizes_card_url character varying
+media.sizes_card_width numeric
+media.sizes_hero_filename character varying
+media.sizes_hero_filesize numeric
+media.sizes_hero_height numeric
+media.sizes_hero_mime_type character varying
+media.sizes_hero_url character varying
+media.sizes_hero_width numeric
+media.sizes_thumbnail_filename character varying
+media.sizes_thumbnail_filesize numeric
+media.sizes_thumbnail_height numeric
+media.sizes_thumbnail_mime_type character varying
+media.sizes_thumbnail_url character varying
+media.sizes_thumbnail_width numeric
+media.thumbnail_u_r_l character varying
+media.updated_at timestamp with time zone
+media.url character varying
+media.width numeric
+membership_applications.attestation boolean
+membership_applications.chapter character varying
+membership_applications.created_at timestamp with time zone
+membership_applications.email character varying
+membership_applications.full_name character varying
+membership_applications.id integer
+membership_applications.membership_tier enum_membership_applications_membership_tier
+membership_applications.message character varying
+membership_applications.phone character varying
+membership_applications.statement_of_faith_agreement enum_membership_applications_statement_of_faith_agreement
+membership_applications.updated_at timestamp with time zone
+ministries.created_at timestamp with time zone
+ministries.description character varying
+ministries.href character varying
+ministries.id integer
+ministries.image_id integer
+ministries.order numeric
+ministries.tag character varying
+ministries.title character varying
+ministries.updated_at timestamp with time zone
+pages.body jsonb
+pages.created_at timestamp with time zone
+pages.hero_heading character varying
+pages.hero_image_id integer
+pages.hero_subheading character varying
+pages.id integer
+pages.is_home boolean
+pages.meta_description character varying
+pages.meta_title character varying
+pages.nav_label character varying
+pages.published boolean
+pages.slug character varying
+pages.tenant_id integer
+pages.title character varying
+pages.updated_at timestamp with time zone
+pages_blocks_bible_study_program._order integer
+pages_blocks_bible_study_program._parent_id integer
+pages_blocks_bible_study_program._path text
+pages_blocks_bible_study_program.block_name character varying
+pages_blocks_bible_study_program.cta_label character varying
+pages_blocks_bible_study_program.description character varying
+pages_blocks_bible_study_program.eyebrow character varying
+pages_blocks_bible_study_program.heading character varying
+pages_blocks_bible_study_program.id character varying
+pages_blocks_bible_study_program.image_id integer
+pages_blocks_events._order integer
+pages_blocks_events._parent_id integer
+pages_blocks_events._path text
+pages_blocks_events.all_events_label character varying
+pages_blocks_events.block_name character varying
+pages_blocks_events.eyebrow character varying
+pages_blocks_events.heading character varying
+pages_blocks_events.id character varying
+pages_blocks_get_involved._order integer
+pages_blocks_get_involved._parent_id integer
+pages_blocks_get_involved._path text
+pages_blocks_get_involved.block_name character varying
+pages_blocks_get_involved.eyebrow character varying
+pages_blocks_get_involved.heading character varying
+pages_blocks_get_involved.id character varying
+pages_blocks_get_involved_cards._order integer
+pages_blocks_get_involved_cards._parent_id character varying
+pages_blocks_get_involved_cards.href character varying
+pages_blocks_get_involved_cards.id character varying
+pages_blocks_get_involved_cards.image_id integer
+pages_blocks_get_involved_cards.title character varying
+pages_blocks_hero._order integer
+pages_blocks_hero._parent_id integer
+pages_blocks_hero._path text
+pages_blocks_hero.background_image_id integer
+pages_blocks_hero.block_name character varying
+pages_blocks_hero.eyebrow character varying
+pages_blocks_hero.heading_highlight1 character varying
+pages_blocks_hero.heading_highlight2 character varying
+pages_blocks_hero.heading_line1 character varying
+pages_blocks_hero.id character varying
+pages_blocks_hero.join_bible_study_label character varying
+pages_blocks_hero.stat1_label character varying
+pages_blocks_hero.stat1_value character varying
+pages_blocks_hero.stat2_label character varying
+pages_blocks_hero.stat2_value character varying
+pages_blocks_hero.stat3_label character varying
+pages_blocks_hero.stat3_value character varying
+pages_blocks_hero.who_we_are_label character varying
+pages_blocks_honorary_chairman._order integer
+pages_blocks_honorary_chairman._parent_id integer
+pages_blocks_honorary_chairman._path text
+pages_blocks_honorary_chairman.block_name character varying
+pages_blocks_honorary_chairman.eyebrow character varying
+pages_blocks_honorary_chairman.following_legacy character varying
+pages_blocks_honorary_chairman.id character varying
+pages_blocks_honorary_chairman.image_id integer
+pages_blocks_honorary_chairman.name character varying
+pages_blocks_honorary_chairman.quote_line1 character varying
+pages_blocks_honorary_chairman.quote_line2 character varying
+pages_blocks_honorary_chairman.quote_line3 character varying
+pages_blocks_honorary_chairman.quote_reference character varying
+pages_blocks_media._order integer
+pages_blocks_media._parent_id integer
+pages_blocks_media._path text
+pages_blocks_media.block_name character varying
+pages_blocks_media.eyebrow character varying
+pages_blocks_media.heading character varying
+pages_blocks_media.id character varying
+pages_blocks_media.more_contents_label character varying
+pages_blocks_media.play_video_label character varying
+pages_blocks_ministries._order integer
+pages_blocks_ministries._parent_id integer
+pages_blocks_ministries._path text
+pages_blocks_ministries.block_name character varying
+pages_blocks_ministries.eyebrow character varying
+pages_blocks_ministries.get_involved_label character varying
+pages_blocks_ministries.heading character varying
+pages_blocks_ministries.id character varying
+pages_blocks_ministries_steps._order integer
+pages_blocks_ministries_steps._parent_id character varying
+pages_blocks_ministries_steps.description character varying
+pages_blocks_ministries_steps.href character varying
+pages_blocks_ministries_steps.id character varying
+pages_blocks_ministries_steps.image_id integer
+pages_blocks_ministries_steps.tag character varying
+pages_blocks_ministries_steps.title character varying
+pages_blocks_newsletter._order integer
+pages_blocks_newsletter._parent_id integer
+pages_blocks_newsletter._path text
+pages_blocks_newsletter.background_image_id integer
+pages_blocks_newsletter.block_name character varying
+pages_blocks_newsletter.cta_label character varying
+pages_blocks_newsletter.description character varying
+pages_blocks_newsletter.heading character varying
+pages_blocks_newsletter.id character varying
+pages_blocks_our_mission._order integer
+pages_blocks_our_mission._parent_id integer
+pages_blocks_our_mission._path text
+pages_blocks_our_mission.block_name character varying
+pages_blocks_our_mission.eyebrow character varying
+pages_blocks_our_mission.history character varying
+pages_blocks_our_mission.id character varying
+pages_blocks_our_mission.name_origin character varying
+pages_blocks_our_mission.our_history_label character varying
+pages_blocks_our_mission.read_full_statement_label character varying
+pages_blocks_our_mission.statement_emphasis character varying
+pages_blocks_our_mission.statement_prefix character varying
+pages_blocks_our_mission.statement_suffix character varying
+pages_blocks_our_network._order integer
+pages_blocks_our_network._parent_id integer
+pages_blocks_our_network._path text
+pages_blocks_our_network.block_name character varying
+pages_blocks_our_network.description character varying
+pages_blocks_our_network.eyebrow character varying
+pages_blocks_our_network.heading character varying
+pages_blocks_our_network.id character varying
+pages_blocks_our_network.no_matches_label character varying
+pages_blocks_our_network.search_placeholder character varying
+pages_blocks_our_network.start_chapter_label character varying
+pages_blocks_partner_with_us._order integer
+pages_blocks_partner_with_us._parent_id integer
+pages_blocks_partner_with_us._path text
+pages_blocks_partner_with_us.block_name character varying
+pages_blocks_partner_with_us.description character varying
+pages_blocks_partner_with_us.eyebrow character varying
+pages_blocks_partner_with_us.give_today_label character varying
+pages_blocks_partner_with_us.heading character varying
+pages_blocks_partner_with_us.id character varying
+pages_blocks_partner_with_us.talk_to_us_label character varying
+pages_blocks_quick_links._order integer
+pages_blocks_quick_links._parent_id integer
+pages_blocks_quick_links._path text
+pages_blocks_quick_links.block_name character varying
+pages_blocks_quick_links.id character varying
+pages_blocks_quick_links_links._order integer
+pages_blocks_quick_links_links._parent_id character varying
+pages_blocks_quick_links_links.description character varying
+pages_blocks_quick_links_links.href character varying
+pages_blocks_quick_links_links.icon enum_pages_blocks_quick_links_links_icon
+pages_blocks_quick_links_links.id character varying
+pages_blocks_quick_links_links.title character varying
+partners.contact_email character varying
+partners.contact_name character varying
+partners.created_at timestamp with time zone
+partners.id integer
+partners.name character varying
+partners.notes character varying
+partners.stripe_customer_id character varying
+partners.type enum_partners_type
+partners.updated_at timestamp with time zone
+payload_kv.data jsonb
+payload_kv.id integer
+payload_kv.key character varying
+payload_locked_documents.created_at timestamp with time zone
+payload_locked_documents.global_slug character varying
+payload_locked_documents.id integer
+payload_locked_documents.updated_at timestamp with time zone
+payload_locked_documents_rels.bible_study_signups_id integer
+payload_locked_documents_rels.campuses_id integer
+payload_locked_documents_rels.chapter_affiliations_id integer
+payload_locked_documents_rels.contact_messages_id integer
+payload_locked_documents_rels.donation_intents_id integer
+payload_locked_documents_rels.events_id integer
+payload_locked_documents_rels.id integer
+payload_locked_documents_rels.invoices_id integer
+payload_locked_documents_rels.media_id integer
+payload_locked_documents_rels.membership_applications_id integer
+payload_locked_documents_rels.ministries_id integer
+payload_locked_documents_rels.order integer
+payload_locked_documents_rels.pages_id integer
+payload_locked_documents_rels.parent_id integer
+payload_locked_documents_rels.partners_id integer
+payload_locked_documents_rels.path character varying
+payload_locked_documents_rels.posts_id integer
+payload_locked_documents_rels.tenant_content_id integer
+payload_locked_documents_rels.tenants_id integer
+payload_locked_documents_rels.users_id integer
+payload_locked_documents_rels.volunteer_applications_id integer
+payload_migrations.batch numeric
+payload_migrations.created_at timestamp with time zone
+payload_migrations.id integer
+payload_migrations.name character varying
+payload_migrations.updated_at timestamp with time zone
+payload_preferences.created_at timestamp with time zone
+payload_preferences.id integer
+payload_preferences.key character varying
+payload_preferences.updated_at timestamp with time zone
+payload_preferences.value jsonb
+payload_preferences_rels.id integer
+payload_preferences_rels.order integer
+payload_preferences_rels.parent_id integer
+payload_preferences_rels.path character varying
+payload_preferences_rels.users_id integer
+posts.body jsonb
+posts.category enum_posts_category
+posts.cover_image_id integer
+posts.created_at timestamp with time zone
+posts.excerpt character varying
+posts.id integer
+posts.published_date timestamp with time zone
+posts.share_with_all_tenants boolean
+posts.share_with_main_site boolean
+posts.slug character varying
+posts.tenant_id integer
+posts.title character varying
+posts.updated_at timestamp with time zone
+posts_rels.id integer
+posts_rels.order integer
+posts_rels.parent_id integer
+posts_rels.path character varying
+posts_rels.tenants_id integer
+posts_share_with_continents.id integer
+posts_share_with_continents.order integer
+posts_share_with_continents.parent_id integer
+posts_share_with_continents.value enum_posts_share_with_continents
+tenant_content.created_at timestamp with time zone
+tenant_content.id integer
+tenant_content.label character varying
+tenant_content.locale enum_tenant_content_locale
+tenant_content.tenant_id integer
+tenant_content.updated_at timestamp with time zone
+tenant_content_overrides._order integer
+tenant_content_overrides._parent_id integer
+tenant_content_overrides.id character varying
+tenant_content_overrides.key enum_tenant_content_overrides_key
+tenant_content_overrides.main_version character varying
+tenant_content_overrides.value character varying
+tenants.active boolean
+tenants.address character varying
+tenants.city character varying
+tenants.contact_email character varying
+tenants.continent enum_tenants_continent
+tenants.country character varying
+tenants.country_codes character varying
+tenants.created_at timestamp with time zone
+tenants.id integer
+tenants.languages character varying
+tenants.locale enum_tenants_locale
+tenants.org_name character varying
+tenants.slug character varying
+tenants.tier enum_tenants_tier
+tenants.updated_at timestamp with time zone
+users.created_at timestamp with time zone
+users.email character varying
+users.hash character varying
+users.id integer
+users.lock_until timestamp with time zone
+users.login_attempts numeric
+users.reset_password_expiration timestamp with time zone
+users.reset_password_token character varying
+users.salt character varying
+users.updated_at timestamp with time zone
+users_sessions._order integer
+users_sessions._parent_id integer
+users_sessions.created_at timestamp with time zone
+users_sessions.expires_at timestamp with time zone
+users_sessions.id character varying
+volunteer_applications.address character varying
+volunteer_applications.availability character varying
+volunteer_applications.church_org_name character varying
+volunteer_applications.city character varying
+volunteer_applications.country character varying
+volunteer_applications.created_at timestamp with time zone
+volunteer_applications.email character varying
+volunteer_applications.full_name character varying
+volunteer_applications.gifts_and_talents character varying
+volunteer_applications.id integer
+volunteer_applications.q1_convicted enum_volunteer_applications_q1_convicted
+volunteer_applications.q1_explanation character varying
+volunteer_applications.q2_explanation character varying
+volunteer_applications.q2_sexual_offense enum_volunteer_applications_q2_sexual_offense
+volunteer_applications.q3_explanation character varying
+volunteer_applications.q3_reported_agency enum_volunteer_applications_q3_reported_agency
+volunteer_applications.q4_church_discipline enum_volunteer_applications_q4_church_discipline
+volunteer_applications.q4_explanation character varying
+volunteer_applications.q5_dismissed_employment enum_volunteer_applications_q5_dismissed_employment
+volunteer_applications.q5_explanation character varying
+volunteer_applications.q6_explanation character varying
+volunteer_applications.q6_investigation enum_volunteer_applications_q6_investigation
+volunteer_applications.signature character varying
+volunteer_applications.signature_date character varying
+volunteer_applications.state_province character varying
+volunteer_applications.telephone character varying
+volunteer_applications.testimony character varying
+volunteer_applications.updated_at timestamp with time zone
+volunteer_applications.why_volunteer character varying
+volunteer_applications.zip_code character varying
+ENUM enum_bible_study_signups_age = Under 18,18–22,23–27,28–34,35+
+ENUM enum_bible_study_signups_how_did_you_hear = Friend or classmate,Social media,Campus event,Church,AM Academy,Other
+ENUM enum_bible_study_signups_marital_status = Single,Engaged,Married,Divorced,Widowed
+ENUM enum_chapter_affiliations_application_type = Annual reaffirmation,New chapter
+ENUM enum_chapter_affiliations_chartered = Yes,No
+ENUM enum_donation_intents_frequency = One-Time,Monthly,Yearly
+ENUM enum_donation_intents_status = pending,completed,failed
+ENUM enum_events_share_with_continents = africa,asia,europe,northamerica,southamerica,oceania
+ENUM enum_invoices_status = draft,open,paid,void,uncollectible
+ENUM enum_membership_applications_membership_tier = Newcomer,Registered,Volunteer,Staff,Leader
+ENUM enum_membership_applications_statement_of_faith_agreement = I agree and share the AM Statement of Faith
+ENUM enum_pages_blocks_quick_links_links_icon = book,pin,people,heart
+ENUM enum_partners_type = chapter,partner-org,other
+ENUM enum_posts_category = news,editorial,photo-news,testimony
+ENUM enum_posts_share_with_continents = africa,asia,europe,northamerica,southamerica,oceania
+ENUM enum_tenant_content_locale = en,es,fr,de,pt,ko,ja,zh,it,ru,tr,id,nl,pl,uk,cs,sk,el,hu,ro,sv,ar,he,ur,hi,bn,ta,ne,si,my,th,vi,fil,ms,mn,kk,sw,am,af,zu,xh,rw,rn,mg,ht,fj,hif,rm
+ENUM enum_tenant_content_overrides_key = AboutPage.blockquote,AboutPage.breadcrumb,AboutPage.cardMissionStatementTitle,AboutPage.cardStatementOfFaithTitle,AboutPage.heroTitle,AboutPage.or,AboutPage.paragraph1,AboutPage.paragraph2,AboutPage.paragraph2Prefix,AboutPage.paragraph3,AboutPage.paragraph4,AboutPage.paragraph5,AboutPage.readStatementOfFaith,AboutPage.traceHistory,AboutSubNav.history,AboutSubNav.leadership,AboutSubNav.membership,AboutSubNav.missionStatement,AboutSubNav.ourFirstChairman,AboutSubNav.statementOfFaith,AboutSubNav.whoWeAre,AnnouncementBar.amAcademy,AnnouncementBar.tagline,Common.clickHere,Common.home,Common.learnMore,Common.readMore,Common.tagline,CountrySwitcher.international,CountrySwitcher.label,Footer.aboutAM,Footer.amAcademy,Footer.bibleStudyProgram,Footer.chapterAffiliation,Footer.connectGrowLeadSent,Footer.contact,Footer.contactUs,Footer.copyright,Footer.email,Footer.events,Footer.fourSpiritualThemes,Footer.getInvolved,Footer.give,Footer.leadership,Footer.legacyOfChairman,Footer.media,Footer.missionStatement,Footer.news,Footer.orgLocation,Footer.orgName,Footer.ourHistory,Footer.ourMinistries,Footer.ourNetwork,Footer.statementOfFaith,Footer.tagline,Footer.whatWeDo,Footer.whoWeAre,GetInvolvedHub.connectHeading,GetInvolvedHub.connectItems,GetInvolvedHub.connectStep1Body,GetInvolvedHub.connectStep1Title,GetInvolvedHub.connectStep2BodyPrefix,GetInvolvedHub.connectStep2BodySuffix,GetInvolvedHub.connectStep2SignUp,GetInvolvedHub.connectStep2Title,GetInvolvedHub.connectStep3BodyPrefix,GetInvolvedHub.connectStep3BodySuffix,GetInvolvedHub.connectStep3SignUp,GetInvolvedHub.connectStep3Title,GetInvolvedHub.connectStep4BodyPrefix,GetInvolvedHub.connectStep4BodySuffix,GetInvolvedHub.connectStep4ContactHere,GetInvolvedHub.connectStep4Title,GetInvolvedHub.connectTag,GetInvolvedHub.fruitfulBody,GetInvolvedHub.fruitfulTitle,GetInvolvedHub.growHeading,GetInvolvedHub.growIntro,GetInvolvedHub.growItems,GetInvolvedHub.growTag,GetInvolvedHub.leadHeading,GetInvolvedHub.leadItems,GetInvolvedHub.leadStep1Body,GetInvolvedHub.leadStep1Title,GetInvolvedHub.leadStep2Body,GetInvolvedHub.leadStep2Title,GetInvolvedHub.leadStep3Body,GetInvolvedHub.leadStep3Title,GetInvolvedHub.leadStep4Body,GetInvolvedHub.leadStep4Title,GetInvolvedHub.leadTag,GetInvolvedHub.matureBody,GetInvolvedHub.matureTitle,GetInvolvedHub.navigatingBody,GetInvolvedHub.navigatingTitle,GetInvolvedHub.nextStepsBody,GetInvolvedHub.nextStepsTitle,GetInvolvedHub.rebornBody,GetInvolvedHub.rebornTitle,GetInvolvedHub.roadmapEyebrow,GetInvolvedHub.roadmapHeading,GetInvolvedHub.roadmapHeroTitle,GetInvolvedHub.sentHeading,GetInvolvedHub.sentItems,GetInvolvedHub.sentLinkAlumniConnect,GetInvolvedHub.sentLinkBibleTeachers,GetInvolvedHub.sentLinkMissionaries,GetInvolvedHub.sentLinkStaff,GetInvolvedHub.sentParagraph1,GetInvolvedHub.sentParagraph2,GetInvolvedHub.sentParagraph3,GetInvolvedHub.sentTag,GetInvolvedSubNav.alumniConnect,GetInvolvedSubNav.bibleStudies,GetInvolvedSubNav.bibleTeacherTraining,GetInvolvedSubNav.chapterStaff,GetInvolvedSubNav.donate,GetInvolvedSubNav.groupActivities,GetInvolvedSubNav.internship,GetInvolvedSubNav.onlineBibleStudy,GetInvolvedSubNav.volunteer,Header.connect,Header.contactUs,Header.getInvolved,Header.getInvolvedMenu.bibleStudies,Header.getInvolvedMenu.bibleTeacherTraining,Header.getInvolvedMenu.chapterAffiliation,Header.getInvolvedMenu.donate,Header.getInvolvedMenu.groupActivities,Header.getInvolvedMenu.internship,Header.getInvolvedMenu.onlineBibleStudy,Header.getInvolvedMenu.volunteer,Header.give,Header.groups.aboutAm.description,Header.groups.aboutAm.title,Header.groups.bibleStudy.description,Header.groups.bibleStudy.title,Header.groups.events.description,Header.groups.events.title,Header.groups.getInvolved.description,Header.groups.getInvolved.title,Header.groups.latestNews.description,Header.groups.latestNews.title,Header.groups.leadership.description,Header.groups.leadership.title,Header.groups.supportMission.description,Header.groups.supportMission.title,Header.groups.whatWeDo.description,Header.groups.whatWeDo.title,Header.megaMenu.aboutHeading,Header.megaMenu.allArticles,Header.megaMenu.ctaBibleStudy,Header.megaMenu.ctaFindChapter,Header.megaMenu.ctaGive,Header.megaMenu.featuredHeading,Header.megaMenu.whatWeDoHeading,Header.mobile.back,Header.mobile.close,Header.mobile.menu,Header.news,Header.newsMenu.editorial,Header.newsMenu.events,Header.newsMenu.featured,Header.newsMenu.photoNews,Header.newsMenu.testimony,Header.ourNetwork,Header.toggleNav,Header.whatWeDo,Header.whatWeDoMenu.administration,Header.whatWeDoMenu.amAcademy,Header.whatWeDoMenu.bibleStudyProgram,Header.whatWeDoMenu.fourSpiritualThemes,Header.whatWeDoMenu.ourMinistries,Header.whatWeDoMenu.pillarsOfMission,Header.whoWeAre,Header.whoWeAreMenu.history,Header.whoWeAreMenu.membership,Header.whoWeAreMenu.ourFirstChairmen,Header.whoWeAreMenu.ourLeadership,Header.whoWeAreMenu.ourMission,Header.whoWeAreMenu.statementOfFaith,Header.whoWeAreMenu.whoWeAre,Home.BibleStudyProgram.cta,Home.BibleStudyProgram.description,Home.BibleStudyProgram.eyebrow,Home.BibleStudyProgram.heading,Home.Events.allEvents,Home.Events.event1Date,Home.Events.event1Title,Home.Events.event2Date,Home.Events.event2Title,Home.Events.event3Date,Home.Events.event3Title,Home.Events.eyebrow,Home.Events.heading,Home.GetInvolved.bibleStudies,Home.GetInvolved.eyebrow,Home.GetInvolved.heading,Home.GetInvolved.internship,Home.GetInvolved.volunteer,Home.Hero.dragToExplore,Home.Hero.eyebrow,Home.Hero.headingLine1,Home.Hero.headingWeAre,Home.Hero.headingWhere,Home.Hero.joinBibleStudy,Home.Hero.stat1Label,Home.Hero.stat1Value,Home.Hero.stat2Label,Home.Hero.stat2Value,Home.Hero.stat3Label,Home.Hero.stat3Value,Home.Hero.whoWeAre,Home.HonoraryChairman.eyebrow,Home.HonoraryChairman.followingLegacy,Home.HonoraryChairman.name,Home.HonoraryChairman.quoteLine1,Home.HonoraryChairman.quoteLine2,Home.HonoraryChairman.quoteLine3,Home.HonoraryChairman.quoteReference,Home.Media.eyebrow,Home.Media.heading,Home.Media.moreContents,Home.Media.playVideo,Home.Media.post1Date,Home.Media.post1Title,Home.Media.post2Date,Home.Media.post2Title,Home.Media.post3Date,Home.Media.post3Title,Home.Media.post4Date,Home.Media.post4Title,Home.Ministries.connectDescription,Home.Ministries.connectTag,Home.Ministries.connectTitle,Home.Ministries.eyebrow,Home.Ministries.getInvolved,Home.Ministries.growDescription,Home.Ministries.growTag,Home.Ministries.growTitle,Home.Ministries.heading,Home.Ministries.leadDescription,Home.Ministries.leadTag,Home.Ministries.leadTitle,Home.Ministries.learnMore,Home.Ministries.sentDescription,Home.Ministries.sentTag,Home.Ministries.sentTitle,Home.Newsletter.cta,Home.Newsletter.description,Home.Newsletter.heading,Home.OurMission.eyebrow,Home.OurMission.history,Home.OurMission.nameOrigin,Home.OurMission.ourHistory,Home.OurMission.readFullStatement,Home.OurMission.statementEmphasis,Home.OurMission.statementPrefix,Home.OurMission.statementSuffix,Home.OurNetwork.description,Home.OurNetwork.eyebrow,Home.OurNetwork.heading,Home.OurNetwork.noMatches,Home.OurNetwork.searchPlaceholder,Home.OurNetwork.startChapter,Home.PartnerWithUs.description,Home.PartnerWithUs.eyebrow,Home.PartnerWithUs.giveToday,Home.PartnerWithUs.heading,Home.PartnerWithUs.talkToUs,Home.QuickLinks.findCampusDescription,Home.QuickLinks.findCampusTitle,Home.QuickLinks.getInvolvedDescription,Home.QuickLinks.getInvolvedTitle,Home.QuickLinks.joinBibleStudyDescription,Home.QuickLinks.joinBibleStudyTitle,Home.QuickLinks.supportDescription,Home.QuickLinks.supportTitle,InPractice.bibleStudyDescription,InPractice.bibleStudyTag,InPractice.eyebrow,InPractice.heading,InPractice.internshipsTripsDescription,InPractice.internshipsTripsTag,InPractice.leadershipTrainingDescription,InPractice.leadershipTrainingTag,InPractice.onlineEducationDescription,InPractice.onlineEducationTag,LanguageSwitcher.label,Logo.international,Network.breadcrumb,Network.chaptersHeading,Network.chaptersSoon,Network.communityEyebrow,Network.continentSubtitle,Network.countriesEyebrow,Network.countriesHeading,Network.countriesSubheading,Network.exploreEyebrow,Network.heading,Network.joinChapter,Network.map.captionEastCentralAsia,Network.map.captionSouthAsia,Network.map.captionSoutheastAsia,Network.map.clear,Network.map.hqBadge,Network.map.loading,Network.map.regionalHqBadge,Network.map.regionAria,Network.map.regionHint,Network.map.world,Network.map.worldAria,Network.map.worldHint,Network.map.zoomIn,Network.noSitesBodyPrefix,Network.noSitesBodySuffix,Network.noSitesLink,Network.noSitesTitle,Network.partnerWithUs,Network.regions.africa,Network.regions.asia,Network.regions.europe,Network.regions.northamerica,Network.regions.oceania,Network.regions.southamerica,Network.regionsHeading,Network.regionsSubheading,Network.siteCount,Network.visitSite,NewsSubNav.editorial,NewsSubNav.events,NewsSubNav.featuredNews,NewsSubNav.photoNews,NewsSubNav.testimony,WhatWeDoSubNav.administration,WhatWeDoSubNav.pillarsOfMission
+ENUM enum_tenants_continent = africa,asia,europe,northamerica,southamerica,oceania
+ENUM enum_tenants_locale = en,es,fr,de,pt,ko,ja,zh,it,ru,tr,id,nl,pl,uk,cs,sk,el,hu,ro,sv,ar,he,ur,hi,bn,ta,ne,si,my,th,vi,fil,ms,mn,kk,sw,am,af,zu,xh,rw,rn,mg,ht,fj,hif,rm
+ENUM enum_tenants_tier = g20,m40
+ENUM enum_volunteer_applications_q1_convicted = Yes,No
+ENUM enum_volunteer_applications_q2_sexual_offense = Yes,No
+ENUM enum_volunteer_applications_q3_reported_agency = Yes,No
+ENUM enum_volunteer_applications_q4_church_discipline = Yes,No
+ENUM enum_volunteer_applications_q5_dismissed_employment = Yes,No
+ENUM enum_volunteer_applications_q6_investigation = Yes,No

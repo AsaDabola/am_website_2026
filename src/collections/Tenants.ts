@@ -1,6 +1,7 @@
 import type { CollectionConfig } from "payload";
 import type { TextFieldSingleValidation } from "payload";
 import { locales, localeLabels } from "@/i18n/routing";
+import { CONTINENT_OPTIONS } from "@/lib/continents";
 import {
   formatCountryCodes,
   isValidCountryCode,
@@ -29,14 +30,7 @@ export const Tenants: CollectionConfig = {
       name: "continent",
       type: "select",
       required: true,
-      options: [
-        { label: "Africa", value: "africa" },
-        { label: "Asia", value: "asia" },
-        { label: "Europe", value: "europe" },
-        { label: "North America", value: "northamerica" },
-        { label: "South America", value: "southamerica" },
-        { label: "Oceania", value: "oceania" },
-      ],
+      options: CONTINENT_OPTIONS,
     },
     {
       name: "slug",

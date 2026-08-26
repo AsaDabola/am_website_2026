@@ -1,6 +1,30 @@
 import config from "@payload-config";
 import { getPayload } from "payload";
+import type { Where } from "payload";
 import { mediaUrl } from "./homeBlockTypes";
+import { tenantContentWhere } from "./tenantContentWhere";
+import { getRequestTenant } from "./tenantContent";
+
+/**
+ * The syndication clause for whichever site is being rendered. The listings
+ * used to carry no clause at all, which meant amintl.org/news showed every
+ * country's articles whether or not they had been shared with the main site —
+ * the share settings only took effect on the homepage feeds. Now the listing
+ * honours them too.
+ *
+ * Article pages themselves are deliberately left reachable by direct link: an
+ * article that is not listed here is unlisted, not private, and 404-ing one
+ * would break links already sent out.
+ */
+function syndicationWhere(): Where {
+  return tenantContentWhere(getRequestTenant() ?? undefined);
+}
+
+/** Combines the syndication clause with a listing's own filter, if any. */
+function scoped(filter?: Where): Where {
+  const where = syndicationWhere();
+  return filter ? { and: [where, filter] } : where;
+}
 
 export type PostCategory = "news" | "editorial" | "photo-news" | "testimony";
 
@@ -37,7 +61,7 @@ export async function getPostsList(category?: PostCategory): Promise<PostSummary
       collection: "posts",
       sort: "-publishedDate",
       limit: 24,
-      where: category ? { category: { equals: category } } : undefined,
+      where: scoped(category ? { category: { equals: category } } : undefined),
     });
     return result.docs.map((doc) => toSummary(doc as Record<string, unknown>));
   } catch {
@@ -66,7 +90,9 @@ export async function getRelatedPosts(category: PostCategory, excludeSlug: strin
     const payload = await getPayload({ config });
     const result = await payload.find({
       collection: "posts",
-      where: { and: [{ category: { equals: category } }, { slug: { not_equals: excludeSlug } }] },
+      where: scoped({
+        and: [{ category: { equals: category } }, { slug: { not_equals: excludeSlug } }],
+      }),
       sort: "-publishedDate",
       limit: 4,
     });

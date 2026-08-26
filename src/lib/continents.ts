@@ -16,3 +16,18 @@ export type Continent = (typeof CONTINENTS)[number];
 export function isContinent(value: string): value is Continent {
   return (CONTINENTS as readonly string[]).includes(value);
 }
+
+export const CONTINENT_LABELS: Record<Continent, string> = {
+  africa: "Africa",
+  asia: "Asia",
+  europe: "Europe",
+  northamerica: "North America",
+  southamerica: "South America",
+  oceania: "Oceania",
+};
+
+/** The shape Payload's `select` fields want, so the wording is written once. */
+export const CONTINENT_OPTIONS = CONTINENTS.map((value) => ({
+  label: CONTINENT_LABELS[value],
+  value,
+}));

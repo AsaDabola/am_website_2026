@@ -87,9 +87,13 @@ export default async function DynamicPage({ params }: Props) {
 
   // Declare which country is being rendered before any content below runs, so
   // the tenant-aware `getTranslations` in @/i18n/content layers this
-  // country's copy changes over the main version. Off a country route this
-  // stays null and everything reads the main copy.
-  setRequestTenant(isTenantRoute && tenant ? String(tenant.id) : null);
+  // country's copy changes over the main version, and so a feed scoped to
+  // this country also picks up whatever was released to its continent. Off a
+  // country route both stay null and everything reads the main copy.
+  setRequestTenant(
+    isTenantRoute && tenant ? String(tenant.id) : null,
+    isTenantRoute && tenant && isContinent(tenant.continent) ? tenant.continent : null,
+  );
 
   // Every country site has one language it's meant to be browsed in
   // (Tenant.locale). Landing on it under a different locale — e.g. a link

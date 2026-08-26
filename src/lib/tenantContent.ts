@@ -2,6 +2,7 @@ import { cache } from "react";
 import config from "@payload-config";
 import { getPayload } from "payload";
 import { coerceOverride } from "./messageKeys";
+import type { Continent } from "./continents";
 
 /**
  * Per-country copy overrides, resolved for the current request.
@@ -13,20 +14,38 @@ import { coerceOverride } from "./messageKeys";
  * dynamic APIs, so the main site stays static.
  */
 
-type TenantRequestState = { tenantId: string | null };
+type TenantRequestState = { tenantId: string | null; continent: Continent | null };
 
-const tenantRequestState = cache((): TenantRequestState => ({ tenantId: null }));
+const tenantRequestState = cache(
+  (): TenantRequestState => ({ tenantId: null, continent: null }),
+);
 
 /**
  * Records which country site is being rendered. Called by the tenant route
  * before it renders any content, so anything below it sees the override set.
+ *
+ * The continent rides along because content can be released to a whole
+ * continent, and the components that read a country's feed are handed only a
+ * tenant id. Passing the continent down as well would mean a second prop on
+ * every one of them, and the failure mode of forgetting one is silent — the
+ * article simply never appears. Here it is set once, in the same place and at
+ * the same moment as the tenant it belongs to.
  */
-export function setRequestTenant(tenantId: string | null): void {
-  tenantRequestState().tenantId = tenantId;
+export function setRequestTenant(
+  tenantId: string | null,
+  continent: Continent | null = null,
+): void {
+  const state = tenantRequestState();
+  state.tenantId = tenantId;
+  state.continent = continent;
 }
 
 export function getRequestTenant(): string | null {
   return tenantRequestState().tenantId;
+}
+
+export function getRequestContinent(): Continent | null {
+  return tenantRequestState().continent;
 }
 
 export type OverrideMap = Record<string, string | string[]>;
