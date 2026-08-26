@@ -6,6 +6,7 @@ import Button from "@/components/ui/Button";
 import PlaceholderPhoto from "@/components/ui/PlaceholderPhoto";
 import AboutHero from "@/components/about/AboutHero";
 import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
+import EventsAndTestimonials from "@/components/sections/EventsAndTestimonials";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 
@@ -153,6 +154,10 @@ export default function BibleStudyPage() {
           ))}
         </Container>
       </section>
+
+      {/* The design closes this page with the same Events & Testimonials
+          row the rest of the Get Involved section uses. */}
+      <EventsAndTestimonials />
 
       <PartnerWithUs />
       <Newsletter />

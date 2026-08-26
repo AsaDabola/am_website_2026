@@ -3,7 +3,7 @@ import Image from "next/image";
 import { getTranslations } from "@/i18n/content";
 import Container from "@/components/ui/Container";
 import GetInvolvedHero from "@/components/get-involved/GetInvolvedHero";
-import EventsAndTestimonials from "@/components/get-involved/EventsAndTestimonials";
+import EventsAndTestimonials from "@/components/sections/EventsAndTestimonials";
 import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";

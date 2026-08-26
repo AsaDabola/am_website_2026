@@ -67,7 +67,21 @@ export default async function EventsAndTestimonials({
     date: dateFormatter.format(new Date(post.publishedDate)),
   }));
 
-  const cards = [...eventCards, ...testimonyCards].slice(0, 4);
+  // Interleaved so the row reads event / testimony / event / testimony, then
+  // topped up from whichever list still has entries. Both halves of the
+  // heading show even when one of them has far more to offer than the other —
+  // four events and no testimony would otherwise render a row that contradicts
+  // its own title.
+  const paired = eventCards
+    .slice(0, 2)
+    .flatMap((event, index) =>
+      testimonyCards[index] ? [event, testimonyCards[index]] : [event],
+    );
+  const cards = [
+    ...paired,
+    ...eventCards.slice(2),
+    ...testimonyCards.slice(Math.min(eventCards.length, 2)),
+  ].slice(0, 4);
 
   // Nothing scheduled and nothing written yet — the design has no empty state
   // for this row, and a lone heading over a gap reads worse than no section.
