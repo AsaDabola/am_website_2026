@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "@/i18n/content";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -75,20 +76,28 @@ const tracks: Track[] = [
   },
 ];
 
-export default function BibleStudyPage() {
+export default async function BibleStudyPage() {
+  const [t, tHeader] = await Promise.all([
+    getTranslations("Common"),
+    getTranslations("Header"),
+  ]);
+
   return (
     <>
       <AboutHero
         crumbs={[
           { label: "Home", href: "/" },
-          { label: "Get Involved", href: "/get-involved" },
+          { label: tHeader("getInvolved"), href: "/get-involved" },
           { label: "Bible Studies" },
         ]}
-        title="Bible Studies"
+        // The section's name over the photograph, at the shorter hero height,
+        // solid and left-aligned — the same header every other Get Involved
+        // page carries and what the design draws here. This page was setting a
+        // tall, centred, outlined title of its own name instead, which left
+        // the page's own name with nowhere to sit below.
+        title={tHeader("getInvolved")}
+        subtitle={t("tagline")}
         backgroundImage="/images/bible-study-hero.jpg"
-        size="large"
-        titleVariant="ghost"
-        align="center"
       />
       {/* Both Bible study pages sit inside Get Involved and the design gives
           each the section's tabs under the hero, with Bible Studies marked —
@@ -100,6 +109,9 @@ export default function BibleStudyPage() {
           <div className="flex justify-center">
             <Eyebrow>Sign up for our Bible studies today</Eyebrow>
           </div>
+          <h1 className="mt-4 font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
+            Bible Studies
+          </h1>
           <p className="mx-auto mt-6 max-w-[640px] text-base leading-relaxed text-ink-muted">
             Apostolos Missions offers various Bible study programs that will nurture your
             spiritual life and relationship with the Lord Jesus. These Bible studies were

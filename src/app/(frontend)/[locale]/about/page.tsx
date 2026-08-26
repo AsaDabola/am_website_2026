@@ -217,8 +217,15 @@ export default async function WhoWeArePage() {
               href="/about/statement-of-faith"
               image="/images/about-statement-faith-card.jpg"
               // Each card washes its photo in a different blue: the wide one
-              // in #0d328a, the narrow one in the darker night.
-              base="#1449c6"
+              // in #0d328a at 60%, as the design specifies, the narrow one in
+              // the darker night.
+              //
+              // That wash is the only blue here now. The file this used to
+              // point at had the wash already baked into it, so the card was
+              // being tinted twice and came out a flat blue with the mountains
+              // barely readable — the same trap the mission card fell into,
+              // noted below. The photograph is now the untinted original.
+              base="#0d328a"
               wash="rgba(13,50,138,0.6)"
               title={t("cardStatementOfFaithTitle")}
               action={tCommon("learnMore")}
