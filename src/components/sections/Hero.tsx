@@ -13,9 +13,9 @@ import { mediaUrl } from "@/lib/homeBlockTypes";
  */
 const DEFAULT_SLIDES = [
   "/images/hero-campus.jpg",
-  "/images/hero-slide-hikers.jpg",
-  "/images/hero-slide-bible-study.jpg",
   "/images/hero-slide-campus.jpg",
+  "/images/hero-slide-bible-study.jpg",
+  "/images/hero-slide-hikers.jpg",
 ];
 
 export default async function Hero({ data }: { data?: HeroData } = {}) {
