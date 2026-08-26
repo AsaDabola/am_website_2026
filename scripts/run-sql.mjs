@@ -21,15 +21,25 @@ if (!file) {
   process.exit(1);
 }
 
-const connectionString = process.env.DATABASE_URI;
+// Same aliases, same order, as src/lib/getDatabaseUri.ts — Vercel's Neon
+// integration injects a different name depending on how it was connected, and
+// a repair script that disagreed with the app about which database it means
+// would be worse than one that fails to start.
+const ALIASES = ["DATABASE_URI", "POSTGRES_URL", "DATABASE_URL", "POSTGRES_PRISMA_URL"];
+const found = ALIASES.find((name) => process.env[name]);
+const connectionString = found && process.env[found];
+
 if (!connectionString) {
-  console.error("DATABASE_URI is not set. Pass --env-file=.env.local, or export it.");
+  console.error(
+    `No connection string found. Looked for: ${ALIASES.join(", ")}.\n` +
+      "Pass --env-file=.env.local, or export one of them.",
+  );
   process.exit(1);
 }
 
 const sql = readFileSync(file, "utf8");
 const { host } = new URL(connectionString);
-console.log(`Running ${file} against ${host}`);
+console.log(`Running ${file} against ${host} (from ${found})`);
 
 const client = new pg.Client({
   connectionString,
