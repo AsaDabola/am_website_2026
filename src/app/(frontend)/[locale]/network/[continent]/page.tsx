@@ -43,6 +43,12 @@ export default async function ContinentPage({ params }: Props) {
         ]}
         title={label}
         subtitle={t("continentSubtitle", { region: label })}
+        // One photograph serves all six continents, so it has to belong to
+        // none of them: a figure looking out over distance, rather than a
+        // landmark that would be wrong on five pages out of six. Without it
+        // this page inherited the Get Involved seabird, which belongs to a
+        // different section entirely.
+        backgroundImage="/images/network-continent-hero.jpg"
       />
 
       <section className="bg-white py-24">
