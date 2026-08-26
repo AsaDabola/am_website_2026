@@ -79,18 +79,44 @@ Anything shown as only in `schema.expected.txt` is a column the code will
 select and the database does not have — which is to say, a feature that is
 quietly switched off.
 
+## A blank screen in /admin
+
+A list view that renders the sidebar and nothing else is a missing column.
+Payload selects every field of the collection, Postgres rejects the query, and
+the page has no error to show you. To find out which collection and which
+column, without reading a schema diff:
+
+```bash
+POSTGRES_URL='<connection string>' node --import tsx scripts/probe-collections.mts
+```
+
+It runs the same query the list view runs, once per collection, and prints the
+failures:
+
+```
+FAIL  pages
+pages: column pages__blocks_getInvolved_cards.description does not exist
+```
+
+Read-only, and safe against the deployed database — `find` with limit 1, and
+`NODE_ENV` forced to production so `push` cannot fire. Exits non-zero if
+anything failed, so it works in a deploy check.
+
 ## The files
 
 | File | What it does |
 | --- | --- |
 | `push-schema.mts` | Boots Payload in development so `push` builds the schema. **Never point at production.** |
 | `inventory-schema.mjs` | Read-only. Prints every table, column and enum, for diffing. |
+| `probe-collections.mts` | Read-only. Runs each admin list view's query and names the collections that fail. |
 | `schema.expected.txt` | Committed snapshot of what the collections currently describe. |
 | `run-sql.mjs` | Applies a `.sql` file to the database in `POSTGRES_URL`. |
 | `fix-tenants-schema.sql` | Adds `tenants.languages` and the other early missing columns. |
 | `fix-tenant-footer-columns.sql` | Adds `tenants.org_name`, `address`, `contact_email`. |
 | `add-continent-syndication.sql` | Adds the `shareWithContinents` tables for Posts and Events. |
 | `catch-up-missing-collections.sql` | The big one. Four whole collections and 40 locale values that never reached the deployed database. |
+| `add-internship-applications.sql` | Adds the Internship Applications collection. |
+| `add-get-involved-card-description.sql` | Adds `description` to the Get Involved cards, and the message keys it introduced. |
 | `copy-flags.mjs` | Copies country flag SVGs into `public/flags`. |
 
 ## A note on connection strings
