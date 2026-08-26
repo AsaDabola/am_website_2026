@@ -7,7 +7,7 @@ import { mediaUrl } from "@/lib/homeBlockTypes";
 
 export default async function Newsletter({ data }: { data?: NewsletterData } = {}) {
   const t = await getTranslations("Home.Newsletter");
-  const backgroundImage = mediaUrl(data?.backgroundImage) ?? "/images/footer-world-map.jpg";
+  const backgroundImage = mediaUrl(data?.backgroundImage) ?? "/images/bible-study-collage.jpg";
 
   return (
     <section className="relative min-h-[195px] overflow-hidden">
