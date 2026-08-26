@@ -44,7 +44,10 @@ export default async function EventsAndTestimonials({
   });
 
   const eventCards: Card[] = (eventDocs ?? []).map((doc) => {
-    const event = doc as Record<string, unknown>;
+    // Via unknown: once payload-types.ts has been generated, `doc` is the
+    // typed Event, which has no index signature and so is not directly
+    // assertable to a record.
+    const event = doc as unknown as Record<string, unknown>;
     return {
       key: `event-${String(event.id)}`,
       href: "/events",
