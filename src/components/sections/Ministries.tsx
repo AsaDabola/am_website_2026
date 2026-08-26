@@ -38,7 +38,7 @@ async function getDefaultSteps(): Promise<Step[]> {
       href: "/get-involved",
       from: "#3a6cd8",
       to: "#0d1f52",
-      imageUrl: "/images/ministry-grow.png",
+      imageUrl: "/images/ministry-grow.jpg",
     },
     {
       tag: t("leadTag"),
@@ -47,7 +47,7 @@ async function getDefaultSteps(): Promise<Step[]> {
       href: "/get-involved",
       from: "#4d8df6",
       to: "#0d1f52",
-      imageUrl: "/images/ministry-lead.png",
+      imageUrl: "/images/ministry-lead.jpg",
     },
     {
       tag: t("sentTag"),
