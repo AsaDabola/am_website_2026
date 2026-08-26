@@ -4,7 +4,6 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import AboutHero from "@/components/about/AboutHero";
-import WhatWeDoSubNav from "@/components/what-we-do/WhatWeDoSubNav";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 
@@ -96,7 +95,6 @@ export default async function AdministrationPage() {
         // Involved seabird from AboutHero's default.
         backgroundImage="/images/administration-hero.jpg"
       />
-      <WhatWeDoSubNav active="/what-we-do/administration" />
 
       <section className="bg-mist py-20">
         <Container className="max-w-[900px] text-center">

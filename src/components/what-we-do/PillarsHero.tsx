@@ -57,9 +57,9 @@ export default function PillarsHero({ title }: { title: string }) {
           colour out of the middle of the photograph. */}
       <div className="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-night via-night/85 to-transparent" />
 
-      {/* The design carries no breadcrumb here — the section tabs sitting
-          directly under the hero do the wayfinding — and gives the frame a
-          2:3 crop, 1280px on its 1920 canvas. */}
+      {/* The design carries no breadcrumb here — the header's What We Do menu
+          does the wayfinding — and gives the frame a 2:3 crop, 1280px on its
+          1920 canvas. */}
       <Container className="relative flex min-h-[720px] flex-col py-14 lg:min-h-[960px]">
         {/* Archivo Black 96px in sentence case, outlined in the brand blue
             rather than the white the About-family ghost titles use — against
@@ -112,7 +112,11 @@ export default function PillarsHero({ title }: { title: string }) {
               <a
                 key={card.title}
                 href={`#${card.title.toLowerCase()}`}
-                className="overflow-hidden rounded-lg transition-transform hover:-translate-y-1"
+                // A column filling the grid row, so all four end level however
+                // long the sentence inside them runs. The card stretched to
+                // the tallest of them before, but its coloured body stopped
+                // where its own text did and left the rest transparent.
+                className="flex h-full flex-col overflow-hidden rounded-lg transition-transform hover:-translate-y-1"
               >
                 <div
                   className="flex items-center justify-center p-5"
@@ -123,11 +127,11 @@ export default function PillarsHero({ title }: { title: string }) {
                   </span>
                 </div>
                 <div
-                  className="px-5 py-6"
+                  className="flex flex-1 items-center px-5 py-6"
                   style={{ backgroundColor: card.body }}
                 >
                   <p
-                    className="text-center text-sm leading-[1.6]"
+                    className="w-full text-center text-sm leading-[1.6]"
                     style={{ color: card.text }}
                   >
                     {card.description}

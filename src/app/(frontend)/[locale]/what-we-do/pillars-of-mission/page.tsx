@@ -4,7 +4,6 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import PillarsHero from "@/components/what-we-do/PillarsHero";
-import WhatWeDoSubNav from "@/components/what-we-do/WhatWeDoSubNav";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 
@@ -70,7 +69,6 @@ export default async function PillarsOfMissionPage() {
   return (
     <>
       <PillarsHero title={tHeader("whatWeDo")} />
-      <WhatWeDoSubNav active="/what-we-do/pillars-of-mission" />
 
       <section className="overflow-hidden bg-night-deep py-20">
         <Container>
