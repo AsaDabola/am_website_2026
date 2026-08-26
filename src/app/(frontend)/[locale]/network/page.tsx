@@ -114,9 +114,20 @@ export default async function NetworkPage() {
             </ol>
           </nav>
 
-          <NetworkMap />
+        </Container>
 
-          <h1 className="mt-10 text-center font-display text-[38px] font-extrabold uppercase leading-none tracking-[-0.02em] text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,0.9)] sm:text-[58px] lg:text-[72px]">
+        {/*
+          The map is the page, not an illustration on it, so it leaves the
+          1200px text column and takes the section's full width — held off the
+          very edge by the same gutter the Container uses, and no further.
+          Everything around it stays in the column.
+        */}
+        <div className="relative mt-8 px-6 lg:px-10">
+          <NetworkMap />
+        </div>
+
+        <Container className="relative">
+          <h1 className="mt-12 text-center font-display text-[38px] font-extrabold uppercase leading-none tracking-[-0.02em] text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,0.9)] sm:text-[58px] lg:text-[72px]">
             {t("heading")}
           </h1>
 

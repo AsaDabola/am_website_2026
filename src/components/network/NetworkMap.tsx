@@ -223,234 +223,251 @@ export default function NetworkMap() {
         ))}
       </div>
 
-      <div className="relative overflow-hidden rounded-2xl">
-        {/* Warm hub glow behind the map, as in the reference. */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(circle at 55% 26%, rgba(232,145,58,0.28) 0%, rgba(0,122,255,0.18) 30%, rgba(0,122,255,0) 58%)",
-          }}
-        />
+      {/*
+        Two boxes, because the map has to run the full width of the page and
+        still not be a thousand pixels tall on a wide screen.
 
-        <svg
-          viewBox={view.viewBox.join(" ")}
-          className="relative w-full"
-          role="img"
-          aria-label={
-            isWorld
-              ? t("map.worldAria", { count: CHAPTERS.length })
-              : t("map.regionAria", {
-                  count: placed.length,
-                  region: t(`regions.${viewKey as RegionKey}`),
-                })
-          }
-        >
-          <defs>
-            <radialGradient id="am-marker-glow">
-              <stop offset="0%" stopColor="#7cc4ff" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#7cc4ff" stopOpacity="0" />
-            </radialGradient>
-            <radialGradient id="am-hq-glow">
-              <stop offset="0%" stopColor="#ffb457" stopOpacity="0.95" />
-              <stop offset="100%" stopColor="#ffb457" stopOpacity="0" />
-            </radialGradient>
-            <radialGradient id="am-regional-glow">
-              <stop offset="0%" stopColor="#eaf5ff" stopOpacity="0.9" />
-              <stop offset="45%" stopColor="#9fd4ff" stopOpacity="0.45" />
-              <stop offset="100%" stopColor="#7cc4ff" stopOpacity="0" />
-            </radialGradient>
-          </defs>
+        The inner box is the map's own 1000:520 at whatever width it is given.
+        The outer one clips it to a maximum height and centres what is left, so
+        an over-tall map loses equal bands of empty Arctic and Southern Ocean
+        rather than being scaled down. They cannot be the same element:
+        `aspect-ratio` and `max-height` together make the browser recompute the
+        *width* from the clamped height, which shrinks the map back into the
+        middle of the page — the opposite of the point.
 
-          <g aria-hidden>
-            {STARS.map((star, i) => (
-              <circle
-                key={i}
-                cx={star.x}
-                cy={star.y}
-                r={star.r}
-                fill="rgba(255,255,255,0.7)"
-                className="am-map-twinkle"
-                style={{ animationDelay: `${star.delay}s` }}
-              />
-            ))}
-          </g>
-
-          {/* Land, national borders, and state lines where we have them. */}
-          <path
-            d={view.land}
-            fill="rgba(77,141,246,0.12)"
-            stroke="rgba(77,141,246,0.7)"
-            strokeWidth={0.75}
-            strokeLinejoin="round"
+        On a narrow screen the natural height is under the cap, nothing
+        overflows, and no continent is ever cropped.
+      */}
+      <div className="relative flex max-h-[min(58vh,660px)] items-center overflow-hidden rounded-2xl">
+        <div className="relative aspect-[1000/520] w-full shrink-0">
+          {/* Warm hub glow behind the map, as in the reference. */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(circle at 55% 26%, rgba(232,145,58,0.28) 0%, rgba(0,122,255,0.18) 30%, rgba(0,122,255,0) 58%)",
+            }}
           />
-          {view.subdivisions && (
+
+          <svg
+            viewBox={view.viewBox.join(" ")}
+            className="absolute inset-0 size-full"
+            role="img"
+            aria-label={
+              isWorld
+                ? t("map.worldAria", { count: CHAPTERS.length })
+                : t("map.regionAria", {
+                    count: placed.length,
+                    region: t(`regions.${viewKey as RegionKey}`),
+                  })
+            }
+          >
+            <defs>
+              <radialGradient id="am-marker-glow">
+                <stop offset="0%" stopColor="#7cc4ff" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#7cc4ff" stopOpacity="0" />
+              </radialGradient>
+              <radialGradient id="am-hq-glow">
+                <stop offset="0%" stopColor="#ffb457" stopOpacity="0.95" />
+                <stop offset="100%" stopColor="#ffb457" stopOpacity="0" />
+              </radialGradient>
+              <radialGradient id="am-regional-glow">
+                <stop offset="0%" stopColor="#eaf5ff" stopOpacity="0.9" />
+                <stop offset="45%" stopColor="#9fd4ff" stopOpacity="0.45" />
+                <stop offset="100%" stopColor="#7cc4ff" stopOpacity="0" />
+              </radialGradient>
+            </defs>
+
+            <g aria-hidden>
+              {STARS.map((star, i) => (
+                <circle
+                  key={i}
+                  cx={star.x}
+                  cy={star.y}
+                  r={star.r}
+                  fill="rgba(255,255,255,0.7)"
+                  className="am-map-twinkle"
+                  style={{ animationDelay: `${star.delay}s` }}
+                />
+              ))}
+            </g>
+
+            {/* Land, national borders, and state lines where we have them. */}
             <path
-              d={view.subdivisions}
+              d={view.land}
+              fill="rgba(77,141,246,0.12)"
+              stroke="rgba(77,141,246,0.7)"
+              strokeWidth={0.75}
+              strokeLinejoin="round"
+            />
+            {view.subdivisions && (
+              <path
+                d={view.subdivisions}
+                fill="none"
+                stroke="rgba(124,196,255,0.3)"
+                strokeWidth={0.4}
+              />
+            )}
+            <path
+              d={view.borders}
               fill="none"
-              stroke="rgba(124,196,255,0.3)"
+              stroke="rgba(77,141,246,0.4)"
               strokeWidth={0.4}
             />
-          )}
-          <path
-            d={view.borders}
-            fill="none"
-            stroke="rgba(77,141,246,0.4)"
-            strokeWidth={0.4}
-          />
 
-          <g aria-hidden>
-            {REGION_CAPTIONS.map((caption) => {
-              const { x, y } = projectForView(caption.lat, caption.lng, view);
-              if (x < -60 || x > 1060 || y < 0 || y > 520) return null;
+            <g aria-hidden>
+              {REGION_CAPTIONS.map((caption) => {
+                const { x, y } = projectForView(caption.lat, caption.lng, view);
+                if (x < -60 || x > 1060 || y < 0 || y > 520) return null;
 
-              // Captions are centre-anchored, so half the label hangs off each
-              // side of x. The margin has to come from the label actually being
-              // drawn, not a constant: translated names run much longer than
-              // the English ones (a fixed clamp let "Восточная и Центральная
-              // Азия" fall off the left edge). Approximated from the glyph
-              // metrics below rather than measured, which is close enough to
-              // keep the text inside the frame.
-              const label = t(caption.key);
-              const halfWidth = (label.length * (CAPTION_FONT_SIZE * 0.72 + CAPTION_TRACKING)) / 2;
-              const margin = Math.min(halfWidth + 6, WIDTH / 2);
-              const clampedX = Math.min(Math.max(x, margin), WIDTH - margin);
-              return (
-                <text
-                  key={caption.key}
-                  x={clampedX}
-                  y={y}
-                  textAnchor="middle"
-                  fill="rgba(232,238,248,0.42)"
-                  fontSize={CAPTION_FONT_SIZE}
-                  fontWeight={600}
-                  letterSpacing={CAPTION_TRACKING}
-                  className="uppercase"
-                >
-                  {t(caption.key)}
-                </text>
-              );
-            })}
-          </g>
+                // Captions are centre-anchored, so half the label hangs off each
+                // side of x. The margin has to come from the label actually being
+                // drawn, not a constant: translated names run much longer than
+                // the English ones (a fixed clamp let "Восточная и Центральная
+                // Азия" fall off the left edge). Approximated from the glyph
+                // metrics below rather than measured, which is close enough to
+                // keep the text inside the frame.
+                const label = t(caption.key);
+                const halfWidth = (label.length * (CAPTION_FONT_SIZE * 0.72 + CAPTION_TRACKING)) / 2;
+                const margin = Math.min(halfWidth + 6, WIDTH / 2);
+                const clampedX = Math.min(Math.max(x, margin), WIDTH - margin);
+                return (
+                  <text
+                    key={caption.key}
+                    x={clampedX}
+                    y={y}
+                    textAnchor="middle"
+                    fill="rgba(232,238,248,0.42)"
+                    fontSize={CAPTION_FONT_SIZE}
+                    fontWeight={600}
+                    letterSpacing={CAPTION_TRACKING}
+                    className="uppercase"
+                  >
+                    {t(caption.key)}
+                  </text>
+                );
+              })}
+            </g>
 
-          <g fill="none" strokeLinecap="round">
-            {routes.map(({ from, to }) => {
-              const d = arcPath(from, to);
-              // Trunk routes leave the international headquarters; spokes
-              // leave a continental one. Colouring them apart is what makes
-              // the two tiers readable at a glance.
-              const isTrunk = from.role === "global";
-              const isActive = activeId === to.id || activeId === from.id;
-              return (
-                <g key={`arc-${from.id}-${to.id}`}>
-                  <path
-                    d={d}
-                    stroke={isTrunk ? "#ffb457" : "#7cc4ff"}
-                    strokeWidth={isActive ? 1.6 : isTrunk ? 1.1 : 0.75}
-                    opacity={isActive ? 1 : isTrunk ? 0.8 : 0.6}
-                    className="transition-all duration-200"
-                  />
-                  <path
-                    d={d}
-                    stroke={isTrunk ? "#ffd8a3" : "#9fd4ff"}
-                    strokeWidth={isTrunk ? 1.2 : 0.9}
-                    opacity={0.95}
-                    className="am-map-flow"
-                  />
-                </g>
-              );
-            })}
-          </g>
+            <g fill="none" strokeLinecap="round">
+              {routes.map(({ from, to }) => {
+                const d = arcPath(from, to);
+                // Trunk routes leave the international headquarters; spokes
+                // leave a continental one. Colouring them apart is what makes
+                // the two tiers readable at a glance.
+                const isTrunk = from.role === "global";
+                const isActive = activeId === to.id || activeId === from.id;
+                return (
+                  <g key={`arc-${from.id}-${to.id}`}>
+                    <path
+                      d={d}
+                      stroke={isTrunk ? "#ffb457" : "#7cc4ff"}
+                      strokeWidth={isActive ? 1.6 : isTrunk ? 1.1 : 0.75}
+                      opacity={isActive ? 1 : isTrunk ? 0.8 : 0.6}
+                      className="transition-all duration-200"
+                    />
+                    <path
+                      d={d}
+                      stroke={isTrunk ? "#ffd8a3" : "#9fd4ff"}
+                      strokeWidth={isTrunk ? 1.2 : 0.9}
+                      opacity={0.95}
+                      className="am-map-flow"
+                    />
+                  </g>
+                );
+              })}
+            </g>
 
-          <g>
-            {placed.map((chapter) => {
-              const isActive = activeId === chapter.id;
-              const isGlobal = chapter.role === "global";
-              const isRegional = chapter.role === "regional";
-              const radius = isGlobal ? 3.2 : isRegional ? 2.7 : 2;
-              // The trunk is orange, the continental hubs are white-hot, and
-              // the chapters they reach are the same blue as their spokes.
-              const colour = isGlobal ? "#ffb457" : isRegional ? "#ffffff" : "#bfe0ff";
+            <g>
+              {placed.map((chapter) => {
+                const isActive = activeId === chapter.id;
+                const isGlobal = chapter.role === "global";
+                const isRegional = chapter.role === "regional";
+                const radius = isGlobal ? 3.2 : isRegional ? 2.7 : 2;
+                // The trunk is orange, the continental hubs are white-hot, and
+                // the chapters they reach are the same blue as their spokes.
+                const colour = isGlobal ? "#ffb457" : isRegional ? "#ffffff" : "#bfe0ff";
 
-              return (
-                <g
-                  key={chapter.id}
-                  role="button"
-                  tabIndex={0}
-                  aria-label={
-                    isGlobal
-                      ? `${chapter.city}, ${chapter.country} — ${t("map.hqBadge")}`
-                      : isRegional
-                        ? `${chapter.city}, ${chapter.country} — ${t("map.regionalHqBadge")}`
-                        : `${chapter.city}, ${chapter.country}`
-                  }
-                  aria-pressed={selected === chapter.id}
-                  onMouseEnter={() => setHovered(chapter.id)}
-                  onMouseLeave={() => setHovered(null)}
-                  onFocus={() => setHovered(chapter.id)}
-                  onBlur={() => setHovered(null)}
-                  onClick={() =>
-                    setSelected((current) => (current === chapter.id ? null : chapter.id))
-                  }
-                  onKeyDown={(event) => {
-                    if (event.key === "Enter" || event.key === " ") {
-                      event.preventDefault();
-                      setSelected((current) => (current === chapter.id ? null : chapter.id));
+                return (
+                  <g
+                    key={chapter.id}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={
+                      isGlobal
+                        ? `${chapter.city}, ${chapter.country} — ${t("map.hqBadge")}`
+                        : isRegional
+                          ? `${chapter.city}, ${chapter.country} — ${t("map.regionalHqBadge")}`
+                          : `${chapter.city}, ${chapter.country}`
                     }
-                  }}
-                  className="cursor-pointer outline-none"
-                >
-                  <circle
-                    cx={chapter.x}
-                    cy={chapter.y}
-                    r={isActive ? radius * 5 : radius * 3}
-                    fill={`url(#${
-                      isGlobal ? "am-hq-glow" : isRegional ? "am-regional-glow" : "am-marker-glow"
-                    })`}
-                    className="transition-all duration-200"
-                  />
-                  <circle
-                    cx={chapter.x}
-                    cy={chapter.y}
-                    r={radius}
-                    fill="none"
-                    stroke={isGlobal ? "#ffb457" : isRegional ? "#dcefff" : "#7cc4ff"}
-                    strokeWidth={0.8}
-                    className="am-map-pulse"
-                  />
-                  <circle
-                    cx={chapter.x}
-                    cy={chapter.y}
-                    r={isActive ? radius * 1.6 : radius}
-                    fill={colour}
-                    className="transition-all duration-200"
-                  />
-                  {(labelledIds.has(chapter.id) || isActive) && (
-                    <text
-                      x={chapter.x}
-                      y={chapter.y - (isGlobal ? 9 : isRegional ? 8 : 7)}
-                      textAnchor="middle"
-                      className="pointer-events-none"
-                      fill={
-                        isGlobal
-                          ? "#ffd8a3"
-                          : isRegional || isActive
-                            ? "#ffffff"
-                            : "rgba(232,238,248,0.7)"
+                    aria-pressed={selected === chapter.id}
+                    onMouseEnter={() => setHovered(chapter.id)}
+                    onMouseLeave={() => setHovered(null)}
+                    onFocus={() => setHovered(chapter.id)}
+                    onBlur={() => setHovered(null)}
+                    onClick={() =>
+                      setSelected((current) => (current === chapter.id ? null : chapter.id))
+                    }
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        setSelected((current) => (current === chapter.id ? null : chapter.id));
                       }
-                      fontSize={isGlobal ? 8.5 : isRegional ? 8 : 7}
-                      fontWeight={isGlobal || isRegional || isActive ? 700 : 500}
-                    >
-                      {isGlobal ? `${t("map.hqBadge")} · ${isolate(`${chapter.city}, NJ`)}` : chapter.city}
-                    </text>
-                  )}
-                  <circle cx={chapter.x} cy={chapter.y} r={9} fill="transparent" />
-                </g>
-              );
-            })}
-          </g>
-        </svg>
+                    }}
+                    className="cursor-pointer outline-none"
+                  >
+                    <circle
+                      cx={chapter.x}
+                      cy={chapter.y}
+                      r={isActive ? radius * 5 : radius * 3}
+                      fill={`url(#${
+                        isGlobal ? "am-hq-glow" : isRegional ? "am-regional-glow" : "am-marker-glow"
+                      })`}
+                      className="transition-all duration-200"
+                    />
+                    <circle
+                      cx={chapter.x}
+                      cy={chapter.y}
+                      r={radius}
+                      fill="none"
+                      stroke={isGlobal ? "#ffb457" : isRegional ? "#dcefff" : "#7cc4ff"}
+                      strokeWidth={0.8}
+                      className="am-map-pulse"
+                    />
+                    <circle
+                      cx={chapter.x}
+                      cy={chapter.y}
+                      r={isActive ? radius * 1.6 : radius}
+                      fill={colour}
+                      className="transition-all duration-200"
+                    />
+                    {(labelledIds.has(chapter.id) || isActive) && (
+                      <text
+                        x={chapter.x}
+                        y={chapter.y - (isGlobal ? 9 : isRegional ? 8 : 7)}
+                        textAnchor="middle"
+                        className="pointer-events-none"
+                        fill={
+                          isGlobal
+                            ? "#ffd8a3"
+                            : isRegional || isActive
+                              ? "#ffffff"
+                              : "rgba(232,238,248,0.7)"
+                        }
+                        fontSize={isGlobal ? 8.5 : isRegional ? 8 : 7}
+                        fontWeight={isGlobal || isRegional || isActive ? 700 : 500}
+                      >
+                        {isGlobal ? `${t("map.hqBadge")} · ${isolate(`${chapter.city}, NJ`)}` : chapter.city}
+                      </text>
+                    )}
+                    <circle cx={chapter.x} cy={chapter.y} r={9} fill="transparent" />
+                  </g>
+                );
+              })}
+            </g>
+          </svg>
+        </div>
       </div>
 
       <div className="mt-6 min-h-[76px]" aria-live="polite">

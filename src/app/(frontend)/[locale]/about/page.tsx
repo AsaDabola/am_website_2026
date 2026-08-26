@@ -126,8 +126,15 @@ export default async function WhoWeArePage() {
             text column it sits under — which is what gives each card the
             273px that keeps "Leadership training" on one line. Subgrid then
             pins every header to the same height, so a language that does wrap
-            the header still leaves the four card bodies aligned. */}
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:-mx-[10px] lg:grid-cols-4 lg:grid-rows-[auto_1fr]">
+            the header still leaves the four card bodies aligned.
+
+            The row gap is zeroed at that width and only there. Once a card is
+            a subgrid spanning both rows, the row gap is no longer space
+            between cards — it is space inside one, and it was splitting each
+            header off its own description with a stripe of the photograph
+            showing through. Below lg the cards are ordinary grid items again
+            and the same gap is doing the job it looks like it is doing. */}
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:-mx-[10px] lg:grid-cols-4 lg:grid-rows-[auto_1fr] lg:gap-y-0">
           {practiceCards.map((card) => (
             <div
               key={card.tag}
