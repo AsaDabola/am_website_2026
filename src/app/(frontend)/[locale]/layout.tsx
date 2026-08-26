@@ -23,6 +23,7 @@ import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CountrySuggestionBanner from "@/components/layout/CountrySuggestionBanner";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 // Subsets have to cover every script the site ships in, or the browser
 // silently falls back to a system font mid-page. Inter carries Latin, Cyrillic
@@ -158,6 +159,7 @@ export default async function RootLayout({
           <Header />
           <CountrySuggestionBanner />
           <main className="flex-1">{children}</main>
+          <ScrollReveal />
           <Footer />
         </NextIntlClientProvider>
       </body>
