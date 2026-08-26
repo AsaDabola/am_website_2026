@@ -46,32 +46,52 @@ const pool = new Pool({
   ssl: local ? false : { rejectUnauthorized: false },
 });
 
-const { rows } = await pool.query(`
-  SELECT table_name, column_name, data_type, udt_name
-  FROM information_schema.columns
-  WHERE table_schema = 'public'
-  ORDER BY table_name, column_name
-`);
+// Both queries run before a single line is printed, so a connection that dies
+// produces no output at all rather than a partial listing. Piping this into
+// `diff` otherwise reports every line as missing and reads exactly like
+// catastrophic drift, when all that happened was a wrong password.
+let lines;
+try {
+  const { rows } = await pool.query(`
+    SELECT table_name, column_name, data_type, udt_name
+    FROM information_schema.columns
+    WHERE table_schema = 'public'
+    ORDER BY table_name, column_name
+  `);
 
-for (const row of rows) {
-  // USER-DEFINED covers the enums Payload generates for select fields, and the
-  // enum's own name is the part worth seeing.
-  const type = row.data_type === "USER-DEFINED" ? row.udt_name : row.data_type;
-  console.log(`${row.table_name}.${row.column_name} ${type}`);
-}
+  const { rows: enums } = await pool.query(`
+    SELECT t.typname, string_agg(e.enumlabel, ',' ORDER BY e.enumsortorder) AS labels
+    FROM pg_type t
+    JOIN pg_enum e ON e.enumtypid = t.oid
+    JOIN pg_namespace n ON n.oid = t.typnamespace
+    WHERE n.nspname = 'public'
+    GROUP BY t.typname
+    ORDER BY t.typname
+  `);
 
-const { rows: enums } = await pool.query(`
-  SELECT t.typname, string_agg(e.enumlabel, ',' ORDER BY e.enumsortorder) AS labels
-  FROM pg_type t
-  JOIN pg_enum e ON e.enumtypid = t.oid
-  JOIN pg_namespace n ON n.oid = t.typnamespace
-  WHERE n.nspname = 'public'
-  GROUP BY t.typname
-  ORDER BY t.typname
-`);
-
-for (const row of enums) {
-  console.log(`ENUM ${row.typname} = ${row.labels}`);
+  lines = [
+    // USER-DEFINED covers the enums Payload generates for select fields, and
+    // the enum's own name is the part worth seeing.
+    ...rows.map(
+      (row) =>
+        `${row.table_name}.${row.column_name} ` +
+        `${row.data_type === "USER-DEFINED" ? row.udt_name : row.data_type}`,
+    ),
+    ...enums.map((row) => `ENUM ${row.typname} = ${row.labels}`),
+  ];
+} catch (error) {
+  const { message, code } = /** @type {Error & { code?: string }} */ (error);
+  console.error(`\nCould not read the schema: ${message}`);
+  if (code === "28P01") {
+    console.error(
+      "That is a wrong password. If you have just rotated it in Neon, make sure the\n" +
+        "new value is actually in POSTGRES_URL — a placeholder left in by mistake\n" +
+        "fails exactly like this.",
+    );
+  }
+  await pool.end().catch(() => {});
+  process.exit(1);
 }
 
 await pool.end();
+console.log(lines.join("\n"));
