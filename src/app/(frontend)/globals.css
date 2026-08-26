@@ -5,6 +5,13 @@
   --color-brand-blue: #007aff;
   --color-brand-navy: #2a5eec;
   --color-brand-navy-light: #4d8df6;
+  /* The deep blue the designs use for eyebrows, highlighted words in a
+     heading, and the small round controls. It was already in the codebase as a
+     bare #1449c6 in five components before it had a name here. */
+  --color-brand-navy-deep: #1449c6;
+  /* Barely-there tint the section bands alternate with white, much lighter
+     than `mist` — which is a surface colour, not a band. */
+  --color-paper: #f7f9fb;
   --color-ink: #101828;
   --color-ink-muted: #55607a;
   --color-night: #050a2e;
@@ -101,6 +108,8 @@
   --color-brand-blue: var(--color-brand-blue);
   --color-brand-navy: var(--color-brand-navy);
   --color-brand-navy-light: var(--color-brand-navy-light);
+  --color-brand-navy-deep: var(--color-brand-navy-deep);
+  --color-paper: var(--color-paper);
   --color-ink: var(--color-ink);
   --color-ink-muted: var(--color-ink-muted);
   --color-night: var(--color-night);

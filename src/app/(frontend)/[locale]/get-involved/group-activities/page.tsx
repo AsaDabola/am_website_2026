@@ -4,6 +4,7 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import AboutHero from "@/components/about/AboutHero";
 import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
+import WeekendPhotoStrip from "@/components/get-involved/WeekendPhotoStrip";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 
@@ -13,10 +14,17 @@ export const metadata: Metadata = {
     "Morning QT, Group Bible Study, Large Group Fellowship, Friday Prayer Meeting, and weekend activities across AM chapters.",
 };
 
+/**
+ * Each heading is two-tone in the design: the lead-in stays ink and the thing
+ * being named turns blue. Splitting it in the data rather than marking it up
+ * per section keeps the five consistent, and a translation can move the break
+ * without touching the markup.
+ */
 const activities = [
   {
     eyebrow: "Campus Daily Devotional",
-    title: "Sustain Your Spirit with Morning QT",
+    title: "Sustain Your Spirit with ",
+    highlight: "Morning QT",
     image: "/images/group-activities-morning-qt.jpg",
     imageSide: "right" as const,
     paragraphs: [
@@ -26,7 +34,8 @@ const activities = [
   },
   {
     eyebrow: "Deeper Understanding",
-    title: "Gather and Share at Group Bible Study",
+    title: "Gather and Share at ",
+    highlight: "Group Bible Study",
     image: "/images/group-activities-bible-study.jpg",
     imageSide: "left" as const,
     paragraphs: [
@@ -36,16 +45,18 @@ const activities = [
   },
   {
     eyebrow: "Weekly Gatherings",
-    title: "Experience Power in Large Group Fellowship",
+    title: "Experience Power in ",
+    highlight: "Large Group Fellowship",
     image: "/images/group-activities-fellowship.jpg",
     imageSide: "right" as const,
     paragraphs: [
-      "When the chapter grows number to more than fifty student members, AM local chapter hosts a Large Group Fellowship every week with worship music, Bible messages, prayer, and fellowship.",
+      "When the chapter grows increasingly in number AM local chapters start to host a Large Group Fellowship every week with worship music, Bible messages, prayer, and fellowship.",
     ],
   },
   {
     eyebrow: "Friday Gatherings",
-    title: "Sincere Hearts at Friday Prayer Meeting",
+    title: "Sincere Hearts at ",
+    highlight: "Friday Prayer Meeting",
     image: "/images/group-activities-prayer.jpg",
     imageSide: "left" as const,
     paragraphs: [
@@ -75,8 +86,8 @@ export default async function GroupActivitiesPage() {
 
       {activities.map((item, index) => (
         <section
-          key={item.title}
-          className={index % 2 === 0 ? "bg-white py-20" : "bg-mist py-20"}
+          key={item.highlight}
+          className={index % 2 === 0 ? "bg-white py-20" : "bg-paper py-20"}
         >
           <Container>
             <div
@@ -84,23 +95,24 @@ export default async function GroupActivitiesPage() {
                 item.imageSide === "left" ? "" : "lg:[&>*:first-child]:order-2"
               }`}
             >
-              <div className="relative aspect-[520/400] overflow-hidden rounded-2xl">
+              <div className="relative aspect-[520/400] overflow-hidden rounded-xl">
                 <Image
                   src={item.image}
-                  alt={item.title}
+                  alt={`${item.title}${item.highlight}`}
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 45vw, 100vw"
                 />
               </div>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-blue">
+                <p className="text-sm font-semibold uppercase tracking-[1.5px] text-brand-navy-deep">
                   {item.eyebrow}
                 </p>
-                <h2 className="mt-3 font-display text-2xl font-semibold tracking-[-0.02em] text-ink sm:text-3xl">
+                <h2 className="mt-4 font-display text-[32px] font-bold leading-[1.15] text-ink sm:text-[44px]">
                   {item.title}
+                  <span className="text-brand-navy-deep">{item.highlight}</span>
                 </h2>
-                <div className="mt-5 space-y-3 text-sm leading-relaxed text-ink-muted">
+                <div className="mt-6 space-y-6 text-base leading-[1.65] text-ink-muted">
                   {item.paragraphs.map((p, i) => (
                     <p key={i}>{p}</p>
                   ))}
@@ -111,46 +123,32 @@ export default async function GroupActivitiesPage() {
         </section>
       ))}
 
-      <section className="bg-white py-20">
+      {/* Tinted like the section above it rather than alternating back to
+          white — the design closes the page on one band, and this section's
+          own layout is different enough to read as a break without one. */}
+      <section className="bg-paper py-20">
         <Container>
-          <div className="grid items-center gap-10 lg:grid-cols-[480px_1fr] lg:gap-16">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-blue">
-                Campus Life &amp; Fun
-              </p>
-              <h2 className="mt-3 font-display text-2xl font-semibold tracking-[-0.02em] text-ink sm:text-3xl">
-                Building Community with Weekend Activities
-              </h2>
-              <p className="mt-5 text-sm leading-relaxed text-ink-muted">
-                AM Campus chapters hold fun weekend activities that include Donut Fellowship,
-                Sports Activities, Picnics, Brunch Book Club, Barbecues, and many others. Check
-                out our local chapter news to find the program!
-              </p>
-            </div>
-            <div className="grid grid-cols-4 gap-3">
-              {[
-                "/images/group-activities-weekend-1.jpg",
-                "/images/group-activities-weekend-2.jpg",
-                "/images/group-activities-weekend-3.jpg",
-                "/images/group-activities-weekend-4.jpg",
-              ].map((src, i) => (
-                <div
-                  key={src}
-                  className={`relative overflow-hidden rounded-xl ${
-                    i === 1 || i === 2 ? "col-span-1 aspect-[240/360]" : "aspect-[120/360]"
-                  }`}
-                >
-                  <Image
-                    src={src}
-                    alt=""
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 25vw, 50vw"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          <WeekendPhotoStrip
+            photos={[
+              { src: "/images/group-activities-weekend-1.jpg", wide: false },
+              { src: "/images/group-activities-weekend-2.jpg", wide: true },
+              { src: "/images/group-activities-weekend-3.jpg", wide: true },
+              { src: "/images/group-activities-weekend-4.jpg", wide: false },
+            ]}
+          >
+            <p className="text-sm font-semibold uppercase tracking-[1.5px] text-brand-navy-deep">
+              Campus Life &amp; Fun
+            </p>
+            <h2 className="mt-4 font-display text-[32px] font-bold leading-[1.15] text-ink sm:text-[44px]">
+              Building Community with{" "}
+              <span className="text-brand-navy-deep">Weekend Activities</span>
+            </h2>
+            <p className="mt-6 text-base leading-[1.65] text-ink-muted">
+              AM Campus chapters hold fun weekend activities that include Group Fellowship
+              gatherings, Sports Activities, Picnics, Brunch Book Club, Barbecues, and many
+              others. Check out our local chapter news to find the program!
+            </p>
+          </WeekendPhotoStrip>
         </Container>
       </section>
 
