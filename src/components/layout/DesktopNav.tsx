@@ -54,11 +54,7 @@ export default function DesktopNav({
   /** Which way the incoming section travels, from the order of the triggers. */
   const [direction, setDirection] = useState(1);
   const [height, setHeight] = useState(0);
-  /** Left edge and width of the open trigger, for the underline that follows it. */
-  const [marker, setMarker] = useState<{ x: number; width: number } | null>(null);
 
-  const rowRef = useRef<HTMLDivElement>(null);
-  const triggers = useRef(new Map<string, HTMLButtonElement>());
   const panes = useRef(new Map<string, HTMLDivElement>());
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -72,7 +68,6 @@ export default function DesktopNav({
   const shut = useCallback(() => {
     setActive(null);
     setHeight(0);
-    setMarker(null);
   }, []);
 
   const close = useCallback(() => {
@@ -99,14 +94,6 @@ export default function DesktopNav({
 
       const pane = panes.current.get(key);
       setHeight(pane?.offsetHeight ?? 0);
-
-      const trigger = triggers.current.get(key);
-      const row = rowRef.current;
-      if (trigger && row) {
-        const t = trigger.getBoundingClientRect();
-        const r = row.getBoundingClientRect();
-        setMarker({ x: t.left - r.left, width: t.width });
-      }
 
       setActive(key);
     },
@@ -147,16 +134,12 @@ export default function DesktopNav({
           if (!event.currentTarget.contains(event.relatedTarget as Node | null)) close();
         }}
       >
-        <div ref={rowRef} className="relative flex items-center gap-1">
+        <div className="flex items-center gap-1">
           {menus.map((menu) => {
             const isOpen = active === menu.key;
             return (
               <button
                 key={menu.key}
-                ref={(el) => {
-                  if (el) triggers.current.set(menu.key, el);
-                  else triggers.current.delete(menu.key);
-                }}
                 type="button"
                 aria-expanded={isOpen}
                 onMouseEnter={() => open(menu.key)}
@@ -186,19 +169,6 @@ export default function DesktopNav({
               {link.label}
             </NavAnchor>
           ))}
-
-          {/* One underline that slides between the triggers rather than a
-              separate one fading in under each. It is only ever under a menu
-              trigger, so the plain links above leave it where it was. */}
-          <span
-            aria-hidden
-            className="pointer-events-none absolute bottom-0 h-0.5 rounded-full bg-white transition-[transform,width,opacity] duration-300 ease-out"
-            style={{
-              transform: `translateX(${marker?.x ?? 0}px)`,
-              width: marker?.width ?? 0,
-              opacity: marker ? 1 : 0,
-            }}
-          />
         </div>
       </nav>
 
