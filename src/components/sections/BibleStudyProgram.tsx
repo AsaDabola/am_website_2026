@@ -8,7 +8,7 @@ import { mediaUrl } from "@/lib/homeBlockTypes";
 
 export default async function BibleStudyProgram({ data }: { data?: BibleStudyProgramData } = {}) {
   const t = await getTranslations("Home.BibleStudyProgram");
-  const image = mediaUrl(data?.image) ?? "/images/bible-study-group.jpg";
+  const image = mediaUrl(data?.image) ?? "/images/bible-study-group.webp";
 
   return (
     <section className="bg-mist py-24">

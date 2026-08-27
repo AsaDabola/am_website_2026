@@ -96,7 +96,7 @@ export default async function MembershipPage() {
           the grass. */}
       <AboutHero
         title="Membership"
-        backgroundImage="/images/membership-hero.jpg"
+        backgroundImage="/images/membership-hero.webp"
         size="tall"
         wash="deep"
         titleVariant="ghost"
@@ -210,7 +210,7 @@ export default async function MembershipPage() {
               className="group relative block h-[320px] overflow-hidden rounded-2xl lg:h-[400px]"
             >
               <Image
-                src="/images/about-statement-faith-card.jpg"
+                src="/images/about-statement-faith-card.webp"
                 alt=""
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -231,7 +231,7 @@ export default async function MembershipPage() {
               className="group relative block h-[320px] overflow-hidden rounded-2xl lg:h-[400px]"
             >
               <Image
-                src="/images/about-mission-card.jpg"
+                src="/images/about-mission-card.webp"
                 alt=""
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-105"

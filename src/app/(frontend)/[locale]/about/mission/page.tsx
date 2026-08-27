@@ -60,7 +60,7 @@ export default function MissionStatementPage() {
         ]}
         title="Mission statement"
         subtitle="The convictions AM holds in common across every campus, chapter and country."
-        backgroundImage="/images/mission-hero.jpg"
+        backgroundImage="/images/mission-hero.webp"
       />
       <AboutSubNav active="/about/mission" />
 

@@ -80,7 +80,7 @@ export default async function Media({
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
           <VideoPlayer
-            poster="/images/media-video-poster.jpg"
+            poster="/images/media-video-poster.webp"
             src="/videos/highlight.mp4"
             playLabel={data?.playVideoLabel ?? t("playVideo")}
           />

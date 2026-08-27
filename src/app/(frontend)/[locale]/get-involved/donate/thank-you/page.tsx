@@ -42,7 +42,7 @@ export default async function DonateThankYouPage({
         ]}
         title="Thank You"
         subtitle="Your generosity is changing lives."
-        backgroundImage="/images/donate-hero.jpg"
+        backgroundImage="/images/donate-hero.webp"
       />
 
       <section className="bg-white py-24">

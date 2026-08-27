@@ -25,7 +25,7 @@ const activities = [
     eyebrow: "Campus Daily Devotional",
     title: "Sustain Your Spirit with ",
     highlight: "Morning QT",
-    image: "/images/group-activities-morning-qt.jpg",
+    image: "/images/group-activities-morning-qt.webp",
     imageSide: "right" as const,
     paragraphs: [
       "Campus life is often drawn to night culture, losing the freshness of the morning. God called His people to seek His truth and pray in the morning. Just as Israelites collected manna (bread) in the morning and quail (meat) in the evening, Jesus provides profound grace and renewing strength when we come to him in the morning, hear His Word, and pray in the evening.",
@@ -36,7 +36,7 @@ const activities = [
     eyebrow: "Deeper Understanding",
     title: "Gather and Share at ",
     highlight: "Group Bible Study",
-    image: "/images/group-activities-bible-study.jpg",
+    image: "/images/group-activities-bible-study.webp",
     imageSide: "left" as const,
     paragraphs: [
       "Group Bible Study allows students to gather and share the Word and prayer. Each study session is comprised of a series of bible studies according to the theme continuing for a set period of time.",
@@ -47,7 +47,7 @@ const activities = [
     eyebrow: "Weekly Gatherings",
     title: "Experience Power in ",
     highlight: "Large Group Fellowship",
-    image: "/images/group-activities-fellowship.jpg",
+    image: "/images/group-activities-fellowship.webp",
     imageSide: "right" as const,
     paragraphs: [
       "When the chapter grows increasingly in number AM local chapters start to host a Large Group Fellowship every week with worship music, Bible messages, prayer, and fellowship.",
@@ -57,7 +57,7 @@ const activities = [
     eyebrow: "Friday Gatherings",
     title: "Sincere Hearts at ",
     highlight: "Friday Prayer Meeting",
-    image: "/images/group-activities-prayer.jpg",
+    image: "/images/group-activities-prayer.webp",
     imageSide: "left" as const,
     paragraphs: [
       "We all have many topics to pray for. AM holds a prayer gathering every Friday. We pray for the world mission, our countries and cities, our campus, and our personal topics.",
@@ -87,7 +87,7 @@ export default async function GroupActivitiesPage() {
         // nothing for the page title below the tabs to say.
         title={tHeader("getInvolved")}
         subtitle={t("tagline")}
-        backgroundImage="/images/group-activities-hero.jpg"
+        backgroundImage="/images/group-activities-hero.webp"
       />
       <GetInvolvedSubNav active="/get-involved/group-activities" />
 
@@ -148,10 +148,10 @@ export default async function GroupActivitiesPage() {
         <Container>
           <WeekendPhotoStrip
             photos={[
-              { src: "/images/group-activities-weekend-1.jpg", wide: false },
-              { src: "/images/group-activities-weekend-2.jpg", wide: true },
-              { src: "/images/group-activities-weekend-3.jpg", wide: true },
-              { src: "/images/group-activities-weekend-4.jpg", wide: false },
+              { src: "/images/group-activities-weekend-1.webp", wide: false },
+              { src: "/images/group-activities-weekend-2.webp", wide: true },
+              { src: "/images/group-activities-weekend-3.webp", wide: true },
+              { src: "/images/group-activities-weekend-4.webp", wide: false },
             ]}
           >
             <p className="text-sm font-semibold uppercase tracking-[1.5px] text-brand-navy-deep">

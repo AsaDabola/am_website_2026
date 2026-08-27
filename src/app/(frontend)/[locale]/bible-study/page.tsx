@@ -28,7 +28,7 @@ type Track = {
 const tracks: Track[] = [
   {
     title: "Phase 1 — Book of Romans, chapters 1–8",
-    image: "/images/bible-study-sola-fide.jpg",
+    image: "/images/bible-study-sola-fide.webp",
     from: "#2a5eec",
     to: "#0d1f52",
     description:
@@ -36,7 +36,7 @@ const tracks: Track[] = [
   },
   {
     title: "Phase 2 — Bible Core: the Four Spiritual Laws",
-    image: "/images/bible-study-bible-core.jpg",
+    image: "/images/bible-study-bible-core.webp",
     from: "#3a6cd8",
     to: "#0d1f52",
     description:
@@ -44,7 +44,7 @@ const tracks: Track[] = [
   },
   {
     title: "Phase 3(1) — The Ancestors of Faith",
-    image: "/images/bible-study-faith.jpg",
+    image: "/images/bible-study-faith.webp",
     from: "#4d8df6",
     to: "#0d1f52",
     description:
@@ -52,7 +52,7 @@ const tracks: Track[] = [
   },
   {
     title: "Phase 3(2) — Basics of Christian Life",
-    image: "/images/bible-study-christian-life.jpg",
+    image: "/images/bible-study-christian-life.webp",
     from: "#1449c6",
     to: "#050a2e",
     description:
@@ -60,7 +60,7 @@ const tracks: Track[] = [
   },
   {
     title: "Phase 4 — Only Jesus: Gospel Studies",
-    image: "/images/bible-study-only-jesus.jpg",
+    image: "/images/bible-study-only-jesus.webp",
     from: "#2a5eec",
     to: "#0d1f52",
     description:
@@ -68,7 +68,7 @@ const tracks: Track[] = [
   },
   {
     title: "Phase 5 — Discipleship Track",
-    image: "/images/bible-study-discipleship-track.jpg",
+    image: "/images/bible-study-discipleship-track.webp",
     from: "#0d1f52",
     to: "#050a2e",
     description:
@@ -97,7 +97,7 @@ export default async function BibleStudyPage() {
         // the page's own name with nowhere to sit below.
         title={tHeader("getInvolved")}
         subtitle={t("tagline")}
-        backgroundImage="/images/bible-study-hero.jpg"
+        backgroundImage="/images/bible-study-hero.webp"
       />
       {/* Both Bible study pages sit inside Get Involved and the design gives
           each the section's tabs under the hero, with Bible Studies marked —

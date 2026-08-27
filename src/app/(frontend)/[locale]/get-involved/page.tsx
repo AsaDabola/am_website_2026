@@ -48,7 +48,7 @@ export default async function GetInvolvedHubPage() {
           <div className="grid items-start gap-10 lg:grid-cols-[570px_1fr] lg:gap-16">
             <div className="relative aspect-[570/577] overflow-hidden rounded-2xl">
               <Image
-                src="/images/get-involved-connect.jpg"
+                src="/images/get-involved-connect.webp"
                 alt="AM students connecting at a campus outreach table"
                 fill
                 className="object-cover"
@@ -119,7 +119,7 @@ export default async function GetInvolvedHubPage() {
           <div className="grid items-start gap-10 lg:grid-cols-[570px_1fr] lg:gap-16">
             <div className="relative aspect-[570/577] overflow-hidden rounded-2xl">
               <Image
-                src="/images/get-involved-grow.jpg"
+                src="/images/get-involved-grow.webp"
                 alt="AM students growing together in fellowship"
                 fill
                 className="object-cover"
@@ -162,7 +162,7 @@ export default async function GetInvolvedHubPage() {
           <div className="grid items-start gap-10 lg:grid-cols-[570px_1fr] lg:gap-16">
             <div className="relative aspect-[570/577] overflow-hidden rounded-2xl">
               <Image
-                src="/images/get-involved-lead.jpg"
+                src="/images/get-involved-lead.webp"
                 alt="AM leadership retreat"
                 fill
                 className="object-cover"
@@ -202,7 +202,7 @@ export default async function GetInvolvedHubPage() {
           <div className="grid items-start gap-10 lg:grid-cols-[570px_1fr] lg:gap-16">
             <div className="relative aspect-[570/577] overflow-hidden rounded-2xl">
               <Image
-                src="/images/get-involved-sent.jpg"
+                src="/images/get-involved-sent.webp"
                 alt="AM missionaries meeting together"
                 fill
                 className="object-cover"

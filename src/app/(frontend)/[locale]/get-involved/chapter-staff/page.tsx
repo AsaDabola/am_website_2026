@@ -31,7 +31,7 @@ export default async function ChapterVolunteerPage() {
         ]}
         title="Get Involved"
         subtitle={t("tagline")}
-        backgroundImage="/images/chapter-volunteer-hero.jpg"
+        backgroundImage="/images/chapter-volunteer-hero.webp"
       />
       <GetInvolvedSubNav active="/get-involved/chapter-staff" />
 
@@ -46,9 +46,9 @@ export default async function ChapterVolunteerPage() {
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
-              "/images/chapter-volunteer-1.jpg",
-              "/images/chapter-volunteer-2.jpg",
-              "/images/chapter-volunteer-3.jpg",
+              "/images/chapter-volunteer-1.webp",
+              "/images/chapter-volunteer-2.webp",
+              "/images/chapter-volunteer-3.webp",
             ].map((src) => (
               <div
                 key={src}
@@ -86,7 +86,7 @@ export default async function ChapterVolunteerPage() {
         <Container>
           <div className="relative aspect-[1375/687] w-full overflow-hidden rounded-2xl">
             <Image
-              src="/images/chapter-volunteer-group.jpg"
+              src="/images/chapter-volunteer-group.webp"
               alt="AM chapter staff and students"
               fill
               className="object-cover"

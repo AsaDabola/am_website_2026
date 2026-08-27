@@ -42,7 +42,7 @@ export default function PillarsHero({ title }: { title: string }) {
   return (
     <section className="relative overflow-hidden bg-night">
       <Image
-        src="/images/pillars-hero.jpg"
+        src="/images/pillars-hero.webp"
         alt=""
         fill
         priority

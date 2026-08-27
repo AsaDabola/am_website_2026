@@ -13,10 +13,10 @@ import { mediaUrl } from "@/lib/homeBlockTypes";
  * chosen photo cycle away.
  */
 const DEFAULT_SLIDES = [
-  "/images/hero-campus.jpg",
-  "/images/hero-slide-campus.jpg",
-  "/images/hero-slide-bible-study.jpg",
-  "/images/hero-slide-hikers.jpg",
+  "/images/hero-campus.webp",
+  "/images/hero-slide-campus.webp",
+  "/images/hero-slide-bible-study.webp",
+  "/images/hero-slide-hikers.webp",
 ];
 
 export default async function Hero({ data }: { data?: HeroData } = {}) {

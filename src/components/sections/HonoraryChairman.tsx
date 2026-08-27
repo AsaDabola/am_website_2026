@@ -14,7 +14,7 @@ export default async function HonoraryChairman({
 }: { data?: HonoraryChairmanData; headingLevel?: "h1" | "h2" } = {}) {
   const t = await getTranslations("Home.HonoraryChairman");
   const name = data?.name ?? t("name");
-  const image = mediaUrl(data?.image) ?? "/images/honorary-chairman.jpg";
+  const image = mediaUrl(data?.image) ?? "/images/honorary-chairman.webp";
 
   const quoteLines = [
     data?.quoteLine1 ?? t("quoteLine1"),

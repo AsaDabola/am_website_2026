@@ -48,7 +48,7 @@ export default async function ContinentPage({ params }: Props) {
         // landmark that would be wrong on five pages out of six. Without it
         // this page inherited the Get Involved seabird, which belongs to a
         // different section entirely.
-        backgroundImage="/images/network-continent-hero.jpg"
+        backgroundImage="/images/network-continent-hero.webp"
       />
 
       <section className="bg-white py-24">

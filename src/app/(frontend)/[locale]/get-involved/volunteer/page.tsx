@@ -76,7 +76,7 @@ export default async function VolunteerPage() {
         // particular. The fourth of the supplied photographs is a group
         // setting out with packs, which is what volunteering with AM looks
         // like from the outside.
-        backgroundImage="/images/volunteer-hero.jpg"
+        backgroundImage="/images/volunteer-hero.webp"
       />
       <GetInvolvedSubNav active="/get-involved/volunteer" />
 
@@ -93,9 +93,9 @@ export default async function VolunteerPage() {
               cropping to, which cut the tops off the group shots. */}
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {[
-              { src: "/images/volunteer-calling.jpg", alt: "Students leading worship at an AM chapter gathering" },
-              { src: "/images/volunteer-team.jpg", alt: "Two volunteers on the welcome desk at an AM event" },
-              { src: "/images/volunteer-worship.jpg", alt: "An AM chapter worship team after a service" },
+              { src: "/images/volunteer-calling.webp", alt: "Students leading worship at an AM chapter gathering" },
+              { src: "/images/volunteer-team.webp", alt: "Two volunteers on the welcome desk at an AM event" },
+              { src: "/images/volunteer-worship.webp", alt: "An AM chapter worship team after a service" },
             ].map(({ src, alt }) => (
               <div
                 key={src}

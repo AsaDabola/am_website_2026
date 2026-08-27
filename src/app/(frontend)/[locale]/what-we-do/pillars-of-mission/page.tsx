@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const pillars = [
   {
     title: "Evangelism",
-    image: "/images/pillars-evangelism.jpg",
+    image: "/images/pillars-evangelism.webp",
     paragraphs: [
       "Evangelism is at the core of everything AM is and does. We wish to go and make disciples of every campus in every nation. We are not only consumers of the grace of God, but we wish to share it in accordance with Biblical instruction.",
       "Dr. Ralph D. Winter, our First Chairman, divided Evangelism into four categories: E0, E1, E2, and E3. His perspective on Evangelism gave an eye-opening realization that Christians are still far from reaching every people group beyond diverse cultural gaps. “E3” indicates the Evangelism that requires cultural crossing to a radically different people group.",
@@ -25,7 +25,7 @@ const pillars = [
   },
   {
     title: "Education",
-    image: "/images/pillars-education.jpg",
+    image: "/images/pillars-education.webp",
     paragraphs: [
       "Hosea 4:6 says, “…my people perish because of a lack of knowledge.” Paul says again in Romans 10:2 that the Israelites have a zeal for God, but not based on knowledge.",
       "In a world full of knowledge, AM International wishes to reaffirm the authority of the Word and uphold it as the center of our lives. The true knowledge is that which comes from God’s Word by knowing Him and living according to that.",
@@ -34,7 +34,7 @@ const pillars = [
   },
   {
     title: "Discipleship",
-    image: "/images/pillars-discipleship.jpg",
+    image: "/images/pillars-discipleship.webp",
     paragraphs: [
       "Being a disciple may feel difficult at times. A true disciple is the one who follows the life of Jesus — the life of the cross. For this, apart from spreading the love of Christ to others actively and guiding the youth with Biblical truth, our ministry walks alongside students to help them live a godly life for Christ in this era. As disciples of Jesus we wish to impact the world and influence people through the power of the gospel.",
       "“Cheap grace is the preaching of forgiveness without requiring repentance, baptism without church discipline, Communion without confession, absolution without personal confession. Cheap grace is grace without discipleship, grace without the cross, grace without Jesus Christ, living and incarnate,” wrote Dietrich Bonhoeffer in his famous book, “The Cost of Discipleship”.",
@@ -43,7 +43,7 @@ const pillars = [
   },
   {
     title: "Mission",
-    image: "/images/pillars-mission.jpg",
+    image: "/images/pillars-mission.webp",
     // Tightened in the design — the same three beats, but half the clauses.
     paragraphs: [
       "Thriving campus mission powerfully advances our world mission. AM is dedicated to spreading the Gospel and fulfilling the Great Commission by going into all nations.",
@@ -88,7 +88,7 @@ export default async function PillarsOfMissionPage() {
             <figure className="m-0">
               <div className="relative aspect-[3/2] overflow-hidden rounded-2xl">
                 <Image
-                  src="/images/pillars-intro-1.jpg"
+                  src="/images/pillars-intro-1.webp"
                   alt=""
                   fill
                   className="object-cover"

@@ -97,7 +97,7 @@ export default function HistoryPage() {
         ]}
         title="Our History"
         subtitle="From a small group of students in Los Angeles to a worldwide sending community."
-        backgroundImage="/images/history-hero.jpg"
+        backgroundImage="/images/history-hero.webp"
       />
       <AboutSubNav active="/about/history" />
 

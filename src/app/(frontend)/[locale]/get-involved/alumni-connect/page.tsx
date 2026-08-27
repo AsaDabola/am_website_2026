@@ -30,7 +30,7 @@ export default async function AlumniConnectPage() {
         ]}
         title={tHeader("getInvolved")}
         subtitle={t("tagline")}
-        backgroundImage="/images/alumni-hero.jpg"
+        backgroundImage="/images/alumni-hero.webp"
       />
       <GetInvolvedSubNav active="/get-involved/alumni-connect" />
 
@@ -44,7 +44,7 @@ export default async function AlumniConnectPage() {
           </h1>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
-            {["/images/alumni-1.jpg", "/images/alumni-2.jpg", "/images/alumni-3.jpg"].map(
+            {["/images/alumni-1.webp", "/images/alumni-2.webp", "/images/alumni-3.webp"].map(
               (src) => (
                 <div
                   key={src}

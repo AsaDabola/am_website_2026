@@ -29,16 +29,16 @@ const people: {
   /** Force this person to open a new row at the five-column width. */
   startsRow?: boolean;
 }[] = [
-  { name: "Rani Reid", role: "Executive Director", image: "/images/leader-reid.jpg" },
+  { name: "Rani Reid", role: "Executive Director", image: "/images/leader-reid.webp" },
 
-  { name: "Cowin Hodges", role: "USA & Canada", image: "/images/coord-cowin-hodges.jpg" },
-  { name: "Andrea Rico", role: "South America", image: "/images/coord-andrea-rico.jpg" },
-  { name: "Joel Lee", role: "Asia Pacific", image: "/images/coord-joel-lee.jpg" },
-  { name: "Mara Onyeama", role: "Europe", image: "/images/coord-mara-onyeama.jpg" },
-  { name: "Jonathan Xie", role: "China", image: "/images/coord-jonathan-xie.jpg" },
-  { name: "Priya Vaya", role: "South Asia", image: "/images/coord-priya-vaya.jpg" },
-  { name: "Samuel Kwizera", role: "Africa", image: "/images/coord-samuel-kwizera.jpg" },
-  { name: "Khiaghie Koropa", role: "Oceania", image: "/images/coord-khiaghie-koropa.jpg" },
+  { name: "Cowin Hodges", role: "USA & Canada", image: "/images/coord-cowin-hodges.webp" },
+  { name: "Andrea Rico", role: "South America", image: "/images/coord-andrea-rico.webp" },
+  { name: "Joel Lee", role: "Asia Pacific", image: "/images/coord-joel-lee.webp" },
+  { name: "Mara Onyeama", role: "Europe", image: "/images/coord-mara-onyeama.webp" },
+  { name: "Jonathan Xie", role: "China", image: "/images/coord-jonathan-xie.webp" },
+  { name: "Priya Vaya", role: "South Asia", image: "/images/coord-priya-vaya.webp" },
+  { name: "Samuel Kwizera", role: "Africa", image: "/images/coord-samuel-kwizera.webp" },
+  { name: "Khiaghie Koropa", role: "Oceania", image: "/images/coord-khiaghie-koropa.webp" },
 
   // Headquarters starts its own row in the design rather than running on from
   // the coordinators, which is the only thing separating the two groups now
@@ -47,19 +47,19 @@ const people: {
   {
     name: "Asa Daboh",
     role: "HQ Staff",
-    image: "/images/hq-asa-daboh.jpg",
+    image: "/images/hq-asa-daboh.webp",
     startsRow: true,
   },
-  { name: "Ruth Jigmedsuren", role: "HQ Staff", image: "/images/hq-ruth-jigmedsuren.jpg" },
+  { name: "Ruth Jigmedsuren", role: "HQ Staff", image: "/images/hq-ruth-jigmedsuren.webp" },
   {
     name: "Can Liu",
     role: "Director of Chinese Mission in USA",
-    image: "/images/hq-can-liu.jpg",
+    image: "/images/hq-can-liu.webp",
   },
   {
     name: "Vanessa Eusebio",
     role: "Online Evangelism Coordinator",
-    image: "/images/hq-vanessa-eusebio.jpg",
+    image: "/images/hq-vanessa-eusebio.webp",
   },
 ];
 
@@ -73,7 +73,7 @@ const advisors = [
     name: "Rev. Dr. Paul DeVries",
     title: "Senior Leader and Advisor",
     bio: "Dr. DeVries provides profound wisdom and spiritual guidance for our mission in many areas. Dr. Paul is also President of the New York Divinity School, and has over 25 years of leadership experience in Christian higher education administration, including at Wheaton College, Northern Baptist Theological Seminary and the Seminary of the East.",
-    image: "/images/leader-paul-devries.jpg",
+    image: "/images/leader-paul-devries.webp",
   },
 ];
 

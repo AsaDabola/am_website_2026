@@ -93,7 +93,7 @@ export default async function AdministrationPage() {
         // The starfield the design puts behind What We Do. Until now this was
         // the last page with no hero of its own, so it was showing the Get
         // Involved seabird from AboutHero's default.
-        backgroundImage="/images/administration-hero.jpg"
+        backgroundImage="/images/administration-hero.webp"
       />
 
       <section className="bg-mist py-20">
@@ -111,9 +111,9 @@ export default async function AdministrationPage() {
                 middle one is new; the table shot that used to sit third is no
                 longer shown, since the row has three places. */}
             {[
-              { src: "/images/admin-intro-2.jpg", alt: "Students at an AM chapter gathering" },
-              { src: "/images/admin-intro-laptop.jpg", alt: "AM staff working together at a laptop" },
-              { src: "/images/admin-intro-1.jpg", alt: "An AM staff member speaking at a lectern" },
+              { src: "/images/admin-intro-2.webp", alt: "Students at an AM chapter gathering" },
+              { src: "/images/admin-intro-laptop.webp", alt: "AM staff working together at a laptop" },
+              { src: "/images/admin-intro-1.webp", alt: "An AM staff member speaking at a lectern" },
             ].map(
               ({ src, alt }) => (
                 <div

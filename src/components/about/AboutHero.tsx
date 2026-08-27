@@ -9,7 +9,7 @@ export default function AboutHero({
   crumbs = [],
   title,
   subtitle,
-  backgroundImage = "/images/about-hero-banner.jpg",
+  backgroundImage = "/images/about-hero-banner.webp",
   size = "default",
   wash,
   titleVariant = "solid",

@@ -24,7 +24,7 @@ export default function JoinBibleStudyPage() {
           { label: "Join our Bible Studies" },
         ]}
         title="Join our Bible Studies"
-        backgroundImage="/images/bible-study-join-hero.jpg"
+        backgroundImage="/images/bible-study-join-hero.webp"
         // The design draws this one at 964px rather than the shorter hero the
         // rest of the section uses — the photograph is the invitation — and
         // centres the title rather than sitting it on the floor of the frame.

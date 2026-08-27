@@ -14,12 +14,12 @@ export default async function GetInvolved({ data }: { data?: GetInvolvedData } =
     ? data.cards.map((card) => ({
         title: card.title ?? "",
         href: card.href ?? "/get-involved",
-        image: mediaUrl(card.image) ?? "/images/get-involved-volunteer.jpg",
+        image: mediaUrl(card.image) ?? "/images/get-involved-volunteer.webp",
       }))
     : [
-        { title: t("bibleStudies"), href: "/bible-study", image: "/images/get-involved-bible-studies.jpg" },
-        { title: t("volunteer"), href: "/get-involved/volunteer", image: "/images/get-involved-volunteer.jpg" },
-        { title: t("internship"), href: "/get-involved/internship", image: "/images/get-involved-internship.jpg" },
+        { title: t("bibleStudies"), href: "/bible-study", image: "/images/get-involved-bible-studies.webp" },
+        { title: t("volunteer"), href: "/get-involved/volunteer", image: "/images/get-involved-volunteer.webp" },
+        { title: t("internship"), href: "/get-involved/internship", image: "/images/get-involved-internship.webp" },
       ];
 
   return (

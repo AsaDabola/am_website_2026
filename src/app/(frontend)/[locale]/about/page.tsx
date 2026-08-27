@@ -116,7 +116,7 @@ export default async function WhoWeArePage() {
       <AboutSubNav active="/about" />
       <AboutHero
         title={t("heroTitle")}
-        backgroundImage="/images/about-hero-cross.jpg"
+        backgroundImage="/images/about-hero-cross.webp"
         size="tall"
         titleVariant="ghost"
         titleCase="sentence"
@@ -215,7 +215,7 @@ export default async function WhoWeArePage() {
           <div className="grid gap-6 lg:grid-cols-[802fr_454fr]">
             <CardLink
               href="/about/statement-of-faith"
-              image="/images/about-statement-faith-card.jpg"
+              image="/images/about-statement-faith-card.webp"
               // Each card washes its photo in a different blue: the wide one
               // in #0d328a at 60%, as the design specifies, the narrow one in
               // the darker night.
@@ -232,7 +232,7 @@ export default async function WhoWeArePage() {
             />
             <CardLink
               href="/about/mission"
-              image="/images/about-mission-card.jpg"
+              image="/images/about-mission-card.webp"
               base="#0d328a"
               // Night at 60%, as the design draws it. The stand-in this held
               // before was a dark worship scene with a wash already baked into

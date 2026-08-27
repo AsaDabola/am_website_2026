@@ -83,7 +83,7 @@ export default async function BibleTeacherTrainingPage() {
 
           <div className="relative mx-auto mt-10 aspect-[1176/588] max-w-[900px] overflow-hidden rounded-2xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.12)]">
             <Image
-              src="/images/bible-teacher-called-to-serve.jpg"
+              src="/images/bible-teacher-called-to-serve.webp"
               alt="Called to serve? Become AM Bible Teachers & Missionaries — www.amacademy.org"
               fill
               className="object-cover"
@@ -183,7 +183,7 @@ export default async function BibleTeacherTrainingPage() {
         <Container className="max-w-[1200px]">
           <div className="relative aspect-[1249/375] w-full overflow-hidden rounded-2xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.12)]">
             <Image
-              src="/images/bible-teacher-called-to-be.jpg"
+              src="/images/bible-teacher-called-to-be.webp"
               alt="Called to be Bible Teachers — AM Academy, www.amacademy.org"
               fill
               className="object-cover"

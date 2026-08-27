@@ -22,7 +22,7 @@ export default async function ContactPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact Us" }]}
         title="Contact Us"
         subtitle={t("tagline")}
-        backgroundImage="/images/contact-hero.jpg"
+        backgroundImage="/images/contact-hero.webp"
       />
 
       <section className="bg-mist py-20">

@@ -54,7 +54,7 @@ export default async function InternshipPage() {
         ]}
         title={tHeader("getInvolved")}
         subtitle={t("tagline")}
-        backgroundImage="/images/internship-hero.jpg"
+        backgroundImage="/images/internship-hero.webp"
       />
       <GetInvolvedSubNav active="/get-involved/internship" />
 
@@ -68,7 +68,7 @@ export default async function InternshipPage() {
           </h1>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
-            {["/images/internship-1.jpg", "/images/internship-2.jpg", "/images/internship-3.jpg"].map(
+            {["/images/internship-1.webp", "/images/internship-2.webp", "/images/internship-3.webp"].map(
               (src) => (
                 <div
                   key={src}

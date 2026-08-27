@@ -27,7 +27,7 @@ export default function GetInvolvedHero({
   return (
     <section className="relative overflow-hidden bg-night">
       <Image
-        src="/images/get-involved-hero.jpg"
+        src="/images/get-involved-hero.webp"
         alt=""
         fill
         priority

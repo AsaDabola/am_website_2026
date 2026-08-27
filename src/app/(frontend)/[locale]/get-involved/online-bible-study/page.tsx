@@ -32,7 +32,7 @@ export default async function OnlineBibleStudyPage() {
         ]}
         title={tHeader("getInvolved")}
         subtitle={t("tagline")}
-        backgroundImage="/images/online-bible-study-hero.jpg"
+        backgroundImage="/images/online-bible-study-hero.webp"
       />
       <GetInvolvedSubNav active="/get-involved/online-bible-study" />
 
@@ -47,9 +47,9 @@ export default async function OnlineBibleStudyPage() {
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
-              "/images/online-bible-study-1.jpg",
-              "/images/online-bible-study-2.jpg",
-              "/images/online-bible-study-3.jpg",
+              "/images/online-bible-study-1.webp",
+              "/images/online-bible-study-2.webp",
+              "/images/online-bible-study-3.webp",
             ].map((src) => (
               <div
                 key={src}

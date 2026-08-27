@@ -29,7 +29,7 @@ export default async function DonatePage() {
         ]}
         title="Donate"
         subtitle={t("tagline")}
-        backgroundImage="/images/donate-hero.jpg"
+        backgroundImage="/images/donate-hero.webp"
       />
       <GetInvolvedSubNav active="/get-involved/donate" />
 
@@ -44,7 +44,7 @@ export default async function DonatePage() {
 
           <div className="relative mx-auto mt-10 aspect-[825/473] max-w-[825px] overflow-hidden rounded-2xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.12)]">
             <Image
-              src="/images/donate-offering.jpg"
+              src="/images/donate-offering.webp"
               alt="Your offering helps us spread the Gospel!"
               fill
               className="object-cover"

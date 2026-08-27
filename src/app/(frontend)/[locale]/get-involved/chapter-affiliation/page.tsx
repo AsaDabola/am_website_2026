@@ -27,7 +27,7 @@ export default async function ChapterAffiliationPage() {
           { label: "Chapter Affiliation" },
         ]}
         title="Chapter Affiliation"
-        backgroundImage="/images/chapter-affiliation-hero.jpg"
+        backgroundImage="/images/chapter-affiliation-hero.webp"
         size="large"
         titleVariant="ghost"
         align="center"

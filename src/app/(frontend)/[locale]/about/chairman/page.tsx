@@ -63,7 +63,7 @@ export default function ChairmanPage() {
             <div className="space-y-6">
               <div className="relative aspect-[420/302] overflow-hidden rounded-2xl">
                 <Image
-                  src="/images/chairman-photo-1.jpg"
+                  src="/images/chairman-photo-1.webp"
                   alt="Dr. Ralph D. Winter teaching at Seoul '73"
                   fill
                   className="object-cover"
@@ -72,7 +72,7 @@ export default function ChairmanPage() {
               </div>
               <div className="relative aspect-[420/250] overflow-hidden rounded-2xl">
                 <Image
-                  src="/images/chairman-photo-2.jpg"
+                  src="/images/chairman-photo-2.webp"
                   alt="AM chapter graduates in Guatemala"
                   fill
                   className="object-cover"
