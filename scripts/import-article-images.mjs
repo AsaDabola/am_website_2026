@@ -48,6 +48,8 @@ const LIMIT = Number(value("limit", 0)) || Infinity;
 const CONCURRENCY = Number(value("concurrency", 4));
 const MANIFEST = value("manifest", "import-manifest.csv");
 const STATE_FILE = value("state", "import-state.json");
+/** Last run's answers, offered as defaults so a re-run is four Enters. */
+const ANSWERS_FILE = value("answers", "import-answers.json");
 
 /** Below this the filename and the title are not the same article. */
 const ACCEPT_SCORE = 0.6;
@@ -232,9 +234,28 @@ async function askYesNo(question) {
   return answer === "y" || answer === "yes";
 }
 
-/** Strips quotes and a trailing slash, so a path dragged into the terminal works. */
+/**
+ * Strips quotes and a trailing slash, so a path dragged into the terminal
+ * works. A dragged path also arrives with spaces backslash-escaped.
+ */
 function cleanPath(input) {
-  return input.trim().replace(/^['"]|['"]$/g, "").replace(/\/+$/, "");
+  return input
+    .trim()
+    .replace(/^['"]|['"]$/g, "")
+    .replace(/\\ /g, " ")
+    .replace(/\/+$/, "");
+}
+
+/**
+ * Dragging the zip rather than the folder is the obvious slip, and on a Mac
+ * the folder it was expanded into is sitting right beside it under the same
+ * name. When that is true, take it and say so, rather than sending someone
+ * back to Finder for a path they have already given in all but four letters.
+ */
+export function resolveArchivePath(input, exists = (p) => fs.existsSync(p)) {
+  if (!input.toLowerCase().endsWith(".zip")) return { path: input };
+  const unzipped = input.slice(0, -4);
+  return exists(unzipped) ? { path: unzipped, wasZip: true } : { path: input };
 }
 
 function csvCell(input) {
@@ -337,24 +358,59 @@ async function main() {
   console.log("\nThis attaches your article photographs to the articles already on the site.");
   console.log("Nothing is uploaded until you say yes.\n");
 
-  let ROOT = cleanPath(value("root", "") || (await ask("Folder with the photographs:")));
+  // Last time's answers become this time's defaults, so a second run — and
+  // after a stumble there is usually a second run — is just Enter, Enter,
+  // Enter. The password is never among them.
+  const saved = fs.existsSync(ANSWERS_FILE)
+    ? JSON.parse(fs.readFileSync(ANSWERS_FILE, "utf8"))
+    : {};
+
+  let ROOT = cleanPath(value("root", "") || (await ask("Folder with the photographs:", { fallback: saved.root })));
   for (;;) {
-    // A dragged-in .zip passes an existence check, which is how one got
-    // accepted as the archive and produced a run with nothing in it. The
-    // folder is what is wanted, and on a Mac it sits beside the zip.
+    const resolved = resolveArchivePath(ROOT);
+    if (resolved.wasZip) {
+      console.log(`  (That's the zip — using the folder beside it: ${resolved.path})`);
+      ROOT = resolved.path;
+    }
     if (!ROOT) console.log("  Please give a folder.");
     else if (!fs.existsSync(ROOT)) console.log(`  Can't find that: ${ROOT}`);
-    else if (ROOT.toLowerCase().endsWith(".zip")) {
-      console.log("  That's the zip file. Unzip it first, then give me the folder it makes");
-      console.log(`  — probably ${ROOT.slice(0, -4)}`);
-    } else if (!fs.statSync(ROOT).isDirectory()) console.log("  That's a file, not a folder.");
-    else break;
-    ROOT = cleanPath(await ask("Folder with the photographs:"));
+    else if (!fs.statSync(ROOT).isDirectory()) {
+      console.log(
+        ROOT.toLowerCase().endsWith(".zip")
+          ? "  That's the zip file, and I can't find an unzipped folder next to it. Unzip it, then give me the folder."
+          : "  That's a file, not a folder.",
+      );
+    } else break;
+    ROOT = cleanPath(await ask("Folder with the photographs:", { fallback: saved.root }));
   }
 
-  const baseUrl = (await ask("Website address:", { fallback: "http://localhost:3000" })).replace(/\/$/, "");
-  const email = await ask("Your admin email:");
-  const password = await ask("Your admin password:", { hidden: true });
+  // No localhost default on a first run. Pressing Enter through this question
+  // used to quietly aim the whole import at a server that was not running,
+  // and the failure then read as a problem with the site rather than with the
+  // answer. After a successful run the last address is the default.
+  let baseUrl = "";
+  while (!baseUrl) {
+    baseUrl = (await ask("Website address:", { fallback: saved.baseUrl })).replace(/\/$/, "");
+    if (!baseUrl) console.log("  Please give the address of your site, e.g. https://your-site.vercel.app");
+    else if (!/^https?:\/\//.test(baseUrl)) {
+      console.log("  Please start it with http:// or https://");
+      baseUrl = "";
+    }
+  }
+
+  let email = "";
+  while (!email) {
+    email = await ask("Your admin email:", { fallback: saved.email });
+    if (!email) console.log("  Please give the email you sign in to /admin with.");
+  }
+
+  let password = "";
+  while (!password) {
+    password = await ask("Your admin password:", { hidden: true });
+    if (!password) console.log("  Nothing came through. Type it — it stays hidden — then press Enter.");
+  }
+
+  fs.writeFileSync(ANSWERS_FILE, JSON.stringify({ root: ROOT, baseUrl, email }, null, 2));
 
   const state = fs.existsSync(STATE_FILE)
     ? JSON.parse(fs.readFileSync(STATE_FILE, "utf8"))

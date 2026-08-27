@@ -35,3 +35,4 @@ src/payload-types.ts
 # Written by scripts/import-article-images.mjs
 import-state.json
 import-manifest.csv
+import-answers.json
