@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
-import { ArrowRightIcon } from "@/components/ui/icons";
 import { Link } from "@/i18n/navigation";
-import NetworkMap from "@/components/network/NetworkMap";
-import TenantLink from "@/components/layout/TenantLink";
+import NetworkGlobe from "@/components/network/NetworkGlobe";
 import OurNetwork from "@/components/sections/OurNetwork";
 import { regions } from "@/lib/regions";
 import { getAllActiveTenantsByContinent } from "@/lib/tenants";
@@ -88,64 +86,40 @@ function CountryRow({ country }: { country: DirectoryCountry }) {
 }
 
 export default async function NetworkPage() {
-  const [t, common, tenantsByContinent, countries] = await Promise.all([
+  const [t, tenantsByContinent, countries] = await Promise.all([
     getTranslations("Network"),
-    getTranslations("Common"),
     getAllActiveTenantsByContinent(),
     getCountryDirectory(),
   ]);
   const countriesByRegion = groupByContinent(countries);
+  const regionLabels = Object.fromEntries(
+    regions.map((region) => [region.slug, t(`regions.${region.slug}`)]),
+  );
+  const liveCount = countries.filter((country) => country.live).length;
 
   return (
     <>
-      <section className="relative overflow-hidden bg-night py-16">
-        <Container className="relative">
-          <nav aria-label="Breadcrumb" className="text-[13px] text-on-dark/80">
-            <ol className="flex items-center gap-2">
-              <li>
-                <TenantLink href="/" className="hover:text-white">
-                  {common("home")}
-                </TenantLink>
-              </li>
-              <li className="opacity-50">/</li>
-              <li>{t("breadcrumb")}</li>
-            </ol>
-          </nav>
-
-        </Container>
-
-        {/*
-          The map is the page, not an illustration on it, so it leaves the
-          1200px text column and takes the section's full width — held off the
-          very edge by the same gutter the Container uses, and no further.
-          Everything around it stays in the column.
-        */}
-        <div className="relative mt-8 px-6 lg:px-10">
-          <NetworkMap />
-        </div>
-
-        <Container className="relative">
-          <h1 className="mt-12 text-center font-display text-[38px] font-extrabold uppercase leading-none tracking-[-0.02em] text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,0.9)] sm:text-[58px] lg:text-[72px]">
-            {t("heading")}
-          </h1>
-
-          <div className="mt-9 flex flex-wrap justify-center gap-4">
-            <TenantLink
-              href="/get-involved/chapter-affiliation"
-              className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.04em] text-white transition-colors hover:bg-brand-navy"
-            >
-              {t("joinChapter")}
-              <ArrowRightIcon />
-            </TenantLink>
-            <TenantLink
-              href="/get-involved/donate"
-              className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.04em] text-white transition-colors hover:bg-white hover:text-ink"
-            >
-              {t("partnerWithUs")}
-            </TenantLink>
-          </div>
-        </Container>
-      </section>
+      {/* The globe replaces the flat map, the outlined heading, the breadcrumb
+          band and the two buttons that used to sit around it — it carries all
+          of them itself, over the sphere. */}
+      <NetworkGlobe
+        heading={t("heading")}
+        subtitle={t("globeSubtitle")}
+        searchPlaceholder={t("globeSearchPlaceholder")}
+        countries={countries}
+        regionLabels={regionLabels}
+        primaryCta={{ label: t("joinChapter"), href: "/get-involved/chapter-affiliation" }}
+        secondaryCta={{ label: t("partnerWithUs"), href: "/get-involved/donate" }}
+        // A zero site count means the database was unreachable, not that no
+        // country has a site — better to drop the row than publish a wrong
+        // number.
+        stats={[
+          { label: "Countries", value: String(countries.length) },
+          ...(liveCount > 0 ? [{ label: "Country sites", value: String(liveCount) }] : []),
+          { label: "Continents", value: String(regions.length) },
+          { label: "Languages", value: "48" },
+        ]}
+      />
 
       {/* The full country list, from the static sheet rather than the CMS, so
           every one of the sixty is here whatever the database holds. A country

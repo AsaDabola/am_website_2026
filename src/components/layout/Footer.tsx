@@ -7,10 +7,24 @@ import Container from "@/components/ui/Container";
 import Logo from "@/components/ui/Logo";
 import { FacebookIcon, InstagramIcon, MailIcon, YoutubeIcon } from "@/components/ui/icons";
 
+/**
+ * AM's own accounts. These were pointing at the bare facebook.com,
+ * instagram.com and youtube.com homepages — the icons were live links to
+ * nowhere. Tracking parameters from the shared links are stripped: they
+ * identify whoever copied the link, and they are not needed to reach the page.
+ */
 const socials = [
-  { label: "Facebook", href: "https://facebook.com", Icon: FacebookIcon },
-  { label: "Instagram", href: "https://instagram.com", Icon: InstagramIcon },
-  { label: "YouTube", href: "https://youtube.com", Icon: YoutubeIcon },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/ApostolosMissionsInternational",
+    Icon: FacebookIcon,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/apostolosmissionsintl",
+    Icon: InstagramIcon,
+  },
+  { label: "YouTube", href: "https://youtube.com/@apostolosmissionsintl", Icon: YoutubeIcon },
   { label: "Email", href: "mailto:info@amintl.org", Icon: MailIcon },
 ];
 
@@ -87,6 +101,9 @@ export default async function Footer() {
                 key={label}
                 href={href}
                 aria-label={label}
+                {...(href.startsWith("http")
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
                 className="flex size-[38px] items-center justify-center rounded-full border border-white/[0.12] text-on-dark/80 transition-colors hover:border-white/30 hover:text-white"
               >
                 <Icon />

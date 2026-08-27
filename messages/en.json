@@ -313,7 +313,9 @@
       "captionSoutheastAsia": "Southeast Asia",
       "hqBadge": "HQ",
       "regionalHqBadge": "Regional HQ"
-    }
+    },
+    "globeSubtitle": "AM is a sending community across six continents — find the country nearest you, or the one you are being sent to.",
+    "globeSearchPlaceholder": "Search for a country, region or chapter"
   },
   "Home": {
     "Hero": {
