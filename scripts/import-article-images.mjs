@@ -242,17 +242,18 @@ export function chooseMatch(fileTokens, candidates, bonus = () => 0) {
 }
 
 /**
- * Marks the files that are the same picture in another format. The archive
- * holds Pentecost.webp beside Pentecost.jpg; uploading both would put two
- * copies of one photograph in the media library and make them compete for the
- * same article. WebP wins — it is what the site serves.
+ * Marks the files that are the same picture in another format, so only one of
+ * each is uploaded. WebP wins, always: it is the format this site serves, and
+ * the .jpg beside it is the copy the old site happened to hold. Where the
+ * archive has only the .jpg of a picture, that is uploaded — nothing is lost,
+ * it is only never preferred.
  */
 export function withoutExtension(relativePath) {
   const normalised = relativePath.split(path.sep).join("/");
   return normalised.slice(0, normalised.length - path.extname(normalised).length);
 }
 
-export function pickBestFormats(relativePaths, mustKeep = new Set()) {
+export function pickBestFormats(relativePaths) {
   const PREFERENCE = [".webp", ".avif", ".png", ".jpg", ".jpeg", ".gif"];
   const rank = (p) => {
     const i = PREFERENCE.indexOf(path.extname(p).toLowerCase());
@@ -260,12 +261,11 @@ export function pickBestFormats(relativePaths, mustKeep = new Set()) {
   };
   const best = new Map();
   for (const relative of relativePaths) {
-    if (mustKeep.has(relative)) continue;
     const key = relative.slice(0, relative.length - path.extname(relative).length);
     const held = best.get(key);
     if (!held || rank(relative) < rank(held)) best.set(key, relative);
   }
-  const keep = new Set([...best.values(), ...relativePaths.filter((p) => mustKeep.has(p))]);
+  const keep = new Set(best.values());
   return { keep, duplicates: relativePaths.filter((p) => !keep.has(p)) };
 }
 
@@ -553,23 +553,9 @@ async function main() {
 
   const mapOnDisk = fs.existsSync(MAP_FILE) ? JSON.parse(fs.readFileSync(MAP_FILE, "utf8")) : null;
 
-  /**
-   * The exact files the old site named, kept whatever else is decided.
-   *
-   * A photograph an article points at by name is never set aside as another
-   * file's duplicate format — if AM_Cuba.jpg is what the article showed, that
-   * is the file, whether or not an AM_Cuba.webp sits beside it.
-   */
-  const namedExactly = new Set(
-    Object.values(mapOnDisk ?? {})
-      .map((entry) => entry.file)
-      .filter(Boolean)
-      .map((file) => file.split("/").join(path.sep)),
-  );
-
   const { keep, duplicates } = KEEP_ALL_FORMATS
     ? { keep: new Set(files), duplicates: [] }
-    : pickBestFormats(files, namedExactly);
+    : pickBestFormats(files);
   for (const relative of duplicates) rows.push({ relative, status: "duplicate", score: 0 });
 
   /**
@@ -578,12 +564,11 @@ async function main() {
    * headline for a file that appears here. A generic name like am-1.webp can
    * only ever be placed this way.
    *
-   * Kept two ways round. `statedExact` is the file the article actually named
-   * and wins; `stated` is the same answer with the extension dropped, which
-   * catches the case where the old site served a .jpg and the archive holds
-   * only the .webp of it.
+   * Keyed without the extension. The old site names the .jpg it served, and
+   * the archive holds the WebP of that picture; WebP is what gets uploaded, so
+   * the answer has to be found under a name that ignores which format it was
+   * given in.
    */
-  const statedExact = new Map();
   const stated = new Map();
   if (mapOnDisk) {
     const bySlug = mapOnDisk;
@@ -620,7 +605,6 @@ async function main() {
         // Keyed without its extension. The old site names the .jpg it served;
         // the archive's copy of the same picture is the .webp beside it, and
         // that is the one kept. Keying on the full name matched neither.
-        statedExact.set(entry.file.split("/").join(path.sep), post);
         stated.set(withoutExtension(entry.file), post);
       } else if (unresolved.length < 3) {
         unresolved.push({ slug, title: entry.title });
@@ -652,7 +636,7 @@ async function main() {
   for (const relative of files) {
     if (!keep.has(relative)) continue;
 
-    const namedFor = statedExact.get(relative) ?? stated.get(withoutExtension(relative));
+    const namedFor = stated.get(withoutExtension(relative));
     if (namedFor) {
       const row = {
         relative,
