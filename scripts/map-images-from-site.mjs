@@ -37,20 +37,57 @@ const value = (name, fallback) => {
 const OUT = value("out", "image-map.json");
 const CONCURRENCY = Number(value("concurrency", 5));
 const LIMIT = Number(value("limit", 0)) || Infinity;
+/** Re-read pages already in the map, rather than skipping them. */
+const REFRESH = args.includes("--refresh");
 
 /**
- * The og:image meta tag. WordPress points it at the featured image, which is
- * the picture the article is presented with — the one wanted for a cover.
- * Falls back to the first upload-path image in the body for a page that sets
- * no featured image.
+ * The article's own photograph.
+ *
+ * Deliberately not og:image first. This site sets one social-share graphic —
+ * Web-innerpage_800px — as og:image on every page, so reading that named the
+ * same file for all 466 articles and the whole map collapsed to one entry.
+ *
+ * WordPress marks the featured image with the wp-post-image class, so that is
+ * asked for by name, then Elementor's featured-image widget, then the first
+ * upload in the page that is not obviously site furniture. og:image is left as
+ * a last resort and flagged, because on this site it usually means nothing was
+ * found.
  */
 export function extractImageUrl(html) {
+  const attempts = [
+    ["wp-post-image", /<img[^>]+class=["'][^"']*wp-post-image[^"']*["'][^>]*>/i],
+    ["elementor-featured", /elementor-widget-theme-post-featured-image[\s\S]{0,400}?<img[^>]*>/i],
+  ];
+  for (const [source, pattern] of attempts) {
+    const tag = pattern.exec(html)?.[0];
+    const src = tag && pickSrc(tag);
+    if (src) return { url: src, source };
+  }
+
+  for (const match of html.matchAll(/<img[^>]+>/gi)) {
+    const src = pickSrc(match[0]);
+    if (src && /\/wp-content\/uploads\//.test(src) && !isSiteFurniture(src)) {
+      return { url: src, source: "body-image" };
+    }
+  }
+
   const og =
     /<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i.exec(html) ??
     /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i.exec(html);
-  if (og) return og[1];
-  const body = /<img[^>]+src=["']([^"']*\/wp-content\/uploads\/[^"']+)["']/i.exec(html);
-  return body ? body[1] : null;
+  return og ? { url: og[1], source: "og:image" } : null;
+}
+
+/** The real source of an img tag, preferring data-src, which lazy loaders use. */
+function pickSrc(tag) {
+  const attr = (name) => new RegExp(`${name}=["']([^"']+)["']`, "i").exec(tag)?.[1];
+  const src = attr("data-src") || attr("src");
+  if (src && /^data:/.test(src)) return attr("data-large_file") || attr("data-lazy-src") || null;
+  return src ?? null;
+}
+
+/** Logos, share graphics and spacers, which belong to the site and not to any article. */
+function isSiteFurniture(url) {
+  return /logo|placeholder|spacer|avatar|favicon|innerpage|default|share|thumb-default/i.test(url);
 }
 
 /**
@@ -179,7 +216,7 @@ async function main() {
   console.log(`${articles.length} of them carry their original address.\n`);
 
   const map = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, "utf8")) : {};
-  const todo = articles.filter((a) => !map[a.slug]);
+  const todo = REFRESH ? articles : articles.filter((a) => !map[a.slug]);
   if (todo.length < articles.length) {
     console.log(`${articles.length - todo.length} were read on an earlier run and will be skipped.`);
   }
@@ -196,12 +233,13 @@ async function main() {
     try {
       const res = await fetch(article.url, { redirect: "follow" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const imageUrl = extractImageUrl(await res.text());
-      const archivePath = imageUrl ? archivePathFromUrl(imageUrl) : null;
+      const found = extractImageUrl(await res.text());
+      const archivePath = found ? archivePathFromUrl(found.url) : null;
       map[article.slug] = {
         title: article.title,
         published: article.published,
-        imageUrl: imageUrl ?? null,
+        imageUrl: found?.url ?? null,
+        source: found?.source ?? null,
         file: archivePath,
       };
     } catch (error) {
@@ -216,8 +254,26 @@ async function main() {
   });
 
   fs.writeFileSync(OUT, JSON.stringify(map, null, 2));
-  const total = Object.values(map).filter((entry) => entry.file).length;
-  console.log(`\nDone. ${total} articles have a photograph named.`);
+  const named = Object.values(map).filter((entry) => entry.file);
+  console.log(`\nDone. ${named.length} articles have a photograph named.`);
+
+  const bySource = {};
+  for (const entry of named) bySource[entry.source ?? "?"] = (bySource[entry.source ?? "?"] ?? 0) + 1;
+  for (const [source, n] of Object.entries(bySource).sort((a, b) => b[1] - a[1])) {
+    console.log(`  ${n} from ${source}`);
+  }
+
+  // One file answering for hundreds of articles means a site-wide graphic was
+  // read rather than each article's own photograph — which is what happened
+  // when og:image was trusted first.
+  const counts = {};
+  for (const entry of named) counts[entry.file] = (counts[entry.file] ?? 0) + 1;
+  const [worstFile, worstCount] = Object.entries(counts).sort((a, b) => b[1] - a[1])[0] ?? [];
+  if (worstCount > 5 && worstCount > named.length / 4) {
+    console.log(`\n  Careful: ${worstCount} articles all name the same file, ${worstFile}.`);
+    console.log("  That is a site-wide graphic, not their own photographs. Send this over.");
+  }
+  console.log(`  ${new Set(named.map((e) => e.file)).size} different photographs in all.`);
   if (failed) console.log(`${failed} pages could not be read — run this again to retry them.`);
   console.log(`Written to ${OUT}. Now run:  npm run import-images`);
 }
