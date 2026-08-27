@@ -24,6 +24,7 @@ export default async function EventsPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "News" }, { label: "Events" }]}
         title="News"
         subtitle="What students are seeing, where AM is going next, and how to pray."
+        backgroundImage="/images/events-hero.webp"
       />
       <NewsSubNav active="/events" />
 

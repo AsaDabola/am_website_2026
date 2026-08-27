@@ -16,6 +16,7 @@ export default function TestimonyPage() {
       eyebrow="News"
       heading="Testimony"
       category="testimony"
+      backgroundImage="/images/testimony-hero.webp"
     />
   );
 }

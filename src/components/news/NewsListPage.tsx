@@ -20,12 +20,19 @@ export default async function NewsListPage({
   heading,
   eyebrow,
   category,
+  backgroundImage = "/images/news-hero.webp",
 }: {
   active: string;
   title: string;
   heading: string;
   eyebrow: string;
   category?: PostCategory;
+  /**
+   * The design draws a banner per category. Editorial and Photo News have no
+   * design of their own, so they take the News one rather than falling back to
+   * the site-wide About banner and reading as a different section.
+   */
+  backgroundImage?: string;
 }) {
   const posts = await getPostsList(category);
   const dateFormatter = new Intl.DateTimeFormat("en-US", {
@@ -40,6 +47,7 @@ export default async function NewsListPage({
         crumbs={[{ label: "Home", href: "/" }, { label: "News" }, { label: title }]}
         title="News"
         subtitle="What students are seeing, where AM is going next, and how to pray."
+        backgroundImage={backgroundImage}
       />
       <NewsSubNav active={active} />
 
