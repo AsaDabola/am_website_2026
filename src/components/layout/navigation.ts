@@ -165,12 +165,13 @@ export async function getNavigation(): Promise<{
       ],
     },
     {
-      // News and events are one shared, global feed — there's no per-country
-      // route for them yet, so nothing in this menu takes a tenant prefix.
+      // A country site has its own news: the listings filter by the country
+      // being browsed, so these carry the prefix rather than sending a reader
+      // back to the main site to read it.
       key: "news",
       label: t("news"),
       href: "/news",
-      tenantAware: false,
+      tenantAware: true,
       groups: [
         {
           key: "latestNews",
@@ -178,11 +179,11 @@ export async function getNavigation(): Promise<{
           label: g("latestNews.title"),
           description: g("latestNews.description"),
           href: "/news",
-          tenantAware: false,
+          tenantAware: true,
           links: [
-            { label: t("newsMenu.editorial"), href: "/news/editorial", tenantAware: false },
-            { label: t("newsMenu.photoNews"), href: "/news/photo-news", tenantAware: false },
-            { label: t("newsMenu.testimony"), href: "/news/testimony", tenantAware: false },
+            { label: t("newsMenu.editorial"), href: "/news/editorial", tenantAware: true },
+            { label: t("newsMenu.photoNews"), href: "/news/photo-news", tenantAware: true },
+            { label: t("newsMenu.testimony"), href: "/news/testimony", tenantAware: true },
           ],
         },
         {
@@ -191,7 +192,7 @@ export async function getNavigation(): Promise<{
           label: g("events.title"),
           description: g("events.description"),
           href: "/events",
-          tenantAware: false,
+          tenantAware: true,
           links: [],
         },
       ],

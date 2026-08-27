@@ -6,9 +6,12 @@
  * prefix while browsing one. Keeping them in one list is what stops a link
  * from pointing at a country URL that 404s.
  *
- * News, events and the network directory are deliberately absent — they are
- * one shared feed for the whole organisation and always resolve to the main
- * site, as does internal tooling.
+ * The network directory is deliberately absent — it is one global list of
+ * every country and always resolves to the main site, as does internal
+ * tooling. News and events are here: the listings already filter by the
+ * country being browsed (see syndicationWhere in lib/posts), so a country
+ * site has its own feed to show and a link into the shared one was taking
+ * readers off the country site to see it.
  *
  * Plain data with no imports, so the client-side TenantLink can use it too.
  */
@@ -37,6 +40,12 @@ export const TENANT_ROUTES = [
   "/get-involved/alumni-connect",
   "/get-involved/online-bible-study",
   "/get-involved/donate",
+
+  "/news",
+  "/news/editorial",
+  "/news/photo-news",
+  "/news/testimony",
+  "/events",
 
   "/contact",
 ] as const;

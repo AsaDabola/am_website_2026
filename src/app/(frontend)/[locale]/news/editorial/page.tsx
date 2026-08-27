@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function EditorialPage({
   searchParams,
 }: {
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }) {
   return (
     <NewsListPage

@@ -18,7 +18,15 @@ import { getTenantStaticPage } from "./tenantStaticPages";
 
 export const revalidate = 60;
 
-type Props = { params: Promise<{ locale: string; slug: string[] }> };
+type Props = {
+  params: Promise<{ locale: string; slug: string[] }>;
+  /**
+   * Forwarded to whichever page renders below. The news listings read sort,
+   * page and per-page from here; without it a country's listing would answer
+   * every page of its own pagination with page one.
+   */
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+};
 
 async function resolve(slug: string[]) {
   if (slug.length >= 2 && isContinent(slug[0])) {
@@ -79,7 +87,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {};
 }
 
-export default async function DynamicPage({ params }: Props) {
+export default async function DynamicPage({ params, searchParams }: Props) {
   const { slug, locale } = await params;
   const resolved = await resolve(slug);
 
@@ -171,7 +179,16 @@ export default async function DynamicPage({ params }: Props) {
     const loadStaticPage = getTenantStaticPage(resolved.restSlug);
     if (loadStaticPage) {
       const { default: StaticPage } = await loadStaticPage();
-      return wrap(<StaticPage />);
+      return wrap(<StaticPage searchParams={searchParams} />);
+    }
+
+    // An article read from a country's listing stays on that country's site.
+    // Its slug cannot be in the static map — that map is exact paths — so it
+    // is matched here and given the params the article page expects.
+    const article = /^news\/(.+)$/.exec(resolved.restSlug);
+    if (article) {
+      const { default: ArticlePage } = await import("../news/[slug]/page");
+      return wrap(<ArticlePage params={Promise.resolve({ locale, slug: article[1] })} />);
     }
   }
 

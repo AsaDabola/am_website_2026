@@ -2,8 +2,17 @@ import type { Metadata } from "next";
 import type { ComponentType } from "react";
 import type { TenantRoute } from "@/lib/tenantRoutes";
 
+/**
+ * Search params reach the page below because the news listings read their
+ * sort, page and page-size from them. Optional: every other page here ignores
+ * them, and a country route is the only caller that has any to pass.
+ */
+type StaticPageProps = {
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+};
+
 type StaticPageModule = {
-  default: ComponentType;
+  default: ComponentType<StaticPageProps>;
   metadata?: Metadata;
 };
 
@@ -46,6 +55,12 @@ export const TENANT_STATIC_PAGES: Record<TenantRoute, () => Promise<StaticPageMo
   "/get-involved/alumni-connect": () => import("../get-involved/alumni-connect/page"),
   "/get-involved/online-bible-study": () => import("../get-involved/online-bible-study/page"),
   "/get-involved/donate": () => import("../get-involved/donate/page"),
+
+  "/news": () => import("../news/page"),
+  "/news/editorial": () => import("../news/editorial/page"),
+  "/news/photo-news": () => import("../news/photo-news/page"),
+  "/news/testimony": () => import("../news/testimony/page"),
+  "/events": () => import("../events/page"),
 
   "/contact": () => import("../contact/page"),
 };
