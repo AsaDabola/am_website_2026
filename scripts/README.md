@@ -127,6 +127,52 @@ nothing to do with the database you came to inspect.
 | `add-get-involved-card-description.sql` | Adds `description` to the Get Involved cards, and the message keys it introduced. |
 | `add-admin-roles.sql` | Adds roles and per-country permissions to Users. **Run this before deploying the access rules** — without it nobody can sign in to /admin. |
 | `copy-flags.mjs` | Copies country flag SVGs into `public/flags`. |
+| `import-article-images.mjs` | Attaches an archive of article photographs to the posts already in the CMS. Dry-run by default. See below. |
+
+## Importing the article image archive
+
+The photographs for the back catalogue do **not** belong in `public/images`.
+That folder is committed, so git would keep every one of them for good, and
+they would ship inside every deployment. They belong in the `media` collection,
+which puts them in Vercel Blob and generates the thumbnail, card and hero sizes
+the site actually serves.
+
+`import-article-images.mjs` does that. It expects the archive laid out by date
+and named by article — `<root>/2019/07/summer-retreat-in-busan.webp` — and
+matches each file against the posts published that month, comparing the words
+in the filename with the words in the headline.
+
+It goes over the REST API rather than booting Payload, for the reason at the
+top of this file: a custom script that imports the TypeScript config under
+`tsx` dies in `loadEnv`. That also means it runs against whichever server you
+point it at.
+
+Dry run first — it writes the manifest and uploads nothing:
+
+```bash
+PAYLOAD_URL=http://localhost:3000 \
+PAYLOAD_EMAIL=you@example.org PAYLOAD_PASSWORD='…' \
+node scripts/import-article-images.mjs --root /path/to/archive
+```
+
+Read `import-manifest.csv`. Every file gets a row saying which post it matched,
+how confident the match was, and whether it would become that post's cover or
+an extra. Files it could not place are listed as `unmatched`, `ambiguous` (two
+articles that month with near-identical headlines) or `no-date-folder`, so
+nothing is silently dropped or silently guessed.
+
+When the manifest looks right, add `--apply`. Uploads are recorded in
+`import-state.json` and skipped on the next run, so it is safe to stop it and
+start it again, and re-running retries only what failed. A post that already
+has a cover image keeps it unless you pass `--replace-covers`.
+
+Useful flags: `--limit 20` to trial a handful first, `--concurrency 4` to
+change how many upload at once, `--manifest` and `--state` to move those files.
+
+One thing it deliberately does not do: an article with several photographs gets
+the best-matching one as its `coverImage`, and the rest are uploaded and listed
+in the manifest but not placed. `coverImage` holds one image; the others belong
+in the article body, and where they go in the prose is an editorial decision.
 
 ## A note on connection strings
 
