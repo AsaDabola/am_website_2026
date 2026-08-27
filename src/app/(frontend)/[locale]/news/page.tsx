@@ -8,9 +8,14 @@ export const metadata: Metadata = {
   description: "What students are seeing, where AM is going next, and how to pray.",
 };
 
-export default function FeaturedNewsPage() {
+export default function FeaturedNewsPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
   return (
     <NewsListPage
+      searchParams={searchParams}
       active="/news"
       title="Featured News"
       eyebrow="News"

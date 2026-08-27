@@ -8,9 +8,14 @@ export const metadata: Metadata = {
   description: "Reflections and long-form writing from AM staff and students.",
 };
 
-export default function EditorialPage() {
+export default function EditorialPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
   return (
     <NewsListPage
+      searchParams={searchParams}
       active="/news/editorial"
       title="Editorial"
       eyebrow="News"

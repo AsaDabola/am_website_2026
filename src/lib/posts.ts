@@ -69,6 +69,51 @@ export async function getPostsList(category?: PostCategory): Promise<PostSummary
   }
 }
 
+/** Sort orders the listings offer, mapped to Payload's sort syntax. */
+export const POST_SORTS = { newest: "-publishedDate", oldest: "publishedDate" } as const;
+export type PostSort = keyof typeof POST_SORTS;
+
+export type PostsPage = {
+  posts: PostSummary[];
+  /** 1-based, already clamped to the number of pages that exist. */
+  page: number;
+  totalPages: number;
+  total: number;
+};
+
+/**
+ * One page of a listing.
+ *
+ * Separate from getPostsList, which the home page feeds still use to take the
+ * newest few — they want a fixed handful, not a page of a paginated set.
+ *
+ * Payload counts the whole filtered set for us, so the page count comes back
+ * without a second query.
+ */
+export async function getPostsPage(
+  category: PostCategory | undefined,
+  { sort = "newest", page = 1, perPage = 12 }: { sort?: PostSort; page?: number; perPage?: number } = {},
+): Promise<PostsPage> {
+  try {
+    const payload = await getPayload({ config });
+    const result = await payload.find({
+      collection: "posts",
+      sort: POST_SORTS[sort] ?? POST_SORTS.newest,
+      limit: perPage,
+      page,
+      where: scoped(category ? { category: { equals: category } } : undefined),
+    });
+    return {
+      posts: result.docs.map((doc) => toSummary(doc as Record<string, unknown>)),
+      page: result.page ?? 1,
+      totalPages: result.totalPages ?? 1,
+      total: result.totalDocs ?? 0,
+    };
+  } catch {
+    return { posts: [], page: 1, totalPages: 1, total: 0 };
+  }
+}
+
 export async function getPostBySlug(slug: string): Promise<PostDetail | null> {
   try {
     const payload = await getPayload({ config });

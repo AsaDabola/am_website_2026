@@ -8,14 +8,21 @@ export const metadata: Metadata = {
   description: "Stories of what God is doing in the lives of AM students and staff.",
 };
 
-export default function TestimonyPage() {
+export default function TestimonyPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
   return (
     <NewsListPage
+      searchParams={searchParams}
       active="/news/testimony"
       title="Testimony"
       eyebrow="News"
       heading="Testimony"
       category="testimony"
+      heroTitle="Testimonial"
+      heroSubtitle="Faith. Growth. Transformation."
       backgroundImage="/images/testimony-hero.webp"
     />
   );
