@@ -260,6 +260,23 @@ async function login(baseUrl, email, password) {
     throw new Error(`I couldn't reach ${baseUrl}.\nCheck the address is right, and that the site is running.`);
   }
   if (res.status === 401) throw new Error("That email and password were not accepted.");
+  if (res.status === 400) {
+    throw new Error("The password came through empty. Type it at the prompt — it stays hidden — then press Enter.");
+  }
+  if (res.status >= 500) {
+    // Signing in is the first thing that reads the users table, so it is also
+    // the first thing a missing column breaks. scripts/add-admin-roles.sql
+    // adds the ones the access rules introduced.
+    throw new Error(
+      [
+        `The site returned an error signing in (${res.status}).`,
+        "",
+        "Check whether you can sign in at the site's /admin page in a browser.",
+        "If that fails too, the deployed database is missing the newer Users columns —",
+        "run scripts/add-admin-roles.sql against it. See scripts/README.md.",
+      ].join("\n"),
+    );
+  }
   if (!res.ok) throw new Error(`Signing in failed (${res.status}): ${await res.text()}`);
   const { token } = await res.json();
   if (!token) throw new Error("Signing in returned no token.");
@@ -321,8 +338,17 @@ async function main() {
   console.log("Nothing is uploaded until you say yes.\n");
 
   let ROOT = cleanPath(value("root", "") || (await ask("Folder with the photographs:")));
-  while (!ROOT || !fs.existsSync(ROOT)) {
-    console.log(ROOT ? `  Can't find that folder: ${ROOT}` : "  Please give a folder.");
+  for (;;) {
+    // A dragged-in .zip passes an existence check, which is how one got
+    // accepted as the archive and produced a run with nothing in it. The
+    // folder is what is wanted, and on a Mac it sits beside the zip.
+    if (!ROOT) console.log("  Please give a folder.");
+    else if (!fs.existsSync(ROOT)) console.log(`  Can't find that: ${ROOT}`);
+    else if (ROOT.toLowerCase().endsWith(".zip")) {
+      console.log("  That's the zip file. Unzip it first, then give me the folder it makes");
+      console.log(`  — probably ${ROOT.slice(0, -4)}`);
+    } else if (!fs.statSync(ROOT).isDirectory()) console.log("  That's a file, not a folder.");
+    else break;
     ROOT = cleanPath(await ask("Folder with the photographs:"));
   }
 
