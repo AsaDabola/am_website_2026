@@ -70,8 +70,20 @@ export default async function PillarsOfMissionPage() {
     <>
       <PillarsHero title={tHeader("whatWeDo")} />
 
-      <section className="overflow-hidden bg-night-deep py-20">
-        <Container>
+      <section className="relative overflow-hidden bg-night-deep py-20">
+        {/* The same blue wash the hero above carries, and the same four stops
+            from the design's inspect panel: clear for the top three quarters,
+            then #598CD1 rising to 0.85 at the foot. It is what lifts this band
+            out of flat navy and carries it into the white section beneath. */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(89, 140, 209, 0), rgba(89, 140, 209, 0) 75%, rgba(89, 140, 209, 0.5) 90%, rgba(89, 140, 209, 0.85))",
+          }}
+        />
+        <Container className="relative">
           {/* The same ghost treatment as the page title above it: Archivo
               Black, sentence case, outlined in the brand blue. The design
               sets it at 96px, but it draws this page on a 1450px content

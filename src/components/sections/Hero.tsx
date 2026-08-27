@@ -11,15 +11,20 @@ import { mediaUrl } from "@/lib/homeBlockTypes";
  * single photograph with the heading they typed, rather than having their
  * choice cycle away.
  */
-const DEFAULT_SLIDE_IMAGES = [
-  // The order named by the team: the embrace, the city at sunrise, the chapel
-  // from the air, hands on an open Bible, the boardwalk.
-  "/images/hero-campus.webp",
-  "/images/hero-skyline.webp",
-  "/images/hero-slide-campus.webp",
-  "/images/hero-slide-bible-study.webp",
-  "/images/hero-boardwalk.webp",
-];
+const DEFAULT_SLIDES = [
+  // The order named by the team: the embrace, the boardwalk, the chapel from
+  // the air, hands on an open Bible.
+  //
+  // The message keys are held with their photograph rather than derived from
+  // position, because the two are no longer in step: the city slide came out
+  // and the boardwalk moved up behind it, so slide 2 on the page reads the
+  // `slide5` strings. Renumbering the keys instead would orphan the
+  // translations already sitting under them in 47 other locales.
+  { image: "/images/hero-campus.webp", key: "slide1" },
+  { image: "/images/hero-boardwalk.webp", key: "slide5" },
+  { image: "/images/hero-slide-campus.webp", key: "slide3" },
+  { image: "/images/hero-slide-bible-study.webp", key: "slide4" },
+] as const;
 
 export default async function Hero({ data }: { data?: HeroData } = {}) {
   const t = await getTranslations("Home.Hero");
@@ -48,10 +53,10 @@ export default async function Hero({ data }: { data?: HeroData } = {}) {
           line2: cmsHighlight || t("slide1Line2"),
         },
       ]
-    : DEFAULT_SLIDE_IMAGES.map((image, i) => ({
+    : DEFAULT_SLIDES.map(({ image, key }) => ({
         image,
-        line1: t(`slide${i + 1}Line1`),
-        line2: t(`slide${i + 1}Line2`),
+        line1: t(`${key}Line1`),
+        line2: t(`${key}Line2`),
       }));
 
   return (
