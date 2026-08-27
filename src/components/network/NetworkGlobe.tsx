@@ -296,8 +296,8 @@ export default function NetworkGlobe({
       // Atmosphere: a soft disc behind the surface so the rim reads as a
       // sphere rather than a circle of dots.
       const glow = context!.createRadialGradient(cx, cy, scaled * 0.68, cx, cy, scaled * 1.2);
-      glow.addColorStop(0, "rgba(70,140,255,0.22)");
-      glow.addColorStop(0.7, "rgba(45,105,235,0.14)");
+      glow.addColorStop(0, "rgba(86,158,255,0.32)");
+      glow.addColorStop(0.7, "rgba(55,120,245,0.2)");
       glow.addColorStop(1, "rgba(12,26,74,0)");
       context!.fillStyle = glow;
       context!.beginPath();
@@ -306,7 +306,7 @@ export default function NetworkGlobe({
 
       // Graticule: meridians and parallels, faint, drawn before the land so
       // the dots sit on top of the wireframe.
-      context!.strokeStyle = "rgba(140,180,255,0.14)";
+      context!.strokeStyle = "rgba(150,190,255,0.2)";
       context!.lineWidth = 0.6;
       for (let lat = -60; lat <= 60; lat += 20) {
         context!.beginPath();
@@ -378,11 +378,11 @@ export default function NetworkGlobe({
         // the line itself. Cheaper than a shadow blur and it does not bleed
         // over the land dots the way one does.
         context!.strokeStyle = "#6aa8ff";
-        context!.globalAlpha = (0.05 + brightest * 0.16) * fade;
+        context!.globalAlpha = (0.07 + brightest * 0.22) * fade;
         context!.lineWidth = 3.4;
         context!.stroke();
         context!.strokeStyle = "#bcd8ff";
-        context!.globalAlpha = (0.14 + brightest * 0.62) * fade;
+        context!.globalAlpha = (0.2 + brightest * 0.75) * fade;
         context!.lineWidth = 1.1;
         context!.stroke();
       }
@@ -398,7 +398,7 @@ export default function NetworkGlobe({
       const cosTilt = Math.cos(c.lat * TO_RAD);
       const sinTilt = Math.sin(c.lat * TO_RAD);
       const grow = Math.sqrt(c.zoom);
-      context!.fillStyle = "#c9dcff";
+      context!.fillStyle = "#dbe9ff";
       for (let i = 0; i < count; i++) {
         const vx = ux[i];
         const vy = uy[i];
@@ -410,7 +410,7 @@ export default function NetworkGlobe({
         const tz = vy * sinTilt + z * cosTilt;
         if (tz <= 0) continue;
 
-        let alpha = 0.22 + tz * 0.78;
+        let alpha = 0.34 + tz * 0.66;
         if (focused) {
           const inside =
             vx * focused[0] + vy * focused[1] + vz * focused[2] >= HIGHLIGHT_COS;
@@ -419,7 +419,7 @@ export default function NetworkGlobe({
         context!.globalAlpha = alpha;
         // Grows with the zoom: the spacing between points grows with the
         // sphere, and dots held at one size would thin out as it closes in.
-        const size = (0.7 + tz * 1.3) * grow;
+        const size = (0.85 + tz * 1.45) * grow;
         context!.fillRect(cx + x * scaled - size / 2, cy - ty * scaled - size / 2, size, size);
       }
 
@@ -528,11 +528,15 @@ export default function NetworkGlobe({
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(5,11,30,0.86) 0%, rgba(5,11,30,0.22) 32%, rgba(5,11,30,0.22) 62%, rgba(5,11,30,0.9) 100%)",
+            "linear-gradient(180deg, rgba(5,11,30,0.86) 0%, rgba(5,11,30,0.12) 32%, rgba(5,11,30,0.12) 62%, rgba(5,11,30,0.9) 100%)",
         }}
       />
 
-      <div className="relative mx-auto flex min-h-[760px] w-full max-w-[1280px] flex-col px-6 py-16 lg:px-10">
+      {/* Transparent to the pointer, so a press anywhere that is not a control
+          falls through to the globe behind it. Each control below turns
+          pointer events back on for itself — without this the column covered
+          the canvas edge to edge and the globe could not be dragged at all. */}
+      <div className="pointer-events-none relative mx-auto flex min-h-[760px] w-full max-w-[1280px] flex-col px-6 py-16 lg:px-10">
         {/* Sits above the heading so it never covers the search. At rest it
             says what the globe will do; in focus it is the way back. */}
         <div className="pointer-events-none flex justify-center">
@@ -557,7 +561,7 @@ export default function NetworkGlobe({
           <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-white/70">{subtitle}</p>
 
           <div className="mt-10 w-full max-w-[1000px]">
-            <div className="flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.06] px-5 py-3.5 backdrop-blur-sm focus-within:border-white/35">
+            <div className="pointer-events-auto flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.06] px-5 py-3.5 backdrop-blur-sm focus-within:border-white/35">
               <span className="text-white/60">
                 <SearchIcon />
               </span>
@@ -586,7 +590,7 @@ export default function NetworkGlobe({
 
             <div className="mt-3 flex flex-wrap justify-center gap-2.5">
               {filters.map((filter) => (
-                <div key={filter.id} className="relative">
+                <div key={filter.id} className="pointer-events-auto relative">
                   <button
                     type="button"
                     onClick={() => setOpenFilter(openFilter === filter.id ? null : filter.id)}
@@ -641,7 +645,7 @@ export default function NetworkGlobe({
               // pushed to the right once a region is in focus, opposite the
               // globe, which has slid the other way to make room.
               <div
-                className={`mt-4 max-h-72 w-full overflow-y-auto rounded-2xl border border-white/12 bg-[#0b1020]/95 p-2 text-start backdrop-blur-sm ${
+                className={`pointer-events-auto mt-4 max-h-72 w-full overflow-y-auto rounded-2xl border border-white/12 bg-[#0b1020]/95 p-2 text-start backdrop-blur-sm ${
                   focus ? "max-w-[640px] lg:ms-auto lg:me-0 lg:max-w-[420px]" : "mx-auto max-w-[640px]"
                 }`}
               >
@@ -685,14 +689,14 @@ export default function NetworkGlobe({
           <div className="mt-9 flex flex-wrap justify-center gap-4">
             <a
               href={primaryCta.href}
-              className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.04em] text-white transition-colors hover:bg-brand-navy"
+              className="pointer-events-auto inline-flex items-center gap-2 rounded-full bg-brand-blue px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.04em] text-white transition-colors hover:bg-brand-navy"
             >
               {primaryCta.label}
               <ArrowRightIcon />
             </a>
             <a
               href={secondaryCta.href}
-              className="inline-flex items-center gap-2 rounded-full border border-white/35 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.04em] text-white transition-colors hover:bg-white hover:text-ink"
+              className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-white/35 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.04em] text-white transition-colors hover:bg-white hover:text-ink"
             >
               {secondaryCta.label}
             </a>

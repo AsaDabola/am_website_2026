@@ -6,7 +6,7 @@ import { Link } from "@/i18n/navigation";
 import NetworkGlobe from "@/components/network/NetworkGlobe";
 import OurNetwork from "@/components/sections/OurNetwork";
 import { regions } from "@/lib/regions";
-import { getAllActiveTenantsByContinent } from "@/lib/tenants";
+import { CHAPTERS } from "@/lib/chapters";
 import {
   getCountryDirectory,
   groupByContinent,
@@ -21,30 +21,6 @@ export const metadata: Metadata = {
   description: "Find AM's presence around the world, from campus chapters to country sites.",
 };
 
-const northAmericaChapters = [
-  "USA, Trenton (HQ)",
-  "USA, New York",
-  "USA, Atlanta",
-  "USA, Boston",
-  "USA, Burlington",
-  "USA, Detroit",
-  "USA, Houston",
-  "USA, Los Angeles",
-  "USA, Nashville",
-  "USA, New Haven",
-  "USA, Philadelphia",
-  "USA, Princeton",
-  "USA, Raleigh",
-  "USA, San Diego",
-  "USA, San Francisco",
-  "USA, Seattle",
-  "USA, St. Louis",
-  "USA, Washington DC",
-  "USA, Wichita",
-  "Canada, Montreal",
-  "Canada, Toronto",
-  "Canada, Vancouver",
-];
 
 /**
  * One country in the directory: flag, name, and the chapter city where the
@@ -86,9 +62,8 @@ function CountryRow({ country }: { country: DirectoryCountry }) {
 }
 
 export default async function NetworkPage() {
-  const [t, tenantsByContinent, countries] = await Promise.all([
+  const [t, countries] = await Promise.all([
     getTranslations("Network"),
-    getAllActiveTenantsByContinent(),
     getCountryDirectory(),
   ]);
   const countriesByRegion = groupByContinent(countries);
@@ -170,44 +145,35 @@ export default async function NetworkPage() {
             {t("chaptersHeading")}
           </h2>
 
+          {/* Every chapter, from the same sheet the globe plots. This used to
+              be a hand-written list of North American cities beside the
+              country sites of the other regions — two different things in one
+              row, and the cities were not the chapters AM actually runs. */}
           <div className="mt-14 grid gap-x-10 gap-y-12 text-start sm:grid-cols-2 lg:grid-cols-4">
-            <div className="border-t-2 border-black/10 pt-6">
-              <h3 className="font-display text-base font-bold text-ink">
-                {t("regions.northamerica")}
-              </h3>
-              <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-ink-muted">
-                {northAmericaChapters.map((chapter) => (
-                  <li key={chapter}>{chapter}</li>
-                ))}
-              </ul>
-            </div>
-
-            {regions
-              .filter((region) => region.slug !== "northamerica")
-              .map((region) => {
-                const tenants = tenantsByContinent[region.slug];
-                return (
-                  <div key={region.slug} className="border-t-2 border-black/10 pt-6">
-                    <h3 className="font-display text-base font-bold text-ink">
-                      {t(`regions.${region.slug}`)}
-                    </h3>
-                    {tenants.length > 0 ? (
-                      <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-ink-muted">
-                        {tenants.map((tenant) => (
-                          <li key={tenant.slug}>
-                            {tenant.country}
-                            {tenant.city ? `, ${tenant.city}` : ""}
-                          </li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p className="mt-3 text-sm leading-relaxed text-ink-muted/70">
-                        {t("chaptersSoon")}
-                      </p>
-                    )}
-                  </div>
-                );
-              })}
+            {regions.map((region) => {
+              const list = CHAPTERS.filter((chapter) => chapter.region === region.slug);
+              return (
+                <div key={region.slug} className="border-t-2 border-black/10 pt-6">
+                  <h3 className="font-display text-base font-bold text-ink">
+                    {t(`regions.${region.slug}`)}
+                  </h3>
+                  {list.length > 0 ? (
+                    <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-ink-muted">
+                      {list.map((chapter) => (
+                        <li key={`${chapter.country}-${chapter.city}`}>
+                          {chapter.country}, {chapter.city}
+                          {chapter.role === "global" ? " (HQ)" : ""}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="mt-3 text-sm leading-relaxed text-ink-muted/70">
+                      {t("chaptersSoon")}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </Container>
       </section>

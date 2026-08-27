@@ -206,3 +206,22 @@ body {
     transition: none;
   }
 }
+
+/* The hero headline changes with its photograph; this fades the new line in
+   so the two turn together rather than the words snapping. */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h1[class*="animate-\\[fadeIn"] {
+    animation: none;
+  }
+}
