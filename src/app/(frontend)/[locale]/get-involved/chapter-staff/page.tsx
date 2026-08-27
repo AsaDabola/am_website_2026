@@ -31,7 +31,10 @@ export default async function ChapterStaffPage() {
         ]}
         title="Get Involved"
         subtitle={t("tagline")}
-        backgroundImage="/images/chapter-volunteer-hero.webp"
+        // The same night sky the Testimony banner uses — the design puts it
+        // behind both, which is why the file is named for the photograph
+        // rather than for either page.
+        backgroundImage="/images/hero-night-sky.webp"
       />
       <GetInvolvedSubNav active="/get-involved/chapter-staff" />
 

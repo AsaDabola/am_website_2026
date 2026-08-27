@@ -23,7 +23,7 @@ export default function TestimonyPage({
       category="testimony"
       heroTitle="Testimonial"
       heroSubtitle="Faith. Growth. Transformation."
-      backgroundImage="/images/testimony-hero.webp"
+      backgroundImage="/images/hero-night-sky.webp"
     />
   );
 }
