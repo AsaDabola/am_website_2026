@@ -4,11 +4,11 @@ import NewsListPage from "@/components/news/NewsListPage";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "News | AM International",
-  description: "What students are seeing, where AM is going next, and how to pray.",
+  title: "Featured | AM International",
+  description: "The stories AM is leading with right now.",
 };
 
-export default function NewsPage({
+export default function FeaturedPage({
   searchParams,
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
@@ -16,11 +16,11 @@ export default function NewsPage({
   return (
     <NewsListPage
       searchParams={searchParams}
-      active="/news"
-      title="News"
+      active="/news/featured"
+      title="Featured"
       eyebrow="News"
-      heading="News"
-      category="news"
+      heading="Featured"
+      category="featured"
       heroTitle="Stories of Faith. Stories of Mission."
       heroSubtitle=""
     />

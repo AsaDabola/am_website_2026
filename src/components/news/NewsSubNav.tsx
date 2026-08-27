@@ -4,8 +4,10 @@ import Container from "@/components/ui/Container";
 
 export default function NewsSubNav({ active }: { active: string }) {
   const t = useTranslations("NewsSubNav");
+  // The order the news section has always been presented in.
   const newsTabs = [
-    { label: t("featuredNews"), href: "/news" },
+    { label: t("news"), href: "/news" },
+    { label: t("featured"), href: "/news/featured" },
     { label: t("events"), href: "/events" },
     { label: t("editorial"), href: "/news/editorial" },
     { label: t("photoNews"), href: "/news/photo-news" },
