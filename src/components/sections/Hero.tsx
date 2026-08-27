@@ -15,11 +15,11 @@ import { mediaUrl } from "@/lib/homeBlockTypes";
 const DEFAULT_SLIDE_IMAGES = [
   // Each is the photograph the design puts that line over: the boardwalk for
   // being sent, the chapel from the air for where we are, hands on an open
-  // Bible for growing, and the embrace for grace.
+  // Bible for growing, and the city at sunrise for grace.
   "/images/hero-boardwalk.webp",
   "/images/hero-slide-campus.webp",
   "/images/hero-slide-bible-study.webp",
-  "/images/hero-campus.webp",
+  "/images/hero-skyline.webp",
 ];
 
 export default async function Hero({ data }: { data?: HeroData } = {}) {
