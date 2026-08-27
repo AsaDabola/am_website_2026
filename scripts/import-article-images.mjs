@@ -51,8 +51,12 @@ const STATE_FILE = value("state", "import-state.json");
 /** Last run's answers, offered as defaults so a re-run is four Enters. */
 const ANSWERS_FILE = value("answers", "import-answers.json");
 
-/** Below this the filename and the title are not the same article. */
-const ACCEPT_SCORE = 0.6;
+/**
+ * Below this the filename and the title are not the same article. Set against
+ * the blend in matchScore: 0.75 needs roughly four fifths of the filename's
+ * words to appear in the headline.
+ */
+const ACCEPT_SCORE = 0.75;
 /** And the runner-up has to be this far behind, or the choice is a guess. */
 const ACCEPT_MARGIN = 0.1;
 /**
@@ -116,8 +120,19 @@ export function tokenise(input) {
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, " ")
     .split(/\s+/)
-    .filter((token) => token.length > 2);
+    .filter((token) => token.length > 2 && !UPLOAD_ARTEFACTS.has(token));
 }
+
+/**
+ * Words a photo library adds to a filename that say nothing about the article.
+ * `-scaled` is WordPress's, added to anything above its threshold, and it is
+ * all over this archive: it costs a sixth of the coverage of a six-word name
+ * and pushed real matches under the line.
+ */
+const UPLOAD_ARTEFACTS = new Set([
+  "scaled", "resized", "cropped", "rotated", "thumb", "thumbnail",
+  "copy", "final", "edited", "orig", "original", "duplicate",
+]);
 
 /**
  * True for `retreat-2.webp` and `retreat copy 3.webp`, false for
@@ -129,12 +144,7 @@ export function hasCounterSuffix(filename) {
   return /\b(?:copy|final|edit(?:ed)?|v)?\s*\d{1,3}\s*$/i.test(filename.replace(/\.[a-z0-9]+$/i, "").replace(/[_\-–—]+/g, " "));
 }
 
-/**
- * Sørensen–Dice over token sets: twice the shared tokens over the combined
- * size. Chosen over a raw overlap count because a filename that is a short
- * fragment of a long headline should not score the same as one that is the
- * whole headline.
- */
+/** Sørensen–Dice over token sets: twice the shared tokens over the combined size. */
 export function similarity(aTokens, bTokens) {
   if (!aTokens.length || !bTokens.length) return 0;
   const a = new Set(aTokens);
@@ -142,6 +152,36 @@ export function similarity(aTokens, bTokens) {
   let shared = 0;
   for (const token of a) if (b.has(token)) shared++;
   return (2 * shared) / (a.size + b.size);
+}
+
+/** How much of the filename the headline accounts for. */
+export function coverage(fileTokens, titleTokens) {
+  if (!fileTokens.length) return 0;
+  const title = new Set(titleTokens);
+  const file = new Set(fileTokens);
+  let shared = 0;
+  for (const token of file) if (title.has(token)) shared++;
+  return shared / file.size;
+}
+
+/**
+ * How well a filename describes a headline.
+ *
+ * Mostly coverage, because these filenames are abbreviations of headlines and
+ * Dice alone punishes exactly that: `san-diego.webp` accounts for every word
+ * of its own name, but against "UC San Diego '4 Spiritual Laws' Workshop" it
+ * scores 0.57 purely because the headline is longer, and a first real run left
+ * 609 files unmatched for that reason.
+ *
+ * Dice still contributes a tenth, which is what separates two headlines that
+ * both contain the whole filename: `prayer.webp` covers "Atlanta Prayer
+ * Retreat" and "Prayer Week" equally, and the shorter one is the better
+ * reading. Where it cannot separate them the runner-up margin declares the
+ * file ambiguous and leaves it alone, which is the behaviour wanted for a
+ * filename as thin as one common word.
+ */
+export function matchScore(fileTokens, titleTokens) {
+  return 0.9 * coverage(fileTokens, titleTokens) + 0.1 * similarity(fileTokens, titleTokens);
 }
 
 /**
@@ -154,7 +194,7 @@ export function similarity(aTokens, bTokens) {
  */
 export function chooseMatch(fileTokens, candidates, bonus = () => 0) {
   const scored = candidates
-    .map((post) => ({ post, score: Math.min(1, similarity(fileTokens, post.tokens) + bonus(post)) }))
+    .map((post) => ({ post, score: Math.min(1, matchScore(fileTokens, post.tokens) + bonus(post)) }))
     .sort((x, y) => y.score - x.score);
 
   const best = scored[0];
