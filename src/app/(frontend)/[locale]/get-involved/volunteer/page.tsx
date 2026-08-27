@@ -182,9 +182,23 @@ export default async function VolunteerPage() {
               </a>{" "}
               for more information.
             </p>
+            {/* The programme description the single-page form used to open
+                with. It belongs to the reader deciding whether to apply, not
+                to the first step of the application, so it sits here with the
+                rest of the introduction rather than inside the wizard. */}
+            <p className="mx-auto mt-6 max-w-[982px] text-base leading-relaxed text-ink-muted">
+              A mission teammate participates in and plans evangelistic methods that align with the
+              chapter&rsquo;s goal for growth, working out how to reach the student body
+              effectively and fostering an environment of spiritual growth and discipleship among
+              college students. The team is a community of believers centred on the Word and
+              fellowship, with a heart to spread the Gospel across university campuses worldwide.
+            </p>
           </div>
 
-          <div className="mx-auto mt-14 max-w-[887px]">
+          {/* 1200px in the design: a 680px form column beside a 360px sidebar,
+              with the gutter between them. The old single-column form sat in
+              887px, which cannot hold both. */}
+          <div className="mx-auto mt-14 max-w-[1200px]">
             <VolunteerApplicationForm />
           </div>
         </Container>

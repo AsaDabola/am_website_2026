@@ -317,6 +317,40 @@ export function GiftIcon({ className = "size-8" }: IconProps) {
 }
 
 /**
+ * The two glyphs the multi-step application needs, drawn at a 20px box rather
+ * than the 32px the section icons above use — they sit beside 14px text, not
+ * alone in an 80px circle.
+ */
+export function AlertTriangleIcon({ className = "size-5" }: IconProps) {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M10 2.9 18.2 17H1.8L10 2.9Z"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinejoin="round"
+      />
+      <path d="M10 8v3.4" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" />
+      <circle cx="10" cy="14.1" r="0.9" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function CheckIcon({ className = "size-3.5" }: IconProps) {
+  return (
+    <svg viewBox="0 0 14 14" fill="none" className={className} aria-hidden="true">
+      <path
+        d="m3 7.4 2.8 2.8L11 4.4"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+/**
  * The nav data is built on the server but also rendered by the client-side
  * mobile menu, and React components can't cross that boundary as props — so
  * groups carry an icon *name* and both sides resolve it through this map.
