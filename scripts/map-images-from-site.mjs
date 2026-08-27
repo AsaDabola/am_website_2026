@@ -35,7 +35,7 @@ const value = (name, fallback) => {
 };
 
 const OUT = value("out", "image-map.json");
-const CONCURRENCY = Number(value("concurrency", 5));
+const CONCURRENCY = Number(value("concurrency", 3));
 const LIMIT = Number(value("limit", 0)) || Infinity;
 /** Re-read pages already in the map, rather than skipping them. */
 const REFRESH = args.includes("--refresh");
@@ -74,7 +74,10 @@ export function extractImageUrl(html) {
   const og =
     /<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i.exec(html) ??
     /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i.exec(html);
-  return og ? { url: og[1], source: "og:image" } : null;
+  // A logo recorded as an article's photograph is worse than no answer: it
+  // reads as a result and puts the same file against hundreds of articles.
+  if (og && !isSiteFurniture(og[1])) return { url: og[1], source: "og:image" };
+  return null;
 }
 
 /** The real source of an img tag, preferring data-src, which lazy loaders use. */
@@ -112,6 +115,25 @@ export function readExportedArticle(markdown) {
   if (!url) return null;
   const slug = /amintl\.org\/([^/?#]+)/.exec(url)?.[1];
   return slug ? { slug, url, title, published } : null;
+}
+
+/**
+ * Reading 466 pages in a few minutes is enough for this host to start
+ * answering 429, and a first full pass lost 162 articles that way. A 429 is
+ * not a failure, it is an instruction to wait — so it is waited out, longer
+ * each time, and the page is asked for again.
+ */
+async function fetchPolitely(url, attempt = 1) {
+  const res = await fetch(url, { redirect: "follow" });
+  if (res.status === 429 || res.status === 503) {
+    if (attempt > 4) throw new Error(`HTTP ${res.status} after ${attempt} tries`);
+    const stated = Number(res.headers.get("retry-after"));
+    const wait = Number.isFinite(stated) && stated > 0 ? stated * 1000 : 2000 * 2 ** (attempt - 1);
+    await new Promise((resolve) => setTimeout(resolve, wait));
+    return fetchPolitely(url, attempt + 1);
+  }
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res;
 }
 
 async function inBatches(items, limit, worker) {
@@ -217,6 +239,9 @@ async function main() {
 
   const map = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, "utf8")) : {};
   const todo = REFRESH ? articles : articles.filter((a) => !map[a.slug]);
+  // Otherwise a page that cannot be re-read keeps whatever an earlier, worse
+  // reading put there — which is how 162 logo entries survived a refresh.
+  if (REFRESH) for (const article of articles) delete map[article.slug];
   if (todo.length < articles.length) {
     console.log(`${articles.length - todo.length} were read on an earlier run and will be skipped.`);
   }
@@ -231,8 +256,7 @@ async function main() {
 
   await inBatches(todo, CONCURRENCY, async (article) => {
     try {
-      const res = await fetch(article.url, { redirect: "follow" });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const res = await fetchPolitely(article.url);
       const found = extractImageUrl(await res.text());
       const archivePath = found ? archivePathFromUrl(found.url) : null;
       map[article.slug] = {

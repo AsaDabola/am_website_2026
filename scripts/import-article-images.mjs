@@ -239,6 +239,11 @@ export function chooseMatch(fileTokens, candidates, bonus = () => 0) {
  * copies of one photograph in the media library and make them compete for the
  * same article. WebP wins — it is what the site serves.
  */
+export function withoutExtension(relativePath) {
+  const normalised = relativePath.split(path.sep).join("/");
+  return normalised.slice(0, normalised.length - path.extname(normalised).length);
+}
+
 export function pickBestFormats(relativePaths) {
   const PREFERENCE = [".webp", ".avif", ".png", ".jpg", ".jpeg", ".gif"];
   const rank = (p) => {
@@ -579,7 +584,10 @@ async function main() {
         if (exact) byExactSlug++;
         else if (loose) byLooseSlug++;
         else byTitle++;
-        stated.set(entry.file, post);
+        // Keyed without its extension. The old site names the .jpg it served;
+        // the archive's copy of the same picture is the .webp beside it, and
+        // that is the one kept. Keying on the full name matched neither.
+        stated.set(withoutExtension(entry.file), post);
       } else if (unresolved.length < 3) {
         unresolved.push({ slug, title: entry.title });
       }
@@ -610,7 +618,7 @@ async function main() {
   for (const relative of files) {
     if (!keep.has(relative)) continue;
 
-    const namedFor = stated.get(relative) ?? stated.get(relative.split(path.sep).join("/"));
+    const namedFor = stated.get(withoutExtension(relative));
     if (namedFor) {
       const row = {
         relative,
