@@ -10,7 +10,6 @@ import { getPostsPage, POST_SORTS, type PostCategory, type PostSort } from "@/li
 
 const categoryTag: Record<PostCategory, string> = {
   news: "News",
-  featured: "Featured",
   editorial: "Editorial",
   "photo-news": "Photo News",
   testimony: "Testimony",

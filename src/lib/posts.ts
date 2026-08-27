@@ -26,7 +26,7 @@ function scoped(filter?: Where): Where {
   return filter ? { and: [where, filter] } : where;
 }
 
-export type PostCategory = "news" | "featured" | "editorial" | "photo-news" | "testimony";
+export type PostCategory = "news" | "editorial" | "photo-news" | "testimony";
 
 export type PostSummary = {
   id: string;

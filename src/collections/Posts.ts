@@ -29,12 +29,11 @@ export const Posts: CollectionConfig = {
       type: "select",
       required: true,
       defaultValue: "news",
-      // The six divisions the news section is presented in. Events is the
-      // sixth and lives in its own collection, because an event carries a date
-      // and a location that an article does not.
+      // The divisions the news section is presented in. Events is one of them
+      // and lives in its own collection, because an event carries a date and a
+      // location that an article does not.
       options: [
         { label: "News", value: "news" },
-        { label: "Featured", value: "featured" },
         { label: "Editorial", value: "editorial" },
         { label: "Photo News", value: "photo-news" },
         { label: "Testimony", value: "testimony" },
