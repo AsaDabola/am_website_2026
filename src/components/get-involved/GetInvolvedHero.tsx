@@ -65,16 +65,27 @@ export default function GetInvolvedHero({
           {cards.map((card, index) => {
             const colour = CARD_COLOURS[index % CARD_COLOURS.length];
             return (
-              <div key={card.label} className="overflow-hidden rounded-lg">
+              // The four cards carry one, two and three lines between them.
+              // The grid already stretches each cell to the tallest, but the
+              // colour only reached as far as the text did — so `h-full` and a
+              // growing body make the block itself the same height, and the
+              // list centres in whatever room that leaves.
+              <div
+                key={card.label}
+                className="flex h-full flex-col overflow-hidden rounded-lg"
+              >
                 <div
-                  className="flex items-center justify-center px-4 py-4"
+                  className="flex shrink-0 items-center justify-center px-4 py-4"
                   style={{ backgroundColor: colour.header }}
                 >
                   <span className="font-display text-base font-extrabold uppercase text-white">
                     {card.label}
                   </span>
                 </div>
-                <div className="px-5 py-6" style={{ backgroundColor: colour.body }}>
+                <div
+                  className="flex flex-1 items-center justify-center px-5 py-6"
+                  style={{ backgroundColor: colour.body }}
+                >
                   <ul className="space-y-1 text-center text-sm leading-[1.5]" style={{ color: colour.text }}>
                     {card.items.map((item) => (
                       <li key={item}>{item}</li>
