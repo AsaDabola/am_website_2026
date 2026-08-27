@@ -111,13 +111,17 @@ export const GetInvolvedBlock: Block = {
       name: "cards",
       type: "array",
       minRows: 1,
-      maxRows: 4,
+      maxRows: 3,
       fields: [
         { name: "title", type: "text", required: true },
-        // Optional so the row still renders for the cards authored before the
-        // design added a body to each one. A card without it simply shows the
-        // photo and the title.
-        { name: "description", type: "textarea" },
+        /**
+         * Not drawn by the current layout, which sets the title over the
+         * photograph and has nowhere to put a body. It stays because its
+         * column already exists on the deployed database — dropping it would
+         * be a destructive migration for no gain — and because the four-card
+         * variant that did use it may come back.
+         */
+        { name: "description", type: "textarea", admin: { readOnly: true, description: "Not shown by the current card design." } },
         { name: "href", type: "text", required: true },
         { name: "image", type: "upload", relationTo: "media", required: true },
       ],
