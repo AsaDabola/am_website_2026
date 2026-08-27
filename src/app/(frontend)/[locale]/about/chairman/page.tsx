@@ -21,14 +21,19 @@ export default function ChairmanPage() {
       <AboutSubNav active="/about/chairman" />
       <HonoraryChairman headingLevel="h1" />
 
-      <article className="bg-white py-20">
+      <article className="bg-white py-24">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[1fr_420px]">
+          {/* Four dense paragraphs of biography sat too tightly to read
+              comfortably — the line height, the gaps between paragraphs and
+              the gutter to the photographs were all a notch short. This is the
+              only long-form prose on the About pages, so it gets a longer
+              measure of leading than the site's default `relaxed`. */}
+          <div className="grid gap-14 lg:grid-cols-[1fr_420px] lg:gap-16">
             <div>
-              <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink">
+              <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
                 Our First Chairman
               </h2>
-              <div className="mt-6 max-w-[720px] space-y-6 text-base leading-relaxed text-ink">
+              <div className="mt-8 max-w-[720px] space-y-7 text-[17px] leading-[1.9] text-ink">
                 <p>
                   Apostolos Mission International is proudly continuing the legacy of world
                   evangelization as established by American missiologist, Ralph D. Winter. Ralph
@@ -60,7 +65,7 @@ export default function ChairmanPage() {
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-8">
               <div className="relative aspect-[420/302] overflow-hidden rounded-2xl">
                 <Image
                   src="/images/chairman-photo-1.webp"

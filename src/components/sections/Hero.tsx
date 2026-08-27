@@ -13,6 +13,9 @@ import { mediaUrl } from "@/lib/homeBlockTypes";
  * chosen photo cycle away.
  */
 const DEFAULT_SLIDES = [
+  // The boardwalk at sunrise leads: it is the shot the team named as the main
+  // banner, and the one the rotation returns to.
+  "/images/hero-boardwalk.webp",
   "/images/hero-campus.webp",
   "/images/hero-slide-campus.webp",
   "/images/hero-slide-bible-study.webp",
