@@ -118,6 +118,35 @@ async function main() {
     }
   };
   walk(exportDir);
+
+  // Notion wraps its export in two zips — the outer one holds an
+  // ExportBlock-….zip, and the pages are inside that. Unzipping once leaves a
+  // folder with a zip in it and no pages, which otherwise reads as an empty
+  // export rather than as a job half done.
+  if (!files.length) {
+    const nested = [];
+    const findZips = (dir) => {
+      for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+        const full = path.join(dir, entry.name);
+        if (entry.isDirectory()) findZips(full);
+        else if (entry.name.toLowerCase().endsWith(".zip")) nested.push(full);
+      }
+    };
+    findZips(exportDir);
+    if (nested.length) {
+      throw new Error(
+        [
+          "That folder has no articles in it, but it does have a zip inside:",
+          `  ${nested[0]}`,
+          "",
+          "Notion puts a second zip inside the first. Unzip that one too, then",
+          "give me the folder it makes.",
+        ].join("\n"),
+      );
+    }
+    throw new Error(`No .md articles found under ${exportDir}.`);
+  }
+
   console.log(`${files.length} exported articles found.`);
 
   const articles = files
