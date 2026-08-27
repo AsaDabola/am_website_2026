@@ -20,10 +20,22 @@ function syndicationWhere(): Where {
   return tenantContentWhere(getRequestTenant() ?? undefined);
 }
 
+/**
+ * An article with no picture is left out of the listings.
+ *
+ * The archive gave back what it had — the rest are pieces that ran as text on
+ * the old site, mostly short event notices and devotionals, and a card with
+ * nothing in its frame is worse than no card. They keep their own pages and
+ * stay reachable by direct link, the same way an unsyndicated article does.
+ *
+ * Remove this clause to show them again; nothing else depends on it.
+ */
+const HAS_PICTURE: Where = { coverImage: { exists: true } };
+
 /** Combines the syndication clause with a listing's own filter, if any. */
 function scoped(filter?: Where): Where {
   const where = syndicationWhere();
-  return filter ? { and: [where, filter] } : where;
+  return { and: filter ? [where, HAS_PICTURE, filter] : [where, HAS_PICTURE] };
 }
 
 export type PostCategory = "news" | "editorial" | "photo-news" | "testimony";
