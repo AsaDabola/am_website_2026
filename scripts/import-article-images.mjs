@@ -316,7 +316,9 @@ function cleanPath(input) {
   return input
     .trim()
     .replace(/^['"]|['"]$/g, "")
-    .replace(/\\ /g, " ")
+    // A path dragged from Finder escapes every awkward character, not just
+    // spaces — `Private\ \&\ Shared` — so the backslashes come off generally.
+    .replace(/\\(.)/g, "$1")
     .replace(/\/+$/, "");
 }
 

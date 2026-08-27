@@ -94,7 +94,20 @@ async function ask(question, fallback = "") {
   process.stdout.write(fallback ? `${question} [${fallback}] ` : `${question} `);
   lines ??= prompts()[Symbol.asyncIterator]();
   const { value: answer, done } = await lines.next();
-  return (done ? "" : answer).trim().replace(/^['"]|['"]$/g, "").replace(/\\ /g, " ").replace(/\/+$/, "") || fallback;
+  return cleanPath(done ? "" : answer) || fallback;
+}
+
+/**
+ * A path dragged from Finder arrives with every awkward character escaped —
+ * `Private\ \&\ Shared` — so the backslashes come off generally rather than
+ * for spaces alone. This folder really is called "Private & Shared".
+ */
+export function cleanPath(input) {
+  return input
+    .trim()
+    .replace(/^['"]|['"]$/g, "")
+    .replace(/\\(.)/g, "$1")
+    .replace(/\/+$/, "");
 }
 
 async function main() {
@@ -102,8 +115,18 @@ async function main() {
   console.log("It only reads — nothing is changed, on either site.\n");
 
   let exportDir = value("export", "") || (await ask("Folder of the unzipped Notion export:"));
-  while (!exportDir || !fs.existsSync(exportDir)) {
-    console.log(exportDir ? `  Can't find that: ${exportDir}` : "  Please give a folder.");
+  for (;;) {
+    if (!exportDir) console.log("  Please give a folder.");
+    else if (!fs.existsSync(exportDir)) console.log(`  Can't find that: ${exportDir}`);
+    else if (!fs.statSync(exportDir).isDirectory()) {
+      // Handing back the zip is the easy slip here, and a bare ENOTDIR names
+      // nothing that helps.
+      console.log(
+        exportDir.toLowerCase().endsWith(".zip")
+          ? "  That's the zip. Unzip it (twice — Notion nests one inside) and give me the\n  folder it makes, the one holding the .md files."
+          : "  That's a file, not a folder.",
+      );
+    } else break;
     exportDir = await ask("Folder of the unzipped Notion export:");
   }
 
