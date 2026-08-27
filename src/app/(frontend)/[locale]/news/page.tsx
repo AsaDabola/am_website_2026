@@ -21,6 +21,8 @@ export default function FeaturedNewsPage({
       eyebrow="News"
       heading="Featured News"
       category="news"
+      heroTitle="Stories of Faith. Stories of Mission."
+      heroSubtitle=""
     />
   );
 }

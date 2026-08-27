@@ -22,8 +22,9 @@ export default async function EventsPage() {
     <>
       <AboutHero
         crumbs={[{ label: "Home", href: "/" }, { label: "News" }, { label: "Events" }]}
-        title="News"
-        subtitle="What students are seeing, where AM is going next, and how to pray."
+        // The line the design puts over the dune banner. No subtitle beneath
+        // it there — the three words carry the section on their own.
+        title="Gather. Grow. Go."
         backgroundImage="/images/events-hero.webp"
       />
       <NewsSubNav active="/events" />

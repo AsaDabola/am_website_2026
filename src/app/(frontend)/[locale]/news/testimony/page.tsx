@@ -21,7 +21,7 @@ export default function TestimonyPage({
       eyebrow="News"
       heading="Testimony"
       category="testimony"
-      heroTitle="Testimonial"
+      heroTitle="Real stories"
       heroSubtitle="Faith. Growth. Transformation."
       backgroundImage="/images/hero-night-sky.webp"
     />

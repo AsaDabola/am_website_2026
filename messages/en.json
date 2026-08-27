@@ -1,6 +1,6 @@
 {
   "AnnouncementBar": {
-    "tagline": "Apostolos · One who is sent on a mission",
+    "tagline": "Apostolos \u00b7 One who is sent on a mission",
     "amAcademy": "AM Academy"
   },
   "Header": {
@@ -122,7 +122,7 @@
     "news": "News",
     "legacyOfChairman": "Legacy of Ralph D. Winter",
     "contactUs": "Contact us",
-    "copyright": "© 2026 {org}. All rights reserved.",
+    "copyright": "\u00a9 2026 {org}. All rights reserved.",
     "contact": "Contact"
   },
   "Logo": {
@@ -190,7 +190,7 @@
     "breadcrumb": "About",
     "paragraph1": "Apostolos Missions International (AM) is an interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord.",
     "paragraph2Prefix": "The name",
-    "paragraph2": "(ἀπόστολος) is the Greek word for apostle. It means \"one who is sent on a mission\" or \"messenger.\" The title \"apostle\" often comes out in the New Testament to represent the Twelve disciples appointed by Jesus (Matthew 10:2, Mark 3:14, Luke 6:13, Acts 2:42). Paul, a former persecutor of Christianity turning to a great herald of the gospel, introduced himself as an \"apostle\" (Romans 1:1, 1 Corinthians 1:1, 2 Corinthians 1:1, Galatians 1:1, Colossians 1:1, 1 Timothy 1:1, 2 Timothy 1:1, Titus).",
+    "paragraph2": "(\u1f00\u03c0\u03cc\u03c3\u03c4\u03bf\u03bb\u03bf\u03c2) is the Greek word for apostle. It means \"one who is sent on a mission\" or \"messenger.\" The title \"apostle\" often comes out in the New Testament to represent the Twelve disciples appointed by Jesus (Matthew 10:2, Mark 3:14, Luke 6:13, Acts 2:42). Paul, a former persecutor of Christianity turning to a great herald of the gospel, introduced himself as an \"apostle\" (Romans 1:1, 1 Corinthians 1:1, 2 Corinthians 1:1, Galatians 1:1, Colossians 1:1, 1 Timothy 1:1, 2 Timothy 1:1, Titus).",
     "paragraph3": "Apostles are those who are sent by the Lord to fulfill the mission of \"preaching Jesus Christ and making God known\" to the whole creation. Biblical foundation of apostleship is found in many words of the Lord who selected first apostles and sent them out like the ambassadors dispatched to represent different nations. Apostles understood that their lives were not just their own, but they lived to reveal the glory of Christ in this fallen world.",
     "blockquote": "John 20:21 says, \"Again Jesus said, 'Peace be with you! As the Father has sent me, I am sending you.'\" (NIV)",
     "paragraph4": "AM wishes to follow the tradition of the apostles who lived as people on a mission to proclaim the Word of God. Each of us also receive this calling from God to be sent out into the world as His hands and feet. We wish to dedicate our lives to follow the footsteps of Jesus and proclaim the Gospel until the ends of the earth.",
@@ -250,7 +250,7 @@
     "navigatingTitle": "Navigating Campus Life",
     "navigatingBody": "Campus life is exciting and fulfilling, but with so many choices available, it can also feel aimless. Through truth and prayer, AM helps you discern God's will and find clear guidance for your extraordinary life.",
     "nextStepsTitle": "Next Steps",
-    "nextStepsBody": "Continue to engage with our programs—take advantage of diverse opportunities to hear the Word, pray together, fellowship with brothers and sisters of faith, and serve as you grow in the Gospel.",
+    "nextStepsBody": "Continue to engage with our programs\u2014take advantage of diverse opportunities to hear the Word, pray together, fellowship with brothers and sisters of faith, and serve as you grow in the Gospel.",
     "leadHeading": "Lead",
     "leadStep1Title": "1. Serving in the Love of Christ",
     "leadStep1Body": "As we grow, we desire to serve others who need help to come to Jesus. As we serve, we also grow more deeply in the love of Christ.",
@@ -301,10 +301,10 @@
     },
     "map": {
       "world": "World",
-      "loading": "Loading…",
+      "loading": "Loading\u2026",
       "zoomIn": "Zoom in",
       "clear": "Clear",
-      "worldHint": "Hover or focus a point to see the city — select one to zoom into its region.",
+      "worldHint": "Hover or focus a point to see the city \u2014 select one to zoom into its region.",
       "regionHint": "{count, plural, =1 {# chapter} other {# chapters}} in {region}. Select a point for detail, or return to the world map.",
       "worldAria": "World map showing all {count} AM chapters. Use the region buttons to zoom in.",
       "regionAria": "{region} map showing {count} AM chapters.",
@@ -314,12 +314,12 @@
       "hqBadge": "HQ",
       "regionalHqBadge": "Regional HQ"
     },
-    "globeSubtitle": "AM is a sending community across six continents — find the country nearest you, or the one you are being sent to.",
+    "globeSubtitle": "AM is a sending community across six continents \u2014 find the country nearest you, or the one you are being sent to.",
     "globeSearchPlaceholder": "Search for a country, region or chapter"
   },
   "Home": {
     "Hero": {
-      "eyebrow": "Apostolos — one who is sent",
+      "eyebrow": "Apostolos \u2014 one who is sent",
       "headingLine1": "Where the",
       "headingWhere": "Love of Jesus",
       "headingWeAre": "Overflows",
@@ -332,14 +332,16 @@
       "stat3Value": "Global",
       "stat3Label": "Campus network",
       "dragToExplore": "Drag to explore",
-      "slide1Line1": "Being Sent",
-      "slide1Line2": "with Purpose",
-      "slide2Line1": "Future Begins From",
-      "slide2Line2": "Where We Are",
-      "slide3Line1": "Growing Together",
-      "slide3Line2": "in the Word",
-      "slide4Line1": "Overflowing",
-      "slide4Line2": "in Grace and Love"
+      "slide1Line1": "Overflowing",
+      "slide1Line2": "in Grace and Love",
+      "slide2Line1": "Overflowing",
+      "slide2Line2": "in Grace and Love",
+      "slide3Line1": "Future Begins From",
+      "slide3Line2": "Where We Are",
+      "slide4Line1": "Growing Together",
+      "slide4Line2": "in the Word",
+      "slide5Line1": "Being Sent",
+      "slide5Line2": "with Purpose"
     },
     "BibleStudyProgram": {
       "eyebrow": "Join our Bible Study Program",
@@ -358,7 +360,7 @@
       "supportDescription": "Give, pray and partner with students in the field."
     },
     "Ministries": {
-      "eyebrow": "Connect · Grow · Lead · Sent",
+      "eyebrow": "Connect \u00b7 Grow \u00b7 Lead \u00b7 Sent",
       "heading": "Four steps, and we walk every one of them with you.",
       "getInvolved": "Get involved",
       "learnMore": "Learn more",
@@ -379,7 +381,7 @@
       "eyebrow": "Our mission",
       "statementPrefix": "Apostolos Missions' mission is to",
       "statementEmphasis": "preach Jesus and Him crucified",
-      "statementSuffix": "— fostering a Christ-centred network of young Christians for the mobilization of campus mission.",
+      "statementSuffix": "\u2014 fostering a Christ-centred network of young Christians for the mobilization of campus mission.",
       "readFullStatement": "Read the full mission statement",
       "nameOrigin": "The name apostolos is the Greek word for apostle. It means \"one who is sent on a mission.\"",
       "history": "What began as a small group of passionate young students in Los Angeles, California, eager to spread the gospel and make Jesus known, has become a global organisation working across university campuses around the world.",
@@ -392,21 +394,21 @@
       "volunteer": "Volunteer",
       "internship": "Internship",
       "missionTrip": "Mission Trip",
-      "missionTripDescription": "Short trips that carry the gospel across a border — students serving alongside a local chapter, and coming home changed by it.",
+      "missionTripDescription": "Short trips that carry the gospel across a border \u2014 students serving alongside a local chapter, and coming home changed by it.",
       "shortTermMission": "Short-term Mission",
       "shortTermMissionDescription": "A season set aside for mission. Three months at our headquarters learning the work from the inside, in the field and in the classroom.",
       "discipleshipTraining": "Discipleship Training",
       "discipleshipTrainingDescription": "Phase 5 of our Bible study program, for students ready to disciple others and pass on what they have been given.",
       "volunteering": "Volunteering",
-      "volunteeringDescription": "Serve with the talents God gave you — education, media, public relations and administration all need hands at every chapter."
+      "volunteeringDescription": "Serve with the talents God gave you \u2014 education, media, public relations and administration all need hands at every chapter."
     },
     "Media": {
       "eyebrow": "Media",
       "heading": "Teaching, testimony and the Word.",
       "moreContents": "More contents",
       "playVideo": "Play the AM introduction video",
-      "post1Title": "Four Spiritual Themes – Overview",
-      "post2Title": "What is Salvation? | Sola Fide Part 1 – AM Academy",
+      "post1Title": "Four Spiritual Themes \u2013 Overview",
+      "post2Title": "What is Salvation? | Sola Fide Part 1 \u2013 AM Academy",
       "post3Title": "Era of Social Media Discipleship, Connecting Students to Reality of the Gospel",
       "post4Title": "God's Promises For the New Year",
       "post1Date": "January 5, 2026",
@@ -418,7 +420,7 @@
       "eyebrow": "Events",
       "heading": "Where the network gathers.",
       "allEvents": "All events",
-      "event1Date": "April 4–5",
+      "event1Date": "April 4\u20135",
       "event1Title": "Easter Retreat",
       "event2Date": "February 18",
       "event2Title": "Lenten 40-Day Walk",
@@ -428,10 +430,10 @@
     "OurNetwork": {
       "eyebrow": "Our network",
       "heading": "There may already be a fellowship on your campus.",
-      "description": "Search by school or city. If nothing comes up near you, that is an invitation — we will help you start one.",
+      "description": "Search by school or city. If nothing comes up near you, that is an invitation \u2014 we will help you start one.",
       "startChapter": "Start a chapter",
       "searchPlaceholder": "Search school or city",
-      "noMatches": "No matches yet — reach out and we'll help you start one."
+      "noMatches": "No matches yet \u2014 reach out and we'll help you start one."
     },
     "HonoraryChairman": {
       "eyebrow": "Our First Honorary Chairman",
@@ -439,8 +441,8 @@
       "name": "Dr. Ralph D. Winter",
       "quoteLine1": "Go therefore",
       "quoteLine2": "and make disciples",
-      "quoteLine3": "of all nations…",
-      "quoteReference": "—Matthew 28:19"
+      "quoteLine3": "of all nations\u2026",
+      "quoteReference": "\u2014Matthew 28:19"
     },
     "PartnerWithUs": {
       "eyebrow": "Partner with us",

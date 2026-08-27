@@ -5,21 +5,20 @@ import { mediaUrl } from "@/lib/homeBlockTypes";
 
 /**
  * Default rotation for the hero: four photographs, each with the line the
- * design pairs it with. The boardwalk leads — it is the one the team named as
- * the main banner.
+ * design pairs it with, in the order the team named.
  *
  * An editor who sets a background image on the Hero block in the CMS gets that
  * single photograph with the heading they typed, rather than having their
  * choice cycle away.
  */
 const DEFAULT_SLIDE_IMAGES = [
-  // Each is the photograph the design puts that line over: the boardwalk for
-  // being sent, the chapel from the air for where we are, hands on an open
-  // Bible for growing, and the city at sunrise for grace.
-  "/images/hero-boardwalk.webp",
+  // The order named by the team: the embrace, the city at sunrise, the chapel
+  // from the air, hands on an open Bible, the boardwalk.
+  "/images/hero-campus.webp",
+  "/images/hero-skyline.webp",
   "/images/hero-slide-campus.webp",
   "/images/hero-slide-bible-study.webp",
-  "/images/hero-skyline.webp",
+  "/images/hero-boardwalk.webp",
 ];
 
 export default async function Hero({ data }: { data?: HeroData } = {}) {
