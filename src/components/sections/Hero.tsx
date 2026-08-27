@@ -13,10 +13,13 @@ import { mediaUrl } from "@/lib/homeBlockTypes";
  * choice cycle away.
  */
 const DEFAULT_SLIDE_IMAGES = [
+  // Each is the photograph the design puts that line over: the boardwalk for
+  // being sent, the chapel from the air for where we are, hands on an open
+  // Bible for growing, and the embrace for grace.
   "/images/hero-boardwalk.webp",
-  "/images/hero-campus.webp",
-  "/images/hero-slide-bible-study.webp",
   "/images/hero-slide-campus.webp",
+  "/images/hero-slide-bible-study.webp",
+  "/images/hero-campus.webp",
 ];
 
 export default async function Hero({ data }: { data?: HeroData } = {}) {
@@ -29,12 +32,21 @@ export default async function Hero({ data }: { data?: HeroData } = {}) {
   ];
 
   const cmsBackground = mediaUrl(data?.backgroundImage);
+  /**
+   * The Hero block still holds three heading fields from when the headline was
+   * one fixed line over a rotating background. The design draws two lines, so
+   * the two highlighted fields join into the second rather than the third
+   * being quietly dropped — an editor's words all reach the page.
+   */
+  const cmsHighlight = [data?.headingHighlight1, data?.headingHighlight2]
+    .filter(Boolean)
+    .join(" ");
   const slides: HeroSlide[] = cmsBackground
     ? [
         {
           image: cmsBackground,
-          line1: data?.headingLine1 ?? t("slide1Line1"),
-          line2: data?.headingHighlight1 ?? t("slide1Line2"),
+          line1: data?.headingLine1 || t("slide1Line1"),
+          line2: cmsHighlight || t("slide1Line2"),
         },
       ]
     : DEFAULT_SLIDE_IMAGES.map((image, i) => ({
