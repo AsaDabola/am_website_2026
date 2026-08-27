@@ -525,13 +525,14 @@ WITH expected(table_name, column_name) AS (VALUES
   ('volunteer_applications', 'why_volunteer'),
   ('volunteer_applications', 'zip_code')
 )
-SELECT
-  e.table_name AS missing_from_table,
-  e.column_name AS missing_column
+-- One cell rather than many rows, so the answer can be copied out whole.
+SELECT coalesce(
+  string_agg(e.table_name || '.' || e.column_name, E'\n' ORDER BY e.table_name, e.column_name),
+  'NOTHING MISSING - schema matches'
+) AS missing_columns
 FROM expected e
 LEFT JOIN information_schema.columns c
   ON c.table_schema = 'public'
  AND c.table_name = e.table_name
  AND c.column_name = e.column_name
-WHERE c.column_name IS NULL
-ORDER BY 1, 2;
+WHERE c.column_name IS NULL;
