@@ -55,6 +55,12 @@ const ANSWERS_FILE = value("answers", "import-answers.json");
 const ACCEPT_SCORE = 0.6;
 /** And the runner-up has to be this far behind, or the choice is a guess. */
 const ACCEPT_MARGIN = 0.1;
+/**
+ * Nudge for a post published in the year the file is filed under. Small on
+ * purpose: it should separate two articles that read alike, never drag a file
+ * onto an article it does not otherwise resemble.
+ */
+const YEAR_BONUS = 0.05;
 
 const IMAGE_EXTENSIONS = new Set([".webp", ".jpg", ".jpeg", ".png", ".gif", ".avif"]);
 const MIME = {
@@ -146,9 +152,9 @@ export function similarity(aTokens, bTokens) {
  * headlines are exactly the case where an automatic choice is worth less than
  * a line in the manifest saying a human should look.
  */
-export function chooseMatch(fileTokens, candidates) {
+export function chooseMatch(fileTokens, candidates, bonus = () => 0) {
   const scored = candidates
-    .map((post) => ({ post, score: similarity(fileTokens, post.tokens) }))
+    .map((post) => ({ post, score: Math.min(1, similarity(fileTokens, post.tokens) + bonus(post)) }))
     .sort((x, y) => y.score - x.score);
 
   const best = scored[0];
@@ -160,6 +166,28 @@ export function chooseMatch(fileTokens, candidates) {
     return { status: "ambiguous", best, runnerUp };
   }
   return { status: "matched", best };
+}
+
+/**
+ * Marks the files that are the same picture in another format. The archive
+ * holds Pentecost.webp beside Pentecost.jpg; uploading both would put two
+ * copies of one photograph in the media library and make them compete for the
+ * same article. WebP wins — it is what the site serves.
+ */
+export function pickBestFormats(relativePaths) {
+  const PREFERENCE = [".webp", ".avif", ".png", ".jpg", ".jpeg", ".gif"];
+  const rank = (p) => {
+    const i = PREFERENCE.indexOf(path.extname(p).toLowerCase());
+    return i === -1 ? PREFERENCE.length : i;
+  };
+  const best = new Map();
+  for (const relative of relativePaths) {
+    const key = relative.slice(0, relative.length - path.extname(relative).length);
+    const held = best.get(key);
+    if (!held || rank(relative) < rank(held)) best.set(key, relative);
+  }
+  const keep = new Set(best.values());
+  return { keep, duplicates: relativePaths.filter((p) => !keep.has(p)) };
 }
 
 /** Everything under root that looks like an image, relative to root. */
@@ -433,15 +461,8 @@ async function main() {
   const files = walkImages(ROOT).slice(0, LIMIT);
   console.log(`${files.length} image files under ${ROOT}.`);
 
-  // Index posts by the month they were published, so a filename is only ever
-  // compared against the handful of articles it could plausibly be.
-  const byMonth = new Map();
   for (const post of posts) {
-    if (!post.publishedDate) continue;
-    const date = new Date(post.publishedDate);
-    const key = `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}`;
-    if (!byMonth.has(key)) byMonth.set(key, []);
-    byMonth.get(key).push(post);
+    post.year = post.publishedDate ? new Date(post.publishedDate).getUTCFullYear() : undefined;
   }
 
   // Decide everything before touching anything, so the dry run and the real
@@ -449,20 +470,26 @@ async function main() {
   const rows = [];
   const claimed = new Map(); // post id -> best row so far, which becomes the cover
 
-  for (const relative of files) {
-    const parsed = parseArchivePath(relative);
-    if (!parsed) {
-      rows.push({ relative, status: "no-date-folder", score: 0 });
-      continue;
-    }
-    const { year, month, file } = parsed;
-    const candidates = byMonth.get(`${year}-${month}`) ?? [];
-    if (!candidates.length) {
-      rows.push({ relative, year, month, status: "no-posts-that-month", score: 0 });
-      continue;
-    }
+  const { keep, duplicates } = pickBestFormats(files);
+  for (const relative of duplicates) rows.push({ relative, status: "duplicate", score: 0 });
 
-    const result = chooseMatch(tokenise(file), candidates);
+  for (const relative of files) {
+    if (!keep.has(relative)) continue;
+    // Every file is weighed against every post, with its folder date as a
+    // nudge rather than a gate.
+    //
+    // Restricting candidates to the folder's own month is what made a first
+    // real run match 9 files out of 1053: an article's publishedDate in the
+    // CMS is not reliably the month its photographs were filed under, and a
+    // date that is even a day out lands in the wrong bucket and takes every
+    // candidate with it. The score threshold and the runner-up margin are
+    // what keep a wrong match out, and they do that job on their own — real
+    // filenames here score 1.00 against their headline.
+    const parsed = parseArchivePath(relative);
+    const { year, month, file } = parsed ?? { file: path.basename(relative) };
+    const result = chooseMatch(tokenise(file), posts, (post) =>
+      year && post.year === year ? YEAR_BONUS : 0,
+    );
     const row = {
       relative,
       year,
@@ -507,15 +534,28 @@ async function main() {
   const covers = rows.filter((r) => r.role === "cover").length;
   const extras = rows.filter((r) => r.role && r.role !== "cover").length;
   const ambiguous = rows.filter((r) => r.status === "ambiguous").length;
-  const unmatched = rows.filter(
-    (r) => r.status === "unmatched" || r.status === "no-posts-that-month" || r.status === "no-date-folder",
-  ).length;
+  const unmatched = rows.filter((r) => r.status === "unmatched").length;
+  const duplicateCount = rows.filter((r) => r.status === "duplicate").length;
 
   console.log("\nHere is what I found:\n");
   console.log(`  ${covers} photos will become the main picture of an article.`);
   if (extras) console.log(`  ${extras} extra photos of those same articles will be uploaded, ready to use.`);
+  if (duplicateCount) console.log(`  ${duplicateCount} are the same picture in another format, so I skipped them.`);
   if (ambiguous) console.log(`  ${ambiguous} could be one of two articles, so I left them alone.`);
   if (unmatched) console.log(`  ${unmatched} did not match any article, so I left them alone.`);
+
+  // The closest near-misses, so a threshold that is set slightly too high is
+  // visible as a list of obviously-right pairs rather than as a low number.
+  const nearMisses = rows
+    .filter((r) => r.status === "unmatched" && r.score > 0.3)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 5);
+  if (nearMisses.length) {
+    console.log("\n  Closest ones I wasn't sure enough about:");
+    for (const r of nearMisses) {
+      console.log(`    ${r.relative}\n      → ${r.postTitle} (${Math.round(r.score * 100)}%)`);
+    }
+  }
 
   const header = "file,year,month,status,role,score,postId,postTitle,runnerUp\n";
   fs.writeFileSync(
