@@ -150,6 +150,25 @@ export function hasCounterSuffix(filename) {
   return /\b(?:copy|final|edit(?:ed)?|v)?\s*\d{1,3}\s*$/i.test(filename.replace(/\.[a-z0-9]+$/i, "").replace(/[_\-–—]+/g, " "));
 }
 
+/**
+ * The common shape of a headline and of the slugs made from one, so the two
+ * can be compared without caring which made which.
+ *
+ * The Notion export's first heading carries the publication date in front of
+ * the title — "2019-10-16 Zambia Community Service…" — and that prefix is
+ * dropped, along with the accents and dashes that differ between a title typed
+ * by hand and a slug generated from it.
+ */
+export function slugify(input) {
+  return input
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/^\s*\d{4}-\d{2}-\d{2}\s+/, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 /** Sørensen–Dice over token sets: twice the shared tokens over the combined size. */
 export function similarity(aTokens, bTokens) {
   if (!aTokens.length || !bTokens.length) return 0;
@@ -530,12 +549,62 @@ async function main() {
   const stated = new Map();
   if (fs.existsSync(MAP_FILE)) {
     const bySlug = JSON.parse(fs.readFileSync(MAP_FILE, "utf8"));
-    const postBySlug = new Map(posts.filter((p) => p.slug).map((p) => [p.slug, p]));
-    for (const [slug, entry] of Object.entries(bySlug)) {
-      const post = postBySlug.get(slug);
-      if (post && entry.file) stated.set(entry.file, post);
+
+    // Three ways in, because a WordPress slug and the slug a post ended up
+    // with in the CMS are not reliably the same string: an editor shortens
+    // one, a migration derives the other from the headline. Requiring them to
+    // be equal matched 1 article out of 466.
+    const index = new Map();
+    const add = (key, post) => {
+      if (key && !index.has(key)) index.set(key, post);
+    };
+    for (const post of posts) {
+      add(post.slug, post);
+      add(slugify(post.slug ?? ""), post);
+      add(slugify(post.title ?? ""), post);
     }
-    console.log(`${stated.size} photographs named by the old site itself.`);
+
+    let byExactSlug = 0;
+    let byLooseSlug = 0;
+    let byTitle = 0;
+    const unresolved = [];
+
+    for (const [slug, entry] of Object.entries(bySlug)) {
+      if (!entry.file) continue;
+      const exact = index.get(slug);
+      const loose = exact ? null : index.get(slugify(slug));
+      const titled = exact || loose ? null : index.get(slugify(entry.title ?? ""));
+      const post = exact ?? loose ?? titled;
+      if (post) {
+        if (exact) byExactSlug++;
+        else if (loose) byLooseSlug++;
+        else byTitle++;
+        stated.set(entry.file, post);
+      } else if (unresolved.length < 3) {
+        unresolved.push({ slug, title: entry.title });
+      }
+    }
+
+    console.log(
+      `${stated.size} photographs named by the old site itself` +
+        ` (${byExactSlug} by address, ${byLooseSlug + byTitle} by headline).`,
+    );
+
+    // When almost nothing lines up the two sides are shaped differently, and
+    // the shapes are the only thing that says how.
+    if (stated.size < Object.keys(bySlug).length / 4 && unresolved.length) {
+      console.log("\n  Most articles on the old site did not match one here. For example:");
+      for (const item of unresolved) {
+        console.log(`    old site: ${item.slug}`);
+        console.log(`       title: ${item.title ?? "(none)"}`);
+      }
+      console.log("  The first few here, for comparison:");
+      for (const post of posts.slice(0, 3)) {
+        console.log(`    this site: ${post.slug}`);
+        console.log(`       title: ${post.title}`);
+      }
+      console.log("  Send those lines over and the matching can be adjusted to fit.\n");
+    }
   }
 
   for (const relative of files) {
