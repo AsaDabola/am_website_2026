@@ -50,6 +50,12 @@ const MANIFEST = value("manifest", "import-manifest.csv");
 const STATE_FILE = value("state", "import-state.json");
 /** Last run's answers, offered as defaults so a re-run is four Enters. */
 const ANSWERS_FILE = value("answers", "import-answers.json");
+/**
+ * Written by scripts/map-images-from-site.mjs: slug to archive path, taken
+ * from the old site's own pages. Where a file is named there it is used as
+ * fact, and no filename is compared with any headline.
+ */
+const MAP_FILE = value("map", "image-map.json");
 
 /**
  * Below this the filename and the title are not the same article. Set against
@@ -513,8 +519,50 @@ async function main() {
   const { keep, duplicates } = pickBestFormats(files);
   for (const relative of duplicates) rows.push({ relative, status: "duplicate", score: 0 });
 
+  /**
+   * The old site's own answer, where we have it: archive path to post. It is
+   * built from slugs, so it is exact — no filename is weighed against any
+   * headline for a file that appears here. A generic name like am-1.webp can
+   * only ever be placed this way.
+   */
+  const stated = new Map();
+  if (fs.existsSync(MAP_FILE)) {
+    const bySlug = JSON.parse(fs.readFileSync(MAP_FILE, "utf8"));
+    const postBySlug = new Map(posts.filter((p) => p.slug).map((p) => [p.slug, p]));
+    for (const [slug, entry] of Object.entries(bySlug)) {
+      const post = postBySlug.get(slug);
+      if (post && entry.file) stated.set(entry.file, post);
+    }
+    console.log(`${stated.size} photographs named by the old site itself.`);
+  }
+
   for (const relative of files) {
     if (!keep.has(relative)) continue;
+
+    const namedFor = stated.get(relative) ?? stated.get(relative.split(path.sep).join("/"));
+    if (namedFor) {
+      const row = {
+        relative,
+        status: "matched",
+        score: 1,
+        postId: namedFor.id,
+        postTitle: namedFor.title,
+        stated: true,
+        counter: false,
+      };
+      rows.push(row);
+      const held = claimed.get(row.postId);
+      // A stated file always outranks a guessed one for the cover.
+      if (!held || !held.stated) {
+        if (held) held.role = "extra";
+        row.role = "cover";
+        claimed.set(row.postId, row);
+      } else {
+        row.role = "extra";
+      }
+      continue;
+    }
+
     // Every file is weighed against every post, with its folder date as a
     // nudge rather than a gate.
     //
