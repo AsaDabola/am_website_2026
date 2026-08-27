@@ -20,13 +20,12 @@
  * also means the same command works against a local server or the deployed
  * one — whichever you point PAYLOAD_URL at is where the images land.
  *
- * Dry run first. It writes the manifest and changes nothing:
+ * To use it:
  *
- *   PAYLOAD_URL=http://localhost:3000 \
- *   PAYLOAD_EMAIL=you@example.org PAYLOAD_PASSWORD='…' \
- *   node scripts/import-article-images.mjs --root /path/to/archive
+ *   npm run import-images
  *
- * Read import-manifest.csv, then run it for real by adding --apply.
+ * It asks where the photographs are and how to sign in, shows you what it
+ * found, and waits for a yes before uploading anything.
  *
  * Safe to re-run. Uploads are recorded in import-state.json and skipped on the
  * next pass, and a post that already has a cover image is never overwritten
@@ -35,6 +34,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import readline from "node:readline";
 
 const args = process.argv.slice(2);
 const flag = (name) => args.includes(`--${name}`);
@@ -43,8 +43,6 @@ const value = (name, fallback) => {
   return i !== -1 && args[i + 1] ? args[i + 1] : fallback;
 };
 
-const ROOT = value("root");
-const APPLY = flag("apply");
 const REPLACE_COVERS = flag("replace-covers");
 const LIMIT = Number(value("limit", 0)) || Infinity;
 const CONCURRENCY = Number(value("concurrency", 4));
@@ -114,6 +112,16 @@ export function tokenise(input) {
 }
 
 /**
+ * True for `retreat-2.webp` and `retreat copy 3.webp`, false for
+ * `retreat.webp`. Used only to break ties: when two files describe the same
+ * article equally well, the one without a counter is the original, and the
+ * numbered ones are the extra frames — so the plain name takes the cover.
+ */
+export function hasCounterSuffix(filename) {
+  return /\b(?:copy|final|edit(?:ed)?|v)?\s*\d{1,3}\s*$/i.test(filename.replace(/\.[a-z0-9]+$/i, "").replace(/[_\-–—]+/g, " "));
+}
+
+/**
  * Sørensen–Dice over token sets: twice the shared tokens over the combined
  * size. Chosen over a raw overlap count because a filename that is a short
  * fragment of a long headline should not score the same as one that is the
@@ -169,6 +177,66 @@ export function walkImages(root, fsImpl = fs) {
   return found.map((full) => path.relative(root, full)).sort();
 }
 
+// ---------------------------------------------------------------------------
+// Asking, rather than being told. Every setting this needs is a question with
+// a sensible default, so running it is one command and four answers.
+// ---------------------------------------------------------------------------
+
+/**
+ * One readline interface for the whole run, not one per question. A fresh
+ * interface buffers everything currently readable on stdin and throws it away
+ * when it closes, so a second one has nothing left to read and the script
+ * hangs on its own prompt.
+ */
+let rl = null;
+let lines = null;
+const prompts = () => (rl ??= readline.createInterface({ input: process.stdin, output: process.stdout }));
+const closePrompts = () => {
+  rl?.close();
+  rl = null;
+  lines = null;
+};
+
+/**
+ * Lines are pulled one at a time through readline's async iterator rather than
+ * through `question()`. `question()` drops input between calls — readline goes
+ * on reading after a callback fires, so the next answer is emitted before the
+ * next `question()` has registered a handler for it, and the script then waits
+ * for a line that has already gone past.
+ */
+async function readLine() {
+  lines ??= prompts()[Symbol.asyncIterator]();
+  const { value, done } = await lines.next();
+  return done ? "" : value;
+}
+
+/**
+ * One question. `hidden` stops a password appearing on screen: the keystrokes
+ * still reach readline, they are simply not echoed back.
+ */
+async function ask(question, { fallback = "", hidden = false } = {}) {
+  const iface = prompts();
+  process.stdout.write(fallback ? `${question} [${fallback}] ` : `${question} `);
+  const echo = iface._writeToOutput;
+  if (hidden) iface._writeToOutput = () => {};
+  const answer = await readLine();
+  if (hidden) {
+    iface._writeToOutput = echo;
+    process.stdout.write("\n");
+  }
+  return answer.trim() || fallback;
+}
+
+async function askYesNo(question) {
+  const answer = (await ask(`${question} (yes/no)`)).toLowerCase();
+  return answer === "y" || answer === "yes";
+}
+
+/** Strips quotes and a trailing slash, so a path dragged into the terminal works. */
+function cleanPath(input) {
+  return input.trim().replace(/^['"]|['"]$/g, "").replace(/\/+$/, "");
+}
+
 function csvCell(input) {
   const text = String(input ?? "");
   return /[",\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
@@ -179,14 +247,22 @@ function csvCell(input) {
 // ---------------------------------------------------------------------------
 
 async function login(baseUrl, email, password) {
-  const res = await fetch(`${baseUrl}/api/users/login`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password }),
-  });
-  if (!res.ok) throw new Error(`Login failed (${res.status}): ${await res.text()}`);
+  let res;
+  try {
+    res = await fetch(`${baseUrl}/api/users/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+  } catch {
+    // The message Node gives here is "fetch failed", which tells nobody
+    // anything. The two things that are actually wrong are worth naming.
+    throw new Error(`I couldn't reach ${baseUrl}.\nCheck the address is right, and that the site is running.`);
+  }
+  if (res.status === 401) throw new Error("That email and password were not accepted.");
+  if (!res.ok) throw new Error(`Signing in failed (${res.status}): ${await res.text()}`);
   const { token } = await res.json();
-  if (!token) throw new Error("Login returned no token.");
+  if (!token) throw new Error("Signing in returned no token.");
   return token;
 }
 
@@ -241,13 +317,18 @@ async function inBatches(items, limit, worker) {
 // ---------------------------------------------------------------------------
 
 async function main() {
-  if (!ROOT) throw new Error("Pass --root <folder> pointing at the archive.");
-  if (!fs.existsSync(ROOT)) throw new Error(`No such folder: ${ROOT}`);
+  console.log("\nThis attaches your article photographs to the articles already on the site.");
+  console.log("Nothing is uploaded until you say yes.\n");
 
-  const baseUrl = (process.env.PAYLOAD_URL || "http://localhost:3000").replace(/\/$/, "");
-  const email = process.env.PAYLOAD_EMAIL;
-  const password = process.env.PAYLOAD_PASSWORD;
-  if (!email || !password) throw new Error("Set PAYLOAD_EMAIL and PAYLOAD_PASSWORD.");
+  let ROOT = cleanPath(value("root", "") || (await ask("Folder with the photographs:")));
+  while (!ROOT || !fs.existsSync(ROOT)) {
+    console.log(ROOT ? `  Can't find that folder: ${ROOT}` : "  Please give a folder.");
+    ROOT = cleanPath(await ask("Folder with the photographs:"));
+  }
+
+  const baseUrl = (await ask("Website address:", { fallback: "http://localhost:3000" })).replace(/\/$/, "");
+  const email = await ask("Your admin email:");
+  const password = await ask("Your admin password:", { hidden: true });
 
   const state = fs.existsSync(STATE_FILE)
     ? JSON.parse(fs.readFileSync(STATE_FILE, "utf8"))
@@ -313,8 +394,17 @@ async function main() {
     rows.push(row);
 
     if (result.status !== "matched") continue;
+    row.counter = hasCounterSuffix(file);
+
+    // Best score wins the cover; on a tie the un-numbered file does, since a
+    // trailing counter marks the second and third frames of the same article.
     const existing = claimed.get(row.postId);
-    if (!existing || row.score > existing.score) {
+    const beatsExisting =
+      !existing ||
+      row.score > existing.score ||
+      (row.score === existing.score && existing.counter && !row.counter);
+
+    if (beatsExisting) {
       if (existing) existing.role = "extra";
       row.role = "cover";
       claimed.set(row.postId, row);
@@ -330,15 +420,20 @@ async function main() {
     if (post?.hasCover && !REPLACE_COVERS) row.role = "extra (post already has a cover)";
   }
 
-  const counts = rows.reduce((acc, row) => {
-    const key = row.role === "cover" ? "cover" : row.status;
-    acc[key] = (acc[key] ?? 0) + 1;
-    return acc;
-  }, {});
-  console.log("\nDecisions:");
-  for (const [key, n] of Object.entries(counts).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${String(n).padStart(6)}  ${key}`);
-  }
+  // Said in plain words on screen. The CSV below is for anyone who wants to
+  // check a specific file; nobody should have to open it to use this.
+  const covers = rows.filter((r) => r.role === "cover").length;
+  const extras = rows.filter((r) => r.role && r.role !== "cover").length;
+  const ambiguous = rows.filter((r) => r.status === "ambiguous").length;
+  const unmatched = rows.filter(
+    (r) => r.status === "unmatched" || r.status === "no-posts-that-month" || r.status === "no-date-folder",
+  ).length;
+
+  console.log("\nHere is what I found:\n");
+  console.log(`  ${covers} photos will become the main picture of an article.`);
+  if (extras) console.log(`  ${extras} extra photos of those same articles will be uploaded, ready to use.`);
+  if (ambiguous) console.log(`  ${ambiguous} could be one of two articles, so I left them alone.`);
+  if (unmatched) console.log(`  ${unmatched} did not match any article, so I left them alone.`);
 
   const header = "file,year,month,status,role,score,postId,postTitle,runnerUp\n";
   fs.writeFileSync(
@@ -353,15 +448,24 @@ async function main() {
         .join("\n") +
       "\n",
   );
-  console.log(`\nManifest written to ${MANIFEST}`);
+  console.log(`\n  (A file-by-file list is in ${MANIFEST} if you want to check any of them.)`);
 
-  if (!APPLY) {
-    console.log("Dry run — nothing uploaded. Re-run with --apply once the manifest looks right.");
+  const toUpload = rows.filter((row) => row.status === "matched" && !state.uploaded[row.relative]);
+  const alreadyDone = rows.filter((row) => row.status === "matched" && state.uploaded[row.relative]).length;
+  if (alreadyDone) console.log(`\n  ${alreadyDone} were uploaded on an earlier run and will be skipped.`);
+
+  if (!toUpload.length) {
+    console.log("\nNothing left to upload.");
     return;
   }
 
-  const toUpload = rows.filter((row) => row.status === "matched" && !state.uploaded[row.relative]);
-  console.log(`\nUploading ${toUpload.length} files (${CONCURRENCY} at a time) …`);
+  console.log("");
+  if (!(await askYesNo(`Upload ${toUpload.length} photos to ${baseUrl} now?`))) {
+    console.log("Stopped. Nothing was uploaded.");
+    return;
+  }
+
+  console.log(`\nUploading — this will take a while. You can stop it at any time and run it again.`);
 
   let done = 0;
   let failed = 0;
@@ -382,14 +486,19 @@ async function main() {
   });
 
   saveState();
-  console.log(`\nUploaded ${done}, failed ${failed}. State in ${STATE_FILE} — re-run to retry failures.`);
+  console.log(`\nDone. ${done} photos uploaded.`);
+  if (failed) {
+    console.log(`${failed} did not upload — run this again and it will retry just those.`);
+  }
 }
 
 // Only run when invoked directly, so the pure helpers above can be imported
 // by a test without the script trying to talk to a server.
 if (process.argv[1] && import.meta.url.endsWith(path.basename(process.argv[1]))) {
-  main().catch((error) => {
-    console.error(error.message);
-    process.exit(1);
-  });
+  main()
+    .catch((error) => {
+      console.error(`\n${error.message}`);
+      process.exitCode = 1;
+    })
+    .finally(closePrompts);
 }

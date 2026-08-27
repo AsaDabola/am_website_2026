@@ -9,7 +9,8 @@
     "lint": "eslint",
     "migrate": "NODE_OPTIONS='--import tsx' payload migrate --disable-transpile",
     "migrate:create": "NODE_OPTIONS='--import tsx' payload migrate:create --disable-transpile",
-    "migrate:status": "NODE_OPTIONS='--import tsx' payload migrate:status --disable-transpile"
+    "migrate:status": "NODE_OPTIONS='--import tsx' payload migrate:status --disable-transpile",
+    "import-images": "node scripts/import-article-images.mjs"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.88.0",

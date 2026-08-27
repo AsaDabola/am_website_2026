@@ -137,37 +137,47 @@ they would ship inside every deployment. They belong in the `media` collection,
 which puts them in Vercel Blob and generates the thumbnail, card and hero sizes
 the site actually serves.
 
-`import-article-images.mjs` does that. It expects the archive laid out by date
-and named by article — `<root>/2019/07/summer-retreat-in-busan.webp` — and
-matches each file against the posts published that month, comparing the words
-in the filename with the words in the headline.
+`import-article-images.mjs` does that. Run it with:
+
+```bash
+npm run import-images
+```
+
+It asks four questions — the folder, the website address, your admin email and
+password — shows you what it found, and waits for a yes before uploading
+anything:
+
+```
+Here is what I found:
+
+  412 photos will become the main picture of an article.
+  180 extra photos of those same articles will be uploaded, ready to use.
+    6 could be one of two articles, so I left them alone.
+   14 did not match any article, so I left them alone.
+
+Upload 592 photos to https://… now? (yes/no)
+```
+
+It expects the archive laid out by date and named by article —
+`2019/07/summer-retreat-in-busan.webp` — and matches each file against the
+posts published that month, comparing the words in the filename with the words
+in the headline. A match has to be good on its own *and* clearly ahead of the
+runner-up, so two articles in one month with similar headlines are left alone
+rather than guessed at. `import-manifest.csv` lists every file and what
+happened to it.
+
+Safe to stop and re-run: uploads are recorded in `import-state.json` and
+skipped next time, so a second run retries only what failed. A post that
+already has a cover image keeps it.
 
 It goes over the REST API rather than booting Payload, for the reason at the
 top of this file: a custom script that imports the TypeScript config under
 `tsx` dies in `loadEnv`. That also means it runs against whichever server you
-point it at.
+point it at — localhost to try it, the live address to do it for real.
 
-Dry run first — it writes the manifest and uploads nothing:
-
-```bash
-PAYLOAD_URL=http://localhost:3000 \
-PAYLOAD_EMAIL=you@example.org PAYLOAD_PASSWORD='…' \
-node scripts/import-article-images.mjs --root /path/to/archive
-```
-
-Read `import-manifest.csv`. Every file gets a row saying which post it matched,
-how confident the match was, and whether it would become that post's cover or
-an extra. Files it could not place are listed as `unmatched`, `ambiguous` (two
-articles that month with near-identical headlines) or `no-date-folder`, so
-nothing is silently dropped or silently guessed.
-
-When the manifest looks right, add `--apply`. Uploads are recorded in
-`import-state.json` and skipped on the next run, so it is safe to stop it and
-start it again, and re-running retries only what failed. A post that already
-has a cover image keeps it unless you pass `--replace-covers`.
-
-Useful flags: `--limit 20` to trial a handful first, `--concurrency 4` to
-change how many upload at once, `--manifest` and `--state` to move those files.
+Flags, if wanted: `--limit 20` to trial a handful, `--concurrency` for how many
+upload at once, `--replace-covers` to overwrite covers that already exist,
+`--root` to skip the first question.
 
 One thing it deliberately does not do: an article with several photographs gets
 the best-matching one as its `coverImage`, and the rest are uploaded and listed
