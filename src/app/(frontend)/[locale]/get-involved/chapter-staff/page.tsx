@@ -10,12 +10,12 @@ import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 
 export const metadata: Metadata = {
-  title: "Chapter Volunteer | AM International",
+  title: "Chapter Staff | AM International",
   description:
     "Serve as a Chapter leader or staff member and help lead local programs and gatherings.",
 };
 
-export default async function ChapterVolunteerPage() {
+export default async function ChapterStaffPage() {
   const [t, tHeader] = await Promise.all([
     getTranslations("Common"),
     getTranslations("Header"),
@@ -27,7 +27,7 @@ export default async function ChapterVolunteerPage() {
         crumbs={[
           { label: "Home", href: "/" },
           { label: tHeader("getInvolved"), href: "/get-involved" },
-          { label: "Chapter Volunteer" },
+          { label: "Chapter Staff" },
         ]}
         title="Get Involved"
         subtitle={t("tagline")}
@@ -41,7 +41,7 @@ export default async function ChapterVolunteerPage() {
             <Eyebrow>Get involved</Eyebrow>
           </div>
           <h1 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
-            Chapter Volunteer
+            Chapter Staff
           </h1>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
