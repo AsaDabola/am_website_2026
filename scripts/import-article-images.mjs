@@ -767,16 +767,58 @@ async function main() {
   const alreadyDone = rows.filter((row) => row.status === "matched" && state.uploaded[row.relative]).length;
   if (alreadyDone) console.log(`\n  ${alreadyDone} were uploaded on an earlier run and will be skipped.`);
 
-  if (!toUpload.length) {
-    console.log("\nNothing left to upload.");
+  /**
+   * Covers whose photograph is already in the library.
+   *
+   * Setting the cover used to happen only as part of uploading, so a file
+   * carried over from an earlier run was skipped along with its post's cover —
+   * and every run that improved the matching promoted more files to cover
+   * whose photograph had already gone up. Those articles stayed blank however
+   * many times this was run.
+   */
+  const coversToSet = rows.filter((row) => {
+    if (row.role !== "cover") return false;
+    const uploaded = state.uploaded[row.relative];
+    if (!uploaded?.mediaId) return false;
+    const post = posts.find((entry) => entry.id === row.postId);
+    return post && (!post.hasCover || REPLACE_COVERS);
+  });
+  if (coversToSet.length) {
+    console.log(`  ${coversToSet.length} of those are the main picture of an article that has none yet.`);
+  }
+
+  if (!toUpload.length && !coversToSet.length) {
+    console.log("\nNothing left to do.");
     return;
   }
 
   console.log("");
-  if (!(await askYesNo(`Upload ${toUpload.length} photos to ${baseUrl} now?`))) {
-    console.log("Stopped. Nothing was uploaded.");
+  const what = [
+    toUpload.length ? `upload ${toUpload.length} photos` : "",
+    coversToSet.length ? `set ${coversToSet.length} main pictures` : "",
+  ]
+    .filter(Boolean)
+    .join(" and ");
+  if (!(await askYesNo(`Go ahead and ${what} on ${baseUrl}?`))) {
+    console.log("Stopped. Nothing was changed.");
     return;
   }
+
+  let setFailed = 0;
+  if (coversToSet.length) {
+    console.log(`\nSetting ${coversToSet.length} main pictures …`);
+    await inBatches(coversToSet, CONCURRENCY, async (row) => {
+      try {
+        await setCoverImage(baseUrl, token, row.postId, state.uploaded[row.relative].mediaId);
+      } catch (error) {
+        setFailed++;
+        console.error(`  ! ${row.postTitle}: ${error.message}`);
+      }
+    });
+    console.log(`Done. ${coversToSet.length - setFailed} articles given their picture.`);
+  }
+
+  if (!toUpload.length) return;
 
   console.log(`\nUploading — this will take a while. You can stop it at any time and run it again.`);
 
