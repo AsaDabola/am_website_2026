@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
+import { ArrowRightIcon } from "@/components/ui/icons";
 
 /**
  * The staggered photo strip that closes Group Activities: two narrow frames
@@ -51,8 +52,15 @@ export default function WeekendPhotoStrip({
     el.scrollBy({ left: direction * el.clientWidth * 0.7, behavior: "smooth" });
   };
 
+  /**
+   * Both buttons draw the same SVG, one of them rotated. They used to draw a
+   * text arrow — and the → glyph is not centred in its em box, so rotating it
+   * moved it to the other side of centre and the two circles ended up with
+   * their arrows at visibly different heights. An SVG with a square viewBox
+   * turns about its own middle, so the pair matches.
+   */
   const arrow =
-    "flex size-10 items-center justify-center rounded-full bg-brand-navy-deep text-white transition-opacity hover:bg-brand-navy disabled:cursor-default disabled:opacity-35";
+    "flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-navy-deep text-white transition-opacity hover:bg-brand-navy disabled:cursor-default disabled:opacity-35";
 
   return (
     <div className="grid items-center gap-10 lg:grid-cols-[480px_1fr] lg:gap-14">
@@ -68,9 +76,7 @@ export default function WeekendPhotoStrip({
             aria-label="Previous photos"
             className={arrow}
           >
-            <span aria-hidden className="rotate-180 text-lg leading-none">
-              &rarr;
-            </span>
+            <ArrowRightIcon className="size-4 rotate-180" />
           </button>
           <button
             type="button"
@@ -79,7 +85,7 @@ export default function WeekendPhotoStrip({
             aria-label="Next photos"
             className={arrow}
           >
-            <span aria-hidden className="text-lg leading-none">&rarr;</span>
+            <ArrowRightIcon className="size-4" />
           </button>
         </div>
       </div>

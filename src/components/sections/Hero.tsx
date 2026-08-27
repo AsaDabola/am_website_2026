@@ -19,7 +19,6 @@ const DEFAULT_SLIDES = [
   "/images/hero-campus.webp",
   "/images/hero-slide-campus.webp",
   "/images/hero-slide-bible-study.webp",
-  "/images/hero-slide-hikers.webp",
 ];
 
 export default async function Hero({ data }: { data?: HeroData } = {}) {
