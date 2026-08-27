@@ -50,23 +50,29 @@ export default function PillarsHero({ title }: { title: string }) {
         sizes="100vw"
       />
       {/*
-        The design's own gradient, taken from its inspect panel rather than
-        approximated: clear for the top three quarters, then a blue that comes
-        up to 0.85 at the foot. It is a blue wash over the photograph, not the
-        near-black scrim this carried before, so the grass and the sea keep
-        their colour all the way down.
+        The hero's fill stack as the design's inspect panel lists it: a scrim
+        that runs clear to #010E2F at 60%, under two faint blue blooms —
+        #1449C6 at 12% and #4D8DF6 at 16%, each falling away to nothing.
 
-        Spelled out inline because it is four stops of one specific colour —
-        as a Tailwind arbitrary value it would be a single unreadable token,
-        and the point of copying it verbatim is that it stays comparable to
-        the design.
+        This is deliberately not the four-stop #598CD1 wash that sat here
+        before. That gradient belongs to the "One Movement, Every Nation" band
+        below; over the photograph it turned the bottom third milky and
+        flattened the grass and the sea. The scrim darkens instead of washing,
+        so the picture holds all the way down.
+
+        Spelled out inline rather than as Tailwind arbitrary values: three
+        stacked gradients would be one unreadable token, and the point of
+        copying them verbatim is that they stay comparable to the design.
       */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
-          background:
-            "linear-gradient(180deg, rgba(89, 140, 209, 0), rgba(89, 140, 209, 0) 75%, rgba(89, 140, 209, 0.5) 90%, rgba(89, 140, 209, 0.85))",
+          background: [
+            "radial-gradient(85% 55% at 22% 100%, rgba(77, 141, 246, 0.16), rgba(77, 141, 246, 0) 70%)",
+            "radial-gradient(85% 55% at 78% 100%, rgba(20, 73, 198, 0.12), rgba(20, 73, 198, 0) 70%)",
+            "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(1, 14, 47, 0.6))",
+          ].join(", "),
         }}
       />
 
