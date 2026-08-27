@@ -69,6 +69,9 @@ export default async function BibleTeacherTrainingPage() {
         ]}
         title={tHeader("getInvolved")}
         subtitle={t("tagline")}
+        // Its own banner, in place of the site-wide seabird this page was
+        // falling through to.
+        backgroundImage="/images/bible-teacher-hero.webp"
       />
       <GetInvolvedSubNav active="/get-involved/bible-teacher-training" />
 
