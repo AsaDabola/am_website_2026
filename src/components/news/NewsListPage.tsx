@@ -61,12 +61,6 @@ export default async function NewsListPage({
     perPage,
   });
 
-  const dateFormatter = new Intl.DateTimeFormat("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  });
-
   return (
     <>
       <AboutHero
@@ -100,7 +94,6 @@ export default async function NewsListPage({
                     image={post.coverImage}
                     tag={categoryTag[post.category]}
                     title={post.title}
-                    date={dateFormatter.format(new Date(post.publishedDate))}
                   />
                 ))}
               </div>

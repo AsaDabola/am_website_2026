@@ -11,7 +11,6 @@ type Card = {
   image?: string;
   tag: string;
   title: string;
-  date?: string;
 };
 
 /**
@@ -37,12 +36,6 @@ export default async function EventsAndTestimonials({
     getPostsList("testimony"),
   ]);
 
-  const dateFormatter = new Intl.DateTimeFormat("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  });
-
   const eventCards: Card[] = (eventDocs ?? []).map((doc) => {
     // Via unknown: once payload-types.ts has been generated, `doc` is the
     // typed Event, which has no index signature and so is not directly
@@ -54,7 +47,6 @@ export default async function EventsAndTestimonials({
       image: mediaUrl(event.coverImage as { url?: string } | string | undefined),
       tag: "Event",
       title: event.title as string,
-      date: (event.dateLabel as string) || undefined,
     };
   });
 
@@ -64,7 +56,6 @@ export default async function EventsAndTestimonials({
     image: post.coverImage,
     tag: "Testimony",
     title: post.title,
-    date: dateFormatter.format(new Date(post.publishedDate)),
   }));
 
   // Interleaved so the row reads event / testimony / event / testimony, then
@@ -90,8 +81,11 @@ export default async function EventsAndTestimonials({
   return (
     <section className="bg-white py-24">
       <Container>
-        <h2 className="font-display text-[34px] font-semibold leading-[1.15] tracking-[-0.02em] text-ink sm:text-[45px]">
-          Events &amp; Testimonials
+        {/* 45.3px Archivo SemiBold in #222520 — a warmer near-black than the
+            site's `ink`, and the design sets the ampersand tight against both
+            words rather than spaced. */}
+        <h2 className="font-display text-[34px] font-semibold leading-[52px] text-[#222520] sm:text-[45.3px]">
+          Events&amp;Testimonials
         </h2>
 
         <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -102,7 +96,6 @@ export default async function EventsAndTestimonials({
               image={card.image}
               tag={card.tag}
               title={card.title}
-              date={card.date}
             />
           ))}
         </div>

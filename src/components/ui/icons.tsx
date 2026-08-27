@@ -351,6 +351,25 @@ export function CheckIcon({ className = "size-3.5" }: IconProps) {
 }
 
 /**
+ * The little document mark that precedes "Read" on an article card. Drawn
+ * here for the same reason the other Lucide-family glyphs are: the design's
+ * exported SVG sits behind a host this session cannot reach, and the file
+ * already authors its icons by hand at the box the design gives them.
+ */
+export function ArticleIcon({ className = "size-[18px]" }: IconProps) {
+  return (
+    <svg viewBox="0 0 18 18" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M1.5 4h15M1.5 9h15M1.5 14h9"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+/**
  * The nav data is built on the server but also rendered by the client-side
  * mobile menu, and React components can't cross that boundary as props — so
  * groups carry an icon *name* and both sides resolve it through this map.

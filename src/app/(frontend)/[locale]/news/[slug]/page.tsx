@@ -124,7 +124,6 @@ export default async function NewsArticlePage({
                   image={related.coverImage}
                   tag={categoryTag[related.category]}
                   title={related.title}
-                  date={dateFormatter.format(new Date(related.publishedDate))}
                 />
               ))}
             </div>
