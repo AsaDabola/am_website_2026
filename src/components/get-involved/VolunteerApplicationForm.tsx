@@ -359,10 +359,17 @@ export default function VolunteerApplicationForm() {
         </p>
       </div>
 
+      {/* `min-w-0` on both columns is load-bearing: a grid item's automatic
+          minimum size is its content's min-content width, and the stepper's row
+          of nowrap labels is ~690px wide. Without it the track — and with it the
+          whole page — grows past a phone screen instead of the stepper
+          scrolling inside its own box. */}
       <div className="mt-6 grid gap-8 lg:grid-cols-[1fr_360px] lg:items-start">
-        <div>
-          {/* Scrolls sideways on a phone instead of wrapping: five numbered
-              steps stacked over two lines stop reading as one track. */}
+        <div className="min-w-0">
+          {/* Scrolls sideways rather than wrapping: five numbered steps stacked
+              over two lines stop reading as one track. Below `sm` the labels
+              come off entirely so all five fit at once — the step's name is
+              already the heading of the card directly beneath. */}
           <ol className="flex items-center gap-3 overflow-x-auto pb-1">
             {STEPS.map((entry, index) => {
               const reachable = index <= furthest;
@@ -387,7 +394,7 @@ export default function VolunteerApplicationForm() {
                       {done ? <CheckIcon /> : index + 1}
                     </span>
                     <span
-                      className={`whitespace-nowrap text-[13px] ${
+                      className={`hidden whitespace-nowrap text-[13px] sm:inline ${
                         active ? "font-bold text-ink" : "font-semibold text-ink-muted/80"
                       }`}
                     >
@@ -397,8 +404,11 @@ export default function VolunteerApplicationForm() {
                   {index < STEPS.length - 1 && (
                     <span
                       aria-hidden
+                      // Not `bg-mist`: this section's background is mist, so a
+                      // mist connector is invisible and the five circles stop
+                      // reading as one track.
                       className={`h-1 min-w-4 flex-1 rounded-full ${
-                        index < current ? "bg-brand-blue" : "bg-mist"
+                        index < current ? "bg-brand-blue" : "bg-black/10"
                       }`}
                     />
                   )}
@@ -585,9 +595,13 @@ export default function VolunteerApplicationForm() {
                           const explanation = SCREENING.find((q) => q.name === name)?.explanation;
                           const detail = explanation ? values[explanation]?.trim() : "";
                           return (
+                            // Answers are free text: an unbroken email or URL is
+                            // one long word, and a grid item's automatic minimum
+                            // size is that word's width. `min-w-0` lets the track
+                            // stay narrow and `break-words` wraps inside it.
                             <div key={name} className="grid gap-1 sm:grid-cols-[200px_1fr] sm:gap-4">
-                              <dt className="text-sm font-semibold text-ink">{label}</dt>
-                              <dd className="whitespace-pre-line text-sm leading-relaxed text-ink-muted">
+                              <dt className="min-w-0 text-sm font-semibold text-ink">{label}</dt>
+                              <dd className="min-w-0 whitespace-pre-line break-words text-sm leading-relaxed text-ink-muted">
                                 {values[name]?.trim() || "—"}
                                 {detail && <span className="mt-1 block">{detail}</span>}
                               </dd>
@@ -646,7 +660,7 @@ export default function VolunteerApplicationForm() {
           </div>
         </div>
 
-        <aside className="space-y-4 lg:sticky lg:top-24">
+        <aside className="min-w-0 space-y-4 lg:sticky lg:top-24">
           <div className="rounded-2xl border border-black/10 bg-white p-5">
             <h4 className="font-display text-base font-extrabold text-ink">Your progress</h4>
             <div
