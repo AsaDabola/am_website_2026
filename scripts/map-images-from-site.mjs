@@ -64,6 +64,17 @@ export function extractImageUrl(html) {
     if (src) return { url: src, source };
   }
 
+  // Elementor renders a good many featured images as a CSS background on a
+  // div rather than as an <img>, and nothing above would ever see those. An
+  // article whose picture is plainly there on the old site but came back
+  // empty is usually one of these.
+  for (const match of html.matchAll(/background-image\s*:\s*url\((['"]?)([^'")]+)\1\)/gi)) {
+    const url = match[2].trim();
+    if (/\/wp-content\/uploads\//.test(url) && !isSiteFurniture(url)) {
+      return { url, source: "background-image" };
+    }
+  }
+
   for (const match of html.matchAll(/<img[^>]+>/gi)) {
     const src = pickSrc(match[0]);
     if (src && /\/wp-content\/uploads\//.test(src) && !isSiteFurniture(src)) {
@@ -84,8 +95,13 @@ export function extractImageUrl(html) {
 function pickSrc(tag) {
   const attr = (name) => new RegExp(`${name}=["']([^"']+)["']`, "i").exec(tag)?.[1];
   const src = attr("data-src") || attr("src");
-  if (src && /^data:/.test(src)) return attr("data-large_file") || attr("data-lazy-src") || null;
-  return src ?? null;
+  if (src && !/^data:/.test(src)) return src;
+  // A placeholder in src, or no src at all: the real one is on a lazy-load
+  // attribute, or first in the srcset.
+  const lazy = attr("data-large_file") || attr("data-lazy-src");
+  if (lazy) return lazy;
+  const srcset = attr("data-srcset") || attr("srcset");
+  return srcset ? srcset.split(",")[0].trim().split(/\s+/)[0] : null;
 }
 
 /** Logos, share graphics and spacers, which belong to the site and not to any article. */
