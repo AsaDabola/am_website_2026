@@ -36,3 +36,5 @@ src/payload-types.ts
 import-state.json
 import-manifest.csv
 import-answers.json
+posts-without-picture.csv
+image-map.json

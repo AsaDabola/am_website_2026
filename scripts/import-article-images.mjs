@@ -56,6 +56,8 @@ const ANSWERS_FILE = value("answers", "import-answers.json");
  * fact, and no filename is compared with any headline.
  */
 const MAP_FILE = value("map", "image-map.json");
+/** Articles left without a picture, written so the remainder is a list, not a number. */
+const BARE_FILE = value("bare", "posts-without-picture.csv");
 
 /**
  * Below this the filename and the title are not the same article. Set against
@@ -738,6 +740,28 @@ async function main() {
       "\n",
   );
   console.log(`\n  (A file-by-file list is in ${MANIFEST} if you want to check any of them.)`);
+
+  // The other half of the question. The counts above are about photographs;
+  // this is about articles, and an article with no picture is the thing
+  // actually visible as a gap on the site.
+  const gettingCover = new Set(rows.filter((r) => r.role === "cover").map((r) => r.postId));
+  const stillBare = posts.filter((post) => !post.hasCover && !gettingCover.has(post.id));
+  if (stillBare.length) {
+    console.log(`\n  ${stillBare.length} articles will still have no picture. They are listed in ${BARE_FILE}.`);
+    fs.writeFileSync(
+      BARE_FILE,
+      "title,slug,publishedDate\n" +
+        stillBare
+          .map((post) => [post.title, post.slug, post.publishedDate].map(csvCell).join(","))
+          .join("\n") +
+        "\n",
+    );
+    const recent = stillBare.filter((post) => (post.year ?? 0) >= 2026).length;
+    if (recent) {
+      console.log(`  ${recent} of them were published in 2026, after the old site's export — there is`);
+      console.log("  no old page to ask about those, so they need a picture choosing by hand.");
+    }
+  }
 
   const toUpload = rows.filter((row) => row.status === "matched" && !state.uploaded[row.relative]);
   const alreadyDone = rows.filter((row) => row.status === "matched" && state.uploaded[row.relative]).length;
