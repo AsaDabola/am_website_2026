@@ -123,6 +123,35 @@ export function archivePathFromUrl(url) {
   return decodeURIComponent(match[1]).replace(/-\d{2,5}x\d{2,5}(?=\.[a-z0-9]+$)/i, "");
 }
 
+/**
+ * Which section of the news an article belongs to, as the old site says.
+ *
+ * WordPress states this three ways and different themes keep different ones,
+ * so all three are tried: the category link a post carries, the category class
+ * on the body element, and the Open Graph section. The label is reduced to the
+ * slug this CMS uses — "Photo News" and category-photo-news both become
+ * photo-news.
+ */
+export function extractCategory(html) {
+  const link = /<a[^>]+href=["'][^"']*\/category\/([a-z0-9-]+)\/?["'][^>]*rel=["'][^"']*category/i.exec(html);
+  if (link) return normaliseCategory(link[1]);
+
+  const bodyClass = /<body[^>]+class=["']([^"']+)["']/i.exec(html)?.[1];
+  const fromClass = bodyClass && /\bcategory-([a-z0-9-]+)\b/i.exec(bodyClass);
+  if (fromClass) return normaliseCategory(fromClass[1]);
+
+  const section =
+    /<meta[^>]+property=["']article:section["'][^>]+content=["']([^"']+)["']/i.exec(html)?.[1];
+  return section ? normaliseCategory(section) : null;
+}
+
+/** The four this CMS has; anything else is reported as it was found. */
+function normaliseCategory(label) {
+  const slug = label.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  const known = { news: "news", editorial: "editorial", "photo-news": "photo-news", testimony: "testimony" };
+  return known[slug] ?? slug;
+}
+
 /** Pulls the slug, title and date out of one exported Notion page. */
 export function readExportedArticle(markdown) {
   const url = /^\*\*URL:\*\*\s*\[([^\]]+)\]/m.exec(markdown)?.[1];
@@ -273,13 +302,16 @@ async function main() {
   await inBatches(todo, CONCURRENCY, async (article) => {
     try {
       const res = await fetchPolitely(article.url);
-      const found = extractImageUrl(await res.text());
+      const html = await res.text();
+      const found = extractImageUrl(html);
+      const category = extractCategory(html);
       const archivePath = found ? archivePathFromUrl(found.url) : null;
       map[article.slug] = {
         title: article.title,
         published: article.published,
         imageUrl: found?.url ?? null,
         source: found?.source ?? null,
+        category,
         file: archivePath,
       };
     } catch (error) {
@@ -296,6 +328,16 @@ async function main() {
   fs.writeFileSync(OUT, JSON.stringify(map, null, 2));
   const named = Object.values(map).filter((entry) => entry.file);
   console.log(`\nDone. ${named.length} articles have a photograph named.`);
+
+  const byCategory = {};
+  for (const entry of Object.values(map)) {
+    const key = entry.category ?? "(none found)";
+    byCategory[key] = (byCategory[key] ?? 0) + 1;
+  }
+  console.log("\n  Sections the old site puts these in:");
+  for (const [category, n] of Object.entries(byCategory).sort((a, b) => b[1] - a[1])) {
+    console.log(`    ${String(n).padStart(4)}  ${category}`);
+  }
 
   const bySource = {};
   for (const entry of named) bySource[entry.source ?? "?"] = (bySource[entry.source ?? "?"] ?? 0) + 1;
