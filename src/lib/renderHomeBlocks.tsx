@@ -48,6 +48,60 @@ export function renderHomeBlock(block: any, tenantId?: string) {
   }
 }
 
+/**
+ * The homepage's sections, in the order the design puts them.
+ *
+ * Every section is always drawn. One authored in the admin replaces its
+ * counterpart here; the rest keep what the site ships. That is what "edit the
+ * content, keep the layout" has to mean — before this, a page holding a single
+ * authored block *was* the whole homepage, so filling in the hero deleted
+ * everything below it.
+ */
+const HOME_SECTIONS = [
+  "hero",
+  "bibleStudyProgram",
+  "quickLinks",
+  "ministries",
+  "ourMission",
+  "getInvolved",
+  "media",
+  "events",
+  "ourNetwork",
+  "honoraryChairman",
+  "partnerWithUs",
+  "newsletter",
+] as const;
+
+export function HomeSections({
+  sections,
+  tenantId,
+}: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  sections?: any[];
+  tenantId?: string;
+}) {
+  const authored = new Map<string, unknown>();
+  for (const block of sections ?? []) {
+    if (block?.blockType && !authored.has(block.blockType)) authored.set(block.blockType, block);
+  }
+
+  return (
+    <>
+      {HOME_SECTIONS.map((type) => {
+        const block = authored.get(type) ?? { blockType: type, id: `default-${type}` };
+        const node = renderHomeBlock(block, tenantId);
+        // The hero is above the fold, so it is deliberately not revealed —
+        // there is no scroll to trigger it and it would only flash on load.
+        return type === "hero" ? (
+          <div key={type}>{node}</div>
+        ) : (
+          <Reveal key={type}>{node}</Reveal>
+        );
+      })}
+    </>
+  );
+}
+
 // The built-in default homepage — used for the main site when no CMS home
 // Page exists yet, and for every country site until its editor customizes
 // (or clones) a home Page of its own in /admin.

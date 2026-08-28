@@ -1,5 +1,5 @@
 import { getPageBySlug } from "@/lib/pages";
-import { renderHomeBlock, DefaultHomeBlocks } from "@/lib/renderHomeBlocks";
+import { HomeSections } from "@/lib/renderHomeBlocks";
 import LivePreviewListener from "@/components/pages/LivePreviewListener";
 
 // Re-render at most once a minute so edits made in /admin (campuses,
@@ -10,20 +10,12 @@ export const revalidate = 60;
 export default async function Home() {
   const homePage = await getPageBySlug(null, "");
 
-  if (homePage?.sections?.length) {
-    return (
-      <>
-        <LivePreviewListener />
-        {homePage.sections.map((block) => renderHomeBlock(block))}
-      </>
-    );
-  }
-
-  // No CMS-authored home page yet — render the built-in default homepage.
+  // Every section is drawn whether or not the page authors it; an authored
+  // one replaces its counterpart rather than the rest of the page.
   return (
     <>
       <LivePreviewListener />
-      <DefaultHomeBlocks />
+      <HomeSections sections={homePage?.sections} />
     </>
   );
 }

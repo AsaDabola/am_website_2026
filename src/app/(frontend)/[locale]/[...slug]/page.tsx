@@ -13,7 +13,7 @@ import { getTenantBySlug } from "@/lib/tenants";
 import { isContinent } from "@/lib/continents";
 import { COUNTRY_BY_CODE } from "@/lib/countrySites";
 import { getPageBySlug } from "@/lib/pages";
-import { renderHomeBlock, DefaultHomeBlocks } from "@/lib/renderHomeBlocks";
+import { HomeSections } from "@/lib/renderHomeBlocks";
 import { getTenantStaticPage } from "./tenantStaticPages";
 
 export const revalidate = 60;
@@ -146,7 +146,7 @@ export default async function DynamicPage({ params, searchParams }: Props) {
     const tenantId = String(tenant!.id);
 
     if (page?.sections?.length) {
-      return wrap(<>{page.sections.map((block) => renderHomeBlock(block, tenantId))}</>);
+      return wrap(<HomeSections sections={page.sections} tenantId={tenantId} />);
     }
 
     if (page) {
@@ -162,7 +162,7 @@ export default async function DynamicPage({ params, searchParams }: Props) {
       );
     }
 
-    return wrap(<DefaultHomeBlocks tenantId={tenantId} />);
+    return wrap(<HomeSections tenantId={tenantId} />);
   }
 
   // No country-specific Page authored yet — serve the main site's version of
