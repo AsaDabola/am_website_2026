@@ -5,12 +5,37 @@
 
 type MediaRef = { url?: string | null } | string | null | undefined;
 
+/**
+ * The address to put in an <Image src>, for a file this site serves itself.
+ *
+ * Payload writes an absolute address once serverURL is set, and next/image
+ * refuses an absolute address whose host is not in `images.remotePatterns` —
+ * the site's own included. Measured on the same file and the same server:
+ * "/images/x.webp" resizes and answers 200, and the identical
+ * "http://host/images/x.webp" answers 400, which is a broken card in every
+ * listing.
+ *
+ * Matching on the path rather than on the host is what makes this hold when
+ * the site moves domain: /api/media/ is Payload's own route, so it is always
+ * this server, whatever it is called today. A file on another host — blob
+ * storage, which remotePatterns does name — is left exactly as it is.
+ */
+function siteRelative(url: string): string {
+  try {
+    const parsed = new URL(url);
+    return parsed.pathname.startsWith("/api/media/") ? `${parsed.pathname}${parsed.search}` : url;
+  } catch {
+    // Already a path, which is the shape this is trying to produce.
+    return url;
+  }
+}
+
 function mediaUrl(media: MediaRef): string | undefined {
-  if (media && typeof media === "object") return media.url ?? undefined;
+  if (media && typeof media === "object" && media.url) return siteRelative(media.url);
   return undefined;
 }
 
-export { mediaUrl };
+export { mediaUrl, siteRelative };
 
 export type HeroData = {
   eyebrow?: string;

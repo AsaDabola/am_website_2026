@@ -92,8 +92,7 @@ async function getSteps(data?: MinistriesData): Promise<Step[]> {
 
   return docs.map((doc, index) => {
     const fallback = defaultSteps[index % defaultSteps.length];
-    const image =
-      doc.image && typeof doc.image === "object" ? doc.image.url ?? undefined : undefined;
+    const image = mediaUrl(doc.image);
 
     return {
       tag: doc.tag,

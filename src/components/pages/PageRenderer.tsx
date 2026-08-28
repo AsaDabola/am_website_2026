@@ -3,12 +3,12 @@ import { RichText } from "@payloadcms/richtext-lexical/react";
 import Container from "@/components/ui/Container";
 import { Link } from "@/i18n/navigation";
 import type { PageDoc } from "@/lib/pages";
+import { mediaUrl } from "@/lib/homeBlockTypes";
 
 type Crumb = { label: string; href?: string };
 
 export default function PageRenderer({ page, crumbs }: { page: PageDoc; crumbs: Crumb[] }) {
-  const heroImageUrl =
-    page.hero?.image && typeof page.hero.image === "object" ? page.hero.image.url : undefined;
+  const heroImageUrl = mediaUrl(page.hero?.image);
   const heading = page.hero?.heading || page.title;
 
   return (
