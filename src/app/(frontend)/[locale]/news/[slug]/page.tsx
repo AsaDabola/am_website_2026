@@ -10,14 +10,16 @@ import ShareButtons from "@/components/news/ShareButtons";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 import { getPostBySlug, getRelatedPosts } from "@/lib/posts";
+import { getTranslations } from "@/i18n/content";
 
 export const revalidate = 60;
 
-const categoryTag: Record<string, string> = {
-  news: "News",
-  editorial: "Editorial",
-  "photo-news": "Photo News",
-  testimony: "Testimony",
+/** The key each section's name is kept under, so the tag reads in the country's language. */
+const categoryKey: Record<string, string> = {
+  news: "news",
+  editorial: "editorial",
+  "photo-news": "photoNews",
+  testimony: "testimony",
 };
 
 const categoryHref: Record<string, string> = {
@@ -48,6 +50,8 @@ export default async function NewsArticlePage({
 }) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
+  const t = await getTranslations("NewsListings");
+  const tabs = await getTranslations("NewsSubNav");
   if (!post) notFound();
 
   const relatedPosts = await getRelatedPosts(post.category, post.slug);
@@ -68,16 +72,16 @@ export default async function NewsArticlePage({
             <ol className="flex items-center gap-2">
               <li>
                 <Link href="/news" className="hover:text-ink">
-                  News
+                  {tabs("news")}
                 </Link>
               </li>
               <span className="opacity-50">/</span>
-              <li>{categoryTag[post.category]}</li>
+              <li>{tabs(categoryKey[post.category])}</li>
             </ol>
           </nav>
 
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-blue">
-            {categoryTag[post.category]}
+            {tabs(categoryKey[post.category])}
           </p>
           <h1 className="mt-3 font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
             {post.title}
@@ -104,7 +108,7 @@ export default async function NewsArticlePage({
           ) : null}
 
           <div className="mt-12 flex items-center justify-between border-t border-black/10 pt-8">
-            <span className="text-sm font-semibold text-ink">Share this story</span>
+            <span className="text-sm font-semibold text-ink">{t("shareStory")}</span>
             <ShareButtons title={post.title} url={url} />
           </div>
         </Container>
@@ -114,7 +118,7 @@ export default async function NewsArticlePage({
         <section className="bg-mist py-20">
           <Container>
             <h2 className="font-display text-2xl font-semibold tracking-[-0.02em] text-ink">
-              More {categoryTag[post.category]}
+              {t("moreIn", { section: tabs(categoryKey[post.category]) })}
             </h2>
             <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {relatedPosts.map((related) => (
@@ -122,7 +126,7 @@ export default async function NewsArticlePage({
                   key={related.id}
                   href={`/news/${related.slug}`}
                   image={related.coverImage}
-                  tag={categoryTag[related.category]}
+                  tag={tabs(categoryKey[related.category])}
                   title={related.title}
                 />
               ))}

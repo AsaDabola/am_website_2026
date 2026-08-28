@@ -457,5 +457,45 @@
       "description": "מכתב חודשי קצר: מה הסטודנטים רואים, לאן AM ממשיך וכיצד להתפלל.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "חדשות",
+    "sort": "מיון",
+    "newest": "החדשים ביותר",
+    "oldest": "הישנים ביותר",
+    "show": "הצג",
+    "storyCount": "{count, plural, other {# סיפורים}}",
+    "eventCount": "{count, plural, other {# אירועים}}",
+    "emptyStories": "אין כאן עדיין סיפורים — חזרו בקרוב.",
+    "emptyEvents": "אין כאן עדיין אירועים — חזרו בקרוב.",
+    "previous": "הקודם",
+    "next": "הבא",
+    "shareStory": "שתפו את הסיפור הזה",
+    "news": {
+      "title": "חדשות",
+      "heroTitle": "סיפורי אמונה. סיפורי שליחות.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "מאמרים",
+      "heroTitle": "חדשות",
+      "heroSubtitle": "מה הסטודנטים רואים, לאן AM הולכת וכיצד להתפלל."
+    },
+    "photoNews": {
+      "title": "כתבות מצולמות",
+      "heroTitle": "חדשות",
+      "heroSubtitle": "מה הסטודנטים רואים, לאן AM הולכת וכיצד להתפלל."
+    },
+    "testimony": {
+      "title": "עדויות",
+      "heroTitle": "סיפורים אמיתיים",
+      "heroSubtitle": "אמונה. צמיחה. שינוי."
+    },
+    "events": {
+      "title": "אירועים",
+      "heroTitle": "להתאסף. לגדול. לצאת.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "עוד מתוך {section}"
   }
 }

@@ -457,5 +457,45 @@
       "description": "Surat bulanan singkat: apa yang dilihat para mahasiswa, ke mana AM melangkah selanjutnya, dan bagaimana mendoakannya.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Berita",
+    "sort": "Urutkan",
+    "newest": "Terbaru",
+    "oldest": "Terlama",
+    "show": "Tampilkan",
+    "storyCount": "{count, plural, other {# cerita}}",
+    "eventCount": "{count, plural, other {# acara}}",
+    "emptyStories": "Belum ada cerita di sini — kunjungi lagi nanti.",
+    "emptyEvents": "Belum ada acara di sini — kunjungi lagi nanti.",
+    "previous": "Sebelumnya",
+    "next": "Berikutnya",
+    "shareStory": "Bagikan cerita ini",
+    "news": {
+      "title": "Berita",
+      "heroTitle": "Cerita iman. Cerita misi.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Editorial",
+      "heroTitle": "Berita",
+      "heroSubtitle": "Apa yang dilihat para mahasiswa, ke mana AM melangkah, dan bagaimana mendoakannya."
+    },
+    "photoNews": {
+      "title": "Berita Foto",
+      "heroTitle": "Berita",
+      "heroSubtitle": "Apa yang dilihat para mahasiswa, ke mana AM melangkah, dan bagaimana mendoakannya."
+    },
+    "testimony": {
+      "title": "Kesaksian",
+      "heroTitle": "Cerita nyata",
+      "heroSubtitle": "Iman. Pertumbuhan. Perubahan."
+    },
+    "events": {
+      "title": "Acara",
+      "heroTitle": "Berkumpul. Bertumbuh. Diutus.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Lainnya di {section}"
   }
 }

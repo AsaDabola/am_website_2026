@@ -457,5 +457,45 @@
       "description": "Taratasy fohy isam-bolana: izay hitan'ny mpianatra, izay halehan'ny AM manaraka, ary ny fomba fivavahana.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Vaovao",
+    "sort": "Alaharo",
+    "newest": "Vaovao indrindra",
+    "oldest": "Tranainy indrindra",
+    "show": "Asehoy",
+    "storyCount": "{count, plural, other {tantara #}}",
+    "eventCount": "{count, plural, other {hetsika #}}",
+    "emptyStories": "Mbola tsy misy na inona na inona eto — miverena tsy ho ela.",
+    "emptyEvents": "Mbola tsy misy hetsika eto — miverena tsy ho ela.",
+    "previous": "Teo aloha",
+    "next": "Manaraka",
+    "shareStory": "Zarao ity tantara ity",
+    "news": {
+      "title": "Vaovao",
+      "heroTitle": "Tantaran'ny finoana. Tantaran'ny iraka.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Editorialy",
+      "heroTitle": "Vaovao",
+      "heroSubtitle": "Izay hitan'ny mpianatra, izay alehan'ny AM, ary ny fomba fivavahana."
+    },
+    "photoNews": {
+      "title": "Vaovao An-tsary",
+      "heroTitle": "Vaovao",
+      "heroSubtitle": "Izay hitan'ny mpianatra, izay alehan'ny AM, ary ny fomba fivavahana."
+    },
+    "testimony": {
+      "title": "Fijoroana Vavolombelona",
+      "heroTitle": "Tantara marina",
+      "heroSubtitle": "Finoana. Fitomboana. Fiovana."
+    },
+    "events": {
+      "title": "Hetsika",
+      "heroTitle": "Miaraka. Mitombo. Mandeha.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Bebe kokoa ao amin'ny {section}"
   }
 }

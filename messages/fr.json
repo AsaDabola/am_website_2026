@@ -457,5 +457,45 @@
       "description": "Une courte lettre mensuelle : ce que voient les étudiants, où AM se dirige, et comment prier.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Actualités",
+    "sort": "Trier",
+    "newest": "Plus récents",
+    "oldest": "Plus anciens",
+    "show": "Afficher",
+    "storyCount": "{count, plural, one {# histoire} other {# histoires}}",
+    "eventCount": "{count, plural, one {# événement} other {# événements}}",
+    "emptyStories": "Pas encore d'histoires ici — revenez bientôt.",
+    "emptyEvents": "Pas encore d'événements ici — revenez bientôt.",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "shareStory": "Partager cette histoire",
+    "news": {
+      "title": "Actualités",
+      "heroTitle": "Des histoires de foi. Des histoires de mission.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Éditorial",
+      "heroTitle": "Actualités",
+      "heroSubtitle": "Ce que voient les étudiants, où va AM et comment prier."
+    },
+    "photoNews": {
+      "title": "Actualités en images",
+      "heroTitle": "Actualités",
+      "heroSubtitle": "Ce que voient les étudiants, où va AM et comment prier."
+    },
+    "testimony": {
+      "title": "Témoignage",
+      "heroTitle": "Histoires vraies",
+      "heroSubtitle": "Foi. Croissance. Transformation."
+    },
+    "events": {
+      "title": "Événements",
+      "heroTitle": "Se rassembler. Grandir. Partir.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Plus de {section}"
   }
 }

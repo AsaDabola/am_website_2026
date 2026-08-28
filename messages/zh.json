@@ -456,5 +456,45 @@
       "description": "一封简短的月度信函：学生们所看见的事、AM 下一步的方向，以及代祷事项。",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "新闻",
+    "sort": "排序",
+    "newest": "最新",
+    "oldest": "最早",
+    "show": "显示",
+    "storyCount": "{count, plural, other {# 篇}}",
+    "eventCount": "{count, plural, other {# 场活动}}",
+    "emptyStories": "这里还没有内容，请稍后再来。",
+    "emptyEvents": "这里还没有活动，请稍后再来。",
+    "previous": "上一页",
+    "next": "下一页",
+    "shareStory": "分享这篇内容",
+    "news": {
+      "title": "新闻",
+      "heroTitle": "信心的故事，宣教的故事",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "专栏",
+      "heroTitle": "新闻",
+      "heroSubtitle": "学生们所看见的、AM 下一步的方向，以及如何代祷"
+    },
+    "photoNews": {
+      "title": "图片新闻",
+      "heroTitle": "新闻",
+      "heroSubtitle": "学生们所看见的、AM 下一步的方向，以及如何代祷"
+    },
+    "testimony": {
+      "title": "见证",
+      "heroTitle": "真实的故事",
+      "heroSubtitle": "信心。成长。改变。"
+    },
+    "events": {
+      "title": "活动",
+      "heroTitle": "聚集。成长。差遣。",
+      "heroSubtitle": ""
+    },
+    "moreIn": "更多{section}"
   }
 }

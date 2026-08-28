@@ -457,5 +457,45 @@
       "description": "Isang maikling buwanang liham: kung ano ang nakikita ng mga estudyante, kung saan susunod ang AM, at kung paano manalangin.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Balita",
+    "sort": "Ayusin",
+    "newest": "Pinakabago",
+    "oldest": "Pinakaluma",
+    "show": "Ipakita",
+    "storyCount": "{count, plural, one {# kuwento} other {# na kuwento}}",
+    "eventCount": "{count, plural, one {# kaganapan} other {# na kaganapan}}",
+    "emptyStories": "Wala pang kuwento rito — bumalik ka sa lalong madaling panahon.",
+    "emptyEvents": "Wala pang kaganapan dito — bumalik ka sa lalong madaling panahon.",
+    "previous": "Nakaraan",
+    "next": "Susunod",
+    "shareStory": "Ibahagi ang kuwentong ito",
+    "news": {
+      "title": "Balita",
+      "heroTitle": "Mga kuwento ng pananampalataya. Mga kuwento ng misyon.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Mga Artikulo",
+      "heroTitle": "Balita",
+      "heroSubtitle": "Ang nakikita ng mga estudyante, ang susunod na hakbang ng AM, at kung paano ipanalangin."
+    },
+    "photoNews": {
+      "title": "Balitang Larawan",
+      "heroTitle": "Balita",
+      "heroSubtitle": "Ang nakikita ng mga estudyante, ang susunod na hakbang ng AM, at kung paano ipanalangin."
+    },
+    "testimony": {
+      "title": "Mga Patotoo",
+      "heroTitle": "Totoong mga kuwento",
+      "heroSubtitle": "Pananampalataya. Paglago. Pagbabago."
+    },
+    "events": {
+      "title": "Mga Kaganapan",
+      "heroTitle": "Magtipon. Lumago. Humayo.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Higit pa sa {section}"
   }
 }

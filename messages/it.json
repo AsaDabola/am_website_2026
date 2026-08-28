@@ -457,5 +457,45 @@
       "description": "Una breve lettera mensile: ciò che gli studenti vedono, dove AM sta andando e come pregare.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Notizie",
+    "sort": "Ordina",
+    "newest": "Più recenti",
+    "oldest": "Meno recenti",
+    "show": "Mostra",
+    "storyCount": "{count, plural, one {# storia} other {# storie}}",
+    "eventCount": "{count, plural, one {# evento} other {# eventi}}",
+    "emptyStories": "Ancora nessuna storia qui — torna presto.",
+    "emptyEvents": "Ancora nessun evento qui — torna presto.",
+    "previous": "Precedente",
+    "next": "Successiva",
+    "shareStory": "Condividi questa storia",
+    "news": {
+      "title": "Notizie",
+      "heroTitle": "Storie di fede. Storie di missione.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Editoriale",
+      "heroTitle": "Notizie",
+      "heroSubtitle": "Ciò che vedono gli studenti, dove sta andando AM e come pregare."
+    },
+    "photoNews": {
+      "title": "Fotonotizie",
+      "heroTitle": "Notizie",
+      "heroSubtitle": "Ciò che vedono gli studenti, dove sta andando AM e come pregare."
+    },
+    "testimony": {
+      "title": "Testimonianze",
+      "heroTitle": "Storie vere",
+      "heroSubtitle": "Fede. Crescita. Trasformazione."
+    },
+    "events": {
+      "title": "Eventi",
+      "heroTitle": "Riunirsi. Crescere. Andare.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Altro da {section}"
   }
 }

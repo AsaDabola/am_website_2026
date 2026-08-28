@@ -457,5 +457,45 @@
       "description": "Ina curta brev mensila: tge ch'ils students vesan, nua che AM va vinavant e co urar.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Novitads",
+    "sort": "Zavrar",
+    "newest": "Ils pli novs",
+    "oldest": "Ils pli vegls",
+    "show": "Mussar",
+    "storyCount": "{count, plural, one {# istorgia} other {# istorgias}}",
+    "eventCount": "{count, plural, one {# occurrenza} other {# occurrenzas}}",
+    "emptyStories": "Anc nagut qua — turnai prest.",
+    "emptyEvents": "Anc naginas occurrenzas qua — turnai prest.",
+    "previous": "Enavos",
+    "next": "Enavant",
+    "shareStory": "Cundivider questa istorgia",
+    "news": {
+      "title": "Novitads",
+      "heroTitle": "Istorgias da cardientscha. Istorgias da missiun.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Editorial",
+      "heroTitle": "Novitads",
+      "heroSubtitle": "Quai ch'ils students vesan, nua che l'AM va vinavant, e co urar."
+    },
+    "photoNews": {
+      "title": "Novitads en fotos",
+      "heroTitle": "Novitads",
+      "heroSubtitle": "Quai ch'ils students vesan, nua che l'AM va vinavant, e co urar."
+    },
+    "testimony": {
+      "title": "Testimoni",
+      "heroTitle": "Istorgias veras",
+      "heroSubtitle": "Cardientscha. Crescher. Midada."
+    },
+    "events": {
+      "title": "Eveniments",
+      "heroTitle": "Sa rimnar. Crescher. Ir.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Dapli en {section}"
   }
 }

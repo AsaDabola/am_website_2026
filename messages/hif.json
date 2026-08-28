@@ -457,5 +457,45 @@
       "description": "Har mahina ke chhota chitthi: chhatra log kaa dekh rahaa hai, AM aage kahaa jaay rahaa hai, aur kaise prarthana kare.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Khabar",
+    "sort": "Chhaante",
+    "newest": "Sab se naya",
+    "oldest": "Sab se puraana",
+    "show": "Dekhao",
+    "storyCount": "{count, plural, one {# kahani} other {# kahani}}",
+    "eventCount": "{count, plural, one {# karyakram} other {# karyakram}}",
+    "emptyStories": "Yahaan abhi kuchh nai hai — jaldi wapas aao.",
+    "emptyEvents": "Yahaan abhi koi karyakram nai hai — jaldi wapas aao.",
+    "previous": "Pichhla",
+    "next": "Agla",
+    "shareStory": "Ii kahani baante",
+    "news": {
+      "title": "Khabar",
+      "heroTitle": "Bhawana ke kahani. Mission ke kahani.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Sampadakiya",
+      "heroTitle": "Khabar",
+      "heroSubtitle": "Student log ka dekhat hai, AM kahaan jaawat hai, aur kaise prarthna kare."
+    },
+    "photoNews": {
+      "title": "Photo Khabar",
+      "heroTitle": "Khabar",
+      "heroSubtitle": "Student log ka dekhat hai, AM kahaan jaawat hai, aur kaise prarthna kare."
+    },
+    "testimony": {
+      "title": "Gawahi",
+      "heroTitle": "Sachcha kahani",
+      "heroSubtitle": "Bhawana. Barhti. Badlaw."
+    },
+    "events": {
+      "title": "Karyakram",
+      "heroTitle": "Milke. Barhke. Jaake.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "{section} me aur"
   }
 }

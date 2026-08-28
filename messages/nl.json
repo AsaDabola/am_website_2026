@@ -457,5 +457,45 @@
       "description": "Een korte maandelijkse brief: wat studenten zien, waar AM naartoe gaat en hoe je kunt bidden.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Nieuws",
+    "sort": "Sorteren",
+    "newest": "Nieuwste",
+    "oldest": "Oudste",
+    "show": "Toon",
+    "storyCount": "{count, plural, one {# verhaal} other {# verhalen}}",
+    "eventCount": "{count, plural, one {# evenement} other {# evenementen}}",
+    "emptyStories": "Hier staat nog niets — kom snel terug.",
+    "emptyEvents": "Hier staan nog geen evenementen — kom snel terug.",
+    "previous": "Vorige",
+    "next": "Volgende",
+    "shareStory": "Deel dit verhaal",
+    "news": {
+      "title": "Nieuws",
+      "heroTitle": "Verhalen van geloof. Verhalen van zending.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Redactioneel",
+      "heroTitle": "Nieuws",
+      "heroSubtitle": "Wat studenten zien, waar AM heen gaat en hoe je kunt bidden."
+    },
+    "photoNews": {
+      "title": "Fotonieuws",
+      "heroTitle": "Nieuws",
+      "heroSubtitle": "Wat studenten zien, waar AM heen gaat en hoe je kunt bidden."
+    },
+    "testimony": {
+      "title": "Getuigenissen",
+      "heroTitle": "Echte verhalen",
+      "heroSubtitle": "Geloof. Groei. Verandering."
+    },
+    "events": {
+      "title": "Evenementen",
+      "heroTitle": "Samenkomen. Groeien. Gaan.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Meer uit {section}"
   }
 }

@@ -13,16 +13,5 @@ export default function NewsPage({
 }: {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  return (
-    <NewsListPage
-      searchParams={searchParams}
-      active="/news"
-      title="News"
-      eyebrow="News"
-      heading="News"
-      category="news"
-      heroTitle="Stories of Faith. Stories of Mission."
-      heroSubtitle=""
-    />
-  );
+  return <NewsListPage searchParams={searchParams} category="news" />;
 }

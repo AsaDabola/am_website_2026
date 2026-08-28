@@ -457,5 +457,45 @@
       "description": "Ileta emfutshane yenyanga nenyanga: oko abafundi bakubonayo, apho i-AM iya khona, nendlela yokuthandaza.",
       "cta": "I-AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Iindaba",
+    "sort": "Hlela",
+    "newest": "Okutsha",
+    "oldest": "Okudala",
+    "show": "Bonisa",
+    "storyCount": "{count, plural, one {ibali eli-#} other {amabali angama-#}}",
+    "eventCount": "{count, plural, one {umsitho ongu-#} other {imisitho engama-#}}",
+    "emptyStories": "Akukho nto apha okwangoku — buya kungekudala.",
+    "emptyEvents": "Ayikho imisitho apha okwangoku — buya kungekudala.",
+    "previous": "Okwangaphambili",
+    "next": "Okulandelayo",
+    "shareStory": "Yabelana ngeli bali",
+    "news": {
+      "title": "Iindaba",
+      "heroTitle": "Amabali okholo. Amabali obuthunywa.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Umhleli",
+      "heroTitle": "Iindaba",
+      "heroSubtitle": "Oko abafundi bakubonayo, apho i-AM isingise khona, nendlela yokuthandaza."
+    },
+    "photoNews": {
+      "title": "Iindaba Ngemifanekiso",
+      "heroTitle": "Iindaba",
+      "heroSubtitle": "Oko abafundi bakubonayo, apho i-AM isingise khona, nendlela yokuthandaza."
+    },
+    "testimony": {
+      "title": "Ubungqina",
+      "heroTitle": "Amabali okwenene",
+      "heroSubtitle": "Ukholo. Ukukhula. Utshintsho."
+    },
+    "events": {
+      "title": "Iminyhadala",
+      "heroTitle": "Ukuhlanganisana. Ukukhula. Ukuhamba.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Okungakumbi ku-{section}"
   }
 }

@@ -457,5 +457,45 @@
       "description": "Krátky mesačný list: čo študenti vidia, kam AM smeruje ďalej a ako sa modliť.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Novinky",
+    "sort": "Zoradiť",
+    "newest": "Najnovšie",
+    "oldest": "Najstaršie",
+    "show": "Zobraziť",
+    "storyCount": "{count, plural, one {# príbeh} few {# príbehy} many {# príbehu} other {# príbehov}}",
+    "eventCount": "{count, plural, one {# podujatie} few {# podujatia} many {# podujatia} other {# podujatí}}",
+    "emptyStories": "Zatiaľ tu nič nie je — príďte sa pozrieť neskôr.",
+    "emptyEvents": "Zatiaľ tu nie sú žiadne podujatia — príďte sa pozrieť neskôr.",
+    "previous": "Predchádzajúca",
+    "next": "Ďalšia",
+    "shareStory": "Zdieľať tento príbeh",
+    "news": {
+      "title": "Novinky",
+      "heroTitle": "Príbehy viery. Príbehy misie.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Články",
+      "heroTitle": "Novinky",
+      "heroSubtitle": "Čo vidia študenti, kam AM smeruje ďalej a ako sa za to modliť."
+    },
+    "photoNews": {
+      "title": "Fotoreportáže",
+      "heroTitle": "Novinky",
+      "heroSubtitle": "Čo vidia študenti, kam AM smeruje ďalej a ako sa za to modliť."
+    },
+    "testimony": {
+      "title": "Svedectvá",
+      "heroTitle": "Skutočné príbehy",
+      "heroSubtitle": "Viera. Rast. Premena."
+    },
+    "events": {
+      "title": "Podujatia",
+      "heroTitle": "Stretávať sa. Rásť. Ísť.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Viac v sekcii {section}"
   }
 }

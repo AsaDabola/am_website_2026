@@ -457,5 +457,45 @@
       "description": "Yon ti lèt chak mwa: sa etidyan yo wè, kote AM prale apre, ak kijan pou priye.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Nouvèl",
+    "sort": "Klase",
+    "newest": "Pi resan",
+    "oldest": "Pi ansyen",
+    "show": "Montre",
+    "storyCount": "{count, plural, one {# istwa} other {# istwa}}",
+    "eventCount": "{count, plural, one {# aktivite} other {# aktivite}}",
+    "emptyStories": "Pa gen anyen isit la ankò — tounen byento.",
+    "emptyEvents": "Pa gen aktivite isit la ankò — tounen byento.",
+    "previous": "Anvan",
+    "next": "Apre",
+    "shareStory": "Pataje istwa sa a",
+    "news": {
+      "title": "Nouvèl",
+      "heroTitle": "Istwa lafwa. Istwa misyon.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Editoryal",
+      "heroTitle": "Nouvèl",
+      "heroSubtitle": "Sa etidyan yo wè, kote AM prale, ak kijan pou nou priye."
+    },
+    "photoNews": {
+      "title": "Nouvèl an Foto",
+      "heroTitle": "Nouvèl",
+      "heroSubtitle": "Sa etidyan yo wè, kote AM prale, ak kijan pou nou priye."
+    },
+    "testimony": {
+      "title": "Temwayaj",
+      "heroTitle": "Istwa reyèl",
+      "heroSubtitle": "Lafwa. Kwasans. Chanjman."
+    },
+    "events": {
+      "title": "Evènman",
+      "heroTitle": "Rasanble. Grandi. Ale.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Plis nan {section}"
   }
 }

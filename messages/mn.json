@@ -457,5 +457,45 @@
       "description": "Богино сарын захидал: оюутнууд юу харж байна, AM цаашид хаашаа явж байна, хэрхэн залбирах вэ.",
       "cta": "AM Академи"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Мэдээ",
+    "sort": "Эрэмбэлэх",
+    "newest": "Шинэ",
+    "oldest": "Хуучин",
+    "show": "Харуулах",
+    "storyCount": "{count, plural, one {# түүх} other {# түүх}}",
+    "eventCount": "{count, plural, one {# арга хэмжээ} other {# арга хэмжээ}}",
+    "emptyStories": "Энд одоогоор юу ч алга — удахгүй дахин ирээрэй.",
+    "emptyEvents": "Энд одоогоор арга хэмжээ алга — удахгүй дахин ирээрэй.",
+    "previous": "Өмнөх",
+    "next": "Дараах",
+    "shareStory": "Энэ түүхийг хуваалцах",
+    "news": {
+      "title": "Мэдээ",
+      "heroTitle": "Итгэлийн түүхүүд. Илгээлтийн түүхүүд.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Нийтлэл",
+      "heroTitle": "Мэдээ",
+      "heroSubtitle": "Оюутнууд юу харж байгаа, AM хаашаа явж байгаа, хэрхэн залбирах вэ."
+    },
+    "photoNews": {
+      "title": "Фото мэдээ",
+      "heroTitle": "Мэдээ",
+      "heroSubtitle": "Оюутнууд юу харж байгаа, AM хаашаа явж байгаа, хэрхэн залбирах вэ."
+    },
+    "testimony": {
+      "title": "Гэрчлэл",
+      "heroTitle": "Жинхэнэ түүхүүд",
+      "heroSubtitle": "Итгэл. Өсөлт. Өөрчлөлт."
+    },
+    "events": {
+      "title": "Арга хэмжээ",
+      "heroTitle": "Цуглар. Өс. Яв.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "{section} хэсгээс илүү"
   }
 }

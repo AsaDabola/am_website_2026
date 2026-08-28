@@ -457,5 +457,45 @@
       "description": "Barua fupi ya kila mwezi: wanafunzi wanaona nini, AM inaelekea wapi, na jinsi ya kuomba.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Habari",
+    "sort": "Panga",
+    "newest": "Mpya zaidi",
+    "oldest": "Za zamani zaidi",
+    "show": "Onyesha",
+    "storyCount": "{count, plural, one {habari #} other {habari #}}",
+    "eventCount": "{count, plural, one {tukio #} other {matukio #}}",
+    "emptyStories": "Bado hakuna habari hapa — rudi hivi karibuni.",
+    "emptyEvents": "Bado hakuna matukio hapa — rudi hivi karibuni.",
+    "previous": "Iliyotangulia",
+    "next": "Ifuatayo",
+    "shareStory": "Shiriki habari hii",
+    "news": {
+      "title": "Habari",
+      "heroTitle": "Hadithi za imani. Hadithi za utume.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Makala",
+      "heroTitle": "Habari",
+      "heroSubtitle": "Yale wanafunzi wanayoyaona, AM inakoelekea, na jinsi ya kuombea."
+    },
+    "photoNews": {
+      "title": "Habari za Picha",
+      "heroTitle": "Habari",
+      "heroSubtitle": "Yale wanafunzi wanayoyaona, AM inakoelekea, na jinsi ya kuombea."
+    },
+    "testimony": {
+      "title": "Ushuhuda",
+      "heroTitle": "Hadithi za kweli",
+      "heroSubtitle": "Imani. Kukua. Kubadilika."
+    },
+    "events": {
+      "title": "Matukio",
+      "heroTitle": "Kukusanyika. Kukua. Kwenda.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Zaidi katika {section}"
   }
 }

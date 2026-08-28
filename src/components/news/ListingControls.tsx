@@ -32,30 +32,42 @@ const chip =
 const chipOn = "border-brand-blue bg-brand-blue text-white";
 const chipOff = "border-black/10 bg-white text-ink-muted hover:text-ink";
 
+/**
+ * The wording these two need, handed down rather than read here.
+ *
+ * Both are rendered from a page that already resolved its text through the
+ * country-aware translator; reading it again inside a component would go back
+ * to the plain catalogue and quietly lose whatever a country had changed.
+ */
+export type ListingLabels = {
+  count: string;
+  sort: string;
+  newest: string;
+  oldest: string;
+  show: string;
+  previous: string;
+  next: string;
+};
+
 export function ListingControls({
   base,
   sort,
   perPage,
-  total,
-  noun = "stories",
+  labels,
 }: {
   base: string;
   sort: PostSort;
   perPage: number;
-  total: number;
-  /** What is being counted. The events listing counts events, not stories. */
-  noun?: "stories" | "events";
+  labels: ListingLabels;
 }) {
   const state = { sort, perPage, page: 1 };
   return (
     <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-black/10 pt-6">
-      <p className="text-sm text-ink-muted">
-        {total === 1 ? `1 ${noun === "events" ? "event" : "story"}` : `${total} ${noun}`}
-      </p>
+      <p className="text-sm text-ink-muted">{labels.count}</p>
 
       <div className="flex flex-wrap items-center gap-6">
         <div className="flex items-center gap-2">
-          <span className="text-[13px] text-ink-muted">Sort</span>
+          <span className="text-[13px] text-ink-muted">{labels.sort}</span>
           {(["newest", "oldest"] as const).map((option) => (
             <Link
               key={option}
@@ -66,13 +78,13 @@ export function ListingControls({
               aria-current={sort === option ? "true" : undefined}
               className={`${chip} ${sort === option ? chipOn : chipOff}`}
             >
-              {option === "newest" ? "Newest" : "Oldest"}
+              {option === "newest" ? labels.newest : labels.oldest}
             </Link>
           ))}
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="text-[13px] text-ink-muted">Show</span>
+          <span className="text-[13px] text-ink-muted">{labels.show}</span>
           {PER_PAGE_CHOICES.map((choice) => (
             <Link
               key={choice}
@@ -114,12 +126,14 @@ export function Pagination({
   perPage,
   page,
   totalPages,
+  labels,
 }: {
   base: string;
   sort: PostSort;
   perPage: number;
   page: number;
   totalPages: number;
+  labels: Pick<ListingLabels, "previous" | "next">;
 }) {
   if (totalPages <= 1) return null;
   const state = { sort, perPage, page };
@@ -136,12 +150,12 @@ export function Pagination({
       {page > 1 ? (
         <Link href={hrefFor(base, state, { page: page - 1 })} className={step}>
           <ArrowRightIcon className="size-4 rotate-180" />
-          Previous
+          {labels.previous}
         </Link>
       ) : (
         <span className={stepOff} aria-hidden>
           <ArrowRightIcon className="size-4 rotate-180" />
-          Previous
+          {labels.previous}
         </span>
       )}
 
@@ -172,12 +186,12 @@ export function Pagination({
 
       {page < totalPages ? (
         <Link href={hrefFor(base, state, { page: page + 1 })} className={step}>
-          Next
+          {labels.next}
           <ArrowRightIcon className="size-4" />
         </Link>
       ) : (
         <span className={stepOff} aria-hidden>
-          Next
+          {labels.next}
           <ArrowRightIcon className="size-4" />
         </span>
       )}

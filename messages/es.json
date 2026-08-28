@@ -457,5 +457,45 @@
       "description": "Una breve carta mensual: lo que los estudiantes están viendo, hacia dónde va AM, y cómo orar.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Noticias",
+    "sort": "Ordenar",
+    "newest": "Más recientes",
+    "oldest": "Más antiguas",
+    "show": "Mostrar",
+    "storyCount": "{count, plural, one {# historia} other {# historias}}",
+    "eventCount": "{count, plural, one {# evento} other {# eventos}}",
+    "emptyStories": "Aún no hay historias aquí: vuelve pronto.",
+    "emptyEvents": "Aún no hay eventos aquí: vuelve pronto.",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "shareStory": "Comparte esta historia",
+    "news": {
+      "title": "Noticias",
+      "heroTitle": "Historias de fe. Historias de misión.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Editorial",
+      "heroTitle": "Noticias",
+      "heroSubtitle": "Lo que ven los estudiantes, hacia dónde va AM y cómo orar."
+    },
+    "photoNews": {
+      "title": "Noticias fotográficas",
+      "heroTitle": "Noticias",
+      "heroSubtitle": "Lo que ven los estudiantes, hacia dónde va AM y cómo orar."
+    },
+    "testimony": {
+      "title": "Testimonio",
+      "heroTitle": "Historias reales",
+      "heroSubtitle": "Fe. Crecimiento. Transformación."
+    },
+    "events": {
+      "title": "Eventos",
+      "heroTitle": "Reunirse. Crecer. Ir.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Más de {section}"
   }
 }

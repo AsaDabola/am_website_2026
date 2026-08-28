@@ -9,6 +9,7 @@ import { ListingControls, Pagination } from "@/components/news/ListingControls";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 import { getEventsPage, type EventSort } from "@/lib/events";
+import { getTranslations } from "@/i18n/content";
 
 export const revalidate = 60;
 
@@ -45,13 +46,19 @@ export default async function EventsPage({
     perPage,
   });
 
+  // Every word below is read through the country-aware translator, so a
+  // country site shows its own language here rather than the English the page
+  // used to carry in its markup.
+  const t = await getTranslations("NewsListings");
+  const tabs = await getTranslations("NewsSubNav");
+
   return (
     <>
       <AboutHero
-        crumbs={[{ label: "Home", href: "/" }, { label: "News" }, { label: "Events" }]}
+        crumbs={[{ label: "Home", href: "/" }, { label: tabs("news") }, { label: tabs("events") }]}
         // The line the design puts over the dune banner. No subtitle beneath
         // it there — the three words carry the section on their own.
-        title="Gather. Grow. Go."
+        title={t("events.heroTitle")}
         backgroundImage="/images/events-hero.webp"
       />
       <NewsSubNav active="/events" />
@@ -59,10 +66,10 @@ export default async function EventsPage({
       <section className="bg-white py-24">
         <Container className="text-center">
           <div className="flex justify-center">
-            <Eyebrow>News</Eyebrow>
+            <Eyebrow>{t("eyebrow")}</Eyebrow>
           </div>
           <h1 className="mx-auto max-w-2xl font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
-            Events
+            {t("events.title")}
           </h1>
 
           {total > 0 && (
@@ -70,8 +77,15 @@ export default async function EventsPage({
               base="/events"
               sort={sort}
               perPage={perPage}
-              total={total}
-              noun="events"
+              labels={{
+                count: t("eventCount", { count: total }),
+                sort: t("sort"),
+                newest: t("newest"),
+                oldest: t("oldest"),
+                show: t("show"),
+                previous: t("previous"),
+                next: t("next"),
+              }}
             />
           )}
 
@@ -104,11 +118,12 @@ export default async function EventsPage({
                 perPage={perPage}
                 page={page}
                 totalPages={totalPages}
+                labels={{ previous: t("previous"), next: t("next") }}
               />
             </>
           ) : (
             <p className="mx-auto mt-14 max-w-md text-base leading-relaxed text-ink-muted">
-              No events here yet — check back soon.
+              {t("emptyEvents")}
             </p>
           )}
         </Container>

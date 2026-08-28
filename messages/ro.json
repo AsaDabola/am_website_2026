@@ -457,5 +457,45 @@
       "description": "O scrisoare lunară scurtă: ce văd studenții, încotro merge AM mai departe și cum să te rogi.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Știri",
+    "sort": "Sortare",
+    "newest": "Cele mai noi",
+    "oldest": "Cele mai vechi",
+    "show": "Afișează",
+    "storyCount": "{count, plural, one {# poveste} few {# povești} other {# de povești}}",
+    "eventCount": "{count, plural, one {# eveniment} few {# evenimente} other {# de evenimente}}",
+    "emptyStories": "Încă nu este nimic aici — revino în curând.",
+    "emptyEvents": "Încă nu sunt evenimente aici — revino în curând.",
+    "previous": "Anterioara",
+    "next": "Următoarea",
+    "shareStory": "Împărtășește această poveste",
+    "news": {
+      "title": "Știri",
+      "heroTitle": "Povești de credință. Povești de misiune.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Articole",
+      "heroTitle": "Știri",
+      "heroSubtitle": "Ce văd studenții, încotro merge AM și cum ne rugăm."
+    },
+    "photoNews": {
+      "title": "Reportaje foto",
+      "heroTitle": "Știri",
+      "heroSubtitle": "Ce văd studenții, încotro merge AM și cum ne rugăm."
+    },
+    "testimony": {
+      "title": "Mărturii",
+      "heroTitle": "Povești adevărate",
+      "heroSubtitle": "Credință. Creștere. Transformare."
+    },
+    "events": {
+      "title": "Evenimente",
+      "heroTitle": "Ne adunăm. Creștem. Mergem.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Mai multe din {section}"
   }
 }

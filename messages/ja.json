@@ -456,5 +456,45 @@
       "description": "月に一度の短い便り: 学生たちが目にしていること、AMの次の展開、そして祈りの課題。",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "ニュース",
+    "sort": "並び替え",
+    "newest": "新しい順",
+    "oldest": "古い順",
+    "show": "表示",
+    "storyCount": "{count, plural, other {# 件の記事}}",
+    "eventCount": "{count, plural, other {# 件のイベント}}",
+    "emptyStories": "まだ記事はありません。またお越しください。",
+    "emptyEvents": "まだイベントはありません。またお越しください。",
+    "previous": "前へ",
+    "next": "次へ",
+    "shareStory": "この記事を共有する",
+    "news": {
+      "title": "ニュース",
+      "heroTitle": "信仰の物語、宣教の物語",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "コラム",
+      "heroTitle": "ニュース",
+      "heroSubtitle": "学生たちが見ているもの、AMの次の一歩、そして祈りの課題"
+    },
+    "photoNews": {
+      "title": "フォトニュース",
+      "heroTitle": "ニュース",
+      "heroSubtitle": "学生たちが見ているもの、AMの次の一歩、そして祈りの課題"
+    },
+    "testimony": {
+      "title": "証し",
+      "heroTitle": "ほんとうの物語",
+      "heroSubtitle": "信仰。成長。変化。"
+    },
+    "events": {
+      "title": "イベント",
+      "heroTitle": "集い、育ち、遣わされる。",
+      "heroSubtitle": ""
+    },
+    "moreIn": "{section}をもっと見る"
   }
 }

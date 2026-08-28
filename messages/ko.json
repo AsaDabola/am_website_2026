@@ -456,5 +456,45 @@
       "description": "매달 전해드리는 짧은 편지: 학생들이 목격하는 일들, AM의 다음 행보, 그리고 기도 제목.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "소식",
+    "sort": "정렬",
+    "newest": "최신순",
+    "oldest": "오래된순",
+    "show": "표시",
+    "storyCount": "{count, plural, other {#개의 이야기}}",
+    "eventCount": "{count, plural, other {#개의 행사}}",
+    "emptyStories": "아직 올라온 이야기가 없습니다. 곧 다시 찾아와 주세요.",
+    "emptyEvents": "아직 예정된 행사가 없습니다. 곧 다시 찾아와 주세요.",
+    "previous": "이전",
+    "next": "다음",
+    "shareStory": "이 이야기 나누기",
+    "news": {
+      "title": "소식",
+      "heroTitle": "믿음의 이야기, 선교의 이야기",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "칼럼",
+      "heroTitle": "소식",
+      "heroSubtitle": "학생들이 보고 있는 것, AM이 나아가는 곳, 그리고 기도할 제목"
+    },
+    "photoNews": {
+      "title": "포토 뉴스",
+      "heroTitle": "소식",
+      "heroSubtitle": "학생들이 보고 있는 것, AM이 나아가는 곳, 그리고 기도할 제목"
+    },
+    "testimony": {
+      "title": "간증",
+      "heroTitle": "진짜 이야기",
+      "heroSubtitle": "믿음. 성장. 변화."
+    },
+    "events": {
+      "title": "행사",
+      "heroTitle": "모이고. 자라고. 나아가고.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "{section} 더 보기"
   }
 }

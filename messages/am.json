@@ -457,5 +457,45 @@
       "description": "አጭር ወርሃዊ ደብዳቤ፦ ተማሪዎች ምን እያዩ ነው፣ AM ቀጥሎ ወዴት እያመራ ነው፣ እንዴት መጸለይ እንደሚቻል።",
       "cta": "AM አካዳሚ"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "ዜና",
+    "sort": "ደርድር",
+    "newest": "አዲሶቹ",
+    "oldest": "አሮጌዎቹ",
+    "show": "አሳይ",
+    "storyCount": "{count, plural, one {# ታሪክ} other {# ታሪኮች}}",
+    "eventCount": "{count, plural, one {# ዝግጅት} other {# ዝግጅቶች}}",
+    "emptyStories": "እዚህ እስካሁን ምንም የለም — በቅርቡ ተመልሰው ይምጡ።",
+    "emptyEvents": "እዚህ እስካሁን ዝግጅት የለም — በቅርቡ ተመልሰው ይምጡ።",
+    "previous": "ቀዳሚ",
+    "next": "ቀጣይ",
+    "shareStory": "ይህን ታሪክ ያጋሩ",
+    "news": {
+      "title": "ዜና",
+      "heroTitle": "የእምነት ታሪኮች። የተልዕኮ ታሪኮች።",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "ጽሑፎች",
+      "heroTitle": "ዜና",
+      "heroSubtitle": "ተማሪዎች የሚያዩት፣ AM ወዴት እየሄደ እንደሆነ፣ እና እንዴት መጸለይ እንደሚቻል።"
+    },
+    "photoNews": {
+      "title": "የፎቶ ዜና",
+      "heroTitle": "ዜና",
+      "heroSubtitle": "ተማሪዎች የሚያዩት፣ AM ወዴት እየሄደ እንደሆነ፣ እና እንዴት መጸለይ እንደሚቻል።"
+    },
+    "testimony": {
+      "title": "ምስክርነቶች",
+      "heroTitle": "እውነተኛ ታሪኮች",
+      "heroSubtitle": "እምነት። እድገት። ለውጥ።"
+    },
+    "events": {
+      "title": "ዝግጅቶች",
+      "heroTitle": "መሰብሰብ። ማደግ። መሄድ።",
+      "heroSubtitle": ""
+    },
+    "moreIn": "በ{section} ውስጥ ተጨማሪ"
   }
 }

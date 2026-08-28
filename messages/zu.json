@@ -457,5 +457,45 @@
       "description": "Incwadi emfushane yanyanga zonke: lokho abafundi abakubonayo, lapho i-AM iya khona ngokulandelayo, nokuthi ungathandaza kanjani.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Izindaba",
+    "sort": "Hlunga",
+    "newest": "Okusha",
+    "oldest": "Okudala",
+    "show": "Bonisa",
+    "storyCount": "{count, plural, one {indaba engu-#} other {izindaba ezingu-#}}",
+    "eventCount": "{count, plural, one {umcimbi ongu-#} other {imicimbi engu-#}}",
+    "emptyStories": "Akukho lutho lapha okwamanje — buya maduze.",
+    "emptyEvents": "Ayikho imicimbi lapha okwamanje — buya maduze.",
+    "previous": "Okwedlule",
+    "next": "Okulandelayo",
+    "shareStory": "Yabelana ngale ndaba",
+    "news": {
+      "title": "Izindaba",
+      "heroTitle": "Izindaba zokholo. Izindaba zomsebenzi wobufundisi.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Izihloko",
+      "heroTitle": "Izindaba",
+      "heroSubtitle": "Lokho abafundi abakubonayo, lapho i-AM iya khona, nokuthi singathandaza kanjani."
+    },
+    "photoNews": {
+      "title": "Izindaba Zezithombe",
+      "heroTitle": "Izindaba",
+      "heroSubtitle": "Lokho abafundi abakubonayo, lapho i-AM iya khona, nokuthi singathandaza kanjani."
+    },
+    "testimony": {
+      "title": "Ubufakazi",
+      "heroTitle": "Izindaba zangempela",
+      "heroSubtitle": "Ukholo. Ukukhula. Ukuguqulwa."
+    },
+    "events": {
+      "title": "Imicimbi",
+      "heroTitle": "Ukubuthana. Ukukhula. Ukuhamba.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Okuningi ku-{section}"
   }
 }

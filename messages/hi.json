@@ -457,5 +457,45 @@
       "description": "एक छोटा मासिक पत्र: छात्र क्या देख रहे हैं, AM आगे कहाँ जा रहा है, और कैसे प्रार्थना करें।",
       "cta": "AM अकादमी"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "समाचार",
+    "sort": "क्रम",
+    "newest": "नवीनतम",
+    "oldest": "सबसे पुराने",
+    "show": "दिखाएँ",
+    "storyCount": "{count, plural, one {# कहानी} other {# कहानियाँ}}",
+    "eventCount": "{count, plural, one {# कार्यक्रम} other {# कार्यक्रम}}",
+    "emptyStories": "यहाँ अभी कुछ नहीं है — जल्द ही फिर आइए।",
+    "emptyEvents": "यहाँ अभी कोई कार्यक्रम नहीं है — जल्द ही फिर आइए।",
+    "previous": "पिछला",
+    "next": "अगला",
+    "shareStory": "यह कहानी साझा करें",
+    "news": {
+      "title": "समाचार",
+      "heroTitle": "विश्वास की कहानियाँ। मिशन की कहानियाँ।",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "लेख",
+      "heroTitle": "समाचार",
+      "heroSubtitle": "छात्र क्या देख रहे हैं, AM आगे कहाँ जा रही है, और प्रार्थना कैसे करें।"
+    },
+    "photoNews": {
+      "title": "चित्र समाचार",
+      "heroTitle": "समाचार",
+      "heroSubtitle": "छात्र क्या देख रहे हैं, AM आगे कहाँ जा रही है, और प्रार्थना कैसे करें।"
+    },
+    "testimony": {
+      "title": "गवाहियाँ",
+      "heroTitle": "सच्ची कहानियाँ",
+      "heroSubtitle": "विश्वास। वृद्धि। परिवर्तन।"
+    },
+    "events": {
+      "title": "कार्यक्रम",
+      "heroTitle": "इकट्ठा हों। बढ़ें। जाएँ।",
+      "heroSubtitle": ""
+    },
+    "moreIn": "{section} में और"
   }
 }

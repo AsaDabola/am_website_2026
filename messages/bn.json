@@ -457,5 +457,45 @@
       "description": "একটি সংক্ষিপ্ত মাসিক চিঠি: শিক্ষার্থীরা কী দেখছেন, AM এরপর কোথায় যাচ্ছে, এবং কীভাবে প্রার্থনা করবেন।",
       "cta": "AM অ্যাকাডেমি"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "সংবাদ",
+    "sort": "সাজান",
+    "newest": "সাম্প্রতিক",
+    "oldest": "পুরোনো",
+    "show": "দেখান",
+    "storyCount": "{count, plural, one {# গল্প} other {# গল্প}}",
+    "eventCount": "{count, plural, one {# আয়োজন} other {# আয়োজন}}",
+    "emptyStories": "এখানে এখনও কিছু নেই — শীঘ্রই আবার আসুন।",
+    "emptyEvents": "এখানে এখনও কোনো আয়োজন নেই — শীঘ্রই আবার আসুন।",
+    "previous": "আগের",
+    "next": "পরের",
+    "shareStory": "এই গল্পটি ভাগ করুন",
+    "news": {
+      "title": "সংবাদ",
+      "heroTitle": "বিশ্বাসের গল্প। প্রেরণের গল্প।",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "প্রবন্ধ",
+      "heroTitle": "সংবাদ",
+      "heroSubtitle": "শিক্ষার্থীরা কী দেখছে, AM কোথায় যাচ্ছে, এবং কীভাবে প্রার্থনা করবেন।"
+    },
+    "photoNews": {
+      "title": "ছবিতে সংবাদ",
+      "heroTitle": "সংবাদ",
+      "heroSubtitle": "শিক্ষার্থীরা কী দেখছে, AM কোথায় যাচ্ছে, এবং কীভাবে প্রার্থনা করবেন।"
+    },
+    "testimony": {
+      "title": "সাক্ষ্য",
+      "heroTitle": "সত্যিকারের গল্প",
+      "heroSubtitle": "বিশ্বাস। বৃদ্ধি। রূপান্তর।"
+    },
+    "events": {
+      "title": "অনুষ্ঠান",
+      "heroTitle": "একত্র হও। বেড়ে ওঠো। যাও।",
+      "heroSubtitle": ""
+    },
+    "moreIn": "{section}-এ আরও"
   }
 }

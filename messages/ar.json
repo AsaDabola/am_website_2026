@@ -457,5 +457,45 @@
       "description": "رسالة شهرية قصيرة: ما يراه الطلاب، وإلى أين تتّجه AM، وكيف تصلّي.",
       "cta": "أكاديمية AM"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "الأخبار",
+    "sort": "ترتيب",
+    "newest": "الأحدث",
+    "oldest": "الأقدم",
+    "show": "عرض",
+    "storyCount": "{count, plural, other {# قصة}}",
+    "eventCount": "{count, plural, other {# فعالية}}",
+    "emptyStories": "لا توجد قصص هنا بعد — عد إلينا قريبًا.",
+    "emptyEvents": "لا توجد فعاليات هنا بعد — عد إلينا قريبًا.",
+    "previous": "السابق",
+    "next": "التالي",
+    "shareStory": "شارك هذه القصة",
+    "news": {
+      "title": "الأخبار",
+      "heroTitle": "قصص إيمان. قصص إرسالية.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "مقالات",
+      "heroTitle": "الأخبار",
+      "heroSubtitle": "ما يراه الطلاب، وإلى أين تتجه AM، وكيف نصلي."
+    },
+    "photoNews": {
+      "title": "أخبار مصوّرة",
+      "heroTitle": "الأخبار",
+      "heroSubtitle": "ما يراه الطلاب، وإلى أين تتجه AM، وكيف نصلي."
+    },
+    "testimony": {
+      "title": "شهادات",
+      "heroTitle": "قصص حقيقية",
+      "heroSubtitle": "إيمان. نمو. تغيير."
+    },
+    "events": {
+      "title": "الفعاليات",
+      "heroTitle": "نجتمع. ننمو. نُرسَل.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "المزيد من {section}"
   }
 }

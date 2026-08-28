@@ -13,14 +13,5 @@ export default function EditorialPage({
 }: {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  return (
-    <NewsListPage
-      searchParams={searchParams}
-      active="/news/editorial"
-      title="Editorial"
-      eyebrow="News"
-      heading="Editorial"
-      category="editorial"
-    />
-  );
+  return <NewsListPage searchParams={searchParams} category="editorial" />;
 }

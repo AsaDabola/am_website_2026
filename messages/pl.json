@@ -457,5 +457,45 @@
       "description": "Krótki miesięczny list: co widzą studenci, dokąd zmierza AM i jak się modlić.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Aktualności",
+    "sort": "Sortuj",
+    "newest": "Najnowsze",
+    "oldest": "Najstarsze",
+    "show": "Pokaż",
+    "storyCount": "{count, plural, one {# historia} few {# historie} many {# historii} other {# historii}}",
+    "eventCount": "{count, plural, one {# wydarzenie} few {# wydarzenia} many {# wydarzeń} other {# wydarzeń}}",
+    "emptyStories": "Jeszcze nic tu nie ma — zajrzyj wkrótce.",
+    "emptyEvents": "Jeszcze nie ma tu wydarzeń — zajrzyj wkrótce.",
+    "previous": "Poprzednia",
+    "next": "Następna",
+    "shareStory": "Udostępnij tę historię",
+    "news": {
+      "title": "Aktualności",
+      "heroTitle": "Historie wiary. Historie misji.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Artykuły",
+      "heroTitle": "Aktualności",
+      "heroSubtitle": "Co widzą studenci, dokąd zmierza AM i jak się modlić."
+    },
+    "photoNews": {
+      "title": "Fotorelacje",
+      "heroTitle": "Aktualności",
+      "heroSubtitle": "Co widzą studenci, dokąd zmierza AM i jak się modlić."
+    },
+    "testimony": {
+      "title": "Świadectwa",
+      "heroTitle": "Prawdziwe historie",
+      "heroSubtitle": "Wiara. Wzrost. Przemiana."
+    },
+    "events": {
+      "title": "Wydarzenia",
+      "heroTitle": "Gromadzić się. Wzrastać. Iść.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Więcej w dziale {section}"
   }
 }

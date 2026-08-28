@@ -457,5 +457,45 @@
       "description": "Ett kort månadsbrev: vad studenterna ser, vart AM är på väg härnäst och hur du kan be.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Nyheter",
+    "sort": "Sortera",
+    "newest": "Senaste",
+    "oldest": "Äldsta",
+    "show": "Visa",
+    "storyCount": "{count, plural, one {# berättelse} other {# berättelser}}",
+    "eventCount": "{count, plural, one {# evenemang} other {# evenemang}}",
+    "emptyStories": "Här finns inget ännu – kom tillbaka snart.",
+    "emptyEvents": "Här finns inga evenemang ännu – kom tillbaka snart.",
+    "previous": "Föregående",
+    "next": "Nästa",
+    "shareStory": "Dela den här berättelsen",
+    "news": {
+      "title": "Nyheter",
+      "heroTitle": "Berättelser om tro. Berättelser om mission.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Artiklar",
+      "heroTitle": "Nyheter",
+      "heroSubtitle": "Vad studenterna ser, vart AM är på väg och hur du kan be."
+    },
+    "photoNews": {
+      "title": "Bildreportage",
+      "heroTitle": "Nyheter",
+      "heroSubtitle": "Vad studenterna ser, vart AM är på väg och hur du kan be."
+    },
+    "testimony": {
+      "title": "Vittnesbörd",
+      "heroTitle": "Sanna berättelser",
+      "heroSubtitle": "Tro. Växt. Förvandling."
+    },
+    "events": {
+      "title": "Evenemang",
+      "heroTitle": "Samlas. Växa. Gå.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Mer i {section}"
   }
 }

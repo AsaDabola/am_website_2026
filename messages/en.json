@@ -456,5 +456,45 @@
       "description": "A short monthly letter: what students are seeing, where AM is going next, and how to pray.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "News",
+    "sort": "Sort",
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "show": "Show",
+    "storyCount": "{count, plural, one {# story} other {# stories}}",
+    "eventCount": "{count, plural, one {# event} other {# events}}",
+    "emptyStories": "No stories here yet — check back soon.",
+    "emptyEvents": "No events here yet — check back soon.",
+    "previous": "Previous",
+    "next": "Next",
+    "shareStory": "Share this story",
+    "news": {
+      "title": "News",
+      "heroTitle": "Stories of Faith. Stories of Mission.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Editorial",
+      "heroTitle": "News",
+      "heroSubtitle": "What students are seeing, where AM is going next, and how to pray."
+    },
+    "photoNews": {
+      "title": "Photo News",
+      "heroTitle": "News",
+      "heroSubtitle": "What students are seeing, where AM is going next, and how to pray."
+    },
+    "testimony": {
+      "title": "Testimony",
+      "heroTitle": "Real stories",
+      "heroSubtitle": "Faith. Growth. Transformation."
+    },
+    "events": {
+      "title": "Events",
+      "heroTitle": "Gather. Grow. Go.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "More {section}"
   }
 }

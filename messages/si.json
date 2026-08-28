@@ -457,5 +457,45 @@
       "description": "කෙටි මාසික ලිපියක්: සිසුන් දකින දේ, AM ඊළඟට යන තැන, සහ යාච්ඤා කරන ආකාරය.",
       "cta": "AM ඇකඩමිය"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "පුවත්",
+    "sort": "පෙළගස්වන්න",
+    "newest": "අලුත්ම",
+    "oldest": "පැරණිම",
+    "show": "පෙන්වන්න",
+    "storyCount": "{count, plural, one {කථා #} other {කථා #}}",
+    "eventCount": "{count, plural, one {සිදුවීම් #} other {සිදුවීම් #}}",
+    "emptyStories": "මෙහි තවම කිසිවක් නැත — ළඟදීම නැවත එන්න.",
+    "emptyEvents": "මෙහි තවම සිදුවීම් නැත — ළඟදීම නැවත එන්න.",
+    "previous": "පෙර",
+    "next": "ඊළඟ",
+    "shareStory": "මෙම කථාව බෙදාගන්න",
+    "news": {
+      "title": "පුවත්",
+      "heroTitle": "විශ්වාසයේ කථා. දූත මෙහෙවරේ කථා.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "ලිපි",
+      "heroTitle": "පුවත්",
+      "heroSubtitle": "සිසුන් දකින දේ, AM යන දිශාව, සහ යාච්ඤා කරන ආකාරය."
+    },
+    "photoNews": {
+      "title": "ඡායාරූප පුවත්",
+      "heroTitle": "පුවත්",
+      "heroSubtitle": "සිසුන් දකින දේ, AM යන දිශාව, සහ යාච්ඤා කරන ආකාරය."
+    },
+    "testimony": {
+      "title": "සාක්ෂි",
+      "heroTitle": "සැබෑ කථා",
+      "heroSubtitle": "විශ්වාසය. වර්ධනය. පරිවර්තනය."
+    },
+    "events": {
+      "title": "සිදුවීම්",
+      "heroTitle": "එකතු වෙමු. වැඩෙමු. යමු.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "{section} හි තවත්"
   }
 }

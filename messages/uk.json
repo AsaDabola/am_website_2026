@@ -457,5 +457,45 @@
       "description": "Короткий щомісячний лист: що бачать студенти, куди AM іде далі та як молитися.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Новини",
+    "sort": "Сортувати",
+    "newest": "Найновіші",
+    "oldest": "Найстаріші",
+    "show": "Показувати",
+    "storyCount": "{count, plural, one {# історія} few {# історії} many {# історій} other {# історій}}",
+    "eventCount": "{count, plural, one {# подія} few {# події} many {# подій} other {# подій}}",
+    "emptyStories": "Тут поки нічого немає — завітайте пізніше.",
+    "emptyEvents": "Тут поки немає подій — завітайте пізніше.",
+    "previous": "Назад",
+    "next": "Далі",
+    "shareStory": "Поділитися цією історією",
+    "news": {
+      "title": "Новини",
+      "heroTitle": "Історії віри. Історії місії.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Статті",
+      "heroTitle": "Новини",
+      "heroSubtitle": "Що бачать студенти, куди AM іде далі та як за це молитися."
+    },
+    "photoNews": {
+      "title": "Фоторепортажі",
+      "heroTitle": "Новини",
+      "heroSubtitle": "Що бачать студенти, куди AM іде далі та як за це молитися."
+    },
+    "testimony": {
+      "title": "Свідчення",
+      "heroTitle": "Справжні історії",
+      "heroSubtitle": "Віра. Зростання. Переміна."
+    },
+    "events": {
+      "title": "Події",
+      "heroTitle": "Збиратися. Зростати. Іти.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Більше в розділі «{section}»"
   }
 }

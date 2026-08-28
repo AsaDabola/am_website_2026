@@ -457,5 +457,45 @@
       "description": "E dua na ivola lekaleka ena vula yadua: na ka era raica na gonevuli, na vanua e lako kina na AM, kei na sala me masulaki kina.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Itukutuku",
+    "sort": "Wasei",
+    "newest": "Vou duadua",
+    "oldest": "Makawa duadua",
+    "show": "Vakaraitaka",
+    "storyCount": "{count, plural, other {itukutuku e #}}",
+    "eventCount": "{count, plural, other {soqo e #}}",
+    "emptyStories": "Se sega ni dua na itukutuku eke — lesu mai ena dua na gauna vakarawarawa.",
+    "emptyEvents": "Se sega ni dua na soqo eke — lesu mai ena dua na gauna vakarawarawa.",
+    "previous": "Liu",
+    "next": "Tarava",
+    "shareStory": "Wasea na itukutuku oqo",
+    "news": {
+      "title": "Itukutuku",
+      "heroTitle": "Itukutuku ni vakabauta. Itukutuku ni cakacaka vakaitalatala.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Ivakamacala ni Dauvolaivola",
+      "heroTitle": "Itukutuku",
+      "heroSubtitle": "Na ka era raica na gonevuli, na vanua e lako kina na AM, kei na sala meda masu kina."
+    },
+    "photoNews": {
+      "title": "Itukutuku Vakaiyaloyalo",
+      "heroTitle": "Itukutuku",
+      "heroSubtitle": "Na ka era raica na gonevuli, na vanua e lako kina na AM, kei na sala meda masu kina."
+    },
+    "testimony": {
+      "title": "Ivakadinadina",
+      "heroTitle": "Itukutuku dina",
+      "heroSubtitle": "Vakabauta. Tubu. Veisau."
+    },
+    "events": {
+      "title": "Soqo",
+      "heroTitle": "Soqoni. Tubu. Lako.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Levu cake ena {section}"
   }
 }

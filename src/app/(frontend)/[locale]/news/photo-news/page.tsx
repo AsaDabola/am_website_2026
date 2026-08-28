@@ -13,14 +13,5 @@ export default function PhotoNewsPage({
 }: {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  return (
-    <NewsListPage
-      searchParams={searchParams}
-      active="/news/photo-news"
-      title="Photo News"
-      eyebrow="News"
-      heading="Photo News"
-      category="photo-news"
-    />
-  );
+  return <NewsListPage searchParams={searchParams} category="photo-news" />;
 }

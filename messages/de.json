@@ -456,5 +456,45 @@
       "description": "Ein kurzer monatlicher Brief: was Studierende erleben, wohin AM als Nächstes geht, und wie man beten kann.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Nachrichten",
+    "sort": "Sortieren",
+    "newest": "Neueste",
+    "oldest": "Älteste",
+    "show": "Anzeigen",
+    "storyCount": "{count, plural, one {# Beitrag} other {# Beiträge}}",
+    "eventCount": "{count, plural, one {# Veranstaltung} other {# Veranstaltungen}}",
+    "emptyStories": "Hier gibt es noch nichts – schau bald wieder vorbei.",
+    "emptyEvents": "Hier gibt es noch keine Veranstaltungen – schau bald wieder vorbei.",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "shareStory": "Diesen Beitrag teilen",
+    "news": {
+      "title": "Nachrichten",
+      "heroTitle": "Geschichten des Glaubens. Geschichten der Mission.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Leitartikel",
+      "heroTitle": "Nachrichten",
+      "heroSubtitle": "Was Studierende erleben, wohin AM als Nächstes geht und wie man dafür betet."
+    },
+    "photoNews": {
+      "title": "Fotonachrichten",
+      "heroTitle": "Nachrichten",
+      "heroSubtitle": "Was Studierende erleben, wohin AM als Nächstes geht und wie man dafür betet."
+    },
+    "testimony": {
+      "title": "Zeugnis",
+      "heroTitle": "Echte Geschichten",
+      "heroSubtitle": "Glaube. Wachstum. Veränderung."
+    },
+    "events": {
+      "title": "Veranstaltungen",
+      "heroTitle": "Zusammenkommen. Wachsen. Gehen.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Mehr aus {section}"
   }
 }

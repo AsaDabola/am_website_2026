@@ -457,5 +457,45 @@
       "description": "Krátký měsíční dopis: co studenti vidí, kam AM směřuje dál a jak se modlit.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Novinky",
+    "sort": "Řadit",
+    "newest": "Nejnovější",
+    "oldest": "Nejstarší",
+    "show": "Zobrazit",
+    "storyCount": "{count, plural, one {# příběh} few {# příběhy} many {# příběhu} other {# příběhů}}",
+    "eventCount": "{count, plural, one {# akce} few {# akce} many {# akce} other {# akcí}}",
+    "emptyStories": "Zatím tu nic není — přijďte se podívat později.",
+    "emptyEvents": "Zatím tu nejsou žádné akce — přijďte se podívat později.",
+    "previous": "Předchozí",
+    "next": "Další",
+    "shareStory": "Sdílet tento příběh",
+    "news": {
+      "title": "Novinky",
+      "heroTitle": "Příběhy víry. Příběhy misie.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Články",
+      "heroTitle": "Novinky",
+      "heroSubtitle": "Co vidí studenti, kam AM míří dál a jak se za to modlit."
+    },
+    "photoNews": {
+      "title": "Fotoreportáže",
+      "heroTitle": "Novinky",
+      "heroSubtitle": "Co vidí studenti, kam AM míří dál a jak se za to modlit."
+    },
+    "testimony": {
+      "title": "Svědectví",
+      "heroTitle": "Skutečné příběhy",
+      "heroSubtitle": "Víra. Růst. Proměna."
+    },
+    "events": {
+      "title": "Události",
+      "heroTitle": "Scházet se. Růst. Jít.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Více v sekci {section}"
   }
 }

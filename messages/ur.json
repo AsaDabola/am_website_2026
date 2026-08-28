@@ -457,5 +457,45 @@
       "description": "ایک مختصر ماہانہ خط: طلبہ کیا دیکھ رہے ہیں، AM آگے کہاں جا رہی ہے، اور کیسے دعا کی جائے۔",
       "cta": "AM اکیڈمی"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "خبریں",
+    "sort": "ترتیب",
+    "newest": "تازہ ترین",
+    "oldest": "قدیم ترین",
+    "show": "دکھائیں",
+    "storyCount": "{count, plural, other {# کہانیاں}}",
+    "eventCount": "{count, plural, other {# تقریبات}}",
+    "emptyStories": "یہاں ابھی کچھ نہیں ہے — جلد دوبارہ آئیں۔",
+    "emptyEvents": "یہاں ابھی کوئی تقریب نہیں — جلد دوبارہ آئیں۔",
+    "previous": "پچھلا",
+    "next": "اگلا",
+    "shareStory": "یہ کہانی شیئر کریں",
+    "news": {
+      "title": "خبریں",
+      "heroTitle": "ایمان کی کہانیاں۔ مشن کی کہانیاں۔",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "مضامین",
+      "heroTitle": "خبریں",
+      "heroSubtitle": "طلبہ کیا دیکھ رہے ہیں، AM کہاں جا رہی ہے، اور کیسے دعا کریں۔"
+    },
+    "photoNews": {
+      "title": "تصویری خبریں",
+      "heroTitle": "خبریں",
+      "heroSubtitle": "طلبہ کیا دیکھ رہے ہیں، AM کہاں جا رہی ہے، اور کیسے دعا کریں۔"
+    },
+    "testimony": {
+      "title": "گواہیاں",
+      "heroTitle": "سچی کہانیاں",
+      "heroSubtitle": "ایمان۔ نمو۔ تبدیلی۔"
+    },
+    "events": {
+      "title": "تقریبات",
+      "heroTitle": "جمع ہوں۔ بڑھیں۔ جائیں۔",
+      "heroSubtitle": ""
+    },
+    "moreIn": "{section} میں مزید"
   }
 }

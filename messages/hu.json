@@ -457,5 +457,45 @@
       "description": "Rövid havi levél: mit látnak a hallgatók, merre tart az AM, és hogyan imádkozz.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Hírek",
+    "sort": "Rendezés",
+    "newest": "Legújabb",
+    "oldest": "Legrégebbi",
+    "show": "Megjelenítés",
+    "storyCount": "{count, plural, other {# történet}}",
+    "eventCount": "{count, plural, other {# esemény}}",
+    "emptyStories": "Itt még nincs semmi — nézz vissza hamarosan.",
+    "emptyEvents": "Itt még nincs esemény — nézz vissza hamarosan.",
+    "previous": "Előző",
+    "next": "Következő",
+    "shareStory": "Oszd meg ezt a történetet",
+    "news": {
+      "title": "Hírek",
+      "heroTitle": "A hit történetei. A misszió történetei.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Írások",
+      "heroTitle": "Hírek",
+      "heroSubtitle": "Amit a diákok látnak, merre tart az AM, és hogyan imádkozzunk."
+    },
+    "photoNews": {
+      "title": "Képriportok",
+      "heroTitle": "Hírek",
+      "heroSubtitle": "Amit a diákok látnak, merre tart az AM, és hogyan imádkozzunk."
+    },
+    "testimony": {
+      "title": "Bizonyságtételek",
+      "heroTitle": "Igaz történetek",
+      "heroSubtitle": "Hit. Növekedés. Változás."
+    },
+    "events": {
+      "title": "Események",
+      "heroTitle": "Együtt lenni. Növekedni. Menni.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Több a(z) {section} rovatból"
   }
 }

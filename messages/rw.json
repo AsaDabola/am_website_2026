@@ -457,5 +457,45 @@
       "description": "Ibaruwa ngufi ya buri kwezi: icyo abanyeshuri babona, aho AM igiye ubutaha, n'uko wasenga.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Amakuru",
+    "sort": "Shungura",
+    "newest": "Ibishya",
+    "oldest": "Ibya kera",
+    "show": "Erekana",
+    "storyCount": "{count, plural, one {inkuru #} other {inkuru #}}",
+    "eventCount": "{count, plural, one {igikorwa #} other {ibikorwa #}}",
+    "emptyStories": "Nta nkuru irahaba — garuka vuba.",
+    "emptyEvents": "Nta bikorwa birahaba — garuka vuba.",
+    "previous": "Ibanza",
+    "next": "Ikurikira",
+    "shareStory": "Sangiza iyi nkuru",
+    "news": {
+      "title": "Amakuru",
+      "heroTitle": "Inkuru z'ukwizera. Inkuru z'ubutumwa.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Inyandiko y'Umwanditsi",
+      "heroTitle": "Amakuru",
+      "heroSubtitle": "Ibyo abanyeshuri babona, aho AM yerekeza, n'uko twasenga."
+    },
+    "photoNews": {
+      "title": "Amakuru mu Mafoto",
+      "heroTitle": "Amakuru",
+      "heroSubtitle": "Ibyo abanyeshuri babona, aho AM yerekeza, n'uko twasenga."
+    },
+    "testimony": {
+      "title": "Ubuhamya",
+      "heroTitle": "Inkuru nyakuri",
+      "heroSubtitle": "Ukwizera. Gukura. Guhinduka."
+    },
+    "events": {
+      "title": "Ibirori",
+      "heroTitle": "Guteranira hamwe. Gukura. Kugenda.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Ibindi muri {section}"
   }
 }

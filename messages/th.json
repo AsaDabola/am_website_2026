@@ -457,5 +457,45 @@
       "description": "จดหมายรายเดือนสั้น ๆ: นักศึกษาเห็นอะไร AM กำลังจะไปที่ใดต่อ และจะอธิษฐานอย่างไร",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "ข่าวสาร",
+    "sort": "จัดเรียง",
+    "newest": "ใหม่ที่สุด",
+    "oldest": "เก่าที่สุด",
+    "show": "แสดง",
+    "storyCount": "{count, plural, other {# เรื่อง}}",
+    "eventCount": "{count, plural, other {# กิจกรรม}}",
+    "emptyStories": "ยังไม่มีเรื่องราวที่นี่ — กลับมาใหม่เร็ว ๆ นี้",
+    "emptyEvents": "ยังไม่มีกิจกรรมที่นี่ — กลับมาใหม่เร็ว ๆ นี้",
+    "previous": "ก่อนหน้า",
+    "next": "ถัดไป",
+    "shareStory": "แบ่งปันเรื่องนี้",
+    "news": {
+      "title": "ข่าวสาร",
+      "heroTitle": "เรื่องราวแห่งความเชื่อ เรื่องราวแห่งพันธกิจ",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "บทความ",
+      "heroTitle": "ข่าวสาร",
+      "heroSubtitle": "สิ่งที่นักศึกษาได้เห็น ทิศทางต่อไปของ AM และคำอธิษฐาน"
+    },
+    "photoNews": {
+      "title": "ภาพข่าว",
+      "heroTitle": "ข่าวสาร",
+      "heroSubtitle": "สิ่งที่นักศึกษาได้เห็น ทิศทางต่อไปของ AM และคำอธิษฐาน"
+    },
+    "testimony": {
+      "title": "คำพยาน",
+      "heroTitle": "เรื่องจริง",
+      "heroSubtitle": "ความเชื่อ การเติบโต การเปลี่ยนแปลง"
+    },
+    "events": {
+      "title": "กิจกรรม",
+      "heroTitle": "รวมกัน เติบโต ออกไป",
+      "heroSubtitle": ""
+    },
+    "moreIn": "ดูเพิ่มใน {section}"
   }
 }

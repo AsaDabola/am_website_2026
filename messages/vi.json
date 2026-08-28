@@ -457,5 +457,45 @@
       "description": "Một lá thư ngắn hằng tháng: sinh viên đang thấy điều gì, AM sẽ đi đâu tiếp theo, và cầu nguyện như thế nào.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Tin tức",
+    "sort": "Sắp xếp",
+    "newest": "Mới nhất",
+    "oldest": "Cũ nhất",
+    "show": "Hiển thị",
+    "storyCount": "{count, plural, other {# câu chuyện}}",
+    "eventCount": "{count, plural, other {# sự kiện}}",
+    "emptyStories": "Chưa có câu chuyện nào ở đây — hãy quay lại sớm.",
+    "emptyEvents": "Chưa có sự kiện nào ở đây — hãy quay lại sớm.",
+    "previous": "Trước",
+    "next": "Tiếp",
+    "shareStory": "Chia sẻ câu chuyện này",
+    "news": {
+      "title": "Tin tức",
+      "heroTitle": "Những câu chuyện đức tin. Những câu chuyện sứ mạng.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Bài viết",
+      "heroTitle": "Tin tức",
+      "heroSubtitle": "Điều sinh viên đang thấy, nơi AM sắp đến, và cách cầu nguyện."
+    },
+    "photoNews": {
+      "title": "Phóng sự ảnh",
+      "heroTitle": "Tin tức",
+      "heroSubtitle": "Điều sinh viên đang thấy, nơi AM sắp đến, và cách cầu nguyện."
+    },
+    "testimony": {
+      "title": "Lời chứng",
+      "heroTitle": "Những câu chuyện có thật",
+      "heroSubtitle": "Đức tin. Tăng trưởng. Biến đổi."
+    },
+    "events": {
+      "title": "Sự kiện",
+      "heroTitle": "Nhóm lại. Lớn lên. Ra đi.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Thêm trong {section}"
   }
 }

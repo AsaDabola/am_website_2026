@@ -457,5 +457,45 @@
       "description": "'n Kort maandelikse brief: wat studente sien, waarheen AM volgende op pad is, en hoe om te bid.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Nuus",
+    "sort": "Sorteer",
+    "newest": "Nuutste",
+    "oldest": "Oudste",
+    "show": "Wys",
+    "storyCount": "{count, plural, one {# storie} other {# stories}}",
+    "eventCount": "{count, plural, one {# geleentheid} other {# geleenthede}}",
+    "emptyStories": "Hier is nog niks nie — kom binnekort weer kuier.",
+    "emptyEvents": "Hier is nog geen geleenthede nie — kom binnekort weer kuier.",
+    "previous": "Vorige",
+    "next": "Volgende",
+    "shareStory": "Deel hierdie storie",
+    "news": {
+      "title": "Nuus",
+      "heroTitle": "Stories van geloof. Stories van sending.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Artikels",
+      "heroTitle": "Nuus",
+      "heroSubtitle": "Wat studente sien, waarheen AM op pad is, en hoe om te bid."
+    },
+    "photoNews": {
+      "title": "Fotonuus",
+      "heroTitle": "Nuus",
+      "heroSubtitle": "Wat studente sien, waarheen AM op pad is, en hoe om te bid."
+    },
+    "testimony": {
+      "title": "Getuienisse",
+      "heroTitle": "Ware stories",
+      "heroSubtitle": "Geloof. Groei. Verandering."
+    },
+    "events": {
+      "title": "Geleenthede",
+      "heroTitle": "Bymekaarkom. Groei. Gaan.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Meer uit {section}"
   }
 }

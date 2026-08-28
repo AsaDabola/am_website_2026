@@ -457,5 +457,45 @@
       "description": "Kısa bir aylık mektup: öğrencilerin gördükleri, AM'in bundan sonra nereye gittiği ve nasıl dua edileceği.",
       "cta": "AM Academy"
     }
+  },
+  "NewsListings": {
+    "eyebrow": "Haberler",
+    "sort": "Sırala",
+    "newest": "En yeni",
+    "oldest": "En eski",
+    "show": "Göster",
+    "storyCount": "{count, plural, one {# yazı} other {# yazı}}",
+    "eventCount": "{count, plural, one {# etkinlik} other {# etkinlik}}",
+    "emptyStories": "Burada henüz bir şey yok — yakında tekrar uğrayın.",
+    "emptyEvents": "Burada henüz etkinlik yok — yakında tekrar uğrayın.",
+    "previous": "Önceki",
+    "next": "Sonraki",
+    "shareStory": "Bu yazıyı paylaş",
+    "news": {
+      "title": "Haberler",
+      "heroTitle": "İman hikâyeleri. Misyon hikâyeleri.",
+      "heroSubtitle": ""
+    },
+    "editorial": {
+      "title": "Yazılar",
+      "heroTitle": "Haberler",
+      "heroSubtitle": "Öğrencilerin gördükleri, AM'in gideceği yer ve nasıl dua edileceği."
+    },
+    "photoNews": {
+      "title": "Foto Haber",
+      "heroTitle": "Haberler",
+      "heroSubtitle": "Öğrencilerin gördükleri, AM'in gideceği yer ve nasıl dua edileceği."
+    },
+    "testimony": {
+      "title": "Tanıklıklar",
+      "heroTitle": "Gerçek hikâyeler",
+      "heroSubtitle": "İman. Büyüme. Değişim."
+    },
+    "events": {
+      "title": "Etkinlikler",
+      "heroTitle": "Toplan. Büyü. Git.",
+      "heroSubtitle": ""
+    },
+    "moreIn": "Daha fazla {section}"
   }
 }
