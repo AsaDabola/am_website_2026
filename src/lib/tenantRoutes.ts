@@ -2,7 +2,7 @@
  * Every route a country site serves.
  *
  * This is the single source of truth for two things that must agree: which
- * pages `/{continent}/{country}/…` can render, and which links get a country
+ * pages `/{country}/…` can render, and which links get a country
  * prefix while browsing one. Keeping them in one list is what stops a link
  * from pointing at a country URL that 404s.
  *

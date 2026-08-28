@@ -8,12 +8,12 @@ export type DirectoryCountry = {
   city?: string;
   continent: Continent;
   slug: string;
-  /** "{continent}/{slug}", which is also the site's path. */
+  /** The slug, which is also the site's path. */
   key: string;
   flag: string | null;
   /** The country's own default language. */
   locale: string;
-  /** A tenant exists for it, so /{continent}/{slug} resolves. */
+  /** A tenant exists for it, so /{slug} resolves. */
   live: boolean;
   /** Footer identity, where the country has filled it in. */
   orgName?: string;
@@ -33,7 +33,7 @@ export async function getCountryDirectory(): Promise<DirectoryCountry[]> {
   const rows = await getActiveTenantRows();
 
   return COUNTRY_SITES.map((site) => {
-    const key = `${site.continent}/${site.slug}`;
+    const key = site.slug;
     const row = rows.get(key);
     return {
       country: site.country,

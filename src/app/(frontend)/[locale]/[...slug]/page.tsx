@@ -9,7 +9,9 @@ import Media from "@/components/sections/Media";
 import Events from "@/components/sections/Events";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import { isContinent, getTenantBySlug } from "@/lib/tenants";
+import { getTenantBySlug } from "@/lib/tenants";
+import { isContinent } from "@/lib/continents";
+import { COUNTRY_SLUGS } from "@/lib/countrySites";
 import { getPageBySlug } from "@/lib/pages";
 import { renderHomeBlock, DefaultHomeBlocks } from "@/lib/renderHomeBlocks";
 import { redirect } from "@/i18n/navigation";
@@ -29,11 +31,13 @@ type Props = {
 };
 
 async function resolve(slug: string[]) {
-  if (slug.length >= 2 && isContinent(slug[0])) {
-    const tenant = await getTenantBySlug(slug[0], slug[1]);
+  // A country site is one segment: /germany, /es/argentina. The language is
+  // already stripped from `slug` by the [locale] segment above.
+  if (slug.length >= 1 && COUNTRY_SLUGS.has(slug[0])) {
+    const tenant = await getTenantBySlug(slug[0]);
     if (!tenant) return null;
 
-    const restSlug = slug.slice(2).join("/");
+    const restSlug = slug.slice(1).join("/");
     const page = await getPageBySlug(String(tenant.id), restSlug);
     return { tenant, page, restSlug, isTenantRoute: true as const };
   }
@@ -59,7 +63,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // metadata — this (plus the sitemap and the tenant-locale redirect) is
   // what lets a country's site surface as its own result in search rather
   // than just as a path under the main site.
-  if (resolved.isTenantRoute && slug.length === 2) {
+  if (resolved.isTenantRoute && slug.length === 1) {
     const tenant = resolved.tenant!;
     return {
       title: `AM ${tenant.country} | Apostolos Missions International`,
@@ -118,7 +122,7 @@ export default async function DynamicPage({ params, searchParams }: Props) {
     redirect({ href: `/${slug.join("/")}`, locale: tenant!.locale });
   }
 
-  const isTenantHome = isTenantRoute && slug.length === 2;
+  const isTenantHome = isTenantRoute && slug.length === 1;
 
   // Server components pick up this country's copy through the request store
   // above, but client components ("use client" subnavs, the network map) read
@@ -197,7 +201,7 @@ export default async function DynamicPage({ params, searchParams }: Props) {
   const crumbs = isTenantRoute
     ? [
         { label: "Home", href: "/" },
-        { label: tenant!.country, href: `/${slug[0]}/${slug[1]}` },
+        { label: tenant!.country, href: `/${slug[0]}` },
         { label: page.title },
       ]
     : [{ label: "Home", href: "/" }, { label: page.title }];

@@ -19,7 +19,7 @@ type StaticPageModule = {
 /**
  * A country site should be a whole site, not just a homepage. Until an editor
  * authors a country-specific Page in the CMS, every route under
- * /{continent}/{country}/… falls back to the main site's version so the
+ * /{country}/… falls back to the main site's version so the
  * country site is browsable in full from the day it is created.
  *
  * Typed as an exhaustive Record over TenantRoute: adding a route to

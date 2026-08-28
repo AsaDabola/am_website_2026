@@ -11,7 +11,7 @@ import {
 /**
  * Seeds the Tenants collection from AM's G20 + M40 mission country list
  * (src/lib/countrySites.ts) as path-based country sites — one per row, at
- * /{continent}/{slug}.
+ * /{slug}.
  *
  * Idempotent: a slug that already exists is updated to match the list rather
  * than duplicated, so re-running after editing countrySites.ts brings the

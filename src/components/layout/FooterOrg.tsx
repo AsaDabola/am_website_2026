@@ -5,7 +5,7 @@ import { countryFromPath, HEAD_OFFICE_KEYS } from "@/lib/currentCountry";
 import { flagSrc } from "@/lib/countryFlags";
 
 export type FooterCountry = {
-  /** "{continent}/{slug}" — the site's path, and how the pathname is matched. */
+  /** The country slug — the site's path, and how the pathname is matched. */
   key: string;
   country: string;
   flag: string | null;

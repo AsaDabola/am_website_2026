@@ -3,7 +3,8 @@ import { locales, type Locale } from "@/i18n/routing";
 
 /**
  * AM's G20 + M40 mission country list — the canonical source for the
- * path-based country sites at amintl.org/{continent}/{slug}.
+ * path-based country sites at amintl.org/{slug}, under the language when it
+ * is not English: amintl.org/es/argentina.
  *
  * Transcribed from the org's "G20 + M40 Mission Country List" sheet. This
  * file is the input to /api/seed-tenants, which writes it into the Tenants
@@ -26,7 +27,7 @@ export type CountrySite = {
   /** Main chapter city. Only filled in where AM's network table names one. */
   city?: string;
   continent: Continent;
-  /** URL segment: /{continent}/{slug} */
+  /** URL segment: /{slug} */
   slug: string;
   /**
    * Default site language. Constrained to a locale the site actually ships;
@@ -155,8 +156,23 @@ export function untranslatedLanguages(site: CountrySite): string[] {
 }
 
 export function countrySiteHref(site: CountrySite): string {
-  return `/${site.continent}/${site.slug}`;
+  return `/${site.slug}`;
 }
+
+/**
+ * Every country slug, for telling "/argentina" from "/about" without asking
+ * the database.
+ *
+ * The sheet rather than the Tenants collection, because this is needed in the
+ * browser — the nav prefixes links with the country you are on — and because
+ * it must be right before any query resolves. A country added in the admin
+ * and never added here still serves: the server resolves the route from the
+ * database either way. It is only the client-side link prefixing that would
+ * not know about it, which is why new countries belong in this file.
+ */
+export const COUNTRY_SLUGS: ReadonlySet<string> = new Set(
+  COUNTRY_SITES.map((site) => site.slug),
+);
 
 /**
  * What a country's footer calls itself before anyone has edited it —

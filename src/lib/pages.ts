@@ -52,7 +52,7 @@ export type NavPage = {
   href: string;
   /**
    * Which site the page belongs to: "" for the main amintl.org site, or
-   * "/{continent}/{country}" for a country's. The nav shows a page only while
+   * "/{country}" for a country's. The nav shows a page only while
    * that site is the one being browsed, so a page written for one country
    * never appears in another country's menu.
    */
@@ -92,7 +92,7 @@ export async function getNavPages(): Promise<NavPage[]> {
 
       const tenant = page.tenant;
       const scope =
-        tenant && tenant.continent && tenant.slug ? `/${tenant.continent}/${tenant.slug}` : "";
+        tenant && tenant.slug ? `/${tenant.slug}` : "";
 
       // A home page is its site's root rather than a path below it.
       const slug = page.isHome ? "" : page.slug?.trim() ?? "";

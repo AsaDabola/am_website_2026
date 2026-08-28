@@ -64,7 +64,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         // Link the canonical, tenant-locale URL directly (matching the
         // redirect the site itself performs) so crawlers land on the final
         // page instead of following a redirect hop.
-        const path = `/${continent}/${tenant.slug}`;
+        void continent;
+        const path = `/${tenant.slug}`;
         const localePrefix =
           tenant.locale && tenant.locale !== routing.defaultLocale ? `/${tenant.locale}` : "";
         return {

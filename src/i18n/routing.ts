@@ -133,4 +133,18 @@ export const routing = defineRouting({
   // ("/ko", "/ja", ...). This is the standard pattern; flag to revisit
   // if a literal "/intl" segment was actually intended for English.
   localePrefix: "as-needed",
+
+  // The address decides the language, and nothing else does.
+  //
+  // Left on, next-intl reads a NEXT_LOCALE cookie and then the browser's
+  // accept-language header to choose what to serve at an unprefixed path. So
+  // amintl.org came up in Korean for someone who had once looked at the
+  // Korean site — the cookie outlived the visit, the main site had no prefix
+  // to contradict it, and with the language picker gone there was no way back
+  // to English short of clearing cookies.
+  //
+  // Language now follows the country: the main site is English, /ko is
+  // Korean, and a country site redirects to its own language. All three are
+  // in the URL, which is shareable, cacheable and the same for everyone.
+  localeDetection: false,
 });

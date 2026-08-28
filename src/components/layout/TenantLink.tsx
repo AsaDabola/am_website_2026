@@ -7,9 +7,9 @@ import { tenantPrefixOf } from "@/lib/tenantPrefix";
 
 /**
  * Drop-in replacement for the site's <Link>. While browsing a country site
- * (/{continent}/{slug}/...), it keeps that country prefixed on internal
+ * (/{slug}/...), it keeps that country prefixed on internal
  * links instead of dropping back to the main amintl.org site — e.g. clicking
- * "Who We Are" from /europe/germany goes to /europe/germany/about, not
+ * "Who We Are" from /germany goes to /germany/about, not
  * /about.
  *
  * Only routes a country site actually serves get prefixed (see

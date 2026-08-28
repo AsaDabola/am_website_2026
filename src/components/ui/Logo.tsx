@@ -2,7 +2,7 @@
 
 import TenantLink from "@/components/layout/TenantLink";
 import { usePathname } from "@/i18n/navigation";
-import { isContinent } from "@/lib/continents";
+import { COUNTRY_SLUGS } from "@/lib/countrySites";
 import { COUNTRY_LOGO_HEIGHT, countryLogo } from "@/lib/countryLogos";
 import LogoMark from "./LogoMark";
 
@@ -17,7 +17,7 @@ const LOGO_PX = 38;
  */
 function countrySlug(pathname: string): string | null {
   const segments = pathname.split("/").filter(Boolean);
-  if (segments.length < 2 || !isContinent(segments[0])) return null;
+  if (!segments.length || !COUNTRY_SLUGS.has(segments[0])) return null;
   return segments[1];
 }
 

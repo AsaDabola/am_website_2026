@@ -5,8 +5,8 @@ import type { Payload } from "payload";
  * beside the form.
  *
  * A page with no tenant belongs to the main site and sits at /{slug}; one with
- * a tenant belongs to that country site and sits at
- * /{continent}/{country}/{slug}. `isHome` means the page is the site's root,
+ * a tenant belongs to that country site and sits at /{country}/{slug}.
+ * `isHome` means the page is the site's root,
  * so it drops the slug rather than adding an empty segment.
  *
  * The tenant arrives as an id or as the row itself depending on the depth the
@@ -33,7 +33,7 @@ export async function livePreviewUrl({
         : await payload
             .findByID({ collection: "tenants", id: tenant as string | number, depth: 0 })
             .catch(() => null);
-    if (row?.continent && row?.slug) prefix = `/${row.continent}/${row.slug}`;
+    if (row?.slug) prefix = `/${row.slug}`;
   }
 
   // A country home page is the prefix itself; the main site's is "/".

@@ -5,19 +5,13 @@ import { getPayload } from "payload";
 export { CONTINENTS, isContinent, type Continent } from "./continents";
 import { CONTINENTS, isContinent, type Continent } from "./continents";
 
-export async function getTenantBySlug(continent: string, countrySlug: string) {
-  if (!isContinent(continent)) return null;
-
+export async function getTenantBySlug(countrySlug: string) {
   try {
     const payload = await getPayload({ config });
     const result = await payload.find({
       collection: "tenants",
       where: {
-        and: [
-          { continent: { equals: continent } },
-          { slug: { equals: countrySlug } },
-          { active: { equals: true } },
-        ],
+        and: [{ slug: { equals: countrySlug } }, { active: { equals: true } }],
       },
       limit: 1,
     });
@@ -97,11 +91,11 @@ export async function getActiveTenantCountByContinent(): Promise<Record<string, 
 }
 
 /**
- * `{continent}/{slug}` for every active tenant.
+ * the slug of every active tenant.
  *
  * The country directory is built from the static COUNTRY_SITES list so it is
  * complete whatever the CMS holds, but only a country with a tenant behind it
- * actually resolves at /{continent}/{slug} — see the catch-all route. This is
+ * actually resolves at /{slug} — see the catch-all route. This is
  * what lets the directory link the ones that resolve and leave the rest as
  * plain text rather than shipping links to 404s.
  */
@@ -116,7 +110,7 @@ export type TenantRow = {
 };
 
 /**
- * Active tenants keyed by "{continent}/{slug}", carrying the fields a country
+ * Active tenants keyed by slug, carrying the fields a country
  * can override in its footer. One query serves both this and the directory's
  * live check, so asking for either costs the same request.
  */
@@ -131,7 +125,7 @@ export const getActiveTenantRows = cache(async (): Promise<Map<string, TenantRow
     });
     return new Map(
       result.docs.map((t) => [
-        `${t.continent}/${t.slug}`,
+        String(t.slug),
         {
           orgName: (t as { orgName?: string | null }).orgName ?? undefined,
           address: (t as { address?: string | null }).address ?? undefined,

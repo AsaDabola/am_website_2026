@@ -1,6 +1,8 @@
 import createMiddleware from "next-intl/middleware";
 import { NextRequest, NextResponse } from "next/server";
 import { routing } from "./i18n/routing";
+import { isContinent } from "./lib/continents";
+import { COUNTRY_SITES, COUNTRY_SLUGS } from "./lib/countrySites";
 
 const intlMiddleware = createMiddleware(routing);
 
@@ -29,8 +31,47 @@ function isRootPath(pathname: string): boolean {
 
 type GeoTenant = { country: string; continent: string; slug: string; locale?: string };
 
+/**
+ * The address a country site used to live at, moved to the one it lives at
+ * now: /europe/germany → /germany, /es/southamerica/argentina → /es/argentina.
+ *
+ * Permanent, because these were the real addresses — they are in Google, in
+ * links people sent each other, and in the sitemap that was already
+ * submitted. A 301 hands all of that to the new path instead of losing it.
+ */
+function movedFromContinentPath(pathname: string): string | null {
+  const segments = pathname.split("/").filter(Boolean);
+  const localePrefix =
+    segments.length && (routing.locales as readonly string[]).includes(segments[0])
+      ? segments.shift()
+      : null;
+
+  if (segments.length < 2 || !isContinent(segments[0])) return null;
+  if (!COUNTRY_SLUGS.has(segments[1])) return null;
+
+  segments.splice(0, 1); // drop the continent; the country and the rest stay
+
+  // Carry the country's own language into the redirect when the old address
+  // had none. Without it the visitor lands on /germany, which redirects again
+  // to /de/germany — one hop is enough, and a chain of them is a thing search
+  // engines follow grudgingly.
+  const country = COUNTRY_SITES.find((site) => site.slug === segments[0]);
+  const language =
+    localePrefix ??
+    (country && country.locale !== routing.defaultLocale ? country.locale : null);
+
+  return `/${[language, ...segments].filter(Boolean).join("/")}`;
+}
+
 export default async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  const moved = movedFromContinentPath(pathname);
+  if (moved) {
+    const target = new URL(moved, request.url);
+    target.search = request.nextUrl.search;
+    return NextResponse.redirect(target, 301);
+  }
 
   if (isRootPath(pathname) && !request.cookies.has(GEO_COOKIE)) {
     const countryCode = request.headers.get("x-vercel-ip-country");
@@ -46,8 +87,8 @@ export default async function middleware(request: NextRequest) {
         if (tenant) {
           const target = new URL(
             tenant.locale && tenant.locale !== routing.defaultLocale
-              ? `/${tenant.locale}/${tenant.continent}/${tenant.slug}`
-              : `/${tenant.continent}/${tenant.slug}`,
+              ? `/${tenant.locale}/${tenant.slug}`
+              : `/${tenant.slug}`,
             request.url,
           );
           const response = NextResponse.redirect(target);
