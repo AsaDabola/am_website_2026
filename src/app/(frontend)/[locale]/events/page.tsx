@@ -4,6 +4,7 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import AboutHero from "@/components/about/AboutHero";
 import NewsSubNav from "@/components/news/NewsSubNav";
 import ArticleCard from "@/components/news/ArticleCard";
+import FeatureCard from "@/components/news/FeatureCard";
 import { ListingControls, Pagination } from "@/components/news/ListingControls";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
@@ -77,17 +78,24 @@ export default async function EventsPage({
           {events.length > 0 ? (
             <>
               <div className="mt-10 grid gap-10 text-start sm:grid-cols-2 lg:grid-cols-3">
-                {events.map((event) => (
-                  <ArticleCard
-                    key={event.id}
-                    image={event.coverImage}
-                    // An event has no page of its own, so the date takes the
-                    // line a story's section would hold and the card does not
-                    // pretend to open anything.
-                    tag={event.location ? `${event.dateLabel} · ${event.location}` : event.dateLabel}
-                    title={event.title}
-                  />
-                ))}
+                {events.map((event, index) => {
+                  // An event has no page of its own, so the date takes the
+                  // line a story's section would hold and the cards do not
+                  // pretend to open anything.
+                  const tag = event.location
+                    ? `${event.dateLabel} · ${event.location}`
+                    : event.dateLabel;
+
+                  // The design opens the listing with one wide card. It is
+                  // whichever event the order puts first, and only on the
+                  // first page — a later page opening with a feature would
+                  // give a middling event the front of the section.
+                  return index === 0 && page === 1 ? (
+                    <FeatureCard key={event.id} image={event.coverImage} tag={tag} title={event.title} />
+                  ) : (
+                    <ArticleCard key={event.id} image={event.coverImage} tag={tag} title={event.title} />
+                  );
+                })}
               </div>
 
               <Pagination
