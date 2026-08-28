@@ -108,6 +108,15 @@ export function IconSpark(props: Props) {
   );
 }
 
+export function IconChart(props: Props) {
+  return (
+    <Svg {...props}>
+      <path d="M4 19V5M4 19h16" />
+      <path d="m7 15 4-5 3.5 3L20 7" />
+    </Svg>
+  );
+}
+
 export const CARD_ICON: Record<string, (props: Props) => ReactElement> = {
   posts: IconArticle,
   events: IconCalendar,

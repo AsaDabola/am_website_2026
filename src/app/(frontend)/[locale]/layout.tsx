@@ -25,6 +25,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CountrySuggestionBanner from "@/components/layout/CountrySuggestionBanner";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import RecordView from "@/components/analytics/RecordView";
 
 // Subsets have to cover every script the site ships in, or the browser
 // silently falls back to a system font mid-page. Inter carries Latin, Cyrillic
@@ -171,6 +172,13 @@ export default async function RootLayout({
           <main className="flex-1">{children}</main>
           <ScrollReveal />
           <Footer />
+          {/*
+            Counts the page as read, once it is. Mounted here rather than per
+            page so it survives navigation and reports every address the reader
+            moves to. Nothing it sends identifies anybody — see the note in the
+            component.
+          */}
+          <RecordView />
         </NextIntlClientProvider>
       </body>
     </html>

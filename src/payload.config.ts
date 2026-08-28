@@ -25,6 +25,7 @@ import { Partners } from "./collections/Partners";
 import { Invoices } from "./collections/Invoices";
 import { ChapterAffiliations } from "./collections/ChapterAffiliations";
 import { MembershipApplications } from "./collections/MembershipApplications";
+import { Traffic } from "./collections/Traffic";
 import { getDatabaseUri } from "./lib/getDatabaseUri";
 
 const filename = fileURLToPath(import.meta.url);
@@ -84,7 +85,22 @@ export default buildConfig({
          * given. The collections are still one click away in the sidebar.
          */
         dashboard: { Component: "/components/admin/Dashboard#Dashboard" },
+        /**
+         * How much the site is being read: /admin/traffic.
+         *
+         * Its own screen rather than a panel on the dashboard, because it
+         * answers a different question and wants the whole width to answer it.
+         * The counters behind it are written by /api/track.
+         */
+        traffic: {
+          Component: "/components/admin/Traffic#TrafficView",
+          path: "/traffic",
+          exact: true,
+          meta: { title: "Traffic" },
+        },
       },
+      // Traffic is not a collection, so it needs its own way in.
+      beforeNavLinks: ["/components/admin/TrafficNavLink#TrafficNavLink"],
     },
     /**
      * The page beside the form, updating as it is edited.
@@ -128,6 +144,7 @@ export default buildConfig({
     Invoices,
     ChapterAffiliations,
     MembershipApplications,
+    Traffic,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",

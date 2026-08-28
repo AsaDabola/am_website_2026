@@ -287,6 +287,27 @@
  * on a larger screen — and six cards then leave one or two stranded on a row
  * of their own, which reads as a mistake rather than a layout.
  */
+/* The way in to Traffic, which is a screen rather than a collection and so
+   has no entry of its own in Payload's list. */
+.am-nav-extra {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--am-line);
+}
+
+.nav .am-nav-extra__link {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 600;
+}
+
+.am-nav-extra__icon {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
 .am-dash__cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
@@ -404,6 +425,39 @@
   transform: translateX(2px);
 }
 
+/* A figure rather than a way in. Traffic's cards are numbers about the site,
+   not doors to a list, so they do not lift or invite a click. */
+.am-stat--plain,
+.am-stat--plain:hover {
+  transform: none;
+  box-shadow: var(--am-shadow);
+  border-color: var(--am-line);
+  cursor: default;
+}
+
+/* Said once, at the top, when there is nothing to draw yet — so an empty
+   chart reads as "not yet" rather than as a failure. */
+.am-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: var(--style-radius-l);
+  border: 1px solid var(--am-accent-line);
+  background: var(--am-accent-soft);
+  color: var(--am-ink);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.am-notice__icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  color: var(--am-accent);
+}
+
 .am-dash__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -423,6 +477,14 @@
    column and this becomes a no-op. */
 .am-panel--wide {
   grid-column: 1 / -1;
+}
+
+/* Four panels in a three-column grid leave one on a row by itself. Traffic has
+   exactly four, so it asks for two columns and gets two tidy rows. */
+@media (min-width: 1100px) {
+  .am-dash__grid--pairs {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .am-panel__head {
@@ -571,6 +633,18 @@
   white-space: nowrap;
 }
 
+/* Traffic's labels are addresses and site names rather than six region names,
+   so they get room to be read and an ellipsis when they still overrun. */
+.am-bars__row--wide {
+  grid-template-columns: minmax(0, 12em) minmax(30px, 1fr) auto;
+}
+
+.am-bars__row--wide .am-bars__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--am-ink);
+}
+
 .am-bars__track {
   height: 7px;
   border-radius: 999px;
@@ -620,6 +694,47 @@
   stroke-width: 2.25;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+/* Visits, over the same axes as views. Dashed and unfilled so the two are
+   told apart without colour alone. */
+.am-chart__line--second {
+  stroke: var(--am-accent-deep);
+  stroke-width: 1.6;
+  stroke-dasharray: 5 4;
+  opacity: 0.75;
+}
+
+.am-chart__key {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin: 12px 0 0;
+  font-size: 0.76rem;
+  color: var(--am-muted);
+}
+
+.am-chart__key-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.am-chart__key-item::before {
+  content: "";
+  width: 16px;
+  height: 0;
+  border-top: 2px solid var(--am-accent);
+  border-radius: 2px;
+}
+
+.am-chart__key-item--visits::before {
+  border-top: 2px dashed var(--am-accent-deep);
+}
+
+.am-chart__key-peak {
+  margin-inline-start: auto;
 }
 
 .am-chart__marker {
