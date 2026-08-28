@@ -12,7 +12,8 @@
     "migrate:status": "NODE_OPTIONS='--import tsx' payload migrate:status --disable-transpile",
     "import-images": "node scripts/import-article-images.mjs",
     "map-images": "node scripts/map-images-from-site.mjs",
-    "map-sections": "node scripts/map-sections-from-site.mjs"
+    "map-sections": "node scripts/map-sections-from-site.mjs",
+    "set-sections": "node scripts/set-article-sections.mjs"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.88.0",
