@@ -1,9 +1,9 @@
-import { COUNTRY_SLUGS } from "./countrySites";
+import { COUNTRY_BY_CODE } from "./countrySites";
 
 /**
  * The country site a path belongs to, or null for the main site.
  *
- * Country sites live at /{slug}/…, and several pieces of the
+ * Country sites live at /{code}/…, and several pieces of the
  * layout — the logo, the footer's organisation block, the hero's stats —
  * need to know which one they are on. They all run in the layout, above the
  * point where the tenant route records the tenant for the request, so the
@@ -13,10 +13,11 @@ import { COUNTRY_SLUGS } from "./countrySites";
  */
 export function countryFromPath(pathname: string): { slug: string; key: string } | null {
   const [first] = pathname.split("/").filter(Boolean);
-  if (!first || !COUNTRY_SLUGS.has(first)) return null;
-  // Key and slug are the same thing now that the continent is out of the
-  // path. Both are kept so the callers reading one or the other still read.
-  return { slug: first, key: first };
+  const site = first ? COUNTRY_BY_CODE.get(first) : undefined;
+  if (!site) return null;
+  // The code is the address; the slug is what the database and the artwork
+  // are filed under. Callers need one or the other, so both are here.
+  return { slug: site.slug, key: first };
 }
 
 /**
@@ -24,7 +25,7 @@ export function countryFromPath(pathname: string): { slug: string; key: string }
  * than one of their own: the United States is where it is, and Canada is run
  * from it.
  */
-export const HEAD_OFFICE_KEYS = new Set(["united-states", "canada"]);
+export const HEAD_OFFICE_KEYS = new Set(["us", "ca"]);
 
 /**
  * The main site's version of a country page.
@@ -41,6 +42,6 @@ export const HEAD_OFFICE_KEYS = new Set(["united-states", "canada"]);
 export function mainSiteHref(pathname: string): string {
   const here = countryFromPath(pathname);
   if (!here) return "/";
-  const rest = pathname.slice(`/${here.slug}`.length);
+  const rest = pathname.slice(`/${here.key}`.length);
   return rest && rest !== "/" ? rest : "/";
 }

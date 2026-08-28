@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 
-type SuggestedTenant = { country: string; continent: string; slug: string };
+type SuggestedTenant = { country: string; continent: string; slug: string; code: string | null };
 
 const DISMISS_KEY = "am-country-banner-dismissed";
 
@@ -18,7 +18,7 @@ export default function CountrySuggestionBanner() {
     fetch("/api/geo")
       .then((res) => res.json())
       .then((data: { tenant: SuggestedTenant | null }) => {
-        if (data.tenant && !pathname.startsWith(`/${data.tenant.slug}`)) {
+        if (data.tenant?.code && !pathname.startsWith(`/${data.tenant.code}`)) {
           setTenant(data.tenant);
         }
       })
@@ -39,7 +39,7 @@ export default function CountrySuggestionBanner() {
     <div className="flex items-center justify-center gap-4 bg-brand-navy px-4 py-2.5 text-center text-sm text-white">
       <p>
         Looks like you&rsquo;re in {tenant.country}.{" "}
-        <Link href={`/${tenant.slug}`} className="font-semibold underline underline-offset-2">
+        <Link href={`/${tenant.code}`} className="font-semibold underline underline-offset-2">
           Visit our {tenant.country} site
         </Link>
       </p>

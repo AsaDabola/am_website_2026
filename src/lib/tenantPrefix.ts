@@ -1,8 +1,8 @@
-import { COUNTRY_SLUGS } from "./countrySites";
+import { COUNTRY_BY_CODE } from "./countrySites";
 
 /**
  * The country site a path belongs to, as the prefix its own links carry —
- * "/germany" while browsing Germany, "" on the main amintl.org site.
+ * "/de" while browsing Germany, "" on the main amintl.org site.
  *
  * Read from the path rather than from the request, because the components that
  * need it are the navigation's, and those render in the layout, above the
@@ -10,5 +10,5 @@ import { COUNTRY_SLUGS } from "./countrySites";
  */
 export function tenantPrefixOf(pathname: string): string {
   const [first] = pathname.split("/").filter(Boolean);
-  return first && COUNTRY_SLUGS.has(first) ? `/${first}` : "";
+  return first && COUNTRY_BY_CODE.has(first) ? `/${first}` : "";
 }

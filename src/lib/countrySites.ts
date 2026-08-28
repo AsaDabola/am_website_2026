@@ -3,8 +3,8 @@ import { locales, type Locale } from "@/i18n/routing";
 
 /**
  * AM's G20 + M40 mission country list — the canonical source for the
- * path-based country sites at amintl.org/{slug}, under the language when it
- * is not English: amintl.org/es/argentina.
+ * path-based country sites at amintl.org/{code} — /co, /de, /kr — each read in
+ * its own language, which the code decides.
  *
  * Transcribed from the org's "G20 + M40 Mission Country List" sheet. This
  * file is the input to /api/seed-tenants, which writes it into the Tenants
@@ -156,7 +156,30 @@ export function untranslatedLanguages(site: CountrySite): string[] {
 }
 
 export function countrySiteHref(site: CountrySite): string {
-  return `/${site.slug}`;
+  return `/${countryCode(site)}`;
+}
+
+/**
+ * The two letters a country site lives at: /co is Colombia, /de is Germany.
+ *
+ * The first of its ISO codes, because a grouped entry covers several countries
+ * and the first is the one it is named for. They are unique across the sheet,
+ * and no route on the site is two letters long, so a two-letter first segment
+ * is a country and nothing else — which is what lets the language come out of
+ * the address entirely.
+ */
+export function countryCode(site: CountrySite): string {
+  return site.countryCodes[0].toLowerCase();
+}
+
+/** Every country site by its code, for resolving an address to a country. */
+export const COUNTRY_BY_CODE: ReadonlyMap<string, CountrySite> = new Map(
+  COUNTRY_SITES.map((site) => [countryCode(site), site]),
+);
+
+/** The language each country site is read in, by code. */
+export function localeForCode(code: string): string | null {
+  return COUNTRY_BY_CODE.get(code)?.locale ?? null;
 }
 
 /**
@@ -172,6 +195,11 @@ export function countrySiteHref(site: CountrySite): string {
  */
 export const COUNTRY_SLUGS: ReadonlySet<string> = new Set(
   COUNTRY_SITES.map((site) => site.slug),
+);
+
+/** The long name a code stands for, for redirecting the addresses that used it. */
+export const CODE_FOR_SLUG: ReadonlyMap<string, string> = new Map(
+  COUNTRY_SITES.map((site) => [site.slug, countryCode(site)]),
 );
 
 /**

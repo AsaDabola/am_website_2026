@@ -129,10 +129,15 @@ export function directionOf(locale: string): "ltr" | "rtl" {
 export const routing = defineRouting({
   locales,
   defaultLocale,
-  // English lives at the root ("/"), every other locale gets a prefix
-  // ("/ko", "/ja", ...). This is the standard pattern; flag to revisit
-  // if a literal "/intl" segment was actually intended for English.
-  localePrefix: "as-needed",
+  // The language is never in the address. A country site is two letters —
+  // /co, /de, /kr — and those two letters decide the language, so a second
+  // segment saying it would only be a way for the two to disagree. The main
+  // site is English.
+  //
+  // The [locale] segment still exists in the route tree, because that is how
+  // the pages read which language to render; the middleware fills it in from
+  // the country and rewrites, so it never appears in the address bar.
+  localePrefix: "never",
 
   // The address decides the language, and nothing else does.
   //

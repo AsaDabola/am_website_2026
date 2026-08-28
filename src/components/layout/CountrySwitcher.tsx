@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { usePathname } from "@/i18n/navigation";
-import { defaultLocale } from "@/i18n/routing";
+import { useSitePathname } from "@/lib/useSitePathname";
 import { countryFromPath, mainSiteHref } from "@/lib/currentCountry";
 import { isTenantAwareHref } from "@/lib/tenantRoutes";
 import { flagSrc } from "@/lib/countryFlags";
@@ -11,7 +10,7 @@ import { ChevronDownIcon } from "@/components/ui/icons";
 
 export type SwitcherCountry = {
   country: string;
-  /** The country slug — also the path the site lives at. */
+  /** The country's two-letter code — also the path the site lives at. */
   key: string;
   flag: string | null;
   /** The country's own language, which opening it also opens it in. */
@@ -55,7 +54,7 @@ export default function CountrySwitcher({
   dark?: boolean;
 }) {
   const t = useTranslations("CountrySwitcher");
-  const pathname = usePathname();
+  const pathname = useSitePathname();
   const [open, setOpen] = useState(false);
 
   const here = countryFromPath(pathname);
@@ -89,14 +88,12 @@ export default function CountrySwitcher({
    * them; anything else — the shared news feed, the network directory — opens
    * that country's home rather than a 404.
    *
-   * The locale is the country's own: arriving on the German site in German is
-   * what picking "Germany" means. `localePrefix` is "as-needed", so the
-   * default locale takes no prefix.
+   * The language is not in the address at all — the country's code decides
+   * it — so picking Germany opens /de and that is the whole of it.
    */
   function hrefFor(country: SwitcherCountry): string {
     const carried = isTenantAwareHref(pathname) ? pathname : "/";
-    const path = carried === "/" ? `/${country.key}` : `/${country.key}${carried}`;
-    return country.locale === defaultLocale ? path : `/${country.locale}${path}`;
+    return carried === "/" ? `/${country.key}` : `/${country.key}${carried}`;
   }
 
   return (

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllActiveTenantsByContinent } from "@/lib/tenants";
 import { routing } from "@/i18n/routing";
+import { CODE_FOR_SLUG } from "@/lib/countrySites";
 
 const SITE_URL = "https://amintl.org";
 
@@ -30,52 +31,49 @@ const MAIN_SITE_PATHS = [
 ];
 
 /**
- * hreflang alternates for one path, in every language the site ships.
+ * The languages a page is readable in, as the addresses that serve them.
  *
- * Routing is `localePrefix: "as-needed"`, so English lives at the bare path
- * and every other locale is prefixed — the same shape the pages themselves
- * serve, which is what keeps the alternates from pointing at redirects.
- * `x-default` goes to the unprefixed URL for anyone whose language AM does
- * not have yet.
+ * There is no language in an address any more: the main site is English, and
+ * each country site is read in its own language at its own two letters. So the
+ * alternates for a page are that page on every country site whose language
+ * differs, plus the English original — which is what hreflang is for, and it
+ * is now true rather than a list of 48 URLs that mostly redirect.
  */
-function alternatesFor(path: string) {
-  const languages: Record<string, string> = { "x-default": `${SITE_URL}${path}` };
-  for (const locale of routing.locales) {
-    languages[locale] =
-      locale === routing.defaultLocale
-        ? `${SITE_URL}${path}`
-        : `${SITE_URL}/${locale}${path}`;
+function alternatesFor(path: string, countries: { code: string; locale: string }[]) {
+  const languages: Record<string, string> = { "x-default": `${SITE_URL}${path}`, en: `${SITE_URL}${path}` };
+  for (const { code, locale } of countries) {
+    // One address per language: several countries share a language, and the
+    // first one listed speaks for it.
+    languages[`${locale}-${code.toUpperCase()}`] = `${SITE_URL}/${code}${path}`;
   }
   return { languages };
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const tenantsByContinent = await getAllActiveTenantsByContinent();
+  const live = Object.values(tenantsByContinent)
+    .flat()
+    .map((tenant) => ({
+      code: CODE_FOR_SLUG.get(tenant.slug),
+      locale: tenant.locale ?? routing.defaultLocale,
+    }))
+    .filter((row): row is { code: string; locale: string } => Boolean(row.code));
+
   const mainSiteEntries: MetadataRoute.Sitemap = MAIN_SITE_PATHS.map((path) => ({
     url: `${SITE_URL}${path}`,
     changeFrequency: path === "" ? "weekly" : "monthly",
     priority: path === "" ? 1 : 0.7,
-    alternates: alternatesFor(path),
+    alternates: alternatesFor(path, live),
   }));
 
-  const tenantsByContinent = await getAllActiveTenantsByContinent();
-  const tenantEntries: MetadataRoute.Sitemap = Object.entries(tenantsByContinent).flatMap(
-    ([continent, tenants]) =>
-      tenants.map((tenant) => {
-        // Link the canonical, tenant-locale URL directly (matching the
-        // redirect the site itself performs) so crawlers land on the final
-        // page instead of following a redirect hop.
-        void continent;
-        const path = `/${tenant.slug}`;
-        const localePrefix =
-          tenant.locale && tenant.locale !== routing.defaultLocale ? `/${tenant.locale}` : "";
-        return {
-          url: `${SITE_URL}${localePrefix}${path}`,
-          changeFrequency: "weekly" as const,
-          priority: 0.8,
-          alternates: alternatesFor(path),
-        };
-      }),
-  );
+  // Each country's home page, at the address it is served from — no redirect
+  // hop for a crawler to follow.
+  const tenantEntries: MetadataRoute.Sitemap = live.map(({ code }) => ({
+    url: `${SITE_URL}/${code}`,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+    alternates: alternatesFor("", live),
+  }));
 
   return [...mainSiteEntries, ...tenantEntries];
 }

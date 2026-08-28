@@ -1,7 +1,8 @@
 "use client";
 
 import type { ComponentProps } from "react";
-import { Link, usePathname } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
+import { useSitePathname } from "@/lib/useSitePathname";
 import { isTenantAwareHref } from "@/lib/tenantRoutes";
 import { tenantPrefixOf } from "@/lib/tenantPrefix";
 
@@ -18,7 +19,7 @@ import { tenantPrefixOf } from "@/lib/tenantPrefix";
  * at a country URL that doesn't exist.
  */
 export default function TenantLink({ href, ...props }: ComponentProps<typeof Link>) {
-  const pathname = usePathname();
+  const pathname = useSitePathname();
 
   if (typeof href !== "string" || !isTenantAwareHref(href)) {
     return <Link href={href} {...props} />;

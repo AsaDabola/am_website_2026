@@ -1,8 +1,8 @@
 "use client";
 
 import TenantLink from "@/components/layout/TenantLink";
-import { usePathname } from "@/i18n/navigation";
-import { COUNTRY_SLUGS } from "@/lib/countrySites";
+import { useSitePathname } from "@/lib/useSitePathname";
+import { COUNTRY_BY_CODE } from "@/lib/countrySites";
 import { COUNTRY_LOGO_HEIGHT, countryLogo } from "@/lib/countryLogos";
 import LogoMark from "./LogoMark";
 
@@ -16,16 +16,14 @@ const LOGO_PX = 38;
  * keep links on the country site.
  */
 function countrySlug(pathname: string): string | null {
-  // The country is the first segment now that the continent is out of the
-  // path — "/germany", "/germany/about". Reading the second one gave the page
-  // rather than the country, so every country site fell back to the
-  // international wordmark.
+  // The address is the country's code — "/de", "/de/about" — and the artwork
+  // is filed under its long name, so the code is resolved to that.
   const [first] = pathname.split("/").filter(Boolean);
-  return first && COUNTRY_SLUGS.has(first) ? first : null;
+  return first ? COUNTRY_BY_CODE.get(first)?.slug ?? null : null;
 }
 
 export default function Logo({ dark = false }: { dark?: boolean }) {
-  const pathname = usePathname();
+  const pathname = useSitePathname();
   const slug = countrySlug(pathname);
   const country = slug ? countryLogo(slug) : null;
   const textColor = dark ? "text-ink" : "text-white";

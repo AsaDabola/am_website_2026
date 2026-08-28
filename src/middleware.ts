@@ -2,7 +2,12 @@ import createMiddleware from "next-intl/middleware";
 import { NextRequest, NextResponse } from "next/server";
 import { routing } from "./i18n/routing";
 import { isContinent } from "./lib/continents";
-import { COUNTRY_SITES, COUNTRY_SLUGS } from "./lib/countrySites";
+import {
+  CODE_FOR_SLUG,
+  COUNTRY_BY_CODE,
+  COUNTRY_SLUGS,
+  localeForCode,
+} from "./lib/countrySites";
 
 const intlMiddleware = createMiddleware(routing);
 
@@ -33,44 +38,80 @@ type GeoTenant = { country: string; continent: string; slug: string; locale?: st
 
 /**
  * The address a country site used to live at, moved to the one it lives at
- * now: /europe/germany → /germany, /es/southamerica/argentina → /es/argentina.
+ * now. Three shapes have existed, and all of them land on the two letters:
  *
- * Permanent, because these were the real addresses — they are in Google, in
- * links people sent each other, and in the sitemap that was already
- * submitted. A 301 hands all of that to the new path instead of losing it.
+ *   /europe/germany            → /de
+ *   /es/southamerica/argentina → /ar
+ *   /germany, /de/germany      → /de
+ *
+ * Permanent, because each of these was the real address at some point — they
+ * are in Google, in the sitemap already submitted, and in links people sent
+ * each other. A 301 hands that standing to the new address instead of losing
+ * it.
  */
-function movedFromContinentPath(pathname: string): string | null {
+export function movedToCountryCode(pathname: string): string | null {
   const segments = pathname.split("/").filter(Boolean);
-  const localePrefix =
-    segments.length && (routing.locales as readonly string[]).includes(segments[0])
-      ? segments.shift()
-      : null;
+  if (!segments.length) return null;
+  let changed = false;
 
-  if (segments.length < 2 || !isContinent(segments[0])) return null;
-  if (!COUNTRY_SLUGS.has(segments[1])) return null;
+  // A leading language, from when the address carried one.
+  //
+  // Some of those languages spell a country code — "es" is Spanish and also
+  // Spain — so the segment after it decides which this is. Followed by a
+  // continent or a country's old long name, it is a stale language prefix and
+  // goes; otherwise it is the country and stays.
+  const next = segments[1];
+  const looksStale = next !== undefined && (isContinent(next) || COUNTRY_SLUGS.has(next));
+  if (LOCALE_SEGMENTS.has(segments[0]) && (looksStale || !COUNTRY_BY_CODE.has(segments[0]))) {
+    segments.shift();
+    changed = true;
+  }
 
-  segments.splice(0, 1); // drop the continent; the country and the rest stay
+  // The continent, from when it was in the path.
+  if (segments.length >= 2 && isContinent(segments[0]) && COUNTRY_SLUGS.has(segments[1])) {
+    segments.shift();
+    changed = true;
+  }
 
-  // Carry the country's own language into the redirect when the old address
-  // had none. Without it the visitor lands on /germany, which redirects again
-  // to /de/germany — one hop is enough, and a chain of them is a thing search
-  // engines follow grudgingly.
-  const country = COUNTRY_SITES.find((site) => site.slug === segments[0]);
-  const language =
-    localePrefix ??
-    (country && country.locale !== routing.defaultLocale ? country.locale : null);
+  // The country's long name, which the two letters replace.
+  const code = segments.length ? CODE_FOR_SLUG.get(segments[0]) : undefined;
+  if (code) {
+    segments[0] = code;
+    changed = true;
+  }
 
-  return `/${[language, ...segments].filter(Boolean).join("/")}`;
+  if (!changed) return null;
+  return `/${segments.join("/")}`;
+}
+
+/**
+ * The language a country's pages are rendered in, put back into the path for
+ * Next to route on — /co/about is served by [locale]/[...slug] as
+ * /es/co/about. A rewrite, not a redirect: the address bar keeps the two
+ * letters, which is the whole point.
+ */
+export function localeRewrite(pathname: string): string | null {
+  const segments = pathname.split("/").filter(Boolean);
+  const locale = segments.length ? localeForCode(segments[0]) : null;
+  return locale ? `/${locale}${pathname}` : null;
 }
 
 export default async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  const moved = movedFromContinentPath(pathname);
-  if (moved) {
+  const moved = movedToCountryCode(pathname);
+  if (moved && moved !== pathname) {
     const target = new URL(moved, request.url);
     target.search = request.nextUrl.search;
     return NextResponse.redirect(target, 301);
+  }
+
+  // A country site: fill the language in behind the scenes and serve it.
+  const rewritten = localeRewrite(pathname);
+  if (rewritten) {
+    const target = new URL(rewritten, request.url);
+    target.search = request.nextUrl.search;
+    return NextResponse.rewrite(target);
   }
 
   if (isRootPath(pathname) && !request.cookies.has(GEO_COOKIE)) {
@@ -85,12 +126,8 @@ export default async function middleware(request: NextRequest) {
         const { tenant } = (await geoRes.json()) as { tenant: GeoTenant | null };
 
         if (tenant) {
-          const target = new URL(
-            tenant.locale && tenant.locale !== routing.defaultLocale
-              ? `/${tenant.locale}/${tenant.slug}`
-              : `/${tenant.slug}`,
-            request.url,
-          );
+          const code = CODE_FOR_SLUG.get(tenant.slug);
+          const target = new URL(code ? `/${code}` : "/", request.url);
           const response = NextResponse.redirect(target);
           response.cookies.set(GEO_COOKIE, "1", { maxAge: ONE_YEAR, path: "/" });
           return response;

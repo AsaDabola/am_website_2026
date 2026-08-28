@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "@/i18n/navigation";
+import { useSitePathname } from "@/lib/useSitePathname";
 import { countryFromPath } from "@/lib/currentCountry";
 
 /**
@@ -20,7 +20,7 @@ export default function HeroStats({
 }: {
   stats: { value: string; label: string }[];
 }) {
-  if (countryFromPath(usePathname())) return null;
+  if (countryFromPath(useSitePathname())) return null;
 
   return (
     <div className="mt-16 flex max-w-xl divide-x divide-white/30 border-t border-white/30 pt-6">

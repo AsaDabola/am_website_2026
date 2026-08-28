@@ -11,11 +11,9 @@ import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 import { getTenantBySlug } from "@/lib/tenants";
 import { isContinent } from "@/lib/continents";
-import { COUNTRY_SLUGS } from "@/lib/countrySites";
+import { COUNTRY_BY_CODE } from "@/lib/countrySites";
 import { getPageBySlug } from "@/lib/pages";
 import { renderHomeBlock, DefaultHomeBlocks } from "@/lib/renderHomeBlocks";
-import { redirect } from "@/i18n/navigation";
-import { locales } from "@/i18n/routing";
 import { getTenantStaticPage } from "./tenantStaticPages";
 
 export const revalidate = 60;
@@ -31,10 +29,11 @@ type Props = {
 };
 
 async function resolve(slug: string[]) {
-  // A country site is one segment: /germany, /es/argentina. The language is
-  // already stripped from `slug` by the [locale] segment above.
-  if (slug.length >= 1 && COUNTRY_SLUGS.has(slug[0])) {
-    const tenant = await getTenantBySlug(slug[0]);
+  // A country site is its two-letter code: /co, /de/about. The language sits
+  // above in [locale], put there by the middleware and never in the address.
+  const country = slug.length ? COUNTRY_BY_CODE.get(slug[0]) : undefined;
+  if (country) {
+    const tenant = await getTenantBySlug(country.slug);
     if (!tenant) return null;
 
     const restSlug = slug.slice(1).join("/");
@@ -108,19 +107,9 @@ export default async function DynamicPage({ params, searchParams }: Props) {
     isTenantRoute && tenant && isContinent(tenant.continent) ? tenant.continent : null,
   );
 
-  // Every country site has one language it's meant to be browsed in
-  // (Tenant.locale). Landing on it under a different locale — e.g. a link
-  // that dropped the prefix, or a visitor's browser default — redirects to
-  // the same page under the tenant's own language instead of silently
-  // serving the wrong one.
-  if (
-    isTenantRoute &&
-    tenant!.locale &&
-    tenant!.locale !== locale &&
-    (locales as readonly string[]).includes(tenant!.locale)
-  ) {
-    redirect({ href: `/${slug.join("/")}`, locale: tenant!.locale });
-  }
+  // No language redirect any more: the address is the country's code and the
+  // middleware fills its language in behind it, so a country site cannot be
+  // reached under the wrong one.
 
   const isTenantHome = isTenantRoute && slug.length === 1;
 

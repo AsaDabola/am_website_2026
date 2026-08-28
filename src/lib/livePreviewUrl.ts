@@ -1,11 +1,12 @@
 import type { Payload } from "payload";
+import { CODE_FOR_SLUG } from "./countrySites";
 
 /**
  * Where a Pages document is actually served, so the editor can watch it change
  * beside the form.
  *
  * A page with no tenant belongs to the main site and sits at /{slug}; one with
- * a tenant belongs to that country site and sits at /{country}/{slug}.
+ * a tenant belongs to that country site and sits at /{code}/{slug}.
  * `isHome` means the page is the site's root,
  * so it drops the slug rather than adding an empty segment.
  *
@@ -33,7 +34,9 @@ export async function livePreviewUrl({
         : await payload
             .findByID({ collection: "tenants", id: tenant as string | number, depth: 0 })
             .catch(() => null);
-    if (row?.slug) prefix = `/${row.slug}`;
+    // The preview opens the address the page is actually served at, which is
+    // the country's code.
+    if (row?.slug) prefix = `/${CODE_FOR_SLUG.get(row.slug) ?? row.slug}`;
   }
 
   // A country home page is the prefix itself; the main site's is "/".

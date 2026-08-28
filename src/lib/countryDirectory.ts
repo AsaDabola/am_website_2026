@@ -1,4 +1,4 @@
-import { COUNTRY_SITES, defaultOrgName } from "./countrySites";
+import { COUNTRY_SITES, countryCode, defaultOrgName } from "./countrySites";
 import { flagCodeFor } from "./countryFlags";
 import { CONTINENTS, type Continent } from "./continents";
 import { getActiveTenantRows } from "./tenants";
@@ -8,12 +8,12 @@ export type DirectoryCountry = {
   city?: string;
   continent: Continent;
   slug: string;
-  /** The slug, which is also the site's path. */
+  /** The country's two-letter code, which is also the site's path. */
   key: string;
   flag: string | null;
   /** The country's own default language. */
   locale: string;
-  /** A tenant exists for it, so /{slug} resolves. */
+  /** A tenant exists for it, so /{code} resolves. */
   live: boolean;
   /** Footer identity, where the country has filled it in. */
   orgName?: string;
@@ -33,8 +33,11 @@ export async function getCountryDirectory(): Promise<DirectoryCountry[]> {
   const rows = await getActiveTenantRows();
 
   return COUNTRY_SITES.map((site) => {
-    const key = site.slug;
-    const row = rows.get(key);
+    const key = countryCode(site);
+    // The tenants are keyed by slug, which is what the database stores; the
+    // key above is the address. Looking the row up by the address would find
+    // nothing and mark every country as not yet live.
+    const row = rows.get(site.slug);
     return {
       country: site.country,
       city: site.city,
@@ -43,7 +46,7 @@ export async function getCountryDirectory(): Promise<DirectoryCountry[]> {
       key,
       flag: flagCodeFor(site),
       locale: site.locale,
-      live: rows.has(key),
+      live: rows.has(site.slug),
       // Falls back to the country's own name, not head office's — see
       // defaultOrgName. Only a country that has actually been edited in the
       // admin overrides it.

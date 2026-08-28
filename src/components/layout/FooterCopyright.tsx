@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "@/i18n/navigation";
+import { useSitePathname } from "@/lib/useSitePathname";
 import { countryFromPath } from "@/lib/currentCountry";
 import type { FooterCountry } from "./FooterOrg";
 
@@ -21,7 +21,7 @@ export default function FooterCopyright({
   countries: FooterCountry[];
   defaultOrgName: string;
 }) {
-  const here = countryFromPath(usePathname());
+  const here = countryFromPath(useSitePathname());
   const current = here ? countries.find((c) => c.key === here.key) : undefined;
 
   return <p>{template.replace("{org}", current?.orgName || defaultOrgName)}</p>;

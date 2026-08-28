@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "@/i18n/navigation";
+import { useSitePathname } from "@/lib/useSitePathname";
 import { countryFromPath, HEAD_OFFICE_KEYS } from "@/lib/currentCountry";
 import { flagSrc } from "@/lib/countryFlags";
 
@@ -39,7 +39,7 @@ export default function FooterOrg({
   defaultAddress: string;
   defaultEmail: string;
 }) {
-  const here = countryFromPath(usePathname());
+  const here = countryFromPath(useSitePathname());
   const current = here ? countries.find((c) => c.key === here.key) : undefined;
 
   const orgName = current?.orgName || defaultOrgName;

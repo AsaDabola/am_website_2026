@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "@/i18n/navigation";
+import { useSitePathname } from "@/lib/useSitePathname";
 import { tenantPrefixOf } from "@/lib/tenantPrefix";
 import type { NavLink } from "@/components/layout/navigation";
 
@@ -14,6 +14,6 @@ import type { NavLink } from "@/components/layout/navigation";
  * kept everywhere.
  */
 export function useSiteLinks(links: NavLink[]): NavLink[] {
-  const prefix = tenantPrefixOf(usePathname());
+  const prefix = tenantPrefixOf(useSitePathname());
   return links.filter((link) => link.scope === undefined || link.scope === prefix);
 }
