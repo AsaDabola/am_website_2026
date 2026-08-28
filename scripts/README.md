@@ -86,6 +86,24 @@ Payload selects every field of the collection, Postgres rejects the query, and
 the page has no error to show you. To find out which collection and which
 column, without reading a schema diff:
 
+### When it is every screen, not one
+
+If the blank screen is a **document** rather than a list — the list works, you
+click a row, and the content area is empty — and it happens in every
+collection, look at `payload_locked_documents_rels` rather than at any one
+collection. Opening a document writes a lock row through that table, and
+Payload gives it one column per collection, so a single missing column there
+breaks every document in the admin at once.
+
+This happened: adding a collection and deploying before its SQL had run took
+out every edit screen on the live site. That is the reason the `traffic` table
+is not a Payload collection — nothing edits those rows, so being one bought
+nothing and cost that. See the header of `add-traffic.sql`.
+
+The general rule it leaves behind: **a new collection cannot be deployed before
+its SQL has run.** Not "the new feature will be switched off until you run it" —
+the admin will not open a document in any collection. Run the SQL first.
+
 ```bash
 POSTGRES_URL='<connection string>' node scripts/probe-collections.mjs
 ```
@@ -126,6 +144,7 @@ nothing to do with the database you came to inspect.
 | `add-internship-applications.sql` | Adds the Internship Applications collection. |
 | `add-get-involved-card-description.sql` | Adds `description` to the Get Involved cards, and the message keys it introduced. |
 | `add-admin-roles.sql` | Adds roles and per-country permissions to Users. **Run this before deploying the access rules** — without it nobody can sign in to /admin. |
+| `add-traffic.sql` | Creates the `traffic` counter table behind /admin/traffic. Not a Payload collection, so `push` will not build it — run this locally as well as on the deployed database. Safe to deploy the code without it; the screen just says nothing has been counted yet. |
 | `copy-flags.mjs` | Copies country flag SVGs into `public/flags`. |
 | `import-article-images.mjs` | Attaches an archive of article photographs to the posts already in the CMS. Dry-run by default. See below. |
 

@@ -5,6 +5,18 @@ import { COUNTRY_BY_CODE } from "@/lib/countrySites";
 /**
  * Reading and writing the traffic counters.
  *
+ * The `traffic` table is not a Payload collection. Its whole definition is
+ * scripts/add-traffic.sql, and everything that touches it does so here, in
+ * SQL. That is deliberate twice over.
+ *
+ * Nothing edits these rows, so a collection would buy nothing — but it would
+ * cost something: Payload gives every collection a column on
+ * payload_locked_documents_rels, and shipping code that expects that column
+ * before the database has it takes out every document screen in the admin,
+ * because opening any document writes a lock row through that table. Keeping
+ * this out of the config means the admin and the site behave identically
+ * whether the table exists or not.
+ *
  * Both halves go straight to SQL rather than through Payload's own methods,
  * for the same reason in each direction.
  *

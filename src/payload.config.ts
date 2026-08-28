@@ -25,7 +25,6 @@ import { Partners } from "./collections/Partners";
 import { Invoices } from "./collections/Invoices";
 import { ChapterAffiliations } from "./collections/ChapterAffiliations";
 import { MembershipApplications } from "./collections/MembershipApplications";
-import { Traffic } from "./collections/Traffic";
 import { getDatabaseUri } from "./lib/getDatabaseUri";
 
 const filename = fileURLToPath(import.meta.url);
@@ -144,7 +143,6 @@ export default buildConfig({
     Invoices,
     ChapterAffiliations,
     MembershipApplications,
-    Traffic,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
