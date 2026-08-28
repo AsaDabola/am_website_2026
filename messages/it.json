@@ -167,11 +167,12 @@
     "donate": "Dona"
   },
   "NewsSubNav": {
-    "featuredNews": "Notizie in evidenza",
+    "news": "Notizie",
     "events": "Eventi",
     "editorial": "Editoriale",
     "photoNews": "Fotonotizie",
-    "testimony": "Testimonianze"
+    "testimony": "Testimonianze",
+    "featuredNews": "Notizie in evidenza"
   },
   "InPractice": {
     "eyebrow": "Nella pratica",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Sud-est asiatico",
       "hqBadge": "Sede",
       "regionalHqBadge": "Sede regionale"
-    }
+    },
+    "globeSubtitle": "AM è una comunità che invia in sei continenti: trova il Paese più vicino a te, o quello verso cui sei inviato.",
+    "globeSearchPlaceholder": "Cerca un Paese, una regione o un gruppo"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, USA",
       "stat3Value": "Globale",
       "stat3Label": "Rete universitaria",
-      "dragToExplore": "Trascina per esplorare"
+      "dragToExplore": "Trascina per esplorare",
+      "slide1Line1": "Traboccante",
+      "slide1Line2": "di grazia e amore",
+      "slide2Line1": "Traboccante",
+      "slide2Line2": "di grazia e amore",
+      "slide3Line1": "Il futuro comincia",
+      "slide3Line2": "da dove siamo",
+      "slide4Line1": "Crescere insieme",
+      "slide4Line2": "nella Parola",
+      "slide5Line1": "Inviati",
+      "slide5Line2": "con uno scopo"
     },
     "BibleStudyProgram": {
       "eyebrow": "Partecipa al nostro programma di studio biblico",

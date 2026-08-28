@@ -167,11 +167,12 @@
     "donate": "תרומה"
   },
   "NewsSubNav": {
-    "featuredNews": "חדשות נבחרות",
+    "news": "חדשות",
     "events": "אירועים",
     "editorial": "מאמרים",
     "photoNews": "כתבות מצולמות",
-    "testimony": "עדויות"
+    "testimony": "עדויות",
+    "featuredNews": "חדשות נבחרות"
   },
   "InPractice": {
     "eyebrow": "בפועל",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "דרום־מזרח אסיה",
       "hqBadge": "מטה",
       "regionalHqBadge": "מטה אזורי"
-    }
+    },
+    "globeSubtitle": "‏AM היא קהילה שולחת בשש יבשות — מצאו את המדינה הקרובה אליכם, או זו שאליה אתם נשלחים.",
+    "globeSearchPlaceholder": "חיפוש מדינה, אזור או סניף"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "ניו ג׳רזי, ארה״ב",
       "stat3Value": "עולמית",
       "stat3Label": "רשת קמפוסים",
-      "dragToExplore": "גררו כדי לחקור"
+      "dragToExplore": "גררו כדי לחקור",
+      "slide1Line1": "גדושים",
+      "slide1Line2": "בחסד ובאהבה",
+      "slide2Line1": "גדושים",
+      "slide2Line2": "בחסד ובאהבה",
+      "slide3Line1": "העתיד מתחיל",
+      "slide3Line2": "מהמקום שבו אנחנו",
+      "slide4Line1": "גדלים יחד",
+      "slide4Line2": "בדבר",
+      "slide5Line1": "נשלחים",
+      "slide5Line2": "עם ייעוד"
     },
     "BibleStudyProgram": {
       "eyebrow": "הצטרפו לתוכנית לימוד המקרא שלנו",

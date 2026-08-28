@@ -167,11 +167,12 @@
     "donate": "Solia na Ivotavota"
   },
   "NewsSubNav": {
-    "featuredNews": "Itukutuku Vakabibitaki",
+    "news": "Itukutuku",
     "events": "Soqo",
     "editorial": "Ivakamacala ni Dauvolaivola",
     "photoNews": "Itukutuku Vakaiyaloyalo",
-    "testimony": "Ivakadinadina"
+    "testimony": "Ivakadinadina",
+    "featuredNews": "Itukutuku Vakabibitaki"
   },
   "InPractice": {
     "eyebrow": "Ena veicakacakataki",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Esia Ceva Tokalau",
       "hqBadge": "VALE LEVU",
       "regionalHqBadge": "Vale levu ni yasana"
-    }
+    },
+    "globeSubtitle": "Na AM e dua na ilawalawa dauvakauta ena ono na kunatuni — vakasaqara na vanua e voleka vei iko, se na vanua o talai kina.",
+    "globeSearchPlaceholder": "Vakasaqara e dua na vanua, yasayasa se tabana"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, USA",
       "stat3Value": "Vakavuravura",
       "stat3Label": "Iwiliwili ni vanua vakavuli",
-      "dragToExplore": "Dreta mo vakadidike"
+      "dragToExplore": "Dreta mo vakadidike",
+      "slide1Line1": "Sivia sara",
+      "slide1Line2": "ena loloma kei na yalololoma",
+      "slide2Line1": "Sivia sara",
+      "slide2Line2": "ena loloma kei na yalololoma",
+      "slide3Line1": "Sa tekivu na gauna mai muri",
+      "slide3Line2": "mai na vanua eda tiko kina",
+      "slide4Line1": "Eda bula vata cake",
+      "slide4Line2": "ena Vosa",
+      "slide5Line1": "Talai",
+      "slide5Line2": "ena inaki"
     },
     "BibleStudyProgram": {
       "eyebrow": "Curu ki na Neimami Porokaramu ni Vuli iVolatabu",

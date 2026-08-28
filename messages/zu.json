@@ -167,11 +167,12 @@
     "donate": "Nikela"
   },
   "NewsSubNav": {
-    "featuredNews": "Izindaba Ezikhethiwe",
+    "news": "Izindaba",
     "events": "Imicimbi",
     "editorial": "Izihloko",
     "photoNews": "Izindaba Zezithombe",
-    "testimony": "Ubufakazi"
+    "testimony": "Ubufakazi",
+    "featuredNews": "Izindaba Ezikhethiwe"
   },
   "InPractice": {
     "eyebrow": "Ekusebenzeni",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "I-Southeast Asia",
       "hqBadge": "Ikomkhulu",
       "regionalHqBadge": "Ikomkhulu lesifunda"
-    }
+    },
+    "globeSubtitle": "I-AM ingumphakathi othumelayo emazwekazini ayisithupha — thola izwe eliseduze nawe, noma lelo othunyelwa kulo.",
+    "globeSearchPlaceholder": "Sesha izwe, isifunda noma igatsha"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, USA",
       "stat3Value": "Umhlaba wonke",
       "stat3Label": "Inethiwekhi yamakhampasi",
-      "dragToExplore": "Hudula ukuze uhlole"
+      "dragToExplore": "Hudula ukuze uhlole",
+      "slide1Line1": "Sichichima",
+      "slide1Line2": "ngomusa nangothando",
+      "slide2Line1": "Sichichima",
+      "slide2Line2": "ngomusa nangothando",
+      "slide3Line1": "Ikusasa liqala",
+      "slide3Line2": "lapho sikhona",
+      "slide4Line1": "Sikhula ndawonye",
+      "slide4Line2": "eZwini",
+      "slide5Line1": "Sithunyiwe",
+      "slide5Line2": "ngenhloso"
     },
     "BibleStudyProgram": {
       "eyebrow": "Joyina Uhlelo lwethu Lokufunda IBhayibheli",

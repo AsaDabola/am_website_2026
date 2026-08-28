@@ -167,11 +167,12 @@
     "donate": "Fè yon don"
   },
   "NewsSubNav": {
-    "featuredNews": "Nouvèl an Vedèt",
+    "news": "Nouvèl",
     "events": "Evènman",
     "editorial": "Editoryal",
     "photoNews": "Nouvèl an Foto",
-    "testimony": "Temwayaj"
+    "testimony": "Temwayaj",
+    "featuredNews": "Nouvèl an Vedèt"
   },
   "InPractice": {
     "eyebrow": "Nan pratik",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Azi di Sidès",
       "hqBadge": "KJ",
       "regionalHqBadge": "Katye jeneral rejyonal"
-    }
+    },
+    "globeSubtitle": "AM se yon kominote k ap voye moun nan sis kontinan — jwenn peyi ki pi pre w la, oswa sa yo voye w ladan l.",
+    "globeSearchPlaceholder": "Chèche yon peyi, yon rejyon oswa yon branch"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, USA",
       "stat3Value": "Mondyal",
       "stat3Label": "Rezo kanpis",
-      "dragToExplore": "Rale pou eksplore"
+      "dragToExplore": "Rale pou eksplore",
+      "slide1Line1": "N ap debòde",
+      "slide1Line2": "ak gras ak lanmou",
+      "slide2Line1": "N ap debòde",
+      "slide2Line2": "ak gras ak lanmou",
+      "slide3Line1": "Lavni kòmanse",
+      "slide3Line2": "kote nou ye a",
+      "slide4Line1": "N ap grandi ansanm",
+      "slide4Line2": "nan Pawòl la",
+      "slide5Line1": "Voye",
+      "slide5Line2": "ak yon objektif"
     },
     "BibleStudyProgram": {
       "eyebrow": "Rejwenn Pwogram Etid Biblik Nou An",

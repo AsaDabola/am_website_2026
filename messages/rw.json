@@ -167,11 +167,12 @@
     "donate": "Tanga inkunga"
   },
   "NewsSubNav": {
-    "featuredNews": "Amakuru Akomeye",
+    "news": "Amakuru",
     "events": "Ibirori",
     "editorial": "Inyandiko y'Umwanditsi",
     "photoNews": "Amakuru mu Mafoto",
-    "testimony": "Ubuhamya"
+    "testimony": "Ubuhamya",
+    "featuredNews": "Amakuru Akomeye"
   },
   "InPractice": {
     "eyebrow": "Mu bikorwa",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Aziya y'Amajyepfo y'Uburasirazuba",
       "hqBadge": "ICYICARO",
       "regionalHqBadge": "Icyicaro cy'akarere"
-    }
+    },
+    "globeSubtitle": "AM ni umuryango wohereza mu migabane itandatu — shakisha igihugu kikwegereye, cyangwa icyo woherezwamo.",
+    "globeSearchPlaceholder": "Shakisha igihugu, akarere cyangwa ishami"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, USA",
       "stat3Value": "Ku Isi Yose",
       "stat3Label": "Urusobe rwa kaminuza",
-      "dragToExplore": "Kurura kugira ngo urebe"
+      "dragToExplore": "Kurura kugira ngo urebe",
+      "slide1Line1": "Turasendera",
+      "slide1Line2": "mu buntu n'urukundo",
+      "slide2Line1": "Turasendera",
+      "slide2Line2": "mu buntu n'urukundo",
+      "slide3Line1": "Ejo hazaza hatangirira",
+      "slide3Line2": "aho turi",
+      "slide4Line1": "Dukurira hamwe",
+      "slide4Line2": "mu Ijambo",
+      "slide5Line1": "Twoherejwe",
+      "slide5Line2": "tugamije"
     },
     "BibleStudyProgram": {
       "eyebrow": "Injira muri Gahunda Yacu yo Kwiga Bibiliya",

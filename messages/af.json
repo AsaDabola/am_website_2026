@@ -167,11 +167,12 @@
     "donate": "Skenk"
   },
   "NewsSubNav": {
-    "featuredNews": "Uitgesoekte nuus",
+    "news": "Nuus",
     "events": "Geleenthede",
     "editorial": "Artikels",
     "photoNews": "Fotonuus",
-    "testimony": "Getuienisse"
+    "testimony": "Getuienisse",
+    "featuredNews": "Uitgesoekte nuus"
   },
   "InPractice": {
     "eyebrow": "In die praktyk",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Suidoos-Asië",
       "hqBadge": "Hoofkantoor",
       "regionalHqBadge": "Streekkantoor"
-    }
+    },
+    "globeSubtitle": "AM is 'n uitstuurgemeenskap oor ses vastelande — vind die land naaste aan jou, of die een waarheen jy gestuur word.",
+    "globeSearchPlaceholder": "Soek 'n land, streek of tak"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, VSA",
       "stat3Value": "Wêreldwyd",
       "stat3Label": "Kampusnetwerk",
-      "dragToExplore": "Sleep om te verken"
+      "dragToExplore": "Sleep om te verken",
+      "slide1Line1": "Oorvloeiend",
+      "slide1Line2": "in genade en liefde",
+      "slide2Line1": "Oorvloeiend",
+      "slide2Line2": "in genade en liefde",
+      "slide3Line1": "Die toekoms begin",
+      "slide3Line2": "waar ons is",
+      "slide4Line1": "Ons groei saam",
+      "slide4Line2": "in die Woord",
+      "slide5Line1": "Uitgestuur",
+      "slide5Line2": "met 'n doel"
     },
     "BibleStudyProgram": {
       "eyebrow": "Sluit aan by ons Bybelstudieprogram",

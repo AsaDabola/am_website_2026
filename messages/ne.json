@@ -167,11 +167,12 @@
     "donate": "दान दिनुहोस्"
   },
   "NewsSubNav": {
-    "featuredNews": "विशेष समाचार",
+    "news": "समाचार",
     "events": "कार्यक्रम",
     "editorial": "लेखहरू",
     "photoNews": "तस्बिर समाचार",
-    "testimony": "गवाहीहरू"
+    "testimony": "गवाहीहरू",
+    "featuredNews": "विशेष समाचार"
   },
   "InPractice": {
     "eyebrow": "व्यवहारमा",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "दक्षिणपूर्वी एसिया",
       "hqBadge": "मुख्यालय",
       "regionalHqBadge": "क्षेत्रीय मुख्यालय"
-    }
+    },
+    "globeSubtitle": "AM छ महादेशमा फैलिएको पठाउने समुदाय हो — तपाईंको नजिकको देश, वा तपाईं पठाइँदै गरेको देश खोज्नुहोस्।",
+    "globeSearchPlaceholder": "देश, क्षेत्र वा शाखा खोज्नुहोस्"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "न्यु जर्सी, अमेरिका",
       "stat3Value": "विश्वव्यापी",
       "stat3Label": "क्याम्पस सञ्जाल",
-      "dragToExplore": "हेर्न तान्नुहोस्"
+      "dragToExplore": "हेर्न तान्नुहोस्",
+      "slide1Line1": "उम्लिरहेको",
+      "slide1Line2": "अनुग्रह र प्रेममा",
+      "slide2Line1": "उम्लिरहेको",
+      "slide2Line2": "अनुग्रह र प्रेममा",
+      "slide3Line1": "भविष्य सुरु हुन्छ",
+      "slide3Line2": "हामी जहाँ छौं त्यहींबाट",
+      "slide4Line1": "सँगै बढ्दै",
+      "slide4Line2": "वचनमा",
+      "slide5Line1": "पठाइएका",
+      "slide5Line2": "उद्देश्यसहित"
     },
     "BibleStudyProgram": {
       "eyebrow": "हाम्रो बाइबल अध्ययन कार्यक्रममा सहभागी हुनुहोस्",

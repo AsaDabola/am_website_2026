@@ -167,11 +167,12 @@
     "donate": "Doneren"
   },
   "NewsSubNav": {
-    "featuredNews": "Uitgelicht nieuws",
+    "news": "Nieuws",
     "events": "Evenementen",
     "editorial": "Redactioneel",
     "photoNews": "Fotonieuws",
-    "testimony": "Getuigenissen"
+    "testimony": "Getuigenissen",
+    "featuredNews": "Uitgelicht nieuws"
   },
   "InPractice": {
     "eyebrow": "In de praktijk",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Zuidoost-Azië",
       "hqBadge": "Hoofdkantoor",
       "regionalHqBadge": "Regionaal kantoor"
-    }
+    },
+    "globeSubtitle": "AM is een zendende gemeenschap op zes continenten — vind het land bij jou in de buurt, of het land waarheen je gezonden wordt.",
+    "globeSearchPlaceholder": "Zoek een land, regio of afdeling"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, VS",
       "stat3Value": "Wereldwijd",
       "stat3Label": "Campusnetwerk",
-      "dragToExplore": "Sleep om te verkennen"
+      "dragToExplore": "Sleep om te verkennen",
+      "slide1Line1": "Overvloeiend",
+      "slide1Line2": "in genade en liefde",
+      "slide2Line1": "Overvloeiend",
+      "slide2Line2": "in genade en liefde",
+      "slide3Line1": "De toekomst begint",
+      "slide3Line2": "waar wij zijn",
+      "slide4Line1": "Samen groeien",
+      "slide4Line2": "in het Woord",
+      "slide5Line1": "Gezonden",
+      "slide5Line2": "met een doel"
     },
     "BibleStudyProgram": {
       "eyebrow": "Doe mee met ons Bijbelstudieprogramma",

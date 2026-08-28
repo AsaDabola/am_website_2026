@@ -167,11 +167,12 @@
     "donate": "Bağış Yapın"
   },
   "NewsSubNav": {
-    "featuredNews": "Öne Çıkan Haberler",
+    "news": "Haberler",
     "events": "Etkinlikler",
     "editorial": "Yazılar",
     "photoNews": "Foto Haber",
-    "testimony": "Tanıklıklar"
+    "testimony": "Tanıklıklar",
+    "featuredNews": "Öne Çıkan Haberler"
   },
   "InPractice": {
     "eyebrow": "Uygulamada",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Güneydoğu Asya",
       "hqBadge": "Merkez",
       "regionalHqBadge": "Bölge merkezi"
-    }
+    },
+    "globeSubtitle": "AM altı kıtaya yayılan bir gönderme topluluğudur — size en yakın ülkeyi ya da gönderildiğiniz ülkeyi bulun.",
+    "globeSearchPlaceholder": "Ülke, bölge veya topluluk ara"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, ABD",
       "stat3Value": "Küresel",
       "stat3Label": "Kampüs ağı",
-      "dragToExplore": "Keşfetmek için sürükleyin"
+      "dragToExplore": "Keşfetmek için sürükleyin",
+      "slide1Line1": "Taşan",
+      "slide1Line2": "lütuf ve sevgiyle",
+      "slide2Line1": "Taşan",
+      "slide2Line2": "lütuf ve sevgiyle",
+      "slide3Line1": "Gelecek başlıyor",
+      "slide3Line2": "bulunduğumuz yerden",
+      "slide4Line1": "Birlikte büyüyoruz",
+      "slide4Line2": "Söz'de",
+      "slide5Line1": "Gönderildik",
+      "slide5Line2": "bir amaçla"
     },
     "BibleStudyProgram": {
       "eyebrow": "Kutsal Kitap Çalışma Programımıza katılın",

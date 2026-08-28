@@ -167,11 +167,12 @@
     "donate": "Beri Sumbangan"
   },
   "NewsSubNav": {
-    "featuredNews": "Berita Pilihan",
+    "news": "Berita",
     "events": "Acara",
     "editorial": "Rencana",
     "photoNews": "Berita Bergambar",
-    "testimony": "Kesaksian"
+    "testimony": "Kesaksian",
+    "featuredNews": "Berita Pilihan"
   },
   "InPractice": {
     "eyebrow": "Dalam amalan",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Asia Tenggara",
       "hqBadge": "Ibu Pejabat",
       "regionalHqBadge": "Ibu Pejabat Wilayah"
-    }
+    },
+    "globeSubtitle": "AM ialah komuniti pengutus di enam benua — cari negara paling hampir dengan anda, atau negara tempat anda diutus.",
+    "globeSearchPlaceholder": "Cari negara, wilayah atau cawangan"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, Amerika Syarikat",
       "stat3Value": "Global",
       "stat3Label": "Rangkaian kampus",
-      "dragToExplore": "Seret untuk menerokai"
+      "dragToExplore": "Seret untuk menerokai",
+      "slide1Line1": "Melimpah",
+      "slide1Line2": "dalam kasih kurnia dan kasih",
+      "slide2Line1": "Melimpah",
+      "slide2Line2": "dalam kasih kurnia dan kasih",
+      "slide3Line1": "Masa depan bermula",
+      "slide3Line2": "dari tempat kami berada",
+      "slide4Line1": "Bertumbuh bersama",
+      "slide4Line2": "dalam Firman",
+      "slide5Line1": "Diutus",
+      "slide5Line2": "dengan tujuan"
     },
     "BibleStudyProgram": {
       "eyebrow": "Sertai Program Pengajian Alkitab kami",

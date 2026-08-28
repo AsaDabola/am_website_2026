@@ -167,11 +167,12 @@
     "donate": "Daan Karo"
   },
   "NewsSubNav": {
-    "featuredNews": "Khaas Khabar",
+    "news": "Khabar",
     "events": "Karyakram",
     "editorial": "Sampadakiya",
     "photoNews": "Photo Khabar",
-    "testimony": "Gawahi"
+    "testimony": "Gawahi",
+    "featuredNews": "Khaas Khabar"
   },
   "InPractice": {
     "eyebrow": "Kaam me",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Dakshin-Purab Asia",
       "hqBadge": "HQ",
       "regionalHqBadge": "Kshetriya HQ"
-    }
+    },
+    "globeSubtitle": "AM chhau mahadweep me failal ek bhejne wala samaj hai — apne sab se lage des khoje, ya wo des jahaan aap ke bheja jaae hai.",
+    "globeSearchPlaceholder": "Des, ilaka ya shakha khoje"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, USA",
       "stat3Value": "Duniya Bhar",
       "stat3Label": "Campus network",
-      "dragToExplore": "Khichke dekho"
+      "dragToExplore": "Khichke dekho",
+      "slide1Line1": "Ubharat",
+      "slide1Line2": "kirpa aur pyaar me",
+      "slide2Line1": "Ubharat",
+      "slide2Line2": "kirpa aur pyaar me",
+      "slide3Line1": "Bhavishya suru hoe hai",
+      "slide3Line2": "jahaan hum log hai",
+      "slide4Line1": "Milke barhat hai",
+      "slide4Line2": "Bachan me",
+      "slide5Line1": "Bheja gaya",
+      "slide5Line2": "maksad ke saath"
     },
     "BibleStudyProgram": {
       "eyebrow": "Hamaar Bible Padhai ke Program me Saamil Hoi",

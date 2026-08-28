@@ -167,11 +167,12 @@
     "donate": "Пожертвувати"
   },
   "NewsSubNav": {
-    "featuredNews": "Обрані новини",
+    "news": "Новини",
     "events": "Події",
     "editorial": "Статті",
     "photoNews": "Фоторепортажі",
-    "testimony": "Свідчення"
+    "testimony": "Свідчення",
+    "featuredNews": "Обрані новини"
   },
   "InPractice": {
     "eyebrow": "На практиці",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Південно-Східна Азія",
       "hqBadge": "Штаб",
       "regionalHqBadge": "Рег. штаб"
-    }
+    },
+    "globeSubtitle": "AM — це спільнота, що посилає, на шести континентах: знайдіть найближчу до вас країну або ту, до якої вас посилають.",
+    "globeSearchPlaceholder": "Пошук країни, регіону або осередку"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "Нью-Джерсі, США",
       "stat3Value": "Глобальна",
       "stat3Label": "Мережа кампусів",
-      "dragToExplore": "Потягніть, щоб дослідити"
+      "dragToExplore": "Потягніть, щоб дослідити",
+      "slide1Line1": "Переповнені",
+      "slide1Line2": "благодаттю і любов'ю",
+      "slide2Line1": "Переповнені",
+      "slide2Line2": "благодаттю і любов'ю",
+      "slide3Line1": "Майбутнє починається",
+      "slide3Line2": "там, де ми є",
+      "slide4Line1": "Зростаємо разом",
+      "slide4Line2": "у Слові",
+      "slide5Line1": "Послані",
+      "slide5Line2": "з покликанням"
     },
     "BibleStudyProgram": {
       "eyebrow": "Долучайтеся до нашої програми вивчення Біблії",

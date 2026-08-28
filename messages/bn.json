@@ -167,11 +167,12 @@
     "donate": "দান করুন"
   },
   "NewsSubNav": {
-    "featuredNews": "নির্বাচিত সংবাদ",
+    "news": "সংবাদ",
     "events": "অনুষ্ঠান",
     "editorial": "প্রবন্ধ",
     "photoNews": "ছবিতে সংবাদ",
-    "testimony": "সাক্ষ্য"
+    "testimony": "সাক্ষ্য",
+    "featuredNews": "নির্বাচিত সংবাদ"
   },
   "InPractice": {
     "eyebrow": "বাস্তবে",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "দক্ষিণ-পূর্ব এশিয়া",
       "hqBadge": "সদর দপ্তর",
       "regionalHqBadge": "আঞ্চলিক দপ্তর"
-    }
+    },
+    "globeSubtitle": "AM ছয়টি মহাদেশ জুড়ে একটি প্রেরণকারী সম্প্রদায় — আপনার নিকটতম দেশটি খুঁজুন, অথবা যেখানে আপনাকে পাঠানো হচ্ছে সেই দেশটি।",
+    "globeSearchPlaceholder": "দেশ, অঞ্চল বা শাখা খুঁজুন"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "নিউ জার্সি, যুক্তরাষ্ট্র",
       "stat3Value": "বিশ্বব্যাপী",
       "stat3Label": "ক্যাম্পাস নেটওয়ার্ক",
-      "dragToExplore": "ঘুরে দেখতে টানুন"
+      "dragToExplore": "ঘুরে দেখতে টানুন",
+      "slide1Line1": "উপচে পড়া",
+      "slide1Line2": "অনুগ্রহ ও ভালোবাসায়",
+      "slide2Line1": "উপচে পড়া",
+      "slide2Line2": "অনুগ্রহ ও ভালোবাসায়",
+      "slide3Line1": "ভবিষ্যৎ শুরু হয়",
+      "slide3Line2": "আমরা যেখানে আছি সেখান থেকে",
+      "slide4Line1": "একসাথে বেড়ে উঠি",
+      "slide4Line2": "বাক্যে",
+      "slide5Line1": "প্রেরিত",
+      "slide5Line2": "উদ্দেশ্য নিয়ে"
     },
     "BibleStudyProgram": {
       "eyebrow": "আমাদের বাইবেল অধ্যয়ন কর্মসূচিতে যোগ দিন",

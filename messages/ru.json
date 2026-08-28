@@ -167,11 +167,12 @@
     "donate": "Пожертвовать"
   },
   "NewsSubNav": {
-    "featuredNews": "Избранные новости",
+    "news": "Новости",
     "events": "События",
     "editorial": "Статьи",
     "photoNews": "Фоторепортажи",
-    "testimony": "Свидетельства"
+    "testimony": "Свидетельства",
+    "featuredNews": "Избранные новости"
   },
   "InPractice": {
     "eyebrow": "На практике",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Юго-Восточная Азия",
       "hqBadge": "Штаб",
       "regionalHqBadge": "Рег. штаб"
-    }
+    },
+    "globeSubtitle": "AM — это посылающее сообщество на шести континентах: найдите ближайшую к вам страну или ту, в которую вас посылают.",
+    "globeSearchPlaceholder": "Поиск страны, региона или отделения"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "Нью-Джерси, США",
       "stat3Value": "Глобальная",
       "stat3Label": "Сеть кампусов",
-      "dragToExplore": "Потяните, чтобы исследовать"
+      "dragToExplore": "Потяните, чтобы исследовать",
+      "slide1Line1": "Изобилуя",
+      "slide1Line2": "благодатью и любовью",
+      "slide2Line1": "Изобилуя",
+      "slide2Line2": "благодатью и любовью",
+      "slide3Line1": "Будущее начинается",
+      "slide3Line2": "там, где мы есть",
+      "slide4Line1": "Растём вместе",
+      "slide4Line2": "в Слове",
+      "slide5Line1": "Посланы",
+      "slide5Line2": "с призванием"
     },
     "BibleStudyProgram": {
       "eyebrow": "Присоединяйтесь к нашей программе изучения Библии",

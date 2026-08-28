@@ -167,11 +167,12 @@
     "donate": "Mag-abuloy"
   },
   "NewsSubNav": {
-    "featuredNews": "Itinatampok na Balita",
+    "news": "Balita",
     "events": "Mga Kaganapan",
     "editorial": "Mga Artikulo",
     "photoNews": "Balitang Larawan",
-    "testimony": "Mga Patotoo"
+    "testimony": "Mga Patotoo",
+    "featuredNews": "Itinatampok na Balita"
   },
   "InPractice": {
     "eyebrow": "Sa praktika",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Timog-Silangang Asya",
       "hqBadge": "Punong Tanggapan",
       "regionalHqBadge": "Rehiyonal na Tanggapan"
-    }
+    },
+    "globeSubtitle": "Ang AM ay isang nagsusugong komunidad sa anim na kontinente — hanapin ang bansang pinakamalapit sa iyo, o ang bansang pinagsusuguan sa iyo.",
+    "globeSearchPlaceholder": "Maghanap ng bansa, rehiyon o kapitulo"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, USA",
       "stat3Value": "Pandaigdig",
       "stat3Label": "Network ng campus",
-      "dragToExplore": "I-drag upang tuklasin"
+      "dragToExplore": "I-drag upang tuklasin",
+      "slide1Line1": "Umaapaw",
+      "slide1Line2": "sa biyaya at pag-ibig",
+      "slide2Line1": "Umaapaw",
+      "slide2Line2": "sa biyaya at pag-ibig",
+      "slide3Line1": "Nagsisimula ang kinabukasan",
+      "slide3Line2": "kung nasaan tayo ngayon",
+      "slide4Line1": "Sabay na lumalago",
+      "slide4Line2": "sa Salita",
+      "slide5Line1": "Isinugo",
+      "slide5Line2": "may layunin"
     },
     "BibleStudyProgram": {
       "eyebrow": "Sumali sa aming Programa sa Pag-aaral ng Biblia",

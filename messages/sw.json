@@ -167,11 +167,12 @@
     "donate": "Toa"
   },
   "NewsSubNav": {
-    "featuredNews": "Habari Teule",
+    "news": "Habari",
     "events": "Matukio",
     "editorial": "Makala",
     "photoNews": "Habari za Picha",
-    "testimony": "Ushuhuda"
+    "testimony": "Ushuhuda",
+    "featuredNews": "Habari Teule"
   },
   "InPractice": {
     "eyebrow": "Katika vitendo",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Asia ya Kusini-Mashariki",
       "hqBadge": "Makao Makuu",
       "regionalHqBadge": "Makao ya Kanda"
-    }
+    },
+    "globeSubtitle": "AM ni jumuiya inayotuma katika mabara sita — tafuta nchi iliyo karibu nawe, au ile unayotumwa.",
+    "globeSearchPlaceholder": "Tafuta nchi, kanda au tawi"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, Marekani",
       "stat3Value": "Kimataifa",
       "stat3Label": "Mtandao wa vyuo",
-      "dragToExplore": "Buruta kuchunguza"
+      "dragToExplore": "Buruta kuchunguza",
+      "slide1Line1": "Tukifurika",
+      "slide1Line2": "kwa neema na upendo",
+      "slide2Line1": "Tukifurika",
+      "slide2Line2": "kwa neema na upendo",
+      "slide3Line1": "Wakati ujao huanza",
+      "slide3Line2": "pale tulipo",
+      "slide4Line1": "Tunakua pamoja",
+      "slide4Line2": "katika Neno",
+      "slide5Line1": "Tumetumwa",
+      "slide5Line2": "kwa kusudi"
     },
     "BibleStudyProgram": {
       "eyebrow": "Jiunge na Mpango wetu wa Kujifunza Biblia",

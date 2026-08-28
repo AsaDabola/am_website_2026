@@ -167,11 +167,12 @@
     "donate": "Ge en gåva"
   },
   "NewsSubNav": {
-    "featuredNews": "Utvalda nyheter",
+    "news": "Nyheter",
     "events": "Evenemang",
     "editorial": "Artiklar",
     "photoNews": "Bildreportage",
-    "testimony": "Vittnesbörd"
+    "testimony": "Vittnesbörd",
+    "featuredNews": "Utvalda nyheter"
   },
   "InPractice": {
     "eyebrow": "I praktiken",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Sydostasien",
       "hqBadge": "Huvudkontor",
       "regionalHqBadge": "Regionkontor"
-    }
+    },
+    "globeSubtitle": "AM är en sändande gemenskap på sex kontinenter – hitta landet närmast dig, eller det du sänds till.",
+    "globeSearchPlaceholder": "Sök efter land, region eller grupp"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, USA",
       "stat3Value": "Globalt",
       "stat3Label": "Campusnätverk",
-      "dragToExplore": "Dra för att utforska"
+      "dragToExplore": "Dra för att utforska",
+      "slide1Line1": "Överflödande",
+      "slide1Line2": "i nåd och kärlek",
+      "slide2Line1": "Överflödande",
+      "slide2Line2": "i nåd och kärlek",
+      "slide3Line1": "Framtiden börjar",
+      "slide3Line2": "där vi är",
+      "slide4Line1": "Vi växer tillsammans",
+      "slide4Line2": "i Ordet",
+      "slide5Line1": "Utsända",
+      "slide5Line2": "med ett syfte"
     },
     "BibleStudyProgram": {
       "eyebrow": "Var med i vårt bibelstudieprogram",

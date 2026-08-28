@@ -167,11 +167,12 @@
     "donate": "ይለግሱ"
   },
   "NewsSubNav": {
-    "featuredNews": "የተመረጡ ዜናዎች",
+    "news": "ዜና",
     "events": "ዝግጅቶች",
     "editorial": "ጽሑፎች",
     "photoNews": "የፎቶ ዜና",
-    "testimony": "ምስክርነቶች"
+    "testimony": "ምስክርነቶች",
+    "featuredNews": "የተመረጡ ዜናዎች"
   },
   "InPractice": {
     "eyebrow": "በተግባር",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "ደቡብ ምሥራቅ እስያ",
       "hqBadge": "ዋና መሥሪያ ቤት",
       "regionalHqBadge": "የክልል መሥሪያ ቤት"
-    }
+    },
+    "globeSubtitle": "AM በስድስት አህጉራት የተዘረጋ የመላክ ማህበረሰብ ነው — ወደ እርስዎ ቅርብ የሆነችውን አገር፣ ወይም የሚላኩባትን አገር ያግኙ።",
+    "globeSearchPlaceholder": "አገር፣ ክልል ወይም ቅርንጫፍ ይፈልጉ"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "ኒው ጀርሲ፣ አሜሪካ",
       "stat3Value": "ዓለም አቀፍ",
       "stat3Label": "የካምፓስ አውታረ መረብ",
-      "dragToExplore": "ለመመልከት ይጎትቱ"
+      "dragToExplore": "ለመመልከት ይጎትቱ",
+      "slide1Line1": "ተትረፍርፎ",
+      "slide1Line2": "በጸጋና በፍቅር",
+      "slide2Line1": "ተትረፍርፎ",
+      "slide2Line2": "በጸጋና በፍቅር",
+      "slide3Line1": "የወደፊቱ ይጀምራል",
+      "slide3Line2": "ካለንበት ስፍራ",
+      "slide4Line1": "አብረን እናድጋለን",
+      "slide4Line2": "በቃሉ",
+      "slide5Line1": "ተልከናል",
+      "slide5Line2": "ዓላማ ይዘን"
     },
     "BibleStudyProgram": {
       "eyebrow": "የመጽሐፍ ቅዱስ ጥናት መርሐ ግብራችንን ይቀላቀሉ",

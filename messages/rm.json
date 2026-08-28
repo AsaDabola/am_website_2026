@@ -167,11 +167,12 @@
     "donate": "Far ina donaziun"
   },
   "NewsSubNav": {
-    "featuredNews": "Novitads en evidenza",
+    "news": "Novitads",
     "events": "Eveniments",
     "editorial": "Editorial",
     "photoNews": "Novitads en fotos",
-    "testimony": "Testimoni"
+    "testimony": "Testimoni",
+    "featuredNews": "Novitads en evidenza"
   },
   "InPractice": {
     "eyebrow": "En la pratica",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Asia dal Sidost",
       "hqBadge": "SEDIA",
       "regionalHqBadge": "Sedia regiunala"
-    }
+    },
+    "globeSubtitle": "AM è ina communitad che tramenta sin sis continents — chatta il pajais il pli datiers da tai, u quel en il qual ti vegns tramess.",
+    "globeSearchPlaceholder": "Tschertgar in pajais, ina regiun u ina gruppa"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, USA",
       "stat3Value": "Global",
       "stat3Label": "Rait da campus",
-      "dragToExplore": "Tira per explorar"
+      "dragToExplore": "Tira per explorar",
+      "slide1Line1": "Sturmond",
+      "slide1Line2": "en grazia ed amur",
+      "slide2Line1": "Sturmond",
+      "slide2Line2": "en grazia ed amur",
+      "slide3Line1": "L'avegnir cumenza",
+      "slide3Line2": "nua che nus essan",
+      "slide4Line1": "Crescher ensemen",
+      "slide4Line2": "en il Pled",
+      "slide5Line1": "Tramess",
+      "slide5Line2": "cun ina finamira"
     },
     "BibleStudyProgram": {
       "eyebrow": "Sa participar a noss program da studi biblic",

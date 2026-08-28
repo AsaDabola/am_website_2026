@@ -167,11 +167,12 @@
     "donate": "Donează"
   },
   "NewsSubNav": {
-    "featuredNews": "Noutăți recomandate",
+    "news": "Știri",
     "events": "Evenimente",
     "editorial": "Articole",
     "photoNews": "Reportaje foto",
-    "testimony": "Mărturii"
+    "testimony": "Mărturii",
+    "featuredNews": "Noutăți recomandate"
   },
   "InPractice": {
     "eyebrow": "În practică",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Asia de Sud-Est",
       "hqBadge": "Sediu",
       "regionalHqBadge": "Sediu regional"
-    }
+    },
+    "globeSubtitle": "AM este o comunitate care trimite pe șase continente — găsește țara cea mai apropiată de tine sau cea în care ești trimis.",
+    "globeSearchPlaceholder": "Caută o țară, o regiune sau o filială"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, SUA",
       "stat3Value": "Globală",
       "stat3Label": "Rețea universitară",
-      "dragToExplore": "Trage pentru a explora"
+      "dragToExplore": "Trage pentru a explora",
+      "slide1Line1": "Revărsându-se",
+      "slide1Line2": "în har și iubire",
+      "slide2Line1": "Revărsându-se",
+      "slide2Line2": "în har și iubire",
+      "slide3Line1": "Viitorul începe",
+      "slide3Line2": "de unde suntem",
+      "slide4Line1": "Creștem împreună",
+      "slide4Line2": "în Cuvânt",
+      "slide5Line1": "Trimiși",
+      "slide5Line2": "cu un scop"
     },
     "BibleStudyProgram": {
       "eyebrow": "Alătură-te programului nostru de studiu biblic",

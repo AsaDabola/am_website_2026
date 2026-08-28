@@ -167,11 +167,109 @@
     "donate": "Doar"
   },
   "NewsSubNav": {
-    "featuredNews": "Destaques",
+    "news": "Notícias",
     "events": "Eventos",
     "editorial": "Editorial",
     "photoNews": "Notícias em fotos",
-    "testimony": "Testemunho"
+    "testimony": "Testemunho",
+    "featuredNews": "Destaques"
+  },
+  "InPractice": {
+    "eyebrow": "Na prática",
+    "heading": "Quatro coisas que fazemos em todos os lugares aonde vamos.",
+    "bibleStudyTag": "Estudo bíblico",
+    "bibleStudyDescription": "Estudo em grupos pequenos e grandes que coloca as Escrituras no centro da vida universitária.",
+    "leadershipTrainingTag": "Treinamento de liderança",
+    "leadershipTrainingDescription": "Os estudantes são orientados a liderar seus pares e, em seguida, enviar o próximo grupo.",
+    "onlineEducationTag": "Educação on-line",
+    "onlineEducationDescription": "Cursos da AM Academy em Escritura, missiologia e ministério intercultural.",
+    "internshipsTripsTag": "Estágios e viagens",
+    "internshipsTripsDescription": "Missões de curto prazo e estágios que transformam treinamento em prática."
+  },
+  "AboutPage": {
+    "heroTitle": "Assim como o Pai me enviou, eu também vos envio.",
+    "breadcrumb": "Quem somos",
+    "paragraph1": "A Apostolos Missions International (AM) é um ministério interdenominacional comprometido em espalhar o evangelho até os confins da terra, testemunhando o amor eterno do Senhor.",
+    "paragraph2Prefix": "O nome",
+    "paragraph2": "(ἀπόστολος) é a palavra grega para apóstolo. Significa \"aquele que é enviado em missão\" ou \"mensageiro\". O título \"apóstolo\" aparece frequentemente no Novo Testamento para representar os Doze discípulos designados por Jesus (Mateus 10:2, Marcos 3:14, Lucas 6:13, Atos 2:42). Paulo, ex-perseguidor do cristianismo que se tornou um grande arauto do evangelho, apresentou-se como \"apóstolo\" (Romanos 1:1, 1 Coríntios 1:1, 2 Coríntios 1:1, Gálatas 1:1, Colossenses 1:1, 1 Timóteo 1:1, 2 Timóteo 1:1, Tito).",
+    "paragraph3": "Apóstolos são aqueles enviados pelo Senhor para cumprir a missão de \"pregar Jesus Cristo e dar a conhecer a Deus\" a toda a criação. O fundamento bíblico do apostolado é encontrado em muitas palavras do Senhor, que escolheu os primeiros apóstolos e os enviou como embaixadores despachados para representar diferentes nações. Os apóstolos entendiam que suas vidas não pertenciam apenas a eles, mas viviam para revelar a glória de Cristo neste mundo caído.",
+    "blockquote": "João 20:21 diz: \"Disse-lhes Jesus novamente: Paz seja convosco! Assim como o Pai me enviou, eu também vos envio.\" (NVI)",
+    "paragraph4": "A AM deseja seguir a tradição dos apóstolos que viveram como pessoas em missão para proclamar a Palavra de Deus. Cada um de nós também recebe esse chamado de Deus para ser enviado ao mundo como suas mãos e pés. Desejamos dedicar nossas vidas a seguir os passos de Jesus e proclamar o Evangelho até os confins da terra.",
+    "paragraph5": "Assim como nossas vidas foram tocadas e transformadas pelo Senhor, desejamos revelar o amor do Senhor que nos foi mostrado, tornando-nos um farol para todos os seus filhos perdidos e nossos irmãos e irmãs.",
+    "readStatementOfFaith": "Leia nossa declaração de fé",
+    "or": "ou",
+    "traceHistory": "conheça nossa história",
+    "cardStatementOfFaithTitle": "Leia nossa Declaração de Fé",
+    "cardMissionStatementTitle": "Declaração de Missão"
+  },
+  "GetInvolvedHub": {
+    "roadmapEyebrow": "Roteiro da AM",
+    "roadmapHeading": "O que é esperado?",
+    "connectTag": "Conectar",
+    "connectItems": [
+      "Estudos bíblicos",
+      "presenciais/on-line"
+    ],
+    "growTag": "Crescer",
+    "growItems": [
+      "Atividades em grupo"
+    ],
+    "leadTag": "Liderar",
+    "leadItems": [
+      "Voluntariado e estágios",
+      "Líderes de capítulo"
+    ],
+    "sentTag": "Enviado",
+    "sentItems": [
+      "Conexão de ex-alunos",
+      "Missionários de tempo integral/parcial",
+      "Professores bíblicos"
+    ],
+    "connectHeading": "Conectar",
+    "connectStep1Title": "1. Inscreva-se em nossos sites",
+    "connectStep1Body": "Há muitas maneiras de se conectar com a AM. Você pode se inscrever em nosso site principal, www.amintl.org, e receber boletins informativos. Ou pode se inscrever em nosso site de escola bíblica on-line, www.amacademy.org, e receber as últimas notícias e programas. Fique à vontade para navegar por nossa visão, atividades e programas em nossos sites e nos enviar um e-mail a qualquer momento se tiver dúvidas.",
+    "connectStep2Title": "2. Inscreva-se para conhecer nossa equipe",
+    "connectStep2BodyPrefix": "Fique à vontade para se",
+    "connectStep2SignUp": "inscrever",
+    "connectStep2BodySuffix": "aqui se desejar conversar com um de nossos membros da equipe e receber aconselhamento em sua jornada espiritual. Você pode agendar um horário ou entrar em contato diretamente com nossa equipe. Muitos de nossos membros têm experiência na vida universitária e compreendem os contextos que os estudantes enfrentam. Eles ajudarão você a encontrar o caminho mais adequado para sua jornada de fé.",
+    "connectStep3Title": "3. Inscreva-se em um estudo bíblico",
+    "connectStep3BodyPrefix": "Se você está pronto para começar nosso programa de estudo bíblico,",
+    "connectStep3SignUp": "inscreva-se",
+    "connectStep3BodySuffix": "nesta página. Se não encontrar um horário adequado, envie o formulário de solicitação com seu curso e horário preferidos!",
+    "connectStep4Title": "4. Conecte-se com o capítulo local",
+    "connectStep4BodyPrefix": "Se desejar se conectar com nosso escritório e equipe do capítulo local, por favor",
+    "connectStep4ContactHere": "entre em contato aqui",
+    "connectStep4BodySuffix": ". Esperamos conhecê-lo em breve!",
+    "growHeading": "Crescer",
+    "growIntro": "Assim como crescemos e amadurecemos por diferentes estágios da infância, também alcançamos marcos importantes em nossa maturidade espiritual. A AM oferece diversos programas e trilhas projetados para guiar os estudantes por cada um desses três estágios vitais do crescimento espiritual:",
+    "rebornTitle": "1. Renascido",
+    "rebornBody": "Nascemos de novo pelo sacrifício expiatório de Jesus na Cruz.",
+    "matureTitle": "1. Maduro",
+    "matureBody": "Crescemos e amadurecemos espiritualmente nutrindo-nos do amor e da verdade de Jesus.",
+    "fruitfulTitle": "1. Frutífero",
+    "fruitfulBody": "Experimentamos a fecundidade da vida por meio da bênção de Deus, cumprida em nossa madura unidade com Cristo Jesus.",
+    "navigatingTitle": "Navegando a vida universitária",
+    "navigatingBody": "A vida universitária é emocionante e gratificante, mas com tantas opções disponíveis, também pode parecer sem rumo. Por meio da verdade e da oração, a AM ajuda você a discernir a vontade de Deus e encontrar uma direção clara para sua vida extraordinária.",
+    "nextStepsTitle": "Próximos passos",
+    "nextStepsBody": "Continue engajado em nossos programas — aproveite as diversas oportunidades de ouvir a Palavra, orar juntos, ter comunhão com irmãos e irmãs na fé, e servir enquanto cresce no Evangelho.",
+    "leadHeading": "Liderar",
+    "leadStep1Title": "1. Servindo no amor de Cristo",
+    "leadStep1Body": "À medida que crescemos, desejamos servir aos que precisam de ajuda para vir a Jesus. Ao servir, também crescemos mais profundamente no amor de Cristo.",
+    "leadStep2Title": "2. A bênção da liderança",
+    "leadStep2Body": "Jesus disse: \"Mais bem-aventurado é dar do que receber\" (Atos 20:35). Liderar e guiar outros requer sabedoria, oração, sacrifício e paciência. No entanto, é um lugar abençoado onde a glória da Cruz culmina.",
+    "leadStep3Title": "3. A bênção da liderança",
+    "leadStep3Body": "Embora os estudantes universitários ainda sejam jovens, dons e habilidades notáveis podem ser descobertos e desenvolvidos ainda mais poderosamente por meio de papéis de liderança. É um belo processo em que cada estudante testa e afirma seus dons celestiais por meio da experiência graciosa de servir e liderar.",
+    "leadStep4Title": "4. Oportunidades com a AM",
+    "leadStep4Body": "A AM oferece diversas oportunidades e papéis para que os estudantes participem do serviço e da liderança. Junte-se à nossa equipe de voluntários, equipe de capítulo, líderes de capítulo, professores bíblicos e muitos outros. Descubra o que Jesus plantou em você de acordo com seu excelente plano.",
+    "sentHeading": "Enviado",
+    "sentParagraph1": "A formatura universitária é outra partida significativa rumo a um mundo amplamente aberto para explorarmos. Alguns de nós podem continuar os estudos ou seguir carreira profissional. Alguns de nós também se tornam funcionários de tempo integral, missionários ou ministros da AM, seguindo o chamado de Deus.",
+    "sentParagraph2": "Nesta etapa crucial, a AM oferece programas para que você permaneça conectado e continue servindo à missão do Evangelho por meio da Conexão de Ex-alunos. A AM também oferece programas de treinamento e trilhas para se tornar um obreiro missionário profissional e membro da equipe da AM World Mission.",
+    "sentParagraph3": "Diversas opções estão abertas para você rumo a um futuro brilhante. A AM deseja caminhar de perto com cada indivíduo para juntos cumprirmos a Grande Comissão: \"Portanto, ide, fazei discípulos de todas as nações, batizando-os em nome do Pai, do Filho e do Espírito Santo\" (Mateus 28:19).",
+    "sentLinkAlumniConnect": "Conexão de ex-alunos",
+    "sentLinkBibleTeachers": "Torne-se professor bíblico da AM",
+    "sentLinkMissionaries": "Torne-se missionário da AM",
+    "sentLinkStaff": "Equipe de tempo integral na sede da AM",
+    "roadmapHeroTitle": "Crescer no campus: um roteiro"
   },
   "Network": {
     "breadcrumb": "Nossa rede",
@@ -216,7 +314,9 @@
       "captionSoutheastAsia": "Sudeste Asiático",
       "hqBadge": "Sede",
       "regionalHqBadge": "Sede regional"
-    }
+    },
+    "globeSubtitle": "A AM é uma comunidade que envia em seis continentes — encontre o país mais perto de você, ou aquele para o qual está sendo enviado.",
+    "globeSearchPlaceholder": "Procure um país, uma região ou um núcleo"
   },
   "Home": {
     "Hero": {
@@ -232,7 +332,17 @@
       "stat2Label": "Nova Jersey, EUA",
       "stat3Value": "Global",
       "stat3Label": "Rede de campus",
-      "dragToExplore": "Arraste para explorar"
+      "dragToExplore": "Arraste para explorar",
+      "slide1Line1": "Transbordando",
+      "slide1Line2": "em graça e amor",
+      "slide2Line1": "Transbordando",
+      "slide2Line2": "em graça e amor",
+      "slide3Line1": "O futuro começa",
+      "slide3Line2": "onde estamos",
+      "slide4Line1": "Crescendo juntos",
+      "slide4Line2": "na Palavra",
+      "slide5Line1": "Enviados",
+      "slide5Line2": "com propósito"
     },
     "BibleStudyProgram": {
       "eyebrow": "Participe do nosso programa de estudo bíblico",
@@ -347,102 +457,5 @@
       "description": "Uma breve carta mensal: o que os estudantes estão vendo, para onde a AM está indo, e como orar.",
       "cta": "AM Academy"
     }
-  },
-  "InPractice": {
-    "eyebrow": "Na prática",
-    "heading": "Quatro coisas que fazemos em todos os lugares aonde vamos.",
-    "bibleStudyTag": "Estudo bíblico",
-    "bibleStudyDescription": "Estudo em grupos pequenos e grandes que coloca as Escrituras no centro da vida universitária.",
-    "leadershipTrainingTag": "Treinamento de liderança",
-    "leadershipTrainingDescription": "Os estudantes são orientados a liderar seus pares e, em seguida, enviar o próximo grupo.",
-    "onlineEducationTag": "Educação on-line",
-    "onlineEducationDescription": "Cursos da AM Academy em Escritura, missiologia e ministério intercultural.",
-    "internshipsTripsTag": "Estágios e viagens",
-    "internshipsTripsDescription": "Missões de curto prazo e estágios que transformam treinamento em prática."
-  },
-  "AboutPage": {
-    "heroTitle": "Assim como o Pai me enviou, eu também vos envio.",
-    "breadcrumb": "Quem somos",
-    "paragraph1": "A Apostolos Missions International (AM) é um ministério interdenominacional comprometido em espalhar o evangelho até os confins da terra, testemunhando o amor eterno do Senhor.",
-    "paragraph2Prefix": "O nome",
-    "paragraph2": "(ἀπόστολος) é a palavra grega para apóstolo. Significa \"aquele que é enviado em missão\" ou \"mensageiro\". O título \"apóstolo\" aparece frequentemente no Novo Testamento para representar os Doze discípulos designados por Jesus (Mateus 10:2, Marcos 3:14, Lucas 6:13, Atos 2:42). Paulo, ex-perseguidor do cristianismo que se tornou um grande arauto do evangelho, apresentou-se como \"apóstolo\" (Romanos 1:1, 1 Coríntios 1:1, 2 Coríntios 1:1, Gálatas 1:1, Colossenses 1:1, 1 Timóteo 1:1, 2 Timóteo 1:1, Tito).",
-    "paragraph3": "Apóstolos são aqueles enviados pelo Senhor para cumprir a missão de \"pregar Jesus Cristo e dar a conhecer a Deus\" a toda a criação. O fundamento bíblico do apostolado é encontrado em muitas palavras do Senhor, que escolheu os primeiros apóstolos e os enviou como embaixadores despachados para representar diferentes nações. Os apóstolos entendiam que suas vidas não pertenciam apenas a eles, mas viviam para revelar a glória de Cristo neste mundo caído.",
-    "blockquote": "João 20:21 diz: \"Disse-lhes Jesus novamente: Paz seja convosco! Assim como o Pai me enviou, eu também vos envio.\" (NVI)",
-    "paragraph4": "A AM deseja seguir a tradição dos apóstolos que viveram como pessoas em missão para proclamar a Palavra de Deus. Cada um de nós também recebe esse chamado de Deus para ser enviado ao mundo como suas mãos e pés. Desejamos dedicar nossas vidas a seguir os passos de Jesus e proclamar o Evangelho até os confins da terra.",
-    "paragraph5": "Assim como nossas vidas foram tocadas e transformadas pelo Senhor, desejamos revelar o amor do Senhor que nos foi mostrado, tornando-nos um farol para todos os seus filhos perdidos e nossos irmãos e irmãs.",
-    "readStatementOfFaith": "Leia nossa declaração de fé",
-    "or": "ou",
-    "traceHistory": "conheça nossa história",
-    "cardStatementOfFaithTitle": "Leia nossa Declaração de Fé",
-    "cardMissionStatementTitle": "Declaração de Missão"
-  },
-  "GetInvolvedHub": {
-    "roadmapEyebrow": "Roteiro da AM",
-    "roadmapHeading": "O que é esperado?",
-    "connectTag": "Conectar",
-    "connectItems": [
-      "Estudos bíblicos",
-      "presenciais/on-line"
-    ],
-    "growTag": "Crescer",
-    "growItems": [
-      "Atividades em grupo"
-    ],
-    "leadTag": "Liderar",
-    "leadItems": [
-      "Voluntariado e estágios",
-      "Líderes de capítulo"
-    ],
-    "sentTag": "Enviado",
-    "sentItems": [
-      "Conexão de ex-alunos",
-      "Missionários de tempo integral/parcial",
-      "Professores bíblicos"
-    ],
-    "connectHeading": "Conectar",
-    "connectStep1Title": "1. Inscreva-se em nossos sites",
-    "connectStep1Body": "Há muitas maneiras de se conectar com a AM. Você pode se inscrever em nosso site principal, www.amintl.org, e receber boletins informativos. Ou pode se inscrever em nosso site de escola bíblica on-line, www.amacademy.org, e receber as últimas notícias e programas. Fique à vontade para navegar por nossa visão, atividades e programas em nossos sites e nos enviar um e-mail a qualquer momento se tiver dúvidas.",
-    "connectStep2Title": "2. Inscreva-se para conhecer nossa equipe",
-    "connectStep2BodyPrefix": "Fique à vontade para se",
-    "connectStep2SignUp": "inscrever",
-    "connectStep2BodySuffix": "aqui se desejar conversar com um de nossos membros da equipe e receber aconselhamento em sua jornada espiritual. Você pode agendar um horário ou entrar em contato diretamente com nossa equipe. Muitos de nossos membros têm experiência na vida universitária e compreendem os contextos que os estudantes enfrentam. Eles ajudarão você a encontrar o caminho mais adequado para sua jornada de fé.",
-    "connectStep3Title": "3. Inscreva-se em um estudo bíblico",
-    "connectStep3BodyPrefix": "Se você está pronto para começar nosso programa de estudo bíblico,",
-    "connectStep3SignUp": "inscreva-se",
-    "connectStep3BodySuffix": "nesta página. Se não encontrar um horário adequado, envie o formulário de solicitação com seu curso e horário preferidos!",
-    "connectStep4Title": "4. Conecte-se com o capítulo local",
-    "connectStep4BodyPrefix": "Se desejar se conectar com nosso escritório e equipe do capítulo local, por favor",
-    "connectStep4ContactHere": "entre em contato aqui",
-    "connectStep4BodySuffix": ". Esperamos conhecê-lo em breve!",
-    "growHeading": "Crescer",
-    "growIntro": "Assim como crescemos e amadurecemos por diferentes estágios da infância, também alcançamos marcos importantes em nossa maturidade espiritual. A AM oferece diversos programas e trilhas projetados para guiar os estudantes por cada um desses três estágios vitais do crescimento espiritual:",
-    "rebornTitle": "1. Renascido",
-    "rebornBody": "Nascemos de novo pelo sacrifício expiatório de Jesus na Cruz.",
-    "matureTitle": "1. Maduro",
-    "matureBody": "Crescemos e amadurecemos espiritualmente nutrindo-nos do amor e da verdade de Jesus.",
-    "fruitfulTitle": "1. Frutífero",
-    "fruitfulBody": "Experimentamos a fecundidade da vida por meio da bênção de Deus, cumprida em nossa madura unidade com Cristo Jesus.",
-    "navigatingTitle": "Navegando a vida universitária",
-    "navigatingBody": "A vida universitária é emocionante e gratificante, mas com tantas opções disponíveis, também pode parecer sem rumo. Por meio da verdade e da oração, a AM ajuda você a discernir a vontade de Deus e encontrar uma direção clara para sua vida extraordinária.",
-    "nextStepsTitle": "Próximos passos",
-    "nextStepsBody": "Continue engajado em nossos programas — aproveite as diversas oportunidades de ouvir a Palavra, orar juntos, ter comunhão com irmãos e irmãs na fé, e servir enquanto cresce no Evangelho.",
-    "leadHeading": "Liderar",
-    "leadStep1Title": "1. Servindo no amor de Cristo",
-    "leadStep1Body": "À medida que crescemos, desejamos servir aos que precisam de ajuda para vir a Jesus. Ao servir, também crescemos mais profundamente no amor de Cristo.",
-    "leadStep2Title": "2. A bênção da liderança",
-    "leadStep2Body": "Jesus disse: \"Mais bem-aventurado é dar do que receber\" (Atos 20:35). Liderar e guiar outros requer sabedoria, oração, sacrifício e paciência. No entanto, é um lugar abençoado onde a glória da Cruz culmina.",
-    "leadStep3Title": "3. A bênção da liderança",
-    "leadStep3Body": "Embora os estudantes universitários ainda sejam jovens, dons e habilidades notáveis podem ser descobertos e desenvolvidos ainda mais poderosamente por meio de papéis de liderança. É um belo processo em que cada estudante testa e afirma seus dons celestiais por meio da experiência graciosa de servir e liderar.",
-    "leadStep4Title": "4. Oportunidades com a AM",
-    "leadStep4Body": "A AM oferece diversas oportunidades e papéis para que os estudantes participem do serviço e da liderança. Junte-se à nossa equipe de voluntários, equipe de capítulo, líderes de capítulo, professores bíblicos e muitos outros. Descubra o que Jesus plantou em você de acordo com seu excelente plano.",
-    "sentHeading": "Enviado",
-    "sentParagraph1": "A formatura universitária é outra partida significativa rumo a um mundo amplamente aberto para explorarmos. Alguns de nós podem continuar os estudos ou seguir carreira profissional. Alguns de nós também se tornam funcionários de tempo integral, missionários ou ministros da AM, seguindo o chamado de Deus.",
-    "sentParagraph2": "Nesta etapa crucial, a AM oferece programas para que você permaneça conectado e continue servindo à missão do Evangelho por meio da Conexão de Ex-alunos. A AM também oferece programas de treinamento e trilhas para se tornar um obreiro missionário profissional e membro da equipe da AM World Mission.",
-    "sentParagraph3": "Diversas opções estão abertas para você rumo a um futuro brilhante. A AM deseja caminhar de perto com cada indivíduo para juntos cumprirmos a Grande Comissão: \"Portanto, ide, fazei discípulos de todas as nações, batizando-os em nome do Pai, do Filho e do Espírito Santo\" (Mateus 28:19).",
-    "sentLinkAlumniConnect": "Conexão de ex-alunos",
-    "sentLinkBibleTeachers": "Torne-se professor bíblico da AM",
-    "sentLinkMissionaries": "Torne-se missionário da AM",
-    "sentLinkStaff": "Equipe de tempo integral na sede da AM",
-    "roadmapHeroTitle": "Crescer no campus: um roteiro"
   }
 }

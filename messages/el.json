@@ -167,11 +167,12 @@
     "donate": "Δωρεά"
   },
   "NewsSubNav": {
-    "featuredNews": "Επιλεγμένα νέα",
+    "news": "Νέα",
     "events": "Εκδηλώσεις",
     "editorial": "Άρθρα",
     "photoNews": "Φωτορεπορτάζ",
-    "testimony": "Μαρτυρίες"
+    "testimony": "Μαρτυρίες",
+    "featuredNews": "Επιλεγμένα νέα"
   },
   "InPractice": {
     "eyebrow": "Στην πράξη",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Νοτιοανατολική Ασία",
       "hqBadge": "Έδρα",
       "regionalHqBadge": "Περιφερειακή έδρα"
-    }
+    },
+    "globeSubtitle": "Η AM είναι μια κοινότητα αποστολής σε έξι ηπείρους — βρείτε τη χώρα πιο κοντά σας ή εκείνη στην οποία αποστέλλεστε.",
+    "globeSearchPlaceholder": "Αναζήτηση χώρας, περιοχής ή παραρτήματος"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "Νιου Τζέρσεϊ, ΗΠΑ",
       "stat3Value": "Παγκόσμιο",
       "stat3Label": "Πανεπιστημιακό δίκτυο",
-      "dragToExplore": "Σύρετε για εξερεύνηση"
+      "dragToExplore": "Σύρετε για εξερεύνηση",
+      "slide1Line1": "Ξεχειλίζοντας",
+      "slide1Line2": "από χάρη και αγάπη",
+      "slide2Line1": "Ξεχειλίζοντας",
+      "slide2Line2": "από χάρη και αγάπη",
+      "slide3Line1": "Το μέλλον ξεκινά",
+      "slide3Line2": "από εκεί που είμαστε",
+      "slide4Line1": "Μεγαλώνουμε μαζί",
+      "slide4Line2": "μέσα στον Λόγο",
+      "slide5Line1": "Απεσταλμένοι",
+      "slide5Line2": "με σκοπό"
     },
     "BibleStudyProgram": {
       "eyebrow": "Ελάτε στο πρόγραμμα μελέτης της Βίβλου",

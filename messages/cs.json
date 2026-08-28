@@ -167,11 +167,12 @@
     "donate": "Darovat"
   },
   "NewsSubNav": {
-    "featuredNews": "Vybrané zprávy",
+    "news": "Novinky",
     "events": "Události",
     "editorial": "Články",
     "photoNews": "Fotoreportáže",
-    "testimony": "Svědectví"
+    "testimony": "Svědectví",
+    "featuredNews": "Vybrané zprávy"
   },
   "InPractice": {
     "eyebrow": "V praxi",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Jihovýchodní Asie",
       "hqBadge": "Ústředí",
       "regionalHqBadge": "Regionální ústředí"
-    }
+    },
+    "globeSubtitle": "AM je vysílající společenství na šesti kontinentech — najděte zemi nejblíže vám nebo tu, do které jste posíláni.",
+    "globeSearchPlaceholder": "Hledat zemi, region nebo skupinu"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, USA",
       "stat3Value": "Celosvětová",
       "stat3Label": "Síť na univerzitách",
-      "dragToExplore": "Táhnutím prozkoumáte"
+      "dragToExplore": "Táhnutím prozkoumáte",
+      "slide1Line1": "Přetékáme",
+      "slide1Line2": "milostí a láskou",
+      "slide2Line1": "Přetékáme",
+      "slide2Line2": "milostí a láskou",
+      "slide3Line1": "Budoucnost začíná",
+      "slide3Line2": "tam, kde jsme",
+      "slide4Line1": "Rosteme společně",
+      "slide4Line2": "ve Slově",
+      "slide5Line1": "Posláni",
+      "slide5Line2": "s posláním"
     },
     "BibleStudyProgram": {
       "eyebrow": "Připojte se k našemu programu studia Bible",

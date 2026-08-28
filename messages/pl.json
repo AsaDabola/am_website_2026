@@ -167,11 +167,12 @@
     "donate": "Przekaż darowiznę"
   },
   "NewsSubNav": {
-    "featuredNews": "Wyróżnione wiadomości",
+    "news": "Aktualności",
     "events": "Wydarzenia",
     "editorial": "Artykuły",
     "photoNews": "Fotorelacje",
-    "testimony": "Świadectwa"
+    "testimony": "Świadectwa",
+    "featuredNews": "Wyróżnione wiadomości"
   },
   "InPractice": {
     "eyebrow": "W praktyce",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "Azja Południowo-Wschodnia",
       "hqBadge": "Centrala",
       "regionalHqBadge": "Centrala regionalna"
-    }
+    },
+    "globeSubtitle": "AM to wspólnota posyłająca na sześciu kontynentach — znajdź kraj najbliżej ciebie albo ten, do którego jesteś posyłany.",
+    "globeSearchPlaceholder": "Szukaj kraju, regionu lub oddziału"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, USA",
       "stat3Value": "Globalna",
       "stat3Label": "Sieć kampusowa",
-      "dragToExplore": "Przeciągnij, aby odkrywać"
+      "dragToExplore": "Przeciągnij, aby odkrywać",
+      "slide1Line1": "Przelewając się",
+      "slide1Line2": "łaską i miłością",
+      "slide2Line1": "Przelewając się",
+      "slide2Line2": "łaską i miłością",
+      "slide3Line1": "Przyszłość zaczyna się",
+      "slide3Line2": "tam, gdzie jesteśmy",
+      "slide4Line1": "Wzrastamy razem",
+      "slide4Line2": "w Słowie",
+      "slide5Line1": "Posłani",
+      "slide5Line2": "z celem"
     },
     "BibleStudyProgram": {
       "eyebrow": "Dołącz do naszego programu studium biblijnego",

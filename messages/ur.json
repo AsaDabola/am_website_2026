@@ -167,11 +167,12 @@
     "donate": "عطیہ دیں"
   },
   "NewsSubNav": {
-    "featuredNews": "نمایاں خبریں",
+    "news": "خبریں",
     "events": "تقریبات",
     "editorial": "مضامین",
     "photoNews": "تصویری خبریں",
-    "testimony": "گواہیاں"
+    "testimony": "گواہیاں",
+    "featuredNews": "نمایاں خبریں"
   },
   "InPractice": {
     "eyebrow": "عملی طور پر",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "جنوب مشرقی ایشیا",
       "hqBadge": "مرکز",
       "regionalHqBadge": "علاقائی مرکز"
-    }
+    },
+    "globeSubtitle": "‏AM چھ براعظموں پر پھیلی ہوئی ایک بھیجنے والی جماعت ہے — اپنے قریب ترین ملک تلاش کریں، یا وہ ملک جہاں آپ کو بھیجا جا رہا ہے۔",
+    "globeSearchPlaceholder": "ملک، خطہ یا شاخ تلاش کریں"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "نیو جرسی، امریکہ",
       "stat3Value": "عالمی",
       "stat3Label": "کیمپس نیٹ ورک",
-      "dragToExplore": "دیکھنے کے لیے کھینچیں"
+      "dragToExplore": "دیکھنے کے لیے کھینچیں",
+      "slide1Line1": "لبریز",
+      "slide1Line2": "فضل اور محبت سے",
+      "slide2Line1": "لبریز",
+      "slide2Line2": "فضل اور محبت سے",
+      "slide3Line1": "مستقبل شروع ہوتا ہے",
+      "slide3Line2": "جہاں ہم ہیں وہیں سے",
+      "slide4Line1": "مل کر بڑھتے ہیں",
+      "slide4Line2": "کلام میں",
+      "slide5Line1": "بھیجے گئے",
+      "slide5Line2": "مقصد کے ساتھ"
     },
     "BibleStudyProgram": {
       "eyebrow": "ہمارے بائبل مطالعہ پروگرام میں شامل ہوں",

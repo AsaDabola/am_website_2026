@@ -167,11 +167,12 @@
     "donate": "Nikela"
   },
   "NewsSubNav": {
-    "featuredNews": "Iindaba Ezibalaselayo",
+    "news": "Iindaba",
     "events": "Iminyhadala",
     "editorial": "Umhleli",
     "photoNews": "Iindaba Ngemifanekiso",
-    "testimony": "Ubungqina"
+    "testimony": "Ubungqina",
+    "featuredNews": "Iindaba Ezibalaselayo"
   },
   "InPractice": {
     "eyebrow": "Ekusebenzeni",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "IAsiya eseMzantsi-Mpuma",
       "hqBadge": "IKOMKHULU",
       "regionalHqBadge": "Ikomkhulu lommandla"
-    }
+    },
+    "globeSubtitle": "I-AM luluntu oluthumelayo kumazwekazi amathandathu — fumana ilizwe elikufuphi nawe, okanye elo uthunyelwa kulo.",
+    "globeSearchPlaceholder": "Khangela ilizwe, ummandla okanye isebe"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "New Jersey, USA",
       "stat3Value": "Ihlabathi",
       "stat3Label": "Uthungelwano lwasekhampasini",
-      "dragToExplore": "Tsala ukuze uphonononge"
+      "dragToExplore": "Tsala ukuze uphonononge",
+      "slide1Line1": "Siphuphuma",
+      "slide1Line2": "ngobabalo nangothando",
+      "slide2Line1": "Siphuphuma",
+      "slide2Line2": "ngobabalo nangothando",
+      "slide3Line1": "Ikamva liqala",
+      "slide3Line2": "apho sikhoyo",
+      "slide4Line1": "Sikhula kunye",
+      "slide4Line2": "eLizwini",
+      "slide5Line1": "Sithunyiwe",
+      "slide5Line2": "ngenjongo"
     },
     "BibleStudyProgram": {
       "eyebrow": "Joyina Inkqubo Yethu Yokufunda IBhayibhile",

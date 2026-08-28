@@ -167,11 +167,12 @@
     "donate": "दान करें"
   },
   "NewsSubNav": {
-    "featuredNews": "विशेष समाचार",
+    "news": "समाचार",
     "events": "कार्यक्रम",
     "editorial": "लेख",
     "photoNews": "चित्र समाचार",
-    "testimony": "गवाहियाँ"
+    "testimony": "गवाहियाँ",
+    "featuredNews": "विशेष समाचार"
   },
   "InPractice": {
     "eyebrow": "व्यवहार में",
@@ -313,7 +314,9 @@
       "captionSoutheastAsia": "दक्षिण-पूर्व एशिया",
       "hqBadge": "मुख्यालय",
       "regionalHqBadge": "क्षेत्रीय मुख्यालय"
-    }
+    },
+    "globeSubtitle": "AM छह महाद्वीपों में फैला एक भेजने वाला समुदाय है — अपने सबसे नज़दीकी देश को खोजें, या उस देश को जहाँ आपको भेजा जा रहा है।",
+    "globeSearchPlaceholder": "देश, क्षेत्र या शाखा खोजें"
   },
   "Home": {
     "Hero": {
@@ -329,7 +332,17 @@
       "stat2Label": "न्यू जर्सी, अमेरिका",
       "stat3Value": "वैश्विक",
       "stat3Label": "परिसर नेटवर्क",
-      "dragToExplore": "देखने के लिए खींचें"
+      "dragToExplore": "देखने के लिए खींचें",
+      "slide1Line1": "उमड़ता हुआ",
+      "slide1Line2": "अनुग्रह और प्रेम में",
+      "slide2Line1": "उमड़ता हुआ",
+      "slide2Line2": "अनुग्रह और प्रेम में",
+      "slide3Line1": "भविष्य शुरू होता है",
+      "slide3Line2": "जहाँ हम हैं वहीं से",
+      "slide4Line1": "साथ मिलकर बढ़ते हैं",
+      "slide4Line2": "वचन में",
+      "slide5Line1": "भेजे गए",
+      "slide5Line2": "उद्देश्य के साथ"
     },
     "BibleStudyProgram": {
       "eyebrow": "हमारे बाइबल अध्ययन कार्यक्रम में जुड़ें",
