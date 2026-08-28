@@ -129,3 +129,42 @@ export function networkRoutes<T extends { region: RegionKey; role?: ChapterRole 
 
   return routes;
 }
+
+/**
+ * The country site a chapter belongs to, where one exists.
+ *
+ * A chapter filed under its country appears on that country's site as well as
+ * in the international network. Burundi and China have chapters but no country
+ * site yet, so theirs are listed internationally and wait for one.
+ */
+export const CHAPTER_COUNTRY_SLUGS: Record<string, string | null> = {
+  USA: "united-states",
+  Colombia: "colombia",
+  Germany: "germany",
+  "United Kingdom": "united-kingdom",
+  France: "france",
+  Netherlands: "netherlands",
+  Rwanda: "rwanda",
+  Burundi: null,
+  India: "india",
+  China: null,
+  "South Korea": "south-korea",
+  Philippines: "philippines",
+  Australia: "australia",
+};
+
+/** "AM Seoul" — what a chapter is called in the network list. */
+export function chapterName(chapter: Chapter): string {
+  return `AM ${chapter.city}`;
+}
+
+/** "Seoul, South Korea" — the line under the name. */
+export function chapterLocation(chapter: Chapter): string {
+  return `${chapter.city}, ${chapter.country}`;
+}
+
+/**
+ * The chapters as the network lists them: every one but the international
+ * headquarters, which is head office rather than a campus chapter.
+ */
+export const CHAPTER_LIST = CHAPTERS.filter((chapter) => chapter.role !== "global");

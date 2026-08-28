@@ -3,26 +3,24 @@ import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import CampusSearch from "@/components/sections/CampusSearch";
+import { CHAPTER_LIST, chapterLocation, chapterName } from "@/lib/chapters";
 import { fetchCollectionSafely } from "@/lib/getPayloadSafely";
 import type { OurNetworkData } from "@/lib/homeBlockTypes";
 
 type Campus = { name: string; location: string };
 
-// PLACEHOLDER campus list — shown until real chapters are added in /admin.
-const defaultCampuses: Campus[] = [
-  { name: "AM Harvard", location: "Cambridge, Massachusetts" },
-  { name: "AM @ UCLA", location: "Los Angeles, California" },
-  { name: "AM Rutgers", location: "New Brunswick, New Jersey" },
-  { name: "AM Columbia", location: "New York, New York" },
-  { name: "AM NYU", location: "New York, New York" },
-  { name: "AM Princeton", location: "Princeton, New Jersey" },
-  { name: "AM Berkeley", location: "Berkeley, California" },
-  { name: "AM Michigan", location: "Ann Arbor, Michigan" },
-  { name: "AM Illinois", location: "Champaign, Illinois" },
-  { name: "AM Texas", location: "Austin, Texas" },
-  { name: "AM Georgia Tech", location: "Atlanta, Georgia" },
-  { name: "AM Washington", location: "Seattle, Washington" },
-];
+/**
+ * The chapters, shown until they have been added in /admin.
+ *
+ * These are the real ones, read from the same list the network map is drawn
+ * from. What stood here before was a dozen invented names — AM Harvard, AM
+ * UCLA, AM Rutgers — put in as placeholders and never replaced, so the live
+ * site listed chapters that do not exist.
+ */
+const defaultCampuses: Campus[] = CHAPTER_LIST.map((chapter) => ({
+  name: chapterName(chapter),
+  location: chapterLocation(chapter),
+}));
 
 async function getCampuses(tenantId?: string): Promise<Campus[]> {
   const docs = await fetchCollectionSafely(async (payload) => {
@@ -31,7 +29,12 @@ async function getCampuses(tenantId?: string): Promise<Campus[]> {
       where: {
         and: [
           { active: { equals: true } },
-          tenantId ? { tenant: { equals: tenantId } } : { tenant: { exists: false } },
+          // A country site lists its own chapters. The international site
+          // lists the whole network, including the ones that belong to a
+          // country — it is the network, and a chapter filed under Germany is
+          // still part of it. Filtering to the ones with no country at all
+          // hid every chapter that had been placed properly.
+          ...(tenantId ? [{ tenant: { equals: tenantId } }] : []),
         ],
       },
       sort: "name",
