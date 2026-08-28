@@ -37,7 +37,15 @@ function mediaUrl(media: MediaRef): string | undefined {
 
 export { mediaUrl, siteRelative };
 
+export type HeroSlideData = {
+  image?: MediaRef;
+  /** Empty means "keep the translated wording the site ships". */
+  line1?: string;
+  line2?: string;
+};
+
 export type HeroData = {
+  slides?: HeroSlideData[];
   eyebrow?: string;
   headingLine1?: string;
   headingHighlight1?: string;

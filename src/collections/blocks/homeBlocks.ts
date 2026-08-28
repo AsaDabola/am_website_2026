@@ -17,6 +17,26 @@ export const HeroBlock: Block = {
     { name: "whoWeAreLabel", type: "text", required: true },
     { name: "backgroundImage", type: "upload", relationTo: "media" },
     {
+      name: "slides",
+      type: "array",
+      labels: { singular: "Slide", plural: "Slides" },
+      admin: {
+        description:
+          "The rotating slides behind the headline. Add, remove or reorder them here. Leave a line empty and that slide keeps the wording the site ships, which is translated into every language; type into it and this site says that instead.",
+        initCollapsed: false,
+      },
+      fields: [
+        { name: "image", type: "upload", relationTo: "media", required: true },
+        {
+          type: "row",
+          fields: [
+            { name: "line1", type: "text", admin: { description: "First line of the headline." } },
+            { name: "line2", type: "text", admin: { description: "Second line, drawn lighter." } },
+          ],
+        },
+      ],
+    },
+    {
       type: "row",
       fields: [
         { name: "stat1", type: "group", fields: stat },

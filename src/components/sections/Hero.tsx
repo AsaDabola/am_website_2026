@@ -45,7 +45,30 @@ export default async function Hero({ data }: { data?: HeroData } = {}) {
   const cmsHighlight = [data?.headingHighlight1, data?.headingHighlight2]
     .filter(Boolean)
     .join(" ");
-  const slides: HeroSlide[] = cmsBackground
+  /**
+   * Slides authored in the admin, when there are any.
+   *
+   * A line left empty keeps the wording the site ships, which is translated
+   * into every language — so a slide can have its photograph replaced without
+   * losing its words in 47 other languages. A slide with no picture is not a
+   * slide, so it is dropped rather than drawn empty.
+   */
+  const authored: HeroSlide[] = (data?.slides ?? []).flatMap((slide, index) => {
+    const image = mediaUrl(slide.image);
+    if (!image) return [];
+    const fallback = DEFAULT_SLIDES[index % DEFAULT_SLIDES.length].key;
+    return [
+      {
+        image,
+        line1: slide.line1 || t(`${fallback}Line1`),
+        line2: slide.line2 || t(`${fallback}Line2`),
+      },
+    ];
+  });
+
+  const slides: HeroSlide[] = authored.length
+    ? authored
+    : cmsBackground
     ? [
         {
           image: cmsBackground,

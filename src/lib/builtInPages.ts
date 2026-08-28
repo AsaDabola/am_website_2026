@@ -15,6 +15,10 @@
  * list in lib/tenantRoutes; those pages exist once per country as well as on
  * amintl.org.
  *
+ * The home page is deliberately absent: it is the one page that already
+ * renders from records — a Page with sections replaces it — so it is an
+ * ordinary editable page rather than a built-in one.
+ *
  * Generated from the route files by scripts/seed-built-in-pages.mjs --list.
  */
 export type BuiltInPage = {
@@ -25,7 +29,6 @@ export type BuiltInPage = {
 };
 
 export const BUILT_IN_PAGES: BuiltInPage[] = [
-  { route: "/", title: "Home", onCountrySites: true },
   { route: "/about", title: "Who We Are", onCountrySites: true },
   { route: "/about/chairman", title: "Ralph D. Winter", onCountrySites: true },
   { route: "/about/history", title: "History", onCountrySites: true },
