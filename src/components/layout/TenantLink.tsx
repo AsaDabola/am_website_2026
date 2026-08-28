@@ -2,8 +2,8 @@
 
 import type { ComponentProps } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
-import { isContinent } from "@/lib/continents";
 import { isTenantAwareHref } from "@/lib/tenantRoutes";
+import { tenantPrefixOf } from "@/lib/tenantPrefix";
 
 /**
  * Drop-in replacement for the site's <Link>. While browsing a country site
@@ -24,9 +24,7 @@ export default function TenantLink({ href, ...props }: ComponentProps<typeof Lin
     return <Link href={href} {...props} />;
   }
 
-  const segments = pathname.split("/").filter(Boolean);
-  const tenantPrefix =
-    segments.length >= 2 && isContinent(segments[0]) ? `/${segments[0]}/${segments[1]}` : "";
+  const tenantPrefix = tenantPrefixOf(pathname);
 
   if (!tenantPrefix || href === tenantPrefix || href.startsWith(`${tenantPrefix}/`)) {
     return <Link href={href} {...props} />;

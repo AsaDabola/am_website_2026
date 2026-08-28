@@ -15,6 +15,7 @@ import {
 // Type-only, so the server-side navigation module is never pulled into the
 // client bundle.
 import type { NavLink, NavMenu } from "@/components/layout/navigation";
+import { useSiteLinks } from "@/components/layout/useSiteLinks";
 
 function MobileAnchor({
   link,
@@ -55,6 +56,7 @@ export default function MobileNav({
   backLabel: string;
   closeLabel: string;
 }) {
+  const links = useSiteLinks(plainLinks);
   const [open, setOpen] = useState(false);
   const [activeKey, setActiveKey] = useState<string | null>(null);
   const active = menus.find((menu) => menu.key === activeKey) ?? null;
@@ -179,7 +181,7 @@ export default function MobileNav({
               </li>
             ))}
 
-            {plainLinks.map((link) => (
+            {links.map((link) => (
               <li key={link.href}>
                 <MobileAnchor
                   link={link}

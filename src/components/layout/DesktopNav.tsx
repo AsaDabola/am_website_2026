@@ -7,6 +7,7 @@ import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
 import { ArrowRightIcon, ChevronDownIcon, NavIcon } from "@/components/ui/icons";
 import type { NavLink, NavMenu } from "@/components/layout/navigation";
+import { useSiteLinks } from "@/components/layout/useSiteLinks";
 
 /** Picks the country-aware or plain link depending on where the target lives. */
 function NavAnchor({
@@ -50,6 +51,7 @@ export default function DesktopNav({
   menus: NavMenu[];
   plainLinks: NavLink[];
 }) {
+  const links = useSiteLinks(plainLinks);
   const [active, setActive] = useState<string | null>(null);
   /** Which way the incoming section travels, from the order of the triggers. */
   const [direction, setDirection] = useState(1);
@@ -159,7 +161,7 @@ export default function DesktopNav({
             );
           })}
 
-          {plainLinks.map((link) => (
+          {links.map((link) => (
             <NavAnchor
               key={link.href}
               href={link.href}

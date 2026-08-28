@@ -1,4 +1,5 @@
 import { getTranslations } from "@/i18n/content";
+import { getNavPages } from "@/lib/pages";
 import type { NavIconName } from "@/components/ui/icons";
 
 export type NavLink = {
@@ -6,6 +7,12 @@ export type NavLink = {
   href: string;
   /** Prefixed with the current country site when browsing one. */
   tenantAware: boolean;
+  /**
+   * Set only on links that come from an editor-managed Page: the site that
+   * page belongs to ("" for the main site). The nav drops a link whose site
+   * is not the one being browsed. A link without this belongs everywhere.
+   */
+  scope?: string;
 };
 
 export type NavGroup = NavLink & {
@@ -203,6 +210,17 @@ export async function getNavigation(): Promise<{
     // A single global directory of every country, not a per-country page.
     { label: t("ourNetwork"), href: "/network", tenantAware: false },
     { label: t("contactUs"), href: "/contact", tenantAware: true },
+
+    // Pages added in /admin with a Nav Label, after the fixed links so a new
+    // page never pushes the site's own navigation around. Their addresses are
+    // already complete — a page written for one country is served under that
+    // country and nowhere else — so they are not tenant-aware.
+    ...(await getNavPages()).map(({ label, href, scope }) => ({
+      label,
+      href,
+      tenantAware: false,
+      scope,
+    })),
   ];
 
   return { menus, plainLinks };
