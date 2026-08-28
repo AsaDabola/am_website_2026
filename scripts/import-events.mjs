@@ -20,6 +20,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import readline from "node:readline";
+import { resolveFolder } from "./lib/paths.mjs";
 
 const args = process.argv.slice(2);
 const value = (name, fallback) => {
@@ -162,7 +163,7 @@ export function planEvent(fileName, { listed }) {
 let rl = null;
 let lines = null;
 const prompts = () => (rl ??= readline.createInterface({ input: process.stdin, output: process.stdout }));
-async function ask(question, { fallback = "", hidden = false } = {}) {
+async function ask(question, { fallback = "", hidden = false, raw = false } = {}) {
   const iface = prompts();
   process.stdout.write(fallback ? `${question} [${fallback}] ` : `${question} `);
   const echo = iface._writeToOutput;
@@ -173,21 +174,16 @@ async function ask(question, { fallback = "", hidden = false } = {}) {
     iface._writeToOutput = echo;
     process.stdout.write("\n");
   }
-  return (done ? "" : answer).trim() || fallback;
+  // A dragged folder path can end in an escaped space, and trimming it here
+  // would leave the backslash stranded on the name — so a path question keeps
+  // what it was given and lets resolveFolder read it.
+  const given = done ? "" : answer;
+  return (raw ? given : given.trim()) || fallback;
 }
 
 async function askYesNo(question) {
   const answer = (await ask(`${question} (yes/no)`)).toLowerCase();
   return answer === "y" || answer === "yes";
-}
-
-/** Strips quotes and unescapes a path dragged in from Finder. */
-function cleanPath(input) {
-  return input
-    .trim()
-    .replace(/^['"]|['"]$/g, "")
-    .replace(/\\(.)/g, "$1")
-    .replace(/\/$/, "");
 }
 
 async function signIn(baseUrl, email, password) {
@@ -267,7 +263,7 @@ async function main() {
 
   const saved = fs.existsSync(ANSWERS_FILE) ? JSON.parse(fs.readFileSync(ANSWERS_FILE, "utf8")) : {};
 
-  const folder = cleanPath(await ask("Folder with the event photographs:", { fallback: saved.eventsRoot || "" }));
+  const folder = resolveFolder(await ask("Folder with the event photographs:", { fallback: saved.eventsRoot || "", raw: true }));
   if (!folder) throw new Error("I need the folder holding the photographs.");
   if (!fs.existsSync(folder)) throw new Error(`I couldn't find ${folder}.`);
   if (!fs.statSync(folder).isDirectory()) {

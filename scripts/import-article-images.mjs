@@ -35,6 +35,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import readline from "node:readline";
+import { resolveFolder } from "./lib/paths.mjs";
 
 const args = process.argv.slice(2);
 const flag = (name) => args.includes(`--${name}`);
@@ -323,7 +324,7 @@ async function readLine() {
  * One question. `hidden` stops a password appearing on screen: the keystrokes
  * still reach readline, they are simply not echoed back.
  */
-async function ask(question, { fallback = "", hidden = false } = {}) {
+async function ask(question, { fallback = "", hidden = false, raw = false } = {}) {
   const iface = prompts();
   process.stdout.write(fallback ? `${question} [${fallback}] ` : `${question} `);
   const echo = iface._writeToOutput;
@@ -333,7 +334,10 @@ async function ask(question, { fallback = "", hidden = false } = {}) {
     iface._writeToOutput = echo;
     process.stdout.write("\n");
   }
-  return answer.trim() || fallback;
+  // A dragged folder path can end in an escaped space, and trimming it here
+  // would leave the backslash stranded on the name — so a path question keeps
+  // what it was given and lets resolveFolder read it.
+  return (raw ? answer : answer.trim()) || fallback;
 }
 
 async function askYesNo(question) {
@@ -341,19 +345,6 @@ async function askYesNo(question) {
   return answer === "y" || answer === "yes";
 }
 
-/**
- * Strips quotes and a trailing slash, so a path dragged into the terminal
- * works. A dragged path also arrives with spaces backslash-escaped.
- */
-function cleanPath(input) {
-  return input
-    .trim()
-    .replace(/^['"]|['"]$/g, "")
-    // A path dragged from Finder escapes every awkward character, not just
-    // spaces — `Private\ \&\ Shared` — so the backslashes come off generally.
-    .replace(/\\(.)/g, "$1")
-    .replace(/\/+$/, "");
-}
 
 /**
  * Dragging the zip rather than the folder is the obvious slip, and on a Mac
@@ -474,7 +465,7 @@ async function main() {
     ? JSON.parse(fs.readFileSync(ANSWERS_FILE, "utf8"))
     : {};
 
-  let ROOT = cleanPath(value("root", "") || (await ask("Folder with the photographs:", { fallback: saved.root })));
+  let ROOT = resolveFolder(value("root", "") || (await ask("Folder with the photographs:", { fallback: saved.root, raw: true })));
   for (;;) {
     const resolved = resolveArchivePath(ROOT);
     if (resolved.wasZip) {
@@ -490,7 +481,7 @@ async function main() {
           : "  That's a file, not a folder.",
       );
     } else break;
-    ROOT = cleanPath(await ask("Folder with the photographs:", { fallback: saved.root }));
+    ROOT = resolveFolder(await ask("Folder with the photographs:", { fallback: saved.root, raw: true }));
   }
 
   // No localhost default on a first run. Pressing Enter through this question
