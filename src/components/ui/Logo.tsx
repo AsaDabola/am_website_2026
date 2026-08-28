@@ -16,9 +16,12 @@ const LOGO_PX = 38;
  * keep links on the country site.
  */
 function countrySlug(pathname: string): string | null {
-  const segments = pathname.split("/").filter(Boolean);
-  if (!segments.length || !COUNTRY_SLUGS.has(segments[0])) return null;
-  return segments[1];
+  // The country is the first segment now that the continent is out of the
+  // path — "/germany", "/germany/about". Reading the second one gave the page
+  // rather than the country, so every country site fell back to the
+  // international wordmark.
+  const [first] = pathname.split("/").filter(Boolean);
+  return first && COUNTRY_SLUGS.has(first) ? first : null;
 }
 
 export default function Logo({ dark = false }: { dark?: boolean }) {
