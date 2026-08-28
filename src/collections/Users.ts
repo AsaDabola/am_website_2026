@@ -1,5 +1,6 @@
 import type { CollectionConfig } from "payload";
 import { SECTIONS, UNSCOPED_SECTIONS, isSuperAdmin, type Section } from "@/lib/adminAccess";
+import { CONTINENT_OPTIONS } from "@/lib/continents";
 
 const sectionLabel = (section: Section) =>
   section
@@ -14,7 +15,7 @@ export const Users: CollectionConfig = {
     useAsTitle: "email",
     defaultColumns: ["email", "role", "tenants"],
     description:
-      "Who can sign in, and what they can reach. A country admin sees only the sections and the country sites listed on their account.",
+      "Who can sign in, and what they can reach. Below super admin, an account sees only the sections listed on it, holding only the countries it was given — named one by one, or a continent at a time.",
     // A country admin has no business managing accounts, including their own
     // permissions.
     hidden: ({ user }) => !isSuperAdmin(user as never),
@@ -34,13 +35,26 @@ export const Users: CollectionConfig = {
       name: "role",
       type: "select",
       required: true,
-      defaultValue: "country-admin",
+      defaultValue: "sub-admin",
       options: [
         { label: "Super admin — the whole network", value: "super-admin" },
-        { label: "Country admin — the countries listed below", value: "country-admin" },
+        { label: "Admin — whole continents, or countries, as listed below", value: "admin" },
+        { label: "Sub admin — only the countries listed below", value: "sub-admin" },
       ],
       admin: {
-        description: "Super admins see everything and are the only ones who can manage accounts.",
+        description:
+          "Super admins see everything and are the only ones who can manage accounts. An admin reaches every country in the continents given to it, so a country added to that continent later needs no further granting. A sub admin reaches only the countries named on it.",
+      },
+    },
+    {
+      name: "continents",
+      type: "select",
+      hasMany: true,
+      options: CONTINENT_OPTIONS,
+      admin: {
+        condition: (data) => data?.role === "admin",
+        description:
+          "Every country site in these continents, including ones added later. Leave empty to give this admin only the countries named below.",
       },
     },
     {
@@ -51,7 +65,7 @@ export const Users: CollectionConfig = {
       admin: {
         condition: (data) => data?.role !== "super-admin",
         description:
-          "The country sites this person may edit. Content with no country belongs to the main amintl.org site and stays out of reach.",
+          "The country sites this person may edit, named one at a time. Content with no country belongs to the main amintl.org site and stays out of reach of everyone but a super admin.",
       },
     },
     {

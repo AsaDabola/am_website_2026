@@ -2,7 +2,6 @@ import { getTranslations } from "@/i18n/content";
 import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
 import Logo from "@/components/ui/Logo";
-import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 import CountrySwitcher from "@/components/layout/CountrySwitcher";
 import DesktopNav from "@/components/layout/DesktopNav";
 import MobileNav from "@/components/layout/MobileNav";
@@ -31,8 +30,15 @@ export default async function Header() {
         <DesktopNav menus={menus} plainLinks={plainLinks} />
 
         <div className="flex items-center gap-1">
+          {/*
+            No language picker: the language follows the country. Choosing
+            Germany is choosing German — the switcher below routes to that
+            country's own locale, and the middleware sends anyone who lands on
+            a country site under the wrong one to the right one. A picker
+            beside it only offered a way to read a country's site in a language
+            that country does not use.
+          */}
           <CountrySwitcher countries={switcherCountries} />
-          <LanguageSwitcher />
           <TenantLink
             href="/get-involved/donate"
             className="ms-2 hidden rounded-full bg-brand-navy px-6 py-3 text-sm font-semibold uppercase tracking-[0.04em] text-white hover:bg-brand-navy-light sm:inline-flex"

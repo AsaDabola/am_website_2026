@@ -1,12 +1,20 @@
-import type { Access, CollectionConfig, FieldHook } from "payload";
+import type { Access, CollectionConfig, FieldHook, Where } from "payload";
+import { isContinent, type Continent } from "./continents";
 
 /**
  * Who can edit what in /admin.
  *
- * Two roles. A super admin runs the network and sees everything. A country
- * admin is given a list of country sites and a list of sections, and sees the
- * intersection: the sections they were given, holding only the countries they
- * were given.
+ * Three roles, each a narrower reach than the one above it.
+ *
+ *   super admin  runs the network and sees everything.
+ *   admin        is given continents, countries, or both, and reaches every
+ *                country site inside them — a continent's admin does not have
+ *                to be re-granted each country added to it.
+ *   sub admin    is given countries only, and reaches exactly those.
+ *
+ * Whichever role, what they see is the intersection with the sections listed
+ * on their account: the parts of the admin they were given, holding only the
+ * countries they were given.
  *
  * Read access is the subtle one. The public site reads Pages, Posts, Events
  * and Campuses without logging in, so `read` cannot simply be locked down —
@@ -17,9 +25,24 @@ import type { Access, CollectionConfig, FieldHook } from "payload";
  * API.)
  */
 
-export type Role = "super-admin" | "country-admin";
+export type Role = "super-admin" | "admin" | "sub-admin";
 
-/** The parts of /admin a country admin can be given. */
+/**
+ * The role name this account was created under before there were three of
+ * them. A country admin reached the countries listed on it and nothing else,
+ * which is exactly what a sub admin is, so it reads as one rather than
+ * needing every existing account rewritten to keep working.
+ */
+const LEGACY_SUB_ADMIN = "country-admin";
+
+/** The role an account holds, with the old name read as what it now means. */
+export function roleOf(user: unknown): Role | null {
+  const role = asUser(user)?.role ?? null;
+  if (!role) return null;
+  return (role === LEGACY_SUB_ADMIN ? "sub-admin" : role) as Role;
+}
+
+/** The parts of /admin an admin or sub admin can be given. */
 export const SECTIONS = [
   "pages",
   "posts",
@@ -58,8 +81,9 @@ export const UNSCOPED_SECTIONS = new Set<Section>([
 ]);
 
 type UserFields = {
-  role?: Role | null;
+  role?: Role | string | null;
   tenants?: (number | string | { id: number | string })[] | null;
+  continents?: string[] | null;
   sections?: string[] | null;
 };
 
@@ -75,7 +99,36 @@ function asUser(user: unknown): UserFields | null {
 }
 
 export function isSuperAdmin(user: unknown): boolean {
-  return asUser(user)?.role === "super-admin";
+  return roleOf(user) === "super-admin";
+}
+
+/** The continents an admin was given. Empty for every other role. */
+export function continentsOf(user: unknown): Continent[] {
+  const fields = asUser(user);
+  if (!fields || roleOf(fields) !== "admin") return [];
+  return (fields.continents ?? []).filter((value): value is Continent => isContinent(value));
+}
+
+/**
+ * The records this person may touch, as a filter, or false for none at all.
+ *
+ * Two ways to be in reach and either is enough: the country is listed on the
+ * account, or its continent is. Records with no country belong to the main
+ * site and match neither, which is the point — nobody below a super admin
+ * edits amintl.org.
+ */
+export function tenantScopeWhere(user: unknown): Where | false {
+  const ids = tenantIds(user);
+  const continents = continentsOf(user);
+
+  const clauses: Where[] = [];
+  if (ids.length) clauses.push({ tenant: { in: ids } });
+  // Payload reads through the relationship, so a continent needs no list of
+  // its countries here and stays right as countries are added to it.
+  if (continents.length) clauses.push({ "tenant.continent": { in: continents } });
+
+  if (clauses.length === 0) return false;
+  return clauses.length === 1 ? clauses[0] : { or: clauses };
 }
 
 /** The tenant ids a user may touch. Empty for a super admin, who is not limited. */
@@ -103,9 +156,7 @@ export function tenantScopedAccess(section: Section): CollectionConfig["access"]
     if (!user) return false;
     if (isSuperAdmin(user)) return true;
     if (!canUseSection(user, section)) return false;
-    const ids = tenantIds(user);
-    if (ids.length === 0) return false;
-    return { tenant: { in: ids } };
+    return tenantScopeWhere(user);
   };
 
   return {
@@ -113,7 +164,8 @@ export function tenantScopedAccess(section: Section): CollectionConfig["access"]
     // at the top of this file.
     read: ({ req: { user } }) => (user ? scoped({ req: { user } } as never) : true),
     create: ({ req: { user } }) =>
-      isSuperAdmin(user) || (canUseSection(user, section) && tenantIds(user).length > 0),
+      isSuperAdmin(user) ||
+      (canUseSection(user, section) && tenantScopeWhere(user) !== false),
     update: scoped,
     delete: scoped,
   };
@@ -147,19 +199,33 @@ export function hideUnlessGranted(section: Section) {
  * With exactly one country to their name the field fills itself in, which is
  * the common case and one less thing to get wrong.
  */
-export const enforceTenantScope: FieldHook = ({ req, value, operation }) => {
+export const enforceTenantScope: FieldHook = async ({ req, value, operation }) => {
   if (operation !== "create" && operation !== "update") return value;
   const user = req.user;
   if (!user || isSuperAdmin(user)) return value;
 
   const ids = tenantIds(user);
-  if (ids.length === 0) return value;
+  const continents = continentsOf(user);
+  if (ids.length === 0 && continents.length === 0) return value;
 
   const chosen = typeof value === "object" && value !== null ? (value as { id: unknown }).id : value;
-  if (chosen !== undefined && chosen !== null && ids.some((id) => String(id) === String(chosen))) {
-    return value;
+  if (chosen !== undefined && chosen !== null) {
+    if (ids.some((id) => String(id) === String(chosen))) return value;
+
+    // Named by continent rather than one by one, so which continent this
+    // country is in has to be read before the answer is known.
+    if (continents.length) {
+      const tenant = await req.payload
+        .findByID({ collection: "tenants", id: chosen as string | number, depth: 0 })
+        .catch(() => null);
+      const continent = (tenant as { continent?: string } | null)?.continent;
+      if (continent && continents.includes(continent as Continent)) return value;
+    }
   }
-  if (ids.length === 1) return ids[0];
+
+  // One country to their name and the field fills itself in — the common case
+  // for a sub admin, and one less thing to get wrong.
+  if (ids.length === 1 && continents.length === 0) return ids[0];
 
   throw new Error(
     "Choose one of your own country sites. You do not have access to the one selected.",
