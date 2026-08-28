@@ -51,47 +51,59 @@ export function getRequestContinent(): Continent | null {
 export type OverrideMap = Record<string, string | string[]>;
 
 /**
- * Overrides for one country in one language, flattened to dotted keys.
+ * The copy changes that apply to the page being rendered, flattened to dotted
+ * keys.
  *
- * Two entries can apply: one scoped to a language and one that applies to
- * every language. The all-languages entry is the base and the language
- * specific one wins over it, so a country can set its general wording once
- * and still say something different in a second language.
+ * Four things can have something to say about one string, and they are
+ * layered weakest to strongest:
+ *
+ *   1. the main site, in every language
+ *   2. the main site, in this language
+ *   3. this country, in every language
+ *   4. this country, in this language
+ *
+ * A change with no country is the main site's own wording — it is how the
+ * fixed pages are edited without a deploy, and it reaches all ~68 country
+ * sites, because a country shows the main version until it says otherwise.
+ * Underneath everything sits messages/<locale>.json, which is what a string
+ * falls back to when nobody has changed it.
  */
 export const getTenantOverrides = cache(
   async (tenantId: string | null, locale: string): Promise<OverrideMap> => {
-    if (!tenantId) return {};
-
     try {
       const payload = await getPayload({ config });
       const result = await payload.find({
         collection: "tenant-content",
-        where: { tenant: { equals: tenantId } },
+        // The main site's changes are read on every request, country route or
+        // not; a country's own are read alongside them in the same query.
+        where: tenantId
+          ? { or: [{ tenant: { exists: false } }, { tenant: { equals: tenantId } }] }
+          : { tenant: { exists: false } },
         limit: 100,
         depth: 0,
       });
 
-      const anyLocale: OverrideMap = {};
-      const thisLocale: OverrideMap = {};
+      const layers: OverrideMap[] = [{}, {}, {}, {}];
 
       for (const doc of result.docs) {
         const entry = doc as unknown as {
+          tenant?: unknown;
           locale?: string | null;
           overrides?: { key?: string | null; value?: string | null }[] | null;
         };
         if (entry.locale && entry.locale !== locale) continue;
 
-        const target = entry.locale ? thisLocale : anyLocale;
+        const target = layers[(entry.tenant ? 2 : 0) + (entry.locale ? 1 : 0)];
         for (const row of entry.overrides ?? []) {
           if (!row?.key || row.value == null || row.value === "") continue;
           target[row.key] = coerceOverride(row.key, row.value);
         }
       }
 
-      return { ...anyLocale, ...thisLocale };
+      return Object.assign({}, ...layers) as OverrideMap;
     } catch {
       // Overrides are an enhancement, never a dependency: if the database is
-      // unreachable the country site still renders the main copy.
+      // unreachable the site still renders the copy it shipped with.
       return {};
     }
   },

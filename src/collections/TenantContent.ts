@@ -4,12 +4,18 @@ import { locales, localeLabels } from "@/i18n/routing";
 import { DEFAULT_BY_KEY, MESSAGE_KEY_OPTIONS, humanizeKey } from "@/lib/messageKeys";
 
 /**
- * Per-country copy changes.
+ * The site's wording, editable without a deploy.
  *
- * A country site shows the main version of every string until someone here
- * says otherwise. Only the differences are stored, which is what keeps the
- * network coherent: correct a headline on the main site and the fix reaches
- * all ~68 countries, except the ones that deliberately said something else.
+ * Most of the site is fixed pages built in code — Who We Are, What We Do, Get
+ * Involved and the rest — so they are not in Pages and never will be. Their
+ * words still have to be changeable, and this is where that happens: pick the
+ * sentence, write the new one.
+ *
+ * Leaving the country empty changes the main amintl.org site, and with it
+ * every country site that has not said otherwise. Naming a country changes
+ * only that one. Only the differences are stored, which is what keeps the
+ * network coherent: correct a headline once and the fix reaches all ~68
+ * countries except the ones that deliberately say something else.
  *
  * The alternative — giving each country a full copy of the site's text —
  * would make the first edit easy and every edit after that a 68-way merge.
@@ -17,15 +23,15 @@ import { DEFAULT_BY_KEY, MESSAGE_KEY_OPTIONS, humanizeKey } from "@/lib/messageK
 export const TenantContent: CollectionConfig = {
   slug: "tenant-content",
   labels: {
-    singular: "Country copy",
-    plural: "Country copy",
+    singular: "Page wording",
+    plural: "Page wording",
   },
   admin: {
     hidden: hideUnlessGranted("tenant-content"),
     useAsTitle: "label",
     defaultColumns: ["label", "tenant", "locale", "updatedAt"],
     description:
-      "Change wording for one country site. Anything not listed here keeps following the main amintl.org copy.",
+      "Change the wording on the site's built-in pages. Leave the country empty to change the main amintl.org site — every country follows it until it says otherwise.",
     group: "Content",
   },
   access: tenantScopedAccess("tenant-content"),
@@ -41,15 +47,20 @@ export const TenantContent: CollectionConfig = {
         beforeChange: [
           async ({ data, req }) => {
             const tenantId = data?.tenant;
-            if (!tenantId) return "Country copy";
-            const tenant = await req.payload
-              .findByID({ collection: "tenants", id: tenantId, depth: 0 })
-              .catch(() => null);
-            const country = (tenant as { country?: string } | null)?.country ?? "Unknown country";
             const locale = data?.locale as string | undefined;
+
+            const tenant = tenantId
+              ? await req.payload
+                  .findByID({ collection: "tenants", id: tenantId, depth: 0 })
+                  .catch(() => null)
+              : null;
+            const where = tenantId
+              ? (tenant as { country?: string } | null)?.country ?? "Unknown country"
+              : "Main site";
+
             return locale
-              ? `${country} — ${localeLabels[locale as keyof typeof localeLabels] ?? locale}`
-              : `${country} — all languages`;
+              ? `${where} — ${localeLabels[locale as keyof typeof localeLabels] ?? locale}`
+              : `${where} — all languages`;
           },
         ],
       },
@@ -59,9 +70,11 @@ export const TenantContent: CollectionConfig = {
       type: "relationship",
       relationTo: "tenants",
       hooks: { beforeChange: [enforceTenantScope] },
-      required: true,
       index: true,
-      admin: { description: "The country site these changes apply to." },
+      admin: {
+        description:
+          "Leave empty to change the main amintl.org site, which every country follows. Name a country to change only that one.",
+      },
     },
     {
       name: "locale",
@@ -69,7 +82,7 @@ export const TenantContent: CollectionConfig = {
       options: locales.map((value) => ({ label: localeLabels[value], value })),
       admin: {
         description:
-          "Leave empty to apply to this country in every language — the usual choice. Set a language only when a country reads the site in more than one and the wording should differ between them.",
+          "Leave empty to apply in every language — the usual choice. Set a language only when the site is read in more than one here and the wording should differ between them.",
       },
     },
     {
@@ -78,7 +91,7 @@ export const TenantContent: CollectionConfig = {
       labels: { singular: "Copy change", plural: "Copy changes" },
       admin: {
         description:
-          "Pick the piece of copy to change, then write this country's version. The main version is shown next to each option.",
+          "Pick the sentence to change, then write the new one. What the site says today is shown next to each option.",
         initCollapsed: false,
       },
       fields: [
@@ -98,7 +111,7 @@ export const TenantContent: CollectionConfig = {
           required: true,
           admin: {
             description:
-              "This country's wording. For the roadmap bullet lists, put one item per line.",
+              "The new wording. For the roadmap bullet lists, put one item per line.",
           },
         },
         {
@@ -106,7 +119,7 @@ export const TenantContent: CollectionConfig = {
           type: "text",
           admin: {
             readOnly: true,
-            description: "The main amintl.org copy this replaces, for reference.",
+            description: "The wording this replaces, as the site ships it, for reference.",
           },
           hooks: {
             beforeChange: [

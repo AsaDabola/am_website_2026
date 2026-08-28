@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
+import { getContentMessages } from "@/i18n/content";
 import {
   Archivo,
   Inter,
@@ -154,7 +155,16 @@ export default async function RootLayout({
       className={`${inter.variable} ${archivo.variable} ${lato.variable} ${playfair.variable} ${notoArabic.variable} ${notoHebrew.variable} ${notoDevanagari.variable} ${notoBengali.variable} ${notoTamil.variable} ${notoSinhala.variable} ${notoThai.variable} ${notoEthiopic.variable} ${notoMyanmar.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white font-sans text-ink">
-        <NextIntlClientProvider>
+        {/*
+          Client components read their text from here rather than from the
+          request config, so the provider is handed the catalogue with the
+          main site's own wording changes already folded in — otherwise a
+          heading edited in /admin would change in the server-rendered half
+          of the page and not in the client half. A country route nests a
+          second provider inside this one carrying that country's wording,
+          which wins for its subtree.
+        */}
+        <NextIntlClientProvider messages={await getContentMessages()}>
           <AnnouncementBar />
           <Header />
           <CountrySuggestionBanner />
