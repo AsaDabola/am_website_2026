@@ -7,7 +7,7 @@ export const Events: CollectionConfig = {
   admin: {
     hidden: hideUnlessGranted("events"),
     useAsTitle: "title",
-    defaultColumns: ["title", "dateLabel", "startDate", "tenant"],
+    defaultColumns: ["title", "dateLabel", "sortOrder", "tenant"],
   },
   access: tenantScopedAccess("events"),
   fields: [
@@ -47,12 +47,21 @@ export const Events: CollectionConfig = {
     {
       name: "startDate",
       type: "date",
-      required: true,
       admin: {
-        description: "Used for sorting events chronologically.",
+        description:
+          "The day it starts, when that is known. Sorting falls back to this only where two events share a place in the order.",
+      },
+    },
+    {
+      name: "sortOrder",
+      type: "number",
+      index: true,
+      admin: {
+        description:
+          "Where this sits in the list — 1 shows first. The events came across from a list whose order is all that is known about when they happened, so this, not the date, is what the page is ordered by.",
       },
     },
     ...syndicationFields,
   ],
-  defaultSort: "startDate",
+  defaultSort: "sortOrder",
 };

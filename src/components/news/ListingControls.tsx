@@ -37,17 +37,20 @@ export function ListingControls({
   sort,
   perPage,
   total,
+  noun = "stories",
 }: {
   base: string;
   sort: PostSort;
   perPage: number;
   total: number;
+  /** What is being counted. The events listing counts events, not stories. */
+  noun?: "stories" | "events";
 }) {
   const state = { sort, perPage, page: 1 };
   return (
     <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-black/10 pt-6">
       <p className="text-sm text-ink-muted">
-        {total === 1 ? "1 story" : `${total} stories`}
+        {total === 1 ? `1 ${noun === "events" ? "event" : "story"}` : `${total} ${noun}`}
       </p>
 
       <div className="flex flex-wrap items-center gap-6">

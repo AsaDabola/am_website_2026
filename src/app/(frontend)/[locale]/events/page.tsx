@@ -1,22 +1,48 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import AboutHero from "@/components/about/AboutHero";
 import NewsSubNav from "@/components/news/NewsSubNav";
+import ArticleCard from "@/components/news/ArticleCard";
+import { ListingControls, Pagination } from "@/components/news/ListingControls";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import { getEventsList } from "@/lib/events";
+import { getEventsPage, type EventSort } from "@/lib/events";
 
 export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Events | AM International",
-  description: "Upcoming AM retreats, conferences, and chapter events.",
+  description: "AM retreats, conferences, and chapter events.",
 };
 
-export default async function EventsPage() {
-  const events = await getEventsList();
+/** Search params arrive as strings or arrays; this reads one safely. */
+function first(value: string | string[] | undefined): string | undefined {
+  return Array.isArray(value) ? value[0] : value;
+}
+
+/**
+ * Events read as one of the news listings, because that is what they are: the
+ * same sub-nav, the same count and sort line, the same card. The date sits
+ * where a story's section sits, which is the line the design puts there.
+ */
+export default async function EventsPage({
+  searchParams,
+}: {
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const params = (await searchParams) ?? {};
+  const sort: EventSort = first(params.sort) === "oldest" ? "oldest" : "newest";
+  const perPage = [12, 24, 48].includes(Number(first(params.per)))
+    ? Number(first(params.per))
+    : 12;
+  const requested = Math.max(1, Number(first(params.page)) || 1);
+
+  const { events, page, totalPages, total } = await getEventsPage({
+    sort,
+    page: requested,
+    perPage,
+  });
 
   return (
     <>
@@ -38,49 +64,43 @@ export default async function EventsPage() {
             Events
           </h1>
 
+          {total > 0 && (
+            <ListingControls
+              base="/events"
+              sort={sort}
+              perPage={perPage}
+              total={total}
+              noun="events"
+            />
+          )}
+
           {events.length > 0 ? (
-            <div className="mt-14 grid gap-8 text-start sm:grid-cols-2 lg:grid-cols-3">
-              {events.map((event) => (
-                <div
-                  key={event.id}
-                  className="overflow-hidden rounded-2xl border border-black/[0.08] bg-white shadow-[0px_10px_30px_0px_rgba(27,29,52,0.06)]"
-                >
-                  <div className="relative aspect-[300/212] w-full overflow-hidden bg-mist">
-                    {event.coverImage ? (
-                      <Image
-                        src={event.coverImage}
-                        alt=""
-                        fill
-                        className="object-cover"
-                        sizes="(min-width: 1024px) 33vw, 100vw"
-                      />
-                    ) : (
-                      <div
-                        className="absolute inset-0"
-                        style={{ backgroundImage: "linear-gradient(135deg, #2a5eec, #0d1f52)" }}
-                      />
-                    )}
-                  </div>
-                  <div className="p-5">
-                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-brand-blue">
-                      {event.dateLabel}
-                      {event.location ? ` · ${event.location}` : ""}
-                    </p>
-                    <h3 className="mt-2 font-display text-lg font-bold leading-snug text-ink">
-                      {event.title}
-                    </h3>
-                    {event.excerpt && (
-                      <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-                        {event.excerpt}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <>
+              <div className="mt-10 grid gap-10 text-start sm:grid-cols-2 lg:grid-cols-3">
+                {events.map((event) => (
+                  <ArticleCard
+                    key={event.id}
+                    image={event.coverImage}
+                    // An event has no page of its own, so the date takes the
+                    // line a story's section would hold and the card does not
+                    // pretend to open anything.
+                    tag={event.location ? `${event.dateLabel} · ${event.location}` : event.dateLabel}
+                    title={event.title}
+                  />
+                ))}
+              </div>
+
+              <Pagination
+                base="/events"
+                sort={sort}
+                perPage={perPage}
+                page={page}
+                totalPages={totalPages}
+              />
+            </>
           ) : (
             <p className="mx-auto mt-14 max-w-md text-base leading-relaxed text-ink-muted">
-              No upcoming events yet — check back soon.
+              No events here yet — check back soon.
             </p>
           )}
         </Container>

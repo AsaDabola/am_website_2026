@@ -22,13 +22,18 @@ export default function ArticleCard({
   tag,
   title,
 }: {
-  href: string;
+  /**
+   * Omitted for a card with nothing to open — an event has no page of its own,
+   * and a card that looks like a link and goes nowhere is worse than one that
+   * plainly does not.
+   */
+  href?: string;
   image?: string;
   tag: string;
   title: string;
 }) {
-  return (
-    <Link href={href} className="group block bg-white">
+  const card = (
+    <>
       <div className="relative aspect-[300/212] w-full overflow-hidden bg-mist">
         {image ? (
           <Image
@@ -52,11 +57,22 @@ export default function ArticleCard({
         <h3 className="mt-[13px] text-[22px] leading-[28px] tracking-[0.1px] text-black">
           {title}
         </h3>
-        <span className="mt-[18px] flex items-center gap-[7px] text-[12px] uppercase leading-[18px] tracking-[3px] text-black transition-colors group-hover:text-brand-blue">
-          <ArticleIcon />
-          Read
-        </span>
+        {href && (
+          <span className="mt-[18px] flex items-center gap-[7px] text-[12px] uppercase leading-[18px] tracking-[3px] text-black transition-colors group-hover:text-brand-blue">
+            <ArticleIcon />
+            Read
+          </span>
+        )}
       </div>
+    </>
+  );
+
+  const shell = "group block bg-white";
+  return href ? (
+    <Link href={href} className={shell}>
+      {card}
     </Link>
+  ) : (
+    <div className={shell}>{card}</div>
   );
 }
