@@ -58,12 +58,23 @@ export const Pages: CollectionConfig = {
     },
     { name: "published", type: "checkbox", defaultValue: true },
     {
+      name: "builtIn",
+      type: "checkbox",
+      defaultValue: false,
+      admin: {
+        readOnly: true,
+        description:
+          "This page is built in code — the site ships it, and it is listed here so every page of the site is in one place. Its wording is edited under Page wording; its layout is changed in the design. The content fields below are hidden for it, because filling them in would do nothing.",
+      },
+    },
+    {
       name: "navLabel",
       type: "text",
       admin: { description: "Label to show in site navigation. Leave empty to keep this page out of the nav." },
     },
     {
       name: "hero",
+      admin: { condition: (data) => data?.builtIn !== true },
       type: "group",
       fields: [
         { name: "heading", type: "text" },
@@ -71,12 +82,18 @@ export const Pages: CollectionConfig = {
         { name: "image", type: "upload", relationTo: "media" },
       ],
     },
-    { name: "body", type: "richText", editor: lexicalEditor() },
+    {
+      name: "body",
+      type: "richText",
+      editor: lexicalEditor(),
+      admin: { condition: (data) => data?.builtIn !== true },
+    },
     {
       name: "sections",
       type: "blocks",
       blocks: homeBlocks,
       admin: {
+        condition: (data) => data?.builtIn !== true,
         description:
           "Homepage-style content sections (used instead of the simple hero/body above — mainly for a site's home page).",
       },

@@ -35,6 +35,11 @@ export async function getPageBySlug(
           tenantId ? { tenant: { equals: tenantId } } : { tenant: { exists: false } },
           slug ? { slug: { equals: slug } } : { isHome: { equals: true } },
           { published: { equals: true } },
+          // A built-in page is a listing entry for a page the code renders.
+          // It has no body of its own, so it must never be rendered as one —
+          // and it never is: a real route answers that address first. This
+          // says so out loud rather than relying on that.
+          { builtIn: { not_equals: true } },
         ],
       },
       limit: 1,
@@ -71,7 +76,13 @@ export async function getNavPages(): Promise<NavPage[]> {
     const result = await payload.find({
       collection: "pages",
       where: {
-        and: [{ navLabel: { exists: true } }, { published: { equals: true } }],
+        and: [
+          { navLabel: { exists: true } },
+          { published: { equals: true } },
+          // The built-in pages are already in the navigation, in the order the
+          // design puts them. Listing them again would print each twice.
+          { builtIn: { not_equals: true } },
+        ],
       },
       limit: 100,
       depth: 1,
