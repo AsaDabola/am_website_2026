@@ -1,0 +1,678 @@
+/**
+ * The admin's own look.
+ *
+ * Payload ships its styles inside `@layer payload-default`, and an unlayered
+ * rule beats a layered one whatever its specificity. So everything here is
+ * written plainly — no `!important`, no selector piled on selector to outweigh
+ * the default. Adding one to this file is enough for it to win.
+ *
+ * Two halves. First the chrome: the sidebar, the header, the surfaces every
+ * screen is built from, restyled to the site's own navy on a soft canvas.
+ * Then the dashboard itself, whose classes are all prefixed `am-`.
+ *
+ * Payload flips `data-theme` on the html element for dark mode, so each token
+ * is declared twice and nothing below needs to know which is in force.
+ */
+
+:root {
+  --am-accent: #2a5eec;
+  --am-accent-deep: #1449c6;
+  --am-accent-soft: rgba(42, 94, 236, 0.1);
+  --am-accent-line: rgba(42, 94, 236, 0.22);
+
+  --am-canvas: #f2f5fa;
+  --am-surface: #ffffff;
+  --am-line: rgba(16, 24, 40, 0.09);
+  --am-ink: #101828;
+  --am-muted: #5b6478;
+  --am-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 10px 26px rgba(16, 24, 40, 0.06);
+  --am-shadow-lift: 0 2px 4px rgba(16, 24, 40, 0.05), 0 16px 36px rgba(16, 24, 40, 0.1);
+
+  --am-green: #16a34a;
+  --am-amber: #d97706;
+  --am-violet: #7c3aed;
+
+  /* Payload's own tokens, turned up: rounder corners and a canvas that is not
+     flat white, so the cards and tables on every screen read as cards. */
+  --style-radius-s: 8px;
+  --style-radius-m: 12px;
+  --style-radius-l: 16px;
+  --theme-bg: var(--am-canvas);
+}
+
+[data-theme="dark"] {
+  --am-accent: #6f9bff;
+  --am-accent-deep: #4d8df6;
+  --am-accent-soft: rgba(111, 155, 255, 0.14);
+  --am-accent-line: rgba(111, 155, 255, 0.3);
+
+  --am-canvas: #0d1017;
+  --am-surface: #161a23;
+  --am-line: rgba(255, 255, 255, 0.09);
+  --am-ink: #e8ecf5;
+  --am-muted: #99a2b8;
+  --am-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 26px rgba(0, 0, 0, 0.35);
+  --am-shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.45), 0 16px 36px rgba(0, 0, 0, 0.5);
+
+  --am-green: #4ade80;
+  --am-amber: #fbbf24;
+  --am-violet: #a78bfa;
+}
+
+/* ---------------------------------------------------------------- chrome */
+
+.nav {
+  background: var(--am-surface);
+  border-right: 1px solid var(--am-line);
+}
+
+.nav__scroll {
+  gap: 2px;
+}
+
+/* Each entry becomes its own rounded target rather than a line of text with a
+   hairline beside it. The negative inline margin pulls the tint out to the
+   edges of the sidebar's padding so the pill has room to be a pill.
+   The geometry is set on every entry, not only on the links, because of the
+   next rule. */
+.nav .nav__link {
+  border-radius: 10px;
+  margin-inline: -10px;
+  padding: 7px 12px;
+  color: var(--am-muted);
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.nav a.nav__link:hover {
+  background: var(--am-accent-soft);
+  color: var(--am-accent);
+  opacity: 1;
+}
+
+/**
+ * The page you are on.
+ *
+ * Payload renders that one entry as a `div` rather than a link — there is
+ * nowhere to go — and puts no class on it to say so. Being the div is what
+ * identifies it. `.active` is kept beside it because that class does exist in
+ * Payload's own stylesheet, so if the markup ever changes back to a marked
+ * anchor this still highlights the right entry.
+ */
+.nav div.nav__link,
+.nav .nav__link.active {
+  background: var(--am-accent-soft);
+  color: var(--am-accent);
+  font-weight: 600;
+}
+
+/* The two-pixel bar to the left of the current entry: the filled pill says
+   the same thing, and the bar sits outside its rounded corner. */
+.nav__link-indicator {
+  display: none;
+}
+
+.nav-group__toggle {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-block: 6px;
+}
+
+/* The AM wordmark, sized here because the admin has no Tailwind to read the
+   classes the site's own header passes it. */
+.am-brand {
+  display: block;
+  color: var(--am-ink);
+  height: auto;
+}
+
+.am-brand--logo {
+  width: 230px;
+}
+
+/* Payload's header slot is an 18px square meant for a round mark. The AM
+   letterforms are twice as wide as they are tall, so the slot is widened to
+   suit them rather than the drawing squeezed to suit the slot. */
+.step-nav__home {
+  width: 42px;
+  height: auto;
+}
+
+.am-brand--icon {
+  width: 100%;
+}
+
+.app-header__bg {
+  background: var(--am-surface);
+  border-bottom: 1px solid var(--am-line);
+}
+
+.card {
+  background: var(--am-surface);
+  border: 1px solid var(--am-line);
+  box-shadow: var(--am-shadow);
+  transition: box-shadow 0.14s ease, transform 0.14s ease, border-color 0.14s ease;
+}
+
+.card--has-onclick:hover {
+  border-color: var(--am-accent-line);
+  box-shadow: var(--am-shadow-lift);
+  transform: translateY(-1px);
+}
+
+/* The list views: one bordered surface holding the table, rather than rows
+   floating on the page background. */
+.table {
+  background: var(--am-surface);
+  border: 1px solid var(--am-line);
+  border-radius: var(--style-radius-m);
+  box-shadow: var(--am-shadow);
+}
+
+.table table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table thead th {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.btn--style-primary {
+  --bg-color: var(--am-accent);
+  --hover-bg: var(--am-accent-deep);
+  --color: #ffffff;
+  --hover-color: #ffffff;
+}
+
+.btn {
+  border-radius: 999px;
+}
+
+/* ------------------------------------------------------------- dashboard */
+
+.am-dash {
+  padding: 28px var(--gutter-h) 80px;
+  color: var(--am-ink);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.am-dash__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.am-dash__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 8px;
+  padding: 4px 12px 4px 8px;
+  border-radius: 999px;
+  background: var(--am-accent-soft);
+  color: var(--am-accent);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.am-dash__eyebrow-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.am-dash__title {
+  margin: 0;
+  font-size: 1.9rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.am-dash__subtitle {
+  margin: 6px 0 0;
+  color: var(--am-muted);
+}
+
+.am-dash__quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.am-quick {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--am-line);
+  background: var(--am-surface);
+  color: var(--am-ink);
+  font-size: 0.86rem;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: var(--am-shadow);
+  transition: border-color 0.12s ease, transform 0.12s ease, background-color 0.12s ease;
+}
+
+.am-quick:hover {
+  border-color: var(--am-accent-line);
+  color: var(--am-accent);
+  transform: translateY(-1px);
+}
+
+.am-quick--primary {
+  background: var(--am-accent);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.am-quick--primary:hover {
+  background: var(--am-accent-deep);
+  color: #ffffff;
+}
+
+/**
+ * Three across once there is room for three.
+ *
+ * A super admin sees six cards, so three columns fill two rows exactly. Left
+ * to `auto-fit` the count follows the window — four across at this width, five
+ * on a larger screen — and six cards then leave one or two stranded on a row
+ * of their own, which reads as a mistake rather than a layout.
+ */
+.am-dash__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: 16px;
+}
+
+@media (min-width: 1024px) {
+  .am-dash__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.am-stat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  border-radius: var(--style-radius-l);
+  border: 1px solid var(--am-line);
+  background: var(--am-surface);
+  box-shadow: var(--am-shadow);
+  color: var(--am-ink);
+  text-decoration: none;
+  overflow: hidden;
+  transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+}
+
+.am-stat:hover {
+  border-color: var(--am-accent-line);
+  box-shadow: var(--am-shadow-lift);
+  transform: translateY(-2px);
+}
+
+/* The tint that names the card, laid behind the content rather than on the
+   border, so six of these side by side read as one family. */
+.am-stat::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: -50px;
+  top: -60px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--am-stat-tone);
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.am-stat--navy {
+  --am-stat-tone: var(--am-accent-deep);
+}
+.am-stat--blue {
+  --am-stat-tone: #007aff;
+}
+.am-stat--green {
+  --am-stat-tone: var(--am-green);
+}
+.am-stat--amber {
+  --am-stat-tone: var(--am-amber);
+}
+.am-stat--violet {
+  --am-stat-tone: var(--am-violet);
+}
+
+.am-stat__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 14px;
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--am-stat-tone) 12%, transparent);
+  color: var(--am-stat-tone);
+}
+
+.am-stat__glyph {
+  width: 20px;
+  height: 20px;
+}
+
+.am-stat__value {
+  font-size: 2rem;
+  font-weight: 650;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  font-variant-numeric: tabular-nums;
+}
+
+.am-stat__label {
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.am-stat__caption {
+  margin-top: 2px;
+  font-size: 0.8rem;
+  color: var(--am-muted);
+}
+
+.am-stat__arrow {
+  position: absolute;
+  top: 20px;
+  inset-inline-end: 18px;
+  width: 17px;
+  height: 17px;
+  color: var(--am-muted);
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.am-stat:hover .am-stat__arrow {
+  opacity: 1;
+  color: var(--am-accent);
+  transform: translateX(2px);
+}
+
+.am-dash__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.am-panel {
+  padding: 20px;
+  border-radius: var(--style-radius-l);
+  border: 1px solid var(--am-line);
+  background: var(--am-surface);
+  box-shadow: var(--am-shadow);
+}
+
+/* The chart wants the full width; on a narrow screen the grid collapses to one
+   column and this becomes a no-op. */
+.am-panel--wide {
+  grid-column: 1 / -1;
+}
+
+.am-panel__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.am-panel__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.am-panel__title-icon {
+  width: 17px;
+  height: 17px;
+  color: var(--am-accent);
+}
+
+.am-panel__note {
+  margin: 3px 0 0;
+  font-size: 0.8rem;
+  color: var(--am-muted);
+}
+
+.am-panel__figure {
+  font-size: 1.5rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--am-accent);
+}
+
+.am-empty {
+  margin: 0;
+  padding: 18px 0;
+  color: var(--am-muted);
+  font-size: 0.88rem;
+}
+
+.am-list,
+.am-feed,
+.am-bars {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.am-list__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 10px;
+  margin-inline: -10px;
+  border-radius: 9px;
+  color: var(--am-ink);
+  text-decoration: none;
+}
+
+.am-list__row:hover {
+  background: var(--am-accent-soft);
+  color: var(--am-accent);
+}
+
+.am-list__label {
+  font-size: 0.88rem;
+}
+
+.am-list__value {
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+.am-feed__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 9px 10px;
+  margin-inline: -10px;
+  border-radius: 9px;
+  color: var(--am-ink);
+  text-decoration: none;
+}
+
+.am-feed__row:hover {
+  background: var(--am-accent-soft);
+}
+
+.am-feed__dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: 6px;
+  border-radius: 50%;
+}
+
+.am-feed__dot--post {
+  background: var(--am-accent);
+}
+.am-feed__dot--event {
+  background: var(--am-green);
+}
+.am-feed__dot--page {
+  background: var(--am-violet);
+}
+
+.am-feed__body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.am-feed__title {
+  font-size: 0.89rem;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.am-feed__meta {
+  font-size: 0.77rem;
+  color: var(--am-muted);
+}
+
+/* The label column is sized to the longest region name — "South America" —
+   rather than to a fraction of the panel, which cut it off. */
+.am-bars__row {
+  display: grid;
+  grid-template-columns: 6.6em minmax(40px, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding-block: 7px;
+}
+
+.am-bars__label {
+  font-size: 0.82rem;
+  color: var(--am-muted);
+  white-space: nowrap;
+}
+
+.am-bars__track {
+  height: 7px;
+  border-radius: 999px;
+  background: var(--am-accent-soft);
+  overflow: hidden;
+}
+
+.am-bars__fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--am-accent), var(--am-accent-deep));
+}
+
+.am-bars__value {
+  font-size: 0.82rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ----------------------------------------------------------------- chart */
+
+.am-chart {
+  position: relative;
+}
+
+.am-chart__plot {
+  position: relative;
+  height: 190px;
+}
+
+.am-chart__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.am-chart__grid {
+  stroke: var(--am-line);
+  stroke-width: 1;
+}
+
+.am-chart__line {
+  fill: none;
+  stroke: var(--am-accent);
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.am-chart__marker {
+  position: absolute;
+  left: 100%;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: var(--am-accent);
+  box-shadow: 0 0 0 4px var(--am-accent-soft);
+  pointer-events: none;
+}
+
+.am-chart__months {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.am-chart__months li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  flex: 1;
+}
+
+.am-chart__month {
+  font-size: 0.72rem;
+  color: var(--am-muted);
+}
+
+.am-chart__count {
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--am-ink);
+  opacity: 0.55;
+}
+
+@media (max-width: 768px) {
+  .am-dash {
+    padding-top: 18px;
+  }
+
+  .am-dash__title {
+    font-size: 1.5rem;
+  }
+
+  .am-chart__count {
+    display: none;
+  }
+}

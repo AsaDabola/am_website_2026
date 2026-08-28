@@ -58,6 +58,35 @@ export default buildConfig({
   admin: {
     user: Users.slug,
     /**
+     * Where a component path beginning with "/" starts from. Without this it
+     * is the directory the build was started in, and every path here would
+     * have to carry a "src/" that means nothing to the rest of the codebase.
+     */
+    importMap: { baseDir: dirname },
+    components: {
+      /**
+       * The AM wordmark where Payload draws its own — on the login screen and
+       * in the header. Signing in should look like signing in to this
+       * organisation, not to a CMS.
+       */
+      graphics: {
+        Logo: "/components/admin/Brand#AdminLogo",
+        Icon: "/components/admin/Brand#AdminIcon",
+      },
+      views: {
+        /**
+         * The screen behind /admin.
+         *
+         * Payload's own is a list of every collection — what is in here, but
+         * not what is going on. Ours opens on how much has been published,
+         * what came in through the forms, what was last touched, and how far
+         * the network reaches, scoped to whatever the person signing in was
+         * given. The collections are still one click away in the sidebar.
+         */
+        dashboard: { Component: "/components/admin/Dashboard#Dashboard" },
+      },
+    },
+    /**
      * The page beside the form, updating as it is edited.
      *
      * This plus the blocks field's own drag handles is the Shopify editor's
