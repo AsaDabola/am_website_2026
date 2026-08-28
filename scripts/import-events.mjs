@@ -20,7 +20,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import readline from "node:readline";
-import { resolveFolder } from "./lib/paths.mjs";
+import { resolveFolder, foldersBeside } from "./lib/paths.mjs";
 
 const args = process.argv.slice(2);
 const value = (name, fallback) => {
@@ -265,7 +265,17 @@ async function main() {
 
   const folder = resolveFolder(await ask("Folder with the event photographs:", { fallback: saved.eventsRoot || "", raw: true }));
   if (!folder) throw new Error("I need the folder holding the photographs.");
-  if (!fs.existsSync(folder)) throw new Error(`I couldn't find ${folder}.`);
+  if (!fs.existsSync(folder)) {
+    const beside = foldersBeside(folder);
+    throw new Error(
+      [
+        `I couldn't find ${folder}.`,
+        ...(beside.length
+          ? ["", "These folders are there:", ...beside.map((name) => `  ${name}`)]
+          : []),
+      ].join("\n"),
+    );
+  }
   if (!fs.statSync(folder).isDirectory()) {
     throw new Error(`${folder} is a file, not a folder. If it is a zip, unzip it first and give me the folder.`);
   }

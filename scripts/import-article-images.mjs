@@ -35,7 +35,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import readline from "node:readline";
-import { resolveFolder } from "./lib/paths.mjs";
+import { resolveFolder, foldersBeside } from "./lib/paths.mjs";
 
 const args = process.argv.slice(2);
 const flag = (name) => args.includes(`--${name}`);
@@ -473,7 +473,11 @@ async function main() {
       ROOT = resolved.path;
     }
     if (!ROOT) console.log("  Please give a folder.");
-    else if (!fs.existsSync(ROOT)) console.log(`  Can't find that: ${ROOT}`);
+    else if (!fs.existsSync(ROOT)) {
+      console.log(`  Can't find that: ${ROOT}`);
+      const beside = foldersBeside(ROOT);
+      if (beside.length) console.log(`  These folders are there: ${beside.join(", ")}`);
+    }
     else if (!fs.statSync(ROOT).isDirectory()) {
       console.log(
         ROOT.toLowerCase().endsWith(".zip")
