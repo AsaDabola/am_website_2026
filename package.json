@@ -18,7 +18,8 @@
     "import-events": "node scripts/import-events.mjs",
     "seed-pages": "node scripts/seed-built-in-pages.mjs",
     "seed-chapters": "node scripts/seed-chapters.mjs",
-    "seed-slides": "node scripts/seed-home-slides.mjs"
+    "seed-slides": "node scripts/seed-home-slides.mjs",
+    "translate-posts": "node --env-file=.env.local scripts/translate-posts.mjs"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.88.0",

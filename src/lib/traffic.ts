@@ -1,6 +1,7 @@
 import type { Payload } from "payload";
 
 import { COUNTRY_BY_CODE } from "@/lib/countrySites";
+import { dbPool as pool } from "@/lib/dbPool";
 
 /**
  * Reading and writing the traffic counters.
@@ -160,14 +161,6 @@ export async function recordView(payload: Payload, facts: ViewFacts): Promise<vo
            updated_at = now()`,
     values,
   );
-}
-
-type Pool = { query: (text: string, values?: unknown[]) => Promise<{ rows: Record<string, unknown>[] }> };
-
-function pool(payload: Payload): Pool {
-  const candidate = (payload.db as unknown as { pool?: Pool }).pool;
-  if (!candidate) throw new Error("The database adapter has no connection pool.");
-  return candidate;
 }
 
 export type TrafficTotals = { views: number; visits: number };

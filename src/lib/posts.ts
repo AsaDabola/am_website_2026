@@ -1,9 +1,11 @@
 import config from "@payload-config";
 import { getPayload } from "payload";
-import type { Where } from "payload";
+import type { Payload, Where } from "payload";
+import { getLocale } from "next-intl/server";
 import { mediaUrl } from "./homeBlockTypes";
 import { tenantContentWhere } from "./tenantContentWhere";
 import { getRequestTenant } from "./tenantContent";
+import { getPostTranslations, SOURCE_LOCALE } from "./postTranslations";
 
 /**
  * The syndication clause for whichever site is being rendered. The listings
@@ -66,6 +68,54 @@ function toSummary(doc: Record<string, unknown>): PostSummary {
   };
 }
 
+/**
+ * The language this page is being read in.
+ *
+ * Every article surface goes through here rather than reading the locale
+ * itself, so a caller outside a request — a script, a build-time helper —
+ * degrades to the language articles are written in instead of throwing.
+ */
+async function readingLocale(): Promise<string> {
+  try {
+    return (await getLocale()) || SOURCE_LOCALE;
+  } catch {
+    return SOURCE_LOCALE;
+  }
+}
+
+/**
+ * Article summaries in the language being read.
+ *
+ * One lookup for the whole page rather than one per article, and anything with
+ * no translation keeps the words it was written in — so a half-translated
+ * catalogue reads as a mix rather than as a page of blanks.
+ */
+async function summariesIn(
+  payload: Payload,
+  docs: Record<string, unknown>[],
+): Promise<PostSummary[]> {
+  const summaries = docs.map(toSummary);
+  const locale = await readingLocale();
+  if (locale === SOURCE_LOCALE || summaries.length === 0) return summaries;
+
+  const translations = await getPostTranslations(
+    payload,
+    summaries.map((post) => post.id),
+    locale,
+  );
+  if (translations.size === 0) return summaries;
+
+  return summaries.map((post) => {
+    const translated = translations.get(post.id);
+    if (!translated) return post;
+    return {
+      ...post,
+      title: translated.title ?? post.title,
+      excerpt: translated.excerpt ?? post.excerpt,
+    };
+  });
+}
+
 export async function getPostsList(category?: PostCategory): Promise<PostSummary[]> {
   try {
     const payload = await getPayload({ config });
@@ -75,7 +125,7 @@ export async function getPostsList(category?: PostCategory): Promise<PostSummary
       limit: 24,
       where: scoped(category ? { category: { equals: category } } : undefined),
     });
-    return result.docs.map((doc) => toSummary(doc as Record<string, unknown>));
+    return await summariesIn(payload, result.docs as Record<string, unknown>[]);
   } catch {
     return [];
   }
@@ -116,7 +166,7 @@ export async function getPostsPage(
       where: scoped(category ? { category: { equals: category } } : undefined),
     });
     return {
-      posts: result.docs.map((doc) => toSummary(doc as Record<string, unknown>)),
+      posts: await summariesIn(payload, result.docs as Record<string, unknown>[]),
       page: result.page ?? 1,
       totalPages: result.totalPages ?? 1,
       total: result.totalDocs ?? 0,
@@ -136,7 +186,21 @@ export async function getPostBySlug(slug: string): Promise<PostDetail | null> {
     });
     const doc = result.docs[0] as Record<string, unknown> | undefined;
     if (!doc) return null;
-    return { ...toSummary(doc), body: doc.body };
+
+    const summary = toSummary(doc);
+    const locale = await readingLocale();
+    if (locale === SOURCE_LOCALE) return { ...summary, body: doc.body };
+
+    // The body as well as the headline here — this is the one surface that
+    // shows the article itself, and a translated headline over English prose
+    // would be worse than leaving both alone.
+    const translated = (await getPostTranslations(payload, [summary.id], locale)).get(summary.id);
+    return {
+      ...summary,
+      title: translated?.title ?? summary.title,
+      excerpt: translated?.excerpt ?? summary.excerpt,
+      body: translated?.body ?? doc.body,
+    };
   } catch {
     return null;
   }
@@ -153,7 +217,7 @@ export async function getRelatedPosts(category: PostCategory, excludeSlug: strin
       sort: "-publishedDate",
       limit: 4,
     });
-    return result.docs.map((doc) => toSummary(doc as Record<string, unknown>));
+    return await summariesIn(payload, result.docs as Record<string, unknown>[]);
   } catch {
     return [];
   }

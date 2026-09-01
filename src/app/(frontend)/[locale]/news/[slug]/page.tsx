@@ -11,6 +11,7 @@ import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 import { getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { getTranslations } from "@/i18n/content";
+import { getLocale } from "next-intl/server";
 
 export const revalidate = 60;
 
@@ -55,7 +56,10 @@ export default async function NewsArticlePage({
   if (!post) notFound();
 
   const relatedPosts = await getRelatedPosts(post.category, post.slug);
-  const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  // The reader's language, not English: with the headline and the body now
+  // translated, an American date under them was the last English left on the
+  // page. Every other article surface already formats this way.
+  const dateFormatter = new Intl.DateTimeFormat(await getLocale(), {
     month: "long",
     day: "numeric",
     year: "numeric",

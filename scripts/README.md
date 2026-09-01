@@ -145,6 +145,8 @@ nothing to do with the database you came to inspect.
 | `add-get-involved-card-description.sql` | Adds `description` to the Get Involved cards, and the message keys it introduced. |
 | `add-admin-roles.sql` | Adds roles and per-country permissions to Users. **Run this before deploying the access rules** — without it nobody can sign in to /admin. |
 | `add-traffic.sql` | Creates the `traffic` counter table behind /admin/traffic. Not a Payload collection, so `push` will not build it — run this locally as well as on the deployed database. Safe to deploy the code without it; the screen just says nothing has been counted yet. |
+| `add-post-translations.sql` | Creates the `post_translations` table holding each article in each language. Not a Payload collection either, so run it locally too. Safe to deploy the code without it; articles just read in the language they were written in. |
+| `translate-posts.mjs` | Fills that table from a translation provider. Resumable, priced before it runs, and skips anything already done. See below. |
 | `copy-flags.mjs` | Copies country flag SVGs into `public/flags`. |
 | `import-article-images.mjs` | Attaches an archive of article photographs to the posts already in the CMS. Dry-run by default. See below. |
 
@@ -210,3 +212,44 @@ contain the literal text `[SENSITIVE]` instead of a connection string. Both
 scripts here reject that up front rather than letting it fail later as a DNS
 error. Copy the real value from the Vercel dashboard under
 Storage → your database → connection string.
+
+## Translating the news articles
+
+The articles are written in one language. The site is read in forty-seven.
+`translate-posts.mjs` fills in the rest — headline, summary and body — into
+the `post_translations` table, which the site reads through
+`src/lib/postTranslations.ts`.
+
+```bash
+psql "$DATABASE_URI" -f scripts/add-post-translations.sql   # once, per database
+npm run translate-posts -- --dry-run                        # what it would cost
+npm run translate-posts                                     # do it
+```
+
+You need a provider and a key in `.env.local`:
+
+```
+TRANSLATE_PROVIDER=google      # or: deepl
+TRANSLATE_API_KEY=...
+```
+
+Both bill roughly $20 per million characters, and the script prices the job
+and asks before spending anything. It is resumable: each translation records a
+digest of the English it was made from, so a second run does nothing except
+pick up articles that are new or have been edited. Stop it with ctrl-C and
+start it again and it carries on.
+
+`--locales fr,de,ko` narrows it to particular languages, `--limit 25` to the
+newest articles. Doing the languages that matter most first costs the same in
+total and gets those country sites readable sooner.
+
+**Correcting a translation.** Set `edited = true` on the row and the script
+will never overwrite it — which matters for the doctrinal wording, where a
+machine translation of a testimony or a statement of faith wants a human eye.
+
+Two things it cannot do. A couple of the site's languages are not offered by
+either provider (Fiji Hindi and Romansh, at the time of writing); the script
+names them at startup and those articles stay in the language they were
+written in. And it translates from the article's source language, so an
+article authored on a country site in its own language should be run with that
+language as the source rather than assumed to be English.
