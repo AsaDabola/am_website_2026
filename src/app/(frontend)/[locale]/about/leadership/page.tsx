@@ -31,7 +31,6 @@ const people: {
 }[] = [
   { name: "Rani Reid", role: "Executive Director", image: "/images/leader-reid.webp" },
 
-  { name: "Cowin Hodges", role: "USA & Canada", image: "/images/coord-cowin-hodges.webp" },
   { name: "Andrea Rico", role: "South America", image: "/images/coord-andrea-rico.webp" },
   { name: "Joel Lee", role: "Asia Pacific", image: "/images/coord-joel-lee.webp" },
   { name: "Mara Onyeama", role: "Europe", image: "/images/coord-mara-onyeama.webp" },
