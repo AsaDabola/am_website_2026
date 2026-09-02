@@ -16,7 +16,12 @@
  *
  *   the code's cap top is level with the top of the AM mark
  *   its cap height is 0.2231 of the mark's height
- *   the space either side of it is set so KR reproduces that file exactly
+ *   the trailing margin is set so KR reproduces that file's proportions
+ *
+ * with one departure from it: the reference sets the code hard against the M,
+ * which read as touching at the size the header draws this, so the space in
+ * front of the code is opened up. `buildLogo` takes that gap as an argument if
+ * it ever wants retuning.
  *
  * all expressed in the 71.11 x 44 box the site already draws these in, so the
  * mark itself is untouched and stays exactly the size it is.
@@ -67,13 +72,26 @@ function inkWidth(code) {
  */
 const SIDE_GAP = (CODE_SHARE * MARK_HEIGHT - inkWidth("KR")) / 2;
 
-export function buildLogo(code) {
+/**
+ * The air between the M and the code.
+ *
+ * The reference sets the code hard against the mark — a gap of one sidebearing,
+ * which is barely a pixel at the size the header draws this — and it read as
+ * touching. This opens it up while leaving the trailing margin alone: the code
+ * is a suffix to the mark, so the space belongs in front of it, not behind.
+ *
+ * Expressed against the cap height rather than as a bare number, so it stays
+ * proportionate if the code is ever set at a different size.
+ */
+const MARK_GAP = SIDE_GAP + 0.28 * CAP;
+
+export function buildLogo(code, markGap = MARK_GAP) {
   const letters = [...code.toUpperCase()];
   const unknown = letters.filter((ch) => !FONT.letters[ch]);
   if (unknown.length) throw new Error(`No letterform for ${unknown.join(", ")} in ${code}.`);
 
   const baseline = MARK_TOP + CAP;
-  let x = MARK_RIGHT + SIDE_GAP;
+  let x = MARK_RIGHT + markGap;
   const drawn = letters.map((ch) => {
     const g = FONT.letters[ch];
     const dx = x - g.x0 * SCALE;
