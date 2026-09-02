@@ -2,90 +2,95 @@
  * Width of each country site's logo, in the 44-unit-tall box they are all
  * drawn in — so a logo's aspect ratio is this over 44.
  *
- * The files are public/logos/am-{slug}.svg: the AM mark from LogoMark with
- * that country's wordmark under it, taken from the 68-file pack AM supplied
- * and mapped onto the mark at one scale for all of them — the mark is exactly
- * 380 units wide in every file of that pack and 71.11 in ours, so the word
- * lands at the size it was drawn against that mark.
+ * The files are public/logos/am-{slug}.svg: the AM mark with that country's
+ * two-letter code set small at its top right, cap-aligned with the top of the
+ * M, following the amlogo_kr.svg the design team supplied. The code is the
+ * same one the country's address uses, so /kr is the site whose logo reads KR.
  *
- * Only the word is taken from the pack. The AM mark in those files is an
- * autotrace — hundreds of curve segments for shapes the real mark draws in
- * straight lines — and it stair-steps along every diagonal when scaled past
- * its artboard size.
+ * The letterforms are AM's own. They were lifted out of the country wordmarks
+ * these logos used to carry — the full country name in the brand's Avenir —
+ * one clean sighting of each of the 26 capitals, so the codes are set in the
+ * typeface the brand actually uses rather than a lookalike. Every letter the
+ * 68 codes need was already drawn somewhere in those 68 names.
  *
- * The widths vary because the names do: Fiji is narrower than the mark and
- * Democratic Republic of the Congo is three times wider. A word narrower than
- * the mark still measures the mark's own 71.11.
+ * The widths still vary a little because the letters do: II is narrower than
+ * two round letters. They no longer vary much, because a two-letter code is a
+ * two-letter code — where the names ranged from 71 to 173 units, the codes
+ * run from 79 to 90.
+ *
+ * The international lockup is deliberately untouched and still comes from
+ * components/ui/LogoMark: it carries the word INTERNATIONAL under the mark,
+ * not a country code, and it is not one of these files.
  */
 export const COUNTRY_LOGO_WIDTHS: Record<string, number> = {
-  "angola": 71.11,
-  "argentina": 71.11,
-  "australia": 71.11,
-  "austria": 71.11,
-  "bangladesh": 71.11,
-  "belgium": 71.11,
-  "brazil": 71.11,
-  "cameroon": 71.11,
-  "canada": 71.11,
-  "chile": 71.11,
-  "colombia": 71.11,
-  "cote-divoire": 71.11,
-  "czechia": 71.11,
-  "democratic-republic-of-the-congo": 173.325,
-  "dominican-republic": 96.277,
-  "east-africa-federation": 95.645,
-  "egypt": 71.11,
-  "ethiopia": 71.11,
-  "fiji": 71.11,
-  "france": 71.11,
-  "germany": 71.11,
-  "ghana": 71.11,
-  "greece": 71.11,
-  "guatemala": 71.11,
-  "haiti": 71.11,
-  "honduras": 71.11,
-  "hungary": 71.11,
-  "india": 71.11,
-  "indonesia": 71.11,
-  "israel": 71.11,
-  "italy": 71.11,
-  "japan": 71.11,
-  "kazakhstan": 71.11,
-  "madagascar": 71.11,
-  "malaysia": 71.11,
-  "mexico": 71.11,
-  "mongolia": 71.11,
-  "mozambique": 71.11,
-  "myanmar": 71.11,
-  "nepal": 71.11,
-  "netherlands": 71.11,
-  "new-zealand": 71.11,
-  "nigeria": 71.11,
-  "pakistan": 71.11,
-  "peru": 71.11,
-  "philippines": 71.11,
-  "poland": 71.11,
-  "portugal": 71.11,
-  "romania": 71.11,
-  "russia": 71.11,
-  "rwanda": 71.11,
-  "singapore": 71.11,
-  "slovakia": 71.11,
-  "south-africa": 71.11,
-  "south-korea": 71.11,
-  "spain": 71.11,
-  "sri-lanka": 71.11,
-  "sweden": 71.11,
-  "switzerland": 71.11,
-  "taiwan": 71.11,
-  "thailand": 71.11,
-  "turkey": 71.11,
-  "ukraine": 71.11,
-  "united-arab-emirates": 102.64,
-  "united-kingdom": 78.41,
-  "united-states": 71.11,
-  "vietnam": 71.11,
-  "zambia": 71.11,
+  "angola": 88.805,                       // AO
+  "argentina": 86.427,                    // AR
+  "australia": 86.882,                    // AU
+  "austria": 86.921,                      // AT
+  "bangladesh": 85.471,                   // BD
+  "belgium": 84.016,                      // BE
+  "brazil": 84.3,                         // BR
+  "cameroon": 88.096,                     // CM
+  "canada": 87.732,                       // CA
+  "chile": 84.888,                        // CL
+  "colombia": 88.096,                     // CO
+  "cote-divoire": 81.599,                 // CI
+  "czechia": 85.981,                      // CZ
+  "democratic-republic-of-the-congo": 86.89,// CD
+  "dominican-republic": 87.962,           // DO
+  "east-africa-federation": 80.181,       // BI
+  "egypt": 85.584,                        // EG
+  "ethiopia": 84.623,                     // ET
+  "fiji": 82.773,                         // FJ
+  "france": 83.825,                       // FR
+  "germany": 85.3,                        // DE
+  "ghana": 86.435,                        // GH
+  "greece": 85.868,                       // GR
+  "guatemala": 86.363,                    // GT
+  "haiti": 85.473,                        // HT
+  "honduras": 86.102,                     // HN
+  "hungary": 85.435,                      // HU
+  "india": 81.416,                        // IN
+  "indonesia": 81.465,                    // ID
+  "israel": 79.463,                       // IL
+  "italy": 80.788,                        // IT
+  "japan": 83.086,                        // JP
+  "kazakhstan": 85.394,                   // KZ
+  "madagascar": 88.246,                   // MG
+  "malaysia": 88.094,                     // MY
+  "mexico": 88.297,                       // MX
+  "mongolia": 87.913,                     // MN
+  "mozambique": 87.053,                   // MZ
+  "myanmar": 89.168,                      // MM
+  "nepal": 85.261,                        // NP
+  "netherlands": 84.705,                  // NL
+  "new-zealand": 85.798,                  // NZ
+  "nigeria": 86.991,                      // NG
+  "pakistan": 84.857,                     // PK
+  "peru": 83.855,                         // PE
+  "philippines": 84.705,                  // PH
+  "poland": 83.308,                       // PL
+  "portugal": 84.633,                     // PT
+  "romania": 86.791,                      // RO
+  "russia": 84.868,                       // RU
+  "rwanda": 89.036,                       // RW
+  "singapore": 85.553,                    // SG
+  "slovakia": 84.816,                     // SK
+  "south-africa": 86.69,                  // ZA
+  "south-korea": 85.131,                  // KR
+  "spain": 83.814,                        // ES
+  "sri-lanka": 84.3,                      // LK
+  "sweden": 83.814,                       // SE
+  "switzerland": 86.285,                  // CH
+  "taiwan": 89.53,                        // TW
+  "thailand": 85.473,                     // TH
+  "turkey": 84.907,                       // TR
+  "ukraine": 86.882,                      // UA
+  "united-arab-emirates": 86.143,         // AE
+  "united-kingdom": 85.756,               // GB
+  "united-states": 84.553,                // US
+  "vietnam": 86.941,                      // VN
+  "zambia": 87.053,                       // ZM
 };
 
 /** Every country logo is drawn in a box this tall. */
