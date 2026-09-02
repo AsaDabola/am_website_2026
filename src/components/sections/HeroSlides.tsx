@@ -95,11 +95,12 @@ export default function HeroSlides({
       </div>
 
       {/*
-        The wash that keeps the headline readable over a photograph. Each stop
-        is a fifth lighter than it was — 70 and 20 — so more of the picture
-        comes through while the text still has something to sit on.
+        The wash that keeps the headline readable over a photograph. It has
+        been taken down a fifth twice — 70 and 20 to begin with, then 56 and
+        16 — so the picture now carries most of the frame and the text has
+        just enough behind it. Its own shadow does the rest.
       */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-night/56 via-night/16 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-night/45 via-night/13 to-transparent" />
 
       <Container className="relative flex min-h-[720px] flex-col justify-center py-24">
         <Eyebrow tone="light">{eyebrow}</Eyebrow>
