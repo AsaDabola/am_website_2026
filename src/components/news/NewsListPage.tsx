@@ -7,7 +7,13 @@ import { ListingControls, Pagination } from "@/components/news/ListingControls";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 import { getTranslations } from "@/i18n/content";
-import { getPostsPage, POST_SORTS, type PostCategory, type PostSort } from "@/lib/posts";
+import {
+  CATEGORY_KEY,
+  getPostsPage,
+  POST_SORTS,
+  type ListedCategory,
+  type PostSort,
+} from "@/lib/posts";
 
 /** Search params arrive as strings or arrays; this reads one safely. */
 function first(value: string | string[] | undefined): string | undefined {
@@ -15,14 +21,13 @@ function first(value: string | string[] | undefined): string | undefined {
 }
 
 /** Where each listing's own wording lives, and the path it is served at. */
-const LISTINGS: Record<PostCategory, { key: string; href: string; image: string }> = {
+const LISTINGS: Record<ListedCategory, { key: string; href: string; image: string }> = {
   news: { key: "news", href: "/news", image: "/images/news-hero.webp" },
   editorial: { key: "editorial", href: "/news/editorial", image: "/images/news-hero.webp" },
   // The design draws a banner per category; Editorial and Photo News have none
   // of their own, so they take the News one rather than falling back to the
   // site-wide About banner and reading as a different section.
   "photo-news": { key: "photoNews", href: "/news/photo-news", image: "/images/news-hero.webp" },
-  testimony: { key: "testimony", href: "/news/testimony", image: "/images/hero-night-sky.webp" },
 };
 
 /**
@@ -38,7 +43,7 @@ export default async function NewsListPage({
   category,
   searchParams,
 }: {
-  category: PostCategory;
+  category: ListedCategory;
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const params = (await searchParams) ?? {};
@@ -105,7 +110,7 @@ export default async function NewsListPage({
                     key={post.id}
                     href={`/news/${post.slug}`}
                     image={post.coverImage}
-                    tag={tabs(LISTINGS[post.category].key)}
+                    tag={tabs(CATEGORY_KEY[post.category])}
                     title={post.title}
                   />
                 ))}

@@ -36,7 +36,12 @@ export const Posts: CollectionConfig = {
         { label: "News", value: "news" },
         { label: "Editorial", value: "editorial" },
         { label: "Photo News", value: "photo-news" },
-        { label: "Testimony", value: "testimony" },
+        // Kept, but relabelled rather than removed. Fourteen articles are
+        // filed under it and the value is in the enum Postgres enforces, so
+        // dropping the option would be a schema change those rows would fail.
+        // Only the label changes — labels are not stored — and it now warns an
+        // editor that the section it belonged to is gone.
+        { label: "Testimony (no longer shown on the site)", value: "testimony" },
       ],
     },
     {

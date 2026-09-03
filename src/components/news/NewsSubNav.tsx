@@ -10,7 +10,6 @@ export default function NewsSubNav({ active }: { active: string }) {
     { label: t("events"), href: "/events" },
     { label: t("editorial"), href: "/news/editorial" },
     { label: t("photoNews"), href: "/news/photo-news" },
-    { label: t("testimony"), href: "/news/testimony" },
   ];
 
   return (

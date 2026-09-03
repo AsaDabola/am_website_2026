@@ -44,7 +44,6 @@ export const TENANT_ROUTES = [
   "/news",
   "/news/editorial",
   "/news/photo-news",
-  "/news/testimony",
   "/events",
 
   "/contact",

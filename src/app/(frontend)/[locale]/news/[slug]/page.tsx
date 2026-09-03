@@ -9,25 +9,21 @@ import ArticleCard from "@/components/news/ArticleCard";
 import ShareButtons from "@/components/news/ShareButtons";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import { getPostBySlug, getRelatedPosts } from "@/lib/posts";
+import { CATEGORY_KEY, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { getTranslations } from "@/i18n/content";
 import { getLocale } from "next-intl/server";
 
 export const revalidate = 60;
 
-/** The key each section's name is kept under, so the tag reads in the country's language. */
-const categoryKey: Record<string, string> = {
-  news: "news",
-  editorial: "editorial",
-  "photo-news": "photoNews",
-  testimony: "testimony",
-};
-
 const categoryHref: Record<string, string> = {
   news: "/news",
   editorial: "/news/editorial",
   "photo-news": "/news/photo-news",
-  testimony: "/news/testimony",
+  // Testimony has no listing of its own any more. Its articles keep their
+  // pages and still say what they are — categoryKey above is untouched — but
+  // the tag and the "more in" link point at News, because that is where a
+  // reader clicking them can actually arrive.
+  testimony: "/news",
 };
 
 export async function generateMetadata({
@@ -80,12 +76,12 @@ export default async function NewsArticlePage({
                 </Link>
               </li>
               <span className="opacity-50">/</span>
-              <li>{tabs(categoryKey[post.category])}</li>
+              <li>{tabs(CATEGORY_KEY[post.category])}</li>
             </ol>
           </nav>
 
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-blue">
-            {tabs(categoryKey[post.category])}
+            {tabs(CATEGORY_KEY[post.category])}
           </p>
           <h1 className="mt-3 font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
             {post.title}
@@ -122,7 +118,7 @@ export default async function NewsArticlePage({
         <section className="bg-mist py-20">
           <Container>
             <h2 className="font-display text-2xl font-semibold tracking-[-0.02em] text-ink">
-              {t("moreIn", { section: tabs(categoryKey[post.category]) })}
+              {t("moreIn", { section: tabs(CATEGORY_KEY[post.category]) })}
             </h2>
             <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {relatedPosts.map((related) => (
@@ -130,7 +126,7 @@ export default async function NewsArticlePage({
                   key={related.id}
                   href={`/news/${related.slug}`}
                   image={related.coverImage}
-                  tag={tabs(categoryKey[related.category])}
+                  tag={tabs(CATEGORY_KEY[related.category])}
                   title={related.title}
                 />
               ))}

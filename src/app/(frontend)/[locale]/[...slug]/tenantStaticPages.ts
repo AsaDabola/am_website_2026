@@ -59,7 +59,6 @@ export const TENANT_STATIC_PAGES: Record<TenantRoute, () => Promise<StaticPageMo
   "/news": () => import("../news/page"),
   "/news/editorial": () => import("../news/editorial/page"),
   "/news/photo-news": () => import("../news/photo-news/page"),
-  "/news/testimony": () => import("../news/testimony/page"),
   "/events": () => import("../events/page"),
 
   "/contact": () => import("../contact/page"),

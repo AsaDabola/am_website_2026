@@ -190,7 +190,6 @@ export async function getNavigation(): Promise<{
           links: [
             { label: t("newsMenu.editorial"), href: "/news/editorial", tenantAware: true },
             { label: t("newsMenu.photoNews"), href: "/news/photo-news", tenantAware: true },
-            { label: t("newsMenu.testimony"), href: "/news/testimony", tenantAware: true },
           ],
         },
         {

@@ -42,6 +42,32 @@ function scoped(filter?: Where): Where {
 
 export type PostCategory = "news" | "editorial" | "photo-news" | "testimony";
 
+/**
+ * The categories that have a listing page of their own.
+ *
+ * Testimony had one and no longer does. The category itself stays: fourteen
+ * articles are filed under it, they keep their own pages, and the value is in
+ * the `enum_posts_category` the database enforces — dropping it would be a
+ * schema change that the existing rows would fail. They are unlisted now, the
+ * same way an article without a picture is: not reachable from a listing, and
+ * not gone.
+ */
+export type ListedCategory = Exclude<PostCategory, "testimony">;
+
+/**
+ * The wording key each category's name is kept under, so a tag reads in the
+ * country's language.
+ *
+ * Covers every category, listing page or not: a Testimony article still has to
+ * say what it is on its own page and on a related-articles card.
+ */
+export const CATEGORY_KEY: Record<PostCategory, string> = {
+  news: "news",
+  editorial: "editorial",
+  "photo-news": "photoNews",
+  testimony: "testimony",
+};
+
 export type PostSummary = {
   id: string;
   title: string;
