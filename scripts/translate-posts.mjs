@@ -18,8 +18,17 @@
  *
  * A translation provider and a key for it, as environment variables:
  *
- *   TRANSLATE_PROVIDER=google        # or: deepl
+ *   TRANSLATE_PROVIDER=openai        # or: google, deepl
  *   TRANSLATE_API_KEY=...
+ *
+ * OpenAI (platform.openai.com → API keys) runs a small model — gpt-4o-mini by
+ * default, `TRANSLATE_MODEL` to change it. It is the cheapest of the three by
+ * two orders of magnitude, pennies rather than tens of dollars per million
+ * characters, and it is the only one that will attempt every language the site
+ * ships: Fiji Hindi and Romansh have no machine translation service at all.
+ * In exchange it is a model rather than a machine, so its replies are checked
+ * to line up one-for-one with what was sent and a batch that does not is
+ * retried, then left undone rather than guessed at.
  *
  * Google Cloud Translation (console.cloud.google.com → APIs → Cloud
  * Translation API → Credentials → API key) bills about $20 per million
@@ -75,6 +84,24 @@ function siteLocales() {
   if (!block) throw new Error("I couldn't read the locale list out of src/i18n/routing.ts.");
   return [...block[1].matchAll(/"([a-z-]+)"/g)].map((match) => match[1]);
 }
+
+/**
+ * Each locale's name in its own language, read from the same file.
+ *
+ * The machine translation services take a language code. A model does not —
+ * it takes a sentence — and "translate this into 한국어" is both unambiguous
+ * and already written down here, so there is no second list to keep in step.
+ */
+function localeLabels() {
+  const source = fs.readFileSync(path.join(ROOT, "src", "i18n", "routing.ts"), "utf8");
+  const block = /export const localeLabels: Record<Locale, string> = \{([\s\S]*?)\n\};/.exec(source);
+  if (!block) return {};
+  return Object.fromEntries(
+    [...block[1].matchAll(/^\s*"?([a-z-]+)"?:\s*"([^"]+)"/gm)].map((m) => [m[1], m[2]]),
+  );
+}
+
+const LABELS = localeLabels();
 
 /* --------------------------------------------------------------- database */
 
@@ -167,6 +194,99 @@ const PROVIDERS = {
       return (await res.json()).translations.map((entry) => entry.text);
     },
   },
+
+  /**
+   * A small language model, through OpenAI's chat completions API.
+   *
+   * Two reasons to prefer it over the two above. It costs roughly a hundredth
+   * as much — pennies per million characters against twenty dollars — and it
+   * can attempt every language the site ships, including Fiji Hindi and
+   * Romansh, which neither machine translation service offers at all.
+   *
+   * What it costs in exchange is determinism: a model can decline, waffle, or
+   * hand back a different number of strings than it was given. So the reply is
+   * parsed strictly and a wrong count is thrown rather than accepted — the
+   * caller retries, and a translation that still does not line up is left
+   * undone, which shows the article in the language it was written in. That is
+   * the same fallback everything else here uses.
+   */
+  openai: {
+    name: "OpenAI",
+    aliases: {},
+    base: () => process.env.TRANSLATE_ENDPOINT || "https://api.openai.com/v1",
+    model: () => process.env.TRANSLATE_MODEL || "gpt-4o-mini",
+    /**
+     * Every locale, unfiltered. There is no endpoint to ask, and a model will
+     * make an honest attempt at any of them — which is the point of using one.
+     */
+    async languages() {
+      return siteLocales();
+    },
+    async translate(key, texts, target) {
+      const language = LABELS[target] ? `${LABELS[target]} (${target})` : target;
+      const res = await fetch(`${PROVIDERS.openai.base()}/chat/completions`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${key}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model: PROVIDERS.openai.model(),
+          // Nothing creative is wanted here.
+          temperature: 0,
+          response_format: { type: "json_object" },
+          messages: [
+            {
+              role: "system",
+              content:
+                "You are a translation engine for a Christian student mission's website. " +
+                `Translate each string from English into ${language}. ` +
+                "Reply with JSON: {\"translations\": [...]} — an array of the translated " +
+                "strings, the same length as the input and in the same order. " +
+                "Translate every string, even one that looks like a heading, a button " +
+                "label or a single word. Keep names of people, places and organisations " +
+                "as they are. Preserve any leading or trailing spaces, and any HTML or " +
+                "markdown around the words. Do not add notes, explanations or quotation " +
+                "marks of your own. If a string is already in the target language, return " +
+                "it unchanged.",
+            },
+            { role: "user", content: JSON.stringify({ strings: texts }) },
+          ],
+        }),
+      });
+
+      if (!res.ok) {
+        const error = new Error(`OpenAI returned ${res.status}: ${(await res.text()).slice(0, 300)}`);
+        error.status = res.status;
+        throw error;
+      }
+
+      const body = await res.json();
+      const content = body.choices?.[0]?.message?.content;
+      if (typeof content !== "string") throw new Error("OpenAI replied with no message content.");
+
+      let parsed;
+      try {
+        parsed = JSON.parse(content);
+      } catch {
+        throw new Error(`OpenAI replied with something that is not JSON: ${content.slice(0, 200)}`);
+      }
+
+      const out = parsed.translations;
+      // The guard that makes a model safe to use here: a reply that does not
+      // line up one-for-one with the input would silently put the wrong
+      // sentence under the wrong heading.
+      if (!Array.isArray(out) || out.length !== texts.length) {
+        const error = new Error(
+          `OpenAI returned ${Array.isArray(out) ? out.length : "no"} strings for ${texts.length}.`,
+        );
+        // Worth retrying: this is usually the model truncating a long batch.
+        error.status = 500;
+        throw error;
+      }
+      return out.map((value, index) => (typeof value === "string" ? value : texts[index]));
+    },
+  },
 };
 
 /**
@@ -210,6 +330,20 @@ async function translateBatch(provider, key, texts, target) {
  * and an article with eighty paragraphs exceeds the first while a single long
  * one can exceed the second.
  */
+/**
+ * How much each provider is given at once.
+ *
+ * The two machine services cap this themselves and are happy with large
+ * requests. A model is given far less: a long batch is where it starts
+ * truncating, and a truncated batch is a whole retry rather than a slightly
+ * short one, so smaller batches are both safer and, in the end, faster.
+ */
+const BATCH_LIMITS = {
+  google: { maxItems: 100, maxChars: 25_000 },
+  deepl: { maxItems: 100, maxChars: 25_000 },
+  openai: { maxItems: 25, maxChars: 6_000 },
+};
+
 function batched(texts, { maxItems = 100, maxChars = 25_000 } = {}) {
   const batches = [];
   let current = [];
@@ -277,9 +411,15 @@ async function confirm(question) {
 }
 
 function money(characters, provider) {
-  // Both list around the same headline rate per million characters. This is an
-  // estimate for deciding whether to press go, not an invoice.
-  const perMillion = provider === "deepl" ? 20 : 20;
+  // An estimate for deciding whether to press go, not an invoice.
+  //
+  // Google and DeepL both bill around $20 per million characters. A small
+  // model bills tokens, not characters: a million characters is roughly a
+  // quarter of a million tokens each way, which at gpt-4o-mini's rates is
+  // about twenty cents. Rounded up hard, because the rate depends on the
+  // model and on how verbose the language is — Korean and Thai take more
+  // tokens per character than French does.
+  const perMillion = provider === "openai" ? 1 : 20;
   return (characters / 1_000_000) * perMillion;
 }
 
@@ -289,7 +429,7 @@ async function main() {
   const providerName = (process.env.TRANSLATE_PROVIDER || "google").toLowerCase();
   const provider = PROVIDERS[providerName];
   if (!provider) {
-    throw new Error(`I don't know the provider "${providerName}". Use google or deepl.`);
+    throw new Error(`I don't know the provider "${providerName}". Use openai, google or deepl.`);
   }
   const key = process.env.TRANSLATE_API_KEY;
   if (!key && !DRY_RUN) {
@@ -399,7 +539,7 @@ async function main() {
     for (const job of jobs) {
       try {
         const out = [];
-        for (const batch of batched(job.shape.texts)) {
+        for (const batch of batched(job.shape.texts, BATCH_LIMITS[providerName])) {
           out.push(...(await translateBatch(provider, key, batch, job.target.code)));
         }
         const { title, excerpt, body } = job.shape.rebuild(out);
