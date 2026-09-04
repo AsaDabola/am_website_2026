@@ -333,8 +333,16 @@
       "stat3Value": "Ihlabathi",
       "stat3Label": "Uthungelwano lwasekhampasini",
       "dragToExplore": "Tsala ukuze uphonononge",
+      "slide1Line1": "Siphuphuma",
+      "slide1Line2": "ngobabalo nangothando",
       "slide2Line1": "Siphuphuma",
-      "slide2Line2": "ngobabalo nangothando"
+      "slide2Line2": "ngobabalo nangothando",
+      "slide3Line1": "Ikamva liqala",
+      "slide3Line2": "apho sikhoyo",
+      "slide4Line1": "Sikhula kunye",
+      "slide4Line2": "eLizwini",
+      "slide5Line1": "Sithunyiwe",
+      "slide5Line2": "ngenjongo"
     },
     "BibleStudyProgram": {
       "eyebrow": "Joyina Inkqubo Yethu Yokufunda IBhayibhile",

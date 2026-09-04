@@ -333,8 +333,16 @@
       "stat3Value": "Kimataifa",
       "stat3Label": "Mtandao wa vyuo",
       "dragToExplore": "Buruta kuchunguza",
+      "slide1Line1": "Tukifurika",
+      "slide1Line2": "kwa neema na upendo",
       "slide2Line1": "Tukifurika",
-      "slide2Line2": "kwa neema na upendo"
+      "slide2Line2": "kwa neema na upendo",
+      "slide3Line1": "Wakati ujao huanza",
+      "slide3Line2": "pale tulipo",
+      "slide4Line1": "Tunakua pamoja",
+      "slide4Line2": "katika Neno",
+      "slide5Line1": "Tumetumwa",
+      "slide5Line2": "kwa kusudi"
     },
     "BibleStudyProgram": {
       "eyebrow": "Jiunge na Mpango wetu wa Kujifunza Biblia",

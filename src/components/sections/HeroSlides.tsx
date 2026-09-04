@@ -149,18 +149,15 @@ export default function HeroSlides({
       <Container className="relative flex min-h-[720px] flex-col justify-center py-24">
         <Eyebrow tone="light">{eyebrow}</Eyebrow>
 
-        {/* One line, with the verb picked out in the pale blue. A slide with a
-            second line still gets it, set entirely in the blue, which is what
-            the design did when the headline was two lines and what an
-            authored slide can still ask for. `key` restarts the fade when the
-            slide turns. */}
+        {/* Two lines, the second in the pale blue: the colouring the design
+            asks for, and the reason the line break is in the copy rather than
+            left to the width. A line can also pick out a single word with
+            <hl>, which is what a one-line headline uses instead — nothing
+            ships that way today. `key` restarts the fade when the slide
+            turns. */}
         <h1
           key={index}
-          // Wide enough that all four headlines set on one line. At the old
-          // 3xl the longest one broke after "Sent" and left "Christ" alone on
-          // a second line — and because the others are one line, the whole
-          // hero jumped as the slideshow turned.
-          className="max-w-5xl animate-[fadeIn_700ms_ease-out] font-display text-5xl font-bold leading-[1.05] tracking-[-0.03em] text-white [text-shadow:0px_4px_14px_rgba(0,0,0,0.4)] sm:text-6xl lg:text-[80px]"
+          className="max-w-3xl animate-[fadeIn_700ms_ease-out] font-display text-5xl font-bold leading-[1.05] tracking-[-0.03em] text-white [text-shadow:0px_4px_14px_rgba(0,0,0,0.4)] sm:text-6xl lg:text-[80px]"
         >
           <Headline text={current.line1} />
           {current.line2 ? (
