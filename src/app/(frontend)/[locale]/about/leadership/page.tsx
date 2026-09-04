@@ -22,8 +22,11 @@ export const metadata: Metadata = {
 type Person = { name: string; role: string; image: string };
 
 /**
- * The people the page opens on, given a row of their own directly under the
- * advisor. Everyone else follows below, four to a row.
+ * The people the page opens on, directly under the advisor.
+ *
+ * A separate list from the coordinators because the order is deliberate, not
+ * because the page draws a break between them — it does not, and has not
+ * since the two grids became one.
  *
  * One tile throughout, at one size, so the separation is about reading order
  * rather than rank — the earlier version of this page gave three groups three
@@ -49,11 +52,6 @@ const team: Person[] = [
     name: "Can Liu",
     role: "Director of Chinese Mission in USA",
     image: "/images/hq-can-liu.webp",
-  },
-  {
-    name: "Vanessa Eusebio",
-    role: "Online Evangelism Coordinator",
-    image: "/images/hq-vanessa-eusebio.webp",
   },
 ];
 
@@ -220,12 +218,10 @@ function LeadershipPage() {
             ))}
           </div>
 
-          {/* One grid, four across at the design's 1104px container — which
-              comes out exact, because the two lists are twelve people between
-              them. They stay two lists in the code, since the order is
-              deliberate and the grouping is worth reading, but nothing forces
-              a break between them any more: an incomplete row is what a
-              forced break costs, and there is no longer one to spend.
+          {/* One grid, four across at the design's 1104px container. The two
+              lists above stay separate in the code — the order is deliberate
+              and the grouping is worth reading — but nothing forces a break
+              between them here, so the rows fill as far as the people go.
 
               Two across on a phone, so a face stays large enough to
               recognise. */}
