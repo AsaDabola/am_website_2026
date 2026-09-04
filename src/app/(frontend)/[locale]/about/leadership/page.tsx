@@ -22,8 +22,8 @@ export const metadata: Metadata = {
 type Person = { name: string; role: string; image: string };
 
 /**
- * The two people the page opens on, given a row of their own directly under
- * the advisor. Everyone else follows below, four to a row.
+ * The people the page opens on, given a row of their own directly under the
+ * advisor. Everyone else follows below, four to a row.
  *
  * One tile throughout, at one size, so the separation is about reading order
  * rather than rank — the earlier version of this page gave three groups three
@@ -32,6 +32,7 @@ type Person = { name: string; role: string; image: string };
 const leadership: Person[] = [
   { name: "Rani Reid", role: "Executive Director", image: "/images/leader-reid.webp" },
   { name: "Asa Daboh", role: "HQ Staff", image: "/images/hq-asa-daboh.webp" },
+  { name: "Ruth Jigmedsuren", role: "HQ Staff", image: "/images/hq-ruth-jigmedsuren.webp" },
 ];
 
 /** The regional coordinators west to east, then the rest of headquarters. */
@@ -44,7 +45,6 @@ const team: Person[] = [
   { name: "Samuel Kwizera", role: "Africa", image: "/images/coord-samuel-kwizera.webp" },
   { name: "Khiaghie Koropa", role: "Oceania", image: "/images/coord-khiaghie-koropa.webp" },
 
-  { name: "Ruth Jigmedsuren", role: "HQ Staff", image: "/images/hq-ruth-jigmedsuren.webp" },
   {
     name: "Can Liu",
     role: "Director of Chinese Mission in USA",
