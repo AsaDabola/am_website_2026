@@ -7,13 +7,19 @@ import AboutHero from "@/components/about/AboutHero";
 import ContactForm from "@/components/contact/ContactForm";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
+import withPageLayout from "@/components/pages/BuiltInPage";
+
+// Sixty seconds, so a section added to this page in /admin appears without a
+// deploy. Without it the page is fully static and the authored layout would be
+// whatever it was at build time — see components/pages/BuiltInPage.
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Contact Us | AM International",
   description: "Get in touch with Apostolos Missions International.",
 };
 
-export default async function ContactPage() {
+async function ContactPage() {
   const t = await getTranslations("Common");
 
   return (
@@ -58,3 +64,6 @@ export default async function ContactPage() {
     </>
   );
 }
+
+// Lets this page be added to or replaced from /admin — see BuiltInPage.
+export default withPageLayout("/contact", ContactPage);

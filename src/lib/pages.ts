@@ -1,5 +1,6 @@
 import config from "@payload-config";
 import { getPayload } from "payload";
+import type { PageBlockData } from "./pageBlockTypes";
 
 export type PageDoc = {
   id?: string | number;
@@ -15,6 +16,8 @@ export type PageDoc = {
   body?: any;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   sections?: any[];
+  /** The general page builder's sections — see collections/blocks/pageBlocks. */
+  layout?: PageBlockData[] | null;
 };
 
 /**

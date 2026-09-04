@@ -9,6 +9,12 @@ import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
 import EventsAndTestimonials from "@/components/sections/EventsAndTestimonials";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
+import withPageLayout from "@/components/pages/BuiltInPage";
+
+// Sixty seconds, so a section added to this page in /admin appears without a
+// deploy. Without it the page is fully static and the authored layout would be
+// whatever it was at build time — see components/pages/BuiltInPage.
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Online Bible Study | AM International",
@@ -16,7 +22,7 @@ export const metadata: Metadata = {
     "Apostolos Mission chapters offer online Bible studies for those who are unable to connect with our physical campus or local ministry locations.",
 };
 
-export default async function OnlineBibleStudyPage() {
+async function OnlineBibleStudyPage() {
   const [t, tHeader] = await Promise.all([
     getTranslations("Common"),
     getTranslations("Header"),
@@ -93,3 +99,6 @@ export default async function OnlineBibleStudyPage() {
     </>
   );
 }
+
+// Lets this page be added to or replaced from /admin — see BuiltInPage.
+export default withPageLayout("/get-involved/online-bible-study", OnlineBibleStudyPage);

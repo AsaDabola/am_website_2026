@@ -4,15 +4,30 @@ import Container from "@/components/ui/Container";
 import { Link } from "@/i18n/navigation";
 import type { PageDoc } from "@/lib/pages";
 import { mediaUrl } from "@/lib/homeBlockTypes";
+import { PageSections } from "@/lib/renderPageBlocks";
 
 type Crumb = { label: string; href?: string };
 
-export default function PageRenderer({ page, crumbs }: { page: PageDoc; crumbs: Crumb[] }) {
+export default function PageRenderer({
+  page,
+  crumbs,
+}: {
+  page: PageDoc;
+  crumbs: Crumb[];
+}) {
   const heroImageUrl = mediaUrl(page.hero?.image);
   const heading = page.hero?.heading || page.title;
+  const sections = page.layout ?? [];
+
+  // A page whose first authored section is a Banner has been given a hero of
+  // its own, with its own picture and colours; drawing this one above it would
+  // put two page titles on the page. Anything else keeps the standard band, so
+  // a page built from a couple of text sections still opens properly.
+  const ownHero = sections[0]?.blockType === "banner";
 
   return (
     <>
+      {!ownHero && (
       <section className="relative overflow-hidden bg-night">
         {heroImageUrl && (
           <>
@@ -49,6 +64,7 @@ export default function PageRenderer({ page, crumbs }: { page: PageDoc; crumbs: 
           )}
         </Container>
       </section>
+      )}
 
       {page.body && (
         <article className="bg-white py-20">
@@ -60,6 +76,8 @@ export default function PageRenderer({ page, crumbs }: { page: PageDoc; crumbs: 
           </Container>
         </article>
       )}
+
+      <PageSections sections={sections} revealFirst={!ownHero} />
     </>
   );
 }

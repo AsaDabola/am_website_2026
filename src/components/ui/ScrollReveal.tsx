@@ -63,7 +63,9 @@ export default function ScrollReveal() {
           observer.unobserve(entry.target);
         }
       },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.05 },
+      // Same reasoning as Reveal: the rise is slow, so it starts as the top
+      // edge appears rather than once the section is properly in view.
+      { rootMargin: "0px 0px -2% 0px", threshold: 0 },
     );
 
     for (const block of hidden) observer.observe(block);

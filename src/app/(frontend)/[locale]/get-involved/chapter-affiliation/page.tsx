@@ -6,6 +6,12 @@ import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
 import ChapterAffiliationForm from "@/components/get-involved/ChapterAffiliationForm";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
+import withPageLayout from "@/components/pages/BuiltInPage";
+
+// Sixty seconds, so a section added to this page in /admin appears without a
+// deploy. Without it the page is fully static and the authored layout would be
+// whatever it was at build time — see components/pages/BuiltInPage.
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Chapter Affiliation | AM International",
@@ -13,7 +19,7 @@ export const metadata: Metadata = {
     "Apply for annual chapter reaffirmation or start a new AM chapter on your campus.",
 };
 
-export default async function ChapterAffiliationPage() {
+async function ChapterAffiliationPage() {
   const tHeader = await getTranslations("Header");
 
   return (
@@ -80,3 +86,6 @@ export default async function ChapterAffiliationPage() {
     </>
   );
 }
+
+// Lets this page be added to or replaced from /admin — see BuiltInPage.
+export default withPageLayout("/get-involved/chapter-affiliation", ChapterAffiliationPage);

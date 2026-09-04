@@ -10,6 +10,7 @@ import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 import { getEventsPage, type EventSort } from "@/lib/events";
 import { getTranslations } from "@/i18n/content";
+import withPageLayout from "@/components/pages/BuiltInPage";
 
 export const revalidate = 60;
 
@@ -28,7 +29,7 @@ function first(value: string | string[] | undefined): string | undefined {
  * same sub-nav, the same count and sort line, the same card. The date sits
  * where a story's section sits, which is the line the design puts there.
  */
-export default async function EventsPage({
+async function EventsPage({
   searchParams,
 }: {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
@@ -134,3 +135,6 @@ export default async function EventsPage({
     </>
   );
 }
+
+// Lets this page be added to or replaced from /admin — see BuiltInPage.
+export default withPageLayout("/events", EventsPage);

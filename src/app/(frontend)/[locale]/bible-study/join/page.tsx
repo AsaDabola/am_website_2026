@@ -6,6 +6,12 @@ import AboutHero from "@/components/about/AboutHero";
 import BibleStudySignupForm from "@/components/bible-study/BibleStudySignupForm";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
+import withPageLayout from "@/components/pages/BuiltInPage";
+
+// Sixty seconds, so a section added to this page in /admin appears without a
+// deploy. Without it the page is fully static and the authored layout would be
+// whatever it was at build time — see components/pages/BuiltInPage.
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Join our Bible Studies | AM International",
@@ -13,7 +19,7 @@ export const metadata: Metadata = {
     "Fill out the form below and one of our teachers will reach out with more information.",
 };
 
-export default function JoinBibleStudyPage() {
+function JoinBibleStudyPage() {
   return (
     <>
       <AboutHero
@@ -75,3 +81,6 @@ export default function JoinBibleStudyPage() {
     </>
   );
 }
+
+// Lets this page be added to or replaced from /admin — see BuiltInPage.
+export default withPageLayout("/bible-study/join", JoinBibleStudyPage);

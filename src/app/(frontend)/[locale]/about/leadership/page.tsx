@@ -7,6 +7,12 @@ import AboutSubNav from "@/components/about/AboutSubNav";
 import { ArrowRightIcon } from "@/components/ui/icons";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
+import withPageLayout from "@/components/pages/BuiltInPage";
+
+// Sixty seconds, so a section added to this page in /admin appears without a
+// deploy. Without it the page is fully static and the authored layout would be
+// whatever it was at build time — see components/pages/BuiltInPage.
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Leadership | AM International",
@@ -150,7 +156,7 @@ const leaderKinds = [
   },
 ];
 
-export default function LeadershipPage() {
+function LeadershipPage() {
   return (
     <>
       <LeadershipHero
@@ -275,3 +281,6 @@ export default function LeadershipPage() {
     </>
   );
 }
+
+// Lets this page be added to or replaced from /admin — see BuiltInPage.
+export default withPageLayout("/about/leadership", LeadershipPage);

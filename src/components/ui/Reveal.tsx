@@ -42,9 +42,11 @@ export default function Reveal({
           observer.disconnect();
         }
       },
-      // Fire a little before the element is fully in view, so the movement has
-      // finished by the time it is properly on screen.
-      { rootMargin: "0px 0px -10% 0px", threshold: 0.08 },
+      // Fires as the top edge appears rather than once the section is well
+      // into view. The rise takes over a second now, and waiting for 8% of a
+      // tall section to show meant the movement was still running when the
+      // section was already fully on screen.
+      { rootMargin: "0px 0px -2% 0px", threshold: 0 },
     );
 
     observer.observe(element);

@@ -6,6 +6,12 @@ import AboutSubNav from "@/components/about/AboutSubNav";
 import PullQuote from "@/components/about/PullQuote";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
+import withPageLayout from "@/components/pages/BuiltInPage";
+
+// Sixty seconds, so a section added to this page in /admin appears without a
+// deploy. Without it the page is fully static and the authored layout would be
+// whatever it was at build time — see components/pages/BuiltInPage.
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Mission Statement | AM International",
@@ -49,7 +55,7 @@ function SummaryList({ items }: { items: { term: string; detail: ReactNode }[] }
   );
 }
 
-export default function MissionStatementPage() {
+function MissionStatementPage() {
   return (
     <>
       <AboutHero
@@ -216,3 +222,6 @@ export default function MissionStatementPage() {
     </>
   );
 }
+
+// Lets this page be added to or replaced from /admin — see BuiltInPage.
+export default withPageLayout("/about/mission", MissionStatementPage);

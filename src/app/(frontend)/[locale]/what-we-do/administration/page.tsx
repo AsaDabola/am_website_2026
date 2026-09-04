@@ -6,6 +6,12 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import AboutHero from "@/components/about/AboutHero";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
+import withPageLayout from "@/components/pages/BuiltInPage";
+
+// Sixty seconds, so a section added to this page in /admin appears without a
+// deploy. Without it the page is fully static and the authored layout would be
+// whatever it was at build time — see components/pages/BuiltInPage.
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Administration | AM International",
@@ -74,7 +80,7 @@ const additionalDepartments = [
   },
 ];
 
-export default async function AdministrationPage() {
+async function AdministrationPage() {
   const [t, tHeader] = await Promise.all([
     getTranslations("Common"),
     getTranslations("Header"),
@@ -189,3 +195,6 @@ export default async function AdministrationPage() {
     </>
   );
 }
+
+// Lets this page be added to or replaced from /admin — see BuiltInPage.
+export default withPageLayout("/what-we-do/administration", AdministrationPage);

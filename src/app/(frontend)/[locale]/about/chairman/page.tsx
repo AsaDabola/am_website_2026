@@ -5,6 +5,12 @@ import AboutSubNav from "@/components/about/AboutSubNav";
 import HonoraryChairman from "@/components/sections/HonoraryChairman";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
+import withPageLayout from "@/components/pages/BuiltInPage";
+
+// Sixty seconds, so a section added to this page in /admin appears without a
+// deploy. Without it the page is fully static and the authored layout would be
+// whatever it was at build time — see components/pages/BuiltInPage.
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Ralph D. Winter | AM International",
@@ -12,7 +18,7 @@ export const metadata: Metadata = {
     "AM's first honorary chairman, and the missiology the ministry still carries forward.",
 };
 
-export default function ChairmanPage() {
+function ChairmanPage() {
   return (
     <>
       {/* The design leads this page with the same dark legacy band the home
@@ -105,3 +111,6 @@ export default function ChairmanPage() {
     </>
   );
 }
+
+// Lets this page be added to or replaced from /admin — see BuiltInPage.
+export default withPageLayout("/about/chairman", ChairmanPage);

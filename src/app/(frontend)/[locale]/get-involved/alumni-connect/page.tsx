@@ -8,13 +8,19 @@ import AboutHero from "@/components/about/AboutHero";
 import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
+import withPageLayout from "@/components/pages/BuiltInPage";
+
+// Sixty seconds, so a section added to this page in /admin appears without a
+// deploy. Without it the page is fully static and the authored layout would be
+// whatever it was at build time — see components/pages/BuiltInPage.
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Alumni Connect | AM International",
   description: "Stay connected with AM after graduation and keep serving the mission.",
 };
 
-export default async function AlumniConnectPage() {
+async function AlumniConnectPage() {
   const [t, tHeader] = await Promise.all([
     getTranslations("Common"),
     getTranslations("Header"),
@@ -82,3 +88,6 @@ export default async function AlumniConnectPage() {
     </>
   );
 }
+
+// Lets this page be added to or replaced from /admin — see BuiltInPage.
+export default withPageLayout("/get-involved/alumni-connect", AlumniConnectPage);

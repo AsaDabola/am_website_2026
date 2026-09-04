@@ -2,6 +2,7 @@ import type { CollectionConfig, TextFieldSingleValidation } from "payload";
 import { enforceTenantScope, hideUnlessGranted, tenantScopedAccess } from "@/lib/adminAccess";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { homeBlocks } from "./blocks/homeBlocks";
+import { pageBlocks } from "./blocks/pageBlocks";
 
 // Editor-managed pages. Leaving `tenant` empty makes a page part of the main
 // amintl.org site; setting it scopes the page to one country site instead
@@ -64,7 +65,44 @@ export const Pages: CollectionConfig = {
       admin: {
         readOnly: true,
         description:
-          "This page is built in code — the site ships it, and it is listed here so every page of the site is in one place. Its wording is edited under Page wording; its layout is changed in the design. The content fields below are hidden for it, because filling them in would do nothing.",
+          "This page is built in code — the site ships it, and it is listed here so every page of the site is in one place. Its wording is edited under Page wording. Its sections can be added to, or replaced entirely, under Sections below.",
+      },
+    },
+    {
+      name: "layoutMode",
+      type: "select",
+      defaultValue: "inherit",
+      options: [
+        { label: "Keep the page as designed", value: "inherit" },
+        { label: "Add my sections above it", value: "before" },
+        { label: "Add my sections below it", value: "after" },
+        { label: "Use only my sections", value: "replace" },
+      ],
+      admin: {
+        condition: (data) => data?.builtIn === true,
+        description:
+          "What to do with the sections below. Nothing is thrown away — set this back to \"as designed\" and the page the site ships comes back exactly as it was.",
+      },
+    },
+    {
+      name: "layout",
+      type: "blocks",
+      label: "Sections",
+      // Deliberately not `[...pageBlocks, ...homeBlocks]`, tempting as it is —
+      // a homepage section offered on every page would be a nice thing to
+      // have. Payload gives a block one table per collection, so reusing the
+      // home blocks in a second field re-declares that table, and the schema
+      // it then wants marks about forty columns of the *existing, populated*
+      // home block tables NOT NULL. Measured, not guessed: pushing this config
+      // with and without the reuse is the only difference between the two.
+      // Nothing here would apply that to the deployed database, but it is the
+      // exact shape of the change that has taken the admin down twice, and the
+      // general blocks below cover the same ground with more control over how
+      // they look.
+      blocks: pageBlocks,
+      admin: {
+        description:
+          "Build the page out of sections. Drag to reorder them. Every section has a Look panel for its background, gradient, colours, spacing, width and alignment. Text typed here is shown as written — it is not yet translated into the site's other languages, so on a country site read in another language write it in that language, or leave the page as designed and change its wording under Page wording instead.",
       },
     },
     {
@@ -91,11 +129,12 @@ export const Pages: CollectionConfig = {
     {
       name: "sections",
       type: "blocks",
+      label: "Home page sections",
       blocks: homeBlocks,
       admin: {
-        condition: (data) => data?.builtIn !== true,
+        condition: (data) => data?.isHome === true && data?.builtIn !== true,
         description:
-          "Homepage-style content sections (used instead of the simple hero/body above — mainly for a site's home page).",
+          "The homepage's own named sections, for a site's home page. Every other page is built under Sections above.",
       },
     },
     {

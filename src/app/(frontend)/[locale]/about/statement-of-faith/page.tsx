@@ -4,6 +4,12 @@ import AboutHero from "@/components/about/AboutHero";
 import AboutSubNav from "@/components/about/AboutSubNav";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
+import withPageLayout from "@/components/pages/BuiltInPage";
+
+// Sixty seconds, so a section added to this page in /admin appears without a
+// deploy. Without it the page is fully static and the authored layout would be
+// whatever it was at build time — see components/pages/BuiltInPage.
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Statement of Faith | AM International",
@@ -31,7 +37,7 @@ const BELIEFS = [
   "We believe that the return of Jesus Christ is imminent, and that it will be visible and personal.",
 ];
 
-export default function StatementOfFaithPage() {
+function StatementOfFaithPage() {
   return (
     <>
       <AboutHero
@@ -66,3 +72,6 @@ export default function StatementOfFaithPage() {
     </>
   );
 }
+
+// Lets this page be added to or replaced from /admin — see BuiltInPage.
+export default withPageLayout("/about/statement-of-faith", StatementOfFaithPage);

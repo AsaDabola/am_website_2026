@@ -188,10 +188,17 @@ body {
    transition to wait through. */
 .am-reveal {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(34px);
+  /* Unhurried on purpose: a section rises about two lines' worth over a
+     second and settles rather than arriving. The curve decelerates almost the
+     whole way — most of the second is the last few pixels — so the movement
+     reads as something coming to rest, not as something sliding into place.
+     The opacity runs shorter than the travel so a section is readable while it
+     is still finishing its rise, which is what keeps a slow reveal from
+     feeling like waiting. */
   transition:
-    opacity 620ms cubic-bezier(0.22, 0.61, 0.36, 1),
-    transform 620ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    opacity 780ms cubic-bezier(0.33, 0, 0.2, 1),
+    transform 1150ms cubic-bezier(0.16, 0.84, 0.3, 1);
   will-change: opacity, transform;
 }
 .am-reveal[data-revealed="true"] {

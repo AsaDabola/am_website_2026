@@ -13,6 +13,7 @@ import {
   type DirectoryCountry,
 } from "@/lib/countryDirectory";
 import { flagSrc } from "@/lib/countryFlags";
+import withPageLayout from "@/components/pages/BuiltInPage";
 
 export const revalidate = 60;
 
@@ -61,7 +62,7 @@ function CountryRow({ country }: { country: DirectoryCountry }) {
   );
 }
 
-export default async function NetworkPage() {
+async function NetworkPage() {
   const [t, countries] = await Promise.all([
     getTranslations("Network"),
     getCountryDirectory(),
@@ -182,3 +183,6 @@ export default async function NetworkPage() {
     </>
   );
 }
+
+// Lets this page be added to or replaced from /admin — see BuiltInPage.
+export default withPageLayout("/network", NetworkPage);

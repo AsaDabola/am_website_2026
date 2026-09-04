@@ -37,29 +37,62 @@ deployed database. These scripts are how.
 
    Lines only in `wanted.txt` are the drift.
 
-4. Write the DDL for those lines into a `.sql` file here, then **verify it** —
-   apply it to a *second* scratch database holding the old schema and confirm
-   the dumps match:
+4. **Generate** the DDL rather than writing it:
 
    ```bash
-   pg_dump --schema-only --no-owner --no-privileges "$OLD" > /tmp/patched.sql
-   pg_dump --schema-only --no-owner --no-privileges "$NEW" > /tmp/pushed.sql
-   diff /tmp/patched.sql /tmp/pushed.sql   # must be empty
+   SOURCE_URL='postgres://localhost/scratch' \
+   TARGET_URL='<the Vercel connection string>' \
+     node scripts/generate-catchup-sql.mjs > scripts/add-your-feature.sql
    ```
+
+   It asks Postgres for the definition of everything the deployed database is
+   missing — tables with their keys and indexes, enum types, and columns on
+   tables that already exist — and makes every statement safe to run twice.
+   It only ever adds: no `DROP`, no `ALTER TYPE`, no change to a column that
+   already exists, so a rename shows up as a new column and removing the old
+   one stays a deliberate decision.
+
+   This exists because step 4 used to be a person typing DDL from a diff, and
+   that is how both of the outages below happened. One page-builder block is
+   25 tables, 111 types and 500-odd columns; that is not a thing to hand-write.
+
+   Read the generated file before running it, and **still verify it** — a
+   generator has bugs too, and step 5 is what finds them. (It found one:
+   `pg_dump -t` dumps a table without the enum types its columns are declared
+   as, so the first version of the file failed on its own first statement.)
+
+5. **Verify it.** Apply it to a *second* scratch database holding the old
+   schema, twice, and confirm the result matches the pushed one:
+
+   ```bash
+   createdb -T old patched
+   POSTGRES_URL='postgres://localhost/patched' node scripts/run-sql.mjs scripts/add-your-feature.sql
+   POSTGRES_URL='postgres://localhost/patched' node scripts/run-sql.mjs scripts/add-your-feature.sql  # must also succeed
+   pg_dump --schema-only --no-owner --no-privileges patched > /tmp/patched.sql
+   pg_dump --schema-only --no-owner --no-privileges scratch > /tmp/pushed.sql
+   diff /tmp/patched.sql /tmp/pushed.sql   # only pg_dump's own \restrict nonce,
+                                           # and possibly a column's position
+   ```
+
+   Run it twice on purpose: "safe to run twice" is a claim, and a half-applied
+   file that cannot be re-run is worse than one that never ran. `ADD CONSTRAINT
+   ... PRIMARY KEY` was the one that caught this out — a second primary key
+   raises `invalid_table_definition`, which a blanket `EXCEPTION WHEN
+   duplicate_object` does not catch.
 
    This is not optional ceremony. Payload's adapter cares about exact table and
    column names — `shareWithContinents` becomes a table called
    `posts_share_with_continents` with a column called `value` of a generated
-   enum type — and hand-written guesses at that shape fail in the same silent
-   way the missing column did.
+   enum type — and a guess at that shape fails in the same silent way the
+   missing column did.
 
-5. Apply it to the deployed database:
+6. Apply it to the deployed database:
 
    ```bash
    POSTGRES_URL='<the Vercel connection string>' node scripts/run-sql.mjs scripts/your-file.sql
    ```
 
-6. Regenerate the committed snapshot so the next person can diff against it
+7. Regenerate the committed snapshot so the next person can diff against it
    without any of the above:
 
    ```bash
@@ -134,6 +167,7 @@ nothing to do with the database you came to inspect.
 | --- | --- |
 | `push-schema.mts` | Boots Payload in development so `push` builds the schema. **Never point at production.** |
 | `inventory-schema.mjs` | Read-only. Prints every table, column and enum, for diffing. |
+| `generate-catchup-sql.mjs` | Read-only. Writes the idempotent, additive DDL that brings one database up to another. Use it instead of writing migration SQL by hand. |
 | `probe-collections.mjs` | Read-only. Names the collection whose admin screen each missing column breaks. |
 | `schema.expected.txt` | Committed snapshot of what the collections currently describe. |
 | `run-sql.mjs` | Applies a `.sql` file to the database in `POSTGRES_URL`. |
@@ -146,6 +180,7 @@ nothing to do with the database you came to inspect.
 | `add-admin-roles.sql` | Adds roles and per-country permissions to Users. **Run this before deploying the access rules** — without it nobody can sign in to /admin. |
 | `add-traffic.sql` | Creates the `traffic` counter table behind /admin/traffic. Not a Payload collection, so `push` will not build it — run this locally as well as on the deployed database. Safe to deploy the code without it; the screen just says nothing has been counted yet. |
 | `add-post-translations.sql` | Creates the `post_translations` table holding each article in each language. Not a Payload collection either, so run it locally too. Safe to deploy the code without it; articles just read in the language they were written in. |
+| `add-page-builder.sql` | The page builder: 25 block tables, 111 types, and `pages.layout_mode`. Generated by `generate-catchup-sql.mjs`. Safe to deploy the code without it — a page with no authored sections renders exactly as it does today, and `getRouteLayout` returns null on any database error. |
 | `translate-posts.mjs` | Fills that table from a translation provider. Resumable, priced before it runs, and skips anything already done. See below. |
 | `copy-flags.mjs` | Copies country flag SVGs into `public/flags`. |
 | `import-article-images.mjs` | Attaches an archive of article photographs to the posts already in the CMS. Dry-run by default. See below. |
