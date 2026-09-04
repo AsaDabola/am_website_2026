@@ -95,12 +95,17 @@ export default function HeroSlides({
       </div>
 
       {/*
-        The wash that keeps the headline readable over a photograph. It has
-        been taken down a fifth twice — 70 and 20 to begin with, then 56 and
-        16 — so the picture now carries most of the frame and the text has
-        just enough behind it. Its own shadow does the rest.
+        No wash over the photograph any more.
+
+        There used to be one — a left-to-right darkening, taken down a fifth
+        twice (70 and 20, then 56 and 16, then 45 and 13) before being dropped
+        here. The banner photographs now carry their own grading, so the wash
+        was darkening a picture that had already been darkened deliberately.
+        The headline keeps its own drop shadow, which is what actually holds it
+        against a bright frame; if a future photograph needs more than that,
+        the answer is to grade that photograph rather than to put a sheet back
+        over all of them.
       */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-night/45 via-night/13 to-transparent" />
 
       <Container className="relative flex min-h-[720px] flex-col justify-center py-24">
         <Eyebrow tone="light">{eyebrow}</Eyebrow>
