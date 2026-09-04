@@ -9,11 +9,50 @@ import HeroStats from "@/components/sections/HeroStats";
 
 export type HeroSlide = {
   image: string;
-  /** White line. */
+  /**
+   * The headline. Wrap a word in <hl>…</hl> to set it in the headline blue —
+   * "As the Father <hl>Sent</hl> Christ".
+   */
   line1: string;
-  /** Sky-blue line under it. */
+  /**
+   * A second line under it, set entirely in the blue. Empty on the slides the
+   * site ships, which highlight a word inside line1 instead; kept because a
+   * slide authored in the admin still has two fields to fill in.
+   */
   line2: string;
 };
+
+/** The blue the headline is picked out in. */
+const HIGHLIGHT = "text-[#c5ddff]";
+
+/**
+ * A headline with its highlighted word set in the blue.
+ *
+ * The mark is a tag inside the message rather than a separate field, because
+ * the word being picked out sits in the middle of the sentence — and because
+ * a sentence translated into Korean or Arabic puts it somewhere else entirely.
+ * A position could not survive that; a tag travels with the word.
+ *
+ * Split rather than parsed as HTML: nothing here is ever set as markup, so a
+ * stray angle bracket in someone's copy is text, not a hole.
+ */
+function Headline({ text }: { text: string }) {
+  const parts = text.split(/<hl>|<\/hl>/);
+  return (
+    <>
+      {parts.map((part, index) =>
+        // Odd pieces are what sat between the tags.
+        index % 2 === 1 ? (
+          <span key={index} className={HIGHLIGHT}>
+            {part}
+          </span>
+        ) : (
+          part
+        ),
+      )}
+    </>
+  );
+}
 
 /**
  * The home hero: a cross-fading photograph with its own headline.
@@ -110,16 +149,26 @@ export default function HeroSlides({
       <Container className="relative flex min-h-[720px] flex-col justify-center py-24">
         <Eyebrow tone="light">{eyebrow}</Eyebrow>
 
-        {/* Two lines, the second in the pale blue: the colouring the design
-            asks for, and the reason the line break is in the copy rather than
-            left to the width. `key` restarts the fade when the slide turns. */}
+        {/* One line, with the verb picked out in the pale blue. A slide with a
+            second line still gets it, set entirely in the blue, which is what
+            the design did when the headline was two lines and what an
+            authored slide can still ask for. `key` restarts the fade when the
+            slide turns. */}
         <h1
           key={index}
-          className="max-w-3xl animate-[fadeIn_700ms_ease-out] font-display text-5xl font-bold leading-[1.05] tracking-[-0.03em] text-white [text-shadow:0px_4px_14px_rgba(0,0,0,0.4)] sm:text-6xl lg:text-[80px]"
+          // Wide enough that all four headlines set on one line. At the old
+          // 3xl the longest one broke after "Sent" and left "Christ" alone on
+          // a second line — and because the others are one line, the whole
+          // hero jumped as the slideshow turned.
+          className="max-w-5xl animate-[fadeIn_700ms_ease-out] font-display text-5xl font-bold leading-[1.05] tracking-[-0.03em] text-white [text-shadow:0px_4px_14px_rgba(0,0,0,0.4)] sm:text-6xl lg:text-[80px]"
         >
-          {current.line1}
-          <br />
-          <span className="text-[#c5ddff]">{current.line2}</span>
+          <Headline text={current.line1} />
+          {current.line2 ? (
+            <>
+              <br />
+              <span className={HIGHLIGHT}>{current.line2}</span>
+            </>
+          ) : null}
         </h1>
 
         <div className="mt-9 flex flex-wrap gap-4">

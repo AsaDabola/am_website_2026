@@ -19,7 +19,8 @@
     "seed-pages": "node scripts/seed-built-in-pages.mjs",
     "seed-chapters": "node scripts/seed-chapters.mjs",
     "seed-slides": "node scripts/seed-home-slides.mjs",
-    "translate-posts": "node --env-file=.env.local scripts/translate-posts.mjs"
+    "translate-posts": "node --env-file=.env.local scripts/translate-posts.mjs",
+    "translate-messages": "node --env-file=.env.local scripts/translate-messages.mjs"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.88.0",
