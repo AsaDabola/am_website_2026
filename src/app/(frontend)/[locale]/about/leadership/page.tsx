@@ -19,24 +19,23 @@ export const metadata: Metadata = {
   description: "Servants, sent and given — the people who steer AM's mission worldwide.",
 };
 
-/**
- * Everyone on one grid, in the order the design lays them out: the executive
- * director, then the regional coordinators west to east, then headquarters
- * staff. The earlier version of this page split the same people across three
- * sections with three different treatments — a wide row with a biography, a
- * four-up card with a biography and an email, and a small five-up tile — which
- * read as three ranks. The design collapses them into one tile so the page
- * shows a team rather than a hierarchy.
- */
-const people: {
-  name: string;
-  role: string;
-  image: string;
-  /** Force this person to open a new row at the five-column width. */
-  startsRow?: boolean;
-}[] = [
-  { name: "Rani Reid", role: "Executive Director", image: "/images/leader-reid.webp" },
+type Person = { name: string; role: string; image: string };
 
+/**
+ * The two people the page opens on, given a row of their own directly under
+ * the advisor. Everyone else follows below, four to a row.
+ *
+ * One tile throughout, at one size, so the separation is about reading order
+ * rather than rank — the earlier version of this page gave three groups three
+ * different treatments and read as three tiers.
+ */
+const leadership: Person[] = [
+  { name: "Rani Reid", role: "Executive Director", image: "/images/leader-reid.webp" },
+  { name: "Asa Daboh", role: "HQ Staff", image: "/images/hq-asa-daboh.webp" },
+];
+
+/** The regional coordinators west to east, then the rest of headquarters. */
+const team: Person[] = [
   { name: "Andrea Rico", role: "South America", image: "/images/coord-andrea-rico.webp" },
   { name: "Joel Lee", role: "Asia Pacific", image: "/images/coord-joel-lee.webp" },
   { name: "Mara Onyeama", role: "Europe", image: "/images/coord-mara-onyeama.webp" },
@@ -45,16 +44,6 @@ const people: {
   { name: "Samuel Kwizera", role: "Africa", image: "/images/coord-samuel-kwizera.webp" },
   { name: "Khiaghie Koropa", role: "Oceania", image: "/images/coord-khiaghie-koropa.webp" },
 
-  // Headquarters starts its own row in the design rather than running on from
-  // the coordinators, which is the only thing separating the two groups now
-  // that they share a tile. Only at the five-column width — below that the
-  // grid rewraps anyway and a forced break would leave a hole.
-  {
-    name: "Asa Daboh",
-    role: "HQ Staff",
-    image: "/images/hq-asa-daboh.webp",
-    startsRow: true,
-  },
   { name: "Ruth Jigmedsuren", role: "HQ Staff", image: "/images/hq-ruth-jigmedsuren.webp" },
   {
     name: "Can Liu",
@@ -69,9 +58,9 @@ const people: {
 ];
 
 /**
- * Kept out of the grid on purpose: the design gives this one person a wide
- * row with a portrait at 258px and room for a paragraph, below a rule. It is
- * the only biography left on the page.
+ * Kept out of the grid on purpose, and now first on the page: a wide row with
+ * a portrait at 258px and room for a paragraph. It is the only biography left
+ * here, which is why it cannot sit in a tile with everyone else.
  */
 const advisors = [
   {
@@ -125,6 +114,24 @@ function Portrait({
           {initials(name)}
         </span>
       )}
+    </div>
+  );
+}
+
+/** One person in the grid. Shared by both rows so the two cannot drift apart. */
+function PersonTile({ person }: { person: Person }) {
+  return (
+    <div className="flex flex-col text-center">
+      <Portrait
+        image={person.image}
+        name={person.name}
+        sizes="(min-width: 1024px) 252px, (min-width: 640px) 30vw, 45vw"
+        initialsClassName="text-2xl"
+      />
+      <p className="pt-4 font-display text-base font-extrabold leading-5 tracking-[-0.025em] text-ink">
+        {person.name}
+      </p>
+      <p className="pt-[5px] text-sm leading-5 text-ink-muted">{person.role}</p>
     </div>
   );
 }
@@ -187,37 +194,11 @@ function LeadershipPage() {
             The people behind the sending.
           </h2>
 
-          {/* Five across at the design's 1104px container, where a 201.6px
-              tile and a 24px gutter come out exact. Two across on a phone so
-              a face stays large enough to recognise. */}
-          <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-11 sm:grid-cols-3 lg:grid-cols-5">
-            {people.map((person) => (
-              <div
-                key={`${person.name}-${person.role}`}
-                className={`flex flex-col text-center ${person.startsRow ? "lg:col-start-1" : ""}`}
-              >
-                <Portrait
-                  image={person.image}
-                  name={person.name}
-                  sizes="(min-width: 1024px) 202px, (min-width: 640px) 30vw, 45vw"
-                  initialsClassName="text-2xl"
-                />
-                <p className="pt-4 font-display text-base font-extrabold leading-5 tracking-[-0.025em] text-ink">
-                  {person.name}
-                </p>
-                <p className="pt-[5px] text-sm leading-5 text-ink-muted">{person.role}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* The one biography the design keeps, under a rule: a wide row
-              rather than a tile, because the paragraph needs the width. */}
-          <div className="mt-20">
+          {/* The biography first: a wide row rather than a tile, because the
+              paragraph needs the width. */}
+          <div className="mt-14">
             {advisors.map((leader) => (
-              <div
-                key={leader.name}
-                className="flex flex-col gap-10 border-t border-ink/[0.12] pt-9 sm:flex-row"
-              >
+              <div key={leader.name} className="flex flex-col gap-10 sm:flex-row">
                 <Portrait
                   image={leader.image}
                   name={leader.name}
@@ -237,6 +218,25 @@ function LeadershipPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Two grids rather than one, so the break after the first pair is
+              guaranteed rather than left to how the row happens to wrap. Both
+              are four across at the design's 1104px container, so every tile
+              on the page is the same size. Two across on a phone, so a face
+              stays large enough to recognise. */}
+          <div className="mt-16 border-t border-ink/[0.12] pt-14">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-11 sm:grid-cols-3 lg:grid-cols-4">
+              {leadership.map((person) => (
+                <PersonTile key={person.name} person={person} />
+              ))}
+            </div>
+
+            <div className="mt-11 grid grid-cols-2 gap-x-6 gap-y-11 sm:grid-cols-3 lg:grid-cols-4">
+              {team.map((person) => (
+                <PersonTile key={`${person.name}-${person.role}`} person={person} />
+              ))}
+            </div>
           </div>
         </Container>
       </section>

@@ -32,7 +32,10 @@ const PADDING: Record<string, string> = {
 };
 
 const WIDTH: Record<string, string> = {
-  narrow: "max-w-[760px]",
+  // The site's own reading measure — what the news article body and the
+  // statement of faith are already set at, so a converted page keeps its line
+  // length rather than gaining forty pixels of it.
+  narrow: "max-w-[720px]",
   wide: "max-w-[1360px]",
   full: "max-w-none px-0 lg:px-0",
 };

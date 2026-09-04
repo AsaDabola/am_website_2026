@@ -1,8 +1,23 @@
 import { cache } from "react";
 import config from "@payload-config";
 import { getPayload } from "payload";
+import { getLocale } from "next-intl/server";
 import { getRequestTenant } from "./tenantContent";
+import { SOURCE_LOCALE, translateSections } from "./pageTranslations";
 import type { PageBlockData } from "./pageBlockTypes";
+
+/**
+ * The language this page is being read in, degrading to the language sections
+ * are authored in outside a request — a script, a build-time helper — rather
+ * than throwing. Same shape as lib/posts does for articles.
+ */
+async function readingLocale(): Promise<string> {
+  try {
+    return (await getLocale()) || SOURCE_LOCALE;
+  } catch {
+    return SOURCE_LOCALE;
+  }
+}
 
 /**
  * How a page built in code is allowed to be rearranged from the admin.
@@ -74,6 +89,7 @@ export const getRouteLayout = cache(async (route: string): Promise<PageLayout | 
     });
 
     const docs = result.docs as unknown as {
+      id: string | number;
       tenant?: { id?: string | number } | string | number | null;
       layoutMode?: LayoutMode | null;
       layout?: PageBlockData[] | null;
@@ -94,7 +110,9 @@ export const getRouteLayout = cache(async (route: string): Promise<PageLayout | 
     const sections = doc.layout ?? [];
     if (mode === "inherit" || sections.length === 0) return null;
 
-    return { mode, sections };
+    // In the language being read, where there is one. A section with nothing
+    // stored keeps the words it was authored in — see lib/pageTranslations.
+    return { mode, sections: await translateSections(payload, doc.id, await readingLocale(), sections) };
   } catch {
     return null;
   }

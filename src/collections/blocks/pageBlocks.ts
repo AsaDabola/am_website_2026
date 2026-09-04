@@ -242,6 +242,15 @@ export const PeopleBlock: Block = {
       fields: [
         { name: "photo", type: "upload", relationTo: "media" },
         {
+          name: "photoPath",
+          type: "text",
+          admin: {
+            readOnly: true,
+            description:
+              "A portrait that ships with the site, put here when this page was imported. Choose a picture above to replace it.",
+          },
+        },
+        {
           type: "row",
           fields: [
             { name: "name", type: "text", required: true },
