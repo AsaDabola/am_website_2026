@@ -31,7 +31,7 @@ type Person = { name: string; role: string; image: string };
  */
 const leadership: Person[] = [
   { name: "Rani Reid", role: "Executive Director", image: "/images/leader-reid.webp" },
-  { name: "Asa Daboh", role: "IT Director", image: "/images/hq-asa-daboh.webp" },
+  { name: "Asa Daboh", role: "HQ Staff", image: "/images/hq-asa-daboh.webp" },
 ];
 
 /** The regional coordinators west to east, then the rest of headquarters. */
