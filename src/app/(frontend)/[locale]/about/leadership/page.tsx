@@ -220,23 +220,19 @@ function LeadershipPage() {
             ))}
           </div>
 
-          {/* Two grids rather than one, so the break after the first pair is
-              guaranteed rather than left to how the row happens to wrap. Both
-              are four across at the design's 1104px container, so every tile
-              on the page is the same size. Two across on a phone, so a face
-              stays large enough to recognise. */}
-          <div className="mt-16 border-t border-ink/[0.12] pt-14">
-            <div className="grid grid-cols-2 gap-x-6 gap-y-11 sm:grid-cols-3 lg:grid-cols-4">
-              {leadership.map((person) => (
-                <PersonTile key={person.name} person={person} />
-              ))}
-            </div>
+          {/* One grid, four across at the design's 1104px container — which
+              comes out exact, because the two lists are twelve people between
+              them. They stay two lists in the code, since the order is
+              deliberate and the grouping is worth reading, but nothing forces
+              a break between them any more: an incomplete row is what a
+              forced break costs, and there is no longer one to spend.
 
-            <div className="mt-11 grid grid-cols-2 gap-x-6 gap-y-11 sm:grid-cols-3 lg:grid-cols-4">
-              {team.map((person) => (
-                <PersonTile key={`${person.name}-${person.role}`} person={person} />
-              ))}
-            </div>
+              Two across on a phone, so a face stays large enough to
+              recognise. */}
+          <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-11 border-t border-ink/[0.12] pt-14 sm:grid-cols-3 lg:grid-cols-4">
+            {[...leadership, ...team].map((person) => (
+              <PersonTile key={`${person.name}-${person.role}`} person={person} />
+            ))}
           </div>
         </Container>
       </section>
