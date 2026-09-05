@@ -4,7 +4,7 @@ import type { HeroData } from "@/lib/homeBlockTypes";
 import { mediaUrl } from "@/lib/homeBlockTypes";
 
 /**
- * Default rotation for the hero: three photographs, each with the line the
+ * Default rotation for the hero: two photographs, each with the line the
  * design pairs it with, in the order the team named.
  *
  * An editor who sets a background image on the Hero block in the CMS gets that
@@ -12,21 +12,19 @@ import { mediaUrl } from "@/lib/homeBlockTypes";
  * choice cycle away.
  */
 const DEFAULT_SLIDES = [
-  // The order named by the team: the embrace, the chapel from the air, the
-  // gathering with hands raised.
+  // The gathering with hands raised, then the chapel from the air.
   //
   // The message keys are held with their photograph rather than derived from
   // position, because the two have never been in step — the city slide came
-  // out first, and the boardwalk after it, so what is on screen third reads
-  // the `slide4` strings. Renumbering to match would orphan the translations
+  // out first, then the boardwalk, then the embrace — so what leads reads the
+  // `slide4` strings. Renumbering to match would orphan the translations
   // already sitting under those keys in 47 other locales.
   //
   // The keys of a withdrawn slide are left in messages/*.json for the same
-  // reason: `slide2` and `slide5` cost nothing where they are, and bringing
-  // either photograph back is one line here rather than a re-translation.
-  { image: "/images/hero-campus.webp", key: "slide1" },
-  { image: "/images/hero-slide-campus.webp", key: "slide3" },
+  // reason: `slide1`, `slide2` and `slide5` cost nothing where they are, and
+  // bringing a photograph back is one line here rather than a re-translation.
   { image: "/images/hero-slide-bible-study.webp", key: "slide4" },
+  { image: "/images/hero-slide-campus.webp", key: "slide3" },
 ] as const;
 
 export default async function Hero({ data }: { data?: HeroData } = {}) {
