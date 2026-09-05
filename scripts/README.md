@@ -348,3 +348,56 @@ somewhere else in the sentence — so the tag travels with the word, and the
 provider is told to keep it around whichever word carries the meaning.
 `HeroSlides` splits on the tag; nothing is ever rendered as markup, so a stray
 angle bracket in someone's copy is text rather than a hole.
+
+## Migrations run themselves now
+
+Everything above describes how to *write* a schema change. This is how it
+reaches a database: it does not need anyone to remember.
+
+`npm run build` runs `scripts/apply-migrations.mjs` before `next build`. So a
+deploy carries its own schema — and if a migration fails, the build fails and
+the old code goes on serving against the old schema, rather than new code
+meeting a database that cannot answer it.
+
+```bash
+npm run migrate:sql:status    # what is applied here, what is pending
+npm run migrate:sql           # apply, by hand, against .env.local
+```
+
+### The two guarantees
+
+**A .sql file that is not registered fails the build.** Every file in
+`scripts/` must appear in `MIGRATIONS` in `scripts/migrations.mjs`, or in
+`NOT_MIGRATIONS` if it is a read-only diagnostic. Writing `add-something.sql`
+and forgetting to wire it up is the exact mistake that took the admin down
+three times, and it is now caught before the deploy rather than by a blank
+screen afterwards.
+
+**A migration that has already landed is recorded, not re-run.** These files
+predate the runner and ran against databases whose history nobody wrote down,
+so "has this been applied?" is answered from the schema itself — the `done`
+predicate each migration carries.
+
+That is a safety property, not an optimisation. `add-admin-roles.sql` ends
+with
+
+```sql
+UPDATE users SET role = 'super-admin' WHERE role = 'country-admin';
+```
+
+which was right the once — it stopped the first migration locking everyone out
+of their own admin. Run again today it would promote every country admin on
+the network to super admin. **A runner that replays history is a runner that
+hands out permissions nobody granted.** Hence `done`, and hence: write one for
+every migration you add, testing for the *last* thing the file does.
+
+### Adding a migration
+
+1. Write the `.sql` — generated, not hand-typed (see step 4 above).
+2. Append `{ file, done }` to `MIGRATIONS` in `scripts/migrations.mjs`. The
+   list is append-only: a file already in it has run on databases you cannot
+   see, so moving it rewrites history rather than the future.
+3. `npm run migrate:sql:status` to see it pending, `npm run migrate:sql` to
+   apply it locally.
+
+Deploying is then just deploying.
