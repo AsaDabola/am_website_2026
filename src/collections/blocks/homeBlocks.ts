@@ -36,8 +36,20 @@ export const HeroBlock: Block = {
         },
       ],
     },
+    /**
+     * The three figures that used to sit under the buttons — founded, city,
+     * reach. The hero no longer draws them: they landed across the middle of
+     * the photograph, which is where the faces are.
+     *
+     * Kept, not deleted, for the reason the Get Involved card description is:
+     * the columns already exist on the deployed database, so removing them
+     * would be a destructive migration bought for nothing, and the row may
+     * come back somewhere the design has space for it. Read-only, so an editor
+     * is told rather than left filling in fields that do nothing.
+     */
     {
       type: "row",
+      admin: { condition: () => false },
       fields: [
         { name: "stat1", type: "group", fields: stat },
         { name: "stat2", type: "group", fields: stat },

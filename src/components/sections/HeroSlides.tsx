@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
-import HeroStats from "@/components/sections/HeroStats";
 
 export type HeroSlide = {
   image: string;
@@ -60,9 +59,9 @@ function Headline({ text }: { text: string }) {
  * The headline used to be fixed while only the imagery rotated, which is why
  * it lives here now rather than in the server component above — each of the
  * design's four photographs carries its own line, so the two have to change
- * together. Everything else on the hero — the eyebrow, the buttons, the
- * statistics — stays put, so the slideshow never moves what a visitor is part
- * way through reading.
+ * together. Everything else on the hero — the eyebrow, the buttons — stays
+ * put, so the slideshow never moves what a visitor is part way through
+ * reading.
  *
  * Holds still for anyone who has asked for reduced motion, and while a pointer
  * is over the hero.
@@ -72,14 +71,12 @@ export default function HeroSlides({
   eyebrow,
   joinBibleStudyLabel,
   whoWeAreLabel,
-  stats,
   intervalMs = 6000,
 }: {
   slides: HeroSlide[];
   eyebrow: string;
   joinBibleStudyLabel: string;
   whoWeAreLabel: string;
-  stats: { value: string; label: string }[];
   intervalMs?: number;
 }) {
   const [index, setIndex] = useState(0);
@@ -146,7 +143,12 @@ export default function HeroSlides({
         over all of them.
       */}
 
-      <Container className="relative flex min-h-[720px] flex-col justify-center py-24">
+      {/* Low in the frame rather than centred in it. Centred, the headline
+          and the buttons landed across the middle of the photograph, which is
+          where the faces are — and a photograph of people you cannot see the
+          eyes of is not doing its job. The padding clears the slide
+          indicators at the bottom right. */}
+      <Container className="relative flex min-h-[720px] flex-col justify-end pb-28 pt-24">
         <Eyebrow tone="light">{eyebrow}</Eyebrow>
 
         {/* Two lines, the second in the pale blue: the colouring the design
@@ -176,8 +178,6 @@ export default function HeroSlides({
             {whoWeAreLabel}
           </Button>
         </div>
-
-        <HeroStats stats={stats} />
       </Container>
 
       {slides.length > 1 && (

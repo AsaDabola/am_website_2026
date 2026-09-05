@@ -30,12 +30,6 @@ const DEFAULT_SLIDES = [
 export default async function Hero({ data }: { data?: HeroData } = {}) {
   const t = await getTranslations("Home.Hero");
 
-  const stats = [
-    { value: data?.stat1?.value ?? t("stat1Value"), label: data?.stat1?.label ?? t("stat1Label") },
-    { value: data?.stat2?.value ?? t("stat2Value"), label: data?.stat2?.label ?? t("stat2Label") },
-    { value: data?.stat3?.value ?? t("stat3Value"), label: data?.stat3?.label ?? t("stat3Label") },
-  ];
-
   const cmsBackground = mediaUrl(data?.backgroundImage);
   /**
    * The Hero block still holds three heading fields from when the headline was
@@ -90,7 +84,6 @@ export default async function Hero({ data }: { data?: HeroData } = {}) {
         eyebrow={data?.eyebrow ?? t("eyebrow")}
         joinBibleStudyLabel={data?.joinBibleStudyLabel ?? t("joinBibleStudy")}
         whoWeAreLabel={data?.whoWeAreLabel ?? t("whoWeAre")}
-        stats={stats}
       />
     </section>
   );
