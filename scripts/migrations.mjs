@@ -120,6 +120,12 @@ export const MIGRATIONS = [
   // Per-country photographs, alongside the per-country wording that was
   // already there.
   { file: "add-country-images.sql", done: tableExists("tenant_content_images") },
+
+  // The leader records, and the counts built on them. A new collection, which
+  // is the change that took the admin down twice — it puts a column on
+  // payload_locked_documents_rels, and without it no document in any
+  // collection opens. It goes out with the code now instead of after it.
+  { file: "add-leaders.sql", done: tableExists("leaders") },
 ];
 
 /**

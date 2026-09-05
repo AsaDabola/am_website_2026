@@ -48,6 +48,7 @@ export const SECTIONS = [
   "posts",
   "events",
   "campuses",
+  "leaders",
   "tenant-content",
   "media",
   "ministries",

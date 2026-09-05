@@ -9,6 +9,7 @@ import { buildConfig } from "payload";
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Campuses } from "./collections/Campuses";
+import { Leaders } from "./collections/Leaders";
 import { Events } from "./collections/Events";
 import { Posts } from "./collections/Posts";
 import { Ministries } from "./collections/Ministries";
@@ -91,6 +92,17 @@ export default buildConfig({
          * answers a different question and wants the whole width to answer it.
          * The counters behind it are written by /api/track.
          */
+        /**
+         * How many leaders there are, by continent and by country:
+         * /admin/leaders. The collection is in the sidebar too; this is the
+         * count, which is what the question is usually about.
+         */
+        leaders: {
+          Component: "/components/admin/Leaders#LeadersView",
+          path: "/leaders",
+          exact: true,
+          meta: { title: "Leaders" },
+        },
         traffic: {
           Component: "/components/admin/Traffic#TrafficView",
           path: "/traffic",
@@ -99,7 +111,10 @@ export default buildConfig({
         },
       },
       // Traffic is not a collection, so it needs its own way in.
-      beforeNavLinks: ["/components/admin/TrafficNavLink#TrafficNavLink"],
+      beforeNavLinks: [
+        "/components/admin/LeadersNavLink#LeadersNavLink",
+        "/components/admin/TrafficNavLink#TrafficNavLink",
+      ],
     },
     /**
      * The page beside the form, updating as it is edited.
@@ -128,6 +143,7 @@ export default buildConfig({
     Users,
     Media,
     Campuses,
+    Leaders,
     Events,
     Posts,
     Ministries,

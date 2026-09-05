@@ -26,6 +26,8 @@ import { CollectionCards as CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1 } f
 import { Dashboard as Dashboard_16b88e9b8c48e393fa86591406efd08f } from '../../../components/admin/Dashboard'
 import { AdminLogo as AdminLogo_81fda60f3e3709e861f40982a767707d } from '../../../components/admin/Brand'
 import { AdminIcon as AdminIcon_81fda60f3e3709e861f40982a767707d } from '../../../components/admin/Brand'
+import { LeadersView as LeadersView_737122741b714ba8a6f41b472ba1c719 } from '../../../components/admin/Leaders'
+import { LeadersNavLink as LeadersNavLink_26fd019f1c1ab5b8459479c6c2a77dba } from '../../../components/admin/LeadersNavLink'
 import { TrafficView as TrafficView_617d2b7fa5591accf0c42fd4befb2a2c } from '../../../components/admin/Traffic'
 import { TrafficNavLink as TrafficNavLink_27e2674448e301bd28d7612388f0c6ec } from '../../../components/admin/TrafficNavLink'
 
@@ -59,6 +61,8 @@ export const importMap = {
   "/components/admin/Dashboard#Dashboard": Dashboard_16b88e9b8c48e393fa86591406efd08f,
   "/components/admin/Brand#AdminLogo": AdminLogo_81fda60f3e3709e861f40982a767707d,
   "/components/admin/Brand#AdminIcon": AdminIcon_81fda60f3e3709e861f40982a767707d,
+  "/components/admin/Leaders#LeadersView": LeadersView_737122741b714ba8a6f41b472ba1c719,
+  "/components/admin/LeadersNavLink#LeadersNavLink": LeadersNavLink_26fd019f1c1ab5b8459479c6c2a77dba,
   "/components/admin/Traffic#TrafficView": TrafficView_617d2b7fa5591accf0c42fd4befb2a2c,
   "/components/admin/TrafficNavLink#TrafficNavLink": TrafficNavLink_27e2674448e301bd28d7612388f0c6ec
 }

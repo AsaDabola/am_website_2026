@@ -20,9 +20,10 @@
  *     node scripts/generate-catchup-sql.mjs > scripts/add-my-feature.sql
  *
  * Read the file before running it. It is generated, not trusted: it says at
- * the top what it found, and it only ever adds — no DROP, no ALTER TYPE, no
- * change to a column that already exists. A rename therefore shows up as a new
- * column, and dropping the old one stays a deliberate, human decision.
+ * the top what it found, and it only ever adds — no DROP, no change to a
+ * column that already exists, and the only ALTER TYPE is ADD VALUE. A rename
+ * therefore shows up as a new column, and dropping the old one stays a
+ * deliberate, human decision.
  *
  * Verify it the way scripts/README.md describes — apply it to a copy of the
  * old schema and diff the dumps against the pushed one — and then run it with
@@ -66,10 +67,12 @@ async function readSchema(uri) {
       WHERE table_schema = 'public'
     `);
     const { rows: enums } = await pool.query(`
-      SELECT t.typname
+      SELECT t.typname, e.enumlabel
       FROM pg_type t
       JOIN pg_namespace n ON n.oid = t.typnamespace
+      LEFT JOIN pg_enum e ON e.enumtypid = t.oid
       WHERE n.nspname = 'public' AND t.typtype = 'e'
+      ORDER BY e.enumsortorder
     `);
 
     const tables = new Map();
@@ -77,7 +80,16 @@ async function readSchema(uri) {
       if (!tables.has(row.table_name)) tables.set(row.table_name, new Set());
       tables.get(row.table_name).add(row.column_name);
     }
-    return { tables, enums: new Set(enums.map((row) => row.typname)) };
+    // Labels as well as names. A value added to an enum that already exists —
+    // a new section on Users, a new continent — is invisible if only the type
+    // names are compared, and the failure it causes is the familiar one: the
+    // column is there, the write is rejected, nothing says why.
+    const labels = new Map();
+    for (const row of enums) {
+      if (!labels.has(row.typname)) labels.set(row.typname, new Set());
+      if (row.enumlabel !== null) labels.get(row.typname).add(row.enumlabel);
+    }
+    return { tables, enums: new Set(labels.keys()), labels };
   } finally {
     await pool.end();
   }
@@ -184,6 +196,15 @@ const source = await readSchema(SOURCE);
 const target = await readSchema(TARGET);
 
 const missingEnums = [...source.enums].filter((name) => !target.enums.has(name)).sort();
+
+// Values missing from an enum both databases already have.
+const missingLabels = [];
+for (const [type, labels] of source.labels) {
+  const existing = target.labels.get(type);
+  if (!existing) continue;
+  const absent = [...labels].filter((label) => !existing.has(label));
+  if (absent.length) missingLabels.push({ type, labels: absent });
+}
 const missingTables = [...source.tables.keys()].filter((name) => !target.tables.has(name)).sort();
 
 const missingColumns = [];
@@ -194,7 +215,7 @@ for (const [table, columns] of source.tables) {
   if (absent.length) missingColumns.push({ table, columns: absent });
 }
 
-if (!missingEnums.length && !missingTables.length && !missingColumns.length) {
+if (!missingEnums.length && !missingTables.length && !missingColumns.length && !missingLabels.length) {
   console.log("-- Nothing to do: the target already has every table, column and type.");
   process.exit(0);
 }
@@ -207,14 +228,47 @@ out.push(
   `-- ${now}`,
   "--",
   `-- ${missingTables.length} table(s), ${missingColumns.reduce((n, row) => n + row.columns.length, 0)} column(s)` +
-    ` on ${missingColumns.length} existing table(s), ${missingEnums.length} type(s).`,
+    ` on ${missingColumns.length} existing table(s), ${missingEnums.length} type(s),` +
+    ` ${missingLabels.reduce((n, row) => n + row.labels.length, 0)} value(s) on ${missingLabels.length} existing type(s).`,
   "--",
-  "-- Additive only: no DROP, no ALTER TYPE, no change to an existing column.",
+  "-- Additive only: no DROP, no change to an existing column, and the only",
+  "-- ALTER TYPE is ADD VALUE, which takes nothing away from an enum.",
   "-- Every statement is safe to run twice.",
   "",
-  "BEGIN;",
   "",
 );
+
+// Before the transaction, on purpose: ALTER TYPE … ADD VALUE is not allowed
+// inside one on every Postgres that has ever run this, and it needs no
+// rollback — it adds a value nothing uses yet.
+if (missingLabels.length) {
+  out.push(
+    `-- ${missingLabels.reduce((n, row) => n + row.labels.length, 0)} new value(s) on existing types.`,
+    "",
+  );
+  for (const { type, labels } of missingLabels) {
+    const order = [...source.labels.get(type)];
+    const present = target.labels.get(type);
+    for (const label of labels) {
+      // Placed where it sits in the schema Payload built, not appended.
+      // Appending works, but it leaves the two databases differing forever in
+      // the drift check — and a check with a permanent false positive in it is
+      // a check people stop reading.
+      const after = order.slice(order.indexOf(label) + 1).find((next) => present.has(next));
+      const quoted = `'${label.replace(/'/g, "''")}'`;
+      out.push(
+        `ALTER TYPE public.${type} ADD VALUE IF NOT EXISTS ${quoted}` +
+          (after ? ` BEFORE '${after.replace(/'/g, "''")}'` : "") +
+          ";",
+      );
+      // So a second missing label lands after this one rather than before it.
+      present.add(label);
+    }
+  }
+  out.push("");
+}
+
+out.push("BEGIN;", "");
 
 // Types first, and all of them.
 //
