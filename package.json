@@ -22,7 +22,8 @@
     "seed-chapters": "node scripts/seed-chapters.mjs",
     "seed-slides": "node scripts/seed-home-slides.mjs",
     "translate-posts": "node --env-file=.env.local scripts/translate-posts.mjs",
-    "translate-messages": "node --env-file=.env.local scripts/translate-messages.mjs"
+    "translate-messages": "node --env-file=.env.local scripts/translate-messages.mjs",
+    "generate-image-keys": "node scripts/generate-image-keys.mjs"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.88.0",

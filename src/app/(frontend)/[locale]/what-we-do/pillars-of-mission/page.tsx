@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "@/i18n/content";
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import PillarsHero from "@/components/what-we-do/PillarsHero";
@@ -105,7 +105,7 @@ async function PillarsOfMissionPage() {
           <div className="mt-14 grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
             <figure className="m-0">
               <div className="relative aspect-[3/2] overflow-hidden rounded-2xl">
-                <Image
+                <SiteImage
                   src="/images/pillars-intro-1.webp"
                   alt=""
                   fill
@@ -171,7 +171,7 @@ async function PillarsOfMissionPage() {
           <Container>
             <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
               <div className="relative aspect-square w-full max-w-[386px] overflow-hidden rounded-lg">
-                <Image
+                <SiteImage
                   src={pillar.image}
                   alt={pillar.title}
                   fill

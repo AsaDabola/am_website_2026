@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "@/i18n/content";
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
@@ -62,7 +62,7 @@ async function ChapterStaffPage() {
                 key={src}
                 className="relative aspect-square overflow-hidden rounded-xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.1)]"
               >
-                <Image
+                <SiteImage
                   src={src}
                   alt=""
                   fill
@@ -93,7 +93,7 @@ async function ChapterStaffPage() {
       <section className="bg-white py-20">
         <Container>
           <div className="relative aspect-[1375/687] w-full overflow-hidden rounded-2xl">
-            <Image
+            <SiteImage
               src="/images/chapter-volunteer-group.webp"
               alt="AM chapter staff and students"
               fill

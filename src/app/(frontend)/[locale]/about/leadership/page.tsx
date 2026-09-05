@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import LeadershipHero from "@/components/about/LeadershipHero";
@@ -104,7 +104,7 @@ function Portrait({
       style={{ backgroundImage: "linear-gradient(127deg, #e5edf6 0%, #cddbee 71%)" }}
     >
       {image ? (
-        <Image src={image} alt={name} fill className="object-cover" sizes={sizes} />
+        <SiteImage src={image} alt={name} fill className="object-cover" sizes={sizes} />
       ) : (
         <span
           className={`flex size-full items-center justify-center font-display font-extrabold text-[#93a7be] ${initialsClassName}`}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import Container from "@/components/ui/Container";
 import AboutSubNav from "@/components/about/AboutSubNav";
 import HonoraryChairman from "@/components/sections/HonoraryChairman";
@@ -66,7 +66,7 @@ function ChairmanPage() {
             </div>
 
             <div className="relative aspect-[420/302] overflow-hidden rounded-[12px]">
-              <Image
+              <SiteImage
                 src="/images/chairman-photo-1.webp"
                 alt="Dr. Ralph D. Winter teaching at Seoul '73"
                 fill
@@ -94,7 +94,7 @@ function ChairmanPage() {
             </div>
 
             <div className="relative aspect-[420/250] overflow-hidden rounded-[12px]">
-              <Image
+              <SiteImage
                 src="/images/chairman-photo-2.webp"
                 alt="AM chapter graduates in Guatemala"
                 fill

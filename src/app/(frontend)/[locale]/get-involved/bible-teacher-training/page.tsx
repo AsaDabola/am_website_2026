@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "@/i18n/content";
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
@@ -91,7 +91,7 @@ async function BibleTeacherTrainingPage() {
           </h1>
 
           <div className="relative mx-auto mt-10 aspect-[1176/588] max-w-[900px] overflow-hidden rounded-2xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.12)]">
-            <Image
+            <SiteImage
               src="/images/bible-teacher-called-to-serve.webp"
               alt="Called to serve? Become AM Bible Teachers & Missionaries — www.amacademy.org"
               fill
@@ -191,7 +191,7 @@ async function BibleTeacherTrainingPage() {
       <section className="bg-white pb-24">
         <Container className="max-w-[1200px]">
           <div className="relative aspect-[1249/375] w-full overflow-hidden rounded-2xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.12)]">
-            <Image
+            <SiteImage
               src="/images/bible-teacher-called-to-be.webp"
               alt="Called to be Bible Teachers — AM Academy, www.amacademy.org"
               fill

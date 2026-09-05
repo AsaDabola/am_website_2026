@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
 
@@ -26,7 +26,7 @@ export default function GetInvolvedHero({
 }) {
   return (
     <section className="relative overflow-hidden bg-night">
-      <Image
+      <SiteImage
         src="/images/get-involved-hero.webp"
         alt=""
         fill

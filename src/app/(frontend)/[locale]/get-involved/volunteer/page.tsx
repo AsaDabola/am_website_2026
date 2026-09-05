@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "@/i18n/content";
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import {
@@ -107,7 +107,7 @@ async function VolunteerPage() {
                 key={src}
                 className="relative aspect-[400/348] overflow-hidden rounded-xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.1)]"
               >
-                <Image
+                <SiteImage
                   src={src}
                   alt={alt}
                   fill

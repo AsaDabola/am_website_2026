@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "@/i18n/content";
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
@@ -152,7 +152,7 @@ async function BibleStudyPage() {
               </div>
               {track.image ? (
                 <div className="relative aspect-[666/520] w-full overflow-hidden rounded-2xl shadow-[0px_10px_30px_0px_rgba(27,29,52,0.12)]">
-                  <Image
+                  <SiteImage
                     src={track.image}
                     alt={track.title}
                     fill

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import { getTranslations } from "@/i18n/content";
 import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
@@ -41,7 +41,7 @@ export default async function GetInvolved({ data }: { data?: GetInvolvedData } =
               href={card.href}
               className="group relative block aspect-[416/520] overflow-hidden rounded-2xl"
             >
-              <Image
+              <SiteImage
                 src={card.image}
                 alt=""
                 fill

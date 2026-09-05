@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import { getTranslations } from "@/i18n/content";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -135,7 +135,7 @@ export default async function Ministries({ data }: { data?: MinistriesData } = {
               <div className="relative aspect-[256/160]">
                 {step.imageUrl ? (
                   <>
-                    <Image
+                    <SiteImage
                       src={step.imageUrl}
                       alt={step.title}
                       fill

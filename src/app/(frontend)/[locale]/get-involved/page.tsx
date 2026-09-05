@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import { getTranslations } from "@/i18n/content";
 import Container from "@/components/ui/Container";
 import GetInvolvedHero from "@/components/get-involved/GetInvolvedHero";
@@ -53,7 +53,7 @@ async function GetInvolvedHubPage() {
         <Container>
           <div className="grid items-start gap-10 lg:grid-cols-[570px_1fr] lg:gap-16">
             <div className="relative aspect-[570/577] overflow-hidden rounded-2xl">
-              <Image
+              <SiteImage
                 src="/images/get-involved-connect.webp"
                 alt="AM students connecting at a campus outreach table"
                 fill
@@ -124,7 +124,7 @@ async function GetInvolvedHubPage() {
         <Container>
           <div className="grid items-start gap-10 lg:grid-cols-[570px_1fr] lg:gap-16">
             <div className="relative aspect-[570/577] overflow-hidden rounded-2xl">
-              <Image
+              <SiteImage
                 src="/images/get-involved-grow.webp"
                 alt="AM students growing together in fellowship"
                 fill
@@ -167,7 +167,7 @@ async function GetInvolvedHubPage() {
         <Container>
           <div className="grid items-start gap-10 lg:grid-cols-[570px_1fr] lg:gap-16">
             <div className="relative aspect-[570/577] overflow-hidden rounded-2xl">
-              <Image
+              <SiteImage
                 src="/images/get-involved-lead.webp"
                 alt="AM leadership retreat"
                 fill
@@ -207,7 +207,7 @@ async function GetInvolvedHubPage() {
         <Container>
           <div className="grid items-start gap-10 lg:grid-cols-[570px_1fr] lg:gap-16">
             <div className="relative aspect-[570/577] overflow-hidden rounded-2xl">
-              <Image
+              <SiteImage
                 src="/images/get-involved-sent.webp"
                 alt="AM missionaries meeting together"
                 fill

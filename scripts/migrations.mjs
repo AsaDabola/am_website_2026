@@ -116,6 +116,10 @@ export const MIGRATIONS = [
   // Pages screen in the admin, so it is the honest thing to test for.
   { file: "add-page-builder.sql", done: columnExists("pages", "layout_mode") },
   { file: "add-page-translations.sql", done: tableExists("page_translations") },
+
+  // Per-country photographs, alongside the per-country wording that was
+  // already there.
+  { file: "add-country-images.sql", done: tableExists("tenant_content_images") },
 ];
 
 /**

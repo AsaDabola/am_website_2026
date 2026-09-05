@@ -2,14 +2,29 @@ import type { CollectionConfig } from "payload";
 import { enforceTenantScope, hideUnlessGranted, tenantScopedAccess } from "@/lib/adminAccess";
 import { locales, localeLabels } from "@/i18n/routing";
 import { DEFAULT_BY_KEY, MESSAGE_KEY_OPTIONS, humanizeKey } from "@/lib/messageKeys";
+import { SITE_IMAGES } from "@/lib/siteImages";
 
 /**
- * The site's wording, editable without a deploy.
+ * The photographs on offer, named by where they appear rather than by
+ * filename — "the banner on /about" is what an editor recognises.
+ *
+ * Derived from the components by scripts/generate-image-keys.mjs, the same way
+ * the wording list is derived from messages/en.json, so neither is a second
+ * copy of anything.
+ */
+const IMAGE_OPTIONS = SITE_IMAGES.map((image) => ({
+  value: image.path,
+  label: `${image.path.replace("/images/", "")} — ${image.usedOn.join(", ")}`,
+}));
+
+/**
+ * The site's wording and photographs, editable without a deploy.
  *
  * Most of the site is fixed pages built in code — Who We Are, What We Do, Get
  * Involved and the rest — so they are not in Pages and never will be. Their
- * words still have to be changeable, and this is where that happens: pick the
- * sentence, write the new one.
+ * words and their pictures still have to be changeable, and this is where that
+ * happens: pick the sentence, write the new one; pick the photograph, upload
+ * the one to show instead.
  *
  * Leaving the country empty changes the main amintl.org site, and with it
  * every country site that has not said otherwise. Naming a country changes
@@ -23,15 +38,18 @@ import { DEFAULT_BY_KEY, MESSAGE_KEY_OPTIONS, humanizeKey } from "@/lib/messageK
 export const TenantContent: CollectionConfig = {
   slug: "tenant-content",
   labels: {
-    singular: "Page wording",
-    plural: "Page wording",
+    // Renamed when photographs joined the wording here. A country
+    // representative looking for where to change a picture has to be able to
+    // find it, and "Page wording" said only half of what this does.
+    singular: "Page wording & photos",
+    plural: "Page wording & photos",
   },
   admin: {
     hidden: hideUnlessGranted("tenant-content"),
     useAsTitle: "label",
     defaultColumns: ["label", "tenant", "locale", "updatedAt"],
     description:
-      "Change the wording on the site's built-in pages. Leave the country empty to change the main amintl.org site — every country follows it until it says otherwise.",
+      "Change the wording and the photographs on the site's built-in pages. Leave the country empty to change the main amintl.org site — every country follows it until it says otherwise.",
     group: "Content",
   },
   access: tenantScopedAccess("tenant-content"),
@@ -148,6 +166,54 @@ export const TenantContent: CollectionConfig = {
           return `Each piece of copy can only be changed once per entry. Duplicated: ${[...dupes]
             .map(humanizeKey)
             .join(", ")}.`;
+        }
+        return true;
+      },
+    },
+    {
+      name: "images",
+      type: "array",
+      labels: { singular: "Photograph", plural: "Photographs" },
+      admin: {
+        description:
+          "Pick a photograph the site draws, then upload the one to show here instead. Everything else about the page stays as it is — the same frame, the same crop, this country's picture in it.",
+        initCollapsed: false,
+      },
+      fields: [
+        {
+          name: "key",
+          type: "select",
+          required: true,
+          options: IMAGE_OPTIONS,
+          admin: {
+            description:
+              "Named by where it appears, so it can be found without knowing the filename.",
+          },
+        },
+        {
+          name: "image",
+          type: "upload",
+          relationTo: "media",
+          required: true,
+          admin: {
+            description:
+              "Use a picture of about the same shape as the one it replaces — the frame does not change, so a very different shape will be cropped to fit.",
+          },
+        },
+      ],
+      validate: (value: unknown) => {
+        const rows = Array.isArray(value) ? (value as { key?: string }[]) : [];
+        const seen = new Set<string>();
+        const dupes = new Set<string>();
+        for (const row of rows) {
+          if (!row?.key) continue;
+          if (seen.has(row.key)) dupes.add(row.key);
+          seen.add(row.key);
+        }
+        if (dupes.size > 0) {
+          // Same reasoning as the copy changes above: two rows for one
+          // photograph makes the winner depend on array order.
+          return `Each photograph can only be replaced once per entry. Duplicated: ${[...dupes].join(", ")}.`;
         }
         return true;
       },

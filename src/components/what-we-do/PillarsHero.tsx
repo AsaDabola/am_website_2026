@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import Container from "@/components/ui/Container";
 
 /**
@@ -41,7 +41,7 @@ const PILLAR_CARDS = [
 export default function PillarsHero({ title }: { title: string }) {
   return (
     <section className="relative overflow-hidden bg-night">
-      <Image
+      <SiteImage
         src="/images/pillars-hero.webp"
         alt=""
         fill

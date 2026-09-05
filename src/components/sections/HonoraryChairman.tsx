@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import { getTranslations } from "@/i18n/content";
 import Container from "@/components/ui/Container";
 import TenantLink from "@/components/layout/TenantLink";
@@ -52,7 +52,7 @@ export default async function HonoraryChairman({
         <Band>
           <div className="grid gap-10 lg:grid-cols-[1fr_425px] lg:gap-x-6 lg:gap-y-0">
             <div className="relative aspect-square w-full max-w-[425px] overflow-hidden rounded-2xl lg:col-start-2 lg:row-start-1 lg:max-w-none">
-              <Image
+              <SiteImage
                 src={image}
                 alt={name}
                 fill

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "@/i18n/content";
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import Container from "@/components/ui/Container";
 import AboutHero from "@/components/about/AboutHero";
 import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
@@ -120,7 +120,7 @@ async function GroupActivitiesPage() {
               }`}
             >
               <div className="relative aspect-[520/400] overflow-hidden rounded-xl">
-                <Image
+                <SiteImage
                   src={item.image}
                   alt={`${item.title}${item.highlight}`}
                   fill

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import type { ReactNode } from "react";
 import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
@@ -75,7 +75,7 @@ export default function AboutHero({
           wash over the top. Dimming the image to 80% and then laying a
           night/10→night/50 gradient on it was doing the darkening twice, which
           is what drained the colour out of the sunrise shots. */}
-      <Image
+      <SiteImage
         src={backgroundImage}
         alt=""
         fill

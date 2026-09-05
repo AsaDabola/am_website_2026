@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import { getTranslations } from "@/i18n/content";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
@@ -11,7 +11,7 @@ export default async function Newsletter({ data }: { data?: NewsletterData } = {
 
   return (
     <section className="relative min-h-[195px] overflow-hidden">
-      <Image
+      <SiteImage
         src={backgroundImage}
         alt=""
         fill

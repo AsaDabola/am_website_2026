@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import { getTranslations } from "@/i18n/content";
 import TenantLink from "@/components/layout/TenantLink";
 import Container from "@/components/ui/Container";
@@ -215,7 +215,7 @@ async function MembershipPage() {
               href="/about/statement-of-faith"
               className="group relative block h-[320px] overflow-hidden rounded-2xl lg:h-[400px]"
             >
-              <Image
+              <SiteImage
                 src="/images/about-statement-faith-card.webp"
                 alt=""
                 fill
@@ -236,7 +236,7 @@ async function MembershipPage() {
               href="/about/mission"
               className="group relative block h-[320px] overflow-hidden rounded-2xl lg:h-[400px]"
             >
-              <Image
+              <SiteImage
                 src="/images/about-mission-card.webp"
                 alt=""
                 fill

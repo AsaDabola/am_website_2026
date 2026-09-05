@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SiteImage from "@/components/ui/SiteImage";
 import { getTranslations } from "@/i18n/content";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -14,7 +14,7 @@ export default async function BibleStudyProgram({ data }: { data?: BibleStudyPro
     <section className="bg-mist py-24">
       <Container className="grid items-center gap-12 lg:grid-cols-[416px_1fr] lg:gap-20">
         <div className="relative aspect-[416/520] w-full overflow-hidden rounded-[18px] shadow-[0px_10px_30px_0px_rgba(27,29,52,0.12)]">
-          <Image
+          <SiteImage
             src={image}
             alt=""
             fill
