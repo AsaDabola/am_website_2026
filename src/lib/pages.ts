@@ -15,6 +15,8 @@ export type PageDoc = {
   body?: any;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   sections?: any[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  genericSections?: any[];
 };
 
 /**
