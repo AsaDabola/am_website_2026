@@ -84,6 +84,9 @@ const columns: Field = {
   type: "select",
   defaultValue: "3",
   options: [
+    // One across is a single picture at the section's width — a banner, a
+    // scanned poster, the one photograph a page opens on.
+    { label: "One across", value: "1" },
     { label: "Two across", value: "2" },
     { label: "Three across", value: "3" },
     { label: "Four across", value: "4" },
@@ -331,6 +334,19 @@ export const StepsBlock: Block = {
   fields: [
     ...headingFields,
     {
+      name: "stepsLayout",
+      type: "select",
+      defaultValue: "list",
+      options: [
+        { label: "A list, one per row", value: "list" },
+        { label: "Columns, each under a rule", value: "columns" },
+      ],
+      admin: {
+        description:
+          "A list reads down the page with the number small beside each title. Columns set the number large and pale behind it, side by side — how the steps to becoming a Bible teacher are drawn.",
+      },
+    },
+    {
       name: "steps",
       type: "array",
       minRows: 1,
@@ -343,6 +359,32 @@ export const StepsBlock: Block = {
         { name: "description", type: "textarea" },
         { name: "href", type: "text", admin: { description: "Optional link for the row." } },
       ],
+    },
+    appearanceField,
+  ],
+};
+
+export const NoticeBlock: Block = {
+  slug: "notice",
+  labels: { singular: "Notice", plural: "Notices" },
+  admin: { group: "Page sections" },
+  fields: [
+    {
+      name: "tone",
+      type: "select",
+      defaultValue: "warning",
+      options: [
+        { label: "Deadline or warning", value: "warning" },
+        { label: "Something to know", value: "info" },
+        { label: "Good news", value: "success" },
+      ],
+      admin: { description: "Sets the colour of the rule down its side." },
+    },
+    {
+      name: "body",
+      type: "richText",
+      editor: lexicalEditor(),
+      admin: { description: "Short. A notice that runs long stops being read as one." },
     },
     appearanceField,
   ],
@@ -437,8 +479,12 @@ export const GalleryBlock: Block = {
         { label: "Landscape", value: "landscape" },
         { label: "Square", value: "square" },
         { label: "Portrait", value: "portrait" },
+        { label: "Its own shape", value: "natural" },
       ],
-      admin: { description: "The frame each picture is cropped to." },
+      admin: {
+        description:
+          "The frame each picture is cropped to. \"Its own shape\" crops nothing — use it for a wide banner or a poster, which a square or landscape frame cuts the ends off.",
+      },
     },
     {
       name: "images",
@@ -569,6 +615,7 @@ export const pageBlocks: Block[] = [
   StepsBlock,
   StatsBlock,
   TimelineBlock,
+  NoticeBlock,
   AccordionBlock,
   QuoteBlock,
   GalleryBlock,

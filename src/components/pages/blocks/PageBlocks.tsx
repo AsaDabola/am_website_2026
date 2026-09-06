@@ -23,6 +23,7 @@ import type {
   SpacerData,
   StatsData,
   StepsData,
+  NoticeData,
   TimelineData,
 } from "@/lib/pageBlockTypes";
 
@@ -40,6 +41,7 @@ import type {
 /* ------------------------------------------------------------------ shared */
 
 const GRID: Record<string, string> = {
+  "1": "grid-cols-1",
   "2": "sm:grid-cols-2",
   "3": "sm:grid-cols-2 lg:grid-cols-3",
   "4": "sm:grid-cols-2 lg:grid-cols-4",
@@ -638,6 +640,65 @@ export function Steps({ data }: { data: StepsData }) {
   const dark = isDarkSection(data.appearance);
   const steps = data.steps ?? [];
 
+  if (data.stepsLayout === "columns") {
+    return (
+      <Section appearance={data.appearance} defaultContainerClassName="max-w-[1200px]">
+        <Heading
+          eyebrow={data.eyebrow}
+          heading={data.heading}
+          dark={dark}
+          size={data.appearance?.headingSize}
+          className="[&>div]:justify-center"
+        />
+
+        <div className="mt-16 grid gap-x-6 gap-y-12 text-start sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((step, index) => (
+            <div
+              key={step.id ?? index}
+              className={`relative border-t-2 pt-6 ${dark ? "border-white/20" : "border-[rgba(16,24,40,0.12)]"}`}
+            >
+              {/* Big, pale, and overlapping the rule — furniture rather than a
+                  label, so it is hidden from assistive tech and the title
+                  carries the meaning. */}
+              <span
+                aria-hidden
+                className={`pointer-events-none absolute end-0 -top-1 select-none font-display text-[72px] font-normal leading-none lg:text-[92px] ${
+                  dark ? "text-white/20" : "text-[#bfbfbf]"
+                }`}
+              >
+                {index + 1}
+              </span>
+
+              <h3
+                className={`relative max-w-[65%] font-display text-[19px] font-bold leading-[1.15] ${dark ? "text-white" : "text-ink"}`}
+              >
+                {step.title}
+              </h3>
+
+              {step.description ? (
+                <p
+                  className={`relative mt-4 text-[15px] leading-[21px] ${dark ? "text-white/75" : "text-ink-muted"}`}
+                >
+                  {step.description}
+                </p>
+              ) : null}
+
+              {step.href ? (
+                <Anchor
+                  href={step.href}
+                  className="relative mt-5 inline-flex items-center gap-2 rounded-full bg-brand-blue px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-navy"
+                >
+                  Click here
+                  <ArrowRightIcon />
+                </Anchor>
+              ) : null}
+            </div>
+          ))}
+        </div>
+      </Section>
+    );
+  }
+
   return (
     <Section appearance={data.appearance} defaultContainerClassName="max-w-[1104px]">
       <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} size={data.appearance?.headingSize} />
@@ -721,6 +782,52 @@ export function Timeline({ data }: { data: TimelineData }) {
           the dates stop lining up with each other. */}
       <div className={`text-start ${data.eyebrow || data.heading ? "mt-16" : ""}`}>
         <HistoryTimeline milestones={milestones} />
+      </div>
+    </Section>
+  );
+}
+
+/**
+ * A short thing the reader has to notice: a deadline, a condition, a caveat.
+ *
+ * A rule down the leading side and a tinted ground, which is what the chapter
+ * affiliation page's September deadline is drawn as. Deliberately not a
+ * section-wide band — a notice is a paragraph the page interrupts itself with,
+ * and giving it the whole width would make it read as the page's subject.
+ */
+const NOTICE_TONES: Record<string, { rule: string; ground: string; mark: string }> = {
+  warning: { rule: "#f0a90a", ground: "#fdf6e7", mark: "!" },
+  info: { rule: "#2a5eec", ground: "#eef3fe", mark: "i" },
+  success: { rule: "#1f9d55", ground: "#eaf7f0", mark: "✓" },
+};
+
+export function Notice({ data }: { data: NoticeData }) {
+  const tone = NOTICE_TONES[data.tone ?? "warning"] ?? NOTICE_TONES.warning;
+
+  return (
+    <Section
+      appearance={data.appearance}
+      defaultClassName="bg-white pb-20"
+      styledClassName="pb-20"
+      defaultContainerClassName="max-w-[1100px]"
+    >
+      <div
+        className="flex gap-3 rounded-lg border-s-4 px-5 py-4 text-start"
+        style={{ borderColor: tone.rule, backgroundColor: tone.ground }}
+      >
+        <span
+          aria-hidden
+          className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full text-[10px] font-bold text-white"
+          style={{ backgroundColor: tone.rule }}
+        >
+          {tone.mark}
+        </span>
+        {/* Always the light theme's ink: the ground is a pale tint whatever the
+            section around it is set to, so following the section here would put
+            white text on cream. */}
+        <div className="[&_p]:m-0 [&_p+p]:mt-3">
+          <Prose data={data.body} dark={false} className="text-sm leading-relaxed" />
+        </div>
       </div>
     </Section>
   );
@@ -810,11 +917,15 @@ export function Gallery({ data }: { data: GalleryData }) {
                 IMAGE_SHAPE[data.imageShape ?? "landscape"] ?? IMAGE_SHAPE.landscape
               }`}
             >
+              {/* A shape of "its own" has no aspect box to fill, so the
+                  picture is laid out at its real proportions instead — a wide
+                  banner keeps its ends rather than being cropped to 4:3. */}
               <Image
                 src={mediaUrl(row.image)!}
                 alt={row.caption ?? ""}
-                fill
-                className="object-cover"
+                {...(data.imageShape === "natural"
+                  ? { width: 1600, height: 900, className: "h-auto w-full" }
+                  : { fill: true, className: "object-cover" })}
                 sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw"
               />
             </div>

@@ -8,7 +8,7 @@ import AboutHero from "@/components/about/AboutHero";
 import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import withPageLayout from "@/components/pages/BuiltInPage";
+import PageBody from "@/components/pages/PageBody";
 
 // Sixty seconds, so a section added to this page in /admin appears without a
 // deploy. Without it the page is fully static and the authored layout would be
@@ -59,7 +59,7 @@ const steps = [
   },
 ];
 
-async function BibleTeacherTrainingPage() {
+export default async function BibleTeacherTrainingPage() {
   const [t, tHeader] = await Promise.all([
     getTranslations("Common"),
     getTranslations("Header"),
@@ -81,6 +81,7 @@ async function BibleTeacherTrainingPage() {
       />
       <GetInvolvedSubNav active="/get-involved/bible-teacher-training" />
 
+      <PageBody route="/get-involved/bible-teacher-training">
       <section className="bg-mist py-20">
         <Container className="max-w-[900px] text-center">
           <div className="flex justify-center">
@@ -201,12 +202,10 @@ async function BibleTeacherTrainingPage() {
           </div>
         </Container>
       </section>
+      </PageBody>
 
       <PartnerWithUs />
       <Newsletter />
     </>
   );
 }
-
-// Lets this page be added to or replaced from /admin — see BuiltInPage.
-export default withPageLayout("/get-involved/bible-teacher-training", BibleTeacherTrainingPage);

@@ -94,8 +94,24 @@ const block = (type, children, extra = {}) => ({
   ...extra,
 });
 
+/**
+ * A line break inside a paragraph, which is what markdown's two trailing
+ * spaces mean. Needed for the things that are one block but several lines —
+ * a postal address, a verse reference — where a paragraph each would space
+ * them apart as if they were separate thoughts.
+ */
+const LINE_BREAK = { type: "linebreak", version: 1 };
+
 function paragraph(text) {
-  return block("paragraph", inline(text), { textFormat: 0, textStyle: "" });
+  // The sentinel is what the reader below leaves where a line ended in two
+  // spaces. It cannot appear in anyone's copy: it is a control character.
+  // The join below puts a space after the sentinel; it belongs to neither
+  // line, so it goes with the mark.
+  const parts = String(text).split(/\u0000 ?/);
+  const children = parts.flatMap((part, index) =>
+    index === 0 ? inline(part) : [LINE_BREAK, ...inline(part)],
+  );
+  return block("paragraph", children, { textFormat: 0, textStyle: "" });
 }
 
 function heading(text, tag) {
@@ -131,6 +147,8 @@ export function markdownToLexical(markdown) {
 
   const flushParagraph = () => {
     if (paragraphLines.length) {
+      // Lines that ended in two spaces already carry the sentinel, so joining
+      // on a space here does not run them together.
       children.push(paragraph(paragraphLines.join(" ").trim()));
       paragraphLines = [];
     }
@@ -150,6 +168,9 @@ export function markdownToLexical(markdown) {
   };
 
   for (const raw of lines) {
+    // Markdown's hard line break: two spaces at the end of a line. Recorded
+    // before trimming, since trimming is what removes it.
+    const hardBreak = /\s\s$/.test(raw);
     const line = raw.trim();
 
     if (line === "") {
@@ -187,7 +208,7 @@ export function markdownToLexical(markdown) {
 
     flushList();
     flushQuote();
-    paragraphLines.push(line);
+    paragraphLines.push(hardBreak ? `${line}\u0000` : line);
   }
 
   flushAll();

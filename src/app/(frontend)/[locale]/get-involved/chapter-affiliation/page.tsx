@@ -6,7 +6,7 @@ import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
 import ChapterAffiliationForm from "@/components/get-involved/ChapterAffiliationForm";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import withPageLayout from "@/components/pages/BuiltInPage";
+import PageBody from "@/components/pages/PageBody";
 
 // Sixty seconds, so a section added to this page in /admin appears without a
 // deploy. Without it the page is fully static and the authored layout would be
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Apply for annual chapter reaffirmation or start a new AM chapter on your campus.",
 };
 
-async function ChapterAffiliationPage() {
+export default async function ChapterAffiliationPage() {
   const tHeader = await getTranslations("Header");
 
   return (
@@ -39,6 +39,7 @@ async function ChapterAffiliationPage() {
         align="center"
       />
 
+      <PageBody route="/get-involved/chapter-affiliation">
       <section className="bg-white py-20">
         <Container className="max-w-[1100px]">
           <p className="text-base leading-relaxed text-ink-muted">
@@ -74,6 +75,7 @@ async function ChapterAffiliationPage() {
           </div>
         </Container>
       </section>
+      </PageBody>
 
       <section className="bg-mist py-20">
         <Container className="max-w-[1240px]">
@@ -86,6 +88,3 @@ async function ChapterAffiliationPage() {
     </>
   );
 }
-
-// Lets this page be added to or replaced from /admin — see BuiltInPage.
-export default withPageLayout("/get-involved/chapter-affiliation", ChapterAffiliationPage);

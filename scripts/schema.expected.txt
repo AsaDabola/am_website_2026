@@ -614,6 +614,31 @@ pages_blocks_newsletter.cta_label character varying
 pages_blocks_newsletter.description character varying
 pages_blocks_newsletter.heading character varying
 pages_blocks_newsletter.id character varying
+pages_blocks_notice._order integer
+pages_blocks_notice._parent_id integer
+pages_blocks_notice._path text
+pages_blocks_notice.appearance_accent_colour character varying
+pages_blocks_notice.appearance_align enum_pages_blocks_notice_appearance_align
+pages_blocks_notice.appearance_anchor character varying
+pages_blocks_notice.appearance_background enum_pages_blocks_notice_appearance_background
+pages_blocks_notice.appearance_background_colour character varying
+pages_blocks_notice.appearance_background_image_id integer
+pages_blocks_notice.appearance_focal_point enum_pages_blocks_notice_appearance_focal_point
+pages_blocks_notice.appearance_gradient_angle numeric
+pages_blocks_notice.appearance_gradient_from character varying
+pages_blocks_notice.appearance_gradient_to character varying
+pages_blocks_notice.appearance_heading_size enum_pages_blocks_notice_appearance_heading_size
+pages_blocks_notice.appearance_hidden boolean
+pages_blocks_notice.appearance_overlay numeric
+pages_blocks_notice.appearance_overlay_colour character varying
+pages_blocks_notice.appearance_padding_bottom enum_pages_blocks_notice_appearance_padding_bottom
+pages_blocks_notice.appearance_padding_top enum_pages_blocks_notice_appearance_padding_top
+pages_blocks_notice.appearance_text_theme enum_pages_blocks_notice_appearance_text_theme
+pages_blocks_notice.appearance_width enum_pages_blocks_notice_appearance_width
+pages_blocks_notice.block_name character varying
+pages_blocks_notice.body jsonb
+pages_blocks_notice.id character varying
+pages_blocks_notice.tone enum_pages_blocks_notice_tone
 pages_blocks_our_mission._order integer
 pages_blocks_our_mission._parent_id integer
 pages_blocks_our_mission._path text
@@ -836,6 +861,7 @@ pages_blocks_steps.block_name character varying
 pages_blocks_steps.eyebrow character varying
 pages_blocks_steps.heading character varying
 pages_blocks_steps.id character varying
+pages_blocks_steps.steps_layout enum_pages_blocks_steps_steps_layout
 pages_blocks_steps_steps._order integer
 pages_blocks_steps_steps._parent_id character varying
 pages_blocks_steps_steps.description character varying
@@ -1081,7 +1107,7 @@ ENUM enum_pages_blocks_cards_appearance_padding_bottom = default,none,sm,md,lg,x
 ENUM enum_pages_blocks_cards_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_cards_appearance_text_theme = auto,dark,light
 ENUM enum_pages_blocks_cards_appearance_width = default,narrow,wide,full
-ENUM enum_pages_blocks_cards_columns = 2,3,4,5
+ENUM enum_pages_blocks_cards_columns = 1,2,3,4,5
 ENUM enum_pages_blocks_cards_layout = card,ruled
 ENUM enum_pages_blocks_cta_appearance_align = default,left,center
 ENUM enum_pages_blocks_cta_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
@@ -1109,8 +1135,8 @@ ENUM enum_pages_blocks_gallery_appearance_padding_bottom = default,none,sm,md,lg
 ENUM enum_pages_blocks_gallery_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_gallery_appearance_text_theme = auto,dark,light
 ENUM enum_pages_blocks_gallery_appearance_width = default,narrow,wide,full
-ENUM enum_pages_blocks_gallery_columns = 2,3,4,5
-ENUM enum_pages_blocks_gallery_image_shape = landscape,square,portrait
+ENUM enum_pages_blocks_gallery_columns = 1,2,3,4,5
+ENUM enum_pages_blocks_gallery_image_shape = landscape,square,portrait,natural
 ENUM enum_pages_blocks_image_text_appearance_align = default,left,center
 ENUM enum_pages_blocks_image_text_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_image_text_appearance_focal_point = center,top,bottom,left,right
@@ -1130,6 +1156,15 @@ ENUM enum_pages_blocks_logos_appearance_padding_bottom = default,none,sm,md,lg,x
 ENUM enum_pages_blocks_logos_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_logos_appearance_text_theme = auto,dark,light
 ENUM enum_pages_blocks_logos_appearance_width = default,narrow,wide,full
+ENUM enum_pages_blocks_notice_appearance_align = default,left,center
+ENUM enum_pages_blocks_notice_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
+ENUM enum_pages_blocks_notice_appearance_focal_point = center,top,bottom,left,right
+ENUM enum_pages_blocks_notice_appearance_heading_size = default,sm,md,lg,xl
+ENUM enum_pages_blocks_notice_appearance_padding_bottom = default,none,sm,md,lg,xl
+ENUM enum_pages_blocks_notice_appearance_padding_top = default,none,sm,md,lg,xl
+ENUM enum_pages_blocks_notice_appearance_text_theme = auto,dark,light
+ENUM enum_pages_blocks_notice_appearance_width = default,narrow,wide,full
+ENUM enum_pages_blocks_notice_tone = warning,info,success
 ENUM enum_pages_blocks_people_appearance_align = default,left,center
 ENUM enum_pages_blocks_people_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_people_appearance_focal_point = center,top,bottom,left,right
@@ -1138,7 +1173,7 @@ ENUM enum_pages_blocks_people_appearance_padding_bottom = default,none,sm,md,lg,
 ENUM enum_pages_blocks_people_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_people_appearance_text_theme = auto,dark,light
 ENUM enum_pages_blocks_people_appearance_width = default,narrow,wide,full
-ENUM enum_pages_blocks_people_columns = 2,3,4,5
+ENUM enum_pages_blocks_people_columns = 1,2,3,4,5
 ENUM enum_pages_blocks_prose_appearance_align = default,left,center
 ENUM enum_pages_blocks_prose_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_prose_appearance_focal_point = center,top,bottom,left,right
@@ -1182,6 +1217,7 @@ ENUM enum_pages_blocks_steps_appearance_padding_bottom = default,none,sm,md,lg,x
 ENUM enum_pages_blocks_steps_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_steps_appearance_text_theme = auto,dark,light
 ENUM enum_pages_blocks_steps_appearance_width = default,narrow,wide,full
+ENUM enum_pages_blocks_steps_steps_layout = list,columns
 ENUM enum_pages_blocks_timeline_appearance_align = default,left,center
 ENUM enum_pages_blocks_timeline_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_timeline_appearance_focal_point = center,top,bottom,left,right

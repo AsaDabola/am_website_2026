@@ -86,6 +86,7 @@ export type StatsData = Base & {
 
 export type StepsData = Base & {
   blockType: "steps";
+  stepsLayout?: "list" | "columns" | null;
   steps?: {
     id?: string;
     title?: string | null;
@@ -104,6 +105,12 @@ export type TimelineData = Base & {
   }[] | null;
 };
 
+export type NoticeData = Base & {
+  blockType: "notice";
+  tone?: "warning" | "info" | "success" | null;
+  body?: unknown;
+};
+
 export type AccordionData = Base & {
   blockType: "accordion";
   items?: { id?: string; question?: string | null; answer?: unknown }[] | null;
@@ -120,7 +127,7 @@ export type QuoteData = Base & {
 export type GalleryData = Base & {
   blockType: "gallery";
   columns?: string | null;
-  imageShape?: "landscape" | "square" | "portrait" | null;
+  imageShape?: "landscape" | "square" | "portrait" | "natural" | null;
   images?: { id?: string; image?: MediaRef; caption?: string | null }[] | null;
 };
 
@@ -157,6 +164,7 @@ export type PageBlockData =
   | StatsData
   | StepsData
   | TimelineData
+  | NoticeData
   | AccordionData
   | QuoteData
   | GalleryData

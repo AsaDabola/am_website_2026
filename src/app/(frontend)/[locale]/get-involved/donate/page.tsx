@@ -9,7 +9,7 @@ import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
 import DonateForm from "@/components/get-involved/DonateForm";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import withPageLayout from "@/components/pages/BuiltInPage";
+import PageBody from "@/components/pages/PageBody";
 
 // Sixty seconds, so a section added to this page in /admin appears without a
 // deploy. Without it the page is fully static and the authored layout would be
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "AM International is a non-profit organization supported by our loving staff, and by the contributions of the Christian community.",
 };
 
-async function DonatePage() {
+export default async function DonatePage() {
   const t = await getTranslations("Common");
 
   return (
@@ -39,6 +39,7 @@ async function DonatePage() {
       />
       <GetInvolvedSubNav active="/get-involved/donate" />
 
+      <PageBody route="/get-involved/donate">
       <section className="bg-mist py-20">
         <Container className="max-w-[900px] text-center">
           <div className="flex justify-center">
@@ -76,6 +77,7 @@ async function DonatePage() {
           </Button>
         </Container>
       </section>
+      </PageBody>
 
       <section id="donate-form" className="bg-white py-24">
         <Container className="mx-auto max-w-[868px]">
@@ -88,6 +90,3 @@ async function DonatePage() {
     </>
   );
 }
-
-// Lets this page be added to or replaced from /admin — see BuiltInPage.
-export default withPageLayout("/get-involved/donate", DonatePage);

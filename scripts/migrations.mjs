@@ -153,6 +153,17 @@ export const MIGRATIONS = [
     file: "add-featured-person.sql",
     done: columnExists("pages_blocks_people_people", "featured"),
   },
+
+  // The notice block, the steps block's second shape, and "one across" on the
+  // three blocks that lay pictures out in a grid.
+  { file: "add-notice-and-step-columns.sql", done: tableExists("pages_blocks_notice") },
+
+  // A gallery picture that keeps its own proportions. The wide banners on the
+  // Bible teacher page were being cropped to 4:3, which cut the ends off them.
+  {
+    file: "add-natural-gallery-shape.sql",
+    done: enumHas("enum_pages_blocks_gallery_image_shape", "natural"),
+  },
 ];
 
 /**

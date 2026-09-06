@@ -7,7 +7,7 @@ import AboutHero from "@/components/about/AboutHero";
 import ContactForm from "@/components/contact/ContactForm";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import withPageLayout from "@/components/pages/BuiltInPage";
+import PageBody from "@/components/pages/PageBody";
 
 // Sixty seconds, so a section added to this page in /admin appears without a
 // deploy. Without it the page is fully static and the authored layout would be
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: "Get in touch with Apostolos Missions International.",
 };
 
-async function ContactPage() {
+export default async function ContactPage() {
   const t = await getTranslations("Common");
 
   return (
@@ -31,6 +31,7 @@ async function ContactPage() {
         backgroundImage="/images/contact-hero.webp"
       />
 
+      <PageBody route="/contact">
       <section className="bg-mist py-20">
         <Container className="max-w-[720px] text-center">
           <div className="flex justify-center">
@@ -52,6 +53,7 @@ async function ContactPage() {
           </div>
         </Container>
       </section>
+      </PageBody>
 
       <section className="bg-white py-24">
         <Container className="mx-auto max-w-[600px]">
@@ -64,6 +66,3 @@ async function ContactPage() {
     </>
   );
 }
-
-// Lets this page be added to or replaced from /admin — see BuiltInPage.
-export default withPageLayout("/contact", ContactPage);

@@ -248,6 +248,149 @@ export const PAGE_DEFAULTS: Record<string, PageSeed> = {
     ],
   },
 
+  // The pages that carry a form. Only the prose above the form is listed —
+  // the form itself stays coded, because an editable copy of a form's heading
+  // above a form that ignores it is worse than not converting the page. The
+  // address, the deadline and the appeal are what a country needs to change.
+  "/contact": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "cta",
+        eyebrow: "We’d love to hear from you",
+        heading: "Contact us",
+        appearance: { background: "mist", align: "center" },
+      },
+      {
+        blockType: "prose",
+        body: {
+          // One paragraph, four lines: two trailing spaces is markdown's hard
+          // line break, and an address set as four paragraphs reads as four
+          // separate facts.
+          markdown:
+            "**AM International Headquarters**  \n" +
+            "**716 Bellevue Ave., Trenton, NJ 08618**  \n" +
+            "[**mission@amintl.org**](mailto:mission@amintl.org)  \n" +
+            "**+1 (917) 569-9073**",
+        },
+        appearance: {
+          background: "mist",
+          align: "center",
+          width: "narrow",
+          paddingTop: "none",
+        },
+      },
+    ],
+  },
+
+  "/get-involved/donate": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "gallery",
+        eyebrow: "Get involved",
+        heading: "Donate",
+        columns: "1",
+        imageShape: "natural",
+        images: [{ image: "/images/donate-offering.webp" }],
+        appearance: { background: "mist", align: "center" },
+      },
+      {
+        blockType: "cta",
+        description:
+          "AM International is a non-profit organization supported by our loving staff, and by the contributions of the Christian community. With your ongoing support, we can continue to keep AM International going on strong, reaching out to the communities, the nation, and the world. Your donations, your participation, and your prayers allow us to be more effective in spreading the good news of Jesus Christ, establishing centers for students to gather and rejoice in Christ, setting up programs for those less fortunate, and strengthen the Christian leaders of tomorrow. By supporting AM International, you will not only be showing your support for one organization. But you will be showing your support for the expansion of God’s Kingdom. Any support that you can offer is greatly appreciated.",
+        buttons: [{ label: "Click here", href: "#donate-form", style: "primary" }],
+        appearance: { background: "mist", paddingTop: "none" },
+      },
+    ],
+  },
+
+  "/get-involved/chapter-affiliation": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "prose",
+        body: {
+          markdown:
+            "Qualifications for membership includes being over the age of 18 and regularly attending Bible programs for at least one month at your local AM chapter. Membership is open primarily to current students of the university, but also to university alumni, faculty, and staff. Becoming a member indicates that you share and agree with the AM Statement of Faith and Mission Statement. A member is also one who wishes to uphold the values of the Christian faith in their lives and support the work of God’s Kingdom here on earth. Current students must be registered to their university chapter by filling out the application and having it signed by their chapter leader. AM members benefit from full access to the AM resources and facilities. They can also join AM leadership meetings, conventions, and retreats. Members of AM are recommended to give a monthly offering to their chapters. The amount of the offering is of their choice. 100% of the donations go towards supporting the local chapter’s operations and activities.",
+        },
+        appearance: { paddingBottom: "none" },
+      },
+      {
+        blockType: "notice",
+        tone: "warning",
+        body: {
+          markdown:
+            "Existing chapters must reaffirm their affiliation **annually by September 1**. Chapters that miss the deadline may have their membership revoked. New chapters may apply anytime between **June and December** of the current calendar year.",
+        },
+      },
+    ],
+  },
+
+  "/get-involved/bible-teacher-training": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "gallery",
+        eyebrow: "AM Academy",
+        heading: "How To Become A Bible Teacher",
+        columns: "1",
+        imageShape: "natural",
+        images: [{ image: "/images/bible-teacher-called-to-serve.webp" }],
+        appearance: { background: "mist", align: "center" },
+      },
+      {
+        blockType: "cta",
+        description:
+          "Are you interested in becoming a Bible Teacher? AM offers diverse training courses for you to be equipped to teach Bible to different age groups. Contact us with your story. We will help you find the most fitting track to share the Gospel. You can also visit AM Academy website (www.amacademy.org), our Online Bible School.",
+        appearance: { background: "mist", paddingTop: "none" },
+      },
+      {
+        blockType: "steps",
+        eyebrow: "Join our Bible Studies!",
+        heading: "Steps to Become Bible Teacher",
+        steps: [
+          {
+            title: "Finish 5-Phase Bible Study Curriculum.",
+            description:
+              "You will receive the proof account when you have completed our Bible Study course. Click through to sign up for the Bible Study Curriculum.",
+            href: "/bible-study/join",
+          },
+          {
+            title: "Apply for Bible Teacher Training",
+            description:
+              "You will receive the Bible Teacher Certificate when you have finished the course. Find more information about our Bible Teacher Certificate in our online bible school website.",
+            href: "https://www.amacademy.org",
+          },
+          {
+            title: "Activate Your Bible Teacher Account",
+            description: "In AM Academy, to share the Gospel with many souls.",
+          },
+          {
+            title:
+              "Continue to join resourceful, educational biblical programs to fulfill your calling!",
+          },
+        ],
+        stepsLayout: "columns",
+        appearance: {
+          background: "colour",
+          backgroundColour: "#f1f3f7",
+          align: "center",
+          headingSize: "xl",
+          paddingTop: "xl",
+          paddingBottom: "xl",
+        },
+      },
+      {
+        blockType: "gallery",
+        columns: "1",
+        imageShape: "natural",
+        images: [{ image: "/images/bible-teacher-called-to-be.webp" }],
+        appearance: { paddingTop: "none" },
+      },
+    ],
+  },
+
   "/bible-study": {
     mode: "replace",
     blocks: [
