@@ -139,6 +139,37 @@ async function indexDefinitions(uri, tables) {
   }
 }
 
+/**
+ * The foreign keys on a set of tables, by name and as SQL.
+ *
+ * A column added to a table that already exists arrives without the constraint
+ * it is declared with, because the column definition and the constraint are two
+ * different statements in pg_dump and only the first was being read. That is
+ * how `payload_locked_documents_rels.leaders_id` reached the live database with
+ * its index but not its `ON DELETE CASCADE` — a deleted leader would leave its
+ * lock row behind instead of taking it with them.
+ */
+async function foreignKeys(uri, tables) {
+  if (tables.length === 0) return [];
+  const pool = connect(uri);
+  try {
+    const { rows } = await pool.query(
+      `SELECT c.conname AS name,
+              'ALTER TABLE ONLY public.' || t.relname
+                || ' ADD CONSTRAINT ' || c.conname || ' '
+                || pg_get_constraintdef(c.oid) AS sql
+         FROM pg_constraint c
+         JOIN pg_class t ON t.oid = c.conrelid
+         JOIN pg_namespace n ON n.oid = t.relnamespace
+        WHERE n.nspname = 'public' AND c.contype = 'f' AND t.relname = ANY($1::text[])`,
+      [tables],
+    );
+    return rows;
+  } finally {
+    await pool.end();
+  }
+}
+
 /** Splits a pg_dump into statements, dropping its session settings and comments. */
 function statements(dump) {
   return dump
@@ -346,6 +377,16 @@ if (missingColumns.length) {
   if (newIndexes.length) {
     out.push(`-- ${newIndexes.length} index(es) for those columns.`, "");
     for (const row of newIndexes) out.push(idempotent(row.indexdef), "");
+  }
+
+  // And the foreign keys. Same reasoning as the indexes, and the same filter:
+  // only what the target does not already have, by constraint name.
+  const tables = missingColumns.map((row) => row.table);
+  const heldKeys = new Set((await foreignKeys(TARGET, tables)).map((row) => row.name));
+  const newKeys = (await foreignKeys(SOURCE, tables)).filter((row) => !heldKeys.has(row.name));
+  if (newKeys.length) {
+    out.push(`-- ${newKeys.length} foreign key(s) for those columns.`, "");
+    for (const row of newKeys) out.push(idempotent(row.sql), "");
   }
 }
 

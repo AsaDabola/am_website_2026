@@ -2,6 +2,7 @@ import Image from "next/image";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import TenantLink from "@/components/layout/TenantLink";
 import Section, { isDarkSection } from "@/components/sections/Section";
+import HistoryTimeline from "@/components/about/HistoryTimeline";
 import { ArrowRightIcon } from "@/components/ui/icons";
 import { mediaUrl } from "@/lib/homeBlockTypes";
 import { embedUrl } from "@/lib/pageBlockTypes";
@@ -22,6 +23,7 @@ import type {
   SpacerData,
   StatsData,
   StepsData,
+  TimelineData,
 } from "@/lib/pageBlockTypes";
 
 /**
@@ -30,8 +32,9 @@ import type {
  * Every one of these is a server component wrapping `<Section>`, so the
  * background, gradient, spacing, width and alignment an editor chose are
  * applied in one place and each component below only has to lay out its own
- * content. The accordion is the only interactive one and uses <details>, so
- * none of this ships JavaScript.
+ * content. Two are interactive: the accordion, which uses <details> and so
+ * ships nothing, and the timeline, which is the one block here that sends
+ * JavaScript to the browser.
  */
 
 /* ------------------------------------------------------------------ shared */
@@ -50,6 +53,28 @@ function grid(columns?: string | null) {
 function isExternal(href: string) {
   return /^(https?:|mailto:|tel:|#)/i.test(href);
 }
+
+/**
+ * The accent colour an editor chose, or the design's own.
+ *
+ * The fallback is not optional. An unset custom property is the
+ * guaranteed-invalid value, so `color: var(--section-accent)` on its own does
+ * not fall back to the Tailwind class beside it — the declaration becomes
+ * `unset`, and for an inherited property that means inherit. Written without
+ * the fallback, as this was, every eyebrow on an authored section came out in
+ * the body's ink and the little rule before it was fully transparent.
+ *
+ * So each call passes the colour its own class sets, and the two agree until
+ * the variable exists.
+ */
+const accent = (fallback: string) => ({ color: `var(--section-accent, ${fallback})` });
+const accentBackground = (fallback: string) => ({
+  backgroundColor: `var(--section-accent, ${fallback})`,
+});
+
+/** The design's blue, and the tints the sections draw it at. */
+const BLUE = "var(--color-brand-blue, #007aff)";
+const INK = "var(--color-ink, #101828)";
 
 /** A link that keeps the country prefix on internal addresses and not on others. */
 function Anchor({
@@ -91,12 +116,12 @@ function Eyebrow({ children, dark }: { children: string; dark: boolean }) {
     // ancestor leaves the row itself packed to the start.
     <div className="am-eyebrow mb-4 flex items-center gap-3">
       <span
-        className={`h-px w-7 ${dark ? "bg-white/60" : "bg-brand-blue/60"}`}
-        style={{ backgroundColor: "var(--section-accent)" }}
+        className="h-px w-7"
+        style={accentBackground(dark ? "rgba(255,255,255,0.6)" : "rgba(0,122,255,0.6)")}
       />
       <span
-        className={`text-xs font-semibold uppercase tracking-[0.2em] ${dark ? "text-white/90" : "text-brand-blue"}`}
-        style={{ color: "var(--section-accent)" }}
+        className="text-xs font-semibold uppercase tracking-[0.2em]"
+        style={accent(dark ? "rgba(255,255,255,0.9)" : BLUE)}
       >
         {children}
       </span>
@@ -104,16 +129,69 @@ function Eyebrow({ children, dark }: { children: string; dark: boolean }) {
   );
 }
 
+/**
+ * A heading with any highlighted words set in the accent blue.
+ *
+ * `Sustain Your Spirit with <hl>Morning QT</hl>` — the same mark the hero
+ * headline uses, and for the same reason: the word being picked out sits in
+ * the middle of the sentence, and a sentence translated into Korean or Arabic
+ * puts it somewhere else entirely. A position could not survive that; a tag
+ * travels with the word.
+ *
+ * Split rather than parsed as HTML. Nothing here is ever set as markup, so a
+ * stray angle bracket in someone's copy stays text instead of becoming a hole.
+ */
+function Highlighted({ text, dark }: { text: string; dark: boolean }) {
+  const parts = text.split(/<hl>|<\/hl>/);
+  if (parts.length === 1) return <>{text}</>;
+  return (
+    <>
+      {parts.map((part, index) =>
+        // Odd pieces are what sat between the tags.
+        index % 2 === 1 ? (
+          <span
+            key={index}
+            style={accent(dark ? "#ffffff" : "var(--color-brand-navy-deep, #1449c6)")}
+          >
+            {part}
+          </span>
+        ) : (
+          part
+        ),
+      )}
+    </>
+  );
+}
+
+/**
+ * The sizes a section title can be set to.
+ *
+ * `default` is what a section added in the admin gets. The designed pages set
+ * their section headings at 44px and their page titles at 45–48px, so a page
+ * converted to blocks asks for `lg` — otherwise every heading on it shrinks by
+ * eight pixels the day it becomes editable, which is not a conversion, it is a
+ * redesign nobody asked for.
+ */
+const HEADING_SIZE: Record<string, string> = {
+  default: "text-3xl sm:text-4xl",
+  sm: "text-xl sm:text-2xl",
+  md: "text-2xl sm:text-3xl",
+  lg: "text-[32px] leading-[1.15] sm:text-[44px]",
+  xl: "text-[34px] leading-[1.1] sm:text-[48px]",
+};
+
 function Heading({
   eyebrow,
   heading,
   dark,
   className = "",
+  size,
 }: {
   eyebrow?: string | null;
   heading?: string | null;
   dark: boolean;
   className?: string;
+  size?: string | null;
 }) {
   if (!eyebrow && !heading) return null;
   return (
@@ -121,9 +199,11 @@ function Heading({
       {eyebrow ? <Eyebrow dark={dark}>{eyebrow}</Eyebrow> : null}
       {heading ? (
         <h2
-          className={`font-display text-3xl font-semibold tracking-[-0.02em] sm:text-4xl ${dark ? "text-white" : "text-ink"}`}
+          className={`font-display font-semibold tracking-[-0.02em] ${
+            HEADING_SIZE[size ?? "default"] ?? HEADING_SIZE.default
+          } ${dark ? "text-white" : "text-ink"}`}
         >
-          {heading}
+          <Highlighted text={heading} dark={dark} />
         </h2>
       ) : null}
     </div>
@@ -275,7 +355,7 @@ export function ProseSection({ data }: { data: ProseData }) {
   const dark = isDarkSection(data.appearance);
   return (
     <Section appearance={data.appearance} defaultContainerClassName="max-w-[860px]">
-      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} className="mb-8" />
+      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} size={data.appearance?.headingSize} className="mb-8" />
       <Prose data={data.body} dark={dark} />
       <Buttons buttons={data.buttons} dark={dark} />
     </Section>
@@ -315,7 +395,7 @@ export function ImageText({ data }: { data: ImageTextData }) {
       >
         {picture}
         <div>
-          <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} className="mb-6" />
+          <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} size={data.appearance?.headingSize} className="mb-6" />
           <Prose data={data.body} dark={dark} />
           <Buttons buttons={data.buttons} dark={dark} />
         </div>
@@ -327,17 +407,31 @@ export function ImageText({ data }: { data: ImageTextData }) {
 export function Cards({ data }: { data: CardsData }) {
   const dark = isDarkSection(data.appearance);
   const cards = data.cards ?? [];
+  // Text-only columns, each under a short rule — how the departments and the
+  // pillars are drawn. The heading steps down to 16px and the copy is set
+  // smaller, because a ruled column is a list item, not a card.
+  const ruled = data.layout === "ruled";
 
   return (
     <Section appearance={data.appearance}>
-      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} />
+      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} size={data.appearance?.headingSize} />
       {data.intro ? (
-        <p className={`mt-4 max-w-[720px] text-base leading-relaxed ${dark ? "text-white/80" : "text-ink-muted"}`}>
+        <p
+          className={`mt-4 max-w-[733px] text-base leading-relaxed ${
+            dark ? "text-white/80" : "text-ink-muted"
+          } ${
+            // Centred inside a centred section rather than pinned left, which
+            // is what the design does with this standfirst.
+            "[.text-center_&]:mx-auto"
+          }`}
+        >
           {data.intro}
         </p>
       ) : null}
 
-      <div className={`mt-12 grid gap-8 ${grid(data.columns)}`}>
+      <div
+        className={`mt-12 grid gap-8 ${ruled ? "gap-x-10 gap-y-10 text-start" : ""} ${grid(data.columns)}`}
+      >
         {cards.map((card, index) => {
           const url = mediaUrl(card.image);
           const body = (
@@ -355,14 +449,16 @@ export function Cards({ data }: { data: CardsData }) {
               ) : null}
               {card.tag ? (
                 <p
-                  className={`mt-5 text-xs font-semibold uppercase tracking-[0.15em] ${dark ? "text-white/70" : "text-brand-blue"}`}
-                  style={{ color: "var(--section-accent)" }}
+                  className="mt-5 text-xs font-semibold uppercase tracking-[0.15em]"
+                  style={accent(dark ? "rgba(255,255,255,0.7)" : BLUE)}
                 >
                   {card.tag}
                 </p>
               ) : null}
               <p
-                className={`${card.tag ? "mt-2" : "mt-5"} font-display text-xl font-semibold tracking-[-0.02em] ${dark ? "text-white" : "text-ink"}`}
+                className={`${card.tag ? "mt-2" : ruled ? "" : "mt-5"} font-display ${
+                  ruled ? "text-base font-bold" : "text-xl font-semibold"
+                } tracking-[-0.02em] ${dark ? "text-white" : "text-ink"}`}
               >
                 {card.title}
               </p>
@@ -373,8 +469,8 @@ export function Cards({ data }: { data: CardsData }) {
               ) : null}
               {card.href ? (
                 <span
-                  className={`mt-4 inline-flex items-center gap-2 text-sm font-semibold ${dark ? "text-white" : "text-brand-blue"}`}
-                  style={{ color: "var(--section-accent)" }}
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold"
+                  style={accent(dark ? "#ffffff" : BLUE)}
                 >
                   {card.linkLabel || "Learn more"}
                   <ArrowRightIcon />
@@ -383,12 +479,16 @@ export function Cards({ data }: { data: CardsData }) {
             </>
           );
 
+          const shell = ruled
+            ? `group border-t-2 pt-6 ${dark ? "border-white/20" : "border-black/10"}`
+            : "group";
+
           return card.href ? (
-            <Anchor key={card.id ?? index} href={card.href} className="group block">
+            <Anchor key={card.id ?? index} href={card.href} className={`${shell} block`}>
               {body}
             </Anchor>
           ) : (
-            <div key={card.id ?? index} className="group">
+            <div key={card.id ?? index} className={shell}>
               {body}
             </div>
           );
@@ -404,7 +504,7 @@ export function People({ data }: { data: PeopleData }) {
 
   return (
     <Section appearance={data.appearance} defaultContainerClassName="max-w-[1104px]">
-      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} />
+      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} size={data.appearance?.headingSize} />
 
       <div className={`mt-16 grid grid-cols-2 gap-x-6 gap-y-11 ${grid(data.columns ?? "5")}`}>
         {people.map((person, index) => (
@@ -435,8 +535,8 @@ export function People({ data }: { data: PeopleData }) {
             {person.email ? (
               <a
                 href={`mailto:${person.email}`}
-                className={`pt-2 text-[13px] font-semibold ${dark ? "text-white" : "text-brand-blue"}`}
-                style={{ color: "var(--section-accent)" }}
+                className="pt-2 text-[13px] font-semibold"
+                style={accent(dark ? "#ffffff" : BLUE)}
               >
                 {person.email}
               </a>
@@ -454,15 +554,15 @@ export function Stats({ data }: { data: StatsData }) {
 
   return (
     <Section appearance={data.appearance}>
-      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} />
+      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} size={data.appearance?.headingSize} />
       <div
         className={`${data.eyebrow || data.heading ? "mt-12" : ""} grid gap-8 ${grid(String(Math.min(4, Math.max(2, stats.length))))}`}
       >
         {stats.map((stat, index) => (
           <div key={stat.id ?? index}>
             <p
-              className={`font-display text-4xl font-extrabold tracking-[-0.03em] sm:text-5xl ${dark ? "text-white" : "text-ink"}`}
-              style={{ color: "var(--section-accent)" }}
+              className="font-display text-4xl font-extrabold tracking-[-0.03em] sm:text-5xl"
+              style={accent(dark ? "#ffffff" : INK)}
             >
               {stat.value}
             </p>
@@ -480,7 +580,7 @@ export function Steps({ data }: { data: StepsData }) {
 
   return (
     <Section appearance={data.appearance} defaultContainerClassName="max-w-[1104px]">
-      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} />
+      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} size={data.appearance?.headingSize} />
 
       <div className={`mt-10 divide-y px-6 ${dark ? "divide-white/15" : "divide-black/10"}`}>
         {steps.map((step, index) => {
@@ -488,8 +588,8 @@ export function Steps({ data }: { data: StepsData }) {
             <div className="flex flex-col gap-3 py-7 sm:flex-row sm:items-center sm:gap-8">
               <div className="flex items-baseline gap-4 sm:w-[304px] sm:shrink-0">
                 <span
-                  className={`font-display text-sm font-extrabold ${dark ? "text-white/70" : "text-brand-blue"}`}
-                  style={{ color: "var(--section-accent)" }}
+                  className="font-display text-sm font-extrabold"
+                  style={accent(dark ? "rgba(255,255,255,0.7)" : BLUE)}
                 >
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -529,13 +629,50 @@ export function Steps({ data }: { data: StepsData }) {
   );
 }
 
+/**
+ * Milestones on a filling rail — the same component the history page draws,
+ * so a country writing its own history gets the design rather than a list.
+ *
+ * It is the one block here that ships JavaScript: one entry is open at a time
+ * and the rail fills to it, which is a choice the reader makes.
+ */
+export function Timeline({ data }: { data: TimelineData }) {
+  const dark = isDarkSection(data.appearance);
+  const milestones = (data.milestones ?? [])
+    .filter((row) => row?.title)
+    .map((row) => ({
+      tag: row.tag ?? "",
+      title: row.title ?? "",
+      description: row.description ?? "",
+    }));
+  if (milestones.length === 0) return null;
+
+  return (
+    <Section appearance={data.appearance} defaultContainerClassName="max-w-[720px]">
+      <Heading
+        eyebrow={data.eyebrow}
+        heading={data.heading}
+        dark={dark}
+        size={data.appearance?.headingSize}
+      />
+      {/* The heading follows the section's alignment; the milestones do not.
+          A centred section is asking for its title to be centred — a dated
+          entry read down a rail is still a list, and centring its lines makes
+          the dates stop lining up with each other. */}
+      <div className={`text-start ${data.eyebrow || data.heading ? "mt-16" : ""}`}>
+        <HistoryTimeline milestones={milestones} />
+      </div>
+    </Section>
+  );
+}
+
 export function Accordion({ data }: { data: AccordionData }) {
   const dark = isDarkSection(data.appearance);
   const items = data.items ?? [];
 
   return (
     <Section appearance={data.appearance} defaultContainerClassName="max-w-[860px]">
-      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} />
+      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} size={data.appearance?.headingSize} />
 
       {/* <details> rather than a click handler, so this section works with no
           JavaScript, is open to search engines and to find-in-page, and adds
@@ -604,7 +741,7 @@ export function Gallery({ data }: { data: GalleryData }) {
 
   return (
     <Section appearance={data.appearance}>
-      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} />
+      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} size={data.appearance?.headingSize} />
       <div className={`mt-12 grid gap-6 ${grid(data.columns)}`}>
         {images.map((row, index) => (
           <figure key={row.id ?? index}>
@@ -642,7 +779,7 @@ export function Cta({ data }: { data: CtaData }) {
       defaultContainerClassName="max-w-[860px]"
       containerClassName="text-center"
     >
-      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} className="[&>div]:justify-center" />
+      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} size={data.appearance?.headingSize} className="[&>div]:justify-center" />
       {data.description ? (
         <p className={`mx-auto mt-5 max-w-[620px] text-base leading-relaxed ${dark ? "text-white/80" : "text-ink-muted"}`}>
           {data.description}
@@ -671,7 +808,7 @@ export function Embed({ data }: { data: EmbedData }) {
 
   return (
     <Section appearance={data.appearance} defaultContainerClassName="max-w-[960px]">
-      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} className="mb-8" />
+      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} size={data.appearance?.headingSize} className="mb-8" />
       <div className={`w-full overflow-hidden rounded-2xl bg-black ${RATIO[data.ratio ?? "16-9"]}`}>
         <iframe
           src={url}
@@ -696,7 +833,7 @@ export function Logos({ data }: { data: LogosData }) {
 
   return (
     <Section appearance={data.appearance} defaultClassName="bg-white py-16" styledClassName="py-16">
-      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} />
+      <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} size={data.appearance?.headingSize} />
       <div className={`${data.eyebrow || data.heading ? "mt-10" : ""} flex flex-wrap items-center justify-center gap-x-12 gap-y-8`}>
         {logos.map((row, index) => {
           const mark = (

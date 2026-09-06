@@ -157,6 +157,273 @@ export const PAGE_DEFAULTS: Record<string, PageSeed> = {
     ],
   },
 
+  "/about/history": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "prose",
+        eyebrow: "History",
+        heading: "A Brief History of Apostolos Missions International",
+        body: { markdown: "From a grassroots campus effort to a global mission organization." },
+        appearance: { align: "center" },
+      },
+      {
+        blockType: "prose",
+        body: {
+          markdown: [
+            "## The vision behind the movement",
+            "Apostolos Campus Ministries (ACM) developed with the focus of reaching out to university students who are thirsty for the Word of God and desiring to continue God’s mission. The early pioneers believed strongly that today’s universities shape tomorrow’s leaders, and their dream was to transform the world by helping to guide students on their spiritual journey to pursue goals that closely resemble the Kingdom of God. What started as a grassroots campus effort quickly grew into a deep discipleship movement committed to reaching nations.",
+            "## A new name, a key mentor",
+            "ACM officially became Apostolos Missions International (AMI) in December 2003. Missiologist Dr. Ralph Winter served as the first honorary chairman of AMI. Dr. Winter and the staff of the U.S. Center for World Missions graciously advised the AMI student board on how to develop mission around the world. Winter was known for his creative approach to missions and his strategies to overcome cultural and societal barriers to delivering the Gospel of Jesus Christ. AMI sought to continue that legacy to reach the unreached youth of today.",
+            "## Growing beyond campus",
+            "AMI’s tradition of Word, fellowship, and service spread to numerous prestigious U.S. schools over the years, including Harvard University, Columbia University, UC Berkeley, UCLA, Wesleyan University, Northwestern University, and many more. As students graduated and went out as missionaries, the network developed globally, establishing ministries in Canada, Cambodia, South Korea, India, Laos, Kenya, Vietnam, Japan, Uganda, Zimbabwe, Rwanda, Tanzania, Egypt, and beyond.",
+            "## Setting up a home base",
+            "To support this rapidly expanding global network, AMI moved its headquarters from the West Coast to Dover, New York in 2015. This allowed the scope of the mission to expand, including not only university students but also young adults in urban societies and developing countries. In 2020, AMI relocated its headquarters office to Trenton, New Jersey, serving as a vital resource hub and training ground for young missionaries to evangelize, teach the Bible, and develop localized mission strategies.",
+            "## Where AMI stands today",
+            "Today, Apostolos Missions International is a vibrant worldwide sending community. It continues to expand its reach, steadfast in its commitment to the great commission. AMI is presently an active member of both the World Olivet Assembly and the World Evangelical Alliance, collaborating globally to testify to the eternal love of Jesus Christ.",
+          ].join("\n\n"),
+        },
+        appearance: { width: "narrow", paddingTop: "none" },
+      },
+      {
+        blockType: "timeline",
+        eyebrow: "Timeline",
+        heading: "Our History at a Glance",
+        milestones: [
+          {
+            tag: "Founding",
+            title: "Apostolos Campus Ministries begins",
+            description:
+              "ACM starts as a grassroots campus effort reaching university students, dedicated to guiding them on their spiritual journey toward the Kingdom of God.",
+          },
+          {
+            tag: "Early years",
+            title: "Guided by Dr. Ralph Winter",
+            description:
+              "Renowned missiologist Dr. Ralph Winter of the U.S. Center for World Missions serves as the first honorary chairman, advising on global mission strategy.",
+          },
+          {
+            tag: "December 2003",
+            title: "ACM becomes AMI",
+            description:
+              "Apostolos Campus Ministries is officially renamed to Apostolos Missions International to reflect its expanding global calling and vision.",
+          },
+          {
+            tag: "Expansion",
+            title: "Campus and global growth",
+            description:
+              "AMI spreads to top U.S. campuses including Harvard, Columbia, Berkeley, and UCLA, while establishing networks across 14+ nations globally.",
+          },
+          {
+            tag: "2015",
+            title: "Headquarters moves to Dover, NY",
+            description:
+              "AMI relocates its main office to Dover, NY, broadening its focus to serve young adults in urban societies and developing countries.",
+          },
+          {
+            tag: "2020",
+            title: "Headquarters moves to Trenton, NJ",
+            description:
+              "AMI moves its hub to Trenton, NJ, establishing a centralized resource center and training ground for active field missionaries.",
+          },
+          {
+            tag: "Today",
+            title: "A global network",
+            description:
+              "AMI operates as a worldwide sending community and is an active member of both the World Olivet Assembly and the World Evangelical Alliance.",
+          },
+        ],
+        appearance: { background: "mist", align: "center", paddingTop: "xl", paddingBottom: "xl" },
+      },
+      {
+        blockType: "cta",
+        description: "Preach the gospel · Make disciples · Equip leaders · Send them out",
+        appearance: {
+          background: "white",
+          align: "center",
+          paddingTop: "sm",
+          paddingBottom: "sm",
+        },
+      },
+    ],
+  },
+
+  "/what-we-do/administration": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "gallery",
+        eyebrow: "What we do",
+        heading: "Administration",
+        columns: "3",
+        imageShape: "square",
+        images: [
+          { image: "/images/admin-intro-2.webp" },
+          { image: "/images/admin-intro-laptop.webp" },
+          { image: "/images/admin-intro-1.webp" },
+        ],
+        appearance: { background: "mist", align: "center" },
+      },
+      {
+        blockType: "cta",
+        description:
+          "Apostolos Missions being an international ministry with a large network, consists of various departments that specialize in specific areas of the ministry. These departments are run by a team of staff who are committed to the successful operations of the ministry.",
+        appearance: { background: "mist", align: "center", paddingTop: "none" },
+      },
+      {
+        blockType: "cards",
+        eyebrow: "In practice",
+        heading: "Department of Mission",
+        intro:
+          "Mission is one of Apostolos Missions’ top priorities. Our desire is to revitalize thriving campus ministries so that all campuses on earth will be filled with God’s word and that the youth from all nations can have the opportunity to listen to the message of the love of God revealed on the cross through our Lord Jesus Christ.",
+        columns: "3",
+        layout: "ruled",
+        cards: [
+          {
+            title: "Network",
+            description:
+              "We are currently serving in 9 regions with ministers, evangelists, and Bible teachers who are passionate about making Christ known to the nations. The staff on this team are committed to supporting our network of mission workers through personal and spiritual development. For this, services and conferences are held on a regular basis to provide guidance and care. The goal is to foster unity while mobilizing the network to perform its day-to-day activities.",
+          },
+          {
+            title: "Outreach & Evangelism",
+            description:
+              "Evangelism and outreach are a big part of Apostolos Missions and what we do. This department focuses on strategizing new ways for chapters to evangelize in innovative ways. It is all about helping build relationships while reaching others through the gospel involving acts of love and compassion.",
+          },
+          {
+            title: "Event & Planning",
+            description:
+              "Our event and planning team serves as a catalyst for fellowship programs and activities. They organize and coordinate a variety of social and professional events including fellowship events, retreats, internships, and other special events.",
+          },
+          {
+            title: "Statistics & Database",
+            description:
+              "In their day-to-day work, the statistics and database team will collect mission data to calculate progress in mission and developments in evangelism and Bible studies. They also create surveys and polls to help the outreach and evangelism team create more dynamic ways of outreach. Not only so, but with such a large network, keeping a database of members worldwide is crucial. The statistics and database staff play a vital role in ensuring that all data is accurate and up-to-date.",
+          },
+          {
+            title: "Chapel & Services",
+            description:
+              "Our chaplain team arranges and leads weekly services while also ensuring that all members and visitors are being taken care of and provided for their well-being. They also provide spiritual guidance and counseling.",
+          },
+          {
+            title: "Art & Design",
+            description:
+              "The staff of the art and design team is responsible for the visual part of Apostolos Missions resources, Bible study materials, and website design. In the case of events, the design department also supports the chapters around the world by designing flyers, banners, t-shirts, clothing, and accessories.",
+          },
+        ],
+        appearance: { align: "center", paddingTop: "xl", paddingBottom: "xl" },
+      },
+      // The five remaining departments, each its own band alternating white and
+      // mist — the design gives them a section apiece rather than a column,
+      // and an editor can reorder or hide one without touching the others.
+      {
+        blockType: "cta",
+        eyebrow: "In practice",
+        heading: "Department of Education",
+        description:
+          "The department of education is made up of a team of experts who have gone through advanced studies in the Bible and/or specific fields of Christianity. The team is committed to creating useful and practical biblical resources that can be used among chapters for evangelism, Bible studies, retreats, and large group activities.",
+        appearance: { background: "white", align: "center", headingSize: "md" },
+      },
+      {
+        blockType: "cta",
+        eyebrow: "In practice",
+        heading: "Department of Media",
+        description:
+          "In an era where media and technology is rapidly spreading and the youth is actively using media for mass communication, Apostolos Missions is investing its time and effort to reach its audience through social media. Our fellowship has a group of young professionals that develop Christian content and use social media platforms to share the gospel at a large scale.",
+        appearance: { background: "mist", align: "center", headingSize: "md" },
+      },
+      {
+        blockType: "cta",
+        eyebrow: "In practice",
+        heading: "Department of Finance",
+        description:
+          "The financial department is responsible for organizing the finance of the ministry while also maintaining the financial health of the organization. The finance staff create financial reports, budgets, and make sure that the organization’s financial records abide by the local, state, and federal regulations.",
+        appearance: { background: "white", align: "center", headingSize: "md" },
+      },
+      {
+        blockType: "cta",
+        eyebrow: "In practice",
+        heading: "Property Management",
+        description:
+          "With a large property that’s serving the world mission and that is home to many staff, the AM property management is currently taking care of its headquarters facility. They do so by maintaining the property, contacting vendors in case of renovations or maintenance requests that involve plumbing, electricity, and HVAC.",
+        appearance: { background: "mist", align: "center", headingSize: "md" },
+      },
+      {
+        blockType: "cta",
+        eyebrow: "In practice",
+        heading: "Language Department",
+        description:
+          "As we are an international ministry, our organization is dedicated to reach all peoples groups with all different languages and backgrounds. One very important aspect of spreading the gospel is the need to do so by language according to the city, country, and region. Our language department works hand in hand with the departments of mission, education, and media in order to ensure that the gospel reaches to all souls across the globe.",
+        appearance: { background: "white", align: "center", headingSize: "md" },
+      },
+    ],
+  },
+
+  "/get-involved/group-activities": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "prose",
+        heading: "Group Activities",
+        appearance: { paddingBottom: "none", headingSize: "xl" },
+      },
+      {
+        blockType: "imageText",
+        eyebrow: "Campus Daily Devotional",
+        heading: "Sustain Your Spirit with <hl>Morning QT</hl>",
+        image: "/images/group-activities-morning-qt.webp",
+        imageSide: "right",
+        imageShape: "landscape",
+        body: {
+          markdown:
+            "Campus life is often drawn to night culture, losing the freshness of the morning. God called His people to seek His truth and pray in the morning. Just as Israelites collected manna (bread) in the morning and quail (meat) in the evening, Jesus provides profound grace and renewing strength when we come to him in the morning, hear His Word, and pray in the evening.\n\n" +
+            "Morning QT (Quiet Time) of the Word and prayer sustains our spiritual life on campus, full of His power and truth.",
+        },
+        appearance: { headingSize: "lg" },
+      },
+      {
+        blockType: "imageText",
+        eyebrow: "Deeper Understanding",
+        heading: "Gather and Share at <hl>Group Bible Study</hl>",
+        image: "/images/group-activities-bible-study.webp",
+        imageSide: "left",
+        imageShape: "landscape",
+        body: {
+          markdown:
+            "Group Bible Study allows students to gather and share the Word and prayer. Each study session is comprised of a series of bible studies according to the theme continuing for a set period of time.\n\n" +
+            "Stay tuned for the news and announcement from your chapter about upcoming Group Bible Study programs.",
+        },
+        appearance: { background: "paper", headingSize: "lg" },
+      },
+      {
+        blockType: "imageText",
+        eyebrow: "Weekly Gatherings",
+        heading: "Experience Power in <hl>Large Group Fellowship</hl>",
+        image: "/images/group-activities-fellowship.webp",
+        imageSide: "right",
+        imageShape: "landscape",
+        body: {
+          markdown:
+            "When the chapter grows increasingly in number AM local chapters start to host a Large Group Fellowship every week with worship music, Bible messages, prayer, and fellowship.",
+        },
+        appearance: { headingSize: "lg" },
+      },
+      {
+        blockType: "imageText",
+        eyebrow: "Friday Gatherings",
+        heading: "Sincere Hearts at <hl>Friday Prayer Meeting</hl>",
+        image: "/images/group-activities-prayer.webp",
+        imageSide: "left",
+        imageShape: "landscape",
+        body: {
+          markdown:
+            "We all have many topics to pray for. AM holds a prayer gathering every Friday. We pray for the world mission, our countries and cities, our campus, and our personal topics.\n\n" +
+            "“The prayer of a righteous person is powerful and effective” (James 5:16). Praying in a group is more impactful and strengthening!",
+        },
+        appearance: { background: "paper", headingSize: "lg" },
+      },
+    ],
+  },
+
   "/get-involved/online-bible-study": {
     mode: "replace",
     blocks: [

@@ -264,6 +264,7 @@ pages_blocks_accordion.appearance_focal_point enum_pages_blocks_accordion_appear
 pages_blocks_accordion.appearance_gradient_angle numeric
 pages_blocks_accordion.appearance_gradient_from character varying
 pages_blocks_accordion.appearance_gradient_to character varying
+pages_blocks_accordion.appearance_heading_size enum_pages_blocks_accordion_appearance_heading_size
 pages_blocks_accordion.appearance_hidden boolean
 pages_blocks_accordion.appearance_overlay numeric
 pages_blocks_accordion.appearance_overlay_colour character varying
@@ -293,6 +294,7 @@ pages_blocks_banner.appearance_focal_point enum_pages_blocks_banner_appearance_f
 pages_blocks_banner.appearance_gradient_angle numeric
 pages_blocks_banner.appearance_gradient_from character varying
 pages_blocks_banner.appearance_gradient_to character varying
+pages_blocks_banner.appearance_heading_size enum_pages_blocks_banner_appearance_heading_size
 pages_blocks_banner.appearance_hidden boolean
 pages_blocks_banner.appearance_overlay numeric
 pages_blocks_banner.appearance_overlay_colour character varying
@@ -336,6 +338,7 @@ pages_blocks_cards.appearance_focal_point enum_pages_blocks_cards_appearance_foc
 pages_blocks_cards.appearance_gradient_angle numeric
 pages_blocks_cards.appearance_gradient_from character varying
 pages_blocks_cards.appearance_gradient_to character varying
+pages_blocks_cards.appearance_heading_size enum_pages_blocks_cards_appearance_heading_size
 pages_blocks_cards.appearance_hidden boolean
 pages_blocks_cards.appearance_overlay numeric
 pages_blocks_cards.appearance_overlay_colour character varying
@@ -349,6 +352,7 @@ pages_blocks_cards.eyebrow character varying
 pages_blocks_cards.heading character varying
 pages_blocks_cards.id character varying
 pages_blocks_cards.intro character varying
+pages_blocks_cards.layout enum_pages_blocks_cards_layout
 pages_blocks_cards_cards._order integer
 pages_blocks_cards_cards._parent_id character varying
 pages_blocks_cards_cards.description character varying
@@ -371,6 +375,7 @@ pages_blocks_cta.appearance_focal_point enum_pages_blocks_cta_appearance_focal_p
 pages_blocks_cta.appearance_gradient_angle numeric
 pages_blocks_cta.appearance_gradient_from character varying
 pages_blocks_cta.appearance_gradient_to character varying
+pages_blocks_cta.appearance_heading_size enum_pages_blocks_cta_appearance_heading_size
 pages_blocks_cta.appearance_hidden boolean
 pages_blocks_cta.appearance_overlay numeric
 pages_blocks_cta.appearance_overlay_colour character varying
@@ -402,6 +407,7 @@ pages_blocks_embed.appearance_focal_point enum_pages_blocks_embed_appearance_foc
 pages_blocks_embed.appearance_gradient_angle numeric
 pages_blocks_embed.appearance_gradient_from character varying
 pages_blocks_embed.appearance_gradient_to character varying
+pages_blocks_embed.appearance_heading_size enum_pages_blocks_embed_appearance_heading_size
 pages_blocks_embed.appearance_hidden boolean
 pages_blocks_embed.appearance_overlay numeric
 pages_blocks_embed.appearance_overlay_colour character varying
@@ -437,6 +443,7 @@ pages_blocks_gallery.appearance_focal_point enum_pages_blocks_gallery_appearance
 pages_blocks_gallery.appearance_gradient_angle numeric
 pages_blocks_gallery.appearance_gradient_from character varying
 pages_blocks_gallery.appearance_gradient_to character varying
+pages_blocks_gallery.appearance_heading_size enum_pages_blocks_gallery_appearance_heading_size
 pages_blocks_gallery.appearance_hidden boolean
 pages_blocks_gallery.appearance_overlay numeric
 pages_blocks_gallery.appearance_overlay_colour character varying
@@ -519,6 +526,7 @@ pages_blocks_image_text.appearance_focal_point enum_pages_blocks_image_text_appe
 pages_blocks_image_text.appearance_gradient_angle numeric
 pages_blocks_image_text.appearance_gradient_from character varying
 pages_blocks_image_text.appearance_gradient_to character varying
+pages_blocks_image_text.appearance_heading_size enum_pages_blocks_image_text_appearance_heading_size
 pages_blocks_image_text.appearance_hidden boolean
 pages_blocks_image_text.appearance_overlay numeric
 pages_blocks_image_text.appearance_overlay_colour character varying
@@ -554,6 +562,7 @@ pages_blocks_logos.appearance_focal_point enum_pages_blocks_logos_appearance_foc
 pages_blocks_logos.appearance_gradient_angle numeric
 pages_blocks_logos.appearance_gradient_from character varying
 pages_blocks_logos.appearance_gradient_to character varying
+pages_blocks_logos.appearance_heading_size enum_pages_blocks_logos_appearance_heading_size
 pages_blocks_logos.appearance_hidden boolean
 pages_blocks_logos.appearance_overlay numeric
 pages_blocks_logos.appearance_overlay_colour character varying
@@ -652,6 +661,7 @@ pages_blocks_people.appearance_focal_point enum_pages_blocks_people_appearance_f
 pages_blocks_people.appearance_gradient_angle numeric
 pages_blocks_people.appearance_gradient_from character varying
 pages_blocks_people.appearance_gradient_to character varying
+pages_blocks_people.appearance_heading_size enum_pages_blocks_people_appearance_heading_size
 pages_blocks_people.appearance_hidden boolean
 pages_blocks_people.appearance_overlay numeric
 pages_blocks_people.appearance_overlay_colour character varying
@@ -687,6 +697,7 @@ pages_blocks_prose.appearance_focal_point enum_pages_blocks_prose_appearance_foc
 pages_blocks_prose.appearance_gradient_angle numeric
 pages_blocks_prose.appearance_gradient_from character varying
 pages_blocks_prose.appearance_gradient_to character varying
+pages_blocks_prose.appearance_heading_size enum_pages_blocks_prose_appearance_heading_size
 pages_blocks_prose.appearance_hidden boolean
 pages_blocks_prose.appearance_overlay numeric
 pages_blocks_prose.appearance_overlay_colour character varying
@@ -730,6 +741,7 @@ pages_blocks_quote.appearance_focal_point enum_pages_blocks_quote_appearance_foc
 pages_blocks_quote.appearance_gradient_angle numeric
 pages_blocks_quote.appearance_gradient_from character varying
 pages_blocks_quote.appearance_gradient_to character varying
+pages_blocks_quote.appearance_heading_size enum_pages_blocks_quote_appearance_heading_size
 pages_blocks_quote.appearance_hidden boolean
 pages_blocks_quote.appearance_overlay numeric
 pages_blocks_quote.appearance_overlay_colour character varying
@@ -756,6 +768,7 @@ pages_blocks_spacer.appearance_focal_point enum_pages_blocks_spacer_appearance_f
 pages_blocks_spacer.appearance_gradient_angle numeric
 pages_blocks_spacer.appearance_gradient_from character varying
 pages_blocks_spacer.appearance_gradient_to character varying
+pages_blocks_spacer.appearance_heading_size enum_pages_blocks_spacer_appearance_heading_size
 pages_blocks_spacer.appearance_hidden boolean
 pages_blocks_spacer.appearance_overlay numeric
 pages_blocks_spacer.appearance_overlay_colour character varying
@@ -780,6 +793,7 @@ pages_blocks_stats.appearance_focal_point enum_pages_blocks_stats_appearance_foc
 pages_blocks_stats.appearance_gradient_angle numeric
 pages_blocks_stats.appearance_gradient_from character varying
 pages_blocks_stats.appearance_gradient_to character varying
+pages_blocks_stats.appearance_heading_size enum_pages_blocks_stats_appearance_heading_size
 pages_blocks_stats.appearance_hidden boolean
 pages_blocks_stats.appearance_overlay numeric
 pages_blocks_stats.appearance_overlay_colour character varying
@@ -809,6 +823,7 @@ pages_blocks_steps.appearance_focal_point enum_pages_blocks_steps_appearance_foc
 pages_blocks_steps.appearance_gradient_angle numeric
 pages_blocks_steps.appearance_gradient_from character varying
 pages_blocks_steps.appearance_gradient_to character varying
+pages_blocks_steps.appearance_heading_size enum_pages_blocks_steps_appearance_heading_size
 pages_blocks_steps.appearance_hidden boolean
 pages_blocks_steps.appearance_overlay numeric
 pages_blocks_steps.appearance_overlay_colour character varying
@@ -826,6 +841,37 @@ pages_blocks_steps_steps.description character varying
 pages_blocks_steps_steps.href character varying
 pages_blocks_steps_steps.id character varying
 pages_blocks_steps_steps.title character varying
+pages_blocks_timeline._order integer
+pages_blocks_timeline._parent_id integer
+pages_blocks_timeline._path text
+pages_blocks_timeline.appearance_accent_colour character varying
+pages_blocks_timeline.appearance_align enum_pages_blocks_timeline_appearance_align
+pages_blocks_timeline.appearance_anchor character varying
+pages_blocks_timeline.appearance_background enum_pages_blocks_timeline_appearance_background
+pages_blocks_timeline.appearance_background_colour character varying
+pages_blocks_timeline.appearance_background_image_id integer
+pages_blocks_timeline.appearance_focal_point enum_pages_blocks_timeline_appearance_focal_point
+pages_blocks_timeline.appearance_gradient_angle numeric
+pages_blocks_timeline.appearance_gradient_from character varying
+pages_blocks_timeline.appearance_gradient_to character varying
+pages_blocks_timeline.appearance_heading_size enum_pages_blocks_timeline_appearance_heading_size
+pages_blocks_timeline.appearance_hidden boolean
+pages_blocks_timeline.appearance_overlay numeric
+pages_blocks_timeline.appearance_overlay_colour character varying
+pages_blocks_timeline.appearance_padding_bottom enum_pages_blocks_timeline_appearance_padding_bottom
+pages_blocks_timeline.appearance_padding_top enum_pages_blocks_timeline_appearance_padding_top
+pages_blocks_timeline.appearance_text_theme enum_pages_blocks_timeline_appearance_text_theme
+pages_blocks_timeline.appearance_width enum_pages_blocks_timeline_appearance_width
+pages_blocks_timeline.block_name character varying
+pages_blocks_timeline.eyebrow character varying
+pages_blocks_timeline.heading character varying
+pages_blocks_timeline.id character varying
+pages_blocks_timeline_milestones._order integer
+pages_blocks_timeline_milestones._parent_id character varying
+pages_blocks_timeline_milestones.description character varying
+pages_blocks_timeline_milestones.id character varying
+pages_blocks_timeline_milestones.tag character varying
+pages_blocks_timeline_milestones.title character varying
 partners.contact_email character varying
 partners.contact_name character varying
 partners.created_at timestamp with time zone
@@ -1011,6 +1057,7 @@ ENUM enum_membership_applications_statement_of_faith_agreement = I agree and sha
 ENUM enum_pages_blocks_accordion_appearance_align = default,left,center
 ENUM enum_pages_blocks_accordion_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_accordion_appearance_focal_point = center,top,bottom,left,right
+ENUM enum_pages_blocks_accordion_appearance_heading_size = default,sm,md,lg,xl
 ENUM enum_pages_blocks_accordion_appearance_padding_bottom = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_accordion_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_accordion_appearance_text_theme = auto,dark,light
@@ -1018,6 +1065,7 @@ ENUM enum_pages_blocks_accordion_appearance_width = default,narrow,wide,full
 ENUM enum_pages_blocks_banner_appearance_align = default,left,center
 ENUM enum_pages_blocks_banner_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_banner_appearance_focal_point = center,top,bottom,left,right
+ENUM enum_pages_blocks_banner_appearance_heading_size = default,sm,md,lg,xl
 ENUM enum_pages_blocks_banner_appearance_padding_bottom = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_banner_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_banner_appearance_text_theme = auto,dark,light
@@ -1027,14 +1075,17 @@ ENUM enum_pages_blocks_banner_height = sm,md,lg,full
 ENUM enum_pages_blocks_cards_appearance_align = default,left,center
 ENUM enum_pages_blocks_cards_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_cards_appearance_focal_point = center,top,bottom,left,right
+ENUM enum_pages_blocks_cards_appearance_heading_size = default,sm,md,lg,xl
 ENUM enum_pages_blocks_cards_appearance_padding_bottom = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_cards_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_cards_appearance_text_theme = auto,dark,light
 ENUM enum_pages_blocks_cards_appearance_width = default,narrow,wide,full
 ENUM enum_pages_blocks_cards_columns = 2,3,4,5
+ENUM enum_pages_blocks_cards_layout = card,ruled
 ENUM enum_pages_blocks_cta_appearance_align = default,left,center
 ENUM enum_pages_blocks_cta_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_cta_appearance_focal_point = center,top,bottom,left,right
+ENUM enum_pages_blocks_cta_appearance_heading_size = default,sm,md,lg,xl
 ENUM enum_pages_blocks_cta_appearance_padding_bottom = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_cta_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_cta_appearance_text_theme = auto,dark,light
@@ -1043,6 +1094,7 @@ ENUM enum_pages_blocks_cta_buttons_style = primary,secondary,link
 ENUM enum_pages_blocks_embed_appearance_align = default,left,center
 ENUM enum_pages_blocks_embed_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_embed_appearance_focal_point = center,top,bottom,left,right
+ENUM enum_pages_blocks_embed_appearance_heading_size = default,sm,md,lg,xl
 ENUM enum_pages_blocks_embed_appearance_padding_bottom = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_embed_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_embed_appearance_text_theme = auto,dark,light
@@ -1051,6 +1103,7 @@ ENUM enum_pages_blocks_embed_ratio = 16-9,1-1,9-16,21-9
 ENUM enum_pages_blocks_gallery_appearance_align = default,left,center
 ENUM enum_pages_blocks_gallery_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_gallery_appearance_focal_point = center,top,bottom,left,right
+ENUM enum_pages_blocks_gallery_appearance_heading_size = default,sm,md,lg,xl
 ENUM enum_pages_blocks_gallery_appearance_padding_bottom = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_gallery_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_gallery_appearance_text_theme = auto,dark,light
@@ -1060,6 +1113,7 @@ ENUM enum_pages_blocks_gallery_image_shape = landscape,square,portrait
 ENUM enum_pages_blocks_image_text_appearance_align = default,left,center
 ENUM enum_pages_blocks_image_text_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_image_text_appearance_focal_point = center,top,bottom,left,right
+ENUM enum_pages_blocks_image_text_appearance_heading_size = default,sm,md,lg,xl
 ENUM enum_pages_blocks_image_text_appearance_padding_bottom = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_image_text_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_image_text_appearance_text_theme = auto,dark,light
@@ -1070,6 +1124,7 @@ ENUM enum_pages_blocks_image_text_image_side = left,right
 ENUM enum_pages_blocks_logos_appearance_align = default,left,center
 ENUM enum_pages_blocks_logos_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_logos_appearance_focal_point = center,top,bottom,left,right
+ENUM enum_pages_blocks_logos_appearance_heading_size = default,sm,md,lg,xl
 ENUM enum_pages_blocks_logos_appearance_padding_bottom = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_logos_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_logos_appearance_text_theme = auto,dark,light
@@ -1077,6 +1132,7 @@ ENUM enum_pages_blocks_logos_appearance_width = default,narrow,wide,full
 ENUM enum_pages_blocks_people_appearance_align = default,left,center
 ENUM enum_pages_blocks_people_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_people_appearance_focal_point = center,top,bottom,left,right
+ENUM enum_pages_blocks_people_appearance_heading_size = default,sm,md,lg,xl
 ENUM enum_pages_blocks_people_appearance_padding_bottom = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_people_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_people_appearance_text_theme = auto,dark,light
@@ -1085,6 +1141,7 @@ ENUM enum_pages_blocks_people_columns = 2,3,4,5
 ENUM enum_pages_blocks_prose_appearance_align = default,left,center
 ENUM enum_pages_blocks_prose_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_prose_appearance_focal_point = center,top,bottom,left,right
+ENUM enum_pages_blocks_prose_appearance_heading_size = default,sm,md,lg,xl
 ENUM enum_pages_blocks_prose_appearance_padding_bottom = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_prose_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_prose_appearance_text_theme = auto,dark,light
@@ -1094,6 +1151,7 @@ ENUM enum_pages_blocks_quick_links_links_icon = book,pin,people,heart
 ENUM enum_pages_blocks_quote_appearance_align = default,left,center
 ENUM enum_pages_blocks_quote_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_quote_appearance_focal_point = center,top,bottom,left,right
+ENUM enum_pages_blocks_quote_appearance_heading_size = default,sm,md,lg,xl
 ENUM enum_pages_blocks_quote_appearance_padding_bottom = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_quote_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_quote_appearance_text_theme = auto,dark,light
@@ -1101,6 +1159,7 @@ ENUM enum_pages_blocks_quote_appearance_width = default,narrow,wide,full
 ENUM enum_pages_blocks_spacer_appearance_align = default,left,center
 ENUM enum_pages_blocks_spacer_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_spacer_appearance_focal_point = center,top,bottom,left,right
+ENUM enum_pages_blocks_spacer_appearance_heading_size = default,sm,md,lg,xl
 ENUM enum_pages_blocks_spacer_appearance_padding_bottom = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_spacer_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_spacer_appearance_text_theme = auto,dark,light
@@ -1109,6 +1168,7 @@ ENUM enum_pages_blocks_spacer_height = sm,md,lg,xl
 ENUM enum_pages_blocks_stats_appearance_align = default,left,center
 ENUM enum_pages_blocks_stats_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_stats_appearance_focal_point = center,top,bottom,left,right
+ENUM enum_pages_blocks_stats_appearance_heading_size = default,sm,md,lg,xl
 ENUM enum_pages_blocks_stats_appearance_padding_bottom = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_stats_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_stats_appearance_text_theme = auto,dark,light
@@ -1116,10 +1176,19 @@ ENUM enum_pages_blocks_stats_appearance_width = default,narrow,wide,full
 ENUM enum_pages_blocks_steps_appearance_align = default,left,center
 ENUM enum_pages_blocks_steps_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_steps_appearance_focal_point = center,top,bottom,left,right
+ENUM enum_pages_blocks_steps_appearance_heading_size = default,sm,md,lg,xl
 ENUM enum_pages_blocks_steps_appearance_padding_bottom = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_steps_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_steps_appearance_text_theme = auto,dark,light
 ENUM enum_pages_blocks_steps_appearance_width = default,narrow,wide,full
+ENUM enum_pages_blocks_timeline_appearance_align = default,left,center
+ENUM enum_pages_blocks_timeline_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
+ENUM enum_pages_blocks_timeline_appearance_focal_point = center,top,bottom,left,right
+ENUM enum_pages_blocks_timeline_appearance_heading_size = default,sm,md,lg,xl
+ENUM enum_pages_blocks_timeline_appearance_padding_bottom = default,none,sm,md,lg,xl
+ENUM enum_pages_blocks_timeline_appearance_padding_top = default,none,sm,md,lg,xl
+ENUM enum_pages_blocks_timeline_appearance_text_theme = auto,dark,light
+ENUM enum_pages_blocks_timeline_appearance_width = default,narrow,wide,full
 ENUM enum_pages_layout_mode = inherit,before,after,replace
 ENUM enum_partners_type = chapter,partner-org,other
 ENUM enum_posts_category = news,editorial,photo-news,testimony

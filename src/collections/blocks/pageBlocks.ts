@@ -195,6 +195,19 @@ export const CardsBlock: Block = {
     { name: "intro", type: "textarea" },
     columns,
     {
+      name: "layout",
+      type: "select",
+      defaultValue: "card",
+      options: [
+        { label: "Cards", value: "card" },
+        { label: "Columns under a rule", value: "ruled" },
+      ],
+      admin: {
+        description:
+          "Cards carry a picture and lift off the page. Columns under a rule are text only, each under a short line — what the departments and the pillars are set as.",
+      },
+    },
+    {
       name: "cards",
       type: "array",
       minRows: 1,
@@ -320,6 +333,41 @@ export const StepsBlock: Block = {
         { name: "title", type: "text", required: true },
         { name: "description", type: "textarea" },
         { name: "href", type: "text", admin: { description: "Optional link for the row." } },
+      ],
+    },
+    appearanceField,
+  ],
+};
+
+export const TimelineBlock: Block = {
+  slug: "timeline",
+  labels: { singular: "Timeline", plural: "Timelines" },
+  admin: { group: "Page sections" },
+  fields: [
+    ...headingFields,
+    {
+      name: "milestones",
+      type: "array",
+      minRows: 1,
+      labels: { singular: "Milestone", plural: "Milestones" },
+      admin: {
+        initCollapsed: false,
+        description: "In the order they happened. The rail fills as a reader opens them.",
+      },
+      fields: [
+        {
+          type: "row",
+          fields: [
+            {
+              name: "tag",
+              type: "text",
+              required: true,
+              admin: { description: "The year, or a word for the period — \"2015\", \"Founding\"." },
+            },
+            { name: "title", type: "text", required: true },
+          ],
+        },
+        { name: "description", type: "textarea" },
       ],
     },
     appearanceField,
@@ -511,6 +559,7 @@ export const pageBlocks: Block[] = [
   PeopleBlock,
   StepsBlock,
   StatsBlock,
+  TimelineBlock,
   AccordionBlock,
   QuoteBlock,
   GalleryBlock,

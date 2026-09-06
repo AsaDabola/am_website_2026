@@ -7,7 +7,7 @@ import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
 import WeekendPhotoStrip from "@/components/get-involved/WeekendPhotoStrip";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import withPageLayout from "@/components/pages/BuiltInPage";
+import PageBody from "@/components/pages/PageBody";
 
 // Sixty seconds, so a section added to this page in /admin appears without a
 // deploy. Without it the page is fully static and the authored layout would be
@@ -72,7 +72,7 @@ const activities = [
   },
 ];
 
-async function GroupActivitiesPage() {
+export default async function GroupActivitiesPage() {
   const [t, tHeader] = await Promise.all([
     getTranslations("Common"),
     getTranslations("Header"),
@@ -97,6 +97,7 @@ async function GroupActivitiesPage() {
       />
       <GetInvolvedSubNav active="/get-involved/group-activities" />
 
+      <PageBody route="/get-involved/group-activities">
       {/* The page's own name, below the tabs rather than in the hero. Archivo
           SemiBold at the design's 45px — the same setting the Events &
           Testimonials heading uses. */}
@@ -146,6 +147,7 @@ async function GroupActivitiesPage() {
           </Container>
         </section>
       ))}
+      </PageBody>
 
       {/* Tinted like the section above it rather than alternating back to
           white — the design closes the page on one band, and this section's
@@ -181,6 +183,3 @@ async function GroupActivitiesPage() {
     </>
   );
 }
-
-// Lets this page be added to or replaced from /admin — see BuiltInPage.
-export default withPageLayout("/get-involved/group-activities", GroupActivitiesPage);

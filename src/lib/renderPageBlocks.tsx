@@ -14,6 +14,7 @@ import {
   Spacer,
   Stats,
   Steps,
+  Timeline,
 } from "@/components/pages/blocks/PageBlocks";
 import type { PageBlockData } from "./pageBlockTypes";
 
@@ -40,6 +41,8 @@ export function renderPageBlock(block: PageBlockData) {
       return <Stats data={block} />;
     case "steps":
       return <Steps data={block} />;
+    case "timeline":
+      return <Timeline data={block} />;
     case "accordion":
       return <Accordion data={block} />;
     case "quote":

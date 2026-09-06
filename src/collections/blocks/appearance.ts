@@ -216,6 +216,22 @@ export const appearanceField: Field = {
           ],
           admin: { description: "Where the text sits." },
         },
+        {
+          name: "headingSize",
+          type: "select",
+          defaultValue: "default",
+          options: [
+            { label: "As designed", value: "default" },
+            { label: "Small", value: "sm" },
+            { label: "Medium", value: "md" },
+            { label: "Large", value: "lg" },
+            { label: "Extra large", value: "xl" },
+          ],
+          admin: {
+            description:
+              "The size of this section's title. The designed pages set theirs large; a section you add is medium unless you say otherwise.",
+          },
+        },
       ],
     },
     {
@@ -268,6 +284,7 @@ export type Appearance = {
   paddingBottom?: "default" | "none" | "sm" | "md" | "lg" | "xl" | null;
   width?: "default" | "narrow" | "wide" | "full" | null;
   align?: "default" | "left" | "center" | null;
+  headingSize?: "default" | "sm" | "md" | "lg" | "xl" | null;
   accentColour?: string | null;
   anchor?: string | null;
   hidden?: boolean | null;

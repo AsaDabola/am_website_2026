@@ -6,7 +6,7 @@ import AboutHero from "@/components/about/AboutHero";
 import AboutSubNav from "@/components/about/AboutSubNav";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import withPageLayout from "@/components/pages/BuiltInPage";
+import PageBody from "@/components/pages/PageBody";
 
 // Sixty seconds, so a section added to this page in /admin appears without a
 // deploy. Without it the page is fully static and the authored layout would be
@@ -92,7 +92,7 @@ const timeline = [
   },
 ];
 
-function HistoryPage() {
+export default function HistoryPage() {
   return (
     <>
       <AboutHero
@@ -107,6 +107,7 @@ function HistoryPage() {
       />
       <AboutSubNav active="/about/history" />
 
+      <PageBody route="/about/history">
       <article className="bg-white py-20">
         <Container className="max-w-[900px] text-center">
           <div className="flex justify-center">
@@ -160,12 +161,10 @@ function HistoryPage() {
           </p>
         </Container>
       </section>
+      </PageBody>
 
       <PartnerWithUs />
       <Newsletter />
     </>
   );
 }
-
-// Lets this page be added to or replaced from /admin — see BuiltInPage.
-export default withPageLayout("/about/history", HistoryPage);

@@ -52,6 +52,7 @@ export type CardsData = Base & {
   blockType: "cards";
   intro?: string | null;
   columns?: string | null;
+  layout?: "card" | "ruled" | null;
   cards?: {
     id?: string;
     image?: MediaRef;
@@ -89,6 +90,16 @@ export type StepsData = Base & {
     title?: string | null;
     description?: string | null;
     href?: string | null;
+  }[] | null;
+};
+
+export type TimelineData = Base & {
+  blockType: "timeline";
+  milestones?: {
+    id?: string;
+    tag?: string | null;
+    title?: string | null;
+    description?: string | null;
   }[] | null;
 };
 
@@ -144,6 +155,7 @@ export type PageBlockData =
   | PeopleData
   | StatsData
   | StepsData
+  | TimelineData
   | AccordionData
   | QuoteData
   | GalleryData

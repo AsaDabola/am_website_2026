@@ -130,6 +130,22 @@ export const MIGRATIONS = [
   // The gallery's frame shape, so a converted page keeps the square crop its
   // design used rather than gaining a landscape one.
   { file: "add-gallery-image-shape.sql", done: columnExists("pages_blocks_gallery", "image_shape") },
+
+  // A title's size, on every section of every page, and the timeline block the
+  // history page's milestones move into. The heading size lands as a column on
+  // each block's table, so the honest test is the last one the file adds.
+  {
+    file: "add-heading-size-and-timeline.sql",
+    done: tableExists("pages_blocks_timeline_milestones"),
+  },
+
+  // The key add-leaders.sql should have carried. See the file's own header.
+  {
+    file: "repair-locked-documents-leader-fk.sql",
+    done: `SELECT EXISTS (SELECT 1 FROM pg_constraint
+             WHERE conname = 'payload_locked_documents_rels_leaders_fk'
+               AND connamespace = 'public'::regnamespace)`,
+  },
 ];
 
 /**
