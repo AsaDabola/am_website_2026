@@ -500,13 +500,73 @@ export function Cards({ data }: { data: CardsData }) {
 
 export function People({ data }: { data: PeopleData }) {
   const dark = isDarkSection(data.appearance);
-  const people = data.people ?? [];
+  const all = data.people ?? [];
+  // Whoever has a paragraph to go with them is drawn first, in a wide row.
+  // A biography cannot sit in a tile at the grid's width without either
+  // stretching the tile or cutting the paragraph, and the design does neither.
+  const featured = all.filter((person) => person.featured);
+  const people = all.filter((person) => !person.featured);
 
   return (
     <Section appearance={data.appearance} defaultContainerClassName="max-w-[1104px]">
       <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} size={data.appearance?.headingSize} />
 
-      <div className={`mt-16 grid grid-cols-2 gap-x-6 gap-y-11 ${grid(data.columns ?? "5")}`}>
+      {featured.length > 0 ? (
+        <div className="mt-14 space-y-12 text-start">
+          {featured.map((person, index) => (
+            <div key={person.id ?? `featured-${index}`} className="flex flex-col gap-10 sm:flex-row">
+              <Portrait
+                image={person.photo}
+                name={person.name ?? ""}
+                sizes="258px"
+                className="w-full shrink-0 sm:w-[258px]"
+                initialsClassName="text-[34px]"
+              />
+              <div className="flex flex-col gap-[7px] pt-1">
+                <p
+                  className={`font-display text-[23px] font-extrabold leading-[24.38px] tracking-[-0.035em] ${dark ? "text-white" : "text-ink"}`}
+                >
+                  {person.name}
+                </p>
+                {person.role ? (
+                  <p
+                    className="text-[14.5px] font-semibold leading-6"
+                    style={accent(dark ? "#ffffff" : BLUE)}
+                  >
+                    {person.role}
+                  </p>
+                ) : null}
+                {person.bio ? (
+                  <p
+                    className={`max-w-[760px] text-[14.5px] leading-[23.9px] ${dark ? "text-white/75" : "text-ink-muted"}`}
+                  >
+                    {person.bio}
+                  </p>
+                ) : null}
+                {person.email ? (
+                  <a
+                    href={`mailto:${person.email}`}
+                    className="pt-1 text-[13px] font-semibold"
+                    style={accent(dark ? "#ffffff" : BLUE)}
+                  >
+                    {person.email}
+                  </a>
+                ) : null}
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : null}
+
+      <div
+        className={`grid grid-cols-2 gap-x-6 gap-y-11 ${grid(data.columns ?? "5")} ${
+          // A rule between the story and the grid when both are here, the way
+          // the leadership page separates them.
+          featured.length > 0
+            ? `mt-16 border-t pt-14 ${dark ? "border-white/20" : "border-ink/[0.12]"}`
+            : "mt-16"
+        }`}
+      >
         {people.map((person, index) => (
           <div
             key={person.id ?? index}

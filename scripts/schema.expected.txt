@@ -678,6 +678,7 @@ pages_blocks_people_people._order integer
 pages_blocks_people_people._parent_id character varying
 pages_blocks_people_people.bio character varying
 pages_blocks_people_people.email character varying
+pages_blocks_people_people.featured boolean
 pages_blocks_people_people.id character varying
 pages_blocks_people_people.name character varying
 pages_blocks_people_people.photo_id integer

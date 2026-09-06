@@ -146,6 +146,13 @@ export const MIGRATIONS = [
              WHERE conname = 'payload_locked_documents_rels_leaders_fk'
                AND connamespace = 'public'::regnamespace)`,
   },
+
+  // The leadership page's advisor: one person in a People section drawn wide,
+  // with room for the paragraph, above the grid of everyone else.
+  {
+    file: "add-featured-person.sql",
+    done: columnExists("pages_blocks_people_people", "featured"),
+  },
 ];
 
 /**

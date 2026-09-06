@@ -691,6 +691,7 @@ WITH expected(table_name, column_name) AS (VALUES
   ('pages_blocks_people_people', '_parent_id'),
   ('pages_blocks_people_people', 'bio'),
   ('pages_blocks_people_people', 'email'),
+  ('pages_blocks_people_people', 'featured'),
   ('pages_blocks_people_people', 'id'),
   ('pages_blocks_people_people', 'name'),
   ('pages_blocks_people_people', 'photo_id'),

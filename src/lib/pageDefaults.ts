@@ -248,6 +248,154 @@ export const PAGE_DEFAULTS: Record<string, PageSeed> = {
     ],
   },
 
+  "/bible-study": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "cta",
+        eyebrow: "Sign up for our Bible studies today",
+        heading: "Bible Studies",
+        description:
+          "Apostolos Missions offers various Bible study programs that will nurture your spiritual life and relationship with the Lord Jesus. These Bible studies were created to guide each person to mature in faith and truth so that everyone can be equipped to serve Jesus and His Kingdom. We are currently offering six tracks of Bible Study Programs: Phase 1 the Book of Romans, Phase 2 Bible Core, Phase 3(1) The Ancestors of Faith, Phase 3(2) Basics of Christian Life, Phase 4 Only Jesus, and Phase 5 the Discipleship Track. Sign up for our Bible studies today by filling out the request form and our teachers will contact you with further information.",
+        buttons: [
+          {
+            label: "Click here to Join our Bible Studies Today!",
+            href: "/bible-study/join",
+            style: "primary",
+          },
+        ],
+        appearance: { background: "mist" },
+      },
+      // The six tracks, in order. Each is its own section so a country can
+      // reorder them, hide one it does not run, or put its own photograph on
+      // it. They run picture-right throughout, as the design draws them, and
+      // only the first carries the space above — the rest sit against the one
+      // before, which is the eighty pixels the coded page had between them.
+      ...[
+        {
+          title: "Phase 1 — Book of Romans, chapters 1–8",
+          image: "/images/bible-study-sola-fide.webp",
+          description:
+            "Sola Fide — “faith alone” — lays the foundation of the gospel: who Jesus is, what He did on the cross, and what it means to trust in Him alone for salvation.",
+        },
+        {
+          title: "Phase 2 — Bible Core: the Four Spiritual Laws",
+          image: "/images/bible-study-bible-core.webp",
+          description:
+            "Bible Core builds a working foundation in Scripture — how the Bible fits together as one story, and how to read and study it for yourself.",
+        },
+        {
+          title: "Phase 3(1) — The Ancestors of Faith",
+          image: "/images/bible-study-faith.webp",
+          description:
+            "Traces the faith of the Old Testament patriarchs and prophets, showing how God’s promises to His people carried forward to Christ.",
+        },
+        {
+          title: "Phase 3(2) — Basics of Christian Life",
+          image: "/images/bible-study-christian-life.webp",
+          description:
+            "A practical study of prayer, community, and discipleship — the everyday habits and disciplines of following Jesus.",
+        },
+        {
+          title: "Phase 4 — Only Jesus: Gospel Studies",
+          image: "/images/bible-study-only-jesus.webp",
+          description:
+            "A deeper look at the person and work of Christ, preparing students to understand and articulate what they believe, and why.",
+        },
+        {
+          title: "Phase 5 — Discipleship Track",
+          image: "/images/bible-study-discipleship-track.webp",
+          description:
+            "For students ready to disciple others — equipping them to pass on what they’ve learned to the next generation of leaders.",
+        },
+      ].map((track, index) => ({
+        blockType: "imageText",
+        heading: track.title,
+        image: track.image,
+        imageSide: "right",
+        imageShape: "landscape",
+        body: { markdown: track.description },
+        appearance: {
+          headingSize: "md",
+          ...(index === 0 ? {} : { paddingTop: "none" }),
+        },
+      })),
+    ],
+  },
+
+  "/about/leadership": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "people",
+        eyebrow: "Headquarters & Field",
+        heading: "The people behind the sending.",
+        columns: "4",
+        people: [
+          {
+            name: "Rev. Dr. Paul DeVries",
+            role: "Senior Leader and Advisor",
+            bio: "Dr. DeVries provides profound wisdom and spiritual guidance for our mission in many areas. Dr. Paul is also President of the New York Divinity School, and has over 25 years of leadership experience in Christian higher education administration, including at Wheaton College, Northern Baptist Theological Seminary and the Seminary of the East.",
+            photo: "/images/leader-paul-devries.webp",
+            featured: true,
+          },
+          // The order is deliberate: the executive director and headquarters
+          // first, then the regional coordinators west to east.
+          { name: "Rani Reid", role: "Executive Director", photo: "/images/leader-reid.webp" },
+          { name: "Asa Daboh", role: "HQ Staff", photo: "/images/hq-asa-daboh.webp" },
+          {
+            name: "Ruth Jigmedsuren",
+            role: "HQ Staff",
+            photo: "/images/hq-ruth-jigmedsuren.webp",
+          },
+          { name: "Andrea Rico", role: "South America", photo: "/images/coord-andrea-rico.webp" },
+          { name: "Joel Lee", role: "Asia Pacific", photo: "/images/coord-joel-lee.webp" },
+          { name: "Mara Onyeama", role: "Europe", photo: "/images/coord-mara-onyeama.webp" },
+          { name: "Jonathan Xie", role: "China", photo: "/images/coord-jonathan-xie.webp" },
+          { name: "Priya Vaya", role: "South Asia", photo: "/images/coord-priya-vaya.webp" },
+          { name: "Samuel Kwizera", role: "Africa", photo: "/images/coord-samuel-kwizera.webp" },
+          {
+            name: "Khiaghie Koropa",
+            role: "Oceania",
+            photo: "/images/coord-khiaghie-koropa.webp",
+          },
+          {
+            name: "Can Liu",
+            role: "Director of Chinese Mission in USA",
+            photo: "/images/hq-can-liu.webp",
+          },
+        ],
+      },
+      {
+        blockType: "steps",
+        eyebrow: "Across the Network",
+        heading: "Four kinds of leaders, one movement.",
+        steps: [
+          {
+            title: "Chapter Leaders",
+            description:
+              "Students who register AM at their university, open the first Bible study, and carry the chapter through each academic year.",
+          },
+          {
+            title: "Field Missionaries",
+            description:
+              "Sent to cities where no chapter exists yet, planting the work from the first conversation onward.",
+          },
+          {
+            title: "Bible Teachers",
+            description:
+              "Walking students through the five-phase programme one study at a time, on the student’s schedule.",
+          },
+          {
+            title: "Local Staff",
+            description:
+              "Holding the practical work of each chapter — rooms, resources, events and the people who keep coming back.",
+          },
+        ],
+      },
+    ],
+  },
+
   "/what-we-do/administration": {
     mode: "replace",
     blocks: [

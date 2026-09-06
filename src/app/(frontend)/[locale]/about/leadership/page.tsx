@@ -7,7 +7,7 @@ import AboutSubNav from "@/components/about/AboutSubNav";
 import { ArrowRightIcon } from "@/components/ui/icons";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import withPageLayout from "@/components/pages/BuiltInPage";
+import PageBody from "@/components/pages/PageBody";
 
 // Sixty seconds, so a section added to this page in /admin appears without a
 // deploy. Without it the page is fully static and the authored layout would be
@@ -161,7 +161,7 @@ const leaderKinds = [
   },
 ];
 
-function LeadershipPage() {
+export default function LeadershipPage() {
   return (
     <>
       <LeadershipHero
@@ -185,6 +185,7 @@ function LeadershipPage() {
       </LeadershipHero>
       <AboutSubNav active="/about/leadership" />
 
+      <PageBody route="/about/leadership">
       <section className="bg-white py-20">
         <Container className="max-w-[1104px]">
           <Eyebrow>Headquarters &amp; Field</Eyebrow>
@@ -267,12 +268,10 @@ function LeadershipPage() {
           </div>
         </Container>
       </section>
+      </PageBody>
 
       <PartnerWithUs />
       <Newsletter />
     </>
   );
 }
-
-// Lets this page be added to or replaced from /admin — see BuiltInPage.
-export default withPageLayout("/about/leadership", LeadershipPage);

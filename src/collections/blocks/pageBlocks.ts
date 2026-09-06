@@ -281,6 +281,15 @@ export const PeopleBlock: Block = {
               defaultValue: false,
               admin: { description: "Start a new row here, to separate one group from the next." },
             },
+            {
+              name: "featured",
+              type: "checkbox",
+              defaultValue: false,
+              admin: {
+                description:
+                  "Show above the others in a wide row, with room for the paragraph. For the one or two people whose story is on the page.",
+              },
+            },
           ],
         },
       ],

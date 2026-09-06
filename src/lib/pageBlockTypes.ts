@@ -75,6 +75,7 @@ export type PeopleData = Base & {
     bio?: string | null;
     email?: string | null;
     startsRow?: boolean | null;
+    featured?: boolean | null;
   }[] | null;
 };
 
