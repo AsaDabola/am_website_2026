@@ -289,6 +289,25 @@ async function main() {
     const { BUILT_IN_PAGES } = await import("../src/lib/builtInPages");
     const titles = new Map(BUILT_IN_PAGES.map((entry) => [entry.route, entry.title]));
 
+    // Every page the site has gets an entry, not only the ones with sections
+    // to seed. A page missing from /admin reads as a page that cannot be
+    // edited, and the ones without seeded sections are exactly the ones an
+    // editor is most likely to go looking for — a news listing they want to
+    // put a notice above, a page they want to add a band to. The entry is what
+    // makes that possible; the empty layout is the honest state of it.
+    if (!DRY_RUN) {
+      for (const entry of BUILT_IN_PAGES) {
+        const slug = entry.route.replace(/^\//, "");
+        if (bySlug.has(slug)) continue;
+        const made = (await payload.create({
+          collection: "pages",
+          data: { title: entry.title, slug, builtIn: true, published: true } as never,
+        })) as never as { id: number; slug?: string; layout?: unknown[] };
+        bySlug.set(slug, made);
+        console.log(`  added ${entry.route} to the Pages list`);
+      }
+    }
+
     for (const [route, seed] of routes) {
       const slug = route.replace(/^\//, "");
       let page = bySlug.get(slug);

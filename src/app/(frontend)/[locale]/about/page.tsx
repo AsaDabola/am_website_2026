@@ -8,7 +8,7 @@ import AboutSubNav from "@/components/about/AboutSubNav";
 import PullQuote from "@/components/about/PullQuote";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import withPageLayout from "@/components/pages/BuiltInPage";
+import PageBody from "@/components/pages/PageBody";
 
 // Sixty seconds, so a section added to this page in /admin appears without a
 // deploy. Without it the page is fully static and the authored layout would be
@@ -108,7 +108,7 @@ function CardLink({
   );
 }
 
-async function WhoWeArePage() {
+export default async function WhoWeArePage() {
   const [t, tCommon, tPractice] = await Promise.all([
     getTranslations("AboutPage"),
     getTranslations("Common"),
@@ -174,6 +174,7 @@ async function WhoWeArePage() {
         </div>
       </AboutHero>
 
+      <PageBody route="/about">
       <article className="bg-white py-20">
         <Container className="max-w-[720px]">
           <div className="space-y-6 text-base leading-relaxed text-ink">
@@ -211,6 +212,7 @@ async function WhoWeArePage() {
           </div>
         </Container>
       </article>
+      </PageBody>
 
       {/* Two cards on white. The design lays these out 1280px wide — wider
           than the 1104px text column above them — so they get their own
@@ -261,6 +263,3 @@ async function WhoWeArePage() {
     </>
   );
 }
-
-// Lets this page be added to or replaced from /admin — see BuiltInPage.
-export default withPageLayout("/about", WhoWeArePage);

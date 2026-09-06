@@ -784,6 +784,7 @@ pages_blocks_quote.id character varying
 pages_blocks_quote.image_id integer
 pages_blocks_quote.quote character varying
 pages_blocks_quote.role character varying
+pages_blocks_quote.style enum_pages_blocks_quote_style
 pages_blocks_spacer._order integer
 pages_blocks_spacer._parent_id integer
 pages_blocks_spacer._path text
@@ -1198,6 +1199,7 @@ ENUM enum_pages_blocks_quote_appearance_padding_bottom = default,none,sm,md,lg,x
 ENUM enum_pages_blocks_quote_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_quote_appearance_text_theme = auto,dark,light
 ENUM enum_pages_blocks_quote_appearance_width = default,narrow,wide,full
+ENUM enum_pages_blocks_quote_style = feature,rule
 ENUM enum_pages_blocks_spacer_appearance_align = default,left,center
 ENUM enum_pages_blocks_spacer_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_spacer_appearance_focal_point = center,top,bottom,left,right

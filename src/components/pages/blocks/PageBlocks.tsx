@@ -86,6 +86,13 @@ const accentBackground = (fallback: string) => ({
   backgroundColor: `var(--section-accent, ${fallback})`,
 });
 
+/** A quotation with its marks, or as written if it already carries them. */
+function quoted(text?: string | null) {
+  const value = (text ?? "").trim();
+  if (!value) return null;
+  return /^["“'‘«]/.test(value) ? value : `“${value}”`;
+}
+
 /** The design's blue, and the tints the sections draw it at. */
 const BLUE = "var(--color-brand-blue, #007aff)";
 const INK = "var(--color-ink, #101828)";
@@ -949,6 +956,32 @@ export function Quote({ data }: { data: QuoteData }) {
   const dark = isDarkSection(data.appearance);
   const url = mediaUrl(data.image);
 
+  // The shorter shape the About, Mission statement, Statement of faith and
+  // Membership designs set a verse in: a blue rule down the leading side, the
+  // display face at 22px, and no quotation marks added — the verse arrives
+  // with its own. Deeper blue than the brand navy token, flat across the four
+  // pages rather than a responsive step, the same as the coded component this
+  // replaces.
+  if (data.style === "rule") {
+    return (
+      <Section appearance={data.appearance} defaultContainerClassName="max-w-[720px]">
+        <blockquote
+          className={`border-s-[3px] py-2 ps-6 font-display text-xl font-semibold leading-[1.35] sm:text-[22px] ${
+            dark ? "border-white/70 text-white" : "border-[#1449c6] text-ink"
+          }`}
+        >
+          {data.quote}
+        </blockquote>
+        {data.attribution ? (
+          <p className={`mt-3 ps-6 text-sm ${dark ? "text-white/70" : "text-ink-muted"}`}>
+            {data.attribution}
+            {data.role ? `, ${data.role}` : ""}
+          </p>
+        ) : null}
+      </Section>
+    );
+  }
+
   return (
     <Section appearance={data.appearance} defaultContainerClassName="max-w-[900px]">
       <figure className="flex flex-col items-start gap-8 sm:flex-row sm:items-center">
@@ -961,7 +994,11 @@ export function Quote({ data }: { data: QuoteData }) {
           <blockquote
             className={`font-quote text-2xl italic leading-snug sm:text-[28px] ${dark ? "text-white" : "text-ink"}`}
           >
-            &ldquo;{data.quote}&rdquo;
+            {/* Quotation marks are added, unless the line already has its own.
+                Scripture usually arrives quoted — and quoted inside that — so
+                adding a second pair around it gives `"John 20:21 says, "Again
+                Jesus said, '…'" (NIV)"`, with a stray mark at each end. */}
+            {quoted(data.quote)}
           </blockquote>
           {data.attribution ? (
             <figcaption className="mt-5">

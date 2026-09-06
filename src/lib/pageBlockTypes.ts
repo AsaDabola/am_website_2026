@@ -121,6 +121,7 @@ export type AccordionData = Base & {
 
 export type QuoteData = Base & {
   blockType: "quote";
+  style?: "feature" | "rule" | null;
   quote?: string | null;
   attribution?: string | null;
   role?: string | null;

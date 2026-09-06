@@ -6,7 +6,7 @@ import AboutSubNav from "@/components/about/AboutSubNav";
 import PullQuote from "@/components/about/PullQuote";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import withPageLayout from "@/components/pages/BuiltInPage";
+import PageBody from "@/components/pages/PageBody";
 
 // Sixty seconds, so a section added to this page in /admin appears without a
 // deploy. Without it the page is fully static and the authored layout would be
@@ -55,7 +55,7 @@ function SummaryList({ items }: { items: { term: string; detail: ReactNode }[] }
   );
 }
 
-function MissionStatementPage() {
+export default function MissionStatementPage() {
   return (
     <>
       <AboutHero
@@ -70,6 +70,7 @@ function MissionStatementPage() {
       />
       <AboutSubNav active="/about/mission" />
 
+      <PageBody route="/about/mission">
       <article className="bg-white py-20">
         <Container className="max-w-[720px] space-y-20">
           <section>
@@ -216,12 +217,10 @@ function MissionStatementPage() {
           </section>
         </Container>
       </article>
+      </PageBody>
 
       <PartnerWithUs />
       <Newsletter />
     </>
   );
 }
-
-// Lets this page be added to or replaced from /admin — see BuiltInPage.
-export default withPageLayout("/about/mission", MissionStatementPage);

@@ -797,6 +797,7 @@ WITH expected(table_name, column_name) AS (VALUES
   ('pages_blocks_quote', 'image_id'),
   ('pages_blocks_quote', 'quote'),
   ('pages_blocks_quote', 'role'),
+  ('pages_blocks_quote', 'style'),
   ('pages_blocks_spacer', '_order'),
   ('pages_blocks_spacer', '_parent_id'),
   ('pages_blocks_spacer', '_path'),

@@ -504,6 +504,19 @@ export const QuoteBlock: Block = {
   labels: { singular: "Quotation", plural: "Quotations" },
   admin: { group: "Page sections" },
   fields: [
+    {
+      name: "style",
+      type: "select",
+      defaultValue: "feature",
+      options: [
+        { label: "Large, with quotation marks", value: "feature" },
+        { label: "Ruled down the side", value: "rule" },
+      ],
+      admin: {
+        description:
+          "Ruled is the shorter one the About, Mission statement and Statement of faith pages set a verse in — a blue rule down the leading side, no quotation marks added.",
+      },
+    },
     { name: "quote", type: "textarea", required: true },
     {
       type: "row",

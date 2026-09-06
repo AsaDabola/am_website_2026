@@ -175,6 +175,10 @@ export const MIGRATIONS = [
   // How much of its half a picture beside text takes. The pillars of mission
   // hold theirs to a small square.
   { file: "add-image-size.sql", done: columnExists("pages_blocks_image_text", "image_size") },
+
+  // The shorter, side-ruled quotation the About and Mission statement designs
+  // set a verse in, alongside the large italic one.
+  { file: "add-quote-style.sql", done: columnExists("pages_blocks_quote", "style") },
 ];
 
 /**

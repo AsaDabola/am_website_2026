@@ -8,7 +8,7 @@ import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
 import TenantLink from "@/components/layout/TenantLink";
-import withPageLayout from "@/components/pages/BuiltInPage";
+import PageBody from "@/components/pages/PageBody";
 
 // Sixty seconds, so a section added to this page in /admin appears without a
 // deploy. Without it the page is fully static and the authored layout would be
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "An interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord.",
 };
 
-async function GetInvolvedHubPage() {
+export default async function GetInvolvedHubPage() {
   const [t, tCommon, tHeader, tPractice] = await Promise.all([
     getTranslations("GetInvolvedHub"),
     getTranslations("Common"),
@@ -49,6 +49,7 @@ async function GetInvolvedHubPage() {
       />
       <GetInvolvedSubNav active="/get-involved" />
 
+      <PageBody route="/get-involved">
       <section className="bg-white py-24">
         <Container>
           <div className="grid items-start gap-10 lg:grid-cols-[570px_1fr] lg:gap-16">
@@ -247,6 +248,7 @@ async function GetInvolvedHubPage() {
           </div>
         </Container>
       </section>
+      </PageBody>
 
       <EventsAndTestimonials />
 
@@ -255,6 +257,3 @@ async function GetInvolvedHubPage() {
     </>
   );
 }
-
-// Lets this page be added to or replaced from /admin — see BuiltInPage.
-export default withPageLayout("/get-involved", GetInvolvedHubPage);

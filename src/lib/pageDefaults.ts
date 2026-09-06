@@ -676,6 +676,216 @@ export const PAGE_DEFAULTS: Record<string, PageSeed> = {
     ],
   },
 
+  // Connect, Grow, Lead, Sent — four picture-beside-text sections alternating
+  // white and mist, which is exactly how the design draws them. The hero above
+  // them, with its four roadmap cards, stays coded.
+  //
+  // Same caveat as /about: this copy came out of messages/en.json, so the other
+  // forty-seven languages read English until `npm run translate-pages` fills
+  // page_translations for it.
+  "/get-involved": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "imageText",
+        heading: "Connect",
+        image: "/images/get-involved-connect.webp",
+        imageSide: "left",
+        imageShape: "square",
+        body: {
+          markdown:
+            "### 1. Subscribe to Our Websites\n\n" +
+            "There are many ways to be connected with AM. You can subscribe to our main website, www.amintl.org, and receive newsletters. Or you can subscribe to our online Bible school website, www.amacademy.org, and receive the latest news and programs. Feel free to browse our vision, activities, and programs through our websites and email us anytime if you have any questions.\n\n" +
+            "### 2. Sign up to Meet Our Staff\n\n" +
+            "Feel free to [sign up](/contact) here if you wish to talk to one of our staff and receive counseling on your spiritual journey. You can either set up the appointment or contact our staff. Many of our staff members have experiences in campus life and understand the contexts that college students face. They will help you find the most fitting track for your journey of faith.\n\n" +
+            "### 3. Sign up for Bible Study\n\n" +
+            "If you are ready to start our Bible study program, [sign up](/bible-study/join) on this page. If you don’t find the schedule that fits, submit the request form with your preferred course and time!\n\n" +
+            "### 4. Connect with Local Chapter\n\n" +
+            "If you wish to be connected in our onsite local chapter office and staff, please [contact here](/contact). We look forward to meeting you soon!",
+        },
+        appearance: { headingSize: "md", paddingTop: "xl", paddingBottom: "xl" },
+      },
+      {
+        blockType: "imageText",
+        heading: "Grow",
+        image: "/images/get-involved-grow.webp",
+        imageSide: "left",
+        imageShape: "square",
+        body: {
+          markdown:
+            "Just as we grow and mature through different stages in our childhood, we reach key milestones in our spiritual maturity. AM offers numerous programs and tracks designed to guide students through each of these three vital stages of spiritual growth:\n\n" +
+            "**1. Reborn**  \nWe are born again through the atoning sacrifice of Jesus on the Cross.\n\n" +
+            "**2. Mature**  \nWe grow and mature spiritually by nourishing love and truth from Jesus.\n\n" +
+            "**3. Fruitful**  \nWe experience the fruitfulness of life through God’s blessing, fulfilled in our mature unity with Christ Jesus.\n\n" +
+            "### Navigating Campus Life\n\n" +
+            "Campus life is exciting and fulfilling, but with so many choices available, it can also feel aimless. Through truth and prayer, AM helps you discern God’s will and find clear guidance for your extraordinary life.\n\n" +
+            "### Next Steps\n\n" +
+            "Continue to engage with our programs — take advantage of diverse opportunities to hear the Word, pray together, fellowship with brothers and sisters of faith, and serve as you grow in the Gospel.",
+        },
+        appearance: {
+          background: "mist",
+          headingSize: "md",
+          paddingTop: "xl",
+          paddingBottom: "xl",
+        },
+      },
+      {
+        blockType: "imageText",
+        heading: "Lead",
+        image: "/images/get-involved-lead.webp",
+        imageSide: "left",
+        imageShape: "square",
+        body: {
+          markdown:
+            "### 1. Serving in the Love of Christ\n\n" +
+            "As we grow, we desire to serve others who need help to come to Jesus. As we serve, we also grow more deeply in the love of Christ.\n\n" +
+            "### 2. The Blessing of Leadership\n\n" +
+            "Jesus said, “It is more blessed to give than to receive” (Acts 20:35). Leading and guiding others requires wisdom, prayer, sacrifice, and patience. However, it is a blessed place where the glory of the Cross culminates.\n\n" +
+            "### 3. Discovering Your Gifts\n\n" +
+            "Although college students are still young, outstanding gifts and skills can be discovered and developed even more powerfully through leadership roles. It is a beautiful process as each student tests and affirms their heavenly gifts through the gracious experience of serving and leading.\n\n" +
+            "### 4. Opportunities with AM\n\n" +
+            "AM offers diverse opportunities and roles for students to participate in serving and leadership. Join our team of volunteers, Chapter staff, Chapter leaders, Bible teachers, and many others. Discover what Jesus planted in you according to His excellent plan.",
+        },
+        appearance: { headingSize: "md", paddingTop: "xl", paddingBottom: "xl" },
+      },
+      {
+        blockType: "imageText",
+        heading: "Sent",
+        image: "/images/get-involved-sent.webp",
+        imageSide: "left",
+        imageShape: "square",
+        body: {
+          markdown:
+            "Graduation from college is another significant departure toward the world wide open for us to explore. Some of us may pursue education further or take the career path. Some of us also become AM full-time staff, missionaries, or ministers following the calling from God.\n\n" +
+            "In this crucial step, AM offers programs that you can stay connected and continue to serve the Gospel mission through Alumni Connect. AM also provides training programs and tracks to become professional mission workers and staff in AM World Mission.\n\n" +
+            "Various options are open for you toward a bright future. AM wishes to walk closely with every individual to bring altogether for the Great Commission, “Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit (Matthew 28:19).”\n\n" +
+            "- [Alumni Connect](/get-involved/alumni-connect)\n" +
+            "- [Become AM Bible Teachers](/get-involved/bible-teacher-training)\n" +
+            "- [Become AM Missionaries](/get-involved/internship)\n" +
+            "- [Full-Time Staff in AM HQ](/contact)",
+        },
+        appearance: {
+          background: "mist",
+          headingSize: "md",
+          paddingTop: "xl",
+          paddingBottom: "xl",
+        },
+      },
+    ],
+  },
+
+  // The hub's body. Its hero — with the four two-tone practice cards inside
+  // it — and the two picture cards that close the page stay coded, as chrome.
+  //
+  // This copy came from messages/en.json, which is translated into all
+  // forty-eight languages. Moving it into blocks moves it out of that
+  // catalogue, so the other forty-seven read English until
+  // `npm run translate-pages` has filled page_translations for this page. That
+  // is a step someone has to run, not something that happens by itself.
+  "/about": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "prose",
+        body: {
+          markdown:
+            "Apostolos Missions International (AM) is an interdenominational ministry committed to spreading the gospel to the ends of the earth, testifying to the eternal love of the Lord.\n\n" +
+            "The name *apostolos* (ἀπόστολος) is the Greek word for apostle. It means “one who is sent on a mission” or “messenger.” The title “apostle” often comes out in the New Testament to represent the Twelve disciples appointed by Jesus (Matthew 10:2, Mark 3:14, Luke 6:13, Acts 2:42). Paul, a former persecutor of Christianity turning to a great herald of the gospel, introduced himself as an “apostle” (Romans 1:1, 1 Corinthians 1:1, 2 Corinthians 1:1, Galatians 1:1, Colossians 1:1, 1 Timothy 1:1, 2 Timothy 1:1, Titus).\n\n" +
+            "Apostles are those who are sent by the Lord to fulfill the mission of “preaching Jesus Christ and making God known” to the whole creation. Biblical foundation of apostleship is found in many words of the Lord who selected first apostles and sent them out like the ambassadors dispatched to represent different nations. Apostles understood that their lives were not just their own, but they lived to reveal the glory of Christ in this fallen world.",
+        },
+        appearance: { width: "narrow", paddingBottom: "none" },
+      },
+      {
+        blockType: "quote",
+        style: "rule",
+        quote:
+          "John 20:21 says, “Again Jesus said, ‘Peace be with you! As the Father has sent me, I am sending you.’” (NIV)",
+        appearance: { width: "narrow", paddingTop: "sm", paddingBottom: "none" },
+      },
+      {
+        blockType: "prose",
+        body: {
+          markdown:
+            "AM wishes to follow the tradition of the apostles who lived as people on a mission to proclaim the Word of God. Each of us also receive this calling from God to be sent out into the world as His hands and feet. We wish to dedicate our lives to follow the footsteps of Jesus and proclaim the Gospel until the ends of the earth.\n\n" +
+            "Just as our lives have been touched and changed by the Lord, we wish to reveal the love of the Lord that was shown to us, becoming a beacon for all of His lost children and our fellow brothers and sisters.\n\n" +
+            "[Read our statement of faith](/about/statement-of-faith) or [trace the history](/about/history).",
+        },
+        appearance: { width: "narrow", paddingTop: "sm" },
+      },
+    ],
+  },
+
+  // One article in the design, so the sections here carry no space of their
+  // own except where the design puts eighty pixels between Our Mission and Our
+  // Vision. The definition lists are a bold term and its line, set with a hard
+  // line break so they sit together rather than a paragraph apart.
+  "/about/mission": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "prose",
+        heading: "Our Mission",
+        body: {
+          markdown:
+            "Preach the gospel, make disciples, equip leaders, and send them out.  \nCalled to Be Sent\n\n" +
+            "The mission of Apostolos Missions begins with a simple but powerful truth: we are called to be sent.\n\n" +
+            "The name *Apostolos* (ἀπόστολος) is a Greek word meaning “one who is sent” or “messenger.” An apostle was someone sent with a specific purpose and mission, just as a representative is sent to carry out the will of the one who sends them.\n\n" +
+            "Jesus said, “You did not choose me, but I chose you and appointed you” (John 15:16). He also said, “As you sent me into the world, I have sent them into the world” (John 17:18).\n\n" +
+            "These words reveal the foundation of our mission. Following Christ is not only about receiving salvation; it is also about receiving His calling to go and make Him known. At AM, we believe that every believer is called to participate in God’s mission. We seek to live according to the identity of *apostolos* — people who have been chosen, called, and sent by Christ.",
+        },
+        appearance: { width: "narrow", headingSize: "md", paddingBottom: "none" },
+      },
+      {
+        blockType: "quote",
+        style: "rule",
+        quote:
+          "John 20:21 says, “Again Jesus said, ‘Peace be with you! As the Father has sent me, I am sending you.’” (NIV)",
+        appearance: { width: "narrow", paddingTop: "sm", paddingBottom: "none" },
+      },
+      {
+        blockType: "prose",
+        body: {
+          markdown:
+            "Our mission is to proclaim Jesus Christ and make God known to the ends of the earth through evangelism, discipleship, Bible study, prayer, fellowship, and ministry.\n\n" +
+            "**Our Mission**  \nTo proclaim Jesus Christ and make God known to the ends of the earth.\n\n" +
+            "**Our Identity**  \nChosen by Christ. Called by Christ. Sent by Christ.\n\n" +
+            "**Our Response**  \nGo. Make disciples. Share the Gospel. Make God known.",
+        },
+        appearance: { width: "narrow", paddingTop: "sm", paddingBottom: "none" },
+      },
+      {
+        blockType: "prose",
+        heading: "Our Vision",
+        body: {
+          markdown:
+            "A Generation Sent by Christ  \nPreach Jesus All Over the World!\n\n" +
+            "At the heart of our vision is Jesus Christ Himself. Our message, our mission, and our ministry are not centered on ourselves, but on knowing Christ and making Him known.",
+        },
+        appearance: { width: "narrow", headingSize: "md", paddingTop: "lg", paddingBottom: "none" },
+      },
+      {
+        blockType: "quote",
+        style: "rule",
+        quote:
+          "“For I resolved to know nothing while I was with you except Jesus Christ and him crucified.” — 1 Corinthians 2:2",
+        appearance: { width: "narrow", paddingTop: "sm", paddingBottom: "none" },
+      },
+      {
+        blockType: "prose",
+        body: {
+          markdown:
+            "Apostolos Missions envisions a generation of students and young people who encounter Jesus Christ, grow in God’s Word, discover their identity and calling in Him, and faithfully live as those who have been sent.\n\n" +
+            "We desire to see young people become deeply rooted in Christ through Bible study, prayer, fellowship, discipleship, and mission, growing not only as followers of Jesus but also as faithful messengers of the Gospel.\n\n" +
+            "Our vision is especially focused on reaching college campuses and the next generation. We desire to see students encounter Jesus, experience the truth of God’s Word, discover their God-given identity and purpose, and become equipped to make Him known wherever He sends them.\n\n" +
+            "We believe the mission does not end when someone receives the Gospel. Those who have been sent by Christ are called to send others. Through this multiplication, Apostolos Mission hopes to see the Gospel carried from campuses to communities and from one generation to the next.\n\n" +
+            "**Our Vision**  \nTo see a generation that knows Christ, lives in His truth, and is sent to make Him known.\n\n" +
+            "**Our Hope**  \nStudents transformed by Christ.  \nBelievers rooted in His Word.  \nA generation sent with the Gospel.",
+        },
+        appearance: { width: "narrow", paddingTop: "sm" },
+      },
+    ],
+  },
+
   "/about/membership": {
     mode: "replace",
     blocks: [
@@ -711,6 +921,7 @@ export const PAGE_DEFAULTS: Record<string, PageSeed> = {
       },
       {
         blockType: "quote",
+        style: "rule",
         quote:
           "John 20:21 says, “Again Jesus said, ‘Peace be with you! As the Father has sent me, I am sending you.’” (NIV)",
         appearance: { width: "wide" },
