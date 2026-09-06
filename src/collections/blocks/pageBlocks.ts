@@ -22,13 +22,18 @@ import { appearanceField } from "./appearance";
  * one of them put script on their site, and the honest answer is an Embed
  * block that takes an address instead.
  *
- * Not yet done, and the one thing that stops these from replacing a built-in
- * page on a country site read in another language: **text typed into a block
- * is stored once and shown as written.** The site's own wording is translated
- * (Page wording, per locale) and so are the articles (the post_translations
- * table), but a block is not. The same shape would work — a translations table
- * beside the block tables, filled by scripts/translate-posts.mjs — and until
- * it exists the field descriptions here say so rather than implying otherwise.
+ * Text typed into a block **is** translated, the same way an article is: the
+ * page_translations table holds one row per page per language, filled by
+ * scripts/translate-pages.mts and read by src/lib/pageTranslations.ts, which
+ * the page builder already calls. A page with nothing stored for the language
+ * being read shows the words it was written in, so a country site is never
+ * broken by a page nobody has translated yet.
+ *
+ * That means a field added here becomes translatable by being a text,
+ * textarea or richText field — the translator reads these definitions to know
+ * what counts as prose, rather than keeping its own list. A text field that is
+ * *not* prose (an address, an anchor, a colour) has to be named in that
+ * script's NOT_PROSE set, or it will be translated and stop working.
  */
 
 /** A link, styled as a button. Used by several blocks, so it lives once here. */

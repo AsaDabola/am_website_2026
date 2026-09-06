@@ -177,10 +177,25 @@ export default buildConfig({
     // never reaches the deployed one, which is how production ended up without
     // `tenants.languages` and failing every query that selected it.
     //
-    // Deployed schema changes go through `npm run migrate:create` (writes a
-    // migration into src/migrations against whatever database you point it at)
-    // and `npm run migrate` to apply it.
-    push: true,
+    // Deployed schema changes go through the migration list in
+    // scripts/migrations.mjs, applied by `npm run build`.
+    //
+    // PAYLOAD_DISABLE_PUSH=1 turns it off, and every script that opens Payload
+    // outside the dev server sets it. Push wants the database to match the
+    // collections *exactly*, and three of this database's tables —
+    // post_translations, traffic and schema_migrations — are deliberately not
+    // collections (see the headers of their .sql files). So on a machine where
+    // NODE_ENV is not production, opening Payload stops on:
+    //
+    //     · You're about to delete post_translations table with 134 items
+    //     · You're about to delete schema_migrations table with 27 items
+    //     · You're about to delete traffic table with 3 items
+    //     Accept warnings and push schema to database? › (y/N)
+    //
+    // A prompt, in a script nobody is watching, whose "yes" deletes every
+    // article translation, the traffic history and the record of which
+    // migrations have run. It is not enough that the default is no.
+    push: process.env.PAYLOAD_DISABLE_PUSH !== "1",
     migrationDir: path.resolve(dirname, "migrations"),
   }),
   plugins: [

@@ -23,6 +23,7 @@
     "seed-slides": "node scripts/seed-home-slides.mjs",
     "translate-posts": "node --env-file=.env.local scripts/translate-posts.mjs",
     "translate-messages": "node --env-file=.env.local scripts/translate-messages.mjs",
+    "translate-pages": "node --env-file=.env.local --import tsx scripts/translate-pages.mts",
     "generate-image-keys": "node scripts/generate-image-keys.mjs",
     "seed-content": "node --import tsx scripts/seed-page-content.mts"
   },

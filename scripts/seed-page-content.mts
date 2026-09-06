@@ -183,6 +183,12 @@ async function fill(
 }
 
 async function main() {
+  // Payload's schema push offers to delete the three tables it does not own —
+  // post_translations, traffic and schema_migrations — and waits for an answer.
+  // A script is not a person, so it is turned off here. The schema comes from
+  // scripts/migrations.mjs instead. See the note in payload.config.ts.
+  process.env.PAYLOAD_DISABLE_PUSH = "1";
+
   const { getPayload } = await import("payload");
   const config = (await import("../src/payload.config")).default;
   const { HOME_DEFAULTS, HOME_BLOCK_ORDER } = await import("../src/lib/homeDefaults");
