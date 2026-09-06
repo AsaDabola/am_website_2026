@@ -9,7 +9,7 @@ import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
 import EventsAndTestimonials from "@/components/sections/EventsAndTestimonials";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import withPageLayout from "@/components/pages/BuiltInPage";
+import PageBody from "@/components/pages/PageBody";
 
 // Sixty seconds, so a section added to this page in /admin appears without a
 // deploy. Without it the page is fully static and the authored layout would be
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "Apostolos Mission chapters offer online Bible studies for those who are unable to connect with our physical campus or local ministry locations.",
 };
 
-async function OnlineBibleStudyPage() {
+export default async function OnlineBibleStudyPage() {
   const [t, tHeader] = await Promise.all([
     getTranslations("Common"),
     getTranslations("Header"),
@@ -42,6 +42,9 @@ async function OnlineBibleStudyPage() {
       />
       <GetInvolvedSubNav active="/get-involved/online-bible-study" />
 
+      {/* Authored in the admin — see lib/pageDefaults. What is inside
+          stays as the fallback for a record that has not been seeded. */}
+      <PageBody route="/get-involved/online-bible-study">
       <section className="bg-mist py-20">
         <Container className="text-center">
           <div className="flex justify-center">
@@ -91,6 +94,7 @@ async function OnlineBibleStudyPage() {
           </Button>
         </Container>
       </section>
+      </PageBody>
 
       <EventsAndTestimonials />
 
@@ -100,5 +104,3 @@ async function OnlineBibleStudyPage() {
   );
 }
 
-// Lets this page be added to or replaced from /admin — see BuiltInPage.
-export default withPageLayout("/get-involved/online-bible-study", OnlineBibleStudyPage);

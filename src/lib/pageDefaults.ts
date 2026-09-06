@@ -105,6 +105,83 @@ export const PAGE_DEFAULTS: Record<string, PageSeed> = {
       },
     ],
   },
+  "/get-involved/alumni-connect": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "gallery",
+        eyebrow: "Get involved",
+        heading: "Alumni Connect",
+        columns: "3",
+        imageShape: "square",
+        images: [
+          { image: "/images/alumni-1.webp" },
+          { image: "/images/alumni-2.webp" },
+          { image: "/images/alumni-3.webp" },
+        ],
+        appearance: { background: "mist", align: "center" },
+      },
+      {
+        blockType: "cta",
+        description:
+          "AM is blessed with numerous alumni members who continued to support our mission after graduation. If you want to continue to help, support and serve AM, join our Alumni Connect to stay connected. No matter where you are or what career you have, our Lord Jesus calls you to keep working together to advance the Gospel mission. Find the most fitting role in your work schedule and family life to help AM mission thrive all across the world.",
+        buttons: [{ label: "Click here", href: "/contact", style: "primary" }],
+        appearance: { background: "mist", paddingTop: "none" },
+      },
+    ],
+  },
+
+  "/get-involved/chapter-staff": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "gallery",
+        eyebrow: "Get involved",
+        heading: "Chapter Staff",
+        columns: "3",
+        imageShape: "square",
+        images: [
+          { image: "/images/chapter-volunteer-1.webp" },
+          { image: "/images/chapter-volunteer-2.webp" },
+          { image: "/images/chapter-volunteer-3.webp" },
+        ],
+        appearance: { background: "mist", align: "center" },
+      },
+      {
+        blockType: "cta",
+        description:
+          "Being a Chapter leader and a staff throughout college life is one of the most rewarding experiences that students can have as followers of Christ. It is spirit-filled roles and positions that help and guide many other students who wish to know Jesus. Our Chapter leaders and staff go through resourceful and empowering training at the onsite venues where they can learn how to lead local programs and hold gatherings and meetings. Chapter leaders and staff share unforgettable memories of participating in the Gospel mission in their college years. We invite you to join our Chapter Staff team.",
+        buttons: [{ label: "Apply here", href: "/get-involved/volunteer#apply", style: "primary" }],
+        appearance: { background: "mist", paddingTop: "none" },
+      },
+    ],
+  },
+
+  "/get-involved/online-bible-study": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "gallery",
+        eyebrow: "What we do",
+        heading: "Online Bible Study",
+        columns: "3",
+        imageShape: "square",
+        images: [
+          { image: "/images/online-bible-study-1.webp" },
+          { image: "/images/online-bible-study-2.webp" },
+          { image: "/images/online-bible-study-3.webp" },
+        ],
+        appearance: { background: "mist", align: "center" },
+      },
+      {
+        blockType: "cta",
+        heading: "In-depth Bible study for anyone, anywhere.",
+        description:
+          "Apostolos Mission chapters offer online Bible studies for those who are unable to connect with our physical campus or local ministry locations. If you are not near one of our physical chapters, we would love to help you get connected with an online Bible study in your area or time zone. Fill out the form below, and our team will contact you with more information.",
+        buttons: [{ label: "Click here", href: "/contact", style: "primary" }],
+      },
+    ],
+  },
 };
 
 /** The routes whose body is now editable. */

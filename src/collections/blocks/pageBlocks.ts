@@ -373,6 +373,17 @@ export const GalleryBlock: Block = {
     ...headingFields,
     columns,
     {
+      name: "imageShape",
+      type: "select",
+      defaultValue: "landscape",
+      options: [
+        { label: "Landscape", value: "landscape" },
+        { label: "Square", value: "square" },
+        { label: "Portrait", value: "portrait" },
+      ],
+      admin: { description: "The frame each picture is cropped to." },
+    },
+    {
       name: "images",
       type: "array",
       minRows: 1,

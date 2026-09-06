@@ -108,6 +108,7 @@ export type QuoteData = Base & {
 export type GalleryData = Base & {
   blockType: "gallery";
   columns?: string | null;
+  imageShape?: "landscape" | "square" | "portrait" | null;
   images?: { id?: string; image?: MediaRef; caption?: string | null }[] | null;
 };
 

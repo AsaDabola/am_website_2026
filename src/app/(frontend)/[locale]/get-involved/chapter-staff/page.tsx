@@ -8,7 +8,7 @@ import AboutHero from "@/components/about/AboutHero";
 import GetInvolvedSubNav from "@/components/get-involved/GetInvolvedSubNav";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import withPageLayout from "@/components/pages/BuiltInPage";
+import PageBody from "@/components/pages/PageBody";
 
 // Sixty seconds, so a section added to this page in /admin appears without a
 // deploy. Without it the page is fully static and the authored layout would be
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "Serve as a Chapter leader or staff member and help lead local programs and gatherings.",
 };
 
-async function ChapterStaffPage() {
+export default async function ChapterStaffPage() {
   const [t, tHeader] = await Promise.all([
     getTranslations("Common"),
     getTranslations("Header"),
@@ -43,6 +43,9 @@ async function ChapterStaffPage() {
       />
       <GetInvolvedSubNav active="/get-involved/chapter-staff" />
 
+      {/* Authored in the admin — see lib/pageDefaults. What is inside
+          stays as the fallback for a record that has not been seeded. */}
+      <PageBody route="/get-involved/chapter-staff">
       <section className="bg-mist py-20">
         <Container className="max-w-[900px] text-center">
           <div className="flex justify-center">
@@ -89,6 +92,7 @@ async function ChapterStaffPage() {
           </Button>
         </Container>
       </section>
+      </PageBody>
 
       <section className="bg-white py-20">
         <Container>
@@ -110,5 +114,3 @@ async function ChapterStaffPage() {
   );
 }
 
-// Lets this page be added to or replaced from /admin — see BuiltInPage.
-export default withPageLayout("/get-involved/chapter-staff", ChapterStaffPage);

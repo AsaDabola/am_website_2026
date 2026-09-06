@@ -38,3 +38,9 @@ import-manifest.csv
 import-answers.json
 posts-without-picture.csv
 image-map.json
+
+# Local uploads. The deployed site keeps its media in Vercel Blob (see the
+# vercelBlobStorage plugin in payload.config.ts); this directory is only what
+# the storage adapter falls back to on a developer machine, and the seeder
+# refills it. Thirty-five of these were committed by accident and removed.
+/media/

@@ -146,6 +146,43 @@ invoices_line_items._parent_id integer
 invoices_line_items.amount numeric
 invoices_line_items.description character varying
 invoices_line_items.id character varying
+leaders.affiliated_center character varying
+leaders.center_address character varying
+leaders.country_website character varying
+leaders.created_at timestamp with time zone
+leaders.current_position character varying
+leaders.discipled_by character varying
+leaders.evangelised_by character varying
+leaders.evangelism_date timestamp with time zone
+leaders.evangelism_pathway character varying
+leaders.faith_and_order_status enum_leaders_faith_and_order_status
+leaders.fellowship_affiliation character varying
+leaders.id integer
+leaders.membership_status enum_leaders_membership_status
+leaders.mentor character varying
+leaders.name character varying
+leaders.next_stage character varying
+leaders.photo_id integer
+leaders.recommendations character varying
+leaders.required_qualifications character varying
+leaders.tenant_id integer
+leaders.updated_at timestamp with time zone
+leaders_documents._order integer
+leaders_documents._parent_id integer
+leaders_documents.file_id integer
+leaders_documents.id character varying
+leaders_documents.title character varying
+leaders_previous_positions._order integer
+leaders_previous_positions._parent_id integer
+leaders_previous_positions.from timestamp with time zone
+leaders_previous_positions.id character varying
+leaders_previous_positions.position character varying
+leaders_previous_positions.to timestamp with time zone
+leaders_training._order integer
+leaders_training._parent_id integer
+leaders_training.completed_on timestamp with time zone
+leaders_training.id character varying
+leaders_training.name character varying
 media.alt character varying
 media.created_at timestamp with time zone
 media.filename character varying
@@ -412,6 +449,7 @@ pages_blocks_gallery.columns enum_pages_blocks_gallery_columns
 pages_blocks_gallery.eyebrow character varying
 pages_blocks_gallery.heading character varying
 pages_blocks_gallery.id character varying
+pages_blocks_gallery.image_shape enum_pages_blocks_gallery_image_shape
 pages_blocks_gallery_images._order integer
 pages_blocks_gallery_images._parent_id character varying
 pages_blocks_gallery_images.caption character varying
@@ -813,6 +851,7 @@ payload_locked_documents_rels.events_id integer
 payload_locked_documents_rels.id integer
 payload_locked_documents_rels.internship_applications_id integer
 payload_locked_documents_rels.invoices_id integer
+payload_locked_documents_rels.leaders_id integer
 payload_locked_documents_rels.media_id integer
 payload_locked_documents_rels.membership_applications_id integer
 payload_locked_documents_rels.ministries_id integer
@@ -965,6 +1004,8 @@ ENUM enum_events_share_with_continents = africa,asia,europe,northamerica,southam
 ENUM enum_internship_applications_education_level = high-school,some-college,undergraduate,postgraduate,other
 ENUM enum_internship_applications_program = summer,short-term,long-term
 ENUM enum_invoices_status = draft,open,paid,void,uncollectible
+ENUM enum_leaders_faith_and_order_status = Not started,In progress,Completed
+ENUM enum_leaders_membership_status = Newcomer,Registered,Volunteer,Staff,Leader
 ENUM enum_membership_applications_membership_tier = Newcomer,Registered,Volunteer,Staff,Leader
 ENUM enum_membership_applications_statement_of_faith_agreement = I agree and share the AM Statement of Faith
 ENUM enum_pages_blocks_accordion_appearance_align = default,left,center
@@ -1015,6 +1056,7 @@ ENUM enum_pages_blocks_gallery_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_gallery_appearance_text_theme = auto,dark,light
 ENUM enum_pages_blocks_gallery_appearance_width = default,narrow,wide,full
 ENUM enum_pages_blocks_gallery_columns = 2,3,4,5
+ENUM enum_pages_blocks_gallery_image_shape = landscape,square,portrait
 ENUM enum_pages_blocks_image_text_appearance_align = default,left,center
 ENUM enum_pages_blocks_image_text_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_image_text_appearance_focal_point = center,top,bottom,left,right
@@ -1090,7 +1132,7 @@ ENUM enum_tenants_locale = en,es,fr,de,pt,ko,ja,zh,it,ru,tr,id,nl,pl,uk,cs,sk,el
 ENUM enum_tenants_tier = g20,m40
 ENUM enum_users_continents = africa,asia,europe,northamerica,southamerica,oceania
 ENUM enum_users_role = super-admin,admin,sub-admin
-ENUM enum_users_sections = pages,posts,events,campuses,tenant-content,media,ministries,bible-study-signups,volunteer-applications,internship-applications,chapter-affiliations,membership-applications,contact-messages,donation-intents
+ENUM enum_users_sections = pages,posts,events,campuses,leaders,tenant-content,media,ministries,bible-study-signups,volunteer-applications,internship-applications,chapter-affiliations,membership-applications,contact-messages,donation-intents
 ENUM enum_volunteer_applications_q1_convicted = Yes,No
 ENUM enum_volunteer_applications_q2_sexual_offense = Yes,No
 ENUM enum_volunteer_applications_q3_reported_agency = Yes,No

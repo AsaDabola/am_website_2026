@@ -204,6 +204,11 @@ body {
 .am-reveal[data-revealed="true"] {
   opacity: 1;
   transform: none;
+  /* Dropped once the movement is over. Holding a compositing layer for the
+     life of the page is the documented way to make one slower, and here it
+     also left a hairline of the page's own background between two stacked
+     sections that share a colour. */
+  will-change: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -231,4 +236,11 @@ body {
   h1[class*="animate-\\[fadeIn"] {
     animation: none;
   }
+}
+
+/* A section set to centred centres its eyebrow too. The eyebrow is a flex row
+   — a short rule, then the word — so `text-center` on the container aligns the
+   text inside it and leaves the row itself at the start. */
+.text-center .am-eyebrow {
+  justify-content: center;
 }

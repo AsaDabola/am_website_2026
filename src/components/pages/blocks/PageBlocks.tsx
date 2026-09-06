@@ -86,7 +86,10 @@ function Anchor({
  */
 function Eyebrow({ children, dark }: { children: string; dark: boolean }) {
   return (
-    <div className="mb-4 flex items-center gap-3">
+    // `am-eyebrow` so a centred section centres the rule and the word together.
+    // Text alignment cannot do it: this is a flex row, and `text-center` on an
+    // ancestor leaves the row itself packed to the start.
+    <div className="am-eyebrow mb-4 flex items-center gap-3">
       <span
         className={`h-px w-7 ${dark ? "bg-white/60" : "bg-brand-blue/60"}`}
         style={{ backgroundColor: "var(--section-accent)" }}
@@ -605,7 +608,11 @@ export function Gallery({ data }: { data: GalleryData }) {
       <div className={`mt-12 grid gap-6 ${grid(data.columns)}`}>
         {images.map((row, index) => (
           <figure key={row.id ?? index}>
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
+            <div
+              className={`relative w-full overflow-hidden rounded-2xl ${
+                IMAGE_SHAPE[data.imageShape ?? "landscape"] ?? IMAGE_SHAPE.landscape
+              }`}
+            >
               <Image
                 src={mediaUrl(row.image)!}
                 alt={row.caption ?? ""}

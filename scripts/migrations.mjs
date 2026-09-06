@@ -126,6 +126,10 @@ export const MIGRATIONS = [
   // payload_locked_documents_rels, and without it no document in any
   // collection opens. It goes out with the code now instead of after it.
   { file: "add-leaders.sql", done: tableExists("leaders") },
+
+  // The gallery's frame shape, so a converted page keeps the square crop its
+  // design used rather than gaining a landscape one.
+  { file: "add-gallery-image-shape.sql", done: columnExists("pages_blocks_gallery", "image_shape") },
 ];
 
 /**

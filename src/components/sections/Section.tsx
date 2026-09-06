@@ -230,6 +230,11 @@ export default function Section({
 
       <Container
         className={[
+          // A block formatting context, so the first child's top margin cannot
+          // escape the section. It does otherwise wherever the padding is set
+          // to none — the margin collapses through and shows as a strip of the
+          // page's own background above a section that should start flush.
+          "flow-root",
           photo ? "relative" : "",
           // The block's own width only applies while none is chosen — both are
           // max-width classes, and two of them is a coin toss over which wins.
