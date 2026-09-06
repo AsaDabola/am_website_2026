@@ -34,6 +34,7 @@ export type BannerData = Base & {
 
 export type ProseData = Base & {
   blockType: "prose";
+  layout?: "stacked" | "aside" | null;
   body?: unknown;
   buttons?: ButtonData[] | null;
 };
@@ -56,6 +57,7 @@ export type CardsData = Base & {
   cards?: {
     id?: string;
     image?: MediaRef;
+    icon?: string | null;
     tag?: string | null;
     title?: string | null;
     description?: string | null;

@@ -164,6 +164,13 @@ export const MIGRATIONS = [
     file: "add-natural-gallery-shape.sql",
     done: enumHas("enum_pages_blocks_gallery_image_shape", "natural"),
   },
+
+  // A heading beside its text rather than above it, and an icon on a card in
+  // place of a picture — the internship tracks and the ways to volunteer.
+  {
+    file: "add-prose-aside-and-card-icons.sql",
+    done: columnExists("pages_blocks_cards_cards", "icon"),
+  },
 ];
 
 /**

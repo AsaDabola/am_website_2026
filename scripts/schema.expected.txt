@@ -357,6 +357,7 @@ pages_blocks_cards_cards._order integer
 pages_blocks_cards_cards._parent_id character varying
 pages_blocks_cards_cards.description character varying
 pages_blocks_cards_cards.href character varying
+pages_blocks_cards_cards.icon enum_pages_blocks_cards_cards_icon
 pages_blocks_cards_cards.id character varying
 pages_blocks_cards_cards.image_id integer
 pages_blocks_cards_cards.link_label character varying
@@ -736,6 +737,7 @@ pages_blocks_prose.body jsonb
 pages_blocks_prose.eyebrow character varying
 pages_blocks_prose.heading character varying
 pages_blocks_prose.id character varying
+pages_blocks_prose.layout enum_pages_blocks_prose_layout
 pages_blocks_prose_buttons._order integer
 pages_blocks_prose_buttons._parent_id character varying
 pages_blocks_prose_buttons.href character varying
@@ -1107,6 +1109,7 @@ ENUM enum_pages_blocks_cards_appearance_padding_bottom = default,none,sm,md,lg,x
 ENUM enum_pages_blocks_cards_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_cards_appearance_text_theme = auto,dark,light
 ENUM enum_pages_blocks_cards_appearance_width = default,narrow,wide,full
+ENUM enum_pages_blocks_cards_cards_icon = ,heart,book,monitor,palette,people,pin,calendar,newspaper,graduation,gift
 ENUM enum_pages_blocks_cards_columns = 1,2,3,4,5
 ENUM enum_pages_blocks_cards_layout = card,ruled
 ENUM enum_pages_blocks_cta_appearance_align = default,left,center
@@ -1183,6 +1186,7 @@ ENUM enum_pages_blocks_prose_appearance_padding_top = default,none,sm,md,lg,xl
 ENUM enum_pages_blocks_prose_appearance_text_theme = auto,dark,light
 ENUM enum_pages_blocks_prose_appearance_width = default,narrow,wide,full
 ENUM enum_pages_blocks_prose_buttons_style = primary,secondary,link
+ENUM enum_pages_blocks_prose_layout = stacked,aside
 ENUM enum_pages_blocks_quick_links_links_icon = book,pin,people,heart
 ENUM enum_pages_blocks_quote_appearance_align = default,left,center
 ENUM enum_pages_blocks_quote_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image

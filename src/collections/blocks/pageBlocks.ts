@@ -135,6 +135,19 @@ export const ProseBlock: Block = {
   fields: [
     ...headingFields,
     {
+      name: "layout",
+      type: "select",
+      defaultValue: "stacked",
+      options: [
+        { label: "Heading above the text", value: "stacked" },
+        { label: "Heading beside the text", value: "aside" },
+      ],
+      admin: {
+        description:
+          "Beside sets the title in a narrow column on the left with the text alongside it, under a short blue rule — how the internship tracks are drawn.",
+      },
+    },
+    {
       name: "body",
       type: "richText",
       editor: lexicalEditor(),
@@ -217,6 +230,27 @@ export const CardsBlock: Block = {
       admin: { initCollapsed: false },
       fields: [
         { name: "image", type: "upload", relationTo: "media" },
+        {
+          name: "icon",
+          type: "select",
+          options: [
+            { label: "None", value: "" },
+            { label: "Heart", value: "heart" },
+            { label: "Book", value: "book" },
+            { label: "Screen", value: "monitor" },
+            { label: "Palette", value: "palette" },
+            { label: "People", value: "people" },
+            { label: "Map pin", value: "pin" },
+            { label: "Calendar", value: "calendar" },
+            { label: "Newspaper", value: "newspaper" },
+            { label: "Graduation cap", value: "graduation" },
+            { label: "Gift", value: "gift" },
+          ],
+          admin: {
+            description:
+              "Drawn in a pale circle above the title, in place of a picture. What the ways to volunteer are set with.",
+          },
+        },
         {
           type: "row",
           fields: [

@@ -9,7 +9,7 @@ import InternshipApplicationForm from "@/components/get-involved/InternshipAppli
 import EventsAndTestimonials from "@/components/sections/EventsAndTestimonials";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import withPageLayout from "@/components/pages/BuiltInPage";
+import PageBody from "@/components/pages/PageBody";
 
 // Sixty seconds, so a section added to this page in /admin appears without a
 // deploy. Without it the page is fully static and the authored layout would be
@@ -44,7 +44,7 @@ const tracks = [
   },
 ];
 
-async function InternshipPage() {
+export default async function InternshipPage() {
   const [t, tHeader] = await Promise.all([
     getTranslations("Common"),
     getTranslations("Header"),
@@ -64,6 +64,7 @@ async function InternshipPage() {
       />
       <GetInvolvedSubNav active="/get-involved/internship" />
 
+      <PageBody route="/get-involved/internship">
       <section className="bg-mist py-20">
         <Container className="max-w-[900px] text-center">
           <div className="flex justify-center">
@@ -120,6 +121,7 @@ async function InternshipPage() {
 
         </Container>
       </section>
+      </PageBody>
 
       {/* The application itself, rather than a link off to the old site. It
           writes into the internship-applications collection, so a submission
@@ -137,6 +139,3 @@ async function InternshipPage() {
     </>
   );
 }
-
-// Lets this page be added to or replaced from /admin — see BuiltInPage.
-export default withPageLayout("/get-involved/internship", InternshipPage);

@@ -15,7 +15,7 @@ import VolunteerApplicationForm from "@/components/get-involved/VolunteerApplica
 import EventsAndTestimonials from "@/components/sections/EventsAndTestimonials";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import withPageLayout from "@/components/pages/BuiltInPage";
+import PageBody from "@/components/pages/PageBody";
 
 // Sixty seconds, so a section added to this page in /admin appears without a
 // deploy. Without it the page is fully static and the authored layout would be
@@ -61,7 +61,7 @@ const categories = [
   },
 ];
 
-async function VolunteerPage() {
+export default async function VolunteerPage() {
   const [t, tHeader] = await Promise.all([
     getTranslations("Common"),
     getTranslations("Header"),
@@ -86,6 +86,7 @@ async function VolunteerPage() {
       />
       <GetInvolvedSubNav active="/get-involved/volunteer" />
 
+      <PageBody route="/get-involved/volunteer">
       <section className="bg-paper py-20">
         <Container className="text-center">
           <div className="flex justify-center">
@@ -166,40 +167,13 @@ async function VolunteerPage() {
         </Container>
       </section>
 
-      <section id="apply" className="bg-mist py-24">
+      </PageBody>
+
+      {/* The application itself. Its introduction is authored above, in the
+          section that closes the page body, so this band carries only the
+          form and picks up where that leaves off. */}
+      <section id="apply" className="bg-mist pb-24">
         <Container>
-          <div className="text-center">
-            <div className="flex justify-center">
-              <Eyebrow>Join the Mission</Eyebrow>
-            </div>
-            <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
-              Volunteer Application
-            </h2>
-            <p className="mx-auto mt-8 max-w-[982px] text-base leading-relaxed text-ink-muted">
-              AM operates under four main areas generally referred to as education, media,
-              public relations, and administration. Volunteer and intern posts can vary from
-              leadership roles to shadowing positions. A manual and application for volunteers
-              and potential interns can be received upon request. Feel free to contact{" "}
-              <a
-                href="mailto:mission@amintl.org"
-                className="font-medium text-brand-navy-deep underline underline-offset-2"
-              >
-                mission@amintl.org
-              </a>{" "}
-              for more information.
-            </p>
-            {/* The programme description the single-page form used to open
-                with. It belongs to the reader deciding whether to apply, not
-                to the first step of the application, so it sits here with the
-                rest of the introduction rather than inside the wizard. */}
-            <p className="mx-auto mt-6 max-w-[982px] text-base leading-relaxed text-ink-muted">
-              A mission teammate participates in and plans evangelistic methods that align with the
-              chapter&rsquo;s goal for growth, working out how to reach the student body
-              effectively and fostering an environment of spiritual growth and discipleship among
-              college students. The team is a community of believers centred on the Word and
-              fellowship, with a heart to spread the Gospel across university campuses worldwide.
-            </p>
-          </div>
 
           {/* 1200px in the design: a 680px form column beside a 360px sidebar,
               with the gutter between them. The old single-column form sat in
@@ -217,6 +191,3 @@ async function VolunteerPage() {
     </>
   );
 }
-
-// Lets this page be added to or replaced from /admin — see BuiltInPage.
-export default withPageLayout("/get-involved/volunteer", VolunteerPage);

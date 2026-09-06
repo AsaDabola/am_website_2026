@@ -3,7 +3,19 @@ import { RichText } from "@payloadcms/richtext-lexical/react";
 import TenantLink from "@/components/layout/TenantLink";
 import Section, { isDarkSection } from "@/components/sections/Section";
 import HistoryTimeline from "@/components/about/HistoryTimeline";
-import { ArrowRightIcon } from "@/components/ui/icons";
+import {
+  ArrowRightIcon,
+  BookIcon,
+  CalendarIcon,
+  GiftIcon,
+  GraduationIcon,
+  HeartIcon,
+  MonitorIcon,
+  NewspaperIcon,
+  PaletteIcon,
+  PeopleIcon,
+  PinIcon,
+} from "@/components/ui/icons";
 import { mediaUrl } from "@/lib/homeBlockTypes";
 import { embedUrl } from "@/lib/pageBlockTypes";
 import type {
@@ -355,6 +367,37 @@ export function Banner({ data }: { data: BannerData }) {
 
 export function ProseSection({ data }: { data: ProseData }) {
   const dark = isDarkSection(data.appearance);
+
+  if (data.layout === "aside") {
+    return (
+      <Section appearance={data.appearance} defaultContainerClassName="max-w-[1116px]">
+        <div className="grid gap-8 text-start lg:grid-cols-[340px_1fr] lg:gap-16">
+          <div>
+            <Heading
+              eyebrow={data.eyebrow}
+              heading={data.heading}
+              dark={dark}
+              size={data.appearance?.headingSize}
+            />
+            {/* The short rule the design puts under a side heading. It belongs
+                to the heading, so it is hidden when there is none. */}
+            {data.heading ? (
+              <span
+                aria-hidden
+                className="mt-8 block h-1 w-14 rounded-full"
+                style={accentBackground(dark ? "#ffffff" : BLUE)}
+              />
+            ) : null}
+          </div>
+          <div>
+            <Prose data={data.body} dark={dark} className="prose-sm" />
+            <Buttons buttons={data.buttons} dark={dark} />
+          </div>
+        </div>
+      </Section>
+    );
+  }
+
   return (
     <Section appearance={data.appearance} defaultContainerClassName="max-w-[860px]">
       <Heading eyebrow={data.eyebrow} heading={data.heading} dark={dark} size={data.appearance?.headingSize} className="mb-8" />
@@ -406,6 +449,24 @@ export function ImageText({ data }: { data: ImageTextData }) {
   );
 }
 
+/**
+ * The icons a card can carry, by the name stored on it. A card with no icon
+ * name draws none, which is the usual case — this is for the pages that name
+ * ways to serve rather than showing photographs of them.
+ */
+const CARD_ICONS: Record<string, (props: { className?: string }) => React.ReactElement> = {
+  heart: HeartIcon,
+  book: BookIcon,
+  monitor: MonitorIcon,
+  palette: PaletteIcon,
+  people: PeopleIcon,
+  pin: PinIcon,
+  calendar: CalendarIcon,
+  newspaper: NewspaperIcon,
+  graduation: GraduationIcon,
+  gift: GiftIcon,
+};
+
 export function Cards({ data }: { data: CardsData }) {
   const dark = isDarkSection(data.appearance);
   const cards = data.cards ?? [];
@@ -436,8 +497,18 @@ export function Cards({ data }: { data: CardsData }) {
       >
         {cards.map((card, index) => {
           const url = mediaUrl(card.image);
+          const Icon = card.icon ? CARD_ICONS[card.icon] : undefined;
           const body = (
             <>
+              {Icon ? (
+                <span
+                  className={`mx-auto flex size-20 items-center justify-center rounded-full ${
+                    dark ? "bg-white/10 text-white" : "bg-mist text-brand-navy-deep"
+                  }`}
+                >
+                  <Icon className="size-9" />
+                </span>
+              ) : null}
               {url ? (
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
                   <Image
@@ -458,7 +529,7 @@ export function Cards({ data }: { data: CardsData }) {
                 </p>
               ) : null}
               <p
-                className={`${card.tag ? "mt-2" : ruled ? "" : "mt-5"} font-display ${
+                className={`${card.tag ? "mt-2" : ruled ? "" : Icon ? "mt-6" : "mt-5"} font-display ${
                   ruled ? "text-base font-bold" : "text-xl font-semibold"
                 } tracking-[-0.02em] ${dark ? "text-white" : "text-ink"}`}
               >

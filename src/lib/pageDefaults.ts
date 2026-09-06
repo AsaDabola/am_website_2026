@@ -327,6 +327,145 @@ export const PAGE_DEFAULTS: Record<string, PageSeed> = {
     ],
   },
 
+  "/get-involved/internship": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "gallery",
+        eyebrow: "Get involved",
+        heading: "Internship",
+        columns: "3",
+        imageShape: "square",
+        images: [
+          { image: "/images/internship-1.webp" },
+          { image: "/images/internship-2.webp" },
+          { image: "/images/internship-3.webp" },
+        ],
+        appearance: { background: "mist", align: "center" },
+      },
+      {
+        blockType: "cta",
+        description:
+          "AM offers several internship opportunities. If you have passion for serving in mission using your gifts and talents and would like to be part of our internship programs, apply today!",
+        appearance: { background: "mist", paddingTop: "none" },
+      },
+      ...[
+        {
+          title: "Summer Internship",
+          markdown:
+            "Our summer internship program runs all summer long, beginning on the last week of June and ending on the last week of August. The internship could range from anywhere between 2-6 weeks. It is designed to help the participant grow more in the Word and as a leader. It will cover diverse areas of mission which will help interns better serve their local or overseas mission.\n\n" +
+            "This includes, but is not limited to, being exposed to an abundance of the Word, learning how to run a local chapter, being involved in media and content creation, evangelism (online & onsite), and participating in administrative works. Yes, we will have trips and fun activities too! Those interested in our summer internship must fill out an application and have an interview with one of our staff.",
+        },
+        {
+          title: "Short-term Internship",
+          markdown:
+            "Our short-term internship is for 3 months at our headquarters. This internship is designed for those who are ready to serve mission full-time or part-time. Through these 3 months, you will be involved in mission works that will aid towards becoming a chapter leader. This internship program includes various lectures on chapter planting, shepherding and counseling, and teaching and preaching as well as mission works that will be carried out on a day-to-day basis in the mission field.",
+        },
+        {
+          title: "Long-term Internship",
+          markdown:
+            "AM’s long-term internship was created for those who have the desire to become an HQ staff or regional leader. The internship can last anywhere between 6 months to 1 year and the program will involve administrative works such as network development, creating mission resources and content on biblical material. The participant will gain experience and knowledge to further their future ministry calling in AM and beyond.",
+        },
+      ].map((track, index) => ({
+        blockType: "prose",
+        layout: "aside",
+        heading: track.title,
+        body: { markdown: track.markdown },
+        appearance: {
+          headingSize: "md",
+          // Sections stack, so the space between two tracks is the one's
+          // bottom plus the next one's top. Thirty-two each side makes the
+          // sixty-four the coded page had between them, while the first keeps
+          // the full space above and the last the full space below.
+          ...(index > 0 ? { paddingTop: "sm" } : {}),
+          ...(index < 2 ? { paddingBottom: "sm" } : {}),
+        },
+      })),
+    ],
+  },
+
+  "/get-involved/volunteer": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "gallery",
+        eyebrow: "Get Involved",
+        heading: "Volunteer",
+        columns: "3",
+        imageShape: "landscape",
+        images: [
+          { image: "/images/volunteer-calling.webp" },
+          { image: "/images/volunteer-team.webp" },
+          { image: "/images/volunteer-worship.webp" },
+        ],
+        appearance: { background: "paper", align: "center" },
+      },
+      {
+        blockType: "quote",
+        quote:
+          "My concern is not with closed doors; my concern is with the doors that are open which we do not enter.",
+        attribution: "Dr. Ralph D. Winter",
+        role: "Perspectives on the World Christian Movement",
+        appearance: { background: "paper", align: "center", paddingTop: "none" },
+      },
+      {
+        blockType: "cta",
+        description:
+          "AM is always happy to welcome family in Christ interested in volunteering in our mission for a period of time. We believe that God has given unique gifts to each person and they can be used preciously for the glory of God.",
+        appearance: { background: "paper", paddingTop: "none" },
+      },
+      {
+        blockType: "cards",
+        columns: "4",
+        cards: [
+          {
+            title: "Chapter Leader / Staff",
+            icon: "heart",
+            description:
+              "Serve and support local campus chapters by organizing fellowship events, bible study meetings, and coordinating outreach activities to connect students with Christ.",
+          },
+          {
+            title: "Bible Teacher",
+            icon: "book",
+            description:
+              "Guide others on a transformative spiritual journey. Instruct and mentor seekers and believers through structured curriculum, helping them establish a solid scriptural foundation.",
+          },
+          {
+            title: "Online Content Developers",
+            icon: "monitor",
+            description:
+              "Utilize your creative design, writing, or web development skills to produce inspiring online media, manage social channels, and expand the digital presence of our ministries.",
+          },
+          {
+            title: "IT & Design",
+            icon: "palette",
+            description:
+              "Gospel spreads much faster than before as IT advances rapidly. If you have skills in IT and Web Design, join us now to bring even more excellent outcomes soon in sharing the Good News of Jesus.",
+          },
+        ],
+        appearance: { align: "center", paddingTop: "xl", paddingBottom: "xl" },
+      },
+      // The introduction to the application, above the form. The form itself
+      // stays coded; this is what a country would rewrite.
+      {
+        blockType: "prose",
+        eyebrow: "Join the Mission",
+        heading: "Volunteer Application",
+        body: {
+          markdown:
+            "AM operates under four main areas generally referred to as education, media, public relations, and administration. Volunteer and intern posts can vary from leadership roles to shadowing positions. A manual and application for volunteers and potential interns can be received upon request. Feel free to contact [mission@amintl.org](mailto:mission@amintl.org) for more information.\n\n" +
+            "A mission teammate participates in and plans evangelistic methods that align with the chapter’s goal for growth, working out how to reach the student body effectively and fostering an environment of spiritual growth and discipleship among college students. The team is a community of believers centred on the Word and fellowship, with a heart to spread the Gospel across university campuses worldwide.",
+        },
+        appearance: {
+          background: "mist",
+          align: "center",
+          paddingTop: "xl",
+          paddingBottom: "none",
+        },
+      },
+    ],
+  },
+
   "/get-involved/bible-teacher-training": {
     mode: "replace",
     blocks: [
