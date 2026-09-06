@@ -605,6 +605,48 @@ export const PAGE_DEFAULTS: Record<string, PageSeed> = {
     ],
   },
 
+  "/about/membership": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "prose",
+        body: {
+          markdown: [
+            "## AM Membership Qualifications & Benefits",
+            "### Eligibility",
+            "To become an AM member, applicants must:",
+            "- Be 18 years of age or older.",
+            "- Regularly attend Bible programs at their local AM chapter for at least one month.",
+            "- Primarily be a current university student, while university alumni, faculty, and staff are also welcome to apply.",
+            "**Becoming an AM member means that you:**",
+            "- Agree with and affirm the AM Statement of Faith and Mission Statement.",
+            "- Desire to uphold the values of the Christian faith in your daily life.",
+            "- Desire to support and participate in the work of God’s Kingdom on earth.",
+            "- Seek to grow spiritually through fellowship, Bible study, service, and participation in AM activities.",
+            "### University Chapter Registration",
+            "Current university students must be registered with their respective AM university chapter. Registration requires completing the membership application and obtaining the signature of the local chapter leader.",
+            "### Membership Benefits",
+            "AM members receive:",
+            "- Full access to AM resources and facilities.",
+            "- Opportunities to participate in AM leadership meetings.",
+            "- Invitations to AM conventions, retreats, and other special events.",
+            "- Opportunities to serve and participate more actively in the mission and ministry of their local chapter.",
+            "### Monthly Offering",
+            "AM members are encouraged to give a monthly offering to their local chapter as an expression of support for its ministry and activities. The amount is entirely voluntary and determined by each member.",
+            "100% of offerings and donations are used to support the operations, ministry, and activities of the local AM chapter.",
+          ].join("\n\n"),
+        },
+        appearance: { width: "wide", paddingBottom: "none" },
+      },
+      {
+        blockType: "quote",
+        quote:
+          "John 20:21 says, “Again Jesus said, ‘Peace be with you! As the Father has sent me, I am sending you.’” (NIV)",
+        appearance: { width: "wide" },
+      },
+    ],
+  },
+
   "/about/leadership": {
     mode: "replace",
     blocks: [
