@@ -2,7 +2,6 @@ import type { CollectionConfig, TextFieldSingleValidation } from "payload";
 import { enforceTenantScope, hideUnlessGranted, tenantScopedAccess } from "@/lib/adminAccess";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { homeBlocks } from "./blocks/homeBlocks";
-import { genericBlocks } from "./blocks/genericBlocks";
 
 // Editor-managed pages. Leaving `tenant` empty makes a page part of the main
 // amintl.org site; setting it scopes the page to one country site instead
@@ -97,16 +96,6 @@ export const Pages: CollectionConfig = {
         condition: (data) => data?.builtIn !== true,
         description:
           "Homepage-style content sections (used instead of the simple hero/body above — mainly for a site's home page).",
-      },
-    },
-    {
-      name: "genericSections",
-      type: "blocks",
-      blocks: genericBlocks,
-      admin: {
-        condition: (data) => data?.builtIn !== true,
-        description:
-          "Reusable content sections — text, cards, gallery, image+text, quote, timeline, stats, list, feature panel, icon cards, link cards, journey, photo grid. Shown below the simple body text above, in the order added here.",
       },
     },
     {

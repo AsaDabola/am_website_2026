@@ -4,7 +4,6 @@ import Container from "@/components/ui/Container";
 import { Link } from "@/i18n/navigation";
 import type { PageDoc } from "@/lib/pages";
 import { mediaUrl } from "@/lib/homeBlockTypes";
-import { renderGenericBlock } from "@/lib/renderGenericBlocks";
 
 type Crumb = { label: string; href?: string };
 
@@ -61,10 +60,6 @@ export default function PageRenderer({ page, crumbs }: { page: PageDoc; crumbs: 
           </Container>
         </article>
       )}
-
-      {page.genericSections?.length
-        ? page.genericSections.map((block) => renderGenericBlock(block))
-        : null}
     </>
   );
 }
