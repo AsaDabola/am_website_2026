@@ -1,4 +1,5 @@
 import type { Block } from "payload";
+import { withHomeDefaults } from "./withDefaults";
 
 const stat: Block["fields"] = [
   { name: "value", type: "text", required: true },
@@ -233,6 +234,11 @@ export const NewsletterBlock: Block = {
   ],
 };
 
+/**
+ * The homepage's sections, each carrying the content the site actually shows
+ * as its defaults — so adding one in the admin gives you the real section to
+ * edit rather than a column of empty boxes. See blocks/withDefaults.
+ */
 export const homeBlocks: Block[] = [
   HeroBlock,
   BibleStudyProgramBlock,
@@ -246,4 +252,4 @@ export const homeBlocks: Block[] = [
   HonoraryChairmanBlock,
   PartnerWithUsBlock,
   NewsletterBlock,
-];
+].map(withHomeDefaults);

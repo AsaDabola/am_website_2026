@@ -401,3 +401,47 @@ every migration you add, testing for the *last* thing the file does.
    apply it locally.
 
 Deploying is then just deploying.
+
+## The page editor holds the page's content
+
+`npm run build` runs `scripts/seed-page-content.mts` after the migrations, so
+this needs remembering no more than they do.
+
+```bash
+npm run seed-content -- --dry-run   # what it would fill
+npm run seed-content                # fill it
+```
+
+**The problem it solves.** Opening the home page in the admin used to show
+empty boxes beside a preview of a full page. Every field had a value; the
+value lived in the components and in `messages/en.json`. "Leave it empty and
+the site uses its own" is a reasonable thing for a renderer to do and an
+unreasonable thing to show an editor — it says the page has no content and
+then contradicts itself on the right-hand side of the screen.
+
+**Two halves, because one is not enough.**
+
+`src/lib/homeDefaults.ts` is the home page as data, read from the same
+`messages/en.json` the components read — not a second copy of the wording.
+
+1. `collections/blocks/withDefaults.ts` hangs those values on every field as
+   its `defaultValue`, so a block **added from now on** arrives holding the
+   real content. This is the half that keeps it fixed.
+2. `seed-page-content.mts` fills blocks that **already exist** and were saved
+   empty, which `defaultValue` cannot reach — it applies when a row is created,
+   and those rows were created long ago. It also adds any of the twelve
+   sections a page is missing, in the order the page draws them.
+
+**What it will not do.** It only ever fills a field that is empty, so an
+edited headline is never overwritten and a second run does nothing. That is
+what makes it safe on every deploy. It is also never fatal: a database it
+cannot reach, or a photograph missing from `public/images`, is reported and
+skipped, because the site renders these sections with or without the records.
+
+**Photographs** become Media records — an upload field holds a record, not a
+path — uploaded once and matched by filename afterwards, so repeat runs reuse
+them instead of filling the library with copies.
+
+**Adding a section to the home page** means adding its content to
+`HOME_DEFAULTS` at the same time. Without it the field defaults are empty
+again, which is the whole complaint.
