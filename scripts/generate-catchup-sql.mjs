@@ -252,6 +252,35 @@ if (!missingEnums.length && !missingTables.length && !missingColumns.length && !
 }
 
 const out = [];
+const usedEnums = await (async () => {
+  const pool = connect(SOURCE);
+  try {
+    const { rows } = await pool.query(
+      `SELECT DISTINCT t.typname
+         FROM pg_attribute a
+         JOIN pg_class c ON c.oid = a.attrelid
+         JOIN pg_namespace n ON n.oid = c.relnamespace
+         JOIN pg_type t ON t.oid = a.atttypid
+        WHERE n.nspname = 'public'
+          AND t.typtype = 'e'
+          AND a.attnum > 0
+          AND NOT a.attisdropped
+          AND (c.relname = ANY($1::text[])
+               OR (c.relname = ANY($2::text[]) AND a.attname = ANY($3::text[])))`,
+      [
+        missingTables,
+        missingColumns.map((row) => row.table),
+        missingColumns.flatMap((row) => row.columns),
+      ],
+    );
+    return rows.map((row) => row.typname);
+  } finally {
+    await pool.end();
+  }
+})();
+
+const typesToCreate = [...new Set([...missingEnums, ...usedEnums])].sort();
+
 const now = new Date().toISOString().slice(0, 10);
 
 out.push(
@@ -259,7 +288,7 @@ out.push(
   `-- ${now}`,
   "--",
   `-- ${missingTables.length} table(s), ${missingColumns.reduce((n, row) => n + row.columns.length, 0)} column(s)` +
-    ` on ${missingColumns.length} existing table(s), ${missingEnums.length} type(s),` +
+    ` on ${missingColumns.length} existing table(s), ${typesToCreate.length} type(s),` +
     ` ${missingLabels.reduce((n, row) => n + row.labels.length, 0)} value(s) on ${missingLabels.length} existing type(s).`,
   "--",
   "-- Additive only: no DROP, no change to an existing column, and the only",
@@ -301,14 +330,30 @@ if (missingLabels.length) {
 
 out.push("BEGIN;", "");
 
-// Types first, and all of them.
+// Types first, and every type this file's tables and columns are declared as
+// — not only the ones the target happens to be missing.
 //
-// `pg_dump -t` dumps the named tables and nothing else — not the enum types
-// their columns are declared as. That is not obvious from the output, which
-// looks complete, and the file then fails on its first CREATE TABLE against a
-// database that has never seen the type. Asking the catalogue directly is both
-// simpler and complete.
-if (missingEnums.length) {
+// Two separate traps here, and the second one cost seven hours of failed
+// deploys.
+//
+// The first: `pg_dump -t` dumps the named tables and nothing else, not the
+// enum types their columns are declared as. That is not obvious from the
+// output, which looks complete. Asking the catalogue directly fixes it.
+//
+// The second: "missing from the target" is the wrong question. `add-leaders`
+// was generated against a machine where Payload's `push` had already made
+// `enum_leaders_membership_status`, so it was not missing, so no CREATE TYPE
+// was written — and the CREATE TABLE that declares a column as that type went
+// out on its own. The deployed database had never seen it, and the file failed
+// on its own first table.
+//
+// So a file creates every type it uses. CREATE TYPE here is wrapped to swallow
+// "already exists", so emitting one the target already has costs a no-op,
+// while leaving one out costs a deploy. The file is then self-contained: it
+// runs against any database, which is the only property worth having, since
+// the whole point is that nobody knows what a given database has.
+
+if (typesToCreate.length) {
   const pool = connect(SOURCE);
   const { rows } = await pool.query(
     `SELECT t.typname,
@@ -319,11 +364,11 @@ if (missingEnums.length) {
      WHERE n.nspname = 'public' AND t.typname = ANY($1::text[])
      GROUP BY t.typname
      ORDER BY t.typname`,
-    [missingEnums],
+    [typesToCreate],
   );
   await pool.end();
 
-  out.push(`-- ${rows.length} new type(s).`, "");
+  out.push(`-- ${rows.length} type(s), created if they are not already there.`, "");
   for (const row of rows) {
     out.push(idempotent(`CREATE TYPE public.${row.typname} AS ENUM (${row.labels})`), "");
   }
@@ -391,4 +436,42 @@ if (missingColumns.length) {
 }
 
 out.push("COMMIT;", "");
-console.log(out.join("\n"));
+
+/**
+ * Every type the file uses, it must also create — unless the target already
+ * has it.
+ *
+ * This is the check that was missing, and it cost seven hours of failed
+ * deploys. `add-leaders.sql` was generated against a database where Payload's
+ * `push` had already created `enum_leaders_membership_status`, so the
+ * generator saw nothing missing and wrote "0 type(s)" — while emitting a
+ * CREATE TABLE whose column is declared as that type. On the deployed
+ * database, which had never seen it, the file failed on its own first table
+ * and every build after it stopped.
+ *
+ * The lesson is not "be careful choosing TARGET". It is that a generated file
+ * has to be checkable against itself, so choosing the wrong target is caught
+ * here rather than in a deploy.
+ */
+const sql = out.join("\n");
+const referenced = new Set(
+  [...sql.matchAll(/\bpublic\.(enum_[a-z0-9_]+)/g)].map((match) => match[1]),
+);
+const created = new Set(
+  [...sql.matchAll(/CREATE TYPE public\.(enum_[a-z0-9_]+)/g)].map((match) => match[1]),
+);
+const dangling = [...referenced].filter((name) => !created.has(name) && !target.enums.has(name));
+
+if (dangling.length) {
+  console.error(
+    `\nThis file uses ${dangling.length} type(s) that it does not create and the target does not have:\n` +
+      dangling.map((name) => `  ${name}`).join("\n") +
+      "\n\nIt would fail on the first statement that mentions one. That happens when\n" +
+      "TARGET_URL points at a database which already has them — a machine where\n" +
+      "`push` has run — rather than at one representing the database you are about\n" +
+      "to change. Point TARGET at a copy of that database and generate again.\n",
+  );
+  process.exit(1);
+}
+
+console.log(sql);
