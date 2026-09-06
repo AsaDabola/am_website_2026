@@ -420,8 +420,14 @@ export function ImageText({ data }: { data: ImageTextData }) {
   const shape = IMAGE_SHAPE[data.imageShape ?? "landscape"] ?? IMAGE_SHAPE.landscape;
   const rounded = data.imageRounded === false ? "" : "rounded-2xl";
 
+  // How much of its half the picture takes. "Small" is what the pillars of
+  // mission hold theirs to; left at full it grows by half again and the
+  // column stops reading as a caption beside the text.
+  const width =
+    data.imageSize === "small" ? "max-w-[386px]" : data.imageSize === "medium" ? "max-w-[520px]" : "";
+
   const picture = url ? (
-    <div className={`relative w-full overflow-hidden ${shape} ${rounded}`}>
+    <div className={`relative w-full overflow-hidden ${width} ${shape} ${rounded}`}>
       <Image
         src={url}
         alt=""

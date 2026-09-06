@@ -46,6 +46,7 @@ export type ImageTextData = Base & {
   imageSide?: "left" | "right" | null;
   imageShape?: "landscape" | "square" | "portrait" | "natural" | null;
   imageRounded?: boolean | null;
+  imageSize?: "full" | "medium" | "small" | null;
   buttons?: ButtonData[] | null;
 };
 

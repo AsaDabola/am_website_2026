@@ -6,7 +6,7 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import PillarsHero from "@/components/what-we-do/PillarsHero";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import withPageLayout from "@/components/pages/BuiltInPage";
+import PageBody from "@/components/pages/PageBody";
 
 // Sixty seconds, so a section added to this page in /admin appears without a
 // deploy. Without it the page is fully static and the authored layout would be
@@ -59,7 +59,7 @@ const pillars = [
   },
 ];
 
-async function PillarsOfMissionPage() {
+export default async function PillarsOfMissionPage() {
   const [tPractice, tHeader] = await Promise.all([
     getTranslations("InPractice"),
     getTranslations("Header"),
@@ -162,6 +162,7 @@ async function PillarsOfMissionPage() {
           split rather than a narrow image beside a wide text block: the
           photograph is a 386px square held to the left of its half, and the
           prose starts a shade past the midpoint. */}
+      <PageBody route="/what-we-do/pillars-of-mission">
       {pillars.map((pillar) => (
         <section
           key={pillar.title}
@@ -196,6 +197,7 @@ async function PillarsOfMissionPage() {
           </Container>
         </section>
       ))}
+      </PageBody>
 
       <section className="bg-white py-24">
         <Container className="text-center">
@@ -222,6 +224,3 @@ async function PillarsOfMissionPage() {
     </>
   );
 }
-
-// Lets this page be added to or replaced from /admin — see BuiltInPage.
-export default withPageLayout("/what-we-do/pillars-of-mission", PillarsOfMissionPage);

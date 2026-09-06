@@ -557,6 +557,7 @@ WITH expected(table_name, column_name) AS (VALUES
   ('pages_blocks_image_text', 'image_rounded'),
   ('pages_blocks_image_text', 'image_shape'),
   ('pages_blocks_image_text', 'image_side'),
+  ('pages_blocks_image_text', 'image_size'),
   ('pages_blocks_image_text_buttons', '_order'),
   ('pages_blocks_image_text_buttons', '_parent_id'),
   ('pages_blocks_image_text_buttons', 'href'),

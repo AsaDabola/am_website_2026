@@ -195,6 +195,20 @@ export const ImageTextBlock: Block = {
           defaultValue: true,
           admin: { description: "Rounded corners." },
         },
+        {
+          name: "imageSize",
+          type: "select",
+          defaultValue: "full",
+          options: [
+            { label: "Fills its half", value: "full" },
+            { label: "Medium", value: "medium" },
+            { label: "Small", value: "small" },
+          ],
+          admin: {
+            description:
+              "How much of its half the picture takes. The pillars of mission hold theirs to a small square rather than letting it fill the column.",
+          },
+        },
       ],
     },
     buttons,

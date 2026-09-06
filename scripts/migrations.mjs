@@ -171,6 +171,10 @@ export const MIGRATIONS = [
     file: "add-prose-aside-and-card-icons.sql",
     done: columnExists("pages_blocks_cards_cards", "icon"),
   },
+
+  // How much of its half a picture beside text takes. The pillars of mission
+  // hold theirs to a small square.
+  { file: "add-image-size.sql", done: columnExists("pages_blocks_image_text", "image_size") },
 ];
 
 /**

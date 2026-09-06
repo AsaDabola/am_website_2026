@@ -544,6 +544,7 @@ pages_blocks_image_text.image_id integer
 pages_blocks_image_text.image_rounded boolean
 pages_blocks_image_text.image_shape enum_pages_blocks_image_text_image_shape
 pages_blocks_image_text.image_side enum_pages_blocks_image_text_image_side
+pages_blocks_image_text.image_size enum_pages_blocks_image_text_image_size
 pages_blocks_image_text_buttons._order integer
 pages_blocks_image_text_buttons._parent_id character varying
 pages_blocks_image_text_buttons.href character varying
@@ -1151,6 +1152,7 @@ ENUM enum_pages_blocks_image_text_appearance_width = default,narrow,wide,full
 ENUM enum_pages_blocks_image_text_buttons_style = primary,secondary,link
 ENUM enum_pages_blocks_image_text_image_shape = landscape,square,portrait,natural
 ENUM enum_pages_blocks_image_text_image_side = left,right
+ENUM enum_pages_blocks_image_text_image_size = full,medium,small
 ENUM enum_pages_blocks_logos_appearance_align = default,left,center
 ENUM enum_pages_blocks_logos_appearance_background = default,white,paper,mist,brand,navy,night,colour,gradient,image
 ENUM enum_pages_blocks_logos_appearance_focal_point = center,top,bottom,left,right

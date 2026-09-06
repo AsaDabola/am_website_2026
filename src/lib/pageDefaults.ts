@@ -327,6 +327,77 @@ export const PAGE_DEFAULTS: Record<string, PageSeed> = {
     ],
   },
 
+  // The four pillars themselves. The band above them — the outlined heading
+  // over the navy gradient — and the four practices below stay coded: the
+  // first cannot be drawn without a text stroke and a four-stop wash no block
+  // offers, and the second is already translated wording rather than fixed
+  // copy, edited under Page wording.
+  "/what-we-do/pillars-of-mission": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "imageText",
+        heading: "Evangelism",
+        image: "/images/pillars-evangelism.webp",
+        imageSide: "left",
+        imageShape: "square",
+        imageSize: "small",
+        body: {
+          markdown:
+            "Evangelism is at the core of everything AM is and does. We wish to go and make disciples of every campus in every nation. We are not only consumers of the grace of God, but we wish to share it in accordance with Biblical instruction.\n\n" +
+            "Dr. Ralph D. Winter, our First Chairman, divided Evangelism into four categories: E0, E1, E2, and E3. His perspective on Evangelism gave an eye-opening realization that Christians are still far from reaching every people group beyond diverse cultural gaps. “E3” indicates the Evangelism that requires cultural crossing to a radically different people group.\n\n" +
+            "Following his legacy, AM endeavors to create numerous evangelism tools to reach all nations, peoples, and languages to embrace every individual regardless of their geographical and cultural gaps.",
+        },
+        appearance: { headingSize: "md", anchor: "evangelism" },
+      },
+      {
+        blockType: "imageText",
+        heading: "Education",
+        image: "/images/pillars-education.webp",
+        imageSide: "left",
+        imageShape: "square",
+        imageSize: "small",
+        body: {
+          markdown:
+            "Hosea 4:6 says, “…my people perish because of a lack of knowledge.” Paul says again in Romans 10:2 that the Israelites have a zeal for God, but not based on knowledge.\n\n" +
+            "In a world full of knowledge, AM International wishes to reaffirm the authority of the Word and uphold it as the center of our lives. The true knowledge is that which comes from God’s Word by knowing Him and living according to that.\n\n" +
+            "Thus, AM has created Bible study materials divided in 5 phases, resources, and activities all with the focus of understanding the truth of the Bible and making Jesus Christ known. Our Online Bible School, AM Academy (amacademy.org), provides a variety of educational tracks to support AM education.",
+        },
+        appearance: { headingSize: "md", anchor: "education" },
+      },
+      {
+        blockType: "imageText",
+        heading: "Discipleship",
+        image: "/images/pillars-discipleship.webp",
+        imageSide: "left",
+        imageShape: "square",
+        imageSize: "small",
+        body: {
+          markdown:
+            "Being a disciple may feel difficult at times. A true disciple is the one who follows the life of Jesus — the life of the cross. For this, apart from spreading the love of Christ to others actively and guiding the youth with Biblical truth, our ministry walks alongside students to help them live a godly life for Christ in this era. As disciples of Jesus we wish to impact the world and influence people through the power of the gospel.\n\n" +
+            "“Cheap grace is the preaching of forgiveness without requiring repentance, baptism without church discipline, Communion without confession, absolution without personal confession. Cheap grace is grace without discipleship, grace without the cross, grace without Jesus Christ, living and incarnate,” wrote Dietrich Bonhoeffer in his famous book, “The Cost of Discipleship”.\n\n" +
+            "AM’s central vision is to raise and make true disciples who experience the power of the Cross and Resurrection. We continue to formulate various programs that aim to equip and raise young disciples of Jesus that will bring a powerful transformation of the world.",
+        },
+        appearance: { headingSize: "md", anchor: "discipleship" },
+      },
+      {
+        blockType: "imageText",
+        heading: "Mission",
+        image: "/images/pillars-mission.webp",
+        imageSide: "left",
+        imageShape: "square",
+        imageSize: "small",
+        body: {
+          markdown:
+            "Thriving campus mission powerfully advances our world mission. AM is dedicated to spreading the Gospel and fulfilling the Great Commission by going into all nations.\n\n" +
+            "Through AM, young people have opportunities to participate in local mission while in school and pursue long-term mission after graduation. Our Bible studies, leadership training, online education, internships, and short-term mission trips equip young people to use their gifts in God’s mission.\n\n" +
+            "As we strengthen our campus mission, AM continues to build channels that expand our world mission and reach the unreached. Join us in reaching the unreached!",
+        },
+        appearance: { headingSize: "md", anchor: "mission" },
+      },
+    ],
+  },
+
   "/get-involved/internship": {
     mode: "replace",
     blocks: [
