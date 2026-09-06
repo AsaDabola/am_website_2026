@@ -445,3 +445,30 @@ them instead of filling the library with copies.
 **Adding a section to the home page** means adding its content to
 `HOME_DEFAULTS` at the same time. Without it the field defaults are empty
 again, which is the whole complaint.
+
+### The rest of the site's pages
+
+`src/lib/pageDefaults.ts` does for a built-in page what `homeDefaults` does for
+the home page: its body as data, seeded into the page's `layout`, rendered by
+`components/pages/PageBody` in place of the coded body. The page keeps its
+chrome — hero, sub-navigation, and the two bands it closes with — because that
+is not what an editor means by "this page".
+
+Prose is written as markdown, `{ markdown: "…" }`, and converted by
+`scripts/lib/markdownToLexical.mjs`. The field stores a Lexical document, and
+one written by hand is hundreds of lines of nested nodes nobody can proofread.
+
+To convert a page:
+
+1. Add its body to `PAGE_DEFAULTS`, keyed by route, using the blocks in
+   `collections/blocks/pageBlocks.ts`. Choose blocks that draw it as it is
+   drawn now — the bar is that a visitor sees the page they saw yesterday.
+2. In the route file, wrap the body in `<PageBody route="…">` and drop the
+   `withPageLayout` wrapper. Leave the coded body inside it: that is the
+   fallback for a record that has not been seeded, or a database that cannot
+   be reached.
+3. `npm run seed-content`. It creates the Pages entry if there is not one.
+
+**A page whose body cannot be expressed in blocks is not listed.** A form, a
+map, a listing that queries the database — leave those coded. Half-converting
+one puts an editable copy of a form's heading above a form that ignores it.

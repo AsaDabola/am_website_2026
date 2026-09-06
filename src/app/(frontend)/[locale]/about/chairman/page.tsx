@@ -5,7 +5,7 @@ import AboutSubNav from "@/components/about/AboutSubNav";
 import HonoraryChairman from "@/components/sections/HonoraryChairman";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import withPageLayout from "@/components/pages/BuiltInPage";
+import PageBody from "@/components/pages/PageBody";
 
 // Sixty seconds, so a section added to this page in /admin appears without a
 // deploy. Without it the page is fully static and the authored layout would be
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "AM's first honorary chairman, and the missiology the ministry still carries forward.",
 };
 
-function ChairmanPage() {
+export default function ChairmanPage() {
   return (
     <>
       {/* The design leads this page with the same dark legacy band the home
@@ -27,6 +27,9 @@ function ChairmanPage() {
       <AboutSubNav active="/about/chairman" />
       <HonoraryChairman headingLevel="h1" />
 
+      {/* Authored in the admin — see lib/pageDefaults. Below is the
+          fallback for a record that has not been seeded. */}
+      <PageBody route="/about/chairman">
       <article className="bg-white py-24">
         {/* 640px of text beside a 420px photograph with a 44px gutter, in a
             1104px column — the design's own measurements. Body at 21px on
@@ -105,6 +108,7 @@ function ChairmanPage() {
           </div>
         </Container>
       </article>
+      </PageBody>
 
       <PartnerWithUs />
       <Newsletter />
@@ -112,5 +116,3 @@ function ChairmanPage() {
   );
 }
 
-// Lets this page be added to or replaced from /admin — see BuiltInPage.
-export default withPageLayout("/about/chairman", ChairmanPage);

@@ -120,6 +120,8 @@ async function fill(
   filled: string[],
 ): Promise<Record<string, unknown> | null> {
   const { isShippedImage } = await import("../src/lib/homeDefaults");
+  const { isMarkdown } = await import("../src/lib/pageDefaults");
+  const { markdownToLexical } = await import("./lib/markdownToLexical.mjs");
   const out = { ...block };
   let changed = false;
 
@@ -130,6 +132,24 @@ async function fill(
       const id = await mediaFor(payload, value, cache);
       if (id === null) continue;
       out[key] = id;
+      filled.push(`${block.blockType}.${key}`);
+      changed = true;
+      continue;
+    }
+
+    // Prose is written as markdown, because the field behind it stores a
+    // Lexical document and one written by hand cannot be proofread.
+    if (isMarkdown(value)) {
+      out[key] = markdownToLexical(value.markdown);
+      filled.push(`${block.blockType}.${key}`);
+      changed = true;
+      continue;
+    }
+
+    if (value !== null && typeof value === "object" && !Array.isArray(value)) {
+      // A group — `appearance`, mostly. Copied whole; there is nothing inside
+      // one that needs resolving.
+      out[key] = value;
       filled.push(`${block.blockType}.${key}`);
       changed = true;
       continue;
@@ -236,6 +256,75 @@ async function main() {
 
     if (!DRY_RUN) {
       await payload.update({ collection: "pages", id: doc.id, data: { sections: next } as never });
+    }
+  }
+
+  /* ------------------------------------------ the rest of the site's pages */
+
+  const { PAGE_DEFAULTS } = await import("../src/lib/pageDefaults");
+  const routes = Object.entries(PAGE_DEFAULTS);
+
+  if (routes.length) {
+    // The main site's copy of each built-in page. A country's own version, if
+    // it has one, is left alone: it follows the main site until it says
+    // otherwise, which is how the wording works and how this should too.
+    const built = await payload.find({
+      collection: "pages",
+      where: { builtIn: { equals: true }, tenant: { exists: false } },
+      limit: 200,
+      depth: 0,
+    });
+    const bySlug = new Map(
+      (built.docs as unknown as { id: number | string; slug?: string; layout?: unknown[] }[]).map(
+        (page) => [String(page.slug ?? ""), page],
+      ),
+    );
+
+    const { BUILT_IN_PAGES } = await import("../src/lib/builtInPages");
+    const titles = new Map(BUILT_IN_PAGES.map((entry) => [entry.route, entry.title]));
+
+    for (const [route, seed] of routes) {
+      const slug = route.replace(/^\//, "");
+      let page = bySlug.get(slug);
+
+      // Make the entry rather than telling someone to run another script.
+      // "Remember to run X first" is the shape of the problem this is fixing.
+      if (!page) {
+        if (DRY_RUN) {
+          console.log(`${route}: no Pages entry; it would be created and filled.`);
+          continue;
+        }
+        page = (await payload.create({
+          collection: "pages",
+          data: {
+            title: titles.get(route) ?? slug,
+            slug,
+            builtIn: true,
+            published: true,
+          } as never,
+        })) as never;
+        console.log(`  created the Pages entry for ${route}`);
+      }
+
+      if ((page.layout ?? []).length > 0) continue;
+
+      const filled: string[] = [];
+      const blocks: Record<string, unknown>[] = [];
+      for (const seedBlock of seed.blocks) {
+        const { blockType, ...rest } = seedBlock;
+        const made = await fill(payload, { blockType }, rest, cache, filled);
+        blocks.push(made ?? { blockType });
+      }
+
+      touched += 1;
+      console.log(`\n${route}: ${blocks.length} section(s)`);
+      if (!DRY_RUN) {
+        await payload.update({
+          collection: "pages",
+          id: page.id,
+          data: { layout: blocks, layoutMode: seed.mode } as never,
+        });
+      }
     }
   }
 

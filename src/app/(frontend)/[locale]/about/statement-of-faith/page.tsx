@@ -4,7 +4,7 @@ import AboutHero from "@/components/about/AboutHero";
 import AboutSubNav from "@/components/about/AboutSubNav";
 import PartnerWithUs from "@/components/sections/PartnerWithUs";
 import Newsletter from "@/components/sections/Newsletter";
-import withPageLayout from "@/components/pages/BuiltInPage";
+import PageBody from "@/components/pages/PageBody";
 
 // Sixty seconds, so a section added to this page in /admin appears without a
 // deploy. Without it the page is fully static and the authored layout would be
@@ -37,7 +37,7 @@ const BELIEFS = [
   "We believe that the return of Jesus Christ is imminent, and that it will be visible and personal.",
 ];
 
-function StatementOfFaithPage() {
+export default function StatementOfFaithPage() {
   return (
     <>
       <AboutHero
@@ -52,6 +52,10 @@ function StatementOfFaithPage() {
       />
       <AboutSubNav active="/about/statement-of-faith" />
 
+      {/* The body is authored in the admin — see lib/pageDefaults. What is
+          below stays as the fallback: a page whose record has not been seeded
+          yet, or a database that cannot be reached, still renders. */}
+      <PageBody route="/about/statement-of-faith">
       <article className="bg-white py-20">
         <Container className="max-w-[720px]">
           <h2 className="font-display text-[28px] font-semibold tracking-[-0.028em] text-ink">
@@ -66,6 +70,7 @@ function StatementOfFaithPage() {
           </ol>
         </Container>
       </article>
+      </PageBody>
 
       <PartnerWithUs />
       <Newsletter />
@@ -73,5 +78,3 @@ function StatementOfFaithPage() {
   );
 }
 
-// Lets this page be added to or replaced from /admin — see BuiltInPage.
-export default withPageLayout("/about/statement-of-faith", StatementOfFaithPage);
