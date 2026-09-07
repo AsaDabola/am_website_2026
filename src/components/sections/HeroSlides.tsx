@@ -148,7 +148,23 @@ export default function HeroSlides({
           where the faces are — and a photograph of people you cannot see the
           eyes of is not doing its job. The padding clears the slide
           indicators at the bottom right. */}
-      <Container className="relative flex min-h-[720px] flex-col justify-end pb-28 pt-24">
+      {/* The height follows the width instead of being fixed, so the banner
+          keeps roughly the photograph's own proportions and stops cropping it
+          to pieces.
+
+          It was a flat 720px at every width. The slides are about 2:1, so at
+          1440 the frame matched them and nothing was lost — which is what a
+          desktop check shows — but the narrower the window, the taller the
+          frame was relative to the picture, and `object-cover` paid for it by
+          throwing away the sides. Measured: 34% of the width gone at a 940px
+          window, 46% at 768. That does not read as a cropped photograph, it
+          reads as a different one, which is exactly what it was reported as.
+
+          50vw tracks the 2:1; 720 caps it so the design's height is unchanged
+          on a wide screen; 480 is the floor, because below that the headline
+          and the buttons would not have room and a hero with the words falling
+          out of it is worse than a hero that crops. */}
+      <Container className="relative flex min-h-[max(480px,min(720px,50vw))] flex-col justify-end pb-28 pt-24">
         <Eyebrow tone="light">{eyebrow}</Eyebrow>
 
         {/* Two lines, the second in the pale blue: the colouring the design
