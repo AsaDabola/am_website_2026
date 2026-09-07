@@ -24,7 +24,7 @@ const DEFAULT_SLIDES = [
   // reason: `slide1`, `slide2` and `slide5` cost nothing where they are, and
   // bringing a photograph back is one line here rather than a re-translation.
   { image: "/images/hero-slide-bible-study.webp", key: "slide4" },
-  { image: "/images/hero-slide-campus.webp", key: "slide3" },
+  { image: "/images/hero-slide-campus-aerial.webp", key: "slide3" },
 ] as const;
 
 export default async function Hero({ data }: { data?: HeroData } = {}) {

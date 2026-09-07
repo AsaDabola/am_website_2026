@@ -179,6 +179,14 @@ export const MIGRATIONS = [
   // The shorter, side-ruled quotation the About and Mission statement designs
   // set a verse in, alongside the large italic one.
   { file: "add-quote-style.sql", done: columnExists("pages_blocks_quote", "style") },
+
+  // The campus aerial under its new filename. Renamed so that replacing the
+  // photograph actually reaches a reader: the image cache is keyed by URL, so
+  // new bytes at the old name go on serving the old picture.
+  {
+    file: "add-campus-aerial-image-key.sql",
+    done: enumHas("enum_tenant_content_images_key", "/images/hero-slide-campus-aerial.webp"),
+  },
 ];
 
 /**
