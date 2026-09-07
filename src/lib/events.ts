@@ -19,6 +19,31 @@ export type EventSummary = {
 export const EVENT_SORTS = ["newest", "oldest"] as const;
 export type EventSort = (typeof EVENT_SORTS)[number];
 
+/**
+ * How an events query is ordered, in one place.
+ *
+ * There were three answers to this and they disagreed: the listing sorted on
+ * `sortOrder` ascending for "newest", the home strip sorted on `startDate` —
+ * a column nothing fills, so its order was whatever Postgres felt like — and
+ * the short list used ascending again. Ordering is one decision, so it is
+ * made once here and read everywhere.
+ *
+ * **Descending is newest.** `sortOrder` counts up as events are added, so the
+ * highest number is the most recent one entered; ascending was serving the
+ * oldest under a button that said Newest. The import script's own comment
+ * claimed the opposite — that the list it read ran most-recent-first — but
+ * that describes the file it imported from, not the numbers in the database
+ * now, and the site is what the reader sees.
+ *
+ * `startDate` deliberately does not come into it. The importer never writes
+ * one — the titles carry "Dec. 6-7" with no year — so it is null on every row,
+ * and sorting on a column that is always null orders by nothing at all. That
+ * is what the home strip was doing.
+ */
+export function eventOrder(sort: EventSort): string {
+  return sort === "newest" ? "-sortOrder" : "sortOrder";
+}
+
 function toSummary(doc: unknown): EventSummary {
   const d = doc as Record<string, unknown>;
   return {
@@ -38,7 +63,9 @@ export async function getEventsList(): Promise<EventSummary[]> {
     const payload = await getPayload({ config });
     const result = await payload.find({
       collection: "events",
-      sort: "sortOrder",
+      // The same order the listing opens on, so the short list and the full
+      // one agree about which event is the most recent.
+      sort: eventOrder("newest"),
       limit: 24,
       // Same reason as the news listing: without this the events page showed
       // every country's events regardless of who they were shared with.
@@ -53,11 +80,11 @@ export async function getEventsList(): Promise<EventSummary[]> {
 /**
  * One page of the events listing.
  *
- * Ordered by the place each event holds in the list it came from, not by date:
- * that list is all that is known about when these happened — the titles carry
- * "Dec. 6-7" and no year — so the order is the information, and inventing a
- * year to sort by would be inventing the answer. "Newest" reads the list from
- * the top, which is how it was given: most recent first.
+ * Ordered by the place each event holds in the list, not by date: no event
+ * carries a year — the titles say "Dec. 6-7" — so the position is all that is
+ * known about when it happened, and inventing a date to sort by would be
+ * inventing the answer. Which direction that runs is decided once, in
+ * `eventOrder`.
  */
 export async function getEventsPage(
   options: { sort?: EventSort; page?: number; perPage?: number } = {},
@@ -67,7 +94,7 @@ export async function getEventsPage(
     const payload = await getPayload({ config });
     const result = await payload.find({
       collection: "events",
-      sort: sort === "newest" ? "sortOrder" : "-sortOrder",
+      sort: eventOrder(sort),
       page,
       limit: perPage,
       where: tenantContentWhere(getRequestTenant() ?? undefined),
