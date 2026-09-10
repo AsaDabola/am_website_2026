@@ -16,15 +16,14 @@ export const metadata: Metadata = {
 };
 
 /**
- * Set to true once AM's photographs are in public/images/tour/:
+ * The aerial itself ships with the site, so the map is live. Set this to true
+ * once the four building photographs are in public/images/tour/:
  *
- *   campus-aerial.jpg   the 1920x1080 aerial the rooflines are traced over
  *   dormitory.jpg  seminary.jpg  office.jpg  chapel.jpg
  *
- * Until then every photo renders as the site's gradient placeholder, so the
- * page is complete and navigable rather than a grid of broken images. The
- * rooflines in campusBuildings.ts are traced against that specific aerial —
- * a differently framed photograph needs them re-traced.
+ * Until then the four cards and the dialog galleries render as the site's
+ * gradient placeholder, so the page is complete and navigable rather than a
+ * grid of broken images.
  */
 const HAS_CAMPUS_PHOTOS = false;
 

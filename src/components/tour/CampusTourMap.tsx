@@ -19,11 +19,15 @@ import { CAMPUS_BUILDINGS, type CampusBuilding } from "./campusBuildings";
  * makes the same highlight work for keyboard focus.
  */
 export default function CampusTourMap({
-  aerial = "/images/tour/campus-aerial.jpg",
+  aerial = "/images/hero-slide-campus-aerial.webp",
   hasPhotos = false,
 }: {
+  /**
+   * Named directly rather than read from the CMS image keys: the outlines in
+   * campusBuildings.ts are traced against this exact photograph.
+   */
   aerial?: string;
-  /** False until AM's photographs are in the repo — see the page comment. */
+  /** False until the four building photographs are in the repo. */
   hasPhotos?: boolean;
 }) {
   const [active, setActive] = useState<string | null>(null);
@@ -42,27 +46,21 @@ export default function CampusTourMap({
       <section className="py-12 lg:py-16">
         <Container>
           <div className="relative overflow-hidden rounded-2xl">
-            {hasPhotos ? (
-              <Image
-                src={aerial}
-                alt="Aerial photograph of the AM campus, showing the dormitory, Immanuel Theological Seminary, the general office and the chapel"
-                width={1920}
-                height={1080}
-                priority
-                className="w-full"
-              />
-            ) : (
-              <PlaceholderPhoto
-                className="aspect-[16/9] w-full"
-                label="Campus aerial photograph"
-              />
-            )}
+            <Image
+              src={aerial}
+              alt="Aerial photograph of the AM campus, showing the dormitory, Immanuel Theological Seminary, the general office and the chapel"
+              width={3840}
+              height={1929}
+              sizes="(min-width: 1280px) 1200px, 100vw"
+              priority
+              className="w-full"
+            />
 
             {/* Rooflines and leader lines, drawn in the photo's own
                 coordinate space so they track it at any width. */}
             <svg
               className="absolute inset-0 h-full w-full"
-              viewBox="0 0 1920 1080"
+              viewBox="0 0 1200 603"
               preserveAspectRatio="none"
               aria-hidden="true"
             >
@@ -82,7 +80,7 @@ export default function CampusTourMap({
                     <circle
                       cx={building.leader.x1}
                       cy={building.leader.y1}
-                      r={8}
+                      r={5}
                       fill="white"
                     />
                   </g>
