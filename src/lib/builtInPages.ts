@@ -55,6 +55,7 @@ export const BUILT_IN_PAGES: BuiltInPage[] = [
   { route: "/news", title: "News", onCountrySites: true },
   { route: "/news/editorial", title: "Editorial", onCountrySites: true },
   { route: "/news/photo-news", title: "Photo News", onCountrySites: true },
+  { route: "/tour", title: "Campus Tour", onCountrySites: false },
   { route: "/what-we-do/administration", title: "Administration", onCountrySites: true },
   { route: "/what-we-do/pillars-of-mission", title: "Our Pillars of Mission", onCountrySites: true },
 ];
