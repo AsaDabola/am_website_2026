@@ -50,6 +50,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/admin-intro-1.webp",
     "usedOn": [
       "/what-we-do/administration",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -57,6 +58,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/admin-intro-2.webp",
     "usedOn": [
       "/what-we-do/administration",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -64,6 +66,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/admin-intro-laptop.webp",
     "usedOn": [
       "/what-we-do/administration",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -78,6 +81,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/alumni-1.webp",
     "usedOn": [
       "/get-involved/alumni-connect",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -85,6 +89,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/alumni-2.webp",
     "usedOn": [
       "/get-involved/alumni-connect",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -92,6 +97,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/alumni-3.webp",
     "usedOn": [
       "/get-involved/alumni-connect",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -106,6 +112,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/bible-study-bible-core.webp",
     "usedOn": [
       "/bible-study",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -113,6 +120,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/bible-study-christian-life.webp",
     "usedOn": [
       "/bible-study",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -120,6 +128,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/bible-study-collage.webp",
     "usedOn": [
       "Newsletter",
+      "homeDefaults",
       "siteImages"
     ]
   },
@@ -127,6 +136,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/bible-study-discipleship-track.webp",
     "usedOn": [
       "/bible-study",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -134,6 +144,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/bible-study-faith.webp",
     "usedOn": [
       "/bible-study",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -141,6 +152,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/bible-study-group.webp",
     "usedOn": [
       "BibleStudyProgram",
+      "homeDefaults",
       "siteImages"
     ]
   },
@@ -162,6 +174,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/bible-study-only-jesus.webp",
     "usedOn": [
       "/bible-study",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -169,6 +182,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/bible-study-sola-fide.webp",
     "usedOn": [
       "/bible-study",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -176,6 +190,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/bible-teacher-called-to-be.webp",
     "usedOn": [
       "/get-involved/bible-teacher-training",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -183,6 +198,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/bible-teacher-called-to-serve.webp",
     "usedOn": [
       "/get-involved/bible-teacher-training",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -197,6 +213,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/chairman-photo-1.webp",
     "usedOn": [
       "/about/chairman",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -204,6 +221,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/chairman-photo-2.webp",
     "usedOn": [
       "/about/chairman",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -218,6 +236,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/chapter-volunteer-1.webp",
     "usedOn": [
       "/get-involved/chapter-staff",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -225,6 +244,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/chapter-volunteer-2.webp",
     "usedOn": [
       "/get-involved/chapter-staff",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -232,6 +252,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/chapter-volunteer-3.webp",
     "usedOn": [
       "/get-involved/chapter-staff",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -253,6 +274,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/coord-andrea-rico.webp",
     "usedOn": [
       "/about/leadership",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -260,6 +282,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/coord-joel-lee.webp",
     "usedOn": [
       "/about/leadership",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -267,6 +290,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/coord-jonathan-xie.webp",
     "usedOn": [
       "/about/leadership",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -274,6 +298,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/coord-khiaghie-koropa.webp",
     "usedOn": [
       "/about/leadership",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -281,6 +306,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/coord-mara-onyeama.webp",
     "usedOn": [
       "/about/leadership",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -288,6 +314,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/coord-priya-vaya.webp",
     "usedOn": [
       "/about/leadership",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -295,6 +322,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/coord-samuel-kwizera.webp",
     "usedOn": [
       "/about/leadership",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -310,6 +338,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/donate-offering.webp",
     "usedOn": [
       "/get-involved/donate",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -324,6 +353,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/get-involved-bible-studies.webp",
     "usedOn": [
       "GetInvolved",
+      "homeDefaults",
       "siteImages"
     ]
   },
@@ -331,6 +361,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/get-involved-connect.webp",
     "usedOn": [
       "/get-involved",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -338,6 +369,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/get-involved-grow.webp",
     "usedOn": [
       "/get-involved",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -352,6 +384,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/get-involved-internship.webp",
     "usedOn": [
       "GetInvolved",
+      "homeDefaults",
       "siteImages"
     ]
   },
@@ -359,6 +392,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/get-involved-lead.webp",
     "usedOn": [
       "/get-involved",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -366,6 +400,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/get-involved-sent.webp",
     "usedOn": [
       "/get-involved",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -373,6 +408,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/get-involved-volunteer.webp",
     "usedOn": [
       "GetInvolved",
+      "homeDefaults",
       "siteImages"
     ]
   },
@@ -380,6 +416,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/group-activities-bible-study.webp",
     "usedOn": [
       "/get-involved/group-activities",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -387,6 +424,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/group-activities-fellowship.webp",
     "usedOn": [
       "/get-involved/group-activities",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -401,6 +439,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/group-activities-morning-qt.webp",
     "usedOn": [
       "/get-involved/group-activities",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -408,6 +447,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/group-activities-prayer.webp",
     "usedOn": [
       "/get-involved/group-activities",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -450,13 +490,15 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/hero-slide-bible-study.webp",
     "usedOn": [
       "Hero",
+      "homeDefaults",
       "siteImages"
     ]
   },
   {
-    "path": "/images/hero-slide-campus.webp",
+    "path": "/images/hero-slide-campus-aerial.webp",
     "usedOn": [
       "Hero",
+      "homeDefaults",
       "siteImages"
     ]
   },
@@ -471,6 +513,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/honorary-chairman.webp",
     "usedOn": [
       "HonoraryChairman",
+      "homeDefaults",
       "siteImages"
     ]
   },
@@ -478,6 +521,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/hq-asa-daboh.webp",
     "usedOn": [
       "/about/leadership",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -485,6 +529,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/hq-can-liu.webp",
     "usedOn": [
       "/about/leadership",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -492,6 +537,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/hq-ruth-jigmedsuren.webp",
     "usedOn": [
       "/about/leadership",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -499,6 +545,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/internship-1.webp",
     "usedOn": [
       "/get-involved/internship",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -506,6 +553,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/internship-2.webp",
     "usedOn": [
       "/get-involved/internship",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -513,6 +561,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/internship-3.webp",
     "usedOn": [
       "/get-involved/internship",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -527,6 +576,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/leader-paul-devries.webp",
     "usedOn": [
       "/about/leadership",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -534,6 +584,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/leader-reid.webp",
     "usedOn": [
       "/about/leadership",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -555,6 +606,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/ministry-connect.webp",
     "usedOn": [
       "Ministries",
+      "homeDefaults",
       "siteImages"
     ]
   },
@@ -562,6 +614,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/ministry-grow.webp",
     "usedOn": [
       "Ministries",
+      "homeDefaults",
       "siteImages"
     ]
   },
@@ -569,6 +622,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/ministry-lead.webp",
     "usedOn": [
       "Ministries",
+      "homeDefaults",
       "siteImages"
     ]
   },
@@ -597,6 +651,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/online-bible-study-1.webp",
     "usedOn": [
       "/get-involved/online-bible-study",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -604,6 +659,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/online-bible-study-2.webp",
     "usedOn": [
       "/get-involved/online-bible-study",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -611,6 +667,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/online-bible-study-3.webp",
     "usedOn": [
       "/get-involved/online-bible-study",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -625,6 +682,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/pillars-discipleship.webp",
     "usedOn": [
       "/what-we-do/pillars-of-mission",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -632,6 +690,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/pillars-education.webp",
     "usedOn": [
       "/what-we-do/pillars-of-mission",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -639,6 +698,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/pillars-evangelism.webp",
     "usedOn": [
       "/what-we-do/pillars-of-mission",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -660,6 +720,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/pillars-mission.webp",
     "usedOn": [
       "/what-we-do/pillars-of-mission",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -674,6 +735,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/volunteer-calling.webp",
     "usedOn": [
       "/get-involved/volunteer",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -688,6 +750,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/volunteer-team.webp",
     "usedOn": [
       "/get-involved/volunteer",
+      "pageDefaults",
       "siteImages"
     ]
   },
@@ -695,6 +758,7 @@ export const SITE_IMAGES: SiteImage[] = [
     "path": "/images/volunteer-worship.webp",
     "usedOn": [
       "/get-involved/volunteer",
+      "pageDefaults",
       "siteImages"
     ]
   }

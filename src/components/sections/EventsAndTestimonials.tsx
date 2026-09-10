@@ -1,5 +1,6 @@
 import Container from "@/components/ui/Container";
 import ArticleCard from "@/components/news/ArticleCard";
+import { eventOrder } from "@/lib/events";
 import { fetchCollectionSafely } from "@/lib/getPayloadSafely";
 import { tenantContentWhere } from "@/lib/tenantContentWhere";
 import { mediaUrl } from "@/lib/homeBlockTypes";
@@ -27,7 +28,9 @@ export default async function EventsAndTestimonials({
     fetchCollectionSafely(async (payload) => {
       const result = await payload.find({
         collection: "events",
-        sort: "startDate",
+        // Was `startDate`, which nothing ever fills, so this row's order was
+        // whatever Postgres returned. The listing's own order, shared.
+        sort: eventOrder("newest"),
         limit: 4,
         where: tenantContentWhere(tenantId),
       });

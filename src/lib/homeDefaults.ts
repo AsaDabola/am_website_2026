@@ -55,7 +55,7 @@ export const HOME_DEFAULTS: Record<string, BlockDefaults> = {
         line2: H.Hero.slide4Line2,
       },
       {
-        image: "/images/hero-slide-campus.webp",
+        image: "/images/hero-slide-campus-aerial.webp",
         line1: H.Hero.slide3Line1,
         line2: H.Hero.slide3Line2,
       },
