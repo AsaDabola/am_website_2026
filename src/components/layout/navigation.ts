@@ -61,6 +61,20 @@ export async function getNavigation(): Promise<{
               tenantAware: true,
             },
             { label: t("whoWeAreMenu.history"), href: "/about/history", tenantAware: true },
+            /*
+             * Deliberately not translated, and deliberately not tenant-aware.
+             * The tour is a walk around the Trenton campus, so it exists once,
+             * on amintl.org — `scope: ""` keeps it out of the menu on the
+             * country sites, which have no such page to link to. A next-intl
+             * key would have to be added to all forty-eight catalogues to
+             * spell one English label that only ever renders in English.
+             */
+            {
+              label: "Campus Tour",
+              href: "/tour",
+              tenantAware: false,
+              scope: "",
+            },
           ],
         },
         {

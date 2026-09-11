@@ -16,16 +16,15 @@ export const metadata: Metadata = {
 };
 
 /**
- * The aerial itself ships with the site, so the map is live. Set this to true
- * once the four building photographs are in public/images/tour/:
+ * All five images are in public/images/tour/, so the page runs on the real
+ * artwork. Dropping this back to false returns every frame to the site's
+ * gradient placeholder, which is how the page shipped before the images
+ * arrived — worth keeping for whoever swaps the campus rendering next.
  *
- *   dormitory.jpg  seminary.jpg  office.jpg  chapel.jpg
- *
- * Until then the four cards and the dialog galleries render as the site's
- * gradient placeholder, so the page is complete and navigable rather than a
- * grid of broken images.
+ * The dialog galleries are the one thing still drawn as placeholders: those
+ * are three interior views per building, and only the exteriors exist.
  */
-const HAS_CAMPUS_PHOTOS = false;
+const HAS_CAMPUS_PHOTOS = true;
 
 export default function CampusTourPage() {
   return (

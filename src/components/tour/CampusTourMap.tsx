@@ -19,15 +19,15 @@ import { CAMPUS_BUILDINGS, type CampusBuilding } from "./campusBuildings";
  * makes the same highlight work for keyboard focus.
  */
 export default function CampusTourMap({
-  aerial = "/images/hero-slide-campus-aerial.webp",
+  aerial = "/images/tour/campus-aerial.jpg",
   hasPhotos = false,
 }: {
   /**
    * Named directly rather than read from the CMS image keys: the outlines in
-   * campusBuildings.ts are traced against this exact photograph.
+   * campusBuildings.ts are traced against this exact image.
    */
   aerial?: string;
-  /** False until the four building photographs are in the repo. */
+  /** False while the four building views are missing from the repo. */
   hasPhotos?: boolean;
 }) {
   const [active, setActive] = useState<string | null>(null);
@@ -48,9 +48,9 @@ export default function CampusTourMap({
           <div className="relative overflow-hidden rounded-2xl">
             <Image
               src={aerial}
-              alt="Aerial photograph of the AM campus, showing the dormitory, Immanuel Theological Seminary, the general office and the chapel"
-              width={3840}
-              height={1929}
+              alt="Aerial view of the AM campus, showing the dormitory, Immanuel Theological Seminary, the general office and the chapel"
+              width={1920}
+              height={1080}
               sizes="(min-width: 1280px) 1200px, 100vw"
               priority
               className="w-full"
@@ -60,7 +60,7 @@ export default function CampusTourMap({
                 coordinate space so they track it at any width. */}
             <svg
               className="absolute inset-0 h-full w-full"
-              viewBox="0 0 1200 603"
+              viewBox="0 0 1920 1080"
               preserveAspectRatio="none"
               aria-hidden="true"
             >
@@ -80,7 +80,7 @@ export default function CampusTourMap({
                     <circle
                       cx={building.leader.x1}
                       cy={building.leader.y1}
-                      r={5}
+                      r={8}
                       fill="white"
                     />
                   </g>
@@ -198,9 +198,14 @@ export default function CampusTourMap({
         </Container>
       </section>
 
+      {/*
+        `m-auto` is what centres it. A modal dialog is centred by the UA
+        stylesheet's `margin: auto`, and Tailwind's preflight zeroes margin on
+        every element — without this the panel sits in the top-left corner.
+      */}
       <dialog
         ref={dialogRef}
-        className="w-[min(92vw,640px)] rounded-2xl p-0 backdrop:bg-night/70 backdrop:backdrop-blur-sm"
+        className="m-auto w-[min(92vw,640px)] rounded-2xl p-0 backdrop:bg-night/70 backdrop:backdrop-blur-sm"
         onClose={() => setOpen(null)}
         onClick={(event) => {
           if (event.target === dialogRef.current) setOpen(null);

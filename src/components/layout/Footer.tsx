@@ -3,6 +3,7 @@ import FooterOrg from "@/components/layout/FooterOrg";
 import FooterCopyright from "@/components/layout/FooterCopyright";
 import { getCountryDirectory } from "@/lib/countryDirectory";
 import TenantLink from "@/components/layout/TenantLink";
+import InternationalOnly from "@/components/layout/InternationalOnly";
 import Container from "@/components/ui/Container";
 import Logo from "@/components/ui/Logo";
 import { FacebookIcon, InstagramIcon, MailIcon, YoutubeIcon } from "@/components/ui/icons";
@@ -52,6 +53,8 @@ export default async function Footer() {
         { label: t("statementOfFaith"), href: "/about/statement-of-faith" },
         { label: t("ourHistory"), href: "/about/history" },
         { label: t("leadership"), href: "/about/leadership" },
+        // English, and amintl.org only — see the note in layout/navigation.ts.
+        { label: "Campus Tour", href: "/tour", internationalOnly: true },
       ],
     },
     {
@@ -118,13 +121,20 @@ export default async function Footer() {
               {col.title}
             </h3>
             <ul className="mt-6 space-y-4 text-sm text-on-dark/70">
-              {col.links.map((link) => (
-                <li key={link.label}>
-                  <TenantLink href={link.href} className="hover:text-white">
-                    {link.label}
-                  </TenantLink>
-                </li>
-              ))}
+              {col.links.map((link) => {
+                const item = (
+                  <li key={link.label}>
+                    <TenantLink href={link.href} className="hover:text-white">
+                      {link.label}
+                    </TenantLink>
+                  </li>
+                );
+                return "internationalOnly" in link && link.internationalOnly ? (
+                  <InternationalOnly key={link.label}>{item}</InternationalOnly>
+                ) : (
+                  item
+                );
+              })}
             </ul>
           </div>
         ))}
