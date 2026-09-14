@@ -135,6 +135,30 @@ export type GalleryData = Base & {
   images?: { id?: string; image?: MediaRef; caption?: string | null }[] | null;
 };
 
+export type CampusTourBuildingData = {
+  id?: string;
+  name?: string | null;
+  tag?: string | null;
+  text?: string | null;
+  photo?: MediaRef;
+  gallery?: { id?: string; image?: MediaRef; caption?: string | null }[] | null;
+  /** The roofline, as an SVG path in the aerial's 1920x1080 space. */
+  shape?: string | null;
+  pinLeft?: number | null;
+  pinTop?: number | null;
+  leaderX1?: number | null;
+  leaderY1?: number | null;
+  leaderX2?: number | null;
+  leaderY2?: number | null;
+};
+
+export type CampusTourData = Base & {
+  blockType: "campusTour";
+  hint?: string | null;
+  aerial?: MediaRef;
+  buildings?: CampusTourBuildingData[] | null;
+};
+
 export type CtaData = Base & {
   blockType: "cta";
   description?: string | null;
@@ -172,6 +196,7 @@ export type PageBlockData =
   | AccordionData
   | QuoteData
   | GalleryData
+  | CampusTourData
   | CtaData
   | EmbedData
   | LogosData

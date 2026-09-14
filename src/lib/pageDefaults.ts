@@ -24,10 +24,25 @@
  * The blocks chosen for a page should draw it as it is drawn now. That is the
  * bar: an editor opening the page finds its content, and a visitor sees the
  * page they saw yesterday. Where a page's body cannot be expressed in the
- * blocks — a form, a map, a listing that queries the database — it is not
- * listed here, and its body stays coded. Half-converting one would put an
- * editable copy of a form's heading above a form that ignores it.
+ * blocks — a form, a listing that queries the database — it is not listed
+ * here, and its body stays coded. Half-converting one would put an editable
+ * copy of a form's heading above a form that ignores it.
+ *
+ * The campus tour was in that excluded set until it got a block of its own.
+ * An interactive map is not a shape the general blocks can express, so rather
+ * than half-convert it, `campusTour` holds the whole thing — the aerial, the
+ * four buildings, their photographs and their outlines — and the interaction
+ * stays coded underneath. Its entry below is built from the same constants the
+ * coded page falls back to, so the seed and the page cannot drift apart.
  */
+
+import {
+  CAMPUS_AERIAL,
+  CAMPUS_BUILDINGS,
+  CAMPUS_TOUR_EYEBROW,
+  CAMPUS_TOUR_HEADING,
+  CAMPUS_TOUR_HINT,
+} from "@/components/tour/campusBuildings";
 
 /** Markdown the seeder turns into a rich text document. */
 export type Markdown = { markdown: string };
@@ -47,6 +62,32 @@ export type PageSeed = {
 };
 
 export const PAGE_DEFAULTS: Record<string, PageSeed> = {
+  "/tour": {
+    mode: "replace",
+    blocks: [
+      {
+        blockType: "campusTour",
+        eyebrow: CAMPUS_TOUR_EYEBROW,
+        heading: CAMPUS_TOUR_HEADING,
+        hint: CAMPUS_TOUR_HINT,
+        aerial: CAMPUS_AERIAL,
+        buildings: CAMPUS_BUILDINGS.map((building) => ({
+          name: building.name,
+          tag: building.tag,
+          text: building.text,
+          photo: building.photo,
+          gallery: building.gallery.map((shot) => ({ caption: shot.caption })),
+          shape: building.shape,
+          pinLeft: building.pin.left,
+          pinTop: building.pin.top,
+          leaderX1: building.leader.x1,
+          leaderY1: building.leader.y1,
+          leaderX2: building.leader.x2,
+          leaderY2: building.leader.y2,
+        })),
+      },
+    ],
+  },
   "/about/statement-of-faith": {
     mode: "replace",
     blocks: [

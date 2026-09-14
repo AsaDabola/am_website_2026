@@ -15,17 +15,6 @@ export const metadata: Metadata = {
     "Take a virtual tour of the Apostolos Missions International campus in Trenton, New Jersey — the chapel, general office, Immanuel Theological Seminary building and student dormitory.",
 };
 
-/**
- * All five images are in public/images/tour/, so the page runs on the real
- * artwork. Dropping this back to false returns every frame to the site's
- * gradient placeholder, which is how the page shipped before the images
- * arrived — worth keeping for whoever swaps the campus rendering next.
- *
- * The dialog galleries are the one thing still drawn as placeholders: those
- * are three interior views per building, and only the exteriors exist.
- */
-const HAS_CAMPUS_PHOTOS = true;
-
 export default function CampusTourPage() {
   return (
     <>
@@ -36,7 +25,7 @@ export default function CampusTourPage() {
       />
 
       <PageBody route="/tour">
-        <CampusTourMap hasPhotos={HAS_CAMPUS_PHOTOS} />
+        <CampusTourMap />
       </PageBody>
 
       <PartnerWithUs />

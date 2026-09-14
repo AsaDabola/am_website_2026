@@ -187,6 +187,14 @@ export const MIGRATIONS = [
     file: "add-campus-aerial-image-key.sql",
     done: enumHas("enum_tenant_content_images_key", "/images/hero-slide-campus-aerial.webp"),
   },
+
+  // The campus tour as an editable section, so the Campus Tour page opens in
+  // the admin holding its own content rather than an empty body. Three tables:
+  // the block, its buildings, and each building's photographs.
+  {
+    file: "add-campus-tour-block.sql",
+    done: tableExists("pages_blocks_campus_tour"),
+  },
 ];
 
 /**

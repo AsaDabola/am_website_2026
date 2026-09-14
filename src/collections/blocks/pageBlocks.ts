@@ -566,6 +566,116 @@ export const GalleryBlock: Block = {
   ],
 };
 
+/**
+ * The campus tour: an aerial view with each building's roofline traced over
+ * it, a card for each building, and a dialog of photographs behind each one.
+ *
+ * The page it draws is one image and four buildings, so the interaction stays
+ * coded and everything an editor would want to change is here — the names, the
+ * descriptions, the photographs, the captions, and the aerial itself.
+ *
+ * "Where it sits on the aerial" is the exception, and it is collapsed because
+ * of what it is: an SVG path traced over one specific photograph. It is
+ * editable rather than hidden, because a replaced aerial needs it retraced and
+ * that should not require a deploy — but nobody is going to type a roofline by
+ * hand, so it stays out of the way of the fields that get edited.
+ */
+export const CampusTourBlock: Block = {
+  slug: "campusTour",
+  labels: { singular: "Campus tour", plural: "Campus tours" },
+  admin: { group: "Page sections" },
+  fields: [
+    ...headingFields,
+    {
+      name: "hint",
+      type: "text",
+      admin: { description: "The line under the aerial, telling a reader the buildings can be opened." },
+    },
+    {
+      name: "aerial",
+      type: "upload",
+      relationTo: "media",
+      admin: {
+        description:
+          "The aerial the buildings are traced over. Replacing it means retracing every building below, under \"Where it sits on the aerial\".",
+      },
+    },
+    {
+      name: "buildings",
+      type: "array",
+      minRows: 1,
+      labels: { singular: "Building", plural: "Buildings" },
+      admin: {
+        initCollapsed: true,
+        // Named rows, because these four have to be told apart — see the
+        // component. Payload's numbered default is right for a gallery and
+        // wrong for a list of buildings.
+        components: { RowLabel: "/components/admin/BuildingRowLabel#BuildingRowLabel" },
+      },
+      fields: [
+        {
+          type: "row",
+          fields: [
+            { name: "name", type: "text", required: true },
+            {
+              name: "tag",
+              type: "text",
+              admin: { description: "The small label on the photograph — \"Housing\", \"Worship\"." },
+            },
+          ],
+        },
+        { name: "text", type: "textarea" },
+        { name: "photo", type: "upload", relationTo: "media" },
+        {
+          name: "gallery",
+          type: "array",
+          labels: { singular: "Photograph", plural: "Photographs" },
+          admin: {
+            description: "Shown when the building is opened. A row with no picture draws a placeholder.",
+            initCollapsed: true,
+          },
+          fields: [
+            { name: "image", type: "upload", relationTo: "media" },
+            { name: "caption", type: "text" },
+          ],
+        },
+        {
+          type: "collapsible",
+          label: "Where it sits on the aerial",
+          admin: { initCollapsed: true },
+          fields: [
+            {
+              name: "shape",
+              type: "textarea",
+              admin: {
+                description:
+                  "The roofline, as an SVG path, in the aerial's own 1920x1080 space. Traced against one photograph — a different aerial needs a new path.",
+              },
+            },
+            {
+              type: "row",
+              fields: [
+                { name: "pinLeft", type: "number", admin: { description: "Name tag, % across." } },
+                { name: "pinTop", type: "number", admin: { description: "Name tag, % down." } },
+              ],
+            },
+            {
+              type: "row",
+              fields: [
+                { name: "leaderX1", type: "number", admin: { description: "Line start, x of 1920." } },
+                { name: "leaderY1", type: "number", admin: { description: "Line start, y of 1080." } },
+                { name: "leaderX2", type: "number", admin: { description: "Line end, x." } },
+                { name: "leaderY2", type: "number", admin: { description: "Line end, y." } },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    appearanceField,
+  ],
+};
+
 export const CtaBlock: Block = {
   slug: "cta",
   labels: { singular: "Call to action", plural: "Calls to action" },
@@ -685,6 +795,7 @@ export const pageBlocks: Block[] = [
   AccordionBlock,
   QuoteBlock,
   GalleryBlock,
+  CampusTourBlock,
   CtaBlock,
   EmbedBlock,
   LogosBlock,

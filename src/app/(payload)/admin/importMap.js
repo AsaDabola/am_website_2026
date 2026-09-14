@@ -29,6 +29,7 @@ import { AdminIcon as AdminIcon_81fda60f3e3709e861f40982a767707d } from '../../.
 import { LeadersView as LeadersView_737122741b714ba8a6f41b472ba1c719 } from '../../../components/admin/Leaders'
 import { LeadersNavLink as LeadersNavLink_26fd019f1c1ab5b8459479c6c2a77dba } from '../../../components/admin/LeadersNavLink'
 import { TrafficView as TrafficView_617d2b7fa5591accf0c42fd4befb2a2c } from '../../../components/admin/Traffic'
+import { BuildingRowLabel as BuildingRowLabel_333bfaf86c1180b0219e3fee0ac9ab86 } from '../../../components/admin/BuildingRowLabel'
 import { TrafficNavLink as TrafficNavLink_27e2674448e301bd28d7612388f0c6ec } from '../../../components/admin/TrafficNavLink'
 
 /** @type import('payload').ImportMap */
@@ -64,5 +65,6 @@ export const importMap = {
   "/components/admin/Leaders#LeadersView": LeadersView_737122741b714ba8a6f41b472ba1c719,
   "/components/admin/LeadersNavLink#LeadersNavLink": LeadersNavLink_26fd019f1c1ab5b8459479c6c2a77dba,
   "/components/admin/Traffic#TrafficView": TrafficView_617d2b7fa5591accf0c42fd4befb2a2c,
-  "/components/admin/TrafficNavLink#TrafficNavLink": TrafficNavLink_27e2674448e301bd28d7612388f0c6ec
+  "/components/admin/TrafficNavLink#TrafficNavLink": TrafficNavLink_27e2674448e301bd28d7612388f0c6ec,
+  "/components/admin/BuildingRowLabel#BuildingRowLabel": BuildingRowLabel_333bfaf86c1180b0219e3fee0ac9ab86
 }

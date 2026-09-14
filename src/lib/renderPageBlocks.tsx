@@ -17,6 +17,7 @@ import {
   Timeline,
   Notice,
 } from "@/components/pages/blocks/PageBlocks";
+import CampusTourSection from "@/components/tour/CampusTourSection";
 import type { PageBlockData } from "./pageBlockTypes";
 
 /**
@@ -52,6 +53,8 @@ export function renderPageBlock(block: PageBlockData) {
       return <Quote data={block} />;
     case "gallery":
       return <Gallery data={block} />;
+    case "campusTour":
+      return <CampusTourSection data={block} />;
     case "cta":
       return <Cta data={block} />;
     case "embed":

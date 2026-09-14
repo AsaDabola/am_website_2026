@@ -5,13 +5,27 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import PlaceholderPhoto from "@/components/ui/PlaceholderPhoto";
-import { CAMPUS_BUILDINGS, type CampusBuilding } from "./campusBuildings";
+import {
+  CAMPUS_AERIAL,
+  CAMPUS_BUILDINGS,
+  CAMPUS_TOUR_EYEBROW,
+  CAMPUS_TOUR_HEADING,
+  CAMPUS_TOUR_HINT,
+  type CampusBuilding,
+} from "./campusBuildings";
 
 /**
- * The campus tour: an aerial photograph with each building's roofline traced
- * over it, and a card for each building below. Hovering either the roofline
- * or its name tag lights both plus the line joining them; choosing one opens
- * a dialog with that building's photos.
+ * The campus tour: an aerial view with each building's roofline traced over
+ * it, and a card for each building below. Hovering either the roofline or its
+ * name tag lights both plus the line joining them; choosing one opens a dialog
+ * with that building's photographs.
+ *
+ * Every word and every picture arrives as a prop, because the tour is an
+ * editable section — `campusTour` in collections/blocks/pageBlocks — and this
+ * draws it whether the content came from the admin or from the defaults the
+ * site ships. Anything missing degrades on its own: no aerial, no photograph
+ * and no gallery image each draw the site's gradient placeholder, so a
+ * half-filled section is still a page.
  *
  * Highlighting runs through React state rather than CSS `:hover`, because the
  * roofline, the tag and the leader line are three separate elements in two
@@ -19,16 +33,17 @@ import { CAMPUS_BUILDINGS, type CampusBuilding } from "./campusBuildings";
  * makes the same highlight work for keyboard focus.
  */
 export default function CampusTourMap({
-  aerial = "/images/tour/campus-aerial.jpg",
-  hasPhotos = false,
+  aerial = CAMPUS_AERIAL,
+  buildings = CAMPUS_BUILDINGS,
+  eyebrow = CAMPUS_TOUR_EYEBROW,
+  heading = CAMPUS_TOUR_HEADING,
+  hint = CAMPUS_TOUR_HINT,
 }: {
-  /**
-   * Named directly rather than read from the CMS image keys: the outlines in
-   * campusBuildings.ts are traced against this exact image.
-   */
-  aerial?: string;
-  /** False while the four building views are missing from the repo. */
-  hasPhotos?: boolean;
+  aerial?: string | null;
+  buildings?: CampusBuilding[];
+  eyebrow?: string | null;
+  heading?: string | null;
+  hint?: string | null;
 }) {
   const [active, setActive] = useState<string | null>(null);
   const [open, setOpen] = useState<CampusBuilding | null>(null);
@@ -41,22 +56,28 @@ export default function CampusTourMap({
     if (!open && dialog.open) dialog.close();
   }, [open]);
 
+  const shown = buildings.filter((building) => building.shape);
+
   return (
     <>
       <section className="py-12 lg:py-16">
         <Container>
           <div className="relative overflow-hidden rounded-2xl">
-            <Image
-              src={aerial}
-              alt="Aerial view of the AM campus, showing the dormitory, Immanuel Theological Seminary, the general office and the chapel"
-              width={1920}
-              height={1080}
-              sizes="(min-width: 1280px) 1200px, 100vw"
-              priority
-              className="w-full"
-            />
+            {aerial ? (
+              <Image
+                src={aerial}
+                alt="Aerial view of the AM campus, showing the dormitory, Immanuel Theological Seminary, the general office and the chapel"
+                width={1920}
+                height={1080}
+                sizes="(min-width: 1280px) 1200px, 100vw"
+                priority
+                className="w-full"
+              />
+            ) : (
+              <PlaceholderPhoto className="aspect-[16/9] w-full" label="Campus aerial" />
+            )}
 
-            {/* Rooflines and leader lines, drawn in the photo's own
+            {/* Rooflines and leader lines, drawn in the image's own
                 coordinate space so they track it at any width. */}
             <svg
               className="absolute inset-0 h-full w-full"
@@ -64,30 +85,22 @@ export default function CampusTourMap({
               preserveAspectRatio="none"
               aria-hidden="true"
             >
-              {CAMPUS_BUILDINGS.map((building) => {
-                const on = active === building.id;
-                return (
-                  <g key={`leader-${building.id}`} opacity={on ? 1 : 0}>
-                    <line
-                      x1={building.leader.x1}
-                      y1={building.leader.y1}
-                      x2={building.leader.x2}
-                      y2={building.leader.y2}
-                      stroke="white"
-                      strokeWidth={2}
-                      vectorEffect="non-scaling-stroke"
-                    />
-                    <circle
-                      cx={building.leader.x1}
-                      cy={building.leader.y1}
-                      r={8}
-                      fill="white"
-                    />
-                  </g>
-                );
-              })}
+              {shown.map((building) => (
+                <g key={`leader-${building.id}`} opacity={active === building.id ? 1 : 0}>
+                  <line
+                    x1={building.leader.x1}
+                    y1={building.leader.y1}
+                    x2={building.leader.x2}
+                    y2={building.leader.y2}
+                    stroke="white"
+                    strokeWidth={2}
+                    vectorEffect="non-scaling-stroke"
+                  />
+                  <circle cx={building.leader.x1} cy={building.leader.y1} r={8} fill="white" />
+                </g>
+              ))}
 
-              {CAMPUS_BUILDINGS.map((building) => {
+              {shown.map((building) => {
                 const on = active === building.id;
                 return (
                   <path
@@ -118,18 +131,16 @@ export default function CampusTourMap({
               })}
             </svg>
 
-            {CAMPUS_BUILDINGS.map((building) => {
+            {shown.map((building) => {
               const on = active === building.id;
               return (
                 <button
                   key={`pin-${building.id}`}
                   type="button"
                   className={`absolute -translate-x-1/2 rounded-full px-3 py-1.5 text-xs font-semibold tracking-[0.08em] uppercase shadow-lg transition-colors ${
-                    on
-                      ? "bg-brand-blue text-white"
-                      : "bg-night/80 text-on-dark backdrop-blur-sm"
+                    on ? "bg-brand-blue text-white" : "bg-night/80 text-on-dark backdrop-blur-sm"
                   }`}
-                  style={{ left: building.pin.left, top: building.pin.top }}
+                  style={{ left: `${building.pin.left}%`, top: `${building.pin.top}%` }}
                   onMouseEnter={() => setActive(building.id)}
                   onMouseLeave={() => setActive(null)}
                   onFocus={() => setActive(building.id)}
@@ -142,25 +153,29 @@ export default function CampusTourMap({
             })}
           </div>
 
-          <p className="mt-4 text-center text-sm text-ink-muted">
-            Hover or tap a building on the photo to explore it.
-          </p>
+          {hint ? <p className="mt-4 text-center text-sm text-ink-muted">{hint}</p> : null}
         </Container>
       </section>
 
       <section className="bg-paper py-16 lg:py-20">
         <Container>
-          <div className="mb-12 text-center">
-            <div className="flex justify-center">
-              <Eyebrow>Around the campus</Eyebrow>
+          {eyebrow || heading ? (
+            <div className="mb-12 text-center">
+              {eyebrow ? (
+                <div className="flex justify-center">
+                  <Eyebrow>{eyebrow}</Eyebrow>
+                </div>
+              ) : null}
+              {heading ? (
+                <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
+                  {heading}
+                </h2>
+              ) : null}
             </div>
-            <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
-              Four buildings, one campus.
-            </h2>
-          </div>
+          ) : null}
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {CAMPUS_BUILDINGS.map((building) => (
+            {buildings.map((building) => (
               <button
                 key={building.id}
                 type="button"
@@ -170,7 +185,7 @@ export default function CampusTourMap({
                 onMouseLeave={() => setActive(null)}
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden">
-                  {hasPhotos ? (
+                  {building.photo ? (
                     <Image
                       src={building.photo}
                       alt=""
@@ -181,13 +196,17 @@ export default function CampusTourMap({
                   ) : (
                     <PlaceholderPhoto className="absolute inset-0" label={building.name} />
                   )}
-                  <span className="absolute left-3 top-3 rounded-full bg-night/75 px-2.5 py-1 text-[11px] font-semibold tracking-[0.12em] text-brand-navy-light uppercase backdrop-blur-sm">
-                    {building.tag}
-                  </span>
+                  {building.tag ? (
+                    <span className="absolute left-3 top-3 rounded-full bg-night/75 px-2.5 py-1 text-[11px] font-semibold tracking-[0.12em] text-brand-navy-light uppercase backdrop-blur-sm">
+                      {building.tag}
+                    </span>
+                  ) : null}
                 </div>
                 <div className="flex flex-1 flex-col gap-3 p-5">
                   <h3 className="font-display text-lg font-bold text-ink">{building.name}</h3>
-                  <p className="text-sm leading-relaxed text-ink-muted">{building.text}</p>
+                  {building.text ? (
+                    <p className="text-sm leading-relaxed text-ink-muted">{building.text}</p>
+                  ) : null}
                   <span className="mt-auto pt-2 text-xs font-semibold tracking-[0.12em] text-brand-blue uppercase">
                     See photos
                   </span>
@@ -222,22 +241,40 @@ export default function CampusTourMap({
               &times;
             </button>
 
-            <p className="text-xs font-semibold tracking-[0.15em] text-brand-blue uppercase">
-              {open.tag}
-            </p>
+            {open.tag ? (
+              <p className="text-xs font-semibold tracking-[0.15em] text-brand-blue uppercase">
+                {open.tag}
+              </p>
+            ) : null}
             <h2 className="mt-2 font-display text-2xl font-bold tracking-[-0.02em] text-ink">
               {open.name}
             </h2>
-            <p className="mt-3 leading-relaxed text-ink-muted">{open.text}</p>
+            {open.text ? <p className="mt-3 leading-relaxed text-ink-muted">{open.text}</p> : null}
 
-            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
-              {open.gallery.map((caption) => (
-                <figure key={caption} className="m-0">
-                  <PlaceholderPhoto className="aspect-[4/3] w-full rounded-xl" />
-                  <figcaption className="mt-2 text-xs text-ink-muted">{caption}</figcaption>
-                </figure>
-              ))}
-            </div>
+            {open.gallery.length > 0 ? (
+              <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                {open.gallery.map((shot, index) => (
+                  <figure key={shot.caption ?? index} className="m-0">
+                    {shot.url ? (
+                      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
+                        <Image
+                          src={shot.url}
+                          alt={shot.caption ?? ""}
+                          fill
+                          sizes="(min-width: 640px) 200px, 90vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <PlaceholderPhoto className="aspect-[4/3] w-full rounded-xl" />
+                    )}
+                    {shot.caption ? (
+                      <figcaption className="mt-2 text-xs text-ink-muted">{shot.caption}</figcaption>
+                    ) : null}
+                  </figure>
+                ))}
+              </div>
+            ) : null}
           </div>
         ) : null}
       </dialog>

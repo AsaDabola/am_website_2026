@@ -103,6 +103,10 @@ const NOT_PROSE = new Set([
   "overlayColour",
   "accentColour",
   "icon",
+  // The campus tour's rooflines. An SVG path is a text field and reads as
+  // prose to the collector; translated, it stops being a path and the
+  // building it outlines disappears from the map.
+  "shape",
 ]);
 
 type FieldLike = {
