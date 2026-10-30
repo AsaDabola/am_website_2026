@@ -40,6 +40,9 @@ tenants, run it again and only the new country is created.
 
 ### Addresses
 
+`country-admin-addresses.md` lists every address this will create, so the
+list can be checked before anything exists.
+
 The address comes from the tenant's own slug at `amintl.org` —
 `germany@amintl.org`, `united-states@amintl.org`. `?domain=example.org` puts
 them on another domain; pass it on the dry run first, so the list can be read
