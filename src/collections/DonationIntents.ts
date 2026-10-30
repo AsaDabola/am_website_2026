@@ -1,5 +1,6 @@
 import type { CollectionConfig } from "payload";
-import { hideUnlessGranted, sectionAccess } from "@/lib/adminAccess";
+import { enforceTenantScope, hideUnlessGranted, submissionAccess } from "@/lib/adminAccess";
+import { attributeToCountrySite } from "@/lib/submissionCountry";
 
 // Deliberately has no payment-card fields. Raw card numbers must never
 // touch our own database — that's a serious PCI-compliance and security
@@ -8,13 +9,25 @@ import { hideUnlessGranted, sectionAccess } from "@/lib/adminAccess";
 // the donor actually pays on Stripe's hosted Checkout page.
 export const DonationIntents: CollectionConfig = {
   slug: "donation-intents",
+  hooks: { beforeValidate: [attributeToCountrySite] },
   admin: {
     hidden: hideUnlessGranted("donation-intents"),
     useAsTitle: "email",
-    defaultColumns: ["fullName", "email", "amount", "frequency", "status", "createdAt"],
+    defaultColumns: ["fullName", "email", "amount", "frequency", "status", "tenant", "createdAt"],
   },
-  access: sectionAccess("donation-intents", { publicCreate: true }),
+  access: submissionAccess("donation-intents"),
   fields: [
+    {
+      name: "tenant",
+      type: "relationship",
+      relationTo: "tenants",
+      hooks: { beforeChange: [enforceTenantScope] },
+      admin: {
+        readOnly: true,
+        description:
+          "The country site this came in from, taken from the page the form was sent from. Empty means the main amintl.org site.",
+      },
+    },
     { name: "fullName", type: "text", required: true },
     { name: "email", type: "email", required: true },
     { name: "amount", type: "number", required: true },

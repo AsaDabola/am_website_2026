@@ -50,9 +50,13 @@ before anything is created.
 The role is `sub-admin`, carrying one tenant. The sections granted are:
 
     pages · posts · events · campuses · leaders · tenant-content · media
+    contact-messages · bible-study-signups · volunteer-applications
+    internship-applications · chapter-affiliations · membership-applications
+    donation-intents
 
 So each account edits its own country's pages, news, events, campuses, leaders
-and site wording, and sees no other country's entries in any of them.
+and site wording, reads the enquiries, applications and donations that came in
+from its own site, and sees no other country's entries in any of them.
 
 They **cannot**:
 
@@ -64,15 +68,33 @@ They **cannot**:
 - create, edit or delete any account, including their own role;
 - edit any tenant record — the country's name, address, contact email and
   org name stay with a super admin;
-- see the submissions: contact messages, donation intents, and the bible
-  study, volunteer, internship, chapter and membership applications.
+- read any submission that did not come in from their own site, including
+  every one that arrived before the country was recorded — see below;
+- reach `ministries`, whose records carry no country at all.
 
-That last one is deliberate and worth knowing. Those records have no country
-on them — the forms behind them do not ask — so granting a country admin one
-of those sections would show them **every** country's submissions, people's
-names and addresses included. If a national office needs its own enquiries,
-that needs a country on the form first. Until then, grant it to one account at
-a time, knowingly.
+### Submissions, and the ones already in the database
+
+Every form now records which country site it was sent from, so a national
+office reads its own enquiries and nobody else's. Two things decide that, in
+order: the country code the form sends, read from the first segment of its own
+path, and the Referer header as a fallback, so a form added later lands in the
+right country without being told to.
+
+Neither is a privilege boundary and neither pretends to be — these forms are
+open to anyone, so the worst a forged value does is file the sender's own
+enquiry under the wrong country. What matters is that the code is resolved to a
+country site on the server rather than an id being accepted from the browser,
+so a submission can only ever name a country that exists.
+
+**Submissions that arrived before this went live have no country on them**, and
+they were deliberately not guessed at from the sender's address or anything
+else. They read as the main site's, which means a super admin's, and none of
+them appears in a country's list. If a national office needs its old enquiries,
+a super admin has to set the country on them.
+
+One caveat on donations: the record is attributed to the country, but the money
+is not. There is one Stripe account behind every site, and the thank-you
+redirect still returns to the main site's URL.
 
 ### The media library works the other way round
 

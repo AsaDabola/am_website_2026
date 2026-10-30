@@ -1,15 +1,28 @@
 import type { CollectionConfig } from "payload";
-import { hideUnlessGranted, sectionAccess } from "@/lib/adminAccess";
+import { enforceTenantScope, hideUnlessGranted, submissionAccess } from "@/lib/adminAccess";
+import { attributeToCountrySite } from "@/lib/submissionCountry";
 
 export const MembershipApplications: CollectionConfig = {
   slug: "membership-applications",
+  hooks: { beforeValidate: [attributeToCountrySite] },
   admin: {
     hidden: hideUnlessGranted("membership-applications"),
     useAsTitle: "fullName",
-    defaultColumns: ["fullName", "email", "chapter", "membershipTier", "createdAt"],
+    defaultColumns: ["fullName", "email", "chapter", "membershipTier", "tenant", "createdAt"],
   },
-  access: sectionAccess("membership-applications", { publicCreate: true }),
+  access: submissionAccess("membership-applications"),
   fields: [
+    {
+      name: "tenant",
+      type: "relationship",
+      relationTo: "tenants",
+      hooks: { beforeChange: [enforceTenantScope] },
+      admin: {
+        readOnly: true,
+        description:
+          "The country site this came in from, taken from the page the form was sent from. Empty means the main amintl.org site.",
+      },
+    },
     {
       type: "row",
       fields: [

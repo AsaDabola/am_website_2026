@@ -204,6 +204,15 @@ export const MIGRATIONS = [
     file: "add-media-tenant.sql",
     done: columnExists("media", "tenant_id"),
   },
+
+  // Which country site a submission came in from, on all seven: the enquiry
+  // forms, the five applications and the donation flow. Without it every
+  // submission belonged to nobody in particular, so a national office could
+  // not be shown its own enquiries without being shown everyone's.
+  {
+    file: "add-submission-tenant.sql",
+    done: columnExists("contact_messages", "tenant_id"),
+  },
 ];
 
 /**

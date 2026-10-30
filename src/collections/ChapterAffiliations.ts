@@ -1,15 +1,28 @@
 import type { CollectionConfig } from "payload";
-import { hideUnlessGranted, sectionAccess } from "@/lib/adminAccess";
+import { enforceTenantScope, hideUnlessGranted, submissionAccess } from "@/lib/adminAccess";
+import { attributeToCountrySite } from "@/lib/submissionCountry";
 
 export const ChapterAffiliations: CollectionConfig = {
   slug: "chapter-affiliations",
+  hooks: { beforeValidate: [attributeToCountrySite] },
   admin: {
     hidden: hideUnlessGranted("chapter-affiliations"),
     useAsTitle: "targetUniversity",
-    defaultColumns: ["targetUniversity", "city", "country", "applicationType", "createdAt"],
+    defaultColumns: ["targetUniversity", "city", "country", "applicationType", "tenant", "createdAt"],
   },
-  access: sectionAccess("chapter-affiliations", { publicCreate: true }),
+  access: submissionAccess("chapter-affiliations"),
   fields: [
+    {
+      name: "tenant",
+      type: "relationship",
+      relationTo: "tenants",
+      hooks: { beforeChange: [enforceTenantScope] },
+      admin: {
+        readOnly: true,
+        description:
+          "The country site this came in from, taken from the page the form was sent from. Empty means the main amintl.org site.",
+      },
+    },
     {
       name: "applicationType",
       type: "select",

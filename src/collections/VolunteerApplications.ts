@@ -1,15 +1,28 @@
 import type { CollectionConfig } from "payload";
-import { hideUnlessGranted, sectionAccess } from "@/lib/adminAccess";
+import { enforceTenantScope, hideUnlessGranted, submissionAccess } from "@/lib/adminAccess";
+import { attributeToCountrySite } from "@/lib/submissionCountry";
 
 export const VolunteerApplications: CollectionConfig = {
   slug: "volunteer-applications",
+  hooks: { beforeValidate: [attributeToCountrySite] },
   admin: {
     hidden: hideUnlessGranted("volunteer-applications"),
     useAsTitle: "email",
-    defaultColumns: ["fullName", "email", "createdAt"],
+    defaultColumns: ["fullName", "email", "tenant", "createdAt"],
   },
-  access: sectionAccess("volunteer-applications", { publicCreate: true }),
+  access: submissionAccess("volunteer-applications"),
   fields: [
+    {
+      name: "tenant",
+      type: "relationship",
+      relationTo: "tenants",
+      hooks: { beforeChange: [enforceTenantScope] },
+      admin: {
+        readOnly: true,
+        description:
+          "The country site this came in from, taken from the page the form was sent from. Empty means the main amintl.org site.",
+      },
+    },
     { name: "fullName", type: "text", required: true },
     { name: "address", type: "text", required: true },
     {

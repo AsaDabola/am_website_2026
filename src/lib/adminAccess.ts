@@ -64,21 +64,23 @@ export const SECTIONS = [
 export type Section = (typeof SECTIONS)[number];
 
 /**
- * Sections with no tenant of their own. A country admin given one of these
- * sees every country's records in it, because there is nothing on the record
- * saying which country it belongs to — the forms behind them do not ask.
- * Grant them deliberately.
+ * Sections a country admin sees whole rather than narrowed to their own
+ * country. Grant them deliberately.
+ *
+ * Two different reasons sit in here. `ministries` has no tenant on its
+ * records at all, so there is nothing to narrow by. `media` has one, and it
+ * is deliberately not used to narrow reading: the library is shared, because
+ * an image is a building material and a country page is assembled out of the
+ * main site's photography. Changing a file is still scoped to the country
+ * that uploaded it — see Media.ts.
+ *
+ * The submissions used to be here too, for the first reason. They carry a
+ * tenant now, taken from the country site the form was sent from, so a
+ * country admin granted one sees their own country's enquiries.
  */
 export const UNSCOPED_SECTIONS = new Set<Section>([
   "media",
   "ministries",
-  "bible-study-signups",
-  "volunteer-applications",
-  "internship-applications",
-  "chapter-affiliations",
-  "membership-applications",
-  "contact-messages",
-  "donation-intents",
 ]);
 
 type UserFields = {
@@ -167,6 +169,32 @@ export function tenantScopedAccess(section: Section): CollectionConfig["access"]
     create: ({ req: { user } }) =>
       isSuperAdmin(user) ||
       (canUseSection(user, section) && tenantScopeWhere(user) !== false),
+    update: scoped,
+    delete: scoped,
+  };
+}
+
+/**
+ * Access for a collection the public writes into and only staff read.
+ *
+ * The inverse of `tenantScopedAccess`: creating is open to anyone, because
+ * that is a visitor sending a form, and reading is closed to everyone but the
+ * country the submission names. There is no "open when nobody is logged in"
+ * here — these records are people's names, addresses, phone numbers and
+ * testimonies, and a submission with no country is the main site's, which
+ * means a super admin's.
+ */
+export function submissionAccess(section: Section): CollectionConfig["access"] {
+  const scoped: Access = ({ req: { user } }) => {
+    if (!user) return false;
+    if (isSuperAdmin(user)) return true;
+    if (!canUseSection(user, section)) return false;
+    return tenantScopeWhere(user);
+  };
+
+  return {
+    read: scoped,
+    create: () => true,
     update: scoped,
     delete: scoped,
   };

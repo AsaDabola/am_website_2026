@@ -1,7 +1,9 @@
 "use client";
 
 import { useMemo, useRef, useState, type ReactNode } from "react";
+import { usePathname } from "next/navigation";
 import { AlertTriangleIcon, ArrowRightIcon, CheckIcon } from "@/components/ui/icons";
+import { tenantPrefixOf } from "@/lib/tenantPrefix";
 
 /**
  * The application is long — nine personal fields, three essays, six screening
@@ -259,6 +261,9 @@ function Affirmation({
 }
 
 export default function VolunteerApplicationForm() {
+  // Which country site this form is on, so the submission lands in that
+  // country's list rather than the main site's. Empty on amintl.org itself.
+  const countryCode = tenantPrefixOf(usePathname()).slice(1) || undefined;
   const [values, setValues] = useState<Values>({});
   const [current, setCurrent] = useState(0);
   const [furthest, setFurthest] = useState(0);
@@ -322,7 +327,7 @@ export default function VolunteerApplicationForm() {
       const res = await fetch("/api/volunteer-applications", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, countryCode }),
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("success");

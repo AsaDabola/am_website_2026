@@ -1,7 +1,9 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { ArrowRightIcon } from "@/components/ui/icons";
+import { tenantPrefixOf } from "@/lib/tenantPrefix";
 
 type LeaderRow = { name: string; role: string; email: string; phone: string };
 type MemberRow = { name: string; email: string };
@@ -76,6 +78,9 @@ async function uploadMedia(file: File, alt: string): Promise<string> {
 }
 
 export default function ChapterAffiliationForm() {
+  // Which country site this form is on, so the submission lands in that
+  // country's list rather than the main site's. Empty on amintl.org itself.
+  const countryCode = tenantPrefixOf(usePathname()).slice(1) || undefined;
   const formRef = useRef<HTMLFormElement>(null);
   const [step, setStep] = useState(0);
   const [status, setStatus] = useState<
@@ -168,6 +173,7 @@ export default function ChapterAffiliationForm() {
           attestation,
           memberListFile: memberListId,
           members,
+          countryCode,
         }),
       });
       if (!res.ok) throw new Error("Request failed");

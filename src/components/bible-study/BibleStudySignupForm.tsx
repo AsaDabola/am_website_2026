@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { usePathname } from "next/navigation";
 import { ArrowRightIcon } from "@/components/ui/icons";
+import { tenantPrefixOf } from "@/lib/tenantPrefix";
 
 const inputClass =
   "w-full rounded-lg border border-black/10 bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-ink-muted/60 focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue";
@@ -16,6 +18,9 @@ function Label({ children, required }: { children: string; required?: boolean })
 }
 
 export default function BibleStudySignupForm() {
+  // Which country site this form is on, so the submission lands in that
+  // country's list rather than the main site's. Empty on amintl.org itself.
+  const countryCode = tenantPrefixOf(usePathname()).slice(1) || undefined;
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -44,7 +49,7 @@ export default function BibleStudySignupForm() {
       const res = await fetch("/api/bible-study-signups", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, countryCode }),
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("success");

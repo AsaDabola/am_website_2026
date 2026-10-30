@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { usePathname } from "next/navigation";
+import { tenantPrefixOf } from "@/lib/tenantPrefix";
 
 const inputClass =
   "w-full rounded-lg border border-black/10 bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-ink-muted/60 focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue";
@@ -9,6 +11,9 @@ const frequencies = ["One-Time", "Monthly", "Yearly"] as const;
 const amounts = [25, 50, 100, 250, 500, 1000];
 
 export default function DonateForm() {
+  // Which country site this form is on, so the donation lands in that
+  // country's list rather than the main site's. Empty on amintl.org itself.
+  const countryCode = tenantPrefixOf(usePathname()).slice(1) || undefined;
   const [frequency, setFrequency] = useState<(typeof frequencies)[number]>("One-Time");
   const [amount, setAmount] = useState<number | null>(100);
   const [customAmount, setCustomAmount] = useState("");
@@ -33,6 +38,7 @@ export default function DonateForm() {
           email: data.get("email"),
           amount: selectedAmount,
           frequency,
+          countryCode,
         }),
       });
       const result = await res.json();

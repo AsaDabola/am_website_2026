@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, type FormEvent, type ReactNode } from "react";
+import { usePathname } from "next/navigation";
 import { ArrowRightIcon } from "@/components/ui/icons";
+import { tenantPrefixOf } from "@/lib/tenantPrefix";
 
 const inputClass =
   "h-12 w-full rounded-lg border border-black/[0.12] bg-white px-3.5 text-sm text-ink outline-none transition-colors placeholder:text-ink-muted/60 focus:border-brand-navy-deep focus:ring-2 focus:ring-brand-navy-deep/20";
@@ -102,6 +104,9 @@ function Reference({ index, label }: { index: 1 | 2; label: string }) {
  * dropped on the way in.
  */
 export default function InternshipApplicationForm() {
+  // Which country site this form is on, so the submission lands in that
+  // country's list rather than the main site's. Empty on amintl.org itself.
+  const countryCode = tenantPrefixOf(usePathname()).slice(1) || undefined;
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -130,7 +135,7 @@ export default function InternshipApplicationForm() {
       const res = await fetch("/api/internship-applications", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, countryCode }),
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("success");

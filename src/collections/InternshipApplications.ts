@@ -1,5 +1,6 @@
 import type { CollectionConfig } from "payload";
-import { hideUnlessGranted, sectionAccess } from "@/lib/adminAccess";
+import { enforceTenantScope, hideUnlessGranted, submissionAccess } from "@/lib/adminAccess";
+import { attributeToCountrySite } from "@/lib/submissionCountry";
 
 /**
  * Submissions from the internship application on
@@ -13,15 +14,27 @@ import { hideUnlessGranted, sectionAccess } from "@/lib/adminAccess";
  */
 export const InternshipApplications: CollectionConfig = {
   slug: "internship-applications",
+  hooks: { beforeValidate: [attributeToCountrySite] },
   admin: {
     hidden: hideUnlessGranted("internship-applications"),
     useAsTitle: "email",
-    defaultColumns: ["firstName", "lastName", "program", "email", "createdAt"],
+    defaultColumns: ["firstName", "lastName", "program", "email", "tenant", "createdAt"],
     description:
       "Applications to the summer, short-term and long-term internships. Read-only in practice — reply to the applicant by email.",
   },
-  access: sectionAccess("internship-applications", { publicCreate: true }),
+  access: submissionAccess("internship-applications"),
   fields: [
+    {
+      name: "tenant",
+      type: "relationship",
+      relationTo: "tenants",
+      hooks: { beforeChange: [enforceTenantScope] },
+      admin: {
+        readOnly: true,
+        description:
+          "The country site this came in from, taken from the page the form was sent from. Empty means the main amintl.org site.",
+      },
+    },
     {
       type: "row",
       fields: [

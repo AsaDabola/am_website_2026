@@ -24,20 +24,22 @@ import { isSuperAdmin, type Section } from "@/lib/adminAccess";
  * The sections whose records carry a tenant, so granting one shows that
  * country's entries and nobody else's.
  *
- * Most of UNSCOPED_SECTIONS in lib/adminAccess is deliberately absent. Those
- * records have no country on them — the contact form, the donation intents and
- * every application do not ask — so handing one to a country admin would show
- * them every country's submissions, including people's names and addresses.
- * A country that needs them should be given them deliberately, one account at
- * a time.
+ * The submissions are in here because the forms now record which country site
+ * they were sent from: a country's own enquiries, applications and donations
+ * reach the team that has to answer them, and nobody else's do. A submission
+ * that names no country is the main site's, and stays a super admin's. Note
+ * what that means for the ones already in the database — they predate the
+ * country being recorded, so they are all the main site's and none of them
+ * appear in a country's list.
  *
- * `media` is the exception, and it is in the list because without it a country
- * team could use the images already in the library but could not add one, so
- * putting a photograph on their own page needed a super admin. An upload now
- * remembers which country made it, and that is what is scoped: the whole
- * library stays visible and usable — the main site's logos and photography are
- * what a country page is assembled from — while renaming or deleting a file
- * reaches only the files that country uploaded.
+ * `media` is here for a different reason: without it a country team could use
+ * the images already in the library but could not add one, so putting a
+ * photograph on their own page needed a super admin. The library stays shared
+ * on purpose — a country page is assembled out of the main site's photography
+ * — and it is changing a file that is scoped to whoever uploaded it.
+ *
+ * What is still deliberately absent is `ministries`, whose records carry no
+ * country at all. Granting it would show every country's.
  */
 const COUNTRY_SCOPED_SECTIONS: Section[] = [
   "pages",
@@ -47,6 +49,13 @@ const COUNTRY_SCOPED_SECTIONS: Section[] = [
   "leaders",
   "tenant-content",
   "media",
+  "contact-messages",
+  "bible-study-signups",
+  "volunteer-applications",
+  "internship-applications",
+  "chapter-affiliations",
+  "membership-applications",
+  "donation-intents",
 ];
 
 /** The local part of the address, from the tenant's own slug: `germany`. */

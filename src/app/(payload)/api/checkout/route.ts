@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getPayload } from "payload";
 import config from "@payload-config";
 import { getStripe } from "@/lib/stripe";
+import { COUNTRY_BY_CODE } from "@/lib/countrySites";
 
 const FREQUENCIES = ["One-Time", "Monthly", "Yearly"] as const;
 type Frequency = (typeof FREQUENCIES)[number];
@@ -31,9 +32,37 @@ export async function POST(request: NextRequest) {
   }
 
   const payload = await getPayload({ config });
+
+  // Which country site the donation came from, so it shows in that country's
+  // list rather than only the main site's. The form sends its own path's
+  // first segment; an unrecognised one, or none, means amintl.org itself.
+  //
+  // Note this attributes the record, not the money: there is one Stripe
+  // account behind every site, and the thank-you redirect below still returns
+  // to the main site's URL.
+  const site = COUNTRY_BY_CODE.get(String(body.countryCode ?? "").toLowerCase());
+  const tenant = site
+    ? (
+        await payload.find({
+          collection: "tenants",
+          where: { slug: { equals: site.slug } },
+          limit: 1,
+          depth: 0,
+          overrideAccess: true,
+        })
+      ).docs[0]
+    : undefined;
+
   const donationIntent = await payload.create({
     collection: "donation-intents",
-    data: { fullName, email, amount, frequency, status: "pending" },
+    data: {
+      fullName,
+      email,
+      amount,
+      frequency,
+      status: "pending",
+      ...(tenant ? { tenant: tenant.id } : {}),
+    },
     overrideAccess: true,
   });
 

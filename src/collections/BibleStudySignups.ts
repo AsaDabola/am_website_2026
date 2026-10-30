@@ -1,15 +1,28 @@
 import type { CollectionConfig } from "payload";
-import { hideUnlessGranted, sectionAccess } from "@/lib/adminAccess";
+import { enforceTenantScope, hideUnlessGranted, submissionAccess } from "@/lib/adminAccess";
+import { attributeToCountrySite } from "@/lib/submissionCountry";
 
 export const BibleStudySignups: CollectionConfig = {
   slug: "bible-study-signups",
+  hooks: { beforeValidate: [attributeToCountrySite] },
   admin: {
     hidden: hideUnlessGranted("bible-study-signups"),
     useAsTitle: "email",
-    defaultColumns: ["firstName", "lastName", "email", "createdAt"],
+    defaultColumns: ["firstName", "lastName", "email", "tenant", "createdAt"],
   },
-  access: sectionAccess("bible-study-signups", { publicCreate: true }),
+  access: submissionAccess("bible-study-signups"),
   fields: [
+    {
+      name: "tenant",
+      type: "relationship",
+      relationTo: "tenants",
+      hooks: { beforeChange: [enforceTenantScope] },
+      admin: {
+        readOnly: true,
+        description:
+          "The country site this came in from, taken from the page the form was sent from. Empty means the main amintl.org site.",
+      },
+    },
     {
       type: "row",
       fields: [
