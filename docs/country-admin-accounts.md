@@ -47,10 +47,9 @@ before anything is created.
 
 ## What these accounts can reach
 
-The role is `sub-admin`, carrying one tenant. The sections granted are the six
-whose records name the country they belong to:
+The role is `sub-admin`, carrying one tenant. The sections granted are:
 
-    pages · posts · events · campuses · leaders · tenant-content
+    pages · posts · events · campuses · leaders · tenant-content · media
 
 So each account edits its own country's pages, news, events, campuses, leaders
 and site wording, and sees no other country's entries in any of them.
@@ -75,10 +74,19 @@ names and addresses included. If a national office needs its own enquiries,
 that needs a country on the form first. Until then, grant it to one account at
 a time, knowingly.
 
-They also cannot upload to the media library, for the same reason: it has no
-tenant, so it is one shared library. Images already in it can be used on their
-pages; adding new ones needs a super admin, or the `media` section granted to
-that account, which shows them the whole library.
+### The media library works the other way round
+
+Every other section hides other countries' records. Media cannot, because an
+image is a building material rather than a country's own work: the main site's
+logos, photography and PDFs are what a country page is assembled from, so a
+library narrowed to your own uploads would be an empty picker and nothing to
+build with.
+
+So the whole library stays visible and usable to everyone, and only changing it
+is scoped. A country admin can upload, and can rename or delete what they
+uploaded. The main site's files and other countries' files are theirs to use
+and not to touch. A file with no country on it belongs to the main site, which
+is every file that existed before uploads remembered a country.
 
 ## Two things to settle first
 

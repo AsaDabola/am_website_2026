@@ -195,6 +195,15 @@ export const MIGRATIONS = [
     file: "add-campus-tour-block.sql",
     done: tableExists("pages_blocks_campus_tour"),
   },
+
+  // Who uploaded a file. Media is granted to a country admin now, so a
+  // country team can add a photograph to its own page rather than asking a
+  // super admin — and this is what keeps them from rearranging anyone
+  // else's library while they do it.
+  {
+    file: "add-media-tenant.sql",
+    done: columnExists("media", "tenant_id"),
+  },
 ];
 
 /**

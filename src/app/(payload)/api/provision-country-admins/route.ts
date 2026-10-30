@@ -24,12 +24,20 @@ import { isSuperAdmin, type Section } from "@/lib/adminAccess";
  * The sections whose records carry a tenant, so granting one shows that
  * country's entries and nobody else's.
  *
- * UNSCOPED_SECTIONS in lib/adminAccess is deliberately not granted here. Those
+ * Most of UNSCOPED_SECTIONS in lib/adminAccess is deliberately absent. Those
  * records have no country on them — the contact form, the donation intents and
  * every application do not ask — so handing one to a country admin would show
  * them every country's submissions, including people's names and addresses.
  * A country that needs them should be given them deliberately, one account at
  * a time.
+ *
+ * `media` is the exception, and it is in the list because without it a country
+ * team could use the images already in the library but could not add one, so
+ * putting a photograph on their own page needed a super admin. An upload now
+ * remembers which country made it, and that is what is scoped: the whole
+ * library stays visible and usable — the main site's logos and photography are
+ * what a country page is assembled from — while renaming or deleting a file
+ * reaches only the files that country uploaded.
  */
 const COUNTRY_SCOPED_SECTIONS: Section[] = [
   "pages",
@@ -38,6 +46,7 @@ const COUNTRY_SCOPED_SECTIONS: Section[] = [
   "campuses",
   "leaders",
   "tenant-content",
+  "media",
 ];
 
 /** The local part of the address, from the tenant's own slug: `germany`. */
