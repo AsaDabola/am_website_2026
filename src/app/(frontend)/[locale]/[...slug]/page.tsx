@@ -51,7 +51,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolved = await resolve(slug);
   if (!resolved) return {};
 
-  if (resolved.page) {
+  // A built-in page's record is not the page: the page is React, and the
+  // record carries its wording and any sections a country has added to it.
+  // So it takes the coded page's metadata, below, the same way it takes the
+  // coded page's design.
+  if (resolved.page && !resolved.page.builtIn) {
     return {
       title: resolved.page.meta?.title || `${resolved.page.title} | AM International`,
       description: resolved.page.meta?.description || undefined,
@@ -149,7 +153,7 @@ export default async function DynamicPage({ params, searchParams }: Props) {
       return wrap(<HomeSections sections={page.sections} tenantId={tenantId} />);
     }
 
-    if (page) {
+    if (page && !page.builtIn) {
       const crumbs = [{ label: "Home", href: "/" }, { label: tenant!.country }];
       return wrap(
         <>
@@ -168,7 +172,14 @@ export default async function DynamicPage({ params, searchParams }: Props) {
   // No country-specific Page authored yet — serve the main site's version of
   // this route rather than a 404, so every country site is browsable in full
   // from the day it is created.
-  if (!page && isTenantRoute) {
+  //
+  // A page marked `builtIn` comes here too, record or no record. Those pages
+  // are React: the record exists so the admin lists every page of the site in
+  // one place, and it carries the wording and the sections a country adds —
+  // which the coded page reads for itself through getRouteLayout. Rendering
+  // the record instead of the page is how a country's /news stopped being the
+  // news listing and became an empty shell, the moment cloning gave it one.
+  if ((!page || page.builtIn) && isTenantRoute) {
     const loadStaticPage = getTenantStaticPage(resolved.restSlug);
     if (loadStaticPage) {
       const { default: StaticPage } = await loadStaticPage();

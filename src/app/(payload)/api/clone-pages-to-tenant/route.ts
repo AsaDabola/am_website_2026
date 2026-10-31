@@ -257,6 +257,19 @@ async function cloneInto(
           isHome: source.isHome,
           published: source.published,
           navLabel: source.navLabel,
+          /**
+           * Carried across, and they were not before.
+           *
+           * A built-in page is React and its record describes it: `builtIn`
+           * says so, and `layoutMode` plus `layout` say what a site has added
+           * around the coded design. Copying a page without them turned the
+           * country's /news from the news listing into an empty record, and
+           * silently dropped whatever sections the main site had added to
+           * every page it shipped.
+           */
+          builtIn: source.builtIn,
+          layoutMode: source.layoutMode,
+          layout: stripRowIds(source.layout),
           hero: source.hero,
           body: source.body,
           // `sections` carries the block-based layout — the whole homepage, in

@@ -18,6 +18,13 @@ export type PageDoc = {
   sections?: any[];
   /** The general page builder's sections — see collections/blocks/pageBlocks. */
   layout?: PageBlockData[] | null;
+  /**
+   * This page is shipped in code and the record only describes it — its
+   * wording, and any sections a country has added around it. The country
+   * route checks this before rendering: a built-in page is drawn by its React
+   * page, which reads those sections itself through getRouteLayout.
+   */
+  builtIn?: boolean | null;
 };
 
 /**
