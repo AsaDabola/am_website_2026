@@ -50,9 +50,32 @@ export const Posts: CollectionConfig = {
       required: true,
     },
     {
+      /**
+       * Required on a new article, and only on a new one.
+       *
+       * The listings leave out any article with no picture — see HAS_PICTURE
+       * in lib/posts.ts, which exists because the archive import brought back
+       * hundreds of text-only pieces and a card with nothing in its frame is
+       * worse than no card. The side effect was its own bug report: an editor
+       * wrote an article, saved it, watched it appear in /admin and never on
+       * the site, and had nothing telling them why.
+       *
+       * So the rule is enforced where it can be read, at save time, rather
+       * than applied silently afterwards. It is checked on create alone
+       * because those hundreds of archive articles have no picture and have
+       * to stay editable.
+       */
       name: "coverImage",
       type: "upload",
       relationTo: "media",
+      validate: (value: unknown, { operation }: { operation?: string }) =>
+        operation === "create" && !value
+          ? "Choose a cover image. An article without one is saved, but it is left out of every news listing, so nobody would find it."
+          : true,
+      admin: {
+        description:
+          "Shown on the article's card in the listings. An article without one does not appear in them at all.",
+      },
     },
     {
       name: "excerpt",

@@ -73,16 +73,12 @@ export async function POST(request: NextRequest) {
   const body = await request.json().catch(() => ({}));
   const { tenantId } = body as { tenantId?: number | string };
 
-  // No tenant named: every active country that has no pages yet, a few at a
-  // time. Writing into all of them at once is a super admin's call.
+  // No tenant named means "the countries I am responsible for": every active
+  // one for a super admin, and your own for everybody else — a country admin
+  // should not have to know their tenant's numeric id to set their own site
+  // up. Either way it works through them a few at a time.
   if (!tenantId) {
-    if (!isSuperAdmin(user)) {
-      return NextResponse.json(
-        { ok: false, message: "Only a super admin can clone pages for every country." },
-        { status: 403 },
-      );
-    }
-    return cloneForEveryTenant(payload, Number((body as { limit?: number }).limit) || 5);
+    return cloneForMine(payload, user, Number((body as { limit?: number }).limit) || 5);
   }
 
   const tenant = (await payload
@@ -171,7 +167,8 @@ async function cloneInto(
 }
 
 /**
- * Works through the active countries that have no pages of their own.
+ * Works through the countries this person is responsible for that have no
+ * pages of their own.
  *
  * `limit` countries per call, with `remaining` reporting the rest, because
  * cloning every page into sixty-odd countries is thousands of queries and a
@@ -179,8 +176,9 @@ async function cloneInto(
  * a country that already has a slug keeps it, so the caller just repeats
  * until `remaining` reaches 0.
  */
-async function cloneForEveryTenant(
+async function cloneForMine(
   payload: Awaited<ReturnType<typeof getPayload>>,
+  user: unknown,
   limit: number,
 ) {
   const tenants = (await payload.find({
@@ -191,8 +189,16 @@ async function cloneForEveryTenant(
     sort: "country",
   })) as unknown as { docs: TenantRecord[] };
 
+  const mine = tenants.docs.filter((tenant) => mayWriteInto(user, tenant));
+  if (mine.length === 0) {
+    return NextResponse.json(
+      { ok: false, message: "You have no country sites to add pages to." },
+      { status: 403 },
+    );
+  }
+
   const pending: TenantRecord[] = [];
-  for (const tenant of tenants.docs) {
+  for (const tenant of mine) {
     const owned = await payload.count({
       collection: "pages",
       where: { tenant: { equals: tenant.id } },
@@ -209,6 +215,10 @@ async function cloneForEveryTenant(
   }
 
   const remaining = pending.length - batch.length;
+  // "Every country" is only true for whoever can reach every country; for a
+  // country admin this did their own, and saying otherwise would be a lie
+  // they could not check.
+  const allOfThem = isSuperAdmin(user) ? "Every active country" : "Every country you hold";
   return NextResponse.json({
     ok: true,
     done,
@@ -216,6 +226,8 @@ async function cloneForEveryTenant(
     message:
       remaining > 0
         ? `Gave ${done.length} more country site(s) their pages; ${remaining} still to go — run it again.`
-        : `Gave ${done.length} country site(s) their pages. Every active country now has its own.`,
+        : done.length > 0
+          ? `Gave ${done.length} country site(s) their pages. ${allOfThem} now has its own.`
+          : `${allOfThem} already had its own pages; nothing to do.`,
   });
 }
