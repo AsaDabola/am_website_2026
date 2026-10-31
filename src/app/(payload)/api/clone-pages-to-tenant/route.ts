@@ -73,12 +73,22 @@ export async function POST(request: NextRequest) {
   const body = await request.json().catch(() => ({}));
   const { tenantId } = body as { tenantId?: number | string };
 
+  const limit = Number((body as { limit?: number }).limit) || 5;
+
+  // Pages copied before the clone carried `builtIn` arrived as ordinary empty
+  // pages and shadow the coded ones they describe. Repairing is separate from
+  // cloning because it touches countries that already have pages, which
+  // cloning deliberately leaves alone.
+  if ((body as { repair?: boolean }).repair) {
+    return repairMine(payload, user, limit);
+  }
+
   // No tenant named means "the countries I am responsible for": every active
   // one for a super admin, and your own for everybody else — a country admin
   // should not have to know their tenant's numeric id to set their own site
   // up. Either way it works through them a few at a time.
   if (!tenantId) {
-    return cloneForMine(payload, user, Number((body as { limit?: number }).limit) || 5);
+    return cloneForMine(payload, user, limit);
   }
 
   const tenant = (await payload
@@ -368,5 +378,121 @@ async function cloneForMine(
               problems.length ? ` ${problems.length} page(s) would not save — see "problems".` : ""
             }`
           : `${allOfThem} already had its own pages; nothing to do.`,
+  });
+}
+
+/**
+ * Puts `builtIn`, `layoutMode` and `layout` back on pages copied before the
+ * clone carried them.
+ *
+ * Those copies arrived claiming to be ordinary pages. A country route draws a
+ * built-in page from its React page and an ordinary one from its record, so a
+ * copy that lies about which it is replaces the news listing — and every other
+ * coded page — with an empty shell. The fix is the three fields, taken from
+ * the main-site page of the same slug; nothing is deleted and nothing a
+ * country has written is touched.
+ *
+ * Batched and idempotent like the clone: a page already matching its source
+ * is left alone, so this converges and can be repeated safely.
+ */
+async function repairMine(
+  payload: Awaited<ReturnType<typeof getPayload>>,
+  user: unknown,
+  limit: number,
+) {
+  const tenants = (await payload.find({
+    collection: "tenants",
+    where: { active: { equals: true } },
+    limit: 500,
+    depth: 0,
+    sort: "country",
+  })) as unknown as { docs: TenantRecord[] };
+
+  const mine = tenants.docs.filter((tenant) => mayWriteInto(user, tenant));
+  if (mine.length === 0) {
+    return NextResponse.json(
+      { ok: false, message: "You have no country sites to repair." },
+      { status: 403 },
+    );
+  }
+
+  const sources = await payload.find({
+    collection: "pages",
+    where: { tenant: { exists: false } },
+    limit: 500,
+    depth: 0,
+  });
+  const sourceBySlug = new Map<string, Record<string, unknown>>();
+  for (const doc of sources.docs as unknown as Record<string, unknown>[]) {
+    if (typeof doc.slug === "string") sourceBySlug.set(doc.slug, doc);
+  }
+
+  const pending: TenantRecord[] = [];
+  for (const tenant of mine) {
+    const wrong = await payload.count({
+      collection: "pages",
+      where: {
+        and: [
+          { tenant: { equals: tenant.id } },
+          { builtIn: { not_equals: true } },
+          { slug: { in: [...sourceBySlug].filter(([, d]) => d.builtIn).map(([slug]) => slug) } },
+        ],
+      },
+    });
+    if (wrong.totalDocs > 0) pending.push(tenant);
+  }
+
+  const batch = pending.slice(0, Math.max(1, limit));
+  const done: { tenant: string; repaired: number }[] = [];
+  const problems: { tenant: string; page: string; why: string }[] = [];
+
+  for (const tenant of batch) {
+    const owned = await payload.find({
+      collection: "pages",
+      where: { tenant: { equals: tenant.id } },
+      limit: 500,
+      depth: 0,
+    });
+
+    let repaired = 0;
+    for (const page of owned.docs as unknown as Record<string, unknown>[]) {
+      const source = typeof page.slug === "string" ? sourceBySlug.get(page.slug) : undefined;
+      if (!source) continue;
+      if (Boolean(source.builtIn) === Boolean(page.builtIn)) continue;
+
+      try {
+        await payload.update({
+          collection: "pages",
+          id: page.id as number,
+          data: {
+            builtIn: source.builtIn,
+            layoutMode: source.layoutMode,
+            layout: stripRowIds(source.layout),
+          } as never,
+        });
+        repaired += 1;
+      } catch (error) {
+        problems.push({
+          tenant: tenant.country,
+          page: String(page.slug),
+          why: error instanceof Error ? error.message : String(error),
+        });
+      }
+    }
+    done.push({ tenant: tenant.country, repaired });
+  }
+
+  const remaining = pending.length - batch.length;
+  return NextResponse.json({
+    ok: true,
+    done,
+    remaining,
+    ...(problems.length ? { problems } : {}),
+    message:
+      remaining > 0
+        ? `Repaired ${done.reduce((n, d) => n + d.repaired, 0)} page(s) across ${done.length} country site(s); ${remaining} country site(s) still to go — run it again.`
+        : done.length > 0
+          ? `Repaired ${done.reduce((n, d) => n + d.repaired, 0)} page(s) across ${done.length} country site(s). Nothing left to repair.`
+          : `Nothing to repair — every copied page already matches the page it describes.`,
   });
 }
